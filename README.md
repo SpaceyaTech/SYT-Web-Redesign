@@ -1,1 +1,1 @@
-# SYT-Web-Redesign
+# SYT Website Redesign
