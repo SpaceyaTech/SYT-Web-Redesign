@@ -106,4 +106,17 @@
     filter: blur(15px);
     transform: rotate(-75deg);
   }
+
+  /* Footer */
+  .flex-1 {
+    flex-grow: 1;
+  }
+
+  .flex-3 {
+    flex-grow: 3;
+  }
+
+  .flex-2 {
+    flex-grow: 2;
+  }
 }

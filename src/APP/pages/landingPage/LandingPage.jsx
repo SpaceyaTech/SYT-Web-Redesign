@@ -1,4 +1,5 @@
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
+import Footer2 from "../../components/Footer2";
 import Header from "../../components/Header";
 import CTASection from "./sections/CTASection";
 import FaqSection from "./sections/FaqSection";
@@ -19,7 +20,8 @@ function LandingPage() {
       <TestimonialSection />
       <FaqSection />
       <CTASection />
-      <Footer />
+      <Footer2 />
+      {/* <Footer /> */}
     </div>
   );
 }
