@@ -12,7 +12,7 @@ function Footer() {
       <div className=" bg-[#252533] mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           {/* logo and socials  */}
-          <div className="mb-8 mr-6 md:mb-0 flex flex-col justify-start items-center w-1/2">
+          <div className="mb-8 md:mb-0 mr-6 flex flex-col justify-start items-center md:w-1/4 w-1/2">
             <img
               src={logo}
               className="h-24 md:mx-8 mx-0 object-contain"
@@ -38,7 +38,7 @@ function Footer() {
             </div>
           </div>
           {/* quick links  */}
-          <div className="grid grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-4">
+          <div className="grid grid-cols-3 gap-8 sm:gap-12 sm:grid-cols-4">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
                 Company
