@@ -14,11 +14,13 @@ const FAQ = () => {
     },
     {
       question: "Does SpaceYaTech only mentor developers?",
-      answer: "No, SpaceYaTech mentors anyone who is involved in modern technology. This includes developers, designers, product managers, and more. SpaceYaTech believes that everyone has the potential to learn and grow in the tech industry, and they are committed to providing mentorship to anyone who wants it.",
+      answer:
+        "No, SpaceYaTech mentors anyone who is involved in modern technology. This includes developers, designers, product managers, and more. SpaceYaTech believes that everyone has the potential to learn and grow in the tech industry, and they are committed to providing mentorship to anyone who wants it.",
     },
     {
       question: "Does SpaceYaTech pay mentors?",
-      answer: "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits",
+      answer:
+        "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits",
     },
     {
       question: "Can I collaborate with SpaceYaTech?",
@@ -26,7 +28,8 @@ const FAQ = () => {
     },
     {
       question: "Can I join the mentorship sessions at any time?",
-      answer: "No, you cannot join the mentorship sessions at any time. SpaceYaTech's mentorship sessions are offered on a rolling basis, and there are limited spots available. To be considered for a mentorship session, you must submit an application and be selected by SpaceYaTech.",
+      answer:
+        "No, you cannot join the mentorship sessions at any time. SpaceYaTech's mentorship sessions are offered on a rolling basis, and there are limited spots available. To be considered for a mentorship session, you must submit an application and be selected by SpaceYaTech.",
     },
   ];
 
@@ -35,15 +38,22 @@ const FAQ = () => {
   };
 
   return (
-    <div id="accordionFlushExample">
+    <div className="flex-col justify-center items-center">
       {questions.map((question, index) => (
-        <div key={index} className="rounded-none border border-t-0 border-l-0 border-r-0 border-neutral-200">
+        <div
+          key={index}
+          className="rounded-none border border-t-0 border-l-0 border-r-0 border-neutral-200"
+        >
           <h2 className="mb-4 text-white" id={`flush-heading${index + 1}`}>
             <button
               className={`group relative flex w-full items-center rounded-none border-0 py-4 px-5  text-left text-base transition ${
-                activeQuestion === index ? "" : "overflow-anchor:none hover:z-[2] focus:z-[3]"
+                activeQuestion === index
+                  ? ""
+                  : "overflow-anchor:none hover:z-[2] focus:z-[3]"
               } focus:outline-none ${
-                activeQuestion === index ? "text-primary" : "&:not([data-te-collapse-collapsed]):text-primary"
+                activeQuestion === index
+                  ? "text-primary"
+                  : "&:not([data-te-collapse-collapsed]):text-primary"
               } ${
                 activeQuestion === index
                   ? "box-shadow:inset_0_-1px_0_rgba(229,231,235)"
@@ -62,13 +72,17 @@ const FAQ = () => {
                   activeQuestion === index ? "text-primary" : ""
                 }`}
               >
-                <FontAwesomeIcon icon={activeQuestion === index ? faChevronUp : faChevronDown} />
+                <FontAwesomeIcon
+                  icon={activeQuestion === index ? faChevronUp : faChevronDown}
+                />
               </span>
             </button>
           </h2>
           <div
             id={`flush-collapse${index + 1}`}
-            className={`${activeQuestion === index ? "" : "invisible hidden"} border-0`}
+            className={`${
+              activeQuestion === index ? "" : "invisible hidden"
+            } border-0`}
             data-te-collapse-item
             data-te-collapse-show
             aria-labelledby={`flush-heading${index + 1}`}
@@ -78,6 +92,23 @@ const FAQ = () => {
           </div>
         </div>
       ))}
+      
+      <div className="flex justify-center">
+          <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
+            Learn More
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              className="w-4 h-4 ml-2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
     </div>
   );
 };

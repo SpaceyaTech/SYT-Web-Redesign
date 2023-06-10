@@ -16,7 +16,8 @@ function FaqSection() {
             or a seasoned member in need of a refresher, we've got you covered.
           </p>
         </div>
-        <FAQ/>
+        <FAQ />
+        
       </div>
     </section>
   );
