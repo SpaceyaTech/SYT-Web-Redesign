@@ -1,4 +1,5 @@
 import logo from "../../assets/images/sytLogo.png";
+import backup from "../../assets/images/backup.svg";
 import {
   facebook,
   instagram,
@@ -10,7 +11,7 @@ const Footer2 = () => {
   var now = new Date();
   var year = now.getFullYear();
   return (
-    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4">
+    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4 relative">
       <div className="flex md:flex-row flex-col md:gap-16 gap-8 ">
         <div className="flex-3 flex flex-col md:items-center items-start">
           {/* logo */}
@@ -115,6 +116,12 @@ const Footer2 = () => {
           &copy; {year} SpaceYaTech | All Rights Reserved.
         </h1>
       </div>
+
+      <img
+        src={backup}
+        alt="backup"
+        className="h-12 w-12 object-contain absolute sm:bottom-14 bottom-0 right-10 cursor-pointer"
+      />
     </footer>
   );
 };
