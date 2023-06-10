@@ -1,3 +1,4 @@
+import FAQ from "../../../components/FAQ";
 /* eslint-disable react/no-unescaped-entities */
 function FaqSection() {
   return (
@@ -15,6 +16,7 @@ function FaqSection() {
             or a seasoned member in need of a refresher, we've got you covered.
           </p>
         </div>
+        <FAQ/>
       </div>
     </section>
   );
