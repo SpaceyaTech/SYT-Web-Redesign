@@ -1,34 +1,36 @@
+import TestimonialImg from "../../../../assets/images/testimonal_image.png";
+
 function TestimonialSection() {
   const TestimonialData = [
     {
       text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
       user: "Pamela Owino",
       vocation: "UX Designer, Kenya",
-      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+      img: TestimonialImg,
     },
     {
       text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
       user: "Pamela Owino",
       vocation: "UX Designer, Kenya",
-      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+      img: TestimonialImg,
     },
     {
       text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
       user: "Pamela Owino",
       vocation: "UX Designer, Kenya",
-      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+      img: TestimonialImg,
     },
     {
       text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
       user: "Pamela Owino",
       vocation: "UX Designer, Kenya",
-      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+      img: TestimonialImg,
     },
     {
       text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
       user: "Pamela Owino",
       vocation: "UX Designer, Kenya",
-      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+      img: TestimonialImg,
     },
   ];
 
@@ -46,23 +48,23 @@ function TestimonialSection() {
       </div>
 
       <div
-        className="py-6"
+        className="py-6 grid grid-cols-1 md:grid-cols-2 gap-2 overflow-x-auto"
         style={{
           display: "grid",
           gap: "2rem",
-          gridTemplateColumns: "500px",
-          gridTemplateRows: "minmax(200px, 300px)",
+          gridTemplateColumns: "max-content",
+          gridTemplateRows: "minmax(250px, 300px)",
           gridAutoFlow: "column",
-          gridAutoColumns: "500px",
+          gridAutoColumns: "max-content",
           overflowX: "auto",
         }}
       >
         {TestimonialData.map((testimonial, index) => (
           <figure
             key={index}
-            className="flex flex-col items-center justify-center p-8  bg-white border border-gray-200 rounded-lg shadow-sm"
+            className="flex flex-col w-[320px] sm:w-[480px] items-center justify-center p-2 sm:p-8  bg-white border border-gray-200 rounded-lg shadow-sm"
           >
-            <blockquote className="px-4 text-gray-500 mb-10 md:px-8  dark:text-gray-400">
+            <blockquote className="px-2 text-gray-500 mb-10 md:px-8  dark:text-gray-400">
               <p className=" leading-relaxed text-base  pl-4 md:pl-2 text-[#323433]">
                 {testimonial.text}
               </p>
