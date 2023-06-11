@@ -1,5 +1,91 @@
 function TestimonialSection() {
-  return <div>TestimonialSection</div>;
+  const TestimonialData = [
+    {
+      text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
+      user: "Pamela Owino",
+      vocation: "UX Designer, Kenya",
+      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+    },
+    {
+      text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
+      user: "Pamela Owino",
+      vocation: "UX Designer, Kenya",
+      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+    },
+    {
+      text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
+      user: "Pamela Owino",
+      vocation: "UX Designer, Kenya",
+      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+    },
+    {
+      text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
+      user: "Pamela Owino",
+      vocation: "UX Designer, Kenya",
+      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+    },
+    {
+      text: "Working as an open source participant has been a great learning opportunity for me. I have learned from teh different roles and tasks I contributed to.",
+      user: "Pamela Owino",
+      vocation: "UX Designer, Kenya",
+      img: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png",
+    },
+  ];
+
+  return (
+    <section className="pt-16 pb-10">
+      <div className="flex flex-col items-center">
+        <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
+          What people are saying...
+        </h1>
+        <p className="sm:hidden md:block leading-relaxed text-base text-center pl-4 md:pl-2 text-[#323433]">
+          Made by techies for techies. SpaceYaTech will allow you to accelerate
+          your growth and <br /> free you from tutorial hell as per word on the
+          street...
+        </p>
+      </div>
+
+      <div
+        className="py-6"
+        style={{
+          display: "grid",
+          gap: "2rem",
+          gridTemplateColumns: "500px",
+          gridTemplateRows: "minmax(200px, 300px)",
+          gridAutoFlow: "column",
+          gridAutoColumns: "500px",
+          overflowX: "auto",
+        }}
+      >
+        {TestimonialData.map((testimonial, index) => (
+          <figure
+            key={index}
+            className="flex flex-col items-center justify-center p-8  bg-white border border-gray-200 rounded-lg shadow-sm"
+          >
+            <blockquote className="px-4 text-gray-500 mb-10 md:px-8  dark:text-gray-400">
+              <p className=" leading-relaxed text-base  pl-4 md:pl-2 text-[#323433]">
+                {testimonial.text}
+              </p>
+            </blockquote>
+            <figcaption className="w-4/5 flex items-center justify-between">
+              <div className="text-left">
+                <p>{testimonial.user}</p>
+                <p className="font-bold text-[#323433]">
+                  {testimonial.vocation}
+                </p>
+              </div>
+
+              <img
+                className="rounded-full w-12 h-12"
+                src={testimonial.img}
+                alt=""
+              />
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default TestimonialSection;
