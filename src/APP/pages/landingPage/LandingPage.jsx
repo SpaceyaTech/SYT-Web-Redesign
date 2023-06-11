@@ -1,4 +1,7 @@
+/* eslint-disable no-unused-vars */
+
 import Footer from "../../components/Footer";
+import Footer2 from "../../components/Footer2";
 import Header from "../../components/Header";
 import CTASection from "./sections/CTASection";
 import FaqSection from "./sections/FaqSection";
@@ -19,6 +22,7 @@ function LandingPage() {
       <TestimonialSection />
       <FaqSection />
       <CTASection />
+      {/* <Footer2 /> */}
       <Footer />
     </div>
   );
