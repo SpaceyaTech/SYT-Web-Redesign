@@ -72,7 +72,7 @@ function TestimonialSection() {
             <figcaption className="w-4/5 flex items-center justify-between">
               <div className="text-left">
                 <p>{testimonial.user}</p>
-                <p className="font-bold text-[#323433]">
+                <p className="font-bold text-neutral-900">
                   {testimonial.vocation}
                 </p>
               </div>
