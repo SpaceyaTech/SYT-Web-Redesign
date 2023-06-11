@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const FAQ = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -92,23 +94,23 @@ const FAQ = () => {
           </div>
         </div>
       ))}
-      
-      <div className="flex justify-center">
-          <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
-            Learn More
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-4 h-4 ml-2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+
+      <div className="flex justify-center mt-4 md:mt-8">
+        <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
+          Learn More
+          <svg
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            className="w-4 h-4 ml-2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
     </div>
   );
 };
