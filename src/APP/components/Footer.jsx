@@ -7,6 +7,8 @@ import {
 import logo from "../../assets/images/sytLogo.png";
 
 function Footer() {
+  var now = new Date();
+  var year = now.getFullYear();
   return (
     <footer>
       <div className=" bg-[#252533] mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
@@ -187,7 +189,7 @@ function Footer() {
         </div>
         {/* signature  */}
         <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy; 2023 SpaceYaTech | All Rights Reserved.
+          &copy; {year} SpaceYaTech | All Rights Reserved.
         </h1>
       </div>
     </footer>

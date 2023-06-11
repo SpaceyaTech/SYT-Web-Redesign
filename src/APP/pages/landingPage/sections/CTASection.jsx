@@ -1,6 +1,6 @@
 function CTASection() {
   return (
-    <section className="text-gray-600 body-font relative">
+    <section className="text-gray-600 body-font relative mx-auto w-full max-w-screen-2xl">
       <div className="container px-5 py-12 mx-auto">
         <div className="flex flex-col text-center w-full mb-8 md:mb-12">
           <h1 className="sm:text-3xl text-3xl font-semibold title-font mb-4 text-[#00664E]">
@@ -18,8 +18,8 @@ function CTASection() {
         </div>
       </div>
 
-      <div className="w-full h-full absolute top-0 left-0">
-        <div className="relative">
+      <div className="w-ful h-full absolute top-0 left-0">
+        <div className="relative ">
           <div className="sm:blur-1 blur-sm-1">ase</div>
           <div className="sm:blur-2 blur-sm-2">ase</div>
           <div className="sm:blur-3 blur-sm-3">ase</div>
