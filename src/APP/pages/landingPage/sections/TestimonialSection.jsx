@@ -35,7 +35,7 @@ function TestimonialSection() {
   ];
 
   return (
-    <section className="pt-16 pb-10">
+    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
       <div className="flex flex-col items-center">
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
           What people are saying...
@@ -48,15 +48,15 @@ function TestimonialSection() {
       </div>
 
       <div
-        className="py-6 grid grid-cols-1 md:grid-cols-2 gap-2 overflow-x-auto"
+        className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
         style={{
-          display: "grid",
-          gap: "2rem",
+          // display: "grid",
+          // gap: "2rem",
           gridTemplateColumns: "max-content",
           gridTemplateRows: "minmax(250px, 300px)",
           gridAutoFlow: "column",
           gridAutoColumns: "max-content",
-          overflowX: "auto",
+          // overflowX: "auto",
         }}
       >
         {TestimonialData.map((testimonial, index) => (
