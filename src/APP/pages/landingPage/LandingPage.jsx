@@ -3,6 +3,7 @@
 import Footer from "../../components/Footer";
 import Footer2 from "../../components/Footer2";
 import Header from "../../components/Header";
+import Header2 from "../../components/Header2";
 import CTASection from "./sections/CTASection";
 import FaqSection from "./sections/FaqSection";
 import FeatureSection from "./sections/FeatureSection";
@@ -14,7 +15,8 @@ import TestimonialSection from "./sections/TestimonialSection";
 function LandingPage() {
   return (
     <div className="text-blue">
-      <Header />
+      {/* <Header /> */}
+      <Header2 />
       <HeroSection />
       <FeatureSection />
       <Services />
