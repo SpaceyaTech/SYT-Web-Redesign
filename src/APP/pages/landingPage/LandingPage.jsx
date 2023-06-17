@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 
-import Footer from "../../components/Footer";
-import Footer2 from "../../components/Footer2";
-import Header from "../../components/Header";
-import Header2 from "../../components/Header2";
+// import Footer from "../../components/Footer";
+// import Footer2 from "../../components/Footer2";
+// import Header from "../../components/Header";
+// import Header2 from "../../components/Header2";
 import CTASection from "./sections/CTASection";
 import FaqSection from "./sections/FaqSection";
 import FeatureSection from "./sections/FeatureSection";
@@ -16,7 +16,7 @@ function LandingPage() {
   return (
     <div className="text-blue">
       {/* <Header /> */}
-      <Header2 />
+      {/* <Header2 /> */}
       <HeroSection />
       <FeatureSection />
       <Services />
@@ -25,7 +25,7 @@ function LandingPage() {
       <FaqSection />
       <CTASection />
       {/* <Footer2 /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

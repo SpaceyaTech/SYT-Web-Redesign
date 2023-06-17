@@ -35,49 +35,49 @@ const Header2 = () => {
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/about-us"
           onClick={() => setShowNavlinks(false)}
         >
           About Us
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/resources"
           onClick={() => setShowNavlinks(false)}
         >
           Resources
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/community"
           onClick={() => setShowNavlinks(false)}
         >
           Community
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/products"
           onClick={() => setShowNavlinks(false)}
         >
           Products
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/blog"
           onClick={() => setShowNavlinks(false)}
         >
           Blog
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/shop"
           onClick={() => setShowNavlinks(false)}
         >
           Shop
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/donate"
           onClick={() => setShowNavlinks(false)}
         >
           Donate
@@ -94,43 +94,43 @@ const Header2 = () => {
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/about-us"
         >
           About Us
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/resources"
         >
           Resources
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/community"
         >
           Community
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/products"
         >
           Products
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/blog"
         >
           Blog
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/shop"
         >
           Shop
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/donate"
         >
           Donate
         </a>
