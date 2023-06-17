@@ -28,7 +28,7 @@ const HeroSection = () => {
         <div className="flex-1 lg:inline-flex hidden" />
       </div>
 
-      <div className="lg:h-[480px] lg:w-[59%] mt-12 rounded-lg z-10 overflow-hidden">
+      <div className="lg:h-[480px] lg:w-[59%] mt-12 rounded-lg lg:z-10 overflow-hidden">
         <video
           src={video}
           controls
