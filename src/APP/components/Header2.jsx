@@ -35,7 +35,7 @@ const Header2 = () => {
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/about"
           onClick={() => setShowNavlinks(false)}
         >
           About Us
@@ -94,7 +94,7 @@ const Header2 = () => {
         </a>
         <a
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          href="/about"
         >
           About Us
         </a>
