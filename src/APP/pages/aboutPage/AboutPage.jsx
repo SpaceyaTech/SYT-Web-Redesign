@@ -1,14 +1,16 @@
-import Footer from "../../components/Footer";
-import Footer2 from "../../components/Footer2";
 import Header2 from "../../components/Header2";
-import AboutSection from "./sections/AboutSection";
+import HeroSection from "./sections/HeroSection";
+import LeadershipSection from "./sections/LeadershipSection";
+import MissionVisionSection from "./sections/MissionVisionSection";
 
 function About() {
   return (
-    <div className="text-blue">
+    <div className="text-[#323433]">
       <Header2 />
-      <AboutSection/>
-      <Footer />
+      <HeroSection/>
+      <MissionVisionSection/>
+      <LeadershipSection/>
+      {/* <Footer /> */}
     </div>
   )
 }

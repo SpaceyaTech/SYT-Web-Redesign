@@ -1,29 +1,35 @@
-import AboutImg1 from '../../../../assets/images/aboutPage/about-img-1.png'
-import AboutImg2 from '../../../../assets/images/aboutPage/about-img-2.png'
+import AboutImg1 from "../../../../assets/images/aboutPage/about-img-1.png";
+import AboutImg2 from "../../../../assets/images/aboutPage/about-img-2.png";
 
-
-function AboutSection() {
+function HeroSection() {
   return (
-    <div>
-      <div>
-        <h3>About us</h3>
-        <h2>
+    <div className="px-32">
+      <div className="bg-[#E5EFEC] rounded-2xl relative pt-10 px-7 pb-5 my-32 w-[90%] h-96 ">
+        <h2 className="mt-3 text-[#009975] inline-flex items-center font-semibold pb-4 text-xl">
+          About us
+        </h2>
+        <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 w-1/2 leading-10">
           A community of innovators, building a space for African tech
           talents...
-        </h2>
-        <p>
+        </h3>
+        <p className="leading-6 w-1/2 text-base">
           SpaceYaTech is a language and stack agnostic community of technology
           enthusiasts with membership across Kenya, Tanzania, Nigeria and
           pockets of Africa. We welcome techies from all backgrounds to build a
           vibrant community of innovators of tech, users of tech and tech
           evangelists.
         </p>
+        <img
+          src={AboutImg1}
+          alt="space ya tech"
+          className="absolute -top-24 -right-36"
+        />
       </div>
-      <div className='flex'>
+      <div className="flex justify-between items-center my-32 min-h-96">
         <div>
-          <img src={AboutImg2} alt="space ya tech" />
+          <img src={AboutImg2} alt="space ya tech" height="100%" width="100%"/>
         </div>
-        <div>
+        <div className="leading-6 w-1/2 text-base space-y-4 pl-10">
           <p>
             Our activities center around designing and building software and
             hardware solutions for the most salient needs we see in the society,
@@ -39,26 +45,8 @@ function AboutSection() {
           </p>
         </div>
       </div>
-      <div className='flex'>
-        <div>
-          <h2>Our Mission</h2>
-          <p>
-            To help 10,000 young Africans to transition to tech in the next
-            three years by being a pool of resources, mentorship and capacity
-            building
-          </p>
-        </div>
-        <div>
-          <h2>Our Vision</h2>
-          <p>
-            To be the best tech community, focused on innovation and actually
-            leveraging on technology to build solutions for Africa and to help
-            our community members to level up their tech skills in the process.
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
 
-export default AboutSection;
+export default HeroSection;
