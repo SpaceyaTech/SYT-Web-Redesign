@@ -4,34 +4,27 @@ function Caroussel({ CarousselData }) {
       <div
         className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
         style={{
-          // display: "grid",
-          // gap: "2rem",
           gridTemplateColumns: "max-content",
           gridTemplateRows: "minmax(250px, 300px)",
           gridAutoFlow: "column",
           gridAutoColumns: "max-content",
-          // overflowX: "auto",
         }}
       >
         {CarousselData.map(({ name, title, image }, index) => (
-          <figure
+          <div
             key={index}
-            className="flex flex-col w-[320px] sm:w-[480px] items-center justify-center p-2 sm:p-8  bg-white border border-gray-200 rounded-lg shadow-sm"
+            className="relative after:block after:relative after:-mt-36 after:h-36 after:w-full after:content-[''] after:z-0 after:rounded-br-lg after:rounded-bl-lg after:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.5)_29.17%,_rgba(0,0,0,0.94)_97.92%)]"
           >
-            {/* <blockquote className="px-2 text-gray-500 mb-10 md:px-8  dark:text-gray-400">
-              <p className=" leading-relaxed text-base  pl-4 md:pl-2 text-[#323433]">
-                {testimonial.text}
-              </p>
-            </blockquote> */}
-            <figcaption className="w-4/5 flex items-center justify-between">
-              <div className="text-left">
-                <p>{name}</p>
-                <p className="font-bold text-neutral-900">{title}</p>
-              </div>
-
-              <img className="rounded-lg max-w-full h-auto" src={image} alt={name} />
-            </figcaption>
-          </figure>
+            <img
+              className="rounded-lg max-w-full h-auto"
+              src={image}
+              alt={name}
+            />
+            <div className="absolute -translate-x-2/4 -translate-y-1/4 left-2/4 top-3/4 text-white text-center z-10 font-medium w-3/5">
+              <p className="pb-2">{name}</p>
+              <p>{title}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>
