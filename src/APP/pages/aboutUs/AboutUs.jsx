@@ -5,17 +5,15 @@ import MissionVisionSection from "./sections/MissionVisionSection";
 import PartnerCTA from "./sections/PartnerCTA";
 import Footer2 from "../../components/Footer2";
 
-function About() {
+function AboutUs() {
   return (
     <div className="text-[#323433]">
-      <Header2 />
       <HeroSection />
       <MissionVisionSection />
       <LeadershipSection />
       <PartnerCTA />
-      <Footer2/>
     </div>
   );
 }
 
-export default About;
+export default AboutUs;

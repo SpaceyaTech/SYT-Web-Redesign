@@ -24,7 +24,7 @@ function HeroSection() {
             </button>
           </div>
           <div className="w-full py-4 mt-8 border-y-2 border-l-[#00664E]">
-            <h1 className="text-2xl md:text-3xl font-bold">Patners</h1>
+            <h1 className="text-2xl md:text-3xl font-bold">Our Partners</h1>
             {/* patner logos  */}
             <div className="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-6 lg:grid-cols-6 mt-4">
               {/* logo 1  */}

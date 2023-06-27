@@ -26,3 +26,10 @@ dist-ssr
 package-lock.json
 
 yarn.lock
+
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html

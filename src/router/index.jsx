@@ -1,25 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 
-//pages imports
-import LandingPage from "../APP/pages/landingPage/LandingPage";
-import Homepage from "../APP/pages/shop/pages/Homepage";
-import SingleItemPage from "../APP/pages/shop/pages/SingleItemPage";
-import Shop from "../APP/pages/shop/Shop";
-import About from "../APP/pages/aboutPage/AboutPage";
+import {
+  Homepage,
+  LandingPage,
+  Layout,
+  Products,
+  Resources,
+  SingleItemPage,
+} from "../APP";
+import AboutUs from "../APP/pages/aboutUs/AboutUs";
+import CommunityPage from "../APP/pages/community/CommunityPage";
+import DonatePage from "../APP/pages/donate/DonatePage";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
-  },
-  {
-    path: "/about",
-    element: <About/>
-  },
-  //shop routes
-  {
-    element: <Shop />,
+    element: <Layout />,
     children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
       {
         path: "/shop",
         element: <Homepage />,
@@ -28,8 +30,30 @@ const router = createBrowserRouter([
         path: "/shop/item/:id",
         element: <SingleItemPage />,
       },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+      {
+        path: "/resources",
+        element: <Resources />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/community",
+        element: <CommunityPage />,
+      },
+      {
+        path: "/donate",
+        element: <DonatePage />,
+      },
     ],
   },
+
+
 ]);
 
 export default router;

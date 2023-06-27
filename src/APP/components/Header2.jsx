@@ -2,6 +2,7 @@ import logo from "../../assets/images/sytLogo.png";
 import { useState } from "react";
 
 import menu from "../../assets/images/hamburger-menu.svg";
+import { Link } from "react-router-dom";
 
 const Header2 = () => {
   const [showNavlinks, setShowNavlinks] = useState(false);
@@ -9,9 +10,10 @@ const Header2 = () => {
   return (
     <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative">
       {/* logo */}
-      <a href="/">
+
+      <Link to="/">
         <img src={logo} alt="logo" className="md:w-16 w-12" />
-      </a>
+      </Link>
 
       {/* mobile menu */}
       <img
@@ -26,114 +28,114 @@ const Header2 = () => {
         className=" flex-col items-start gap-8 text-base absolute top-[90px] left-0 bg-white w-full h-[480px] z-[1] p-5 pl-12"
         style={showNavlinks ? { display: "flex" } : { display: "none" }}
       >
-        <a
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/"
           onClick={() => setShowNavlinks(false)}
         >
           Home
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/about"
+          to="/about-us"
           onClick={() => setShowNavlinks(false)}
         >
           About Us
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/resources"
           onClick={() => setShowNavlinks(false)}
         >
           Resources
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/community"
           onClick={() => setShowNavlinks(false)}
         >
           Community
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/products"
           onClick={() => setShowNavlinks(false)}
         >
           Products
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/blog"
           onClick={() => setShowNavlinks(false)}
         >
           Blog
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/shop"
           onClick={() => setShowNavlinks(false)}
         >
           Shop
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/donate"
           onClick={() => setShowNavlinks(false)}
         >
           Donate
-        </a>
+        </Link>
       </nav>
 
       {/* navlinks */}
       <nav className="md:flex hidden items-center gap-5 text-base">
-        <a
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/"
         >
           Home
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/about"
+          to="/about-us"
         >
           About Us
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/resources"
         >
           Resources
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/community"
         >
           Community
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/products"
         >
           Products
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/blog"
         >
           Blog
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/shop"
         >
           Shop
-        </a>
-        <a
+        </Link>
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          href="/"
+          to="/donate"
         >
           Donate
-        </a>
+        </Link>
       </nav>
     </header>
   );
