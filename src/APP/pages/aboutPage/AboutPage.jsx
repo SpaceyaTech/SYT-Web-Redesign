@@ -2,7 +2,7 @@ import Header2 from "../../components/Header2";
 import HeroSection from "./sections/HeroSection";
 import LeadershipSection from "./sections/LeadershipSection";
 import MissionVisionSection from "./sections/MissionVisionSection";
-import CreativeTeamSection from "./sections/CreativeTeamSection";
+import PartnerCTA from "./sections/PartnerCTA";
 import Footer2 from "../../components/Footer2";
 
 function About() {
@@ -12,7 +12,7 @@ function About() {
       <HeroSection />
       <MissionVisionSection />
       <LeadershipSection />
-      <CreativeTeamSection />
+      <PartnerCTA />
       <Footer2/>
     </div>
   );

@@ -3,19 +3,18 @@ import VisionBg from "../../../../assets/images/aboutPage/vision-bg.png";
 
 function MissionVisionSection() {
   return (
-    <div className="flex px-32 h-[24rem] pb-16 text-center justify-between">
+    <div className="flex flex-col md:flex-row mx-4 my-8 md:m-auto sm:px-28 min-h-[24rem] md:pb-16 text-center justify-between max-w-screen-2xl">
       <div
         style={{
           background: `url(${MissionBg}) no-repeat center`,
           backgroundSize: "contain",
         }}
-        className=" w-[45%] pt-20"
+        className="md:w-[45%] pt-6 mb-10 md:mb-0 md:pt-20 h-[200px] md:h-auto"
       >
-        {/* <div className={`bg-[url(${MissionBg})]`}> */}
-        <h2 className="sm:text-3xl text-2xl font-medium title-font my-4">
+        <h2 className="md:text-3xl text-2xl font-medium title-font my-4">
           Our Mission
         </h2>
-        <p className="m-auto w-[80%]">
+        <p className="m-auto w-[85%] sm:w-[80%]">
           To help 10,000 young Africans to transition to tech in the next three
           years by being a pool of resources, mentorship and capacity building.
         </p>
@@ -25,12 +24,12 @@ function MissionVisionSection() {
           background: `url(${VisionBg}) no-repeat center`,
           backgroundSize: "contain",
         }}
-        className="w-[50%] pt-20"
+        className="md:w-[45%] pt-2 md:pt-20 h-[200px] md:h-auto"
       >
-        <h2 className="sm:text-3xl text-2xl font-medium title-font my-4 ">
+        <h2 className="md:text-3xl text-2xl font-medium title-font my-4 ">
           Our Vision
         </h2>
-        <p className="m-auto w-[80%]">
+        <p className="m-auto w-[95%] sm:w-[80%]">
           To be the best tech community, focused on innovation and actually
           leveraging on technology to build solutions for Africa and to help our
           community members to level up their tech skills in the process.

@@ -3,16 +3,18 @@ import AboutImg2 from "../../../../assets/images/aboutPage/about-img-2.png";
 
 function HeroSection() {
   return (
-    <div className="px-32">
-      <div className="bg-[#E5EFEC] rounded-2xl relative pt-10 px-7 pb-14 my-32 w-[90%] min-h-96">
-        <h2 className="mt-3 text-[#009975] inline-flex items-center font-semibold pb-4 text-xl">
-          About us
-        </h2>
-        <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 w-1/2 leading-10">
-          A community of innovators, building a space for African tech
-          talents...
-        </h3>
-        <p className="leading-6 w-1/2 text-base">
+    <div className="px-0 sm:px-28 sm:m-auto max-w-screen-2xl">
+      <div className="md:bg-[#E5EFEC] md:border-solid md:border md:border-[#00664E] rounded-2xl relative md:pt-10 px-4 md:px-7 md:pb-14 mt-16 md:my-32 w-full md:w-[90%] min-h-96">
+        <div className="bg-[#E5EFEC] border-solid border border-[#00664E] md:border-none space-y-4 py-8 pl-4 md:pl-0 mb-4 rounded-lg">
+          <h2 className="mt-3 text-[#009975] inline-flex items-center font-semibold text-xl">
+            About us
+          </h2>
+          <h3 className="md:text-4xl text-md mb-4 font-medium text-gray-900 w-3/5 md:w-1/2 leading-6 md:leading-10">
+            A community of innovators, building a space for African tech
+            talents...
+          </h3>
+        </div>
+        <p className="leading-6 md:w-1/2 text-base">
           SpaceYaTech is a language and stack agnostic community of technology
           enthusiasts with membership across Kenya, Tanzania, Nigeria and
           pockets of Africa. We welcome techies from all backgrounds to build a
@@ -22,15 +24,14 @@ function HeroSection() {
         <img
           src={AboutImg1}
           alt="space ya tech"
-          className="absolute -top-24 -right-36"
-          // height="70%" width="70%"
+          className="absolute -top-8 md:-top-24 right-0 md:-right-36 w-2/6 md:w-auto"
         />
       </div>
-      <div className="flex justify-between items-center my-32 min-h-96">
-        <div>
-          <img src={AboutImg2} alt="space ya tech" height="100%" width="100%"/>
+      <div className="flex flex-col md:flex-row justify-between items-center md:my-32 min-h-96 px-4 md:px-7">
+        <div className="my-10 md:my-0">
+          <img src={AboutImg2} alt="space ya tech" height="100%" width="100%" />
         </div>
-        <div className="leading-6 w-1/2 text-base space-y-4 pl-10">
+        <div className="leading-6 md:w-1/2 text-base space-y-4 md:pl-10">
           <p>
             Our activities center around designing and building software and
             hardware solutions for the most salient needs we see in the society,

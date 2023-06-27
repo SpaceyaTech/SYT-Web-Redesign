@@ -60,30 +60,30 @@ const LeadershipData = [
 
 function LeadershipSection() {
   return (
-    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-3xl">
-      <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] text-center">
+    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
+      <h1 className="md:text-3xl text-2xl font-medium title-font text-[#323433] text-center">
         Meet our leadership
       </h1>
 
       <Caroussel CarousselData={LeadershipData}/>
       
-      <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-24 px-32 justify-between">
-        <div className="space-y-4 w-1/2">
+      <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-8 md:pb-24 px-4 sm:px-28 justify-between flex-col md:flex-row">
+        <div className="space-y-4 md:w-1/2 mb-14">
           <h2 className="text-[#009975] items-center font-semibold text-xl">
             Committed to building community
           </h2>
-          <h3 className=" sm:text-4xl text-3xl font-medium text-gray-900 leading-10">
+          <h3 className=" md:text-4xl text-2xl font-medium text-gray-900 leading-8 md:leading-10">
             We partner with like-minded organizations to build the workforce for
             Africa’s transformation.
           </h3>
-          <p className="leading-6 text-base mr-5">
+          <p className="leading-6 text-base md:mr-5">
             We have narrowed our focus to do just one thing; building capacity
             in tech. We partner with individuals, organizations and public
             institutions to mentor and coach young people, between the ages of
             18-35 in the technology skills they need to build the software that
             power the world.
           </p>
-          <p className="leading-6 text-base mr-5">
+          <p className="leading-6 text-base md:mr-5">
             {" "}
             We therefore focus our energies and resources on ensuring that those
             getting in a tech career, and specifically IT, are directed to the
@@ -91,9 +91,9 @@ function LeadershipSection() {
             mentorship and connected with job opportunities where they can earn
             from their hard work.
           </p>
-          <button className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg">Partner with us</button>
+          <button className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg">Partner with us</button>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <img src={BuildingCommunity} alt="Space ya Tech Community"/>
         </div>
       </div>
