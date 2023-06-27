@@ -8,6 +8,7 @@ import SharonJebitok from "../../../../assets/images/aboutPage/leadership/sharon
 import WaithakaWaweru from "../../../../assets/images/aboutPage/leadership/waithaka-waweru.png";
 import JumaLawrence from "../../../../assets/images/aboutPage/leadership/juma-lawrence.png";
 import Caroussel from "../../../components/Caroussel";
+import BuildingCommunity from "../../../../assets/images/aboutPage/building-community.png";
 
 const LeadershipData = [
   {
@@ -59,12 +60,43 @@ const LeadershipData = [
 
 function LeadershipSection() {
   return (
-    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl pl-32">
+    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-3xl">
       <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] text-center">
         Meet our leadership
       </h1>
 
-      <Caroussel CarousselData={LeadershipData} />
+      <Caroussel CarousselData={LeadershipData}/>
+      
+      <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-24 px-32 justify-between">
+        <div className="space-y-4 w-1/2">
+          <h2 className="text-[#009975] items-center font-semibold text-xl">
+            Committed to building community
+          </h2>
+          <h3 className=" sm:text-4xl text-3xl font-medium text-gray-900 leading-10">
+            We partner with like-minded organizations to build the workforce for
+            Africa’s transformation.
+          </h3>
+          <p className="leading-6 text-base mr-5">
+            We have narrowed our focus to do just one thing; building capacity
+            in tech. We partner with individuals, organizations and public
+            institutions to mentor and coach young people, between the ages of
+            18-35 in the technology skills they need to build the software that
+            power the world.
+          </p>
+          <p className="leading-6 text-base mr-5">
+            {" "}
+            We therefore focus our energies and resources on ensuring that those
+            getting in a tech career, and specifically IT, are directed to the
+            right resources, connected with the right people in industry for
+            mentorship and connected with job opportunities where they can earn
+            from their hard work.
+          </p>
+          <button className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg">Partner with us</button>
+        </div>
+        <div className="w-1/2">
+          <img src={BuildingCommunity} alt="Space ya Tech Community"/>
+        </div>
+      </div>
     </section>
   );
 }

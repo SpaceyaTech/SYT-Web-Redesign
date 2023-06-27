@@ -1,6 +1,6 @@
 function Caroussel({ CarousselData }) {
   return (
-    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
+    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl pl-32">
       <div
         className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
         style={{

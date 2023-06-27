@@ -3,6 +3,7 @@ import HeroSection from "./sections/HeroSection";
 import LeadershipSection from "./sections/LeadershipSection";
 import MissionVisionSection from "./sections/MissionVisionSection";
 import CreativeTeamSection from "./sections/CreativeTeamSection";
+import Footer2 from "../../components/Footer2";
 
 function About() {
   return (
@@ -12,7 +13,7 @@ function About() {
       <MissionVisionSection />
       <LeadershipSection />
       <CreativeTeamSection />
-      {/* <Footer /> */}
+      <Footer2/>
     </div>
   );
 }

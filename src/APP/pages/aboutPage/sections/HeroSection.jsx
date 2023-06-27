@@ -4,7 +4,7 @@ import AboutImg2 from "../../../../assets/images/aboutPage/about-img-2.png";
 function HeroSection() {
   return (
     <div className="px-32">
-      <div className="bg-[#E5EFEC] rounded-2xl relative pt-10 px-7 pb-5 my-32 w-[90%] h-96 ">
+      <div className="bg-[#E5EFEC] rounded-2xl relative pt-10 px-7 pb-14 my-32 w-[90%] min-h-96">
         <h2 className="mt-3 text-[#009975] inline-flex items-center font-semibold pb-4 text-xl">
           About us
         </h2>
@@ -23,6 +23,7 @@ function HeroSection() {
           src={AboutImg1}
           alt="space ya tech"
           className="absolute -top-24 -right-36"
+          // height="70%" width="70%"
         />
       </div>
       <div className="flex justify-between items-center my-32 min-h-96">
