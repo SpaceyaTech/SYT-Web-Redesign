@@ -11,6 +11,7 @@ import {
 import AboutUs from "../APP/pages/aboutUs/AboutUs";
 import CommunityPage from "../APP/pages/community/CommunityPage";
 import DonatePage from "../APP/pages/donate/DonatePage";
+import Categories from "../APP/pages/shop/pages/Categories"
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Homepage />,
+      },
+      {
+        path: '/shop/category/:category',
+        element: <Categories />
       },
       {
         path: "/shop/item/:id",
