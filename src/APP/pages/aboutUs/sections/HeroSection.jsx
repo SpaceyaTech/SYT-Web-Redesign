@@ -3,18 +3,18 @@ import AboutImg2 from "../../../../assets/images/aboutPage/about-img-2.png";
 
 function HeroSection() {
   return (
-    <div className="px-0 sm:px-28 sm:m-auto max-w-screen-2xl">
-      <div className="md:bg-[#E5EFEC] md:border-solid md:border md:border-[#00664E] rounded-2xl relative md:pt-10 px-4 md:px-7 md:pb-14 mt-16 md:my-32 w-full md:w-[90%] min-h-96">
-        <div className="bg-[#E5EFEC] border-solid border border-[#00664E] md:border-none space-y-4 py-8 pl-4 md:pl-0 mb-4 rounded-lg">
-          <h2 className="mt-3 text-[#009975] inline-flex items-center font-semibold text-xl">
+    <div className="px-0 sm:px-14 xl:px-28 sm:m-auto max-w-screen-2xl">
+      <div className="md:bg-[#E5EFEC] md:border-solid md:border md:border-[#00664E] rounded-2xl relative md:pt-10 lg:pt-5 xl:pt-10 px-4 md:px-7 md:pb-14 lg:pb-7 xl:pb-14 mt-16 md:my-32 w-full md:w-[85%] min-h-96">
+        <div className="bg-[#E5EFEC] border-solid border border-[#00664E] md:border-none space-y-4 py-8 lg:py-0 pl-4 md:pl-0 mb-4 rounded-lg">
+          <h2 className="mt-3 text-[#009975] inline-flex items-center font-medium text-xl">
             About us
           </h2>
-          <h3 className="md:text-4xl text-md mb-4 font-medium text-gray-900 w-3/5 md:w-1/2 leading-6 md:leading-10">
+          <h3 className="md:text-3xl text-md mb-4 font-semibold w-3/5 md:w-1/2 lg:w-3/5 xl:w-1/2 leading-6 md:leading-10">
             A community of innovators, building a space for African tech
             talents...
           </h3>
         </div>
-        <p className="leading-6 md:w-1/2 text-base">
+        <p className="leading-6 w-full md:w-1/2 text-base">
           SpaceYaTech is a language and stack agnostic community of technology
           enthusiasts with membership across Kenya, Tanzania, Nigeria and
           pockets of Africa. We welcome techies from all backgrounds to build a
@@ -24,12 +24,12 @@ function HeroSection() {
         <img
           src={AboutImg1}
           alt="space ya tech"
-          className="absolute -top-8 md:-top-24 right-0 md:-right-36 w-2/6 md:w-auto"
+          className="absolute -top-8 md:-top-24 lg:-top-8 xl:-top-28 right-0 md:-right-36 lg:-right-48 xl:-right-48 w-2/6 md:w-auto lg:w-[70%]"
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center md:my-32 min-h-96 px-4 md:px-7">
-        <div className="my-10 md:my-0">
-          <img src={AboutImg2} alt="space ya tech" height="100%" width="100%" />
+      <div className="flex flex-col md:flex-row justify-between items-center md:my-20 min-h-96 px-4 md:px-0">
+        <div className="my-10">
+          <img src={AboutImg2} alt="space ya tech" />
         </div>
         <div className="leading-6 md:w-1/2 text-base space-y-4 md:pl-10">
           <p>

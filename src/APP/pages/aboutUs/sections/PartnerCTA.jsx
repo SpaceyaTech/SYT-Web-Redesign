@@ -41,19 +41,19 @@ const CreativeTeamData = [
 function PartnerCTA() {
   return (
     <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
-      <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] text-center">
+      <h1 className="sm:text-3xl text-2xl font-semibold title-font text-[#323433] text-center">
         The Creative Team
       </h1>
 
       <Caroussel CarousselData={CreativeTeamData}/>
       <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-28">
         <div className="space-y-4 mb-8 sm:mb-0">
-          <h3 className="font-medium text-md sm:text-xl">Our Reports</h3>
-          <p><a href="/" className="text-[#009975] text-sm sm:text-md">Annual SpaceYaTech  Report - 2022</a></p>
-          <p><a href="/" className="text-[#009975] text-sm sm:text-md">Mentorlst Leadership and Growth</a></p>
+          <h3 className="font-semibold text-md sm:text-xl">Our Reports</h3>
+          <p><a href="/" className="text-[#009975] text-sm sm:text-base">Annual SpaceYaTech  Report - 2022</a></p>
+          <p><a href="/" className="text-[#009975] text-sm sm:text-base">Mentorlst Leadership and Growth</a></p>
         </div>
         <div>
-          <h3 className="font-medium">Follow us on social media </h3>
+          <h3 className="font-semibold">Follow us on social media </h3>
           <div className="flex items-center w-1/2 justify-between sm:justify-between py-4">
             <a href="/" target="_blank" rel="noopener noreferrer">
               <img src={facebook} alt="facebook" className="w-7 h7" />

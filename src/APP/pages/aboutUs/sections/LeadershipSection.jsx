@@ -60,19 +60,19 @@ const LeadershipData = [
 
 function LeadershipSection() {
   return (
-    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
-      <h1 className="md:text-3xl text-2xl font-medium title-font text-[#323433] text-center">
+    <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl">
+      <h1 className="md:text-3xl text-2xl font-semibold title-font text-[#323433] text-center">
         Meet our leadership
       </h1>
 
       <Caroussel CarousselData={LeadershipData}/>
       
-      <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-8 md:pb-24 px-4 sm:px-28 justify-between flex-col md:flex-row">
+      <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-8 md:pb-24 px-4 lg:px-14 xl:px-28 justify-between flex-col md:flex-row">
         <div className="space-y-4 md:w-1/2 mb-14">
-          <h2 className="text-[#009975] items-center font-semibold text-xl">
+          <h2 className="text-[#009975] items-center text-xl">
             Committed to building community
           </h2>
-          <h3 className=" md:text-4xl text-2xl font-medium text-gray-900 leading-8 md:leading-10">
+          <h3 className=" md:text-3xl text-2xl font-semibold text-gray-900 leading-8 md:leading-10">
             We partner with like-minded organizations to build the workforce for
             Africa’s transformation.
           </h3>

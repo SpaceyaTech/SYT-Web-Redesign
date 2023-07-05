@@ -1,6 +1,6 @@
 function Caroussel({ CarousselData }) {
   return (
-    <section className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl pl-4 sm:pl-28">
+    <section className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl pl-4 lg:pl-14 xl:pl-28">
       <div
         className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
         style={{
@@ -21,8 +21,8 @@ function Caroussel({ CarousselData }) {
               alt={name}
             />
             <div className="absolute -translate-x-2/4 -translate-y-1/4 left-2/4 top-3/4 text-white text-center z-10 font-medium w-3/5">
-              <p className="pb-2">{name}</p>
-              <p>{title}</p>
+              <p className="pb-2 text-xl">{name}</p>
+              <p className="text-base">{title}</p>
             </div>
           </div>
         ))}
