@@ -41,13 +41,13 @@ function SingleItemPage() {
   const [showDrawer, setShowDrawer] = useState(false);
 
   return (
-    <>
+    <div className="relative">
       <ItemHeader setShowDrawer={() => setShowDrawer((prev) => !prev)}/>
-
+      <div className="relative z-[0]" style={showDrawer ?{boxShadow: "0 0 0 5000px rgba(0,0,0,0.7)"}: {boxShadow:"none"}}></div>
       <div className="px-8 sm:px-28 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-24 text-[#323433]">
         
         {/* cart drawer */}
-        <div className="absolute px-6 py-12 sm:px-16 top-[90px] right-0 w-full sm:w-2/5 min-h-screen bg-white shadow-lg" style={showDrawer ? { display: "block" } : { display: "none" }}>
+        <div className="z-[1] absolute px-6 py-12 sm:px-16 top-[0] min-h-screen right-0 w-full sm:w-2/5 bg-white shadow-lg" style={showDrawer ? { display: "block" } : { display: "none" }}>
           <div className="flex justify-between">
             <h2 className="text-lg font-semibold">Your cart <span className="text-[#00CC9C]">(4)</span></h2>
             <button onClick={() => setShowDrawer((prev) => !prev)} className=""><img src={CloseIcon} alt="close"/></button>
@@ -150,7 +150,7 @@ function SingleItemPage() {
           <button type="button" className="w-full h-[62px] bg-[#F5FFFD] text-[#009975] text-sm font-medium rounded-lg outline outline-[#009975]">Add to cart</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
