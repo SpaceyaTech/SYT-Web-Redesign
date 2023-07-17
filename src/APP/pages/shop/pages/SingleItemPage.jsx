@@ -291,7 +291,7 @@ export default function Example() {
                           </button>
                           <button
                             type="button"
-                            className=" md:w-1/2 w-full h-[62px] bg-[#009975] text-[#F7F7F7] text-sm font-medium rounded-lg"
+                            className=" md:w-1/2 w-full h-[62px] bg-[#009975] hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
                             onClick={() => navigate("/shop/checkout")}
                           >
                             Checkout
