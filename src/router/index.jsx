@@ -7,6 +7,7 @@ import {
   Products,
   Resources,
   SingleItemPage,
+  Checkout,
 } from "../APP";
 import AboutUs from "../APP/pages/aboutUs/AboutUs";
 import CommunityPage from "../APP/pages/community/CommunityPage";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/shop/item/:id",
         element: <SingleItemPage />,
+      },
+      {
+        path: "/shop/checkout",
+        element: <Checkout />,
       },
       {
         path: "/products",

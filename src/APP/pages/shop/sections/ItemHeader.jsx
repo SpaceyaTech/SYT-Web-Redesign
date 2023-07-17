@@ -1,7 +1,7 @@
 import SearchIcon from "../../../../assets/images/icons/search-icon.svg";
 import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
 
-function ItemHeader({setShowDrawer}) {
+function ItemHeader({show}) {
   return (
       <div className="px-8 m-auto max-w-screen-2xl flex justify-between  md:space-x-48"> 
       {/* Breadcrumb */}
@@ -22,7 +22,7 @@ function ItemHeader({setShowDrawer}) {
               <img src={SearchIcon} alt="search"/>
               </span>
           </label>
-          <button type="button" className="ml-6" onClick={setShowDrawer}><img src={CartIcon} alt="cart"/></button>
+          <button type="button" className="ml-6" onClick={show}><img src={CartIcon} alt="cart"/></button>
         </div>
     </div>
   )
