@@ -49,7 +49,7 @@ export default function Example() {
           <img src={SampleImg} alt="Sample" className="m-auto md:min-w-full " />
           <div className="flex justify-between">
             {VariationData.map((pic, i) => (
-              <div key={i} className="w-[70px] sm:w-full">
+              <div key={i} className="w-[70px] sm:w-auto">
                 <img src={pic} alt="recommendation" />
               </div>
             ))}
