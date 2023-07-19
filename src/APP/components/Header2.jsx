@@ -29,7 +29,7 @@ const Header2 = () => {
         style={showNavlinks ? { display: "flex" } : { display: "none" }}
       >
         <Link
-          className="text-gray-900 hover:text-#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
           to="/"
           onClick={() => setShowNavlinks(false)}
         >
