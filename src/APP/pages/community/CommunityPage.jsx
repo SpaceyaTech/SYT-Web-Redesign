@@ -1,6 +1,6 @@
-import React from 'react';
-import WelcomeSection from './sections/WelcomeSection';
-import EventsSection from './sections/EventsSection';
+import React from "react";
+import WelcomeSection from "./sections/WelcomeSection";
+import EventsSection from "./sections/eventsSection/EventsSection";
 
 function CommunityPage() {
   return (
