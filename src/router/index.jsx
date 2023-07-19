@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 
 import {
   Homepage,
@@ -7,24 +7,23 @@ import {
   Products,
   Resources,
   SingleItemPage,
-} from "../APP";
-import AboutUs from "../APP/pages/aboutUs/AboutUs";
-import CommunityPage from "../APP/pages/community/CommunityPage";
-import DonatePage from "../APP/pages/donate/DonatePage";
-import Categories from "../APP/pages/shop/pages/Categories"
-
+} from '../APP';
+import AboutUs from '../APP/pages/aboutUs/AboutUs';
+import CommunityPage from '../APP/pages/community/CommunityPage';
+import DonatePage from '../APP/pages/donate/DonatePage';
+import Categories from '../APP/pages/shop/pages/Categories'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <LandingPage />,
       },
       {
-        path: "/shop",
+        path: '/shop',
         element: <Homepage />,
       },
       {
@@ -32,32 +31,31 @@ const router = createBrowserRouter([
         element: <Categories />
       },
       {
-        path: "/shop/item/:id",
+        path: '/shop/item/:id',
         element: <SingleItemPage />,
       },
       {
-        path: "/products",
+        path: '/products',
         element: <Products />,
       },
       {
-        path: "/resources",
+        path: '/resources',
         element: <Resources />,
       },
       {
-        path: "/about-us",
+        path: '/about-us',
         element: <AboutUs />,
       },
       {
-        path: "/community",
+        path: '/community',
         element: <CommunityPage />,
       },
       {
-        path: "/donate",
+        path: '/donate',
         element: <DonatePage />,
       },
     ],
   },
-
 
 ]);
 
