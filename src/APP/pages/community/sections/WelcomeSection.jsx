@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  community
-} from '../../../../assets/images/community';
+import {community} from '../../../../assets/images/community';
 
 function WelcomeSection() {
   return (
@@ -9,7 +7,7 @@ function WelcomeSection() {
       className="relative overflow-hidden  bg-cover bg-no-repeat py-24 text-center"
       style={{ 'background-image': `url(${community}`, height: '450px' }}
     >
-      <div className="flex h-full items-center justify-center content-between px-20 ">
+      <div className="flex h-full items-center justify-center content-between px-20">
         <div className="text-white max-w-4xl">
           <h2 className="mb-10 text-3xl font-medium">Welcome to The SpaceYaTech Community</h2>
           <p className="mb-10 text-base font-medium">SpaceYaTech is a fast growing tech community born out of a need for a space for young techies to find communities to help them accelerate in their careers. The community targets all sectors in the tech industry and provides online communities to network, learn and grow for techies at all stages in their career.</p>

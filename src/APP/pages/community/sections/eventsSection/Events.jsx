@@ -6,7 +6,7 @@ function Events({events}) {
 
   // box-shadow: 0px 4px 10px 0px #04080D0D;
   return (
-    <div className=" mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
+    <div className="mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
       {events.map(({
         img, title, date, location, mode
       }) => {
@@ -15,7 +15,7 @@ function Events({events}) {
           : 'bg-blue-800 hover:bg-blue-800';
         return (
           <div
-            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto"
             style={{ 'box-shadow': '0px 4px 10px 0px #04080D0D' }}
           >
             <a href="#">
