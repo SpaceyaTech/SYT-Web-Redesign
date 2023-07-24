@@ -1,12 +1,7 @@
-/* eslint-disable arrow-body-style */
-/* eslint-disable react/function-component-definition */
-// eslint-disable-next-line quotes
 import React from "react";
-import {
-  arrowRight,
-  community,
-} from "../../../../assets/images/resources-page";
 import { Link } from "react-router-dom";
+
+import { arrowRight } from "../../../../assets/images/resources-page";
 
 const ResourceCard2 = ({ resource }) => {
   const { img, title, desc } = resource;
@@ -22,7 +17,7 @@ const ResourceCard2 = ({ resource }) => {
 
       <Link
         to="/"
-        className="flex items-center gap-2 text-xs leading-5  py-1 px-2 border border-white hover:border-[#009975] rounded-lg"
+        className="flex items-center gap-2 text-xs leading-5  py-1 px-2 border transition-all duration-300 ease-in border-white hover:border-[#009975] rounded-lg"
       >
         {/* <button className="flex items-center gap-2 text-xs leading-5"> */}
         <span className="text-[#009975] uppercase">explore</span>

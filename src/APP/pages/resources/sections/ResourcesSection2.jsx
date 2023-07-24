@@ -1,5 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 
 import { search } from "../../../../assets/images/resources-page";
@@ -32,7 +30,7 @@ function ResourcesSection2() {
         />
       </div>
 
-      <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-16 grid-cols-1">
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
         {resources.map((resource) => (
           <ResourceCard2 key={resource.id} resource={resource} />
         ))}
