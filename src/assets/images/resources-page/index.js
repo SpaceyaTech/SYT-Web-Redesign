@@ -3,5 +3,6 @@ import curriculums from "./curriculums.png";
 import mentorlst from "./mentorlst.png";
 import podcasts from "./podcasts.png";
 import yt_channel from "./yt-channel.png";
+import search from "./search-icon.svg";
 
-export { earth_moon, curriculums, mentorlst, podcasts, yt_channel };
+export { earth_moon, curriculums, mentorlst, podcasts, search, yt_channel };

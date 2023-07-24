@@ -1,6 +1,12 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable quotes */
 import { createBrowserRouter } from "react-router-dom";
 
 import {
+  AboutUs,
+  Categories,
+  CommunityPage,
+  DonatePage,
   Homepage,
   LandingPage,
   Layout,
@@ -8,11 +14,6 @@ import {
   Resources,
   SingleItemPage,
 } from "../APP";
-import AboutUs from "../APP/pages/aboutUs/AboutUs";
-import CommunityPage from "../APP/pages/community/CommunityPage";
-import DonatePage from "../APP/pages/donate/DonatePage";
-import Categories from "../APP/pages/shop/pages/Categories"
-
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,8 @@ const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: '/shop/category/:category',
-        element: <Categories />
+        path: "/shop/category/:category",
+        element: <Categories />,
       },
       {
         path: "/shop/item/:id",
@@ -57,8 +58,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-
 ]);
 
 export default router;
