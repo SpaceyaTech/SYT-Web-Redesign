@@ -13,6 +13,7 @@ import {
   Products,
   Resources,
   SingleItemPage,
+  Checkout,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/shop/item/:id",
         element: <SingleItemPage />,
+      },
+      {
+        path: "/shop/checkout",
+        element: <Checkout />,
       },
       {
         path: "/products",
