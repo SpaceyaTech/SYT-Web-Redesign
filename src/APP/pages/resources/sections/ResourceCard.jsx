@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 const ResourceCard = ({ resource }) => {
   const { header, desc, button, img } = resource;
   return (
