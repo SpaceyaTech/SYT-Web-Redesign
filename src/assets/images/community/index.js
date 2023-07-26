@@ -15,10 +15,16 @@ import uiux from './uiux.png';
 import uiux2 from './uiux2.png';
 import nairobi1 from './nairobi1.png';
 import nairobi2 from './nairobi2.png';
-
-
-
+import galleryimage1 from './galleryimage1.png';
+import galleryimage2 from './galleryimage2.png';
+import galleryimage3 from './galleryimage3.png';
+import galleryimage4 from './galleryimage4.png';
+import galleryimage5 from './galleryimage5.png';
+import galleryimage6 from './galleryimage6.png';
+import galleryimage7 from './galleryimage7.png';
+import galleryimage8 from './galleryimage8.png';
+import galleryimage9 from './galleryimage9.png';
 
 export {
-  community, MasterBase, techrecruiters, mentorlst, mpesapayments, uxhiringafrica, vector1, Group, Nairobi, Mombasa, Tanzania, google, google2, uiux, uiux2, nairobi1, nairobi2
+  community, MasterBase, techrecruiters, mentorlst, mpesapayments, uxhiringafrica, vector1, Group, Nairobi, Mombasa, Tanzania, google, google2, uiux, uiux2, nairobi1, nairobi2, galleryimage1, galleryimage2, galleryimage3, galleryimage4, galleryimage5, galleryimage6, galleryimage7, galleryimage8, galleryimage9
 };
