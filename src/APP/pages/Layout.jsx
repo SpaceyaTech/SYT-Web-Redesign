@@ -4,7 +4,7 @@ import { Header2, Footer2 } from "../components";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="w-screen overflow-hidden">
       <Header2 />
       <Outlet />
       <Footer2 />

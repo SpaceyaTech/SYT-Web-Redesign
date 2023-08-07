@@ -5,11 +5,11 @@ import {
 import PartnerCard from './PartnerCard';
 
 
-const chapters = [{ image:google2, backgroundColor: "#FFFFFF" }, { image:uiux2, backgroundColor: "#000000" }, { image: nairobi2, backgroundColor: "#F5F3F3" },]
+const chapters = [{ image:google2, backgroundColor: "#FFFFFF"}, { image:uiux2, backgroundColor: "#000000" }, { image: nairobi2, backgroundColor: "#F5F3F3" },]
 function PartnerSection() {
   return (
     <div
-      className="px-6 py-16 text-center"
+      className="px-6 py-12 text-center"
     >
       <div className="text-[#323433]">
         <h2 className="mb-5 text-3xl font-medium">SpaceYaTech Partner Communities</h2>
