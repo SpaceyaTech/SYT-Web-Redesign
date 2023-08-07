@@ -13,7 +13,7 @@ import { default as Categories } from "../APP/pages/shop/pages/Categories";
 export {
   LandingPage,
   Homepage,
-  Checkout
+  Checkout,
   SingleItemPage,
   Layout,
   Products,
