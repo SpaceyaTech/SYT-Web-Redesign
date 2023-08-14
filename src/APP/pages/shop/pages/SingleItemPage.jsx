@@ -1,34 +1,34 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import SampleImg from "../../../../assets/images/shop-page/main-sample.png";
-import SmallSample1 from "../../../../assets/images/shop-page/small-sample-colored.png";
-import SmallSample2 from "../../../../assets/images/shop-page/small-sample-greyscale.png";
-import Sample1 from "../../../../assets/images/shop-page/sample1.png";
-import Sample2 from "../../../../assets/images/shop-page/sample2.png";
-import Sample3 from "../../../../assets/images/shop-page/sample3.png";
-import CloseIcon from "../../../../assets/images/icons/close-icon.svg";
-import DeleteIcon from "../../../../assets/images/icons/delete-icon.svg";
-import Counter from "../../../components/Counter";
-import ItemHeader from "../sections/ItemHeader";
-import { useNavigate } from "react-router-dom";
+import { Fragment, useState } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { useNavigate } from 'react-router-dom';
+import SampleImg from '../../../../assets/images/shop-page/main-sample.png';
+import SmallSample1 from '../../../../assets/images/shop-page/small-sample-colored.png';
+import SmallSample2 from '../../../../assets/images/shop-page/small-sample-greyscale.png';
+import Sample1 from '../../../../assets/images/shop-page/sample1.png';
+import Sample2 from '../../../../assets/images/shop-page/sample2.png';
+import Sample3 from '../../../../assets/images/shop-page/sample3.png';
+import CloseIcon from '../../../../assets/images/icons/close-icon.svg';
+import DeleteIcon from '../../../../assets/images/icons/delete-icon.svg';
+import Counter from '../../../components/Counter';
+import ItemHeader from '../sections/ItemHeader';
 
 const products = [
   {
     id: 1,
-    name: "SYT Hoodie",
-    href: "#",
-    color: "Salmon",
-    price: "90.00",
+    name: 'SYT Hoodie',
+    href: '#',
+    color: 'Salmon',
+    price: '90.00',
     quantity: 1,
     imageSrc: Sample1,
   },
   {
     id: 2,
-    name: "SYT Bookmark",
-    href: "#",
-    color: "Blue",
-    price: "32.00",
+    name: 'SYT Bookmark',
+    href: '#',
+    color: 'Blue',
+    price: '32.00',
     quantity: 1,
     imageSrc: Sample2,
   },
@@ -166,7 +166,8 @@ export default function Example() {
                       <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                         <div className="flex items-start justify-between">
                           <Dialog.Title className="text-3xl font-semibold">
-                            Your cart{" "}
+                            Your cart
+                            {' '}
                             <span className="text-[#00CC9C]">(4)</span>
                           </Dialog.Title>
                           <div className="ml-3 flex h-7 items-center">
@@ -211,7 +212,7 @@ export default function Example() {
                                       <div className="flex justify-between text-base font-medium text-gray-900">
                                         <h3>
                                           <p className="text-base md:text-xl">
-                                            {" "}
+                                            {' '}
                                             <a href={href}>{name}</a>
                                           </p>
                                         </h3>
@@ -244,8 +245,10 @@ export default function Example() {
                         {/* Recommendation items */}
                         <div className="pb-8 pt-10 border-b">
                           <p className="pt-6 text-base md:text-xl text-center font-bold">
-                            {" <  "}
-                            You might love {"  > "}
+                            {' <  '}
+                            You might love
+                            {' '}
+                            {'  > '}
                           </p>
                           <div className="flex pb-8 pt-10 space-x-4 sm:space-x-16 sm:px-8">
                             <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
@@ -285,20 +288,21 @@ export default function Example() {
                           <button
                             type="button"
                             className=" md:w-1/2 w-full h-[62px] bg-[#F5FFFD] text-[#009975] text-sm font-medium rounded-lg outline outline-2 outline-[#009975]"
-                            onClick={() => navigate("/shop")}
+                            onClick={() => navigate('/shop')}
                           >
                             Continue shopping
                           </button>
                           <button
                             type="button"
                             className=" md:w-1/2 w-full h-[62px] bg-[#009975] hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
-                            onClick={() => navigate("/shop/checkout")}
+                            onClick={() => navigate('/shop/checkout')}
                           >
                             Checkout
                           </button>
                         </div>
                         <p className="text-center">
-                          By selecting ‘Check Out’ you are agreeing to our{" "}
+                          By selecting ‘Check Out’ you are agreeing to our
+                          {' '}
                           <b className="font-medium">Terms & Conditions</b>
                         </p>
                       </div>

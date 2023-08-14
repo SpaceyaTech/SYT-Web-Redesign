@@ -14,6 +14,7 @@ import {
   Resources,
   SingleItemPage,
   Checkout,
+  SingleEvent,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
         element: <Categories />,
       },
       {
-        path: "/shop/item/:id",
+        path: "zid",
         element: <SingleItemPage />,
       },
       {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         path: "/donate",
         element: <DonatePage />,
       },
+      {
+        path: "/events/:id", // New route path
+        element: <SingleEvent />,
+      }
     ],
   },
 ]);

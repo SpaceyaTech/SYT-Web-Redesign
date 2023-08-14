@@ -1,22 +1,21 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-
-function Events({events}) {
-  
+function Events({ events }) {
+  const navigate = useNavigate();
 
   // box-shadow: 0px 4px 10px 0px #04080D0D;
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
-      {events.map(({
-        img, title, date, location, mode
-      }) => {
-        const buttonColor = mode === 'virtual'
-          ? 'bg-red-800 hover:bg-red-800'
-          : 'bg-blue-800 hover:bg-blue-800';
+      {events.map(({ img, id, title, date, location, mode }) => {
+        const buttonColor =
+          mode === "virtual"
+            ? "bg-red-800 hover:bg-red-800"
+            : "bg-blue-800 hover:bg-blue-800";
         return (
           <div
             className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto"
-            style={{ 'box-shadow': '0px 4px 10px 0px #04080D0D' }}
+            style={{ "box-shadow": "0px 4px 10px 0px #04080D0D" }}
           >
             <a href="#">
               <img className="rounded-t-lg w-full" src={img} alt="" />
@@ -36,6 +35,9 @@ function Events({events}) {
               <button
                 type="button"
                 className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2`}
+                onClick={() => {
+                  navigate(`/events/${id}`);
+                }}
               >
                 {mode}
               </button>
