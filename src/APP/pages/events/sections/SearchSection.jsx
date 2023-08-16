@@ -1,7 +1,7 @@
 import React from 'react'
-import { community } from '../../../../../../assets/images/community';
+import { community } from '../../../../assets/images/community';
 
-function AllEventsSection() {
+function SearchSection() {
   // content-between md:px-20
 
   return (
@@ -51,4 +51,4 @@ function AllEventsSection() {
   )
 }
 
-export default AllEventsSection
+export default SearchSection;

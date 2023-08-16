@@ -1,9 +1,6 @@
 import React from 'react';
 
-
-function Events({events}) {
-  
-
+function Events({ events }) {
   // box-shadow: 0px 4px 10px 0px #04080D0D;
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">

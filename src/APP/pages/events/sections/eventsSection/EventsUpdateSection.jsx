@@ -1,5 +1,5 @@
 import React from 'react'
-// bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 grid-cols-1 gap-x-33 gap-y-10 inline-flex
+
 function EventsUpdateSection() {
   return (
     <div className="flex flex-col ">

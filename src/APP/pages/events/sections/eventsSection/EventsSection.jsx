@@ -1,5 +1,6 @@
 import React from 'react';
 import EventsUpdateSection from './EventsUpdateSection';
+import EventsTab from './EventsTab'
 import Events from './Events';
 import {
   community,
@@ -48,13 +49,18 @@ const events = [
     mode: 'virtual',
   },
 ];
-function EventsSection() {
+function EventsSection({showTabs}) {
   return (
     <div className="p-6">
       <EventsUpdateSection />
+      {showTabs && <EventsTab />}
       <Events events={events} />
     </div>
   );
+}
+
+EventsSection.defaultProps = {
+  showTabs: false,
 }
 
 export default EventsSection;

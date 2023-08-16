@@ -1,6 +1,6 @@
 import React from 'react';
 import WelcomeSection from './sections/WelcomeSection';
-import EventsSection from './sections/eventsSection/EventsSection';
+import EventsSection from '../events/sections/eventsSection/EventsSection';
 import ChaptersSection from './sections/chaptersSection/ChaptersSection';
 import PartnerSection from './sections/partnerSection/PartnerSection';
 import Gallery from './sections/gallerySection/GallerySection';
