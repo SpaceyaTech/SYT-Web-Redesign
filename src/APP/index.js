@@ -1,14 +1,15 @@
-import { default as LandingPage } from "../APP/pages/landingPage/LandingPage";
-import { default as Homepage } from "../APP/pages/shop/pages/Homepage";
-import { default as SingleItemPage } from "../APP/pages/shop/pages/SingleItemPage";
-import { default as Layout } from "../APP/pages/Layout";
-import { default as Products } from "../APP/pages/products/Products";
-import { default as Resources } from "../APP/pages/resources/Resources";
-import { default as Checkout } from "../APP/pages/shop/pages/Checkout";
-import { default as AboutUs } from "../APP/pages/aboutUs/AboutUs";
-import { default as CommunityPage } from "../APP/pages/community/CommunityPage";
-import { default as DonatePage } from "../APP/pages/donate/DonatePage";
-import { default as Categories } from "../APP/pages/shop/pages/Categories";
+import { default as LandingPage } from './pages/landingPage/LandingPage';
+import { default as Homepage } from './pages/shop/pages/Homepage';
+import { default as SingleItemPage } from './pages/shop/pages/SingleItemPage';
+import { default as Layout } from './pages/Layout';
+import { default as Products } from './pages/products/Products';
+import { default as Resources } from './pages/resources/Resources';
+import { default as Checkout } from './pages/shop/pages/Checkout';
+import { default as AboutUs } from './pages/aboutUs/AboutUs';
+import { default as CommunityPage } from './pages/community/CommunityPage';
+import { default as DonatePage } from './pages/donate/DonatePage';
+import { default as Categories } from './pages/shop/pages/Categories';
+import { default as AllEventsSection } from './pages/community/sections/eventsSection/AllEvents/AllEventsSection';
 
 export {
   LandingPage,
@@ -22,4 +23,5 @@ export {
   Categories,
   CommunityPage,
   DonatePage,
+  AllEventsSection
 };
