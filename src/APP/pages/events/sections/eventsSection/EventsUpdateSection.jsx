@@ -3,8 +3,8 @@ import React from 'react'
 function EventsUpdateSection() {
   return (
     <div className="flex flex-col ">
-      <div className="flex flex-wrap flex-col md:flex-row md:items-center">
-        <h2 className="text-lg font-light text-[#323433]">Upcoming events near</h2>
+      <div className="flex flex-wrap flex-row items-center">
+        <h2 className="text-base md:text-lg md:font-light text-[#323433] whitespace-nowrap">Upcoming events near</h2>
         <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" className="text-blue-700 underline font-medium text-s px-2 py-2.5 text-center inline-flex items-center transition duration-150 ease-in-out" type="button">
           Nairobi
           {' '}
@@ -13,7 +13,6 @@ function EventsUpdateSection() {
           </svg>
         </button>
       </div>
-
       <div id="dropdownDivider" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 relative" data-te-dropdown-ref>
         <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton" data-te-dropdown-menu-ref>
           <li>
@@ -30,7 +29,6 @@ function EventsUpdateSection() {
           <a href="#" data-te-dropdown-item-ref className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Separated link</a>
         </div>
       </div>
-
     </div>
 
   )
