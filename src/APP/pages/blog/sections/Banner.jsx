@@ -1,4 +1,3 @@
-import React from "react";
 import { search } from "../../../../assets/images/blogs-page";
 
 const Banner = () => {
