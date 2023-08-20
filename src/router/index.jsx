@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import {
+  Blog,
   Homepage,
   LandingPage,
   Layout,
@@ -11,8 +12,7 @@ import {
 import AboutUs from "../APP/pages/aboutUs/AboutUs";
 import CommunityPage from "../APP/pages/community/CommunityPage";
 import DonatePage from "../APP/pages/donate/DonatePage";
-import Categories from "../APP/pages/shop/pages/Categories"
-
+import Categories from "../APP/pages/shop/pages/Categories";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: '/shop/category/:category',
-        element: <Categories />
+        path: "/shop/category/:category",
+        element: <Categories />,
       },
       {
         path: "/shop/item/:id",
@@ -55,10 +55,12 @@ const router = createBrowserRouter([
         path: "/donate",
         element: <DonatePage />,
       },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
     ],
   },
-
-
 ]);
 
 export default router;
