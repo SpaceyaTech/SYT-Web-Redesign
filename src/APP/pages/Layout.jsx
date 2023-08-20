@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 
-import { Header2, Footer } from "../components";
+import { Header2, Footer2 } from "../components";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="w-screen overflow-hidden">
       <Header2 />
       <Outlet />
-      <Footer />
+      <Footer2 />
     </div>
   );
 };

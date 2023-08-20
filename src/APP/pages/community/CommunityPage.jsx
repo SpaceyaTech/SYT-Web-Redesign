@@ -1,9 +1,21 @@
-import React from 'react'
+import React from 'react';
+import WelcomeSection from './sections/WelcomeSection';
+import EventsSection from './sections/eventsSection/EventsSection';
+import ChaptersSection from './sections/chaptersSection/ChaptersSection';
+import PartnerSection from './sections/partnerSection/PartnerSection';
+import Gallery from './sections/gallerySection/GallerySection';
+import GallerySection from './sections/gallerySection/GallerySection';
 
 function CommunityPage() {
   return (
-    <div>CommunityPage</div>
-  )
+    <div className="w-screen flex flex-col">
+      <WelcomeSection />
+      <EventsSection />
+      <ChaptersSection />
+      <PartnerSection />
+      <GallerySection />
+    </div>
+  );
 }
 
-export default CommunityPage
+export default CommunityPage;
