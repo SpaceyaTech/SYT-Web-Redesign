@@ -1,33 +1,9 @@
-const blogCat = [
-  {
-    id: 1,
-    cat: "Software Development",
-  },
-  {
-    id: 2,
-    cat: "Design",
-  },
-  {
-    id: 3,
-    cat: "Mobile Development",
-  },
-  {
-    id: 4,
-    cat: "UX Design",
-  },
-  {
-    id: 5,
-    cat: "UI Design",
-  },
-  {
-    id: 6,
-    cat: "Technical Writing",
-  },
-];
+import { blogCard, blogCat } from "../data";
+import BlogCard from "./BlogCard";
 
 const BlogsWrapper = () => {
   return (
-    <div className="flex flex-col items-center gap-8 md:gap-16 px-4 xl:px-14">
+    <div className="flex flex-col items-start md:items-center gap-8 md:gap-16 px-4 pt-4 xl:px-14 w-full mb-10 md:mb-40">
       <div className="w-max overflow-scroll md:overflow-auto flex flex-row items-center gap-3">
         {blogCat.map((blog) => (
           <span
@@ -38,7 +14,11 @@ const BlogsWrapper = () => {
           </span>
         ))}
       </div>
-      <div className="">Blogs items</div>
+      <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
+        {blogCard.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
+        ))}
+      </div>
     </div>
   );
 };

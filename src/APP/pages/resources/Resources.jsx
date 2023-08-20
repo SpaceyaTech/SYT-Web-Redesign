@@ -1,4 +1,3 @@
-
 import { HeroSection, ResourcesSection } from "./sections";
 
 const Resources = () => {
@@ -11,4 +10,3 @@ const Resources = () => {
 };
 
 export default Resources;
-
