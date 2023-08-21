@@ -8,6 +8,7 @@ import chatText from "./chatText.svg";
 import Ellipse30 from "./Ellipse30.png";
 import eye from "./eye.svg";
 import thumbsUp from "./thumbsUp.svg";
+import reply from "./reply.svg";
 
 export {
   search,
@@ -20,4 +21,5 @@ export {
   Ellipse30,
   thumbsUp,
   eye,
+  reply,
 };
