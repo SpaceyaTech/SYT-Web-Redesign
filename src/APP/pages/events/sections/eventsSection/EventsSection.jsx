@@ -54,7 +54,7 @@ function EventsSection({showTabs}) {
     <div className="p-6">
       <EventsUpdateSection />
       {showTabs && <EventsTab />}
-      <Events events={events} />
+      <Events events={events} isVertical={false} />
     </div>
   );
 }

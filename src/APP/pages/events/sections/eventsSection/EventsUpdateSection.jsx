@@ -3,7 +3,7 @@ import React from 'react'
 function EventsUpdateSection() {
   return (
     <div className="flex flex-col ">
-      <div className="flex flex-wrap flex-row items-center">
+      <div className="flex flex-row items-center">
         <h2 className="text-base md:text-lg md:font-light text-[#323433] whitespace-nowrap">Upcoming events near</h2>
         <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" className="text-blue-700 underline font-medium text-s px-2 py-2.5 text-center inline-flex items-center transition duration-150 ease-in-out" type="button">
           Nairobi

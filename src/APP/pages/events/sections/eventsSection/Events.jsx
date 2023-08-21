@@ -1,9 +1,14 @@
 import React from 'react';
 
-function Events({ events }) {
+function Events({ events, isVertical }) {
   // box-shadow: 0px 4px 10px 0px #04080D0D;
+  const verticalContainer = "mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
+  const horizontalContainer = "flex overflow-auto";
+
+  const verticalWrapper = "max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto";
+  const horizontalWrapper = "mr-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
   return (
-    <div className="mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8">
+    <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({
         img, title, date, location, mode
       }) => {
@@ -12,7 +17,7 @@ function Events({ events }) {
           : 'bg-blue-800 hover:bg-blue-800';
         return (
           <div
-            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto"
+            className={isVertical ? verticalWrapper : horizontalWrapper}
             style={{ 'box-shadow': '0px 4px 10px 0px #04080D0D' }}
           >
             <a href="#">
@@ -24,7 +29,7 @@ function Events({ events }) {
                   {title}
                 </h5>
               </a>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              <p className="mb-3 font-normal text-gray-700 dark:text-gray-40 whitespace-nowrap">
                 {date}
               </p>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -42,6 +47,10 @@ function Events({ events }) {
       })}
     </div>
   );
+}
+
+Events.defaultProps = {
+  isVertical: true,
 }
 
 export default Events;
