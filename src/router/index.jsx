@@ -1,8 +1,8 @@
-// <<<<<<< felix-blog-page-build
 import { createBrowserRouter } from "react-router-dom";
 
 import {
   Blog,
+  Blogs,
   Homepage,
   LandingPage,
   Layout,
@@ -57,7 +57,11 @@ const router = createBrowserRouter([
         element: <DonatePage />,
       },
       {
-        path: "/blog",
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/blogs/:id",
         element: <Blog />,
       },
     ],

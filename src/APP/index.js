@@ -1,4 +1,3 @@
-
 import { default as LandingPage } from "../APP/pages/landingPage/LandingPage";
 import { default as Homepage } from "../APP/pages/shop/pages/Homepage";
 import { default as SingleItemPage } from "../APP/pages/shop/pages/SingleItemPage";
@@ -10,8 +9,8 @@ import { default as AboutUs } from "../APP/pages/aboutUs/AboutUs";
 import { default as CommunityPage } from "../APP/pages/community/CommunityPage";
 import { default as DonatePage } from "../APP/pages/donate/DonatePage";
 import { default as Categories } from "../APP/pages/shop/pages/Categories";
-import { default as Blog } from "../APP/pages/blog/Blog";
-
+import { default as Blogs } from "./pages/blogs/Blogs";
+import { default as Blog } from "./pages/blog/Blog";
 
 export {
   LandingPage,
@@ -25,6 +24,6 @@ export {
   Categories,
   CommunityPage,
   DonatePage,
+  Blogs,
   Blog,
 };
-
