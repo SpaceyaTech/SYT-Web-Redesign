@@ -1,6 +1,7 @@
 import { blog4 } from "../../../assets/images/blogs-page";
 import BlogStats from "../blogs/sections/BlogStats";
 import BlogWrapper from "./sections/BlogWrapper";
+import RelatedBlogs from "./sections/RelatedBlogs";
 
 const Blog = () => {
   return (
@@ -20,6 +21,8 @@ const Blog = () => {
       </div>
 
       <BlogWrapper />
+
+      <RelatedBlogs />
     </section>
   );
 };

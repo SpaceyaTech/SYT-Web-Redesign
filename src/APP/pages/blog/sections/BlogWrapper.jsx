@@ -43,7 +43,7 @@ const BlogWrapper = () => {
         <Comments />
       </div>
 
-      <div className="w-2/5 bg-green-300 hidden md:inline-flex" />
+      <div className="w-2/5 hidden md:inline-flex" />
     </div>
   );
 };
