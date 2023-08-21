@@ -28,7 +28,7 @@ const CommentCard = () => {
         </button>
       </div>
 
-      <p className="text-base font-normal">
+      <p className="text-xs font-normal">
         Lorem ipsum dolor sit amet consectetur. Nunc duis purus eu non posuere.
         Suspendisse pretium lobortis convallis massa tempor in. Tincidunt sit
         amet venenatis nibh ut nunc at erat sollicitudin. Gravida ultrices
@@ -49,7 +49,13 @@ const Comments = () => {
         Comments(35)
       </span>
 
-      <div className="relative flex flex-col w-full gap-4">
+      <div className="relative flex flex-col w-full gap-4 overflow-scroll h-[600px] md:h-[540px]">
+        <CommentCard />
+        <CommentCard />
+        <CommentCard />
+        <CommentCard />
+        <CommentCard />
+        <CommentCard />
         <CommentCard />
         <CommentCard />
         <CommentInput />
