@@ -17,6 +17,8 @@ import {
   SingleEvent,
   Blog,
   Blogs,
+  EventsPage,
+  EventsSection
 } from "../APP";
 
 
@@ -66,10 +68,6 @@ const router = createBrowserRouter([
         element: <DonatePage />,
       },
       {
-        path: "/donate",
-        element: <DonatePage />,
-      },
-      {
         path: "/events/:id", // New route path
         element: <SingleEvent />,
       },     
@@ -80,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs/:id",
         element: <Blog />,
+      },
+      {
+        path: "/allevents",
+        element: <EventsPage />,
       },
     ],
   },
