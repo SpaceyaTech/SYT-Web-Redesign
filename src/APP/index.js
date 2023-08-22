@@ -9,6 +9,7 @@ import { default as AboutUs } from "../APP/pages/aboutUs/AboutUs";
 import { default as CommunityPage } from "../APP/pages/community/CommunityPage";
 import { default as DonatePage } from "../APP/pages/donate/DonatePage";
 import { default as Categories } from "../APP/pages/shop/pages/Categories";
+import { default as SingleEvent} from "../APP/pages/community/sections/eventsSection/SingleEvents/SingleEvent";
 
 export {
   LandingPage,
@@ -22,4 +23,5 @@ export {
   Categories,
   CommunityPage,
   DonatePage,
+  SingleEvent,
 };

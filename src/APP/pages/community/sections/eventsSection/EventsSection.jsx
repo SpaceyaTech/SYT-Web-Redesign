@@ -17,6 +17,7 @@ const events = [
     date: 'Sat, May 6, 2023 8:00 PM EAT',
     location: 'Twitter Spaces',
     mode: 'virtual',
+    id: 1,
   },
   {
     img: mentorlst,
@@ -24,6 +25,7 @@ const events = [
     date: 'Sat, May 6, 2023 8:00 PM EAT',
     location: 'Sarit Centre • Nairobi ',
     mode: 'Physical',
+    id: 2,
   },
   {
     img: mpesapayments,
@@ -31,6 +33,7 @@ const events = [
     date: 'Sat, May 6, 2023 8:00 PM EAT',
     location: '#SYTTechTalks',
     mode: 'virtual',
+    id: 3,
   },
   {
     img: techrecruiters,
@@ -39,6 +42,7 @@ const events = [
     date: 'Sat, May 6, 2023 8:00 PM EAT',
     location: 'Twitter Spaces',
     mode: 'virtual',
+    id: 4,
   },
   {
     img: uxhiringafrica,
@@ -46,6 +50,7 @@ const events = [
     date: 'Sat, May 6, 2023 8:00 PM EAT',
     location: 'Twitter Spaces',
     mode: 'virtual',
+    id: 5,
   },
 ];
 function EventsSection() {
