@@ -10,7 +10,7 @@ function CommunityPage() {
   return (
     <div className="w-screen flex flex-col">
       <WelcomeSection />
-      <EventsSection />
+      <EventsSection showAllEventsLink />
       <ChaptersSection />
       <PartnerSection />
       <GallerySection />

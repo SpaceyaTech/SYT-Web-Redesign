@@ -54,10 +54,10 @@ const events = [
     id: 5,
   },
 ];
-function EventsSection({showTabs}) {
+function EventsSection({showTabs, showAllEventsLink}) {
   return (
     <div className="p-6">
-      <EventsUpdateSection />
+      <EventsUpdateSection showAllEventsLink={showAllEventsLink} />
       {showTabs && <EventsTab />}
       <Events events={events} isVertical={false} />
     </div>
@@ -66,6 +66,7 @@ function EventsSection({showTabs}) {
 
 EventsSection.defaultProps = {
   showTabs: false,
+  showAllEventsLink: false
 }
 
 export default EventsSection;
