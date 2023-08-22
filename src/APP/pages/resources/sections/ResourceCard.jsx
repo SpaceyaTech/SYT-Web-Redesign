@@ -1,39 +1,31 @@
-// <<<<<<< felix-blog-page-build
-/* eslint-disable react/prop-types */
+import React from "react";
+import { Link } from "react-router-dom";
+
+import { arrowRight } from "../../../../assets/images/resources-page";
 
 const ResourceCard = ({ resource }) => {
-  const { header, desc, button, img } = resource;
+  const { img, title, desc } = resource;
   return (
-    <div className="flex flex-col items-center">
-      <img src={img} alt={header} className="object-cover flex-2 w-full" />
-      <div className="flex-1 p-6 flex flex-col items-center gap-4">
-        <h4 className="text-xl leading-8 font-medium ">{header}</h4>
-        <p className="text-center text-base font-light w-2/3">{desc}</p>
-        <button className="py-3 px-8 border-2 border-solid border-[#009975] rounded-lg flex items-center justify-center text-sm text-[#009975] transition-all duration-300 ease-in hover:text-white hover:bg-[#009975]">
-          {button}
-        </button>
+    <div className="flex flex-col items-center p-6 gap-3 border border-[#CBCDCC] rounded-2xl bg-white">
+      <div className="p-4  rounded-full bg-[#F5FFFD]">
+        <img src={img} alt={title} className="w-12 h-12" />
       </div>
+
+      <h4 className="text-center text-lg font-medium capitalize">{title}</h4>
+
+      <p className="text-base font-normal text-center">{desc}</p>
+
+      <Link
+        to="/"
+        className="flex items-center gap-2 text-xs leading-5  py-1 px-2 border transition-all duration-300 ease-in border-white hover:border-[#009975] rounded-lg"
+      >
+        {/* <button className="flex items-center gap-2 text-xs leading-5"> */}
+        <span className="text-[#009975] uppercase">explore</span>
+        <img src={arrowRight} alt="arrow-right" />
+        {/* </button> */}
+      </Link>
     </div>
   );
 };
 
 export default ResourceCard;
-// =======
-// const ResourceCard = ({ resource }) => {
-//   const { header, desc, button, img } = resource;
-//   return (
-//     <div className="flex flex-col items-center">
-//       <img src={img} alt={header} className="object-cover flex-2 w-full" />
-//       <div className="flex-1 p-6 flex flex-col items-center gap-4">
-//         <h4 className="text-xl leading-8 font-medium ">{header}</h4>
-//         <p className="text-center text-base font-light w-2/3">{desc}</p>
-//         <button className="py-3 px-8 border-2 border-solid border-[#009975] rounded-lg flex items-center justify-center text-sm text-[#009975] transition-all duration-300 ease-in hover:text-white hover:bg-[#009975]">
-//           {button}
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ResourceCard;
-// >>>>>>> main
