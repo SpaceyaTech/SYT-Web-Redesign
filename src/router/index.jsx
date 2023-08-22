@@ -18,7 +18,7 @@ import {
   Blog,
   Blogs,
   EventsPage,
-  EventsSection
+  SingleProductDonation,
 } from "../APP";
 
 
@@ -66,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/donate",
         element: <DonatePage />,
+      },
+      {
+        path: "/donate/:id",
+        element: <SingleProductDonation />,
       },
       {
         path: "/events/:id", // New route path
