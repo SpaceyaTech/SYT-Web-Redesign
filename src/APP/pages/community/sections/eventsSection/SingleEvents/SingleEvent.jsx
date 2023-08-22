@@ -8,7 +8,8 @@ import {
   mentorlst,
   uxhiringafrica,
 } from '../../../../../../assets/images/community';
-import Events from '../Events';
+import Events from '../../../../events/sections/eventsSection/Events';
+
 
 const events = [
   {

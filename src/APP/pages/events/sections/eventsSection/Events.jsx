@@ -1,8 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Events({ events, isVertical }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // box-shadow: 0px 4px 10px 0px #04080D0D;
   const verticalContainer = "mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
@@ -13,7 +13,7 @@ function Events({ events, isVertical }) {
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({
-        img, title, date, location, mode
+        img, title, date, location, mode, id
       }) => {
         const buttonColor = mode === 'virtual'
           ? 'bg-red-800 hover:bg-red-800'
@@ -38,15 +38,15 @@ function Events({ events, isVertical }) {
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {location}
               </p>
+              <Link to={`/events/${id}`}>
               <button
                 type="button"
                 className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2`}
-                onClick={() => {
-                  navigate(`/events/${id}`);
-                }}
               >
                 {mode}
               </button>
+              </Link>
+             
             </div>
           </div>
         );
