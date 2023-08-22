@@ -21,7 +21,6 @@ import {
   SingleProductDonation,
 } from "../APP";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -74,7 +73,7 @@ const router = createBrowserRouter([
       {
         path: "/events/:id", // New route path
         element: <SingleEvent />,
-      },     
+      },
       {
         path: "/blogs",
         element: <Blogs />,
@@ -91,10 +90,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 export default router;
-
-
-
-
-
