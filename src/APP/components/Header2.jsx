@@ -65,7 +65,7 @@ const Header2 = () => {
         </Link>
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          to="/blog"
+          to="/blogs"
           onClick={() => setShowNavlinks(false)}
         >
           Blog
@@ -120,7 +120,7 @@ const Header2 = () => {
         </Link>
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          to="/blog"
+          to="/blogs"
         >
           Blog
         </Link>

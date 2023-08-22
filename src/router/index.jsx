@@ -15,7 +15,10 @@ import {
   SingleItemPage,
   Checkout,
   SingleEvent,
+  Blog,
+  Blogs,
 } from "../APP";
+
 
 const router = createBrowserRouter([
   {
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
         element: <Categories />,
       },
       {
-        path: "zid",
+        path: "/shop/item/:id",
         element: <SingleItemPage />,
       },
       {
@@ -63,11 +66,30 @@ const router = createBrowserRouter([
         element: <DonatePage />,
       },
       {
+        path: "/donate",
+        element: <DonatePage />,
+      },
+      {
         path: "/events/:id", // New route path
         element: <SingleEvent />,
-      }
+      },
+      
+      {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/blogs/:id",
+        element: <Blog />,
+      },
     ],
   },
 ]);
 
+
 export default router;
+
+
+
+
+

@@ -10,6 +10,10 @@ import { default as CommunityPage } from "../APP/pages/community/CommunityPage";
 import { default as DonatePage } from "../APP/pages/donate/DonatePage";
 import { default as Categories } from "../APP/pages/shop/pages/Categories";
 import { default as SingleEvent} from "../APP/pages/community/sections/eventsSection/SingleEvents/SingleEvent";
+import { default as Blogs } from "./pages/blogs/Blogs";
+import { default as Blog } from "./pages/blog/Blog";
+
+
 
 export {
   LandingPage,
@@ -24,4 +28,6 @@ export {
   CommunityPage,
   DonatePage,
   SingleEvent,
+  Blogs,
+  Blog,
 };
