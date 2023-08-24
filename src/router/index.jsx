@@ -20,6 +20,7 @@ import {
   EventsPage,
   SingleProductDonation,
 } from "../APP";
+import { AllChaptersPage } from "../ADMIN";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,20 @@ const router = createBrowserRouter([
       {
         path: "/allevents",
         element: <EventsPage />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <Layout />,
+    children: [
+      {
+        path: "/admin",
+        element: <AllChaptersPage />,
+      },
+      {
+        path: "/admin/all-chapters",
+        element: <AllChaptersPage />,
       },
     ],
   },
