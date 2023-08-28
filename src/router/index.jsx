@@ -19,6 +19,7 @@ import {
   Blogs,
   EventsPage,
   SingleProductDonation,
+  IndividualChapter,
 } from "../APP";
 
 
@@ -87,14 +88,13 @@ const router = createBrowserRouter([
         path: "/allevents",
         element: <EventsPage />,
       },
+      {
+        path: "/chapter/:id",
+        element: <IndividualChapter />,
+      },
     ],
   },
 ]);
 
-
 export default router;
-
-
-
-
 

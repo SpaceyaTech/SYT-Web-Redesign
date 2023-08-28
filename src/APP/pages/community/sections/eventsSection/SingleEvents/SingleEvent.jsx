@@ -10,7 +10,6 @@ import {
 } from '../../../../../../assets/images/community';
 import Events from '../../../../events/sections/eventsSection/Events';
 
-
 const events = [
   {
     img: MasterBase,
@@ -54,15 +53,15 @@ const events = [
     id: 5,
   },
 ];
-
+// className="bg-cover bg-no-repeat py-24 text-center"
 function SingleEvent() {
   React.useEffect(() => {
     window.scroll(0, 0)
   }, [])
   return (
-    <div className="w-screen flex flex-col">
+    <div className="w-screen flex flex-col ">
       <div
-        className="h-80 items-center bg-cover bg-no-repeat py-20 px-30 md:py-44"
+        className="bg-cover bg-no-repeat py-24 px-30 h-full md:py-44"
         style={{ 'background-image': `url(${singleEvents}` }}
       />
       <div className="px-20">
@@ -193,14 +192,11 @@ function SingleEvent() {
             <li>Students get 25% OFF on all ticket types</li>
             <li>Admission on entry (at the gate) will be Ksh 2500/=</li>
           </ol>
-
         </div>
-
         <div className="pb-6">
           <hr
             className="my-12 h-0.5 border divide-slate-600 "
           />
-
           <p className="text-xl text-[#323433] font-light">
             Similar Events
           </p>
@@ -209,7 +205,6 @@ function SingleEvent() {
         </div>
       </div>
     </div>
-
   );
 }
 
