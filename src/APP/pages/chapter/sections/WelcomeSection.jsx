@@ -1,19 +1,34 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { individualchapter } from '../../../../assets/images/community';
 
 function WelcomeSection() {
   // content-between md:px-20
+  React.useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
 
   return (
     <div
       className="bg-cover bg-no-repeat py-24 text-center"
       style={{ 'background-image': `url(${individualchapter}` }}
     >
-
+      <div className="flex items-center ml-4 pb-14 md:ml-12">
+        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.682812 7.44254L6.30781 13.0675C6.42509 13.1848 6.58415 13.2507 6.75 13.2507C6.91585 13.2507 7.07491 13.1848 7.19219 13.0675C7.30946 12.9503 7.37535 12.7912 7.37535 12.6253C7.37535 12.4595 7.30946 12.3004 7.19219 12.1832L2.63359 7.62535H14.875C15.0408 7.62535 15.1997 7.5595 15.3169 7.44229C15.4342 7.32508 15.5 7.16611 15.5 7.00035C15.5 6.83459 15.4342 6.67562 15.3169 6.55841C15.1997 6.4412 15.0408 6.37535 14.875 6.37535H2.63359L7.19219 1.81753C7.30946 1.70026 7.37535 1.5412 7.37535 1.37535C7.37535 1.2095 7.30946 1.05044 7.19219 0.93316C7.07491 0.815885 6.91585 0.75 6.75 0.75C6.58415 0.75 6.42509 0.815885 6.30781 0.93316L0.682812 6.55816C0.624701 6.61621 0.578603 6.68514 0.54715 6.76101C0.515697 6.83688 0.499509 6.91821 0.499509 7.00035C0.499509 7.08248 0.515697 7.16381 0.547150.682812 7.44254Z" fill="#FCFDFC" />
+        </svg>
+        <p className="text-sm md:font-normal text-white ml-2  font-medium" onClick={goBack}>BACK</p>
+      </div>
       <div className="flex flex-col h-full items-center justify-center content-between md:px-20">
         <div className="text-white">
+
           <h2 className="mb-10 text-lg md:text-3xl font-medium">SpaceYaTech Nairobi Chapter</h2>
-          <p className="mb-10 text-lg md:text-3xl font-medium">1000 Members</p>
+          <p className="mb-10 text-lg md:text-3xl font-medium ">1000 Members</p>
         </div>
         <div className="flex flex-row items-center justify-center ">
           <div className="mr-4">
@@ -50,5 +65,4 @@ function WelcomeSection() {
     </div>
   )
 }
-
 export default WelcomeSection;

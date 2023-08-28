@@ -57,7 +57,7 @@ function UpcomingEventSection() {
     <div className="pb-6 px-6">
       <div className="flex flex-row justify-between">
         <div>
-          <h2 className="text-lg font-normal text-[#323433] ">Upcoming Events</h2>
+          <h2 className="text-lg font-normal text-[#323433] pb-4 md:pb-4 ">Upcoming Events</h2>
         </div>
         <div className="flex flex-row items-center">
           <p className="text-sm font-normal text-[#009975] mr-2">PAST EVENTS</p>
