@@ -20,7 +20,7 @@ import {
   EventsPage,
   SingleProductDonation,
 } from "../APP";
-import { AllChaptersPage } from "../ADMIN";
+import { AllChaptersPage, AdminLayout } from "../ADMIN";
 
 const router = createBrowserRouter([
   {
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Layout />,
+    element: <AdminLayout />,
     children: [
       {
         path: "/admin",

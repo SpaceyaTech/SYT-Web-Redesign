@@ -4,6 +4,7 @@ import AllChaptersPage from "./pages/chapters/AllChaptersPage";
 import AddEventPage from "./pages/events/AddEventPage";
 import AllEventsPage from "./pages/events/AllEventsPage";
 import UpdateEventPage from "./pages/events/UpdateEventPage";
+import AdminLayout from "./components/AdminLayout";
 
 // {default as AllBlogsPage}
 // {default as AddChapterPage}
@@ -19,4 +20,5 @@ export {
   AllChaptersPage,
   AllEventsPage,
   UpdateEventPage,
+  AdminLayout,
 };
