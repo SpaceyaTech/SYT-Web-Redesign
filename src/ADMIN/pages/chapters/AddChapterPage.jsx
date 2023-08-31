@@ -34,17 +34,27 @@ function AddChapterPage() {
           Add Chapter Details
         </p>
       </div>
-      <div className="mt-10 rounded-lg border border-solid border-neutral-500 p-1">
-        <div className="mx-auto container h-20 items-center border border-solid border-neutral-300 mt-14 flex justify-around">
-          {steps.map((step) => (
-            <div className="flex gap-x-4 items-center" key={step.section}>
-              <div className="flex  h-10 w-10 rounded-full items-center justify-center border border-solid border-neutral-500">
-                {step.section}
+      <div className="rounded-lg border border-gray-300  items-center inline-flex">
+        {steps.map((step) => (
+          <div
+            className="h-20 border-r border-gray-300  w-2/5 flex"
+            key={step.section}
+          >
+            <div className="bg-emerald-800" />
+            <div className="justify-start items-center pl-2 gap-4 inline-flex">
+              <div className="w-10 h-10 rounded-full  border border-emerald-800 flex-col justify-center items-center inline-flex">
+                <div className="text-emerald-800 text-sm font-medium leading-none">
+                  {step.section}
+                </div>
               </div>
-              <p>{step.title}</p>
+              <div className="flex-col justify-center items-start inline-flex">
+                <div className="text-emerald-800 text-xs font-medium uppercase leading-none tracking-tight">
+                  {step.title}
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
