@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import StepIndicator from "../../components/StepIndicator";
 import AddChapterForm from "../../components/AddChapterForm";
 
@@ -10,6 +11,7 @@ function AddChapterPage() {
   ]);
 
   const [currentStep, setCurrentStep] = React.useState(0);
+  const navigate = useNavigate();
 
   const handleNextStep = () => {
     if (currentStep < steps.length - 1) {
@@ -33,7 +35,14 @@ function AddChapterPage() {
 
   return (
     <div className="mx-auto flex px-11 flex-col">
-      <div className="flex cursor-pointer gap-x-2 mt-8 items-center">
+      <button
+        className="flex cursor-pointer gap-x-2  mt-8 items-center"
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          navigate("/");
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -46,8 +55,10 @@ function AddChapterPage() {
             fill="#323433"
           />
         </svg>
+
         <p className="text-sm font-medium">BACK</p>
-      </div>
+      </button>
+
       <div className="mt-10 gap-y-2 flex flex-col">
         <p className="text-base text-[#656767] tracking-wider font-medium">
           Chapters
