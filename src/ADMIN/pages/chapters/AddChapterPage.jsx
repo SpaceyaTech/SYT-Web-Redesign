@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import * as React from "react";
-import DropdownInput from "../../components/DropdownInput";
+import GeneralInfo from "../../components/GeneralInfo";
+import SocialMediaLinks from "../../components/SocialMediaLinks";
+import Organizers from "../../components/Organizers";
 
 function AddChapterPage() {
   const steps = [
@@ -9,6 +11,28 @@ function AddChapterPage() {
     { section: "03", title: "ORGANIZERS" },
   ];
   const noBorderRight = "border-r-0";
+
+  const [currentStep, setCurrentStep] = React.useState(0);
+
+  const handleNextStep = () => {
+    setCurrentStep(currentStep + 1);
+  };
+  const handlePreviousStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
+
+  const renderFormContent = () => {
+    switch (currentStep) {
+      case 0:
+        return <GeneralInfo />;
+      case 1:
+        return <SocialMediaLinks />;
+      case 2:
+        return <Organizers />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="mx-auto flex px-11 flex-col">
@@ -63,41 +87,27 @@ function AddChapterPage() {
             </div>
           ))}
         </div>
-        <div className=" w-3/4 mt-4  items-center">
-          <p className="tracking-wider text-lg font-normal text-[#323433]">
-            General Info
-          </p>
-          <form>
-            <DropdownInput marginTop="4" />
-            <DropdownInput marginTop="4" />
-            <div className="w-full mt-4 h-10">
-              <input
-                id="username"
-                className="w-full h-12 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-                type="text"
-                placeholder="Chapter name"
-              />
-            </div>
-            <div className="w-full mt-4">
-              <input
-                id="username"
-                className="w-full h-20 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-                type="text"
-                placeholder="About Chapter"
-              />
-            </div>
-          </form>
-        </div>
+        {renderFormContent()}
         <div className=" w-3/4 mt-4 mb-14 items-center inline-flex justify-end gap-x-4">
           <button
             type="button"
-            className="w-52 h-11 px-8 py-3 rounded-lg border border-zinc-500 text-zinc-500 text-[13px] font-medium leading-tight tracking-tight "
+            onClick={handlePreviousStep}
+            className={`w-52 h-11 px-8 py-3 rounded-lg border border-zinc-500 text-zinc-500 text-[13px] font-medium leading-tight tracking-tight ${
+              currentStep === 0 ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={currentStep === 0}
           >
-            Cancel
+            Back
           </button>
           <button
-            type="submit"
-            className="bg-blue-500 w-52 h-11  bg-emerald-600 rounded-lg text-neutral-50 text-[13px] font-medium leading-tight tracking-tight py-3 px-8 "
+            type="button"
+            onClick={handleNextStep}
+            disabled={currentStep === steps.length - 1}
+            className={`bg-blue-500 w-52 h-11 bg-emerald-600 rounded-lg text-neutral-50 text-[13px] font-medium leading-tight tracking-tight py-3 px-8 ${
+              currentStep === steps.length - 1
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }`}
           >
             Next
           </button>
