@@ -1,9 +1,6 @@
 import * as React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import GeneralInfo from "../../components/GeneralInfo";
-import SocialMediaLinks from "../../components/SocialMediaLinks";
-import Organizers from "../../components/Organizers";
+import StepIndicator from "../../components/StepIndicator";
+import AddChapterForm from "../../components/AddChapterForm";
 
 function AddChapterPage() {
   const [steps, setSteps] = React.useState([
@@ -11,7 +8,6 @@ function AddChapterPage() {
     { section: "02", title: "SOCIAL MEDIA LINKS", status: "inactive" },
     { section: "03", title: "ORGANIZERS", status: "inactive" },
   ]);
-  const noBorderRight = "border-r-0";
 
   const [currentStep, setCurrentStep] = React.useState(0);
 
@@ -32,19 +28,6 @@ function AddChapterPage() {
       updatedSteps[currentStep - 1].status = "inactive";
       setSteps(updatedSteps);
       setCurrentStep(currentStep - 1);
-    }
-  };
-
-  const renderFormContent = () => {
-    switch (currentStep) {
-      case 0:
-        return <GeneralInfo />;
-      case 1:
-        return <SocialMediaLinks />;
-      case 2:
-        return <Organizers />;
-      default:
-        return null;
     }
   };
 
@@ -77,52 +60,8 @@ function AddChapterPage() {
         </p>
       </div>
       <div className="rounded-lg mt-8 border flex flex-col justify-center items-center  border-gray-300">
-        <div
-          className={`w-3/4 mt-10 rounded-lg items-center inline-flex ${
-            steps[currentStep].status === "completed"
-              ? "border-b-4 border-indigo-500"
-              : "border border-gray-300"
-          }`}
-        >
-          {steps.map((step, index) => (
-            <div
-              className={`h-20 border-gray-300 w-2/5   flex ${
-                index === steps.length - 1 ? noBorderRight : "border-r"
-              } ${
-                step.status === "completed"
-                  ? "border-b-4 border-emerald-600"
-                  : ""
-              }`}
-              key={step.section}
-            >
-              <div className="bg-emerald-800" />
-              <div className="justify-start items-center gap-4 inline-flex">
-                <div
-                  className={`w-10 h-10 rounded-[20px] border-2 border-emerald-900 flex-col justify-center items-center inline-flex ${
-                    step.status === "completed" ? "bg-emerald-800" : ""
-                  }`}
-                >
-                  <div className="text-emerald-900 text-sm px-2 font-bold leading-none">
-                    {step.status === "completed" ? (
-                      <FontAwesomeIcon
-                        icon={faCheck}
-                        style={{ color: "#fafafa" }}
-                      />
-                    ) : (
-                      step.section
-                    )}
-                  </div>
-                </div>
-                <div className="flex-col justify-center items-start inline-flex">
-                  <div className="text-emerald-800 text-xs font-bold uppercase leading-none tracking-tight">
-                    {step.title}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        {renderFormContent()}
+        <StepIndicator steps={steps} currentStep={currentStep} />
+        <AddChapterForm currentStep={currentStep} />
         <div className=" w-3/4 mt-4 mb-14 items-center inline-flex justify-end gap-x-4">
           <button
             type="button"
