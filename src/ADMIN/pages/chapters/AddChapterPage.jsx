@@ -36,7 +36,7 @@ function AddChapterPage() {
 
   return (
     <div className="mx-auto flex px-11 flex-col">
-      <div className="flex gap-x-2 mt-8 items-center">
+      <div className="flex cursor-pointer gap-x-2 mt-8 items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
