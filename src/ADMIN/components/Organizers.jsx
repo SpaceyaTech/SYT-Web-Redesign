@@ -46,6 +46,13 @@ function Organizers() {
           tabIndex="0"
           role="button"
         >
+          <input
+            type="file"
+            id="imageInput"
+            accept=".png,.jpg,.jpeg,.jfif"
+            onChange={handleImageChange}
+            style={{ display: "none" }}
+          />
           <div className="grow shrink basis-0 h-[87px] flex-col justify-center items-center gap-2 inline-flex">
             <div className="justify-start items-center inline-flex">
               <div className="text-zinc-700 text-base font-normal">
@@ -65,13 +72,14 @@ function Organizers() {
             )}
           </div>
         </div>
-        <input
-          type="file"
-          id="imageInput"
-          accept=".png,.jpg,.jpeg,.jfif"
-          onChange={handleImageChange}
-          style={{ display: "none" }}
-        />
+        <div className="w-full mt-4  items-center inline-flex justify-end ">
+          <button
+            type="button"
+            className="w-[154px] h-11 px-3.5 py-3 rounded-lg border border-emerald-600 text-emerald-600 text-[13px] font-medium leading-tight tracking-tight justify-end items-center gap-2.5 inline-flex"
+          >
+            Add Organizer
+          </button>
+        </div>
       </form>
     </div>
   );

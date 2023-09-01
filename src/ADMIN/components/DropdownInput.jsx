@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import React, { useState } from "react";
 
 const options = [
@@ -39,7 +38,7 @@ DropdownInput.propTypes = {
 };
 
 DropdownInput.defaultProps = {
-  marginTop: "", // Default value, can be adjusted as needed
+  marginTop: "",
 };
 
 export default DropdownInput;
