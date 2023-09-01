@@ -1,4 +1,6 @@
 import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Organizers() {
   const [selectedImage, setSelectedImage] = React.useState(null);
@@ -77,6 +79,11 @@ function Organizers() {
             type="button"
             className="w-[154px] h-11 px-3.5 py-3 rounded-lg border border-emerald-600 text-emerald-600 text-[13px] font-medium leading-tight tracking-tight justify-end items-center gap-2.5 inline-flex"
           >
+            <FontAwesomeIcon
+              icon={faPlus}
+              size="xl"
+              style={{ color: "#009975" }}
+            />
             Add Organizer
           </button>
         </div>

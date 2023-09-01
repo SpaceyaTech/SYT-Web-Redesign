@@ -1,23 +1,38 @@
 import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import GeneralInfo from "../../components/GeneralInfo";
 import SocialMediaLinks from "../../components/SocialMediaLinks";
 import Organizers from "../../components/Organizers";
 
 function AddChapterPage() {
-  const steps = [
-    { section: "01", title: "GENERAL INFO" },
-    { section: "02", title: "SOCIAL MEDIA LINKS" },
-    { section: "03", title: "ORGANIZERS" },
-  ];
+  const [steps, setSteps] = React.useState([
+    { section: "01", title: "GENERAL INFO", status: "active" },
+    { section: "02", title: "SOCIAL MEDIA LINKS", status: "inactive" },
+    { section: "03", title: "ORGANIZERS", status: "inactive" },
+  ]);
   const noBorderRight = "border-r-0";
 
   const [currentStep, setCurrentStep] = React.useState(0);
 
   const handleNextStep = () => {
-    setCurrentStep(currentStep + 1);
+    if (currentStep < steps.length - 1) {
+      const updatedSteps = [...steps];
+      updatedSteps[currentStep].status = "completed";
+      updatedSteps[currentStep + 1].status = "active";
+      setSteps(updatedSteps);
+      setCurrentStep(currentStep + 1);
+    }
   };
+
   const handlePreviousStep = () => {
-    setCurrentStep(currentStep - 1);
+    if (currentStep > 0) {
+      const updatedSteps = [...steps];
+      updatedSteps[currentStep].status = "inactive";
+      updatedSteps[currentStep - 1].status = "inactive";
+      setSteps(updatedSteps);
+      setCurrentStep(currentStep - 1);
+    }
   };
 
   const renderFormContent = () => {
@@ -62,19 +77,40 @@ function AddChapterPage() {
         </p>
       </div>
       <div className="rounded-lg mt-8 border flex flex-col justify-center items-center  border-gray-300">
-        <div className=" w-3/4 border border-gray-300 mt-10 rounded-lg items-center inline-flex">
+        <div
+          className={`w-3/4 mt-10 rounded-lg items-center inline-flex ${
+            steps[currentStep].status === "completed"
+              ? "border-b-4 border-indigo-500"
+              : "border border-gray-300"
+          }`}
+        >
           {steps.map((step, index) => (
             <div
-              className={`h-20 border-gray-300 mx-2 w-2/5 flex ${
+              className={`h-20 border-gray-300 w-2/5   flex ${
                 index === steps.length - 1 ? noBorderRight : "border-r"
+              } ${
+                step.status === "completed"
+                  ? "border-b-4 border-emerald-600"
+                  : ""
               }`}
               key={step.section}
             >
               <div className="bg-emerald-800" />
               <div className="justify-start items-center gap-4 inline-flex">
-                <div className="w-10 h-10 rounded-[20px] border-2 border-emerald-900 flex-col justify-center items-center inline-flex">
-                  <div className="text-emerald-900 text-sm font-bold leading-none">
-                    {step.section}
+                <div
+                  className={`w-10 h-10 rounded-[20px] border-2 border-emerald-900 flex-col justify-center items-center inline-flex ${
+                    step.status === "completed" ? "bg-emerald-800" : ""
+                  }`}
+                >
+                  <div className="text-emerald-900 text-sm px-2 font-bold leading-none">
+                    {step.status === "completed" ? (
+                      <FontAwesomeIcon
+                        icon={faCheck}
+                        style={{ color: "#fafafa" }}
+                      />
+                    ) : (
+                      step.section
+                    )}
                   </div>
                 </div>
                 <div className="flex-col justify-center items-start inline-flex">
@@ -101,14 +137,9 @@ function AddChapterPage() {
           <button
             type="button"
             onClick={handleNextStep}
-            disabled={currentStep === steps.length - 1}
-            className={`bg-blue-500 w-52 h-11 bg-emerald-600 rounded-lg text-neutral-50 text-[13px] font-medium leading-tight tracking-tight py-3 px-8 ${
-              currentStep === steps.length - 1
-                ? "opacity-50 cursor-not-allowed"
-                : ""
-            }`}
+            className="bg-blue-500 w-52 h-11 bg-emerald-600 rounded-lg text-neutral-50 text-[13px] font-medium leading-tight tracking-tight py-3 px-8"
           >
-            Next
+            {currentStep === steps.length - 1 ? "Finish" : "Next"}
           </button>
         </div>
       </div>
