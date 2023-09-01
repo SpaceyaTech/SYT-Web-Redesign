@@ -1,4 +1,6 @@
+/* eslint-disable max-len */
 import * as React from "react";
+import DropdownInput from "../../components/DropdownInput";
 
 function AddChapterPage() {
   const steps = [
@@ -6,6 +8,8 @@ function AddChapterPage() {
     { section: "02", title: "SOCIAL MEDIA LINKS" },
     { section: "03", title: "ORGANIZERS" },
   ];
+  const noBorderRight = "border-r-0";
+
   return (
     <div className="mx-auto flex px-11 flex-col">
       <div className="flex gap-x-2 mt-8 items-center">
@@ -34,27 +38,70 @@ function AddChapterPage() {
           Add Chapter Details
         </p>
       </div>
-      <div className="rounded-lg border border-gray-300  items-center inline-flex">
-        {steps.map((step) => (
-          <div
-            className="h-20 border-r border-gray-300  w-2/5 flex"
-            key={step.section}
-          >
-            <div className="bg-emerald-800" />
-            <div className="justify-start items-center pl-2 gap-4 inline-flex">
-              <div className="w-10 h-10 rounded-full  border border-emerald-800 flex-col justify-center items-center inline-flex">
-                <div className="text-emerald-800 text-sm font-medium leading-none">
-                  {step.section}
+      <div className="rounded-lg mt-8 border flex flex-col justify-center items-center  border-gray-300">
+        <div className=" w-3/4 border border-gray-300 mt-10 rounded-lg items-center inline-flex">
+          {steps.map((step, index) => (
+            <div
+              className={`h-20 border-gray-300 mx-2 w-2/5 flex ${
+                index === steps.length - 1 ? noBorderRight : "border-r"
+              }`}
+              key={step.section}
+            >
+              <div className="bg-emerald-800" />
+              <div className="justify-start items-center gap-4 inline-flex">
+                <div className="w-10 h-10 rounded-[20px] border-2 border-emerald-900 flex-col justify-center items-center inline-flex">
+                  <div className="text-emerald-900 text-sm font-bold leading-none">
+                    {step.section}
+                  </div>
                 </div>
-              </div>
-              <div className="flex-col justify-center items-start inline-flex">
-                <div className="text-emerald-800 text-xs font-medium uppercase leading-none tracking-tight">
-                  {step.title}
+                <div className="flex-col justify-center items-start inline-flex">
+                  <div className="text-emerald-800 text-xs font-bold uppercase leading-none tracking-tight">
+                    {step.title}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className=" w-3/4 mt-4  items-center">
+          <p className="tracking-wider text-lg font-normal text-[#323433]">
+            General Info
+          </p>
+          <form>
+            <DropdownInput marginTop="4" />
+            <DropdownInput marginTop="4" />
+            <div className="w-full mt-4 h-10">
+              <input
+                id="username"
+                className="w-full h-12 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                type="text"
+                placeholder="Chapter name"
+              />
+            </div>
+            <div className="w-full mt-4">
+              <input
+                id="username"
+                className="w-full h-20 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                type="text"
+                placeholder="About Chapter"
+              />
+            </div>
+          </form>
+        </div>
+        <div className=" w-3/4 mt-4 mb-14 items-center inline-flex justify-end gap-x-4">
+          <button
+            type="button"
+            className="w-52 h-11 px-8 py-3 rounded-lg border border-zinc-500 text-zinc-500 text-[13px] font-medium leading-tight tracking-tight "
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="bg-blue-500 w-52 h-11  bg-emerald-600 rounded-lg text-neutral-50 text-[13px] font-medium leading-tight tracking-tight py-3 px-8 "
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
