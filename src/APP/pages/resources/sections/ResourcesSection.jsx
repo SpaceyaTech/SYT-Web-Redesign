@@ -1,50 +1,42 @@
-import {
-  curriculums,
-  mentorlst,
-  podcasts,
-  yt_channel,
-} from "../../../../assets/images/resources-page";
+import React, { useState } from "react";
+
+import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
+import { resources } from "./data";
 
-const resourcesData = [
-  {
-    id: 1,
-    header: "Our YouTube Channel",
-    desc: "We post weekly discussions regarding tech on a myriad of topics. Join us to learn more.",
-    button: "Subscribe to our channel",
-    img: yt_channel,
-  },
-  {
-    id: 2,
-    header: "Curriculums",
-    desc: "We have free and paid ongoing classes to help techies get started and grow in their careers.",
-    button: "Learn more",
-    img: curriculums,
-  },
-  {
-    id: 3,
-    header: "SpaceYaTech Podcast",
-    desc: "Get weekly recording of our Twitter spaces, and sessions with experts in the market on our podcast.",
-    button: "Listen",
-    img: podcasts,
-  },
-  {
-    id: 4,
-    header: "Mentorlst",
-    desc: "Get personalized and one-on-one mentorship with experts across all tech fields.",
-    button: "Join Mentorlst",
-    img: mentorlst,
-  },
-];
+function ResourcesSection() {
+  const [searchText, setSearchText] = useState("");
 
-const ResourcesSection = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(searchText);
+  };
+
   return (
-    <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
-      {resourcesData.map((resource) => (
-        <ResourceCard key={resource.id} resource={resource} />
-      ))}
+    <div className="flex flex-col gap-12">
+      <div className="flex self-stretch flex-row mx-auto border-[#CBCDCC] border-2 rounded-[30px] px-4">
+        <input
+          type="text"
+          placeholder="Search resources"
+          className="h-10 md:w-[50vw] w-[70vw] border-none outline-none"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <img
+          src={search}
+          alt="search"
+          className="p-2 cursor-pointer"
+          onClick={handleSearch}
+        />
+      </div>
+
+      <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
+        {resources.map((resource) => (
+          <ResourceCard key={resource.id} resource={resource} />
+        ))}
+      </div>
     </div>
   );
-};
+}
 
 export default ResourcesSection;
