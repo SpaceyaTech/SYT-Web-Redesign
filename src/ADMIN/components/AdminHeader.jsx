@@ -56,13 +56,13 @@ function AdminHeader() {
           </Link>
           <Link
             className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
-            to="/chapters"
+            to="/admin/all-chapters"
           >
             Chapters
           </Link>
           <Link
             className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
-            to="/events"
+            to="/admin/events"
           >
             Events
           </Link>

@@ -153,10 +153,10 @@ function Calendar() {
         </button>
       </div>
 
-      <div className="bg-[#CCFFF3] border-r border-b h-24 flex items-center justify-center">
+      <div className="border-r border-b h-24 flex items-center justify-center">
         Chapters
       </div>
-      <div className="col-span-3 bg-[#CCFFF3] border-b px-10">
+      <div className="col-span-3 border-b px-10 pt-2 h-24">
         <div className="grid grid-cols-11 mt-2 text-sm">
           {days.map((day, dayIdx) => (
             <div key={day.toString()}>
