@@ -21,7 +21,8 @@ import {
   SingleProductDonation,
   IndividualChapter,
 } from "../APP";
-import { AllChaptersPage, AdminLayout, AllEventsPage } from "../ADMIN";
+import { AllChaptersPage, AdminLayout, AllEventsPage,AddChapterPage } from "../ADMIN";
+
 
 const router = createBrowserRouter([
   {
@@ -109,7 +110,11 @@ const router = createBrowserRouter([
       {
         path: "/admin/events",
         element: <AllEventsPage/>
-      }
+      },
+      {
+        path: "/admin/add-chapters",
+        element: <AddChapterPage />,
+      },
     ],
   },
 ]);
