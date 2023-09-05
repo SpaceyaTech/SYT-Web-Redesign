@@ -1,6 +1,6 @@
-import React from "react";
-import Calendar from "../../components/events/Calendar";
-import EventsTable from "../../components/events/EventsTable";
+import React from 'react';
+import Calendar from '../../components/events/Calendar';
+import EventsTable from '../../components/events/EventsTable';
 
 function AllEventsPage() {
   return (
@@ -22,7 +22,7 @@ function AllEventsPage() {
         </div>
       </div>
 
-      {/* <Calendar /> */}
+      <Calendar />
       <EventsTable />
     </div>
   );
