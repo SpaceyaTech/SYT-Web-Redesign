@@ -9,7 +9,6 @@ function SearchSection() {
       className="bg-cover bg-no-repeat py-24 text-center"
       style={{ 'background-image': `url(${community}` }}
     >
-
       <div className="flex flex-col h-full items-center justify-center content-between md:px-20">
         <div className="text-white">
           <h2 className="mb-10 text-lg md:text-3xl font-medium">SpaceYaTech Events</h2>

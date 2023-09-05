@@ -19,6 +19,7 @@ import {
   Blogs,
   EventsPage,
   SingleProductDonation,
+  IndividualChapter,
 } from "../APP";
 import { AllChaptersPage, AdminLayout } from "../ADMIN";
 
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: "/allevents",
         element: <EventsPage />,
+      },
+      {
+        path: "/chapter/:id",
+        element: <IndividualChapter />,
       },
     ],
   },

@@ -15,7 +15,8 @@ import { default as EventsPage } from '../APP/pages/events/pages/EventsPage';
 import { default as EventsSection } from '../APP/pages/events/sections/eventsSection/EventsSection';
 import { default as Blogs } from "../APP/pages/blogs/Blogs";
 import { default as Blog } from "../APP/pages/blog/Blog";
-import {default as SingleProductDonation} from "../APP/pages/donate/pages/SingleProductDonatePage"
+import { default as SingleProductDonation } from "../APP/pages/donate/pages/SingleProductDonatePage"
+import { default as IndividualChapter } from "../APP/pages/chapter/pages/IndividualChapter";
 
 export {
   LandingPage,
@@ -34,5 +35,6 @@ export {
   Blog,
   EventsPage,
   EventsSection,
-  SingleProductDonation
+  SingleProductDonation,
+  IndividualChapter,
 };

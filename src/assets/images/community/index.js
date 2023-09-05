@@ -25,7 +25,13 @@ import galleryimage7 from './galleryimage7.png';
 import galleryimage8 from './galleryimage8.png';
 import galleryimage9 from './galleryimage9.png';
 import singleEvents from './singleEvents.png';
+import individualchapter from './individualchapter.png'
+import Akinyi from './Akinyi.png';
+import akinyiux from './akinyiux.png';
+import eakinyi from './eakinyi.png';
+import Emmy from './Emmy.png';
+import Pam from './Pam.png';
 
 export {
-  community, MasterBase, techrecruiters, mentorlst, mpesapayments, uxhiringafrica, vector1, Group, Nairobi, Mombasa, Tanzania, google, google2, uiux, uiux2, nairobi1, nairobi2, galleryimage1, galleryimage2, galleryimage3, galleryimage4, galleryimage5, galleryimage6, galleryimage7, galleryimage8, galleryimage9, singleEvents
+  community, MasterBase, techrecruiters, mentorlst, mpesapayments, uxhiringafrica, vector1, Group, Nairobi, Mombasa, Tanzania, google, google2, uiux, uiux2, nairobi1, nairobi2, galleryimage1, galleryimage2, galleryimage3, galleryimage4, galleryimage5, galleryimage6, galleryimage7, galleryimage8, galleryimage9, singleEvents, individualchapter, Akinyi, akinyiux, eakinyi, Emmy, Pam
 };

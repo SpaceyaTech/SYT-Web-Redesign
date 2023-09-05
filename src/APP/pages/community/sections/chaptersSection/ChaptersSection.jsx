@@ -1,12 +1,18 @@
-import React from "react";
-import { vector1, Nairobi, Mombasa, Tanzania,} from "../../../../../assets/images/community";
-import ChapterCard from "./ChapterCard";
+import React from 'react';
+import {
+  vector1, Nairobi, Mombasa, Tanzania,
+} from '../../../../../assets/images/community';
+import ChapterCard from './ChapterCard';
 
 const chapters = [
-  { location: "SYT Nairobi, Kenya", members: "1000 members", image: Nairobi },
-  { location: "SYT Mombasa, Kenya", members: "70 members", image: Mombasa },
   {
-    location: "SYT Dar es salaam, Tanzania", members: "50 members",image: Tanzania,
+    location: 'SYT Nairobi, Kenya', members: '1000 members', image: Nairobi, id: 1
+  },
+  {
+    location: 'SYT Mombasa, Kenya', members: '70 members', image: Mombasa, id: 2
+  },
+  {
+    location: 'SYT Dar es salaam, Tanzania', members: '50 members', image: Tanzania, id: 3
   },
 ];
 function ChaptersSection() {
@@ -14,7 +20,7 @@ function ChaptersSection() {
     <div className="my-2">
       <div
         className="h-full items-center justify-center content-between bg-cover bg-no-repeat py-40 md:py-32 text-center p-6"
-        style={{ "background-image": `url(${vector1}` }}
+        style={{ 'background-image': `url(${vector1}` }}
       >
         <div className="text-white">
           <h2 className="mb-5 text-3xl font-medium">SpaceYaTech Chapters</h2>

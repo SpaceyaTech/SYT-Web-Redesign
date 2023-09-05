@@ -1,15 +1,15 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Events({ events, isVertical }) {
   // const navigate = useNavigate();
 
   // box-shadow: 0px 4px 10px 0px #04080D0D;
-  const verticalContainer = "mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
-  const horizontalContainer = "flex overflow-auto";
+  const verticalContainer = 'mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8';
+  const horizontalContainer = 'flex overflow-auto';
 
-  const verticalWrapper = "max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto";
-  const horizontalWrapper = "mr-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+  const verticalWrapper = 'max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto';
+  const horizontalWrapper = 'mr-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700';
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({
@@ -39,14 +39,14 @@ function Events({ events, isVertical }) {
                 {location}
               </p>
               <Link to={`/events/${id}`}>
-              <button
-                type="button"
-                className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2`}
-              >
-                {mode}
-              </button>
+                <button
+                  type="button"
+                  className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2`}
+                >
+                  {mode}
+                </button>
               </Link>
-             
+
             </div>
           </div>
         );
