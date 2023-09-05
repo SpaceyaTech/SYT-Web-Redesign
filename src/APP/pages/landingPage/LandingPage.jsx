@@ -7,7 +7,8 @@
 import CTASection from "./sections/CTASection";
 import FaqSection from "./sections/FaqSection";
 import FeatureSection from "./sections/FeatureSection";
-import HeroSection from "./sections/HeroSection";
+// import HeroSection from "./sections/HeroSection";
+import HeroSection2 from "./sections/HeroSection2";
 import Services from "./sections/Services";
 import StatsSection from "./sections/StatsSection";
 import TestimonialSection from "./sections/TestimonialSection";
@@ -17,7 +18,8 @@ function LandingPage() {
     <div className="text-blue">
       {/* <Header /> */}
       {/* <Header2 /> */}
-      <HeroSection />
+      <HeroSection2 />
+      {/* <HeroSection /> */}
       <FeatureSection />
       <Services />
       <StatsSection />
