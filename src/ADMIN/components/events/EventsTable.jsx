@@ -147,7 +147,7 @@ function EventsTable() {
   const currentData = filteredData.slice(indexOfFirstRow, indexOfLastRow);
 
   return (
-    <div className="px-5">
+    <div className="px-5 sm:px-0">
       {/* header */}
       <div className="flex justify-between items-center py-10">
         <h2 className="text-2xl">SYT events</h2>
