@@ -202,13 +202,13 @@ function EventsTable() {
           <table className="min-w-full divide-y divide-gray-200 table-auto sm:table-fixed">
             <thead>
               <tr className="text-left font-medium text-[#323433]">
-                <th className="hidden sm:block min-w-4">{}</th>
+                <th className="hidden sm:table-cell min-w-4">{}</th>
                 <th className="py-4 w-64">Event Name</th>
                 <th className="min-w-32">City</th>
-                <th className="hidden sm:block min-w-32">Date</th>
-                <th className="hidden sm:block min-w-24">From</th>
-                <th className="hidden sm:block min-w-24">To</th>
-                <th className="hidden sm:block min-w-32">Chapter</th>
+                <th className="hidden sm:table-cell min-w-32">Date</th>
+                <th className="hidden sm:table-cell min-w-24">From</th>
+                <th className="hidden sm:table-cell min-w-24">To</th>
+                <th className="hidden sm:table-cell min-w-32">Chapter</th>
                 <th className="min-w-24">RSVPs</th>
               </tr>
             </thead>
@@ -222,7 +222,7 @@ function EventsTable() {
                       : 'hover:bg-[#F7F7F7] text-[#656767] text-sm'
                   }
                 >
-                  <td className="hidden sm:block py-4">
+                  <td className="hidden sm:table-cell py-4">
                     <input
                       type="checkbox"
                       className="cursor-pointer"
@@ -232,11 +232,11 @@ function EventsTable() {
                   </td>
                   <td className="whitespace-wrap px-2 py-4">{row.eventName}</td>
                   <td>{row.city}</td>
-                  <td className="hidden sm:block">{row.date}</td>
-                  <td className="hidden sm:block">{row.from}</td>
-                  <td className="hidden sm:block">{row.to}</td>
-                  <td className="hidden sm:block">{row.chapter}</td>
-                  <td className="text-center">{row.rsvp}</td>
+                  <td className="hidden sm:table-cell">{row.date}</td>
+                  <td className="hidden sm:table-cell">{row.from}</td>
+                  <td className="hidden sm:table-cell">{row.to}</td>
+                  <td className="hidden sm:table-cell">{row.chapter}</td>
+                  <td className="text-center sm:text-start">{row.rsvp}</td>
                 </tr>
               ))}
             </tbody>
