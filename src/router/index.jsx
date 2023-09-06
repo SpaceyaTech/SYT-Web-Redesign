@@ -20,7 +20,13 @@ import {
   EventsPage,
   SingleProductDonation,
 } from "../APP";
-import { AllChaptersPage, AdminLayout, AllEventsPage } from "../ADMIN";
+import {
+  AllChaptersPage,
+  AdminLayout,
+  AllEventsPage,
+  AddEventPage,
+  UpdateEventPage,
+} from "../ADMIN";
 
 const router = createBrowserRouter([
   {
@@ -103,8 +109,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/events",
-        element: <AllEventsPage/>
-      }
+        element: <AllEventsPage />,
+      },
+      {
+        path: "/admin/events/add-event",
+        element: <AddEventPage />,
+      },
+      {
+        path: "/admin/events/update-event",
+        element: <UpdateEventPage />,
+      },
     ],
   },
 ]);
