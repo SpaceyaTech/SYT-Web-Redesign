@@ -6,7 +6,6 @@ on:
 
 jobs:
   labels:
-
     runs-on: ubuntu-latest
 
     steps:
