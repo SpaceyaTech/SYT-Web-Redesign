@@ -43,10 +43,10 @@ function SignUp() {
             placeholder="Enter Password"
           />
           <input
-            type="password"
+            type="text"
             name="password"
             className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#79747E] placeholder-[#49454F] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded sm:text-sm focus:ring-1"
-            placeholder="Enter Password"
+            placeholder="Confirm Password"
           />
 
           <a
