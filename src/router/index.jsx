@@ -21,8 +21,13 @@ import {
   SingleProductDonation,
   IndividualChapter,
 } from "../APP";
-import { AllChaptersPage, AdminLayout, AllEventsPage,AddChapterPage } from "../ADMIN";
-
+import {
+  AllChaptersPage,
+  AdminLayout,
+  AllEventsPage,
+  AddChapterPage,
+} from "../ADMIN";
+import { LogIn, SignUp, Validate } from "../AUTH";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +98,14 @@ const router = createBrowserRouter([
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
     ],
   },
   {
@@ -109,11 +122,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/events",
-        element: <AllEventsPage/>
+        element: <AllEventsPage />,
       },
       {
         path: "/admin/add-chapters",
         element: <AddChapterPage />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <Layout />,
+    children: [
+      {
+        path: "/auth/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/auth/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/auth/validate",
+        element: <Validate />,
       },
     ],
   },
