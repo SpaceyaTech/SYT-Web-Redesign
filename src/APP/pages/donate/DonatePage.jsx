@@ -75,7 +75,7 @@ function DonatePage() {
           </svg>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 p-4 gap-4">
         {projects?.map((project) => (
           <div key={project.id} className="shadow-lg rounded-md text-sm">
             <div className="h-[12rem]">
