@@ -49,7 +49,7 @@ function DonatePage() {
   return (
     <section className="my-2 space-y-12 p-3 mb-10">
       <div className="max-w-3xl mx-auto text-center space-y-6">
-        <h2 className="text-4xl">Promote a Projet</h2>
+        <h2 className="text-4xl">Promote a Project</h2>
         <p>
           Make a difference today! Join us in our mission to bring positive
           change to our community by donating. Every dollar counts and directly
@@ -75,7 +75,7 @@ function DonatePage() {
           </svg>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 p-4 gap-4">
         {projects?.map((project) => (
           <div key={project.id} className="shadow-lg rounded-md text-sm">
             <div className="h-[12rem]">
