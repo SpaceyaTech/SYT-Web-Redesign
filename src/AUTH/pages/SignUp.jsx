@@ -1,5 +1,5 @@
 import React from "react";
-import SignUpImg from "./../../assets/images/auth/signup.svg";
+import SignUpImg from "../../assets/images/auth/signup.svg";
 
 function SignUp() {
   return (

@@ -27,7 +27,7 @@ import {
   AllEventsPage,
   AddChapterPage,
 } from "../ADMIN";
-import { LogIn, SignUp, Validate } from "../AUTH";
+import { ForgotPassword, LogIn, ResetPassword, SignUp, Validate } from "../AUTH";
 
 const router = createBrowserRouter([
   {
@@ -145,6 +145,14 @@ const router = createBrowserRouter([
       {
         path: "/auth/validate",
         element: <Validate />,
+      },
+      {
+        path: "/auth/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/auth/reset-password",
+        element: <ResetPassword />,
       },
     ],
   },
