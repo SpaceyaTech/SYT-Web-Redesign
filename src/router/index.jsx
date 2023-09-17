@@ -25,9 +25,16 @@ import {
   AllChaptersPage,
   AdminLayout,
   AllEventsPage,
+<<<<<<< HEAD
   AddChapterPage,
 } from "../ADMIN";
 import { ForgotPassword, LogIn, ResetPassword, SignUp, Validate } from "../AUTH";
+=======
+  AddEventPage,
+  UpdateEventPage,
+  AddChapterPage
+} from "../ADMIN";
+>>>>>>> create-update-event-pg
 
 const router = createBrowserRouter([
   {
@@ -121,12 +128,27 @@ const router = createBrowserRouter([
         element: <AllChaptersPage />,
       },
       {
+<<<<<<< HEAD
         path: "/admin/events",
         element: <AllEventsPage />,
       },
       {
+=======
+>>>>>>> create-update-event-pg
         path: "/admin/add-chapters",
         element: <AddChapterPage />,
+      },
+      {
+        path: "/admin/events",
+        element: <AllEventsPage />,
+      },
+      {
+        path: "/admin/events/add-event",
+        element: <AddEventPage />,
+      },
+      {
+        path: "/admin/events/update-event",
+        element: <UpdateEventPage />,
       },
     ],
   },
