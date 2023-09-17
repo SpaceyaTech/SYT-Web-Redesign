@@ -6,13 +6,6 @@ import AllEventsPage from "./pages/events/AllEventsPage";
 import UpdateEventPage from "./pages/events/UpdateEventPage";
 import AdminLayout from "./components/AdminLayout";
 
-// {default as AllBlogsPage}
-// {default as AddChapterPage}
-// {default as AllChaptersPage}
-// {default as AddEventPage}
-// {default as AllEventsPage}
-// {default as UpdateEventPage}
-
 export {
   AddChapterPage,
   AddEventPage,

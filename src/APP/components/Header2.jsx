@@ -9,8 +9,8 @@ const Header2 = () => {
 
   return (
     <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative">
-      {/* logo */}
 
+      {/* logo */}
       <Link to="/">
         <img src={logo} alt="logo" className="md:w-16 w-12" />
       </Link>
@@ -25,7 +25,7 @@ const Header2 = () => {
 
       {/* mobile navlinks */}
       <nav
-        className=" flex-col items-start gap-8 text-base absolute top-[90px] left-0 bg-white w-full h-[480px] z-[1] p-5 pl-12"
+        className="flex-col items-start gap-8 text-base absolute top-[90px] left-0 bg-white w-full h-[480px] z-[1] p-5 pl-12"
         style={showNavlinks ? { display: "flex" } : { display: "none" }}
       >
         <Link

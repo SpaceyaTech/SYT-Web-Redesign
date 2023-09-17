@@ -147,7 +147,7 @@ function EventsTable() {
   const currentData = filteredData.slice(indexOfFirstRow, indexOfLastRow);
 
   return (
-    <div className="px-5">
+    <div className="px-5 sm:px-0">
       {/* header */}
       <div className="flex justify-between items-center py-10">
         <h2 className="text-2xl">SYT events</h2>
@@ -170,7 +170,7 @@ function EventsTable() {
 
       {/* table actions */}
       <div className="border border-gray-200 rounded py-4 px-3">
-        <div className="space-x-4 py-2">
+        <div className="space-x-4 py-2 hidden sm:block">
           <input
             type="checkbox"
             onChange={handleSelectAll}
@@ -198,17 +198,17 @@ function EventsTable() {
         </div>
 
         {/* table display */}
-        <div className="overflow-x-auto">
+        <div className="overflow-scroll">
           <table className="min-w-full divide-y divide-gray-200 table-auto sm:table-fixed">
             <thead>
               <tr className="text-left font-medium text-[#323433]">
-                <th className="min-w-4">{}</th>
+                <th className="hidden sm:table-cell min-w-4">{}</th>
                 <th className="py-4 w-64">Event Name</th>
                 <th className="min-w-32">City</th>
-                <th className="min-w-32">Date</th>
-                <th className="min-w-24">From</th>
-                <th className="min-w-24">To</th>
-                <th className="min-w-32">Chapter</th>
+                <th className="hidden sm:table-cell min-w-32">Date</th>
+                <th className="hidden sm:table-cell min-w-24">From</th>
+                <th className="hidden sm:table-cell min-w-24">To</th>
+                <th className="hidden sm:table-cell min-w-32">Chapter</th>
                 <th className="min-w-24">RSVPs</th>
               </tr>
             </thead>
@@ -222,7 +222,7 @@ function EventsTable() {
                       : 'hover:bg-[#F7F7F7] text-[#656767] text-sm'
                   }
                 >
-                  <td className="py-4">
+                  <td className="hidden sm:table-cell py-4">
                     <input
                       type="checkbox"
                       className="cursor-pointer"
@@ -230,13 +230,13 @@ function EventsTable() {
                       checked={selectedRows.includes(row.id)}
                     />
                   </td>
-                  <td className="whitespace-wrap px-2">{row.eventName}</td>
+                  <td className="whitespace-wrap px-2 py-4">{row.eventName}</td>
                   <td>{row.city}</td>
-                  <td>{row.date}</td>
-                  <td>{row.from}</td>
-                  <td>{row.to}</td>
-                  <td>{row.chapter}</td>
-                  <td>{row.rsvp}</td>
+                  <td className="hidden sm:table-cell">{row.date}</td>
+                  <td className="hidden sm:table-cell">{row.from}</td>
+                  <td className="hidden sm:table-cell">{row.to}</td>
+                  <td className="hidden sm:table-cell">{row.chapter}</td>
+                  <td className="text-center sm:text-start">{row.rsvp}</td>
                 </tr>
               ))}
             </tbody>
