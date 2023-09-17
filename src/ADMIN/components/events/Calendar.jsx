@@ -71,8 +71,8 @@ function EventCard({ event }) {
 
   return (
     <div className="bg-[#CCFFF3] w-64 rounded h-32 px-4 py-2">
-      <h1 className="font-medium">{event.title}</h1>
-      <p className="font-medium text-xs pt-1">
+      <h1 className="font-medium text-sm sm:text-base">{event.title}</h1>
+      <p className="font-medium text-xs pt-2 sm:pt-1">
         {' '}
         <time dateTime={event.startDatetime}>
           {format(startDateTime, 'h:mm a')}
@@ -84,7 +84,7 @@ function EventCard({ event }) {
           {format(endDateTime, 'h:mm a')}
         </time>
       </p>
-      <div className="pt-5 flex justify-between">
+      <div className="pt-2 sm:pt-5 flex justify-between">
         <p className="text-xs">{event.location}</p>
         <span className={`bg-${event.tag} h-6 w-6 rounded-3xl`} />
       </div>
@@ -157,7 +157,7 @@ function Calendar() {
         Chapters
       </div>
       <div className="col-span-3 border-b px-10 pt-2 h-24">
-        <div className="grid grid-cols-11 mt-2 text-sm">
+        <div className="grid grid-cols-11 gap-20 sm:gap-0 mt-2 text-sm overflow-scroll">
           {days.map((day, dayIdx) => (
             <div key={day.toString()}>
               <button
@@ -202,21 +202,25 @@ function Calendar() {
         </div>
       </div>
 
-      <div className="border-r border-b h-44 flex items-center justify-center">
+      <div className="border-r border-b h-44 flex items-center justify-center text-center">
         SYT Nairobi
       </div>
-      <div className="col-span-3 border-b flex items-center px-10 space-x-8">
-        {selectedDayMeetings.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
+      <div className="col-span-3 border-b flex items-center overflow-scroll px-10 ">
+        <div className="flex w-screen space-x-8">
+          {selectedDayMeetings.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
       </div>
-      <div className="border-r h-44 flex items-center justify-center">
+      <div className="border-r h-44 flex items-center justify-center text-center">
         SYT Tanzania
       </div>
-      <div className="col-span-3 flex items-center px-10 space-x-8">
-        {selectedDayMeetings.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
+      <div className="col-span-3 flex items-center overflow-scroll px-10 ">
+        <div className="flex w-screen space-x-8">
+          {selectedDayMeetings.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
       </div>
     </div>
   );
