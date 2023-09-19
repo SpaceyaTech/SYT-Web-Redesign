@@ -21,7 +21,16 @@ import {
   SingleProductDonation,
   IndividualChapter,
 } from "../APP";
-import { AllChaptersPage, AdminLayout, AllEventsPage,AddChapterPage } from "../ADMIN";
+import {
+  AllChaptersPage,
+  AdminLayout,
+  AllEventsPage,
+  AddChapterPage,
+  AddEventPage,
+  UpdateEventPage,
+} from "../ADMIN";
+import { ForgotPassword, LogIn, ResetPassword, SignUp, Validate } from "../AUTH";
+ 
 
 
 const router = createBrowserRouter([
@@ -93,6 +102,14 @@ const router = createBrowserRouter([
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
     ],
   },
   {
@@ -109,11 +126,49 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/events",
-        element: <AllEventsPage/>
+        element: <AllEventsPage />,
       },
       {
         path: "/admin/add-chapters",
         element: <AddChapterPage />,
+      },
+      {
+        path: "/admin/events",
+        element: <AllEventsPage />,
+      },
+      {
+        path: "/admin/events/add-event",
+        element: <AddEventPage />,
+      },
+      {
+        path: "/admin/events/update-event",
+        element: <UpdateEventPage />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <Layout />,
+    children: [
+      {
+        path: "/auth/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/auth/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/auth/validate",
+        element: <Validate />,
+      },
+      {
+        path: "/auth/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/auth/reset-password",
+        element: <ResetPassword />,
       },
     ],
   },
