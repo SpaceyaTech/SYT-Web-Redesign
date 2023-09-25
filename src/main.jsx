@@ -5,6 +5,7 @@ import "./index.css";
 import router from "./router";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AuthContextProvider } from "./utils/AuthContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -16,9 +17,11 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <ReactQueryDevtools position="bottom-right" />
-    </QueryClientProvider>
+    <AuthContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools position="bottom-right" />
+      </QueryClientProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );

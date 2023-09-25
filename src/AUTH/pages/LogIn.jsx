@@ -2,22 +2,26 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import LoginImg from "../../assets/images/auth/login.svg";
+import useAuth from "../../hooks/useAuth";
 
 function LogIn() {
+  const { auth, setAuth } = useAuth();
+
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(null);
+  const [Response, setResponse] = useState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log("User: " + username + " Password: " + password);
+    console.log("User: " + username + " Password: " + password);
 
     try {
       axios
         .post(
-          "http://34.175.147.171:8000/api/token/",
+          "http://0.0.0.0:8879/api/token/",
           {
             username,
             password,
@@ -26,6 +30,8 @@ function LogIn() {
         )
         .then((res) => {
           console.log("response", res.data);
+          setResponse(res.data);
+          setAuth(res.data);
         });
     } catch (error) {
       setError(error.message);
@@ -33,6 +39,9 @@ function LogIn() {
     }
   };
 
+  if (auth?.access) {
+    navigate("/admin");
+  }
   return (
     <div className="flex flex-row justify-center items-center md:m-auto md:py-16 xl:px-14 lg:px-10 space-x-0 md:space-x-24">
       <div className="hidden md:block bg-[#F4F4F4] text-[#222222] rounded-2xl py-16 px-10 xl:w-[40%] lg:w-2/3 text-center">
@@ -83,6 +92,7 @@ function LogIn() {
           <button
             type="submit"
             className="bg-[#009975] hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
+            onClick={(e) => {}}
           >
             Login
           </button>
