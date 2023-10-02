@@ -1,27 +1,24 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import LoginImg from "../../assets/images/auth/login.svg";
 import useAuth from "../../hooks/useAuth";
 
 function LogIn() {
   const { auth, setAuth } = useAuth();
 
-  const navigate = useNavigate();
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(null);
-  const [Response, setResponse] = useState();
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("User: " + username + " Password: " + password);
 
     try {
       axios
         .post(
-          "http://0.0.0.0:8879/api/token/",
+          "http://34.175.147.171:8000/api/token/",
           {
             username,
             password,
@@ -29,18 +26,17 @@ function LogIn() {
           { headers: { "Content-Type": "application/json" } }
         )
         .then((res) => {
-          console.log("response", res.data);
-          setResponse(res.data);
+          // console.log("response", res.data);
           setAuth(res.data);
         });
     } catch (error) {
       setError(error.message);
-      console.error(error);
+      // console.error(error);
     }
   };
 
   if (auth?.access) {
-    navigate("/admin");
+    return <Navigate to="/admin" />;
   }
   return (
     <div className="flex flex-row justify-center items-center md:m-auto md:py-16 xl:px-14 lg:px-10 space-x-0 md:space-x-24">
@@ -78,7 +74,11 @@ function LogIn() {
 
           <div className=" flex items-center justify-between">
             <label className="text-[#79747E]">
-              <input className="mr-2 leading-tight" type="checkbox" />
+              <input
+                className="mr-2 leading-tight"
+                type="checkbox"
+                onChange={() => setRememberMe(!rememberMe)}
+              />
               <span className="text-sm">Remember me</span>
             </label>
 
