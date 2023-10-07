@@ -93,3 +93,55 @@ export const blogCard = [
     date: "3 days ago",
   },
 ];
+
+interface BlogCategory {
+  id: number;
+  name: string;
+}
+
+const fetchBlogCategories = async () => {
+  try {
+    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/blog/category/`);
+    const blogCat: BlogCategory[] = await response.json();
+    return blogCat;
+  } catch (error) {
+    console.error("Error fetching blog categories:", error);
+    throw error;
+  }
+}
+
+interface Blog {
+  id: number;
+  title: string;
+  description: string;
+  category: number;
+  likes: number;
+  image: string;
+  created_at: string;
+}
+
+interface BlogList {
+  count: number;
+  next: string;
+  previous: string;
+  results: Blog[]
+}
+
+const fetchBlogsData = async (page?: number): Promise<BlogList> => {
+  let url = `${process.env.REACT_APP_API_BASE_URL}/blog/`;
+
+  if (page) {
+    url += `?page=${page}`
+  }
+
+  try {
+    const response = await fetch(url);
+    const data: BlogList = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+    throw error;
+  }
+}
+
+export { fetchBlogCategories, fetchBlogsData };
