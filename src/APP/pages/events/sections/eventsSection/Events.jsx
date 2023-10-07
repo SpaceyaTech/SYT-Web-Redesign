@@ -20,8 +20,9 @@ function Events({ events, isVertical }) {
           : 'bg-blue-800 hover:bg-blue-800';
         return (
           <div
+            key={index}
             className={isVertical ? verticalWrapper : horizontalWrapper}
-            style={{ 'box-shadow': '0px 4px 10px 0px #04080D0D' }}
+            style={{ boxShadow: "0px 4px 10px 0px #04080D0D" }}
           >
             <a href="#">
               <img className="rounded-t-lg w-full" src={img} alt="" />

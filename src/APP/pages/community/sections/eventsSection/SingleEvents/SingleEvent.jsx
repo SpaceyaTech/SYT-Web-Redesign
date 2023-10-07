@@ -62,7 +62,7 @@ function SingleEvent() {
     <div className="w-screen flex flex-col ">
       <div
         className="bg-cover bg-no-repeat py-24 px-30 h-full md:py-44"
-        style={{ 'background-image': `url(${singleEvents}` }}
+        style={{ backgroundImage: `url(${singleEvents}` }}
       />
       <div className="px-20">
         <div className="flex flex-row justify-between pt-10 pb-2 ">
