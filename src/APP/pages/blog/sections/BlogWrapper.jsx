@@ -1,16 +1,19 @@
 import React from "react";
+import { formatDistanceToNow } from "date-fns";
 import { Ellipse30 } from "../../../../assets/images/blogs-page";
-import { blogData } from "../data";
 import Comments from "./Comments";
 
-const BlogWrapper = () => {
-  const paragraph = blogData.split("\n\n");
+const BlogWrapper = ({ blog }) => {
+  const paragraph = blog.body.split("\n");
+  const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
+    addSuffix: true,
+  });
   return (
     <div className="flex flex-row">
       <div className="w-full md:w-3/5 flex flex-col">
         <div className="flex flex-col pt-2 gap-2">
           <h3 className="text-2xl leading-9 md:text-3xl md:leading-normal text-[#323433] font-normal">
-            The Future of Virtual Reality in Education
+            {blog.title}
           </h3>
 
           <div className="flex gap-[10px]">
@@ -21,9 +24,9 @@ const BlogWrapper = () => {
             />
 
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className=" font-medium text-[#323433]">Sharon Makena</h4>
+              <h4 className=" font-medium text-[#323433]">Author Here</h4>
 
-              <span className="text-[#656767]">3 days ago</span>
+              <span className="text-[#656767]">{timeAgo}</span>
             </div>
           </div>
         </div>
@@ -40,7 +43,7 @@ const BlogWrapper = () => {
           </p>
         </div>
 
-        <Comments />
+        {/* <Comments /> */}
       </div>
 
       <div className="w-2/5 hidden md:inline-flex" />
