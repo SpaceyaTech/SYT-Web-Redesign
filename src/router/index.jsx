@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable quotes */
 import { createBrowserRouter } from "react-router-dom";
+import { DataProvider } from "../APP/contexts/DataContext";
 
 import {
   AboutUs,
@@ -29,14 +30,22 @@ import {
   AddEventPage,
   UpdateEventPage,
 } from "../ADMIN";
-import { ForgotPassword, LogIn, ResetPassword, SignUp, Validate } from "../AUTH";
- 
-
+import {
+  ForgotPassword,
+  LogIn,
+  ResetPassword,
+  SignUp,
+  Validate,
+} from "../AUTH";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <DataProvider>
+        <Layout />
+      </DataProvider>
+    ),
     children: [
       {
         path: "/",
