@@ -14,7 +14,7 @@ function Events({ events, isVertical }) {
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({
         img, title, date, location, mode, id
-      }) => {
+      }, index) => {
         const buttonColor = mode === 'virtual'
           ? 'bg-red-800 hover:bg-red-800'
           : 'bg-blue-800 hover:bg-blue-800';
