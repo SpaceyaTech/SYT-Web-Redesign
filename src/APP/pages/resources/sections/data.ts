@@ -1,3 +1,5 @@
+import axios from "axios";
+
 interface Resource {
   id: number;
   name: string;
@@ -6,9 +8,8 @@ interface Resource {
 
 const fetchResourcesData = async () => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/resourcetypes/`);
-    const data: Resource[] = await response.json();
-    return data;
+    const response = await axios.get<Resource[]>(`${process.env.REACT_APP_API_BASE_URL}/resourcetypes/`);
+    return response.data;
   } catch (error) {
     console.error("Error fetching resources:", error);
     throw error;

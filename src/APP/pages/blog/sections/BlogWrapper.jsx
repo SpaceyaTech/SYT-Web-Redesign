@@ -1,7 +1,6 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { Ellipse30 } from "../../../../assets/images/blogs-page";
-import Comments from "./Comments";
 
 const BlogWrapper = ({ blog }) => {
   const paragraph = blog.body.split("\n");
@@ -24,7 +23,7 @@ const BlogWrapper = ({ blog }) => {
             />
 
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className=" font-medium text-[#323433]">Author Here</h4>
+              <h4 className=" font-medium text-[#323433]">{blog.author}</h4>
 
               <span className="text-[#656767]">{timeAgo}</span>
             </div>

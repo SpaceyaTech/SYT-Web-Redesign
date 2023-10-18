@@ -1,3 +1,5 @@
+import axios from "axios";
+
 interface Blog {
     id: number;
     title: string;
@@ -7,13 +9,13 @@ interface Blog {
     image: string;
     created_at: string;
     likes: string;
+    author?: string;
 }
 
 const fetchBlogData = async (id) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/blog/${id}/`);
-        const data: Blog = await response.json();
-        return data;
+        const response = await axios.get<Blog>(`${process.env.REACT_APP_API_BASE_URL}/blog/${id}/`);
+        return response.data;
     } catch (error) {
         console.error("Error fetching blog:", error);
         throw error;

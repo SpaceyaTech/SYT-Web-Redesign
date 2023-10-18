@@ -36,7 +36,7 @@ const BlogCard = ({ blog }) => {
             />
 
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className=" font-medium text-[#323433]">Author Here</h4>
+              <h4 className=" font-medium text-[#323433]">{blog.author}</h4>
 
               <span className="text-[#656767]">{timeAgo}</span>
             </div>

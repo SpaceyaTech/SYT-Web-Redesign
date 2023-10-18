@@ -1,9 +1,7 @@
 import { useEffect } from "react";
-import { blog4 } from "../../../assets/images/blogs-page";
 import { useDataDispatch, useDataState } from "../../contexts/DataContext";
 import BlogStats from "../blogs/sections/BlogStats";
 import BlogWrapper from "./sections/BlogWrapper";
-import RelatedBlogs from "./sections/RelatedBlogs";
 import { fetchBlogData } from "./data";
 import { useParams } from "react-router-dom";
 

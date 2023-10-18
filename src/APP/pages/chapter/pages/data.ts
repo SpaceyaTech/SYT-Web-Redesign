@@ -1,3 +1,5 @@
+import axios from "axios";
+
 interface Organizer {
     id: number;
     name: string;
@@ -33,9 +35,8 @@ interface Chapter {
 
 const fetchChapterData = async (id) => {
     try {
-        const res0 = await fetch(`${process.env.REACT_APP_API_BASE_URL}/chapter/${id}/`);
-        const data = await res0.json();
-        return data;
+        const response = await axios.get<Chapter>(`${process.env.REACT_APP_API_BASE_URL}/chapter/${id}/`);
+        return response.data;
     } catch (error) {
         console.error('Error fetching chapter data:', error);
         throw error;
