@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import LoginImg from "../../assets/images/auth/login.svg";
@@ -6,7 +6,6 @@ import useAuth from "../../hooks/useAuth";
 
 function LogIn() {
   const { auth, setAuth } = useAuth();
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(null);
@@ -16,28 +15,25 @@ function LogIn() {
     e.preventDefault();
 
     try {
-      axios
-        .post(
-          "http://34.175.147.171:8000/api/token/",
-          {
-            username,
-            password,
-          },
-          { headers: { "Content-Type": "application/json" } }
-        )
-        .then((res) => {
-          // console.log("response", res.data);
-          setAuth(res.data);
-        });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URI}/api/token/`,
+        {
+          username,
+          password,
+        },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      setAuth(response.data);
     } catch (error) {
       setError(error.message);
-      // console.error(error);
     }
   };
 
   if (auth?.access) {
     return <Navigate to="/admin" />;
   }
+
   return (
     <div className="flex flex-row justify-center items-center md:m-auto md:py-16 xl:px-14 lg:px-10 space-x-0 md:space-x-24">
       <div className="hidden md:block bg-[#F4F4F4] text-[#222222] rounded-2xl py-16 px-10 xl:w-[40%] lg:w-2/3 text-center">
@@ -73,8 +69,9 @@ function LogIn() {
           />
 
           <div className=" flex items-center justify-between">
-            <label className="text-[#79747E]">
+            <label className="text-[#79747E]" htmlFor="rememberMe">
               <input
+                name="rememberMe"
                 className="mr-2 leading-tight"
                 type="checkbox"
                 onChange={() => setRememberMe(!rememberMe)}
@@ -92,7 +89,6 @@ function LogIn() {
           <button
             type="submit"
             className="bg-[#009975] hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
-            onClick={(e) => {}}
           >
             Login
           </button>
