@@ -1,7 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable quotes */
 import { createBrowserRouter } from "react-router-dom";
-import { DataProvider } from "../APP/contexts/DataContext";
 
 import {
   AboutUs,
@@ -41,11 +40,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <DataProvider>
-        <Layout />
-      </DataProvider>
-    ),
+    element: <Layout />,
     children: [
       {
         path: "/",
