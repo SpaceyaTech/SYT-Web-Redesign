@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MasterBase,
   mpesapayments,
@@ -7,6 +7,7 @@ import {
   uxhiringafrica,
 } from '../../../../../assets/images/community';
 import Events from './Events';
+import { fetchEventsCategories } from '../../pages/data';
 
 const categories = ['DevOps', 'Software Development', 'Cloud Development', 'Software Development', 'Design', 'DevOps', 'Software Development', 'Cloud Development', 'Software Development'];
 
@@ -96,23 +97,44 @@ const events = [
 ];
 
 function EventCategory() {
+  const [eventsCategories, setEventsCategories] = useState(null);
+
+  useEffect (() => {
+    const fetchCategoriesData = async () => {
+      try {
+        const theEventsCategoriesData = await fetchEventsCategories();
+        setEventsCategories((prevState) => {
+          return prevState = theEventsCategoriesData;
+        });
+      } catch(error) {
+        console.error("Error fetching event categories: ", error);
+        throw error;
+      }
+    }
+    fetchCategoriesData();
+  }, [])
+
   return (
     <div className="flex flex-col px-6">
       <div className="flex flex-wrap flex-col">
         <h2 className="text-lg font-light text-[#323433] ">Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 py-6">
-          <button className="bg-blue-500 active:bg-blue-500 font-normal text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate" key="1">
+          {/* <button className="bg-blue-500 active:bg-blue-500 font-normal text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate" key="">
             Design
-          </button>
-          {categories.map((category) => (
-            <button className="bg-transparent hover:bg-blue-500 active:bg-blue-500 text-[#323433] font-normal hover:text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate" key={category}>
-              {category}
-            </button>
-          )) }
+          </button> */}
+          {eventsCategories ? (
+            eventsCategories.map(({id, name}) => (
+              <button className="bg-transparent hover:bg-blue-500 active:bg-blue-500 text-[#323433] font-normal hover:text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate" key={id}>
+                {name}
+              </button>
+            )) 
+          ) : (
+            ''
+          )}
         </div>
         <div className="flex flex-row justify-between">
           <div>
-            <h2 className="text-lg font-light text-[#323433] ">Events in Nairobi</h2>
+            <h2 className="text-lg font-light text-[#323433] ">Events</h2>
           </div>
           <div className="flex flex-row">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

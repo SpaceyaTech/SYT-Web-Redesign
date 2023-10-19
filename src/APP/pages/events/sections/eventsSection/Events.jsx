@@ -13,33 +13,33 @@ function Events({ events, isVertical }) {
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({
-        img, title, date, location, mode, id
-      }, index) => {
-        const buttonColor = mode === 'virtual'
+        id, name, date, location, mode, category, poster
+      }) => {
+        const buttonColor = mode === 'Virtual'
           ? 'bg-red-800 hover:bg-red-800'
           : 'bg-blue-800 hover:bg-blue-800';
         return (
           <div
-            key={index}
+            key={id}
             className={isVertical ? verticalWrapper : horizontalWrapper}
             style={{ boxShadow: "0px 4px 10px 0px #04080D0D" }}
           >
-            <a href="#">
-              <img className="rounded-t-lg w-full" src={img} alt="" />
-            </a>
+            <Link to={`/events/${id}`}>
+            <img className="rounded-t-lg w-full" src={poster} alt="" />
+            </Link>
             <div className="p-5">
-              <a href="#">
+              <Link to={`/events/${id}`}>
                 <h5 className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
-                  {title}
+                  {name}
                 </h5>
-              </a>
+              </Link>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-40 whitespace-nowrap">
                 {date}
               </p>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {location}
               </p>
-              <Link to={`/events/${id}`}>
+                <Link to={`/events/${id}`}>
                 <button
                   type="button"
                   className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2`}
@@ -47,6 +47,7 @@ function Events({ events, isVertical }) {
                   {mode}
                 </button>
               </Link>
+              
 
             </div>
           </div>

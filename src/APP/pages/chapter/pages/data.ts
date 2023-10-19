@@ -21,6 +21,25 @@ interface Socials {
     whatsapp?: string;
 }
 
+interface Event {
+    id: number;
+    name: string;
+    about: string;
+    link: string;
+    location: string;
+    mode: string;
+    city: string;
+    country: string;
+    date: string;
+    start_time: string;
+    end_time: string;
+    poster: string;
+    category: string;
+    chapter: Chapter;
+    created_at: string;
+    updated_at: string;
+}
+
 interface Chapter {
     id: number;
     country: string;
@@ -31,6 +50,8 @@ interface Chapter {
     members: number;
     banner: string;
     organizers: Organizer[];
+    events_count?: number;
+    events?: Event[];
 }
 
 const fetchChapterData = async (id) => {

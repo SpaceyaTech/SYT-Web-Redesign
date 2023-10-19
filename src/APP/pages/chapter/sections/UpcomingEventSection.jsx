@@ -9,50 +9,7 @@ import {
 } from '../../../../assets/images/community';
 import Events from '../../events/sections/eventsSection/Events';
 
-const events = [
-  {
-    img: MasterBase,
-    title: 'How to Master Database Engineering using SQL',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Twitter Spaces',
-    mode: 'virtual',
-    id: 1,
-  },
-  {
-    img: mentorlst,
-    title: 'Deploying and Managing Applications with Kubernetes',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Sarit Centre • Nairobi ',
-    mode: 'Physical',
-    id: 2,
-  },
-  {
-    img: mpesapayments,
-    title: 'How to Integrate MPESA Payments into Your Website or App',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: '#SYTTechTalks',
-    mode: 'virtual',
-    id: 3,
-  },
-  {
-    img: techrecruiters,
-    title:
-      'Insights and Advice from Tech Recruiters ',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Twitter Spaces',
-    mode: 'virtual',
-    id: 4,
-  },
-  {
-    img: uxhiringafrica,
-    title: 'UX Hiring Africa: What Recruiters Look for When Hiring Designers',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Twitter Spaces',
-    mode: 'virtual',
-    id: 5,
-  },
-];
-function UpcomingEventSection() {
+function UpcomingEventSection({events}) {
   return (
     <div className="pb-6 px-6">
       <div className="flex flex-row justify-between">

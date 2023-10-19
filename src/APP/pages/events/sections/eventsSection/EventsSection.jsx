@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import EventsUpdateSection from './EventsUpdateSection';
 import EventsTab from './EventsTab'
 import Events from './Events';
@@ -10,6 +10,7 @@ import {
   mentorlst,
   uxhiringafrica,
 } from '../../../../../assets/images/community';
+import { fetchEventData } from '../../../community/sections/eventsSection/data';
 
 const events = [
   {
@@ -55,11 +56,32 @@ const events = [
   },
 ];
 function EventsSection({showTabs, showAllEventsLink}) {
+  const [topEventsData, setTopEventsData] = useState(null);
+
+  useEffect (()=> {
+    const fetchData = async () => {
+      try {
+        const theData = await fetchEventData();
+        setTopEventsData((prevState) => {
+          return prevState = theData;
+        });
+      } catch(error) {
+        // Handle error
+        console.error("Error fetching top events: ", error);
+      }
+    }
+    fetchData();
+  }, []);
+  
   return (
     <div className="p-6">
       <EventsUpdateSection showAllEventsLink={showAllEventsLink} />
       {showTabs && <EventsTab />}
-      <Events events={events} isVertical={false} />
+      {topEventsData ? (
+        <Events events={topEventsData.results} isVertical={false} />
+      ) : (
+        <div>Loading Recent Events...</div>
+      )}
     </div>
   );
 }
