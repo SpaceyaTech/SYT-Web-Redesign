@@ -1,20 +1,20 @@
-import { useEffect } from "react";
-import { useDataDispatch, useDataState } from "../../contexts/DataContext";
+import { useEffect, useState } from "react";
 import BlogStats from "../blogs/sections/BlogStats";
 import BlogWrapper from "./sections/BlogWrapper";
 import { fetchBlogData } from "./data";
 import { useParams } from "react-router-dom";
 
 function Blog() {
-  const dataState = useDataState();
-  const dataDispatch = useDataDispatch();
+  const [blogData, setBlogData] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const blogData = await fetchBlogData(id);
-        dataDispatch({ type: "SET_ONE_BLOG", payload: blogData });
+        const theData = await fetchBlogData(id);
+        setBlogData((prevState) => {
+          return prevState = theData;
+        });
       } catch (error) {
         // Handle error
         console.error("Problem fetching blog data:", error);
@@ -22,31 +22,31 @@ function Blog() {
     };
 
     fetchData();
-  }, [dataDispatch]);
+  }, []);
 
   return (
     <>
-      {dataState.blog ? (
+      {blogData ? (
         <section className="flex flex-col p-4 md:p-8 lg:p-10">
           <img
-            src={dataState.blog.image}
+            src={blogData.image}
             alt="blog"
             className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"
           />
 
           <div className="flex flex-row items-center justify-between">
             <p className="text-[#4C4D4D] text-sm  md:text-base font-bold">
-              {new Date(dataState.blog.created_at).toLocaleDateString("en-US", {
+              {new Date(blogData.created_at).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
               })}
             </p>
 
-            <BlogStats likes={dataState.blog.likes} />
+            <BlogStats likes={blogData.likes} />
           </div>
 
-          <BlogWrapper blog={dataState.blog} />
+          <BlogWrapper blog={blogData} />
 
           {/* <RelatedBlogs /> */}
         </section>

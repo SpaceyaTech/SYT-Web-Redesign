@@ -3,18 +3,18 @@ import React, { useState, useEffect } from "react";
 import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
 import { fetchResourcesData } from "./data";
-import { useDataState, useDataDispatch } from "../../../contexts/DataContext";
 
 function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
-  const dataState = useDataState();
-  const dataDispatch = useDataDispatch();
+  const [resourceTypesState, setResourceTypesState] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const resourcesData = await fetchResourcesData();
-        dataDispatch({ type: "SET_RESOURCES", payload: resourcesData });
+        setResourceTypesState((prevState) => {
+          return prevState = resourcesData;
+        });
       } catch (error) {
         // Handle error
         console.error("Problem fetching resource data:", error);
@@ -22,7 +22,7 @@ function ResourcesSection() {
     };
 
     fetchData();
-  }, [dataDispatch]);
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ function ResourcesSection() {
 
   return (
     <>
-      {dataState.resources ? (
+      {resourceTypesState ? (
         <div className="flex flex-col gap-12">
           <div className="flex self-stretch flex-row mx-auto border-[#CBCDCC] border-2 rounded-[30px] px-4">
             <input
@@ -50,7 +50,7 @@ function ResourcesSection() {
           </div>
 
           <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
-            {dataState.resources.map((resource) => (
+            {resourceTypesState.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} />
             ))}
           </div>
@@ -58,7 +58,6 @@ function ResourcesSection() {
       ) : (
         <div>Loading resources...</div>
       )}
-      ;
     </>
   );
 }

@@ -1,27 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useDataDispatch, useDataState } from "../../../contexts/DataContext";
 import { blogCat, fetchBlogCategories, fetchBlogsData } from "../data";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 
 const BlogsWrapper = () => {
   const [page, setPage] = useState(1);
-  const dataState = useDataState();
-  const dataDispatch = useDataDispatch();
+  const [blogsData, setBlogsData] = useState(null);
 
   useEffect(() => {
     const fetchData = async (pageNumber) => {
       try {
-        const blogsData = await fetchBlogsData(pageNumber);
-        dataDispatch({ type: "SET_BLOGS", payload: blogsData });
+        const theData = await fetchBlogsData(pageNumber);
+        setBlogsData((prevState) => {
+          return prevState = theData;
+        });
       } catch (error) {
         // Handle error
         console.error("Problem fetching blogs:", error);
       }
     };
-
     fetchData(page);
-  }, [dataDispatch, page]);
+  }, [page]);
 
   const handlePageChange = ({ index }) => {
     setPage(index);
@@ -52,24 +51,24 @@ const BlogsWrapper = () => {
 
   return (
     <div className="flex flex-col items-start md:items-center gap-8 md:gap-16 px-4 pt-4 xl:px-14 w-full mb-10 md:mb-40">
-      {dataState.blogs ? (
+      {blogsData ? (
         <>
           <FilterBtns />
           <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
-            {dataState.blogs.results.map((blog) => (
+            {blogsData.results.map((blog) => (
               <BlogCard key={blog.id} blog={blog} />
             ))}
           </div>
-          {dataState.blogs.next === null &&
-          dataState.blogs.previous === null ? (
+          {blogsData.next === null &&
+          blogsData.previous === null ? (
             ""
           ) : (
             <BlogPagination
-              count={dataState.blogs.count}
-              next={dataState.blogs.next}
-              previous={dataState.blogs.previous}
+              count={blogsData.count}
+              next={blogsData.next}
+              previous={blogsData.previous}
               current={page}
-              blogs_per_page={dataState.blogs.results.length}
+              blogs_per_page={blogsData.results.length}
               onPageChange={handlePageChange}
             />
           )}
