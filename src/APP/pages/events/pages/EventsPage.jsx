@@ -7,7 +7,7 @@ function Events() {
   return (
     <div>
       <SearchSection />
-      <EventsSection showTabs />
+      {/* <EventsSection showTabs /> */}
       <EventCategory />
 
     </div>
