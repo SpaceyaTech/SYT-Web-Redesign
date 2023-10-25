@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { Ellipse30, arrowRight } from "../../../../assets/images/blogs-page";
 import BlogStats from "./BlogStats";
+import { formatDistanceToNow } from "date-fns";
 
 const BlogCard = ({ blog }) => {
   const navigate = useNavigate();
+  const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
+    addSuffix: true,
+  });
   return (
     <div className="flex flex-col items-start w-full">
       <img
@@ -16,11 +20,11 @@ const BlogCard = ({ blog }) => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
           <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
 
-          <BlogStats />
+          <BlogStats likes={blog.likes} />
         </div>
 
         <p className="text-base font-normal leading-6 flex flex-wrap text-[#4C4D4D] line-clamp-2">
-          {blog.desc}
+          {blog.description}
         </p>
 
         <div className="flex flex-row items-start justify-between">
@@ -34,7 +38,7 @@ const BlogCard = ({ blog }) => {
             <div className="flex flex-col gap-1 text-sm">
               <h4 className=" font-medium text-[#323433]">{blog.author}</h4>
 
-              <span className="text-[#656767]">{blog.date}</span>
+              <span className="text-[#656767]">{timeAgo}</span>
             </div>
           </div>
 
