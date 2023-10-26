@@ -18,8 +18,8 @@ function LandingPage() {
       {/* <HeroSection /> */}
       <FeatureSection />
       <Services />
-      <StatsSection />
       <PodcastSection />
+      <StatsSection />
       <TestimonialSection />
       <FaqSection />
       <CTASection />
