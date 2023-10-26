@@ -1,17 +1,13 @@
-/* eslint-disable no-unused-vars */
-
-// import Footer from "../../components/Footer";
-// import Footer2 from "../../components/Footer2";
-// import Header from "../../components/Header";
-// import Header2 from "../../components/Header2";
-import CTASection from "./sections/CTASection";
-import FaqSection from "./sections/FaqSection";
-import FeatureSection from "./sections/FeatureSection";
-// import HeroSection from "./sections/HeroSection";
-import HeroSection2 from "./sections/HeroSection2";
-import Services from "./sections/Services";
-import StatsSection from "./sections/StatsSection";
-import TestimonialSection from "./sections/TestimonialSection";
+import {
+  CTASection,
+  FaqSection,
+  FeatureSection,
+  HeroSection2,
+  PodcastSection,
+  Services,
+  StatsSection,
+  TestimonialSection,
+} from "./sections";
 
 function LandingPage() {
   return (
@@ -23,6 +19,7 @@ function LandingPage() {
       <FeatureSection />
       <Services />
       <StatsSection />
+      <PodcastSection />
       <TestimonialSection />
       <FaqSection />
       <CTASection />
