@@ -5,6 +5,8 @@ import AddEventPage from "./pages/events/AddEventPage";
 import AllEventsPage from "./pages/events/AllEventsPage";
 import UpdateEventPage from "./pages/events/UpdateEventPage";
 import AdminLayout from "./components/AdminLayout";
+import CreatePost from "./pages/blogs/CreatePost";
+import ManagePosts from "./pages/blogs/ManagePosts";
 
 export {
   AddChapterPage,
@@ -14,4 +16,6 @@ export {
   AllEventsPage,
   UpdateEventPage,
   AdminLayout,
+  CreatePost,
+  ManagePosts,
 };
