@@ -8,8 +8,7 @@ const Header2 = () => {
   const [showNavlinks, setShowNavlinks] = useState(false);
 
   return (
-    <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative">
-
+    <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
       {/* logo */}
       <Link to="/">
         <img src={logo} alt="logo" className="md:w-16 w-12" />

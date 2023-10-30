@@ -68,7 +68,7 @@ const partners = [
 
 const HeroSection3 = () => {
   return (
-    <section className="p-4 lg:p-0 border flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
+    <section className="p-4 lg:p-0 flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
       {/* Hero Header */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-4">
         {/* hero desc */}
@@ -84,6 +84,7 @@ const HeroSection3 = () => {
 
           <Link
             to="/community"
+            preventScrollReset={true}
             className="text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none rounded-lg text-lg w-full md:w-fit text-center"
           >
             Join the community
@@ -111,13 +112,8 @@ const HeroSection3 = () => {
         </p>
 
         <div className="overflow-auto flex flex-row gap-14 items-center">
-          {partners.map((partner) => (
-            <img
-              src={partner.img}
-              className="object-cover"
-              alt={partner.name}
-              key={partner.id}
-            />
+          {partners.map(({ id, img, name }) => (
+            <img src={img} className="object-cover" alt={name} key={id} />
           ))}
         </div>
       </div>

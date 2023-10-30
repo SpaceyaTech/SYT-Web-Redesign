@@ -13,9 +13,6 @@ import {
 function LandingPage() {
   return (
     <div className="text-blue">
-      {/* <Header /> */}
-      {/* <Header2 /> */}
-      {/* <HeroSection2 /> */}
       <HeroSection3 />
       <FeatureSection />
       <Services />
@@ -24,8 +21,6 @@ function LandingPage() {
       <TestimonialSection />
       <FaqSection />
       <CTASection />
-      {/* <Footer2 /> */}
-      {/* <Footer /> */}
     </div>
   );
 }
