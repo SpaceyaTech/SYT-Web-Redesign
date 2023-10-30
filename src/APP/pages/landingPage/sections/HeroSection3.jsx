@@ -1,9 +1,74 @@
 import { Link } from "react-router-dom";
-import { bannerImg } from "../../../../assets/images/hero-section";
+import {
+  ctfroom,
+  DevOps,
+  Kushite,
+  Propel,
+  bannerImg,
+  chimoney,
+  moringa,
+  osca,
+  reactke,
+  spheron,
+  cytonn,
+} from "../../../../assets/images/hero-section";
+
+const partners = [
+  {
+    id: 1,
+    img: ctfroom,
+    name: "ctfroom",
+  },
+  {
+    id: 2,
+    img: DevOps,
+    name: "DevOps",
+  },
+  {
+    id: 3,
+    img: Propel,
+    name: "Propel",
+  },
+  {
+    id: 4,
+    img: moringa,
+    name: "moringa",
+  },
+  {
+    id: 5,
+    img: chimoney,
+    name: "chimoney",
+  },
+  {
+    id: 6,
+    img: Kushite,
+    name: "Kushite",
+  },
+  {
+    id: 7,
+    img: spheron,
+    name: "spheron",
+  },
+  {
+    id: 8,
+    img: osca,
+    name: "osca",
+  },
+  {
+    id: 9,
+    img: cytonn,
+    name: "cytonn",
+  },
+  {
+    id: 10,
+    img: reactke,
+    name: "reactke",
+  },
+];
 
 const HeroSection3 = () => {
   return (
-    <section className="p-4 md:p-10 border flex flex-col gap-2">
+    <section className="p-4 lg:p-0 border flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
       {/* Hero Header */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-4">
         {/* hero desc */}
@@ -27,12 +92,35 @@ const HeroSection3 = () => {
 
         {/* hero img */}
         <div className="flex-1">
-          <img src={bannerImg} alt="banner" className="" />
+          <img
+            src={bannerImg}
+            alt="banner"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 
       {/* Partners */}
-      <div className="">Partners</div>
+      <div className="my-6 flex flex-col items-center gap-6">
+        <h2 className="text-3xl font-semibold">Our Partners</h2>
+
+        <p className="max-w-[832px] text-center text-base font-normal">
+          At SpaceYaTech, we thrive on innovation, knowledge and he support of
+          our dedicated partners. Join us in celebrating the companies and
+          individuals who make SpaceYaTech possible.
+        </p>
+
+        <div className="overflow-auto flex flex-row gap-14 items-center">
+          {partners.map((partner) => (
+            <img
+              src={partner.img}
+              className="object-cover"
+              alt={partner.name}
+              key={partner.id}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
