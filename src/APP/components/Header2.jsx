@@ -28,56 +28,63 @@ const Header2 = () => {
         style={showNavlinks ? { display: "flex" } : { display: "none" }}
       >
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/"
           onClick={() => setShowNavlinks(false)}
         >
           Home
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          to="/about-us"
-          onClick={() => setShowNavlinks(false)}
-        >
-          About Us
-        </Link>
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          to="/resources"
-          onClick={() => setShowNavlinks(false)}
-        >
-          Resources
-        </Link>
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/community"
           onClick={() => setShowNavlinks(false)}
         >
           Community
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/about-us"
+          onClick={() => setShowNavlinks(false)}
+        >
+          About Us
+        </Link>
+
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
           onClick={() => setShowNavlinks(false)}
         >
           Products
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/blogs"
           onClick={() => setShowNavlinks(false)}
         >
           Blog
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/resources"
+          onClick={() => setShowNavlinks(false)}
+        >
+          Resources
+        </Link>
+
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/shop"
           onClick={() => setShowNavlinks(false)}
         >
           Shop
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/donate"
           onClick={() => setShowNavlinks(false)}
         >
@@ -88,49 +95,55 @@ const Header2 = () => {
       {/* navlinks */}
       <nav className="md:flex hidden items-center gap-5 text-base">
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline focus:text-[#009975] focus:underline transition-all duration-300 cursor-pointer"
           to="/"
         >
           Home
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          to="/about-us"
-        >
-          About Us
-        </Link>
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
-          to="/resources"
-        >
-          Resources
-        </Link>
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/community"
         >
           Community
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/about-us"
+        >
+          About Us
+        </Link>
+
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
         >
           Products
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/blogs"
         >
           Blog
         </Link>
+
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/resources"
+        >
+          Resources
+        </Link>
+
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/shop"
         >
           Shop
         </Link>
         <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer"
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/donate"
         >
           Donate
