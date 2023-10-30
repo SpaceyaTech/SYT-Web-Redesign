@@ -111,7 +111,7 @@ const HeroSection3 = () => {
           individuals who make SpaceYaTech possible.
         </p>
 
-        <div className="overflow-auto flex flex-row gap-14 items-center">
+        <div className="overflow-auto flex flex-row gap-14 md:px-3 w-full items-center">
           {partners.map(({ id, img, name }) => (
             <img src={img} className="object-cover" alt={name} key={id} />
           ))}
