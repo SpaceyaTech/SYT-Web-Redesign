@@ -5,7 +5,7 @@ function Services() {
   return (
     <section className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap">
-        <div className="hidden md:flex lg:w-1/2 w-full md:w-1/2 justify-center items-center py-20">
+        <div className="hidden md:flex lg:w-1/2 w-full md:w-1/2 justify-center items-center py-20 bg-[#F7F7F7]">
           <img
             className="object-cover object-center rounded w-[569px] h-[650px]"
             alt="services"
