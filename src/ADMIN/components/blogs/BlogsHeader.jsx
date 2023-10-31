@@ -16,15 +16,16 @@ function BlogsHeader({ pageType }) {
         {pageType === "CreatePost" ? "Create Post" : "Manage Posts"}
       </h1>
       <div className="flex w-full sm:w-auto flex-row gap-8 items-center">
-        {pageType === "CreatePost" && (
-          <button
-            type="button"
-            className={ActiveBtnClasses}
-            onClick={() => navigate("/admin/blogs/create-post")}
-          >
-            Create Post
-          </button>
-        )}
+        <button
+          type="button"
+          className={
+            pageType === "CreatePost" ? ActiveBtnClasses : SecondaryBtnClasses
+          }
+          onClick={() => navigate("/admin/blogs/create-post")}
+        >
+          Create Post
+        </button>
+
         <button
           type="button"
           className={
