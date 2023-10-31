@@ -81,9 +81,9 @@ const PodcastSection = () => {
         ))}
       </div>
 
-      <Link to="/" className="text-[#00664E] text-xl font-bold">
+      {/* <Link to="/" className="text-[#00664E] text-xl font-bold">
         View All
-      </Link>
+      </Link> */}
     </section>
   );
 };

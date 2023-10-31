@@ -59,7 +59,12 @@ function Services() {
                 10 p.m EAT, where industry experts talk about various topics and
                 upcoming tech events
               </p>
-              <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
+              <a
+                className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer"
+                href="https://x.com/SpaceYaTech"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Learn More
                 <svg
                   fill="none"
@@ -100,7 +105,12 @@ function Services() {
                 We run full-stack, open-source projects, where UI/UX designers,
                 developers and dev-ops engineers work together.
               </p>
-              <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
+              <a
+                className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer"
+                href="https://spaceyatech.github.io/CoLabs/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Learn More
                 <svg
                   fill="none"
