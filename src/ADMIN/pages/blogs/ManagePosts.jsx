@@ -9,15 +9,12 @@ function ManagePosts() {
   const [Posts, setPosts] = useState([]);
 
   const getAllPosts = async () => {
-    console.log(`${process.env.REACT_APP_API_BASE_URL}/api/blog/`)
-    
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}/api/blog/`
+        `${process.env.REACT_APP_API_BASE_URL}/blog/`
       );
 
-      setPosts(response.results);
-      console.log(response);
+      setPosts(response.data.results);
     } catch (error) {
       setError(error.message);
     }
@@ -25,15 +22,6 @@ function ManagePosts() {
 
   useEffect(() => {
     getAllPosts();
-    // try {
-    //   const response = axios.get(
-    //     `${process.env.REACT_APP_API_BASE_URL}/api/blog/`
-    //   );
-
-    //   setPosts(response.results);
-    // } catch (error) {
-    //   setError(error.message);
-    // }
   }, []);
 
   return (
@@ -42,31 +30,24 @@ function ManagePosts() {
       <div className="border-t border-x border-[#D9D9D9]">
         <table className="table-auto min-w-full text-left text-base">
           <tbody>
-            <tr className="border-b border-[#D9D9D9]">
-              <td className="px-6 py-4">
-                01. Introduction to UI/UX Fundamentals
-              </td>
-              <td className="whitespace-nowrap px-6 py-4 text-[#009975]">
-                Edit
-                <FontAwesomeIcon icon={faPenToSquare} className="ml-2" />
-              </td>
-              <td className="whitespace-nowrap px-6 py-4 text-red-600">
-                Delete
-                <FontAwesomeIcon icon={faTrashCan} className="ml-2" />
-              </td>
-            </tr>
-            {Posts.map(({ id, title }) => (
+            {Posts?.map(({ id, title }, idx) => (
               <tr key={id} className="border-b border-[#D9D9D9]">
                 <td className="px-6 py-4">
-                  {id}.{title}
+                  {(idx + 1).toString().length === 1 ? `0${idx + 1}` : idx + 1}.{" "}
+                  {title}
                 </td>
                 <td className="whitespace-nowrap px-6 py-4 text-[#009975]">
-                  Edit
-                  <FontAwesomeIcon icon={faPenToSquare} className="ml-2" />
+                  <button type="button">
+                    Edit
+                    <FontAwesomeIcon icon={faPenToSquare} className="ml-2" />
+                  </button>
                 </td>
                 <td className="whitespace-nowrap px-6 py-4 text-red-600">
-                  Delete
-                  <FontAwesomeIcon icon={faTrashCan} className="ml-2" />
+                  <button type="button">
+                    {" "}
+                    Delete
+                    <FontAwesomeIcon icon={faTrashCan} className="ml-2" />
+                  </button>
                 </td>
               </tr>
             ))}

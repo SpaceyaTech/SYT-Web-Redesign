@@ -11,7 +11,7 @@ function BlogsHeader({ pageType }) {
     "hover:bg-[#009975] text-center text-[#009975] hover:text-white rounded-lg border py-3 px-5 sm:px-8 w-full sm:w-52 border-[#009975] focus:outline-none";
 
   return (
-    <div className="flex flex-col sm:flex-row space-y-4 items-start sm:items-center justify-between mb-8">
+    <div className="flex flex-col sm:flex-row space-y-4 items-start sm:items-center justify-between mb-14">
       <h1 className="text-2xl items-start sm:items-center">
         {pageType === "CreatePost" ? "Create Post" : "Manage Posts"}
       </h1>
