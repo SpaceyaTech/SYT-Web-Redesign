@@ -30,12 +30,13 @@ const organizationDetails = {
 // ))}
 
 // </div>
-function ImpactSection({ organizers }) {
+function ImpactSection({ organizers, city, country }) {
   // content-between md:px-20
+  const aboutChapter = `The SpaceYaTech ${city} Chapter is led by a capable team of developers and designers from ${country}.`
 
   return (
     <div className="">
-      {/* <DetailsContainer {...organizationDetails} /> */}
+      <DetailsContainer title="Organizers" paragraph={aboutChapter} />
 
       <div className="flex overflow-auto px-6 pb-12 mt-6 md:grid md:grid-cols-1 md:gap-x-2 md:gap-y-10 lg:grid-cols-5 xl:gap-x-8">
         {organizers.map(({ id, name, role, image }) => (
