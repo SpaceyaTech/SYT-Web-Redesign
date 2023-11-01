@@ -1,27 +1,30 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Events({ events, isVertical }) {
   // const navigate = useNavigate();
 
   // box-shadow: 0px 4px 10px 0px #04080D0D;
-  const verticalContainer = 'mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8';
-  const horizontalContainer = 'flex overflow-auto';
+  const verticalContainer =
+    "mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
+  const horizontalContainer = "flex overflow-auto";
 
-  const verticalWrapper = 'max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto';
-  const horizontalWrapper = 'mr-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700';
+  const verticalWrapper =
+    "max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto";
+  const horizontalWrapper =
+    "mr-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
-      {events.map(({
-        img, title, date, location, mode, id
-      }) => {
-        const buttonColor = mode === 'virtual'
-          ? 'bg-red-800 hover:bg-red-800'
-          : 'bg-blue-800 hover:bg-blue-800';
+      {events.map(({ img, title, date, location, mode, id }) => {
+        const buttonColor =
+          mode === "virtual"
+            ? "bg-red-800 hover:bg-red-800"
+            : "bg-blue-800 hover:bg-blue-800";
         return (
           <div
             className={isVertical ? verticalWrapper : horizontalWrapper}
-            style={{ 'box-shadow': '0px 4px 10px 0px #04080D0D' }}
+            style={{ boxShadow: "0px 4px 10px 0px #04080D0D" }}
+            key={id}
           >
             <a href="#">
               <img className="rounded-t-lg w-full" src={img} alt="" />
@@ -46,7 +49,6 @@ function Events({ events, isVertical }) {
                   {mode}
                 </button>
               </Link>
-
             </div>
           </div>
         );
@@ -57,6 +59,6 @@ function Events({ events, isVertical }) {
 
 Events.defaultProps = {
   isVertical: true,
-}
+};
 
 export default Events;

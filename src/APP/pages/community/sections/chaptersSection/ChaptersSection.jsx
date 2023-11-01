@@ -32,7 +32,7 @@ function ChaptersSection() {
     <div className="my-2">
       <div
         className="h-full items-center justify-center content-between bg-cover bg-no-repeat py-40 md:py-32 text-center p-6"
-        style={{ "background-image": `url(${vector1}` }}
+        style={{ backgroundImage: `url(${vector1}` }}
       >
         <div className="text-white">
           <h2 className="mb-5 text-3xl font-medium">SpaceYaTech Chapters</h2>

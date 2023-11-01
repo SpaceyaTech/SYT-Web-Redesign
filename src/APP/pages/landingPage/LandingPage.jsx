@@ -9,6 +9,7 @@ import {
   StatsSection,
   TestimonialSection,
 } from "./sections";
+
 import ScrollToTop from "../../../utilities/ScrollToTop";
 
 function LandingPage() {

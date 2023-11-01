@@ -1,11 +1,17 @@
-import Header2 from "../../components/Header2";
-import HeroSection from "./sections/HeroSection";
-import LeadershipSection from "./sections/LeadershipSection";
-import MissionVisionSection from "./sections/MissionVisionSection";
-import PartnerCTA from "./sections/PartnerCTA";
-import Footer2 from "../../components/Footer2";
+import { useEffect } from "react";
+
+import {
+  HeroSection,
+  LeadershipSection,
+  MissionVisionSection,
+  PartnerCTA,
+} from "./sections";
 
 function AboutUs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="text-[#323433]">
       <HeroSection />
