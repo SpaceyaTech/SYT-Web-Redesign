@@ -9,10 +9,12 @@ import {
   StatsSection,
   TestimonialSection,
 } from "./sections";
+import ScrollToTop from "../../../utilities/ScrollToTop";
 
 function LandingPage() {
   return (
     <div className="text-blue">
+      <ScrollToTop />
       <HeroSection3 />
       <FeatureSection />
       <Services />

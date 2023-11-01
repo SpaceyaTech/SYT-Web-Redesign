@@ -37,18 +37,18 @@ const Header2 = () => {
 
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
-          to="/community"
-          onClick={() => setShowNavlinks(false)}
-        >
-          Community
-        </Link>
-
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/about-us"
           onClick={() => setShowNavlinks(false)}
         >
           About Us
+        </Link>
+
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/community"
+          onClick={() => setShowNavlinks(false)}
+        >
+          Community
         </Link>
 
         <Link
@@ -103,16 +103,16 @@ const Header2 = () => {
 
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
-          to="/community"
+          to="/about-us"
         >
-          Community
+          About Us
         </Link>
 
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
-          to="/about-us"
+          to="/community"
         >
-          About Us
+          Community
         </Link>
 
         <Link
