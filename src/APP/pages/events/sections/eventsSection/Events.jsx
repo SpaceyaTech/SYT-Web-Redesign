@@ -1,3 +1,4 @@
+import { parse, format } from 'date-fns';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -13,7 +14,7 @@ function Events({ events, isVertical }) {
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({
-        id, name, date, location, mode, category, poster
+        id, name, date, location, mode, category, poster, city, start_time
       }) => {
         const buttonColor = mode === 'Virtual'
           ? 'bg-red-800 hover:bg-red-800'
@@ -34,10 +35,10 @@ function Events({ events, isVertical }) {
                 </h5>
               </Link>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-40 whitespace-nowrap">
-                {date}
+                {format(new Date(date), 'EEE, MMM d, yyyy')} {format(parse(start_time, 'HH:mm:ss', new Date()), 'h:mm a')} EAT
               </p>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {location}
+                {location} {mode==="Physical" && <> • {city}</>}
               </p>
                 <Link to={`/events/${id}`}>
                 <button
