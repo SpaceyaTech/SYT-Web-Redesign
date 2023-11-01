@@ -79,7 +79,7 @@ function PodcastSection() {
 
       {/* Cards */}
       <div
-        className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto"
+        className="px-2 py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto"
         style={{
           gridTemplateColumns: "max-content",
           gridTemplateRows: "minmax(520px, 300px)",
@@ -105,7 +105,7 @@ function PodcastSection() {
         rel="noopener noreferrer"
         className="text-[#00664E] text-xl font-bold mx-auto"
       >
-        View All 
+        View All
       </a>
     </section>
   );
