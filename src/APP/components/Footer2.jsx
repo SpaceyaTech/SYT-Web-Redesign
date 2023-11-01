@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import React, { Link } from "react-router-dom";
 
 import logo from "../../assets/images/sytLogo.png";
 import backup from "../../assets/images/backup.svg";
 import { linkedin, twitter, spotify } from "../../assets/images/socials";
 
-const Footer2 = () => {
+function Footer2() {
   const now = new Date();
   const year = now.getFullYear();
 
@@ -104,8 +104,10 @@ const Footer2 = () => {
 
             <div className="flex flex-col gap-5 text-sm font-light">
               <p className="text-sm left-6">
-                Subscribe to our newsletter to get your <br />
-                weekly dose of news, updates, tips and even <br />
+                Subscribe to our newsletter to get your
+                <br />
+                weekly dose of news, updates, tips and even
+                <br />
                 special offers
               </p>
 
@@ -129,7 +131,9 @@ const Footer2 = () => {
 
       <div className="sm:mt-14 mt-10">
         <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy; {year} SpaceYaTech | All Rights Reserved.
+          &copy;
+          {year}
+          SpaceYaTech | All Rights Reserved.
         </h1>
       </div>
 
@@ -140,6 +144,6 @@ const Footer2 = () => {
       />
     </footer>
   );
-};
+}
 
 export default Footer2;
