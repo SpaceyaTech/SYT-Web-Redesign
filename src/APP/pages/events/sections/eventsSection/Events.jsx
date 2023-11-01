@@ -6,13 +6,14 @@ function Events({ events, isVertical }) {
 
   // box-shadow: 0px 4px 10px 0px #04080D0D;
   const verticalContainer =
-    "mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
-  const horizontalContainer = "flex overflow-auto";
+    "my-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
+  const horizontalContainer = "flex overflow-auto my-6";
 
+  // Event Card classes
   const verticalWrapper =
-    "max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto";
-  const horizontalWrapper =
-    "mr-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700";
+    "max-w-sm bg-white border border-gray-200 rounded-lg h-auto";
+  // const horizontalWrapper = "m-6 bg-white rounded-lg w-60";
+
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events.map(({ img, title, date, location, mode, id }) => {
@@ -23,33 +24,32 @@ function Events({ events, isVertical }) {
         return (
           <div
             key={id}
-            className={isVertical ? verticalWrapper : horizontalWrapper}
-            style={{ boxShadow: "0px 4px 10px 0px #04080D0D" }}
+            // className={isVertical ? verticalWrapper : horizontalWrapper}
+            className="m-6 bg-white rounded-lg w-72"
+            // style={{ boxShadow: "0px 4px 10px 0px #04080D0D" }}
+            style={{
+              boxShadow:
+                "0px 4px 10px 0px rgba(4, 8, 13, 0.05), 0px 2px 4px 0px rgba(4, 8, 13, 0.25)",
+            }}
           >
-            <Link to="#">
-              <img className="rounded-t-lg w-full" src={img} alt="" />
-            </Link>
-            <div className="p-5">
-              <Link to="#">
-                <h5 className="mb-2 text-base font-bold tracking-tight text-gray-900 dark:text-white">
-                  {title}
-                </h5>
-              </Link>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-40 whitespace-nowrap">
-                {date}
-              </p>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {location}
-              </p>
-              <Link to={`/events/${id}`}>
+            <Link to={`/events/${id}`} className="cursor-pointer">
+              <img className="rounded-t-lg w-full" src={img} alt={title} />
+
+              <div className="p-5 text-[#323433]">
+                <h5 className="mb-2 text-sm font-semibold">{title}</h5>
+
+                <p className="mb-3 font-semibold text-xs whitespace-nowrap">
+                  {date}
+                </p>
+                <p className="mb-3 font-normal text-xs">{location}</p>
                 <button
                   type="button"
-                  className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2`}
+                  className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-xs px-3 py-1 text-center mr-2 mb-2`}
                 >
                   {mode}
                 </button>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         );
       })}
