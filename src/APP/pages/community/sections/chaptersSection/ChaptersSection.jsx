@@ -20,7 +20,7 @@ function ChaptersSection() {
         });
       } catch (error) {
         //Handle error
-        console.error("Problem fetchin chapters:", error);
+        console.error("Problem fetching chapters:", error);
       }
     };
 
