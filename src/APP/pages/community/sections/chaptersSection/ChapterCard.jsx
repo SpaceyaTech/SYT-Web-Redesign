@@ -17,7 +17,7 @@ function ChapterCard({ id, country, city, name, members, banner }) {
       <p className="text-base text-center leading-6">{members} members</p>
       <Link to={`/chapter/${id}`}>
         <button className="py-2 px-12 border-2 border-solid my-8 rounded-lg flex items-center justify-center text-xs capitalize transition-all duration-300 ease-in hover:text-white hover:bg-[#009975]">
-          EXPLORE
+          JOIN
         </button>
       </Link>
     </div>
