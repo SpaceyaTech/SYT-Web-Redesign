@@ -2,13 +2,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/sytLogo.png";
 import backup from "../../assets/images/backup.svg";
-import {
-  facebook,
-  instagram,
-  linkedin,
-  twitter,
-  spotify,
-} from "../../assets/images/socials";
+import { linkedin, twitter, spotify } from "../../assets/images/socials";
 
 const Footer2 = () => {
   const now = new Date();
