@@ -1,4 +1,5 @@
-import React, { Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/sytLogo.png";
 import backup from "../../assets/images/backup.svg";
