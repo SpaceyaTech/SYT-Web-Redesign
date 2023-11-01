@@ -24,8 +24,12 @@ const Header2 = () => {
 
       {/* mobile navlinks */}
       <nav
-        className="flex-col items-start gap-8 text-base absolute top-[90px] left-0 bg-white w-full h-[480px] z-[1] p-5 pl-12"
-        style={showNavlinks ? { display: "flex" } : { display: "none" }}
+        className="flex flex-col items-start justify-start gap-6 text-base absolute top-[90px] left-0 bg-white border-b w-full h-fit z-[1] p-5 pl-12"
+        style={
+          showNavlinks
+            ? { display: "flex", height: "calc(100vh - 90px)" }
+            : { display: "none" }
+        }
       >
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
@@ -51,7 +55,7 @@ const Header2 = () => {
           Community
         </Link>
 
-        <Link
+        {/* <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
           onClick={() => setShowNavlinks(false)}
@@ -89,7 +93,7 @@ const Header2 = () => {
           onClick={() => setShowNavlinks(false)}
         >
           Donate
-        </Link>
+        </Link> */}
       </nav>
 
       {/* navlinks */}
@@ -115,7 +119,7 @@ const Header2 = () => {
           Community
         </Link>
 
-        <Link
+        {/* <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
         >
@@ -147,7 +151,7 @@ const Header2 = () => {
           to="/donate"
         >
           Donate
-        </Link>
+        </Link> */}
       </nav>
     </header>
   );
