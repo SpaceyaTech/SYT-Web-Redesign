@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import BlogsHeader from "../../components/blogs/BlogsHeader";
 
 function ManagePosts() {
+  const { auth } = useAuth();
   const [isError, setError] = useState(null);
   const [Posts, setPosts] = useState([]);
 
@@ -23,6 +26,10 @@ function ManagePosts() {
   useEffect(() => {
     getAllPosts();
   }, []);
+
+  if (auth?.access) {
+    return <Navigate to="/admin" />;
+  }
 
   return (
     <div className="max-w-[1328px] mx-auto h-screen">

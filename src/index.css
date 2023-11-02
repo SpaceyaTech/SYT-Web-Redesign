@@ -130,6 +130,32 @@
   .bg-blog-image {
     background-image: url("../src/assets/images/blogs-page/blogBg.png");
   }
+
+  /* React-quill custom styles */
+  .quill .ql-toolbar {
+    @apply bg-white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .ql-custom :focus {
+    outline: #9c529d;
+  }
+  .ql-container {
+    @apply bg-white placeholder:text-neutral-gray;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    max-height: 300px;
+    overflow-y: hidden;
+  }
+  .quill.ql-error .ql-toolbar {
+    border-bottom: 1px solid red;
+  }
+
+  .quill.ql-error .ql-container {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+  }
 }
 /* =======
 @import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");

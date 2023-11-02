@@ -1,33 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Listbox, Transition } from "@headlessui/react";
+import { Navigate, useNavigate } from "react-router-dom";
+import ReactQuill from "react-quill";
 import BlogsHeader from "../../components/blogs/BlogsHeader";
-
-const categories = [
-  {
-    id: 1,
-    name: "Tech Communities",
-  },
-  {
-    id: 3,
-    name: "Software Development",
-  },
-  {
-    id: 4,
-    name: "DevOps",
-  },
-  {
-    id: 5,
-    name: "Frontend Engineering",
-  },
-];
+import useAuth from "../../../hooks/useAuth";
+import "react-quill/dist/quill.snow.css";
 
 function CreatePost() {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const { auth } = useAuth();
+  const [categories, setCategories] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [body, setBody] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState();
+  const [isError, setError] = useState(null);
+  const navigate = useNavigate();
 
+  const getAllCategories = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/blog/category`
+      );
+
+      setCategories(response.data);
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/blog/create`,
+        {
+          title,
+          description,
+          body,
+          category: selectedCategory.id,
+        },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      console.log("Created blog successful ", response);
+      navigate("/admin/blogs/manage-posts");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  if (auth?.access) {
+    return <Navigate to="/admin" />;
+  }
   return (
     <div className="max-w-[1328px] mx-auto h-screen px-4">
       <BlogsHeader pageType="CreatePost" />
-      <form className="mb-4 sm:mb-16">
+      <form className="mb-4 sm:mb-16" onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-12">
           <div className="flex flex-col gap-6 sm:gap-12 w-full">
             {/* <Listbox
@@ -122,10 +156,10 @@ function CreatePost() {
               name="category"
               className="w-full max-w-lg px-6 h-10 border border-solid border-[#7F7A83] rounded focus:outline-none focus:ring focus:ring-[#009975] text-base"
               value={selectedCategory}
-              onChange={setSelectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
               placeholder="Select Category"
             >
-              {categories.map(({ id, name }) => (
+              {categories?.map(({ id, name }) => (
                 <option key={id} value={name}>
                   {name}
                 </option>
@@ -133,10 +167,11 @@ function CreatePost() {
             </select>
             <input
               type="text"
-              name="heading"
+              name="title"
               className="w-full max-w-lg px-6 h-10 bg-white border border-solid shadow-sm border-[#7F7A83] rounded focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block sm:text-sm focus:ring"
-              placeholder="Type Heading"
-              // value="Deploying and Managing Applications with Kubernetes"
+              placeholder="Add Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="flex flex-col gap-6 sm:gap-12 w-full items-end">
@@ -155,22 +190,28 @@ function CreatePost() {
               name="description"
               className="w-full max-w-lg px-6 h-10 bg-white border border-solid shadow-sm border-[#7F7A83] rounded focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block sm:text-sm focus:ring"
               placeholder="Description"
-              // value="Deploying and Managing Applications with Kubernetes"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
         </div>
-        <textarea
-          type="text"
-          name="body"
-          className="w-full h-96 mt-6 sm:mt-16 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block rounded-md sm:text-sm focus:ring-1"
-          placeholder="Body"
-          // value=""
-        />
+        <div className="w-full h-96 my-6 sm:my-16">
+          <ReactQuill
+            placeholder="body"
+            theme="snow"
+            value={body}
+            onChange={setBody}
+            className="ql-custom"
+            style={{
+              height: "100%",
+              fontSize: "14px",
+            }}
+          />
+        </div>
       </form>
       <button
         type="submit"
         className="bg-[#009975] mb-20 text-center float-right text-white rounded-lg border-0 py-3 px-5 sm:px-8 w-full sm:w-56 hover:bg-white hover:border hover:border-[#009975] hover:text-[#009975] focus:outline-none"
-        // onClick={}
       >
         Publish Post
       </button>
