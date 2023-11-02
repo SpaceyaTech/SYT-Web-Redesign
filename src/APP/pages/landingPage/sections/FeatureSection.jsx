@@ -51,7 +51,7 @@ function FeatureSection() {
                   </p>
                 </div>
                 <Link
-                  to="/resources"
+                  to="/"
                   preventScrollReset={true}
                   className="mt-3 text-[#009975] inline-flex items-center font-semibold"
                 >
@@ -96,7 +96,7 @@ function FeatureSection() {
                 </div>
 
                 <Link
-                  to="/blogs"
+                  to="/"
                   preventScrollReset={true}
                   className="mt-3 text-[#009975] inline-flex items-center font-semibold"
                 >
@@ -146,7 +146,7 @@ function FeatureSection() {
                   </p>
                 </div>
                 <Link
-                  to="/products"
+                  to="/"
                   preventScrollReset={true}
                   className="mt-3 text-[#009975] inline-flex items-center font-semibold"
                 >
