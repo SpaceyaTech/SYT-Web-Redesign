@@ -38,7 +38,7 @@ function Events({ events, isVertical }) {
                 {format(new Date(date), 'EEE, MMM d, yyyy')} {format(parse(start_time, 'HH:mm:ss', new Date()), 'h:mm a')} EAT
               </p>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                {location} {mode==="Physical" && <> • {city}</>}
+                {location} {mode.toLowerCase()==="physical" && <> • {city}</>}
               </p>
                 <Link to={`/events/${id}`}>
                 <button
