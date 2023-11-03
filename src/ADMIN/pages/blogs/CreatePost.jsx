@@ -61,6 +61,7 @@ function CreatePost() {
   return (
     <div className="max-w-[1328px] mx-auto h-screen px-4">
       <BlogsHeader pageType="CreatePost" />
+      {isError && <p>{isError.message}</p>}
       <form className="mb-4 sm:mb-16" onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-12">
           <div className="flex flex-col gap-6 sm:gap-12 w-full">
