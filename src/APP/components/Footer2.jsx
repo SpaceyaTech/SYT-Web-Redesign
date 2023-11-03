@@ -8,6 +8,7 @@ import {
   youtube,
   spotify,
 } from "../../assets/images/socials";
+import { Link } from "react-router-dom";
 
 const Footer2 = () => {
   var now = new Date();
@@ -59,9 +60,9 @@ const Footer2 = () => {
             </h2>
 
             <ul className="flex flex-col gap-5 list-none text-sm font-light">
-              <li>About Us</li>
+              <li><Link to="/about-us">About Us</Link></li>
               <li>FAQs</li>
-              <li>Community</li>
+              <li><Link to="/community">Community</Link></li>
             </ul>
           </div>
 
@@ -71,8 +72,9 @@ const Footer2 = () => {
             </h2>
 
             <ul className="flex flex-col gap-5 list-none text-sm font-light">
-              <li>Jobs</li>
-              <li>Events</li>
+              {/* To be restored once the jobs section is implemented */}
+              {/* <li>Jobs</li> */}
+              <li><Link to="/allevents">Events</Link></li>
               <li>Mentorship</li>
             </ul>
           </div>
