@@ -3,26 +3,11 @@ import React, { useState, useEffect } from "react";
 import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
 import { fetchResourcesData } from "./data";
+import { useQuery } from "react-query";
 
 function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
-  const [resourceTypesState, setResourceTypesState] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const resourcesData = await fetchResourcesData();
-        setResourceTypesState((prevState) => {
-          return prevState = resourcesData;
-        });
-      } catch (error) {
-        // Handle error
-        console.error("Problem fetching resource data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data: resourceTypes, status } = useQuery("resourcetypes", () => fetchResourcesData());
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -31,7 +16,10 @@ function ResourcesSection() {
 
   return (
     <>
-      {resourceTypesState ? (
+    { status === "error" && <p>Error loading resource categories!</p> }
+    { status === "loading" && <p>Loading resource categories...</p> }
+    { status === "success" && (
+      <>
         <div className="flex flex-col gap-12">
           <div className="flex self-stretch flex-row mx-auto border-[#CBCDCC] border-2 rounded-[30px] px-4">
             <input
@@ -50,15 +38,14 @@ function ResourcesSection() {
           </div>
 
           <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
-            {resourceTypesState.map((resource) => (
+            {resourceTypes.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} />
             ))}
           </div>
         </div>
-      ) : (
-        <div>Loading resources...</div>
-      )}
-    </>
+      </>
+    )}
+  </>
   );
 }
 
