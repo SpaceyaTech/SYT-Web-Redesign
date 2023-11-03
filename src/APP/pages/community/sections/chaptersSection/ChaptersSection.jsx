@@ -43,11 +43,11 @@ function ChaptersSection() {
           <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">
             {chapters.map(({ location, members, image, id }) => (
               <ChapterCard
+                key={id}
                 location={location}
                 members={members}
                 image={image}
                 id={id}
-                key={id}
               />
             ))}
           </div>

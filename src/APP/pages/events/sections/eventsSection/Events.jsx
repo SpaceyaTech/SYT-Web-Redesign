@@ -1,10 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Events({ events, isVertical }) {
-  // const navigate = useNavigate();
-
-  // box-shadow: 0px 4px 10px 0px #04080D0D;
   const verticalContainer =
     "my-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
   const horizontalContainer = "flex overflow-auto my-6";
@@ -12,7 +9,7 @@ function Events({ events, isVertical }) {
   // Event Card classes
   const verticalWrapper =
     "max-w-sm bg-white border border-gray-200 rounded-lg h-auto";
-  // const horizontalWrapper = "m-6 bg-white rounded-lg w-60";
+  const horizontalWrapper = "m-6 bg-white rounded-lg w-72";
 
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
@@ -24,9 +21,7 @@ function Events({ events, isVertical }) {
         return (
           <div
             key={id}
-            // className={isVertical ? verticalWrapper : horizontalWrapper}
-            className="m-6 bg-white rounded-lg w-72"
-            // style={{ boxShadow: "0px 4px 10px 0px #04080D0D" }}
+            className={isVertical ? verticalWrapper : horizontalWrapper}
             style={{
               boxShadow:
                 "0px 4px 10px 0px rgba(4, 8, 13, 0.05), 0px 2px 4px 0px rgba(4, 8, 13, 0.25)",

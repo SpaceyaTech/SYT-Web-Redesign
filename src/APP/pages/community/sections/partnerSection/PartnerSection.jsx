@@ -26,11 +26,11 @@ function PartnerSection() {
           join courtesy of SpaceYaTech
         </p>
         <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">
-          {chapters.map(({ image, backgroundColor }, _i) => (
+          {chapters.map(({ image, backgroundColor }) => (
             <PartnerCard
+              key={crypto.randomUUID()}
               image={image}
               backgroundColor={backgroundColor}
-              key={_i}
             />
           ))}
         </div>
