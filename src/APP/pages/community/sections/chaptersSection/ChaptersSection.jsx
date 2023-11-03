@@ -1,35 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   vector1,
-  Nairobi,
-  Mombasa,
-  Tanzania,
+  // Nairobi,
+  // Mombasa,
+  // Tanzania,
 } from "../../../../../assets/images/community";
 import ChapterCard from "./ChapterCard";
 import { fetchChaptersData } from "./data";
+import { useQuery } from "react-query";
 
 function ChaptersSection() {
-  const [chaptersData, setChaptersData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const theData = await fetchChaptersData();
-        setChaptersData((prevState) => {
-          return prevState = theData;
-        });
-      } catch (error) {
-        //Handle error
-        console.error("Problem fetching chapters:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data: chaptersData, status } = useQuery("allchapters", () => fetchChaptersData());
 
   return (
     <>
-      {chaptersData ? (
+    {status === "error" && <p>Error!</p>}
+    {status === "loading" && <p>Loading...</p>}
+    {status === "success" && (
+      <>
         <div className="my-2">
           <div
             className="h-full items-center justify-center content-between bg-cover bg-no-repeat py-40 md:py-32 text-center p-6"
@@ -51,10 +39,10 @@ function ChaptersSection() {
             </div>
           </div>
         </div>
-      ) : (
-        <div>Loading chapters...</div>
-      )}
     </>
+    )
+  }
+  </>
   );
 }
 
