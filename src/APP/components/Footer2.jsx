@@ -5,6 +5,8 @@ import {
   instagram,
   linkedin,
   twitter,
+  youtube,
+  spotify,
 } from "../../assets/images/socials";
 
 const Footer2 = () => {
@@ -23,20 +25,28 @@ const Footer2 = () => {
 
           {/* socials */}
           <div className="flex items-center md:gap-5 gap-3 py-4">
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/spaceyatech" target="_blank" rel="noopener noreferrer">
               <img src={facebook} alt="facebook" className="w-7 h7" />
             </a>
 
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/spaceyatech/" target="_blank" rel="noopener noreferrer">
               <img src={instagram} alt="instagram" className="w-7 h7" />
             </a>
 
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/SpaceYaTech" target="_blank" rel="noopener noreferrer">
               <img src={twitter} alt="twiiter" className="w-7 h7" />
             </a>
 
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/spaceyatech/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="linkedin" className="w-7 h7" />
+            </a>
+
+            <a href="https://www.youtube.com/@spaceyatech" target="_blank" rel="noopener noreferrer">
+              <img src={youtube} alt="linkedin" className="w-7 h7" />
+            </a>
+
+            <a href="https://spoti.fi/3j3wCM2?r=lp" target="_blank" rel="noopener noreferrer">
+              <img src={spotify} alt="linkedin" className="w-7 h7" />
             </a>
           </div>
         </div>
