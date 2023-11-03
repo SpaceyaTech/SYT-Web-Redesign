@@ -7,66 +7,34 @@ import BlogsHeader from "../../components/blogs/BlogsHeader";
 import useAuth from "../../../hooks/useAuth";
 import "react-quill/dist/quill.snow.css";
 
-const categories = [
-  {
-    id: 1,
-    name: "Tech Communities",
-  },
-  {
-    id: 3,
-    name: "Software Development",
-  },
-  {
-    id: 4,
-    name: "DevOps",
-  },
-  {
-    id: 5,
-    name: "Frontend Engineering",
-  },
-  {
-    id: 6,
-    name: "Backend Engineering",
-  },
-  {
-    id: 7,
-    name: "Engineering",
-  },
-  {
-    id: 8,
-    name: "Cats",
-  },
-];
-
 function CreatePost() {
   const { auth } = useAuth();
-  // const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [body, setBody] = useState("");
   const [selectedCategory, setSelectedCategory] = useState();
-  const [isError, setError] = useState(null);
+  const [isError, setError] = useState();
   const navigate = useNavigate();
 
-  // const getAllCategories = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `${process.env.REACT_APP_API_BASE_URL}/blog/category`
-  //     );
+  const getAllCategories = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/blog/category`
+      );
 
-  //     setCategories(response.data);
-  //   } catch (error) {
-  //     setError(error.message);
-  //   }
-  // };
+      return response.data;
+    } catch (error) {
+      return error.message;
+    }
+  };
 
-  // useEffect(() => {
-  //   getAllCategories();
-  // }, []);
+  useEffect(() => {
+    getAllCategories().then(setCategories).catch(setError);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_API_BASE_URL}/blog/create`,
@@ -74,7 +42,7 @@ function CreatePost() {
           title,
           description,
           body,
-          category: selectedCategory.id,
+          category: Number(selectedCategory),
         },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -93,7 +61,7 @@ function CreatePost() {
     <div className="max-w-[1328px] mx-auto h-screen px-4">
       <BlogsHeader pageType="CreatePost" />
       {isError && <p className="text-red-500 text-sm">{isError.message}</p>}
-      <form className="mb-4 sm:mb-16" onSubmit={handleSubmit}>
+      <form className="mb-4 sm:mb-16">
         <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-12">
           <div className="flex flex-col gap-6 sm:gap-12 w-full">
             {/* <Listbox
@@ -192,7 +160,7 @@ function CreatePost() {
               placeholder="Select Category"
             >
               {categories?.map(({ id, name }) => (
-                <option key={id} value={name}>
+                <option key={id} value={id}>
                   {name}
                 </option>
               ))}
@@ -244,6 +212,7 @@ function CreatePost() {
       <button
         type="submit"
         className="bg-[#009975] mb-20 text-center float-right text-white rounded-lg border-0 py-3 px-5 sm:px-8 w-full sm:w-56 hover:bg-white hover:border hover:border-[#009975] hover:text-[#009975] focus:outline-none"
+        onClick={handleSubmit}
       >
         Publish Post
       </button>
