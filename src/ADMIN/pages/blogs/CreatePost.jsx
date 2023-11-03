@@ -7,9 +7,40 @@ import BlogsHeader from "../../components/blogs/BlogsHeader";
 import useAuth from "../../../hooks/useAuth";
 import "react-quill/dist/quill.snow.css";
 
+const categories = [
+  {
+    id: 1,
+    name: "Tech Communities",
+  },
+  {
+    id: 3,
+    name: "Software Development",
+  },
+  {
+    id: 4,
+    name: "DevOps",
+  },
+  {
+    id: 5,
+    name: "Frontend Engineering",
+  },
+  {
+    id: 6,
+    name: "Backend Engineering",
+  },
+  {
+    id: 7,
+    name: "Engineering",
+  },
+  {
+    id: 8,
+    name: "Cats",
+  },
+];
+
 function CreatePost() {
   const { auth } = useAuth();
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [body, setBody] = useState("");
@@ -17,21 +48,21 @@ function CreatePost() {
   const [isError, setError] = useState(null);
   const navigate = useNavigate();
 
-  const getAllCategories = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}/blog/category`
-      );
+  // const getAllCategories = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `${process.env.REACT_APP_API_BASE_URL}/blog/category`
+  //     );
 
-      setCategories(response.data);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  //     setCategories(response.data);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  // };
 
-  useEffect(() => {
-    getAllCategories();
-  }, []);
+  // useEffect(() => {
+  //   getAllCategories();
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +92,7 @@ function CreatePost() {
   return (
     <div className="max-w-[1328px] mx-auto h-screen px-4">
       <BlogsHeader pageType="CreatePost" />
-      {isError && <p>{isError.message}</p>}
+      {isError && <p className="text-red-500 text-sm">{isError.message}</p>}
       <form className="mb-4 sm:mb-16" onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row justify-between gap-6 sm:gap-12">
           <div className="flex flex-col gap-6 sm:gap-12 w-full">
