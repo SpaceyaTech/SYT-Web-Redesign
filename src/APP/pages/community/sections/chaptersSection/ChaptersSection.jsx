@@ -14,8 +14,8 @@ function ChaptersSection() {
 
   return (
     <>
-    {status === "error" && <p>Error!</p>}
-    {status === "loading" && <p>Loading...</p>}
+    {status === "error" && <p>Error loading chapter details!</p>}
+    {status === "loading" && <p>Loading chapters...</p>}
     {status === "success" && (
       <>
         <div className="my-2">

@@ -14,8 +14,8 @@ function IndividualChapter() {
 
   return (
     <>
-      {status === "error" && <p>Error!</p>}
-      {status === "loading" && <p>Loading...</p>}
+      {status === "error" && <p>Error loading chapter details!</p>}
+      {status === "loading" && <p>Loading chapter details...</p>}
       {status === "success" && (
         <div>
         <WelcomeSection chapter={chapterData} />
