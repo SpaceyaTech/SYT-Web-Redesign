@@ -31,7 +31,6 @@ const BlogsWrapper = () => {
       { statusBlogsData === "loading" && <p>Loading blogs...</p> }
       { statusBlogsData === "success" && 
         <>
-        
         <div className="w-max overflow-scroll md:overflow-auto flex flex-row items-center gap-3">
         { statusBlogCategories === "error" && <p>Error loading blog categories!</p> }
         { statusBlogCategories === "loading" && <p>...</p> }
@@ -47,29 +46,27 @@ const BlogsWrapper = () => {
             ))
           ) : '')
         }
-        
       </div>
-
-        <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
-          {blogsData && Array.isArray(blogsData) ? (
-            blogsData.results.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))
-          ) : ''}
-        </div>
-        {blogsData.next === null &&
-        blogsData.previous === null ? (
-          ""
-        ) : (
-          <BlogPagination
-            count={blogsData.count}
-            next={blogsData.next}
-            previous={blogsData.previous}
-            current={page}
-            blogs_per_page={blogsData.results.length}
-            onPageChange={handlePageChange}
-          />
-        )}
+      <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
+        {blogsData && Array.isArray(blogsData.results) ? (
+          blogsData.results.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))
+        ) : ''}
+      </div>
+      {blogsData.next === null &&
+      blogsData.previous === null ? (
+        ""
+      ) : (
+        <BlogPagination
+          count={blogsData.count}
+          next={blogsData.next}
+          previous={blogsData.previous}
+          current={page}
+          blogs_per_page={blogsData.results.length}
+          onPageChange={handlePageChange}
+        />
+      )}
       </> }
     </div>
   );
