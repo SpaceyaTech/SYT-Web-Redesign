@@ -34,13 +34,12 @@ interface BlogCategory {
 }
 
 const fetchBlogCategories = async () => {
-    axios.get<BlogCategory[]>(`${process.env.REACT_APP_API_BASE_URL}/blog/category/`)
-    .then(res => {
-      return res.data;
-    }).catch(error => {
-      console.error("Error fetching blog categories:", error);
-      throw error;
-    });
+  try {
+    const response = await axios.get<BlogCategory[]>(`${process.env.REACT_APP_API_BASE_URL}/blog/category/`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching blog categories: ", error);
+  }
 }
 
 interface Blog {

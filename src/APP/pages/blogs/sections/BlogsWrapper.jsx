@@ -2,43 +2,19 @@ import React, { useState, useEffect } from "react";
 import { blogCat, fetchBlogCategories, fetchBlogsData } from "../data";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
+import { useQuery } from "react-query";
 
 const BlogsWrapper = () => {
   const [page, setPage] = useState(1);
-  const [blogsData, setBlogsData] = useState(null);
+  const { data: blogsData, status: statusBlogsData, refetch: refetchBlogsData } = useQuery("blogsdata", () => fetchBlogsData(page));
+  const { data: blogCategories, status: statusBlogCategories } = useQuery("blogcategories", () => fetchBlogCategories());
 
   useEffect(() => {
-    const fetchData = async (pageNumber) => {
-      try {
-        const theData = await fetchBlogsData(pageNumber);
-        setBlogsData((prevState) => {
-          return prevState = theData;
-        });
-      } catch (error) {
-        // Handle error
-        console.error("Problem fetching blogs:", error);
-      }
-    };
-    fetchData(page);
-  }, [page]);
+    refetchBlogsData();
+  }, [page])
 
   const handlePageChange = ({ index }) => {
-    setPage(index);
-  };
-
-  const FilterBtns = () => {
-    return (
-      <div className="w-max overflow-scroll md:overflow-auto flex flex-row items-center gap-3">
-        {blogCat.map((blog) => (
-          <span
-            key={blog.id}
-            className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-[#009975] hover:text-white active:bg-[#009975] active:text-white w-fit whitespace-normal"
-          >
-            {blog.cat}
-          </span>
-        ))}
-      </div>
-    );
+    setPage((prevState) => prevState=index);
   };
 
   const SearchResults = ({ searchText }) => {
@@ -51,31 +27,46 @@ const BlogsWrapper = () => {
 
   return (
     <div className="flex flex-col items-start md:items-center gap-8 md:gap-16 px-4 pt-4 xl:px-14 w-full mb-10 md:mb-40">
-      {blogsData ? (
+      { statusBlogsData === "error" && <p>Error loading blogs!</p> }
+      { statusBlogsData === "loading" && <p>Loading blogs...</p> }
+      { statusBlogsData === "success" && 
         <>
-          <FilterBtns />
-          <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
-            {blogsData.results.map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))}
-          </div>
-          {blogsData.next === null &&
-          blogsData.previous === null ? (
-            ""
-          ) : (
-            <BlogPagination
-              count={blogsData.count}
-              next={blogsData.next}
-              previous={blogsData.previous}
-              current={page}
-              blogs_per_page={blogsData.results.length}
-              onPageChange={handlePageChange}
-            />
-          )}
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+        
+        <div className="w-max overflow-scroll md:overflow-auto flex flex-row items-center gap-3">
+        { statusBlogCategories === "error" && <p>Error loading blog categories!</p> }
+        { statusBlogCategories === "loading" && <p>...</p> }
+        { statusBlogCategories === "success" &&
+          blogCategories.map((blog) => (
+            <span
+              key={blog.id}
+              className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-[#009975] hover:text-white active:bg-[#009975] active:text-white w-fit whitespace-normal"
+            >
+              {blog.name}
+            </span>
+          ))
+        }
+        
+      </div>
+
+        <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
+          {blogsData.results.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
+        </div>
+        {blogsData.next === null &&
+        blogsData.previous === null ? (
+          ""
+        ) : (
+          <BlogPagination
+            count={blogsData.count}
+            next={blogsData.next}
+            previous={blogsData.previous}
+            current={page}
+            blogs_per_page={blogsData.results.length}
+            onPageChange={handlePageChange}
+          />
+        )}
+      </> }
     </div>
   );
 };
