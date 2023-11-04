@@ -66,7 +66,6 @@ const fetchEvents = async(filter_array) => {
         });
 
         url += filter_string;
-        console.log(url)
     }
 
     try {

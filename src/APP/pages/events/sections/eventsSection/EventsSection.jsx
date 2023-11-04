@@ -12,22 +12,41 @@ import Events from './Events';
 // } from '../../../../../assets/images/community';
 import { fetchEventData } from '../../../community/sections/eventsSection/data';
 import { useQuery } from 'react-query';
+import { fetchCities } from '../../pages/data';
 
 function EventsSection({showTabs, showAllEventsLink}) {
   const [filters, setFilters] = useState({});
-  const { data: topEventsData, status } = useQuery("topevents", () => fetchEventData(filters));
+  const { data: topEventsData, status: statusTopEvents, refetch: refetchTopEvents } = useQuery("topevents", () => fetchEventData(filters));
+  const { data: topEventsCities, status: statusTopCities } = useQuery("topcities", () => fetchCities());
 
+  // To update the filters from the EventsUpdateSection sub-component
+  const updateCityFilter = (city) => {
+    setFilters((prevState) => { 
+      return {...prevState, city:city } 
+    });
+  }
+
+  useEffect(() => { refetchTopEvents() }, [filters]);
+  
   return (
     <>
-    {status === "error" && <p>Error!</p>}
-    {status === "loading" && <p>Loading...</p>}
-    {status === "success" && (
-      <div className="p-6">
-      <EventsUpdateSection showAllEventsLink={showAllEventsLink} />
-      {showTabs && <EventsTab />}
+    <div className="p-6">
+    {statusTopCities === "error" && <p>Error loading cities!</p>}
+    {statusTopCities === "loading" && <p>Loading cities...</p>}
+    {statusTopCities === "success" && (
+      <EventsUpdateSection cityFilter={filters} topEventsCities={topEventsCities} updateCityFilter={updateCityFilter} showAllEventsLink={showAllEventsLink} />
+    )}
+
+    {showTabs && <EventsTab />}
+
+    {statusTopEvents === "error" && <p>Error loading top events!</p>}
+    {statusTopEvents === "loading" && <p>Loading top events...</p>}
+    {statusTopEvents === "success" && (
+      <>
       <Events events={topEventsData.results} isVertical={false} />
+      </>
+    )}
     </div>
-    )};
     </>
   );
 }
