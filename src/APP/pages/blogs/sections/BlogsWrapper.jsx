@@ -47,14 +47,14 @@ const BlogsWrapper = () => {
           ) : '')
         }
       </div>
-      <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
+      {/* <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
         {blogsData && Array.isArray(blogsData.results) ? (
           blogsData.results.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))
         ) : ''}
-      </div>
-      {blogsData.next === null &&
+      </div> */}
+      {/* {blogsData.next === null &&
       blogsData.previous === null ? (
         ""
       ) : (
@@ -66,7 +66,7 @@ const BlogsWrapper = () => {
           blogs_per_page={blogsData.results.length}
           onPageChange={handlePageChange}
         />
-      )}
+      )} */}
       </> }
     </div>
   );
