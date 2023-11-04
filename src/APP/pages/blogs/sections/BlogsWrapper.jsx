@@ -54,10 +54,8 @@ const BlogsWrapper = () => {
           ))
         ) : ''}
       </div>
-      {blogsData.next === null &&
-      blogsData.previous === null ? (
-        ""
-      ) : (
+      { Array.isArray(blogsData) && blogsData && (blogsData.next !== null &&
+      blogsData.previous !== null) ? (
         <BlogPagination
           count={blogsData.count}
           next={blogsData.next}
@@ -66,7 +64,7 @@ const BlogsWrapper = () => {
           blogs_per_page={blogsData.results.length}
           onPageChange={handlePageChange}
         />
-      )}
+      ) : '' }
       </> }
     </div>
   );
