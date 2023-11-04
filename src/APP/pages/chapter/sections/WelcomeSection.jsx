@@ -14,7 +14,9 @@ function WelcomeSection({ chapter }) {
   };
 
   return (
-    <div
+    <>
+    {chapter ? (
+      <div
       className="bg-cover bg-no-repeat py-24 text-center"
       style={{ backgroundImage: `url(${chapter.banner}` }}
     >
@@ -196,6 +198,8 @@ function WelcomeSection({ chapter }) {
         </div>
       </div>
     </div>
+    ) : ''}
+    </>
   );
 }
 export default WelcomeSection;
