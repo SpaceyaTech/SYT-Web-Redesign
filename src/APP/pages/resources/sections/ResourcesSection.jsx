@@ -38,7 +38,7 @@ function ResourcesSection() {
           </div>
 
           <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
-            {resourceTypes.map((resource) => (
+            {resourceTypes && resourceTypes.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} />
             ))}
           </div>
