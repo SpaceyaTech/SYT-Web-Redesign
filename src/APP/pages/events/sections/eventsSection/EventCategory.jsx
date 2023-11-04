@@ -4,6 +4,7 @@ import { format, endOfWeek, add, sub } from 'date-fns';
 import { useQuery } from 'react-query';
 
 import { fetchEventsCategories, fetchEvents, fetchCities } from '../../pages/data';
+import filterRecentTime from './helpers/FilterRecentTime';
 
 function EventCategory() {
   const [filters, setFilters] = useState(null);
@@ -11,12 +12,15 @@ function EventCategory() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
 
+  // DATA Fetchers
   const { data: eventsCategories, status: statusEventsCategories } = useQuery("eventscategories", () => fetchEventsCategories());
   const { data: eventsCities, status: statusEventsCities } = useQuery("eventscities", () => fetchCities());
   const { data: events, status: statusEvents, refetch: refetchEvents } = useQuery("events", () => fetchEvents(filters));
 
+  // Monitor filters
   useEffect(() => { refetchEvents() }, [filters]);
 
+  // Handle filter by events categories
   const filterEventsCategory = (category) => {
     if( filters && filters.category == category) { return; }
 
@@ -24,53 +28,14 @@ function EventCategory() {
     setSelectedCategory((prevState) => { return prevState = category; });
   };
 
-  // Helper function for filtering dates below
-  const updateStateOnTime = (date1, date2) => {
-    setFilters((prevState) => {
+  // Handle filter by recent buttons
+  const filterRecents = (times) => {
+    setFilters((prevState) => { 
       return {
         ...prevState,
-        date:format(date1, 'yyyy-MM-dd').toString()+","+format(date2, 'yyyy-MM-dd').toString()
-      }
-    });
-  }
-
-  const filterRecentTime = (times) => {
-    const today = new Date();
-
-    switch(times) {
-      case 'today':
-        updateStateOnTime(today, today);
-        setSelectedRecentButton((prevState) => {return prevState = 'today'});
-        break;
-      case 'thisweek':
-        // Fetch from today to the last day of the week
-        updateStateOnTime(today, endOfWeek(today, { weekStartsOn: 1 }));
-        setSelectedRecentButton((prevState) => {return prevState = 'thisweek'});
-        break;
-      case 'weekend':
-        // For weekdays, fetch last day and previous of the last day
-        if (today.getDay() < 5){
-          const lastDay = endOfWeek(today, { weekStartsOn: 1 });
-          updateStateOnTime(sub(lastDay, { days: 1 }), lastDay);
-          // If it's saturday, fetch for that day and the following day
-        } else if (today.getDay() === 5) {
-          updateStateOnTime(today, endOfWeek(today, { weekStartsOn: 1 }));
-        } else {
-          // If it's sunday, fetch for that day
-          updateStateOnTime(today, today);
-        }
-        setSelectedRecentButton((prevState) => {return prevState = 'weekend'});
-        break;
-      case 'recent':
-        // Fetch for next 30 days
-        updateStateOnTime(today, add(today, { days: 30 }));
-        setSelectedRecentButton((prevState) => {return prevState = 'recent'});
-        break;
-      default:
-        // Fetch for next 90 days
-        updateStateOnTime(today, add(today, { days: 90 }));
-        break;
-    }
+        date:filterRecentTime(times)
+      }});
+    setSelectedRecentButton((prevState) => {return prevState = times });
   };
 
   const filterCities = (city) => {
@@ -78,6 +43,7 @@ function EventCategory() {
     setSelectedCity((prevState) => { return prevState = city });
   }
 
+  // Clear selected filters
   const clearEvents = (payload) => {
     switch(payload) {
       case 'recents':
@@ -151,16 +117,16 @@ function EventCategory() {
       </div>
       <br />
       <div className="pb-6 flex overflow-auto">
-        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'today' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full whitespace-nowrap`} onClick={() => filterRecentTime('today')}>
+        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'today' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full whitespace-nowrap`} onClick={() => filterRecents('today')}>
           Today
         </button>
-        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'thisweek' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`} onClick={() => filterRecentTime('thisweek')}>
+        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'thisweek' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`} onClick={() => filterRecents('thisweek')}>
           This week
         </button>
-        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'weekend' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium file:px-4 rounded-full ml-4 whitespace-nowrap`} onClick={() => filterRecentTime('weekend')}>
+        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'weekend' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium file:px-4 rounded-full ml-4 whitespace-nowrap`} onClick={() => filterRecents('weekend')}>
           This weekend
         </button>
-        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'recent' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`} onClick={() => filterRecentTime('recent')}>
+        <button className={`${selectedRecentButton !== null && selectedRecentButton == 'recent' ? 'bg-[#009975] text-white' :'bg-[#F7F7F7] text-[#4C4D4D]'} hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`} onClick={() => filterRecents('recent')}>
           Recent
         </button>
 

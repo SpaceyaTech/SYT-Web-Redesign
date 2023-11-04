@@ -26,6 +26,16 @@ function EventsSection({showTabs, showAllEventsLink}) {
     });
   }
 
+  // To update the recent filters from the EventsTab sub-component
+  const updateRecentFilter = (dateFilterString) => {
+    setFilters((prevState) => {
+      return {
+        ...prevState,
+        date:dateFilterString
+      }
+    });
+  }
+
   useEffect(() => { refetchTopEvents() }, [filters]);
   
   return (
@@ -37,7 +47,7 @@ function EventsSection({showTabs, showAllEventsLink}) {
       <EventsUpdateSection cityFilter={filters} topEventsCities={topEventsCities} updateCityFilter={updateCityFilter} showAllEventsLink={showAllEventsLink} />
     )}
 
-    {showTabs && <EventsTab />}
+    {showTabs && <EventsTab updateRecentFilter={updateRecentFilter} />}
 
     {statusTopEvents === "error" && <p>Error loading top events!</p>}
     {statusTopEvents === "loading" && <p>Loading top events...</p>}
