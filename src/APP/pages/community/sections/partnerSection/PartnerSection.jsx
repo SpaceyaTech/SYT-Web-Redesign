@@ -14,7 +14,7 @@ function PartnerSection() {
       <div className="text-[#323433]">
         <h2 className="mb-5 text-3xl font-medium">SpaceYaTech Partner Communities</h2>
         <p className="mb-10 text-base font-medium">We don’t gatekeep! Here are some awesome tech communities you can also join courtesy of SpaceYaTech</p>
-        <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">{chapters.map((chapter) => <PartnerCard {...chapter} />)}</div>
+        <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">{chapters.map((chapter, index) => <PartnerCard key={index} {...chapter} />)}</div>
       </div>
     </div>
   )
