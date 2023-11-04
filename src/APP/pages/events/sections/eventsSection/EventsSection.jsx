@@ -53,7 +53,12 @@ function EventsSection({showTabs, showAllEventsLink}) {
     {statusTopEvents === "loading" && <p>Loading top events...</p>}
     {statusTopEvents === "success" && (
       <>
-      <Events events={topEventsData.results} isVertical={false} />
+      {
+      topEventsData.count === 0 ? (
+        <p>No events found for the selected filter!</p>
+      ) : (
+        <Events events={topEventsData.results} isVertical={false} />
+      )}
       </>
     )}
     </div>

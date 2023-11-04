@@ -152,12 +152,19 @@ function EventCategory() {
     {statusEvents === "loading" && <p>Loading events...</p>}
     {statusEvents === "success" && (
       <>
-        <Events events={events.results} />
-        { events.next &&
-          <button className="bg-transparent self-center active:bg-green-600 active:text-white font-normal w-fit text-[#009975] py-2 px-4 md:px-28 border-2 border-[#009975] rounded my-12">
-          SEE MORE
-          </button> }
-      </> )}
+      {events.count === 0 ? (
+        <p>No events found for the selected filter!</p>
+      ) : (
+        <>
+          <Events events={events.results} />
+          { events.next &&
+            <button className="bg-transparent self-center active:bg-green-600 active:text-white font-normal w-fit text-[#009975] py-2 px-4 md:px-28 border-2 border-[#009975] rounded my-12">
+            SEE MORE
+            </button> }
+        </>
+      )}
+      </>
+       )}
     &nbsp;
   </div>
 )};
