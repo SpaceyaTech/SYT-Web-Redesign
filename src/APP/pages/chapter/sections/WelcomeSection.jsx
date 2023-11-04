@@ -13,10 +13,14 @@ function WelcomeSection({ chapter }) {
     navigate(-1);
   };
 
+  const websiteLink = chapter.socials.website ? chapter.socials.website : "#";
+  const facebookLink = chapter.socials.facebook ? chapter.socials.facebook : "#";
+  const instagramLink = chapter.socials.instagram ? chapter.socials.instagram : "#";
+  const twitterLink = chapter.socials.twitter ? chapter.socials.twitter : "#";
+  const linkedinLink = chapter.socials.linkedin ? chapter.socials.linkedin : "#";
+
   return (
-    <>
-    {chapter ? (
-      <div
+    <div
       className="bg-cover bg-no-repeat py-24 text-center"
       style={{ backgroundImage: `url(${chapter.banner}` }}
     >
@@ -51,7 +55,7 @@ function WelcomeSection({ chapter }) {
         </div>
         <div className="flex flex-row items-center justify-center ">
           <div className="mr-3">
-            <Link to={chapter.socials.website ? chapter.socials.website : "#"}>
+            <Link to={websiteLink}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -92,7 +96,7 @@ function WelcomeSection({ chapter }) {
           </div>
           <div className="mr-3">
             <Link
-              to={chapter.socials.facebook ? chapter.socials.facebook : "#"}
+              to={facebookLink}
             >
               <svg
                 width="36"
@@ -116,7 +120,7 @@ function WelcomeSection({ chapter }) {
           </div>
           <div className="mr-3">
             <Link
-              to={chapter.socials.instagram ? chapter.socials.instagram : "#"}
+              to={instagramLink}
             >
               <svg
                 width="36"
@@ -140,7 +144,7 @@ function WelcomeSection({ chapter }) {
             </Link>
           </div>
           <div className="mr-3">
-            <Link to={chapter.socials.twitter ? chapter.socials.twitter : "#"}>
+            <Link to={twitterLink}>
               <svg
                 width="36"
                 height="36"
@@ -163,9 +167,7 @@ function WelcomeSection({ chapter }) {
             </Link>
           </div>
           <div className="mr-3">
-            <Link
-              to={chapter.socials.linkedin ? chapter.socials.linkedin : "#"}
-            >
+            <Link to={linkedinLink} >
               <svg
                 width="36"
                 height="36"
@@ -198,8 +200,6 @@ function WelcomeSection({ chapter }) {
         </div>
       </div>
     </div>
-    ) : ''}
-    </>
   );
 }
 export default WelcomeSection;
