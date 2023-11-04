@@ -35,7 +35,7 @@ const BlogsWrapper = () => {
         { statusBlogCategories === "error" && <p>Error loading blog categories!</p> }
         { statusBlogCategories === "loading" && <p>...</p> }
         { statusBlogCategories === "success" &&
-          blogCategories && Array.isArray(blogCategories ? (
+          blogCategories && Array.isArray(blogCategories) ? (
             blogCategories.map((blog) => (
               <span
                 key={blog.id}
@@ -44,7 +44,7 @@ const BlogsWrapper = () => {
                 {blog.name}
               </span>
             ))
-          ) : '')
+          ) : ''
         }
       </div>
       {/* <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
