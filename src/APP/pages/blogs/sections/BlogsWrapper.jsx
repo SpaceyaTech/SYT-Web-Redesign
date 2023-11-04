@@ -36,22 +36,26 @@ const BlogsWrapper = () => {
         { statusBlogCategories === "error" && <p>Error loading blog categories!</p> }
         { statusBlogCategories === "loading" && <p>...</p> }
         { statusBlogCategories === "success" &&
-          blogCategories.map((blog) => (
-            <span
-              key={blog.id}
-              className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-[#009975] hover:text-white active:bg-[#009975] active:text-white w-fit whitespace-normal"
-            >
-              {blog.name}
-            </span>
-          ))
+          blogCategories && Array.isArray(blogCategories ? (
+            blogCategories.map((blog) => (
+              <span
+                key={blog.id}
+                className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-[#009975] hover:text-white active:bg-[#009975] active:text-white w-fit whitespace-normal"
+              >
+                {blog.name}
+              </span>
+            ))
+          ) : '')
         }
         
       </div>
 
         <div className="grid sm:grid-cols-2  gap-16 grid-cols-1">
-          {blogsData.results.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
-          ))}
+          {blogsData && Array.isArray(blogsData) ? (
+            blogsData.results.map((blog) => (
+              <BlogCard key={blog.id} blog={blog} />
+            ))
+          ) : ''}
         </div>
         {blogsData.next === null &&
         blogsData.previous === null ? (

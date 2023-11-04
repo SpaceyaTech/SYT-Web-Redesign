@@ -87,10 +87,12 @@ function EventCategory() {
           {statusEventsCategories === "error" && <p>Error loading events categories!</p>}
           {statusEventsCategories === "loading" && <p>Loading Events Categories...</p>}
           {statusEventsCategories === "success" && 
-            eventsCategories.map(({id, name}) => (
-              <button className={`hover:bg-blue-500 active:bg-blue-500 font-normal hover:text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate ${filters !== null && filters.category == name ? ' bg-blue-500 text-white' : ' text-[#323433]'}`} key={id} onClick={() => filterEventsCategory(name)}>
-                {name}
-              </button> )) }
+            eventsCategories && Array.isArray(eventsCategories) ? (
+              eventsCategories.map(({id, name}) => (
+                <button className={`hover:bg-blue-500 active:bg-blue-500 font-normal hover:text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate ${filters !== null && filters.category == name ? ' bg-blue-500 text-white' : ' text-[#323433]'}`} key={id} onClick={() => filterEventsCategory(name)}>
+                  {name}
+                </button> ))
+            ) : '' }
 
           { selectedCategory && 
           <a onClick={() => clearEvents('categories')} className='hover:text-red-800 hover:underline cursor-pointer align-baseline'>Clear Categories</a> }
@@ -102,7 +104,8 @@ function EventCategory() {
         { statusEventsCities === "success" && (
           <>
           <h2 className="text-base md:text-lg md:font-light text-[#323433] whitespace-nowrap">Events in</h2>
-          {eventsCities.cities.map((city, index) => (
+          {eventsCities && Array.isArray(eventsCities) ? (
+            eventsCities.cities.map((city, index) => (
               <button key={index} id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" className="text-blue-700 underline font-medium text-s px-2 py-2.5 text-center inline-flex items-center transition duration-150 ease-in-out" type="button" onClick={() => filterCities(city)}>
                 {city}
                 {' '}
@@ -110,7 +113,8 @@ function EventCategory() {
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                 </svg> */}
               </button>
-          ))}
+          ))
+          ) : ''}
           {selectedCity &&
           <span className="text-red-800 underline font-medium text-s px-2 py-2.5 text-center cursor-pointer" onClick={() => clearEvents('city')}>Clear City</span>}
           </> )}
