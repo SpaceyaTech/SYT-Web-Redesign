@@ -11,7 +11,8 @@ const fetchEventData = async (filter_array?: Filter) => {
 
         if (filter_array) {
             Object.keys(filter_array).forEach((key) => {
-                url += `&` + key + "=" + filter_array[key];
+                filter_array[key] !== null && 
+                (url += `&` + key + "=" + filter_array[key]);
             });
         }
         const response = await axios.get(url);
