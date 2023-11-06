@@ -1,5 +1,5 @@
-import React from 'react'
-import { community } from '../../../../assets/images/community';
+import React from "react";
+import { community } from "../../../../assets/images/community";
 
 function SearchSection() {
   // content-between md:px-20
@@ -7,11 +7,13 @@ function SearchSection() {
   return (
     <div
       className="bg-cover bg-no-repeat py-24 text-center"
-      style={{ 'background-image': `url(${community}` }}
+      style={{ backgroundImage: `url(${community}` }}
     >
       <div className="flex flex-col h-full items-center justify-center content-between md:px-20">
         <div className="text-white">
-          <h2 className="mb-10 text-lg md:text-3xl font-medium">SpaceYaTech Events</h2>
+          <h2 className="mb-10 text-lg md:text-3xl font-medium">
+            SpaceYaTech Events
+          </h2>
         </div>
         <div className="flex relative px-4 w-full md:w-3/5">
           <div className="relative w-full">
@@ -45,9 +47,8 @@ function SearchSection() {
           </div>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
 export default SearchSection;
