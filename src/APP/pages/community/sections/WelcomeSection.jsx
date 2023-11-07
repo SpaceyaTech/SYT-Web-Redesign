@@ -21,9 +21,9 @@ function WelcomeSection() {
             and grow for techies at all stages in their career.
           </p>
 
-          <p className="mb-20 text-base font-semibold underline">
+          {/* <p className="mb-20 text-base font-semibold underline">
             View Community Guidelines
-          </p>
+          </p> */}
 
           <div className="flex flex-col items-center justify-center md:flex-row">
             <a

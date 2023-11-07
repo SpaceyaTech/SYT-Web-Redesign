@@ -1,24 +1,43 @@
-import React from 'react'
-import WelcomeSection from '../sections/WelcomeSection';
-import AboutChapterSection from '../sections/AboutChapterSection';
-import UpcomingEventSection from '../sections/UpcomingEventSection';
-import ImpactSection from '../sections/ImpactSection';
-import OrganizersSection from '../sections/OrganizersSection';
-
+import { React } from "react";
+import { useParams } from "react-router-dom";
+import WelcomeSection from "../sections/WelcomeSection";
+import AboutChapterSection from "../sections/AboutChapterSection";
+import UpcomingEventSection from "../sections/UpcomingEventSection";
+import ImpactSection from "../sections/ImpactSection";
+import OrganizersSection from "../sections/OrganizersSection";
+import useIndividualChapterData from "../../../../hooks/Queries/chapter/useIndividualChapter";
 
 function IndividualChapter() {
-  // content-between md:px-20
+  const { id } = useParams();
+  const {
+    data: chapterData,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useIndividualChapterData(id);
 
   return (
-    <div>
-      <WelcomeSection />
-      <AboutChapterSection />
-      <UpcomingEventSection />
-      <ImpactSection />
-      <OrganizersSection />
-    </div>
-
-  )
+    <>
+      {isError && <p>Error loading chapter details!</p>}
+      {isLoading === "loading" && <p>Loading chapter details...</p>}
+      {isSuccess && (
+        <div>
+          <WelcomeSection chapter={chapterData} />
+          <AboutChapterSection chapter={chapterData} />
+          <UpcomingEventSection events={chapterData.events} />
+          <ImpactSection
+            members={chapterData.members}
+            events_count={chapterData.events_count}
+          />
+          <OrganizersSection
+            organizers={chapterData.organizers}
+            city={chapterData.city}
+            country={chapterData.country}
+          />
+        </div>
+      )}
+    </>
+  );
 }
 
 export default IndividualChapter;

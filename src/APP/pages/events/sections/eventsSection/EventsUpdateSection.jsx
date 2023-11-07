@@ -1,42 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function EventsUpdateSection({ showAllEventsLink }) {
+function EventsUpdateSection({
+  cityFilter,
+  topEventsCities,
+  updateCityFilter,
+  showAllEventsLink,
+}) {
   return (
     <div className="flex items-center justify-between my-4 ">
       <div className="flex flex-row items-center">
-        <h2 className="text-base md:text-lg md:font-light text-[#323433] whitespace-nowrap">
-          Upcoming events near
-        </h2>
-        {/* <button
-          id="dropdownDividerButton"
-          data-dropdown-toggle="dropdownDivider"
-          className="text-blue-700 underline font-medium text-s px-2 py-2.5 text-center inline-flex items-center transition duration-150 ease-in-out"
-          type="button"
-        >
-          Nairobi{" "}
-          <svg
-            className=" h-2.5 ml-2.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 "
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m1 1 4 4 4-4"
-            />
-          </svg>
-        </button> */}
-
-        <select className="text-blue-700 underline font-medium outline-none text-s px-1 py-2.5 text-center inline-flex items-center transition duration-150 ease">
-          <option value="Nairobi">Nairobi</option>
-          <option value="Mombasa">Mombasa</option>
-          <option value="Kisumu">Kisumu</option>
-        </select>
+        {topEventsCities && Array.isArray(topEventsCities.cities) ? (
+          <>
+            <h2 className="text-base md:text-lg md:font-light text-[#323433] whitespace-nowrap">
+              Events in
+            </h2>
+            {topEventsCities.cities.map((city, index) => (
+              <button
+                key={index}
+                id="dropdownDividerButton"
+                data-dropdown-toggle="dropdownDivider"
+                className="text-blue-700 underline font-medium text-s px-2 py-2.5 text-center inline-flex items-center transition duration-150 ease-in-out"
+                type="button"
+                onClick={() => {
+                  updateCityFilter(city);
+                }}
+              >
+                {city}{" "}
+                {/* <svg className=" h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 ">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+                  </svg> */}
+              </button>
+            ))}
+            {cityFilter.city && (
+              <span
+                className="text-red-800 underline font-medium text-s px-2 py-2.5 text-center cursor-pointer"
+                onClick={() => updateCityFilter("")}
+              >
+                Clear City
+              </span>
+            )}
+          </>
+        ) : (
+          ""
+        )}
       </div>
       <div>
         {showAllEventsLink && (

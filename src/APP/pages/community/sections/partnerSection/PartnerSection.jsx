@@ -22,8 +22,8 @@ function PartnerSection() {
           SpaceYaTech Partner Communities
         </h2>
         <p className="mb-10 text-base font-medium">
-          We don’t gatekeep! Here are some awesome tech communities you can also
-          join courtesy of SpaceYaTech
+          We don&apos;t gatekeep! Here are some awesome tech communities you can
+          also join courtesy of SpaceYaTech
         </p>
         <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">
           {chapters.map(({ image, backgroundColor }) => (
