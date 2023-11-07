@@ -5,25 +5,36 @@ import AboutChapterSection from "../sections/AboutChapterSection";
 import UpcomingEventSection from "../sections/UpcomingEventSection";
 import ImpactSection from "../sections/ImpactSection";
 import OrganizersSection from "../sections/OrganizersSection";
-import { fetchChapterData } from "./data";
-import { useQuery } from "react-query";
+import useIndividualChapterData from "../../../../hooks/Queries/chapter/useIndividualChapter";
 
 function IndividualChapter() {
   const { id } = useParams();
-  const { data: chapterData, status } = useQuery("onechapter", () => fetchChapterData(id));
+  const {
+    data: chapterData,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useIndividualChapterData(id);
 
   return (
     <>
-      {status === "error" && <p>Error loading chapter details!</p>}
-      {status === "loading" && <p>Loading chapter details...</p>}
-      {status === "success" && (
+      {isError && <p>Error loading chapter details!</p>}
+      {isLoading === "loading" && <p>Loading chapter details...</p>}
+      {isSuccess && (
         <div>
-        <WelcomeSection chapter={chapterData} />
-        <AboutChapterSection chapter={chapterData} />
-        <UpcomingEventSection events={chapterData.events} />
-        <ImpactSection members={chapterData.members} events_count={chapterData.events_count} />
-        <OrganizersSection organizers={chapterData.organizers} city={chapterData.city} country={chapterData.country} />
-      </div>
+          <WelcomeSection chapter={chapterData} />
+          <AboutChapterSection chapter={chapterData} />
+          <UpcomingEventSection events={chapterData.events} />
+          <ImpactSection
+            members={chapterData.members}
+            events_count={chapterData.events_count}
+          />
+          <OrganizersSection
+            organizers={chapterData.organizers}
+            city={chapterData.city}
+            country={chapterData.country}
+          />
+        </div>
       )}
     </>
   );

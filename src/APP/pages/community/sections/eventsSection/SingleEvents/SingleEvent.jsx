@@ -10,45 +10,45 @@ import React, { useEffect, useState } from "react";
 // } from "../../../../../../assets/images/community";
 import Events from "../../../../events/sections/eventsSection/Events";
 import { Link, useParams } from "react-router-dom";
-import { useQuery } from "react-query";
 import { parse, format } from "date-fns";
-import { fetchEvents, fetchOneEvent } from "../../../../events/pages/data";
+import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
+import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
 
-// className="bg-cover bg-no-repeat py-24 text-center"
 function SingleEvent() {
   React.useEffect(() => {
     window.scroll(0, 0);
   }, []);
 
-  const [ similarEvents, setSimilarEvents ] = useState({})
+  const [similarEvents, setSimilarEvents] = useState({});
 
   const { id } = useParams();
-  const { data: oneEvent, status: statusOneEvent } = useQuery("oneevent", () =>
-    fetchOneEvent(id)
-  );
-  
+  const { data: oneEvent, isLoading, isError, isSuccess } = useOneEvent(id);
+
   useEffect(() => {
-    if (typeof oneEvent !== 'undefined') {
+    if (typeof oneEvent !== "undefined") {
       const fetchData = async () => {
         const data = await fetchEvents({
           page_size: 5,
-          category: oneEvent.category.name
+          category: oneEvent.category.name,
         });
-        const similarEv = data.results.filter(event => event.id !== oneEvent.id);
+
+        const similarEv = data.results.filter(
+          (event) => event.id !== oneEvent.id
+        );
 
         setSimilarEvents((prevState) => {
-          return prevState=similarEv;
-        })
-      }
+          return (prevState = similarEv);
+        });
+      };
       fetchData();
     }
   }, [oneEvent]);
 
   return (
     <>
-      {statusOneEvent === "error" && <p>Error fetching event!</p>}
-      {statusOneEvent === "loading" && <p>Loading event...</p>}
-      {statusOneEvent === "success" && typeof oneEvent !== "undefined" ? (
+      {isError && <p>Error fetching event!</p>}
+      {isLoading && <p>Loading event...</p>}
+      {isSuccess && typeof oneEvent !== "undefined" ? (
         <div className="w-screen flex flex-col ">
           <div
             className="bg-cover bg-no-repeat py-24 px-30 h-full md:py-44"
@@ -56,9 +56,7 @@ function SingleEvent() {
           />
           <div className="px-20">
             <div className="flex flex-row justify-between pt-10 pb-2 ">
-              <h2>
-                {format(new Date(oneEvent.date), "EEE MMM d, yyyy")}
-              </h2>
+              <h2>{format(new Date(oneEvent.date), "EEE MMM d, yyyy")}</h2>
               <div className="flex flex-row justify-between ">
                 <div className="">
                   <svg
@@ -125,7 +123,18 @@ function SingleEvent() {
                   </div>
                   <div className="text-sm text-[#323433] font-light mb-6 ml-8">
                     <p>{format(new Date(oneEvent.date), "EEE MMM d, yyyy")}</p>
-                    <p>{format(parse(oneEvent.start_time, 'HH:mm:ss', new Date()), 'h:mm a')} - {format(parse(oneEvent.end_time, 'HH:mm:ss', new Date()), 'h:mm a')} EAT</p>
+                    <p>
+                      {format(
+                        parse(oneEvent.start_time, "HH:mm:ss", new Date()),
+                        "h:mm a"
+                      )}{" "}
+                      -{" "}
+                      {format(
+                        parse(oneEvent.end_time, "HH:mm:ss", new Date()),
+                        "h:mm a"
+                      )}{" "}
+                      EAT
+                    </p>
                   </div>
                 </div>
                 <div>
@@ -148,7 +157,10 @@ function SingleEvent() {
                       </p>
                     </div>
                     <div className="text-sm text-[#323433] font-light mb-6 ml-8">
-                      <p>{oneEvent.location} {oneEvent.mode==='Physical' && `, ${oneEvent.city}`}</p>
+                      <p>
+                        {oneEvent.location}{" "}
+                        {oneEvent.mode === "Physical" && `, ${oneEvent.city}`}
+                      </p>
                       <p className="underline">Set reminder</p>
                     </div>
                   </div>
@@ -160,10 +172,10 @@ function SingleEvent() {
                   This event is free
                 </p>
 
-                <Link to = {oneEvent.link}>
-                <button className="flex items-center justify-center h-6 text-white bg-[#009975]  font-medium rounded-md text-xs px-2.5 text-center w-full ">
-                  RSVP
-                </button>
+                <Link to={oneEvent.link}>
+                  <button className="flex items-center justify-center h-6 text-white bg-[#009975]  font-medium rounded-md text-xs px-2.5 text-center w-full ">
+                    RSVP
+                  </button>
                 </Link>
                 <div className="flex flex-row justify-center ">
                   <svg
