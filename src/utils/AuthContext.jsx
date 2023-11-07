@@ -27,7 +27,7 @@ export function AuthContextProvider({ children }) {
     setAuth(null);
   };
 
-  console.log("AUTHrityad", auth)
+  // console.log("AUTHrityad", auth)
 
   return (
     <AuthContext.Provider value={{ auth, setAuth, logout }}>

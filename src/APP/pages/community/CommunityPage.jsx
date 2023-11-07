@@ -1,11 +1,17 @@
-import React from "react";
-import WelcomeSection from "./sections/WelcomeSection";
+import React, { useEffect } from "react";
+import {
+  WelcomeSection,
+  ChaptersSection,
+  PartnerSection,
+  GallerySection,
+} from "./sections";
 import EventsSection from "../events/sections/eventsSection/EventsSection";
-import ChaptersSection from "./sections/chaptersSection/ChaptersSection";
-import PartnerSection from "./sections/partnerSection/PartnerSection";
-import GallerySection from "./sections/gallerySection/GallerySection";
 
 function CommunityPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-screen flex flex-col">
       <WelcomeSection />

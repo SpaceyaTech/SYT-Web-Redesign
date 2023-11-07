@@ -33,5 +33,4 @@ coverage
 
 # Ignore all HTML files:
 *.html
-
 .env

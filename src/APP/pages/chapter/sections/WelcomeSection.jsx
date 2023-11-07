@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { individualchapter } from "../../../../assets/images/community";
 
 function WelcomeSection({ chapter }) {
@@ -14,10 +14,16 @@ function WelcomeSection({ chapter }) {
   };
 
   const websiteLink = chapter.socials.website ? chapter.socials.website : "#";
-  const facebookLink = chapter.socials.facebook ? chapter.socials.facebook : "#";
-  const instagramLink = chapter.socials.instagram ? chapter.socials.instagram : "#";
+  const facebookLink = chapter.socials.facebook
+    ? chapter.socials.facebook
+    : "#";
+  const instagramLink = chapter.socials.instagram
+    ? chapter.socials.instagram
+    : "#";
   const twitterLink = chapter.socials.twitter ? chapter.socials.twitter : "#";
-  const linkedinLink = chapter.socials.linkedin ? chapter.socials.linkedin : "#";
+  const linkedinLink = chapter.socials.linkedin
+    ? chapter.socials.linkedin
+    : "#";
 
   return (
     <div
@@ -95,9 +101,7 @@ function WelcomeSection({ chapter }) {
             </Link>
           </div>
           <div className="mr-3">
-            <Link
-              to={facebookLink}
-            >
+            <Link to={facebookLink}>
               <svg
                 width="36"
                 height="36"
@@ -119,9 +123,7 @@ function WelcomeSection({ chapter }) {
             </Link>
           </div>
           <div className="mr-3">
-            <Link
-              to={instagramLink}
-            >
+            <Link to={instagramLink}>
               <svg
                 width="36"
                 height="36"
@@ -167,7 +169,7 @@ function WelcomeSection({ chapter }) {
             </Link>
           </div>
           <div className="mr-3">
-            <Link to={linkedinLink} >
+            <Link to={linkedinLink}>
               <svg
                 width="36"
                 height="36"
