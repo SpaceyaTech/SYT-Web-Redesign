@@ -16,7 +16,6 @@ function ChaptersSection() {
     isSuccess,
   } = useChaptersData();
 
-  console.log(chaptersData);
   return (
     <>
       {isError && <p>Error loading chapter details!</p>}

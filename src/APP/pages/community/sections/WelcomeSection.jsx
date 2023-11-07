@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { community } from "../../../../assets/images/community";
 
 function WelcomeSection() {
@@ -21,6 +20,10 @@ function WelcomeSection() {
             the tech industry and provides online communities to network, learn
             and grow for techies at all stages in their career.
           </p>
+
+          {/* <p className="mb-20 text-base font-semibold underline">
+            View Community Guidelines
+          </p> */}
 
           <div className="flex flex-col items-center justify-center md:flex-row">
             <a

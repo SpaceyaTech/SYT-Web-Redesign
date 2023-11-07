@@ -1,6 +1,7 @@
 import { parse, format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Events({ events, isVertical }) {
   const verticalContainer =
@@ -56,7 +57,7 @@ function Events({ events, isVertical }) {
                       <p className="mb-3 font-normal text-xs">
                         {location}{" "}
                         {mode.toLowerCase() === "physical" && (
-                          <span> • {city}</span>
+                          <span> •{city}</span>
                         )}
                       </p>
                       <button
@@ -80,4 +81,9 @@ export default Events;
 
 Events.defaultProps = {
   isVertical: true,
+};
+
+Events.propTypes = {
+  events: PropTypes.array.isRequired,
+  isVertical: PropTypes.bool.isRequired,
 };
