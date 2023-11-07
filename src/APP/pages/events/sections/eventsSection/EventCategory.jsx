@@ -157,7 +157,7 @@ function EventCategory() {
     {statusEvents === "success" && (
       <>
       {events.count === 0 ? (
-        <p>No events found for the selected filter!</p>
+        <p>No events found!</p>
       ) : (
         <>
           <Events events={events.results} />
