@@ -55,7 +55,7 @@ interface Events {
 
 
 const fetchEvents = async(filter_array) => {
-    const filters = ["chapter_id", "date", "city", "country", "category"];
+    // "chapter_id", "date", "city", "country", "category"
     let url = `${process.env.REACT_APP_API_BASE_URL}/events`;
 
     let filter_string = "";
@@ -77,6 +77,16 @@ const fetchEvents = async(filter_array) => {
     }
 }
 
+const fetchOneEvent = async (id) => {
+    try {
+      const results = await axios.get<Event>(`${process.env.REACT_APP_API_BASE_URL}/events/${id}`);
+      return results.data;
+    } catch (error) {
+      console.error("Error fetching event: ", error);
+      throw error;
+    }
+  }
+
 const fetchCities = async () => {
     try {
         const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/cities/`);
@@ -87,4 +97,4 @@ const fetchCities = async () => {
     }
 }
 
-export { fetchEventsCategories, fetchEvents, fetchCities };
+export { fetchEventsCategories, fetchEvents, fetchOneEvent, fetchCities };
