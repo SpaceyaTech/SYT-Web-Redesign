@@ -1,6 +1,9 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 function PartnerCard({ image, backgroundColor }) {
   return (
+    // Restore this after bringing back the JOIN button
+    // <div className="flex flex-col items-center  p-8 justify-between h-80 border-2 rounded-2xl" style={{ 'background-color': `${backgroundColor}` }}>
     <div
       className={`flex flex-col items-center p-8 justify-between h-80 border-2 rounded-2xl bg-[${backgroundColor}]`}
     >
@@ -16,3 +19,8 @@ function PartnerCard({ image, backgroundColor }) {
 }
 
 export default PartnerCard;
+
+PartnerCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+};

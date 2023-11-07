@@ -1,5 +1,7 @@
+import { parse, format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Events({ events, isVertical }) {
   const verticalContainer =
@@ -13,47 +15,75 @@ function Events({ events, isVertical }) {
 
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
-      {events.map(({ img, title, date, location, mode, id }) => {
-        const buttonColor =
-          mode === "virtual"
-            ? "bg-red-800 hover:bg-red-800"
-            : "bg-blue-800 hover:bg-blue-800";
-        return (
-          <div
-            key={id}
-            className={isVertical ? verticalWrapper : horizontalWrapper}
-            style={{
-              boxShadow:
-                "0px 4px 10px 0px rgba(4, 8, 13, 0.05), 0px 2px 4px 0px rgba(4, 8, 13, 0.25)",
-            }}
-          >
-            <Link to={`/events/${id}`} className="cursor-pointer">
-              <img className="rounded-t-lg w-full" src={img} alt={title} />
-
-              <div className="p-5 text-[#323433]">
-                <h5 className="mb-2 text-sm font-semibold">{title}</h5>
-
-                <p className="mb-3 font-semibold text-xs whitespace-nowrap">
-                  {date}
-                </p>
-                <p className="mb-3 font-normal text-xs">{location}</p>
-                <button
-                  type="button"
-                  className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-xs px-3 py-1 text-center mr-2 mb-2`}
+      {events && Array.isArray(events)
+        ? events.map(
+            ({
+              id,
+              name,
+              date,
+              location,
+              mode,
+              category,
+              img,
+              city,
+              start_time,
+            }) => {
+              const buttonColor =
+                mode === "Virtual"
+                  ? "bg-red-800 hover:bg-red-800"
+                  : "bg-blue-800 hover:bg-blue-800";
+              return (
+                <div
+                  key={id}
+                  className={isVertical ? verticalWrapper : horizontalWrapper}
+                  style={{
+                    boxShadow:
+                      "0px 4px 10px 0px rgba(4, 8, 13, 0.05), 0px 2px 4px 0px rgba(4, 8, 13, 0.25)",
+                  }}
                 >
-                  {mode}
-                </button>
-              </div>
-            </Link>
-          </div>
-        );
-      })}
+                  <Link to={`/events/${id}`} className="cursor-pointer">
+                    <img className="rounded-t-lg w-full" src={img} alt={name} />
+
+                    <div className="p-5 text-[#323433]">
+                      <h5 className="mb-2 text-sm font-semibold">{name}</h5>
+                      <p className="mb-3 font-semibold text-xs whitespace-nowrap">
+                        {format(new Date(date), "EEE, MMM d, yyyy")}{" "}
+                        {format(
+                          parse(start_time, "HH:mm:ss", new Date()),
+                          "h:mm a"
+                        )}{" "}
+                        EAT
+                      </p>
+                      <p className="mb-3 font-normal text-xs">
+                        {location}{" "}
+                        {mode.toLowerCase() === "physical" && (
+                          <span> •{city}</span>
+                        )}
+                      </p>
+                      <button
+                        type="button"
+                        className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-xs px-3 py-1 text-center mr-2 mb-2`}
+                      >
+                        {mode}
+                      </button>
+                    </div>
+                  </Link>
+                </div>
+              );
+            }
+          )
+        : ""}
     </div>
   );
 }
+
+export default Events;
 
 Events.defaultProps = {
   isVertical: true,
 };
 
-export default Events;
+Events.propTypes = {
+  events: PropTypes.array.isRequired,
+  isVertical: PropTypes.bool.isRequired,
+};

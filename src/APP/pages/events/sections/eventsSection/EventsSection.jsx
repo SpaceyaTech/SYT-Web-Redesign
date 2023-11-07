@@ -1,72 +1,85 @@
-import React from 'react';
-import EventsUpdateSection from './EventsUpdateSection';
-import EventsTab from './EventsTab'
-import Events from './Events';
-import {
-  community,
-  MasterBase,
-  mpesapayments,
-  techrecruiters,
-  mentorlst,
-  uxhiringafrica,
-} from '../../../../../assets/images/community';
+import React, { useEffect, useState } from "react";
+import EventsUpdateSection from "./EventsUpdateSection";
+import EventsTab from "./EventsTab";
+import Events from "./Events";
+// import {
+//   community,
+//   MasterBase,
+//   mpesapayments,
+//   techrecruiters,
+//   mentorlst,
+//   uxhiringafrica,
+// } from '../../../../../assets/images/community';
+import { useAllCities } from "../../../../../hooks/Queries/eventsSection/useEventCategories";
+import useTopEvents from "../../../../../hooks/Queries/eventsSection/useTopEvents";
 
-const events = [
-  {
-    img: MasterBase,
-    title: 'How to Master Database Engineering using SQL',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Twitter Spaces',
-    mode: 'virtual',
-    id: 1,
-  },
-  {
-    img: mentorlst,
-    title: 'Deploying and Managing Applications with Kubernetes',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Sarit Centre • Nairobi ',
-    mode: 'Physical',
-    id: 2,
-  },
-  {
-    img: mpesapayments,
-    title: 'How to Integrate MPESA Payments into Your Website or App',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: '#SYTTechTalks',
-    mode: 'virtual',
-    id: 3,
-  },
-  {
-    img: techrecruiters,
-    title:
-      'Insights and Advice from Tech Recruiters on Navigating the Job Market',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Twitter Spaces',
-    mode: 'virtual',
-    id: 4,
-  },
-  {
-    img: uxhiringafrica,
-    title: 'UX Hiring Africa: What Recruiters Look for When Hiring Designers',
-    date: 'Sat, May 6, 2023 8:00 PM EAT',
-    location: 'Twitter Spaces',
-    mode: 'virtual',
-    id: 5,
-  },
-];
-function EventsSection({showTabs, showAllEventsLink}) {
+function EventsSection({ showTabs, showAllEventsLink }) {
+  const [filters, setFilters] = useState({});
+  const {
+    data: topEventsData,
+    isLoading: isLoadingTopEvents,
+    isError: isErrorTopEvents,
+    isSuccess: isSuccessTopEvents,
+    refetch: refetchTopEvents,
+  } = useTopEvents(filters);
+
+  const {
+    data: topEventsCities,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useAllCities();
+
+  // To update the filters from the EventsUpdateSection sub-component
+  const updateCityFilter = (city) => {
+    setFilters((prevState) => ({ ...prevState, city }));
+  };
+
+  // To update the recent filters from the EventsTab sub-component
+  const updateRecentFilter = (dateFilterString) => {
+    setFilters((prevState) => ({
+      ...prevState,
+      date: dateFilterString,
+    }));
+  };
+
+  useEffect(() => {
+    refetchTopEvents();
+  }, [filters]);
+
   return (
     <div className="p-6">
-      <EventsUpdateSection showAllEventsLink={showAllEventsLink} />
-      {showTabs && <EventsTab />}
-      <Events events={events} isVertical={false} />
+      {isErrorTopEvents && <p>Error loading cities!</p>}
+      {isLoadingTopEvents && <p>Loading cities...</p>}
+      {isSuccessTopEvents && (
+        <EventsUpdateSection
+          cityFilter={filters}
+          topEventsCities={topEventsCities}
+          updateCityFilter={updateCityFilter}
+          showAllEventsLink={showAllEventsLink}
+        />
+      )}
+
+      {showTabs && <EventsTab updateRecentFilter={updateRecentFilter} />}
+
+      {isError && <p>Error loading top events!</p>}
+      {isLoading && <p>Loading top events...</p>}
+      {isSuccess && (
+        <>
+          {topEventsData?.count === 0 ? (
+            <p>No events found!</p>
+          ) : (
+            <Events events={topEventsData.results} isVertical={false} />
+          )}
+        </>
+      )}
     </div>
   );
 }
 
 EventsSection.defaultProps = {
   showTabs: false,
-  showAllEventsLink: false
-}
+  showAllEventsLink: false,
+};
 
 export default EventsSection;

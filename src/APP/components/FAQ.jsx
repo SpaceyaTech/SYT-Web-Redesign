@@ -62,8 +62,8 @@ const FAQ = () => {
                   : "&:not([data-te-collapse-collapsed]):text-primary"
               } ${
                 activeQuestion === index
-                  ? "box-shadow:inset_0_-1px_0_rgba(229,231,235)"
-                  : "&:not([data-te-collapse-collapsed]):box-shadow:inset_0_-1px_0_rgba(229,231,235)"
+                  ? "boxShadow:inset_0_-1px_0_rgba(229,231,235)"
+                  : "&:not([data-te-collapse-collapsed]):boxShadow:inset_0_-1px_0_rgba(229,231,235)"
               } dark:&:not([data-te-collapse-collapsed]):text-primary-400`}
               type="button"
               data-te-collapse-init

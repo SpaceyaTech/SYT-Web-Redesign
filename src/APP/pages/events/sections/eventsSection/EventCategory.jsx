@@ -1,134 +1,253 @@
-import React from "react";
-import {
-  MasterBase,
-  mpesapayments,
-  techrecruiters,
-  mentorlst,
-  uxhiringafrica,
-} from "../../../../../assets/images/community";
+import React, { useEffect, useState } from "react";
 import Events from "./Events";
-
-const categories = [
-  "DevOps",
-  "Software Development",
-  "Cloud Development",
-  "Software Design",
-  "Cyber Security",
-  "Software Development",
-  "Software Engineering",
-];
-
-const events = [
-  {
-    id: 1,
-    img: MasterBase,
-    title: "How to Master Database Engineering using SQL",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Twitter Spaces",
-    mode: "virtual",
-  },
-  {
-    id: 2,
-    img: mentorlst,
-    title: "Deploying and Managing Applications with Kubernetes",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Sarit Centre • Nairobi ",
-    mode: "Physical",
-  },
-  {
-    id: 3,
-    img: mpesapayments,
-    title: "How to Integrate MPESA Payments into Your Website or App",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "#SYTTechTalks",
-    mode: "virtual",
-  },
-  {
-    id: 4,
-    img: techrecruiters,
-    title:
-      "Insights and Advice from Tech Recruiters on Navigating the Job Market",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Twitter Spaces",
-    mode: "virtual",
-  },
-  {
-    id: 5,
-    img: uxhiringafrica,
-    title: "UX Hiring Africa: What Recruiters Look for When Hiring Designers",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Twitter Spaces",
-    mode: "virtual",
-  },
-  {
-    id: 6,
-    img: MasterBase,
-    title: "How to Master Database Engineering using SQL",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Twitter Spaces",
-    mode: "virtual",
-  },
-  {
-    id: 7,
-    img: mentorlst,
-    title: "Deploying and Managing Applications with Kubernetes",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Sarit Centre • Nairobi ",
-    mode: "Physical",
-  },
-  {
-    id: 8,
-    img: mpesapayments,
-    title: "How to Integrate MPESA Payments into Your Website or App",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "#SYTTechTalks",
-    mode: "virtual",
-  },
-  {
-    id: 9,
-    img: techrecruiters,
-    title:
-      "Insights and Advice from Tech Recruiters on Navigating the Job Market",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Twitter Spaces",
-    mode: "virtual",
-  },
-  {
-    id: 10,
-    img: uxhiringafrica,
-    title: "UX Hiring Africa: What Recruiters Look for When Hiring Designers",
-    date: "Sat, May 6, 2023 8:00 PM EAT",
-    location: "Twitter Spaces",
-    mode: "virtual",
-  },
-];
+import { format, endOfWeek, add, sub } from "date-fns";
+import filterRecentTime from "./helpers/FilterRecentTime";
+import {
+  useEventsCategories,
+  useAllEvents,
+  useAllCities,
+} from "../../../../../hooks/Queries/eventsSection/useEventCategories.jsx";
 
 function EventCategory() {
+  const [filters, setFilters] = useState(null);
+  const [selectedRecentButton, setSelectedRecentButton] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
+
+  // DATA Fetchers
+  const { data: eventsCategories, status: statusEventsCategories } =
+    useEventsCategories();
+
+  const { data: eventsCities, status: statusEventsCities } = useAllCities();
+  const {
+    data: events,
+    status: statusEvents,
+    refetch: refetchEvents,
+  } = useAllEvents(filters);
+
+  // Monitor filters
+  useEffect(() => {
+    refetchEvents();
+  }, [filters]);
+
+  // Handle filter by events categories
+  const filterEventsCategory = (category) => {
+    if (filters && filters.category == category) {
+      return;
+    }
+
+    setFilters((prevState) => {
+      return { ...prevState, category: category };
+    });
+    setSelectedCategory((prevState) => {
+      return (prevState = category);
+    });
+  };
+
+  // Handle filter by recent buttons
+  const filterRecents = (times) => {
+    setFilters((prevState) => {
+      return {
+        ...prevState,
+        date: filterRecentTime(times),
+      };
+    });
+    setSelectedRecentButton((prevState) => {
+      return (prevState = times);
+    });
+  };
+
+  const filterCities = (city) => {
+    setFilters((prevState) => {
+      return { ...prevState, city: city };
+    });
+    setSelectedCity((prevState) => {
+      return (prevState = city);
+    });
+  };
+
+  // Clear selected filters
+  const clearEvents = (payload) => {
+    switch (payload) {
+      case "recents":
+        setFilters((prevState) => {
+          const { date, ...rest } = prevState;
+          return rest;
+        });
+        setSelectedRecentButton((prevState) => {
+          return (prevState = null);
+        });
+        break;
+
+      case "categories":
+        setFilters((prevState) => {
+          const { category, ...rest } = prevState;
+          return rest;
+        });
+        setSelectedCategory((prevState) => {
+          return (prevState = null);
+        });
+        break;
+
+      case "city":
+        setFilters((prevState) => {
+          const { city, ...rest } = prevState;
+          return rest;
+        });
+        setSelectedCity((prevState) => {
+          return (prevState = null);
+        });
+        break;
+
+      default:
+        setFilters((prevState) => {
+          return (prevState = null);
+        });
+        setSelectedRecentButton((prevState) => {
+          return (prevState = null);
+        });
+        setSelectedCategory((prevState) => {
+          return (prevState = null);
+        });
+        setSelectedCity((prevState) => {
+          return (prevState = null);
+        });
+        break;
+    }
+  };
+
   return (
     <div className="flex flex-col px-6">
       <div className="flex flex-wrap flex-col">
         <h2 className="text-lg font-light text-[#323433] ">Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 py-6">
-          <button
-            className="bg-blue-500 active:bg-blue-500 font-normal text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate"
-            key="1"
-          >
-            Design
-          </button>
-          {categories.map((category, _i) => (
-            <button
-              className="bg-transparent hover:bg-blue-500 active:bg-blue-500 text-[#323433] font-normal hover:text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate"
-              key={_i}
+          {statusEventsCategories === "error" && (
+            <p>Error loading events categories!</p>
+          )}
+          {statusEventsCategories === "loading" && (
+            <p>Loading Events Categories...</p>
+          )}
+          {statusEventsCategories === "success" &&
+          eventsCategories &&
+          Array.isArray(eventsCategories)
+            ? eventsCategories.map(({ id, name }) => (
+                <button
+                  className={`hover:bg-blue-500 active:bg-blue-500 font-normal hover:text-white py-2 px-4 border border-[#323433] hover:border-transparent rounded w-full truncate ${
+                    filters !== null && filters.category == name
+                      ? " bg-blue-500 text-white"
+                      : " text-[#323433]"
+                  }`}
+                  key={id}
+                  onClick={() => filterEventsCategory(name)}
+                >
+                  {name}
+                </button>
+              ))
+            : ""}
+
+          {selectedCategory && (
+            <a
+              onClick={() => clearEvents("categories")}
+              className="hover:text-red-800 hover:underline cursor-pointer align-baseline"
             >
-              {category}
-            </button>
-          ))}
+              Clear Categories
+            </a>
+          )}
         </div>
+
+        <div className="flex flex-row items-center">
+          {statusEventsCities === "error" && <p>Error loading cities!</p>}
+          {statusEventsCities === "loading" && <p>Loading cities...</p>}
+          {statusEventsCities === "success" && (
+            <>
+              <h2 className="text-base md:text-lg md:font-light text-[#323433] whitespace-nowrap">
+                Events in
+              </h2>
+              {eventsCities && Array.isArray(eventsCities)
+                ? eventsCities.cities.map((city, index) => (
+                    <button
+                      key={index}
+                      id="dropdownDividerButton"
+                      data-dropdown-toggle="dropdownDivider"
+                      className="text-blue-700 underline font-medium text-s px-2 py-2.5 text-center inline-flex items-center transition duration-150 ease-in-out"
+                      type="button"
+                      onClick={() => filterCities(city)}
+                    >
+                      {city}{" "}
+                      {/* <svg className=" h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 ">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+                </svg> */}
+                    </button>
+                  ))
+                : ""}
+              {selectedCity && (
+                <span
+                  className="text-red-800 underline font-medium text-s px-2 py-2.5 text-center cursor-pointer"
+                  onClick={() => clearEvents("city")}
+                >
+                  Clear City
+                </span>
+              )}
+            </>
+          )}
+        </div>
+        <br />
+        <div className="pb-6 flex overflow-auto">
+          <button
+            className={`${
+              selectedRecentButton !== null && selectedRecentButton == "today"
+                ? "bg-[#009975] text-white"
+                : "bg-[#F7F7F7] text-[#4C4D4D]"
+            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full whitespace-nowrap`}
+            onClick={() => filterRecents("today")}
+          >
+            Today
+          </button>
+          <button
+            className={`${
+              selectedRecentButton !== null &&
+              selectedRecentButton == "thisweek"
+                ? "bg-[#009975] text-white"
+                : "bg-[#F7F7F7] text-[#4C4D4D]"
+            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`}
+            onClick={() => filterRecents("thisweek")}
+          >
+            This week
+          </button>
+          <button
+            className={`${
+              selectedRecentButton !== null && selectedRecentButton == "weekend"
+                ? "bg-[#009975] text-white"
+                : "bg-[#F7F7F7] text-[#4C4D4D]"
+            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium file:px-4 rounded-full ml-4 whitespace-nowrap`}
+            onClick={() => filterRecents("weekend")}
+          >
+            This weekend
+          </button>
+          <button
+            className={`${
+              selectedRecentButton !== null && selectedRecentButton == "recent"
+                ? "bg-[#009975] text-white"
+                : "bg-[#F7F7F7] text-[#4C4D4D]"
+            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`}
+            onClick={() => filterRecents("recent")}
+          >
+            Recent
+          </button>
+
+          {selectedRecentButton && (
+            <button
+              className={`bg-[#c4c2c2] text-white hover:bg-red-800 hover:text-white text-sm px-5 text-center inline-flex items-center h-8 font-medium py-2 rounded-full ml-4 whitespace-nowrap`}
+              onClick={() => clearEvents("recents")}
+            >
+              Clear
+            </button>
+          )}
+        </div>
+
         <div className="flex flex-row justify-between">
           <div>
-            <h2 className="text-lg font-light text-[#323433] ">
-              Events in Nairobi
-            </h2>
+            <h2 className="text-lg font-light text-[#323433] ">Events</h2>
           </div>
           <div className="flex flex-row">
             <svg
@@ -150,10 +269,25 @@ function EventCategory() {
           </div>
         </div>
       </div>
-      <Events events={events} />
-      <button className="bg-transparent self-center active:bg-green-600 active:text-white font-normal w-fit text-[#009975] py-2 px-4 md:px-28 border border-2 border-[#009975] rounded my-12">
-        SEE MORE
-      </button>
+      {statusEvents === "error" && <p>Error loading events!</p>}
+      {statusEvents === "loading" && <p>Loading events...</p>}
+      {statusEvents === "success" && (
+        <>
+          {events?.count === 0 ? (
+            <p>No events found!</p>
+          ) : (
+            <>
+              <Events events={events.results} />
+              {events.next && (
+                <button className="bg-transparent self-center active:bg-green-600 active:text-white font-normal w-fit text-[#009975] py-2 px-4 md:px-28 border-2 border-[#009975] rounded my-12">
+                  SEE MORE
+                </button>
+              )}
+            </>
+          )}
+        </>
+      )}
+      &nbsp;
     </div>
   );
 }

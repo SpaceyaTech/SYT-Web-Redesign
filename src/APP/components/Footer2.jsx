@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import logo from "../../assets/images/sytLogo.png";
 import backup from "../../assets/images/backup.svg";
 import { linkedin, twitter, spotify } from "../../assets/images/socials";
+import youtube from "../../assets/images/socials/youtube.svg";
 
 function Footer2() {
   const now = new Date();
@@ -49,6 +49,22 @@ function Footer2() {
             >
               <img src={linkedin} alt="linkedin" className="w-7 h7" />
             </a>
+
+            <a
+              href="https://www.youtube.com/@spaceyatech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={youtube} alt="linkedin" className="w-7 h7" />
+            </a>
+
+            <a
+              href="https://spoti.fi/3j3wCM2?r=lp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={spotify} alt="linkedin" className="w-7 h7" />
+            </a>
           </div>
         </div>
 
@@ -78,8 +94,9 @@ function Footer2() {
             </h2>
 
             <ul className="flex flex-col gap-5 list-none text-sm font-light">
-              <li>Jobs</li>
-              <li>Events</li>
+              //To be restored once the jobs section is implemented
+              //<li>Jobs</li>
+              <li><Link to="/allevents">Events</Link></li>
               <li>Mentorship</li>
             </ul>
           </div> */}
@@ -97,7 +114,7 @@ function Footer2() {
             </ul>
           </div> */}
         </div>
-        <div className="flex-2">
+        {/* <div className="flex-2">
           <div className="flex flex-col gap-8">
             <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
               Subscribe to our Newsletter
@@ -127,7 +144,7 @@ function Footer2() {
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="sm:mt-14 mt-10">
