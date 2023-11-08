@@ -54,21 +54,13 @@ function PartnerCTA() {
         </div>
         <div>
           <h3 className="font-semibold">Follow us on social media </h3>
-          <div className="flex items-center w-1/2 justify-between sm:justify-between py-4">
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={facebook} alt="facebook" className="w-7 h7" />
+          <div className="flex items-center w-1/2 gap-2 py-4">
+            <a href="https://x.com/SpaceYaTech" target="_blank" rel="noopener noreferrer">
+              <img src={twitter} alt="twitter" className="w-7 h-7" />
             </a>
 
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={instagram} alt="instagram" className="w-7 h7" />
-            </a>
-
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={twitter} alt="twitter" className="w-7 h7" />
-            </a>
-
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedin} alt="linkedin" className="w-7 h7" />
+            <a href="https://linkedin.com/company/spaceyatech" target="_blank" rel="noopener noreferrer">
+              <img src={linkedin} alt="linkedin" className="w-7 h-7" />
             </a>
           </div>
         </div>

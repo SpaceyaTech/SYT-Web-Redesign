@@ -23,23 +23,11 @@ function Footer2() {
           {/* socials */}
           <div className="flex items-center md:gap-5 gap-3 py-4">
             <a
-              href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
+              href="https://x.com/SpaceYaTech"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={spotify} alt="spotify" className="w-7 h7" />
-            </a>
-
-            {/* <a href="/" target="_blank" rel="noopener noreferrer">
-              <img src={instagram} alt="instagram" className="w-7 h7" />
-            </a> */}
-
-            <a
-              href="https://twitter.com/SpaceyaTech"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={twitter} alt="twiiter" className="w-7 h7" />
+              <img src={twitter} alt="twitter" className="w-7 h-7" />
             </a>
 
             <a
@@ -47,7 +35,7 @@ function Footer2() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={linkedin} alt="linkedin" className="w-7 h7" />
+              <img src={linkedin} alt="linkedin" className="w-7 h-7" />
             </a>
 
             <a
@@ -55,15 +43,15 @@ function Footer2() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={youtube} alt="linkedin" className="w-7 h7" />
+              <img src={youtube} alt="youtube" className="w-7 h-7" />
             </a>
 
             <a
-              href="https://spoti.fi/3j3wCM2?r=lp"
+              href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={spotify} alt="linkedin" className="w-7 h7" />
+              <img src={spotify} alt="spotify" className="w-7 h-7" />
             </a>
           </div>
         </div>
@@ -149,9 +137,9 @@ function Footer2() {
 
       <div className="sm:mt-14 mt-10">
         <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy;
-          {year}
-          SpaceYaTech | All Rights Reserved.
+          &copy;{" "}
+          {year}{" "}
+          SpaceYaTech | All Rights Reserved
         </h1>
       </div>
 
