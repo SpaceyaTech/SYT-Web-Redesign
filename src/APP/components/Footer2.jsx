@@ -143,11 +143,11 @@ function Footer2() {
         </h1>
       </div>
 
-      <img
+      {/* <img
         src={backup}
         alt="backup"
         className="h-12 w-12 object-contain absolute sm:bottom-14 bottom-0 right-10 cursor-pointer"
-      />
+      /> */}
     </footer>
   );
 }

@@ -1,65 +1,72 @@
-import { podImage1, podImage2 } from "../../../../assets/images/podcast";
+import {
+  RichardMulandi,
+  Balogun,
+  Saruni,
+  Vivian,
+  Jean,
+  Melody,
+  Kristin,
+} from "../../../../assets/images/podcast";
 import { PodcastCard } from "../../../components";
 
 const data = [
   {
     id: 1,
-    img: podImage1,
-    link: "https://open.spotify.com/episode/6GAhWxeZNuDtfQj76o7EhV?si=PFb994_WQzKw2qfXCtsrbQ",
-
-    title: "The Future of Fintech X Saruni Maina",
-    desc: "Join host Marlyn Mayienga in a captivating conversation with Saruni Maina as they dive into 'The Future of Fintech in Africa.",
+    img: RichardMulandi,
+    link: "https://open.spotify.com/episode/7hUJsdPdB0drnyNNTiYim2?si=idIGiZQBQdau9lEdh4Y8Rg",
+    title: "Product life-cycle with Product Head at SafeBoda",
+    description:
+      "The conversation wades into product-management-specific topics that you'd be interested in.",
   },
   {
     id: 2,
-    img: podImage2,
+    img: Balogun,
     link: "https://open.spotify.com/episode/4iHhYqBHMWjPTpOdm6F14z?si=JTp43JZoSgesogJi90X-xQ",
     title: "Tech Makers & Movers with PocketFood",
-    desc: "The story behind the branding, the success, and the challenges PocketFood has faced in delivering innovative food-tech solutions in Africa.",
+    description:
+      "The story behind the branding, the success, and the challenges PocketFood has faced in delivering innovative food-tech solutions in Africa.",
   },
   {
     id: 3,
-    img: podImage1,
-    link: "https://open.spotify.com/episode/1kfTpXwooNq98svRGSriPt?si=iFiuS_VKTzSmNVBc2PsjqA",
-    title:
-      "What it Takes to be a World-class SDE in Today's Market x Juma Allan",
-    desc: "Ever wanted to know what it takes to be a world-class SDE? Then you should come and listen to today's space.",
+    img: Melody,
+    link: "https://open.spotify.com/episode/7u24ofrYpk3umcCss9kgnw?si=0be796e136304358",
+    title: "Smart Cities and Sustainable Urban Developement in Africa",
+    description:
+      "Do you know the checklist for a smart city? Find out in this fun converasation with Fred, Marlyn and Melody.",
   },
   {
     id: 4,
-    img: podImage2,
-    link: "https://open.spotify.com/episode/4NtWmj2NrFl9LVFtVbA7T8?si=yabUkjcETZafbRPKz5kmMg",
-    title: "Bouncing Back from a Layoff - part 2",
-    desc: "Due to popular demand, @CharityKith and I shall be hosting @Sometkip to tell us how he thought he'd only be out for 3 months but ended up jobless for 8!",
+    img: Jean,
+    link: "https://open.spotify.com/episode/1F6ecP7YS8S1mhWdnuQ0DU?si=2a94751b4c034a02",
+    title: "Building a more inclusive Tech Industry in Africa",
+    description:
+      "Learn how to build and lead technical teams, applying development methodologies to design and ship software.",
   },
   {
     id: 5,
-    img: podImage1,
-    link: "https://open.spotify.com/episode/64dVAfEgahcUev5S0UjC2U?si=hsbFSKmWT8WJDarmkNPPOg",
-    title:
-      "Insights and Advice from Tech Recruiters on Navigating the Job Market",
-    desc: "Don't miss our upcoming Twitter Space, where top recruiters spill the tea on how to ace the job market.",
+    img: Saruni,
+    link: "https://open.spotify.com/episode/6GAhWxeZNuDtfQj76o7EhV?si=PFb994_WQzKw2qfXCtsrbQ",
+    title: "The Future of Fintech X Saruni Maina",
+    description:
+      "Join host Marlyn Mayienga in a captivating conversation with Saruni Maina as they dive into 'The Future of Fintech in Africa.",
   },
+
   {
     id: 6,
-    img: podImage2,
-    link: "https://open.spotify.com/episode/2vE4J2b4QuCqZgMZuRZGpW?si=8sD1AQKmTXKEZaS1MWOZ4w",
-    title: "Bootcamps, Computer Science Degrees and YouTube University",
-    desc: "Where does a CS degree win over boot camps and self-taught road maps, where do boot camps excel?",
+    img: Vivian,
+    link: "https://open.spotify.com/episode/0KBLGLilCC5X0SnM4eg9Ko?si=6c129ddf60914838",
+    title: "Digging into Website Hosting Sector",
+    description:
+      "Learn how the web development and hosting landscape in Kenya has changed over the past decade and how cloud hosting could disrupt it.",
   },
   {
     id: 7,
-    img: podImage1,
-    link: "https://open.spotify.com/episode/7hUJsdPdB0drnyNNTiYim2?si=idIGiZQBQdau9lEdh4Y8Rg",
-    title: "Product life-cycle with Product Head at SafeBoda",
-    desc: "The conversation wades into product-management-specific topics that you'd be interested in.",
-  },
-  {
-    id: 8,
-    img: podImage2,
-    link: "https://open.spotify.com/episode/5tILKOJk1NAVK8BN1C1NOB?si=83126b9c020c43b4",
-    title: "UX Africa: What Recruiters look for when Hiring Designers",
-    desc: "Don't miss out on this insightful episode if you're a Designer.",
+    img: Kristin,
+    link: "https://open.spotify.com/episode/1XblqFJZJUf9l1uWmkAcvD?si=9bf748e882b848ed",
+    title:
+      "Sustainable Entrepreneurship and the Goal to Impact 1 billion Entrepreneurs in Africa",
+    description:
+      "Listen to how Kristin is helping SMEs across Africa to get off the ground in a sustainable way.",
   },
 ];
 
@@ -86,13 +93,13 @@ function PodcastSection() {
           gridAutoColumns: "max-content",
         }}
       >
-        {data.map(({ id, img, desc, cat, title, link }) => (
+        {data.map(({ id, img, description, category, title, link }) => (
           <PodcastCard
             key={id}
             img={img}
-            cat={cat}
+            category={category}
             title={title}
-            desc={desc}
+            description={description}
             link={link}
           />
         ))}
