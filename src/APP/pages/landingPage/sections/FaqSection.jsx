@@ -1,8 +1,11 @@
-import FAQ from "../../../components/FAQ";
+import { FAQ } from "../../../components";
 /* eslint-disable react/no-unescaped-entities */
 function FaqSection() {
   return (
-    <section className="bg-[#00664E] body-font mx-auto w-full max-w-screen-2xl">
+    <section
+      className="bg-[#00664E] body-font mx-auto w-full max-w-screen-2xl"
+      id="faq"
+    >
       <div className="container px-5 py-8 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h2 className="text-xs text-[#BDF16D] tracking-widest font-medium title-font mb-1">
@@ -17,7 +20,6 @@ function FaqSection() {
           </p>
         </div>
         <FAQ />
-        
       </div>
     </section>
   );

@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { tools } from "../../../../assets/images/resources-page";
 
 import { arrowRight } from "../../../../assets/images/resources-page";
 
 const ResourceCard = ({ resource }) => {
-  const { img, title, desc } = resource;
+  const { id, name, description } = resource;
   return (
     <div className="flex flex-col items-center p-6 gap-3 border border-[#CBCDCC] rounded-2xl bg-white">
       <div className="p-4  rounded-full bg-[#F5FFFD]">
-        <img src={img} alt={title} className="w-12 h-12" />
+        <img src={tools} alt={name} className="w-12 h-12" />
       </div>
 
-      <h4 className="text-center text-lg font-medium capitalize">{title}</h4>
+      <h4 className="text-center text-lg font-medium capitalize">{name}</h4>
 
-      <p className="text-base font-normal text-center">{desc}</p>
+      <p className="text-base font-normal text-center">{description}</p>
 
       <Link
         to="/"

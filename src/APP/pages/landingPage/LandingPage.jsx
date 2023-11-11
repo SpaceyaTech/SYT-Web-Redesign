@@ -1,33 +1,29 @@
-/* eslint-disable no-unused-vars */
+import {
+  CTASection,
+  FaqSection,
+  FeatureSection,
+  // HeroSection2,
+  HeroSection3,
+  PodcastSection,
+  Services,
+  StatsSection,
+  TestimonialSection,
+} from "./sections";
 
-// import Footer from "../../components/Footer";
-// import Footer2 from "../../components/Footer2";
-// import Header from "../../components/Header";
-// import Header2 from "../../components/Header2";
-import CTASection from "./sections/CTASection";
-import FaqSection from "./sections/FaqSection";
-import FeatureSection from "./sections/FeatureSection";
-// import HeroSection from "./sections/HeroSection";
-import HeroSection2 from "./sections/HeroSection2";
-import Services from "./sections/Services";
-import StatsSection from "./sections/StatsSection";
-import TestimonialSection from "./sections/TestimonialSection";
+import ScrollToTop from "../../../utilities/ScrollToTop";
 
 function LandingPage() {
   return (
     <div className="text-blue">
-      {/* <Header /> */}
-      {/* <Header2 /> */}
-      <HeroSection2 />
-      {/* <HeroSection /> */}
+      <ScrollToTop />
+      <HeroSection3 />
       <FeatureSection />
       <Services />
+      <PodcastSection />
       <StatsSection />
       <TestimonialSection />
       <FaqSection />
       <CTASection />
-      {/* <Footer2 /> */}
-      {/* <Footer /> */}
     </div>
   );
 }
