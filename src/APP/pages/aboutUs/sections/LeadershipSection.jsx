@@ -1,5 +1,6 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import emailjs from "@emailjs/browser";
 
 import { Caroussel } from "../../../components";
 import { closeIcon } from "../../../../assets/images/icons";
@@ -8,6 +9,13 @@ import { buildComm } from "../../../../assets/images/aboutPage";
 
 function LeadershipSection() {
   const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const formRef = useRef();
 
   function closeModal() {
     setIsOpen(false);
@@ -17,6 +25,41 @@ function LeadershipSection() {
     setIsOpen(true);
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_rvx6y2h",
+        "template_8fq0b3l",
+        {
+          from_name: name,
+          to_name: "SYT Admin",
+          from_email: email,
+          to_email: "felix5olali@gmail.com",
+          message,
+        },
+        "maz5XYDLGqV1Eo4h7"
+      )
+      .then(
+        (result) => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon possible.");
+
+          console.log(result.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error.text);
+          alert("Sorry, something went wrong! 💀");
+        }
+      )
+      .finally(closeModal());
+  };
   return (
     <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl">
       <h1 className="md:text-3xl text-2xl font-semibold title-font text-[#323433] text-center">
@@ -91,7 +134,11 @@ function LeadershipSection() {
                           className="object-contain w-4 h-4"
                         />
                       </button>
-                      <form className="flex flex-col gap-6 w-full">
+                      <form
+                        className="flex flex-col gap-6 w-full"
+                        onSubmit={handleSubmit}
+                        ref={formRef}
+                      >
                         <Dialog.Title
                           as="h3"
                           className="text-lg font-medium leading-6 text-gray-900 pl-2"
@@ -103,27 +150,35 @@ function LeadershipSection() {
                           <input
                             type="text"
                             placeholder="Your name"
+                            required
                             className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                           />
                           <input
                             type="email"
                             placeholder="Your email"
+                            required
                             className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                           <textarea
                             cols="30"
                             rows="10"
                             placeholder="Your name"
+                            required
                             className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                           />
                         </div>
 
                         <button
                           type="submit"
                           className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-[#009975] px-6 py-3 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
-                          onClick={closeModal}
                         >
-                          Send message
+                          {loading ? "Sending message..." : "Send message"}
                         </button>
                       </form>
                     </Dialog.Panel>
