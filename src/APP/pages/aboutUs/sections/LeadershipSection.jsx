@@ -1,72 +1,30 @@
-import FredOuko from "../../../../assets/images/aboutPage/leadership/fred-ouko.png";
-import CatherineKiiru from "../../../../assets/images/aboutPage/leadership/catherine-kiiru.png";
-import JamesOtieno from "../../../../assets/images/aboutPage/leadership/james-otieno.png";
-import HudsonObai from "../../../../assets/images/aboutPage/leadership/hudson-obai.png";
-import IanMugenya from "../../../../assets/images/aboutPage/leadership/ian-mugenya.png";
-import MarlynMayienga from "../../../../assets/images/aboutPage/leadership/marlyn-mayienga.png";
-import SharonJebitok from "../../../../assets/images/aboutPage/leadership/sharon-jebitok.png";
-import WaithakaWaweru from "../../../../assets/images/aboutPage/leadership/waithaka-waweru.png";
-import JumaLawrence from "../../../../assets/images/aboutPage/leadership/juma-lawrence.png";
-import Caroussel from "../../../components/Caroussel";
-import BuildingCommunity from "../../../../assets/images/aboutPage/building-community.png";
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
-const LeadershipData = [
-  {
-    name: "Fred Ouko",
-    title: "Founder",
-    image: FredOuko,
-  },
-  {
-    name: "Catherine Kiiru",
-    title: "Dev Relations & Opensource Programs",
-    image: CatherineKiiru,
-  },
-  {
-    name: "James Otieno",
-    title: "Community Manager",
-    image: JamesOtieno,
-  },
-  {
-    name: "Hudson Obai",
-    title: "Head of Engineering",
-    image: HudsonObai,
-  },
-  {
-    name: "Ian Mugenya",
-    title: "Mentorship Program Lead",
-    image: IanMugenya,
-  },
-  {
-    name: "Marlyn Mayienga",
-    title: "Program Manager",
-    image: MarlynMayienga,
-  },
-  {
-    name: "Sharon Jebitok",
-    title: "Head of Chapters and Volunteers",
-    image: SharonJebitok,
-  },
-  {
-    name: "Waithaka Waweru",
-    title: "Dev Relations and Events",
-    image: WaithakaWaweru,
-  },
-  {
-    name: "Juma Lawrence",
-    title: "Head of Communication",
-    image: JumaLawrence,
-  },
-];
+import { Caroussel } from "../../../components";
+import { closeIcon } from "../../../../assets/images/icons";
+import { LeadershipData } from "../data";
+import { buildComm } from "../../../../assets/images/aboutPage";
 
 function LeadershipSection() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
   return (
     <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl">
       <h1 className="md:text-3xl text-2xl font-semibold title-font text-[#323433] text-center">
         Meet our leadership
       </h1>
 
-      <Caroussel CarousselData={LeadershipData}/>
-      
+      <Caroussel CarousselData={LeadershipData} />
+
       <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-8 md:pb-24 px-4 lg:px-14 xl:px-28 justify-between flex-col md:flex-row">
         <div className="space-y-4 md:w-1/2 mb-14">
           <h2 className="text-[#009975] items-center text-xl">
@@ -91,10 +49,92 @@ function LeadershipSection() {
             mentorship and connected with job opportunities where they can earn
             from their hard work.
           </p>
-          <button className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg">Partner with us</button>
+          <button
+            className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg"
+            type="button"
+            onClick={openModal}
+          >
+            Partner with us
+          </button>
+
+          {/* Email us Modal */}
+          <Transition appear show={isOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-10" onClose={closeModal}>
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className="fixed inset-0 bg-black/25" />
+              </Transition.Child>
+
+              <div className="fixed inset-0 overflow-y-auto">
+                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-xl bg-white p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
+                      <button type="button" onClick={closeModal}>
+                        <img
+                          src={closeIcon}
+                          alt="close"
+                          className="object-contain w-4 h-4"
+                        />
+                      </button>
+                      <form className="flex flex-col gap-6 w-full">
+                        <Dialog.Title
+                          as="h3"
+                          className="text-lg font-medium leading-6 text-gray-900 pl-2"
+                        >
+                          Write a message
+                        </Dialog.Title>
+
+                        <div className="flex flex-col gap-4">
+                          <input
+                            type="text"
+                            placeholder="Your name"
+                            className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                          />
+                          <input
+                            type="email"
+                            placeholder="Your email"
+                            className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                          />
+                          <textarea
+                            cols="30"
+                            rows="10"
+                            placeholder="Your name"
+                            className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                          />
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-[#009975] px-6 py-3 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+                          onClick={closeModal}
+                        >
+                          Send message
+                        </button>
+                      </form>
+                    </Dialog.Panel>
+                  </Transition.Child>
+                </div>
+              </div>
+            </Dialog>
+          </Transition>
         </div>
         <div className="md:w-1/2">
-          <img src={BuildingCommunity} alt="Space ya Tech Community"/>
+          <img src={buildComm} alt="Space ya Tech Community" />
         </div>
       </div>
     </section>
