@@ -1,18 +1,27 @@
 import React from "react";
 import {
-  google,
   google2,
-  nairobi1,
   nairobi2,
-  uiux,
   uiux2,
 } from "../../../../../assets/images/community";
 import PartnerCard from "./PartnerCard";
 
 const chapters = [
-  { image: google2, backgroundColor: "#FFFFFF" },
-  { image: uiux2, backgroundColor: "#000000" },
-  { image: nairobi2, backgroundColor: "#F5F3F3" },
+  {
+    image: google2,
+    backgroundColor: "#FFFFFF",
+    link: "https://opensource.google/",
+  },
+  {
+    image: uiux2,
+    backgroundColor: "#000000",
+    link: "https://uxkitchenke.com/",
+  },
+  {
+    image: nairobi2,
+    backgroundColor: "#F5F3F3",
+    link: "https://friends.figma.com/nairobi/",
+  },
 ];
 function PartnerSection() {
   return (
@@ -26,11 +35,12 @@ function PartnerSection() {
           also join courtesy of SpaceYaTech
         </p>
         <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">
-          {chapters.map(({ image, backgroundColor }) => (
+          {chapters.map(({ image, backgroundColor, link }) => (
             <PartnerCard
               key={crypto.randomUUID()}
               image={image}
               backgroundColor={backgroundColor}
+              link={link}
             />
           ))}
         </div>

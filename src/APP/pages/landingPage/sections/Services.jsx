@@ -152,7 +152,12 @@ function Services() {
                 mentored by experienced professionals and given guidance on
                 getting started in tech.
               </p>
-              <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
+              <a
+                className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer"
+                href="https://x.com/SpaceYaTech"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Learn More
                 <svg
                   fill="none"

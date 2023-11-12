@@ -50,13 +50,13 @@ function FeatureSection() {
                     way possible.
                   </p>
                 </div>
-                <Link
+                {/* <Link
                   to="/"
                   preventScrollReset={true}
                   className="mt-3 text-[#009975] inline-flex items-center font-semibold"
                 >
                   View Our resources
-                </Link>
+                </Link> */}
               </div>
             </div>
             {/* item 2  */}
@@ -95,13 +95,13 @@ function FeatureSection() {
                   </p>
                 </div>
 
-                <Link
+                {/* <Link
                   to="/"
                   preventScrollReset={true}
                   className="mt-3 text-[#009975] inline-flex items-center font-semibold"
                 >
                   View Our blogs
-                </Link>
+                </Link> */}
               </div>
             </div>
             {/* item 3  */}
@@ -145,13 +145,13 @@ function FeatureSection() {
                     exciting events and open-source projects
                   </p>
                 </div>
-                <Link
+                {/* <Link
                   to="/"
                   preventScrollReset={true}
                   className="mt-3 text-[#009975] inline-flex items-center font-semibold"
                 >
                   View Our projects
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

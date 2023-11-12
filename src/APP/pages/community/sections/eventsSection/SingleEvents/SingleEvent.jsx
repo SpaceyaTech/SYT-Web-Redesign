@@ -8,9 +8,9 @@ import React, { useEffect, useState } from "react";
 //   mentorlst,
 //   uxhiringafrica,
 // } from "../../../../../../assets/images/community";
-import Events from "../../../../events/sections/eventsSection/Events";
 import { Link, useParams } from "react-router-dom";
 import { parse, format } from "date-fns";
+import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
 import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
 
@@ -36,9 +36,7 @@ function SingleEvent() {
           (event) => event.id !== oneEvent.id
         );
 
-        setSimilarEvents((prevState) => {
-          return (prevState = similarEv);
-        });
+        setSimilarEvents((prevState) => (prevState = similarEv));
       };
       fetchData();
     }
