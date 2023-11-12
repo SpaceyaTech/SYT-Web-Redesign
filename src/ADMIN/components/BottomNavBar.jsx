@@ -12,7 +12,7 @@ function BottomNavBar() {
 
       <Link
         className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
-        to="/blogs"
+        to="/admin/blogs/manage-posts"
       >
         Blogs
       </Link>
