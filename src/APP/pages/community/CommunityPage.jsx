@@ -15,7 +15,7 @@ function CommunityPage() {
   return (
     <div className="w-screen flex flex-col">
       <WelcomeSection />
-      <EventsSection showAllEventsLink={true} />
+      <EventsSection showAllEventsLink />
       <ChaptersSection />
       <PartnerSection />
       <GallerySection />

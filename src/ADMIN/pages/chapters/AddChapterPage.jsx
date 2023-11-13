@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import StepIndicator from "../../components/chapters/StepIndicator";
-import AddChapterForm from "../../components/chapters/AddChapterForm";
+import StepIndicator from "../../components/StepIndicator";
+import AddChapterForm from "../../components/AddChapterForm";
 
 function AddChapterPage() {
   const [steps, setSteps] = React.useState([
