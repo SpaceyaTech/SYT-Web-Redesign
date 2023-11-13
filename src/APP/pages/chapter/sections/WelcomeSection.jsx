@@ -21,6 +21,12 @@ function WelcomeSection({ chapter }) {
   const goBack = () => {
     navigate(-1);
   };
+
+  const handleSubmit = () => {
+    console.log("Form Submitted");
+    closeModal();
+  };
+
   const websiteLink = chapter.socials.website ? chapter.socials.website : "#";
   const facebookLink = chapter.socials.facebook
     ? chapter.socials.facebook
@@ -213,7 +219,7 @@ function WelcomeSection({ chapter }) {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Join Chapter Modal Form */}
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -268,7 +274,7 @@ function WelcomeSection({ chapter }) {
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border border-transparent text-white hover:text-[#009975] hover:border-[#009975] bg-[#009975] px-4 py-2 text-sm font-medium hover:bg-white focus:outline-none focus-visible:ring-2"
-                      onClick={closeModal}
+                      onClick={handleSubmit}
                     >
                       Join
                     </button>
