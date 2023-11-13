@@ -28,8 +28,6 @@ import {
   AddChapterPage,
   AddEventPage,
   UpdateEventPage,
-  ManagePosts,
-  CreatePost,
 } from "../ADMIN";
 import {
   ForgotPassword,
@@ -149,14 +147,6 @@ const router = createBrowserRouter([
       {
         path: "/admin/events/update-event",
         element: <UpdateEventPage />,
-      },
-      {
-        path: "/admin/blogs/create-post",
-        element: <CreatePost />,
-      },
-      {
-        path: "/admin/blogs/manage-posts",
-        element: <ManagePosts />,
       },
     ],
   },
