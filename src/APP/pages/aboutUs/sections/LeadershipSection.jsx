@@ -14,6 +14,7 @@ function LeadershipSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const formRef = useRef();
 
@@ -39,26 +40,29 @@ function LeadershipSection() {
           from_email: email,
           to_email: "felix5olali@gmail.com",
           message,
+          phoneNumber,
         },
         "maz5XYDLGqV1Eo4h7"
       )
       .then(
         (result) => {
-          setLoading(false);
           alert("Thank you. I will get back to you as soon possible.");
 
           console.log(result.text);
+          setLoading(false);
           setName("");
           setEmail("");
           setMessage("");
+          setPhoneNumber("");
+          closeModal();
         },
         (error) => {
           setLoading(false);
           console.log(error.text);
+          closeModal();
           alert("Sorry, something went wrong! 💀");
         }
-      )
-      .finally(closeModal());
+      );
   };
   return (
     <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl">
@@ -126,7 +130,7 @@ function LeadershipSection() {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-xl bg-white p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
+                    <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-md bg-white p-4 md:p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
                       <button type="button" onClick={closeModal}>
                         <img
                           src={closeIcon}
@@ -135,38 +139,55 @@ function LeadershipSection() {
                         />
                       </button>
                       <form
-                        className="flex flex-col gap-6 w-full"
+                        className="flex flex-col gap-4 md:gap-6 w-full"
                         onSubmit={handleSubmit}
                         ref={formRef}
                       >
                         <Dialog.Title
                           as="h3"
-                          className="text-lg font-medium leading-6 text-gray-900 pl-2"
+                          className="text-base md:text-lg font-medium leading-5 md:leading-6 text-gray-900 pl-2"
                         >
-                          Write a message
+                          Let’s build something great together!
                         </Dialog.Title>
+
+                        <p className="pl-2 text-sm md:text-[15px] font-normal leading-5 md:leading-7 my-0 md:my-2">
+                          We are excited about the possibility of partnering
+                          with you. Share a few details with us and let’s
+                          explore how we can collaborate for mutual success{" "}
+                        </p>
 
                         <div className="flex flex-col gap-4">
                           <input
                             type="text"
-                            placeholder="Your name"
+                            placeholder="Company name"
                             required
-                            className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                            className="w-full outline-none text-base font-normal placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                           />
+
                           <input
                             type="email"
-                            placeholder="Your email"
+                            placeholder="Email address"
                             required
-                            className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                            className="w-full outline-none text-base font-normal placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                           />
+
+                          <input
+                            type="telephone"
+                            placeholder="Phone number"
+                            required
+                            className="w-full outline-none text-base font-normal placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                          />
+
                           <textarea
                             cols="30"
-                            rows="10"
-                            placeholder="Your name"
+                            rows="5"
+                            placeholder="Brief description of partnership proposal "
                             required
                             className="w-full outline-none text-base placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
                             value={message}
@@ -176,9 +197,9 @@ function LeadershipSection() {
 
                         <button
                           type="submit"
-                          className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-[#009975] px-6 py-3 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+                          className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-[#009975] px-8 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
                         >
-                          {loading ? "Sending message..." : "Send message"}
+                          {loading ? "Submitting..." : "Submit"}
                         </button>
                       </form>
                     </Dialog.Panel>
