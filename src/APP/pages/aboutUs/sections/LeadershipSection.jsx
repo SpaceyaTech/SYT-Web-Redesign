@@ -97,7 +97,7 @@ function LeadershipSection() {
             from their hard work.
           </p>
           <button
-            className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg"
+            className="font-semibold text-white bg-[#009975] hover:border-[#009975] hover:border hover:text-[#009975] hover:bg-transparent border py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg transition-all ease-in duration-150"
             type="button"
             onClick={openModal}
           >
