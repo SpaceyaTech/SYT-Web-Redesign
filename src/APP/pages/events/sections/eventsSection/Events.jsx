@@ -24,7 +24,7 @@ function Events({ events, isVertical }) {
               location,
               mode,
               category,
-              img,
+              poster,
               city,
               start_time,
             }) => {
@@ -42,7 +42,7 @@ function Events({ events, isVertical }) {
                   }}
                 >
                   <Link to={`/events/${id}`} className="cursor-pointer">
-                    <img className="rounded-t-lg w-full" src={img} alt={name} />
+                    <img className="rounded-t-lg w-full" src={poster} alt={name} />
 
                     <div className="p-5 text-[#323433]">
                       <h5 className="mb-2 text-sm font-semibold">{name}</h5>
