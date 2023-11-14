@@ -29,9 +29,13 @@ import {
   AddEventPage,
   UpdateEventPage,
 } from "../ADMIN";
-import { ForgotPassword, LogIn, ResetPassword, SignUp, Validate } from "../AUTH";
- 
-
+import {
+  ForgotPassword,
+  LogIn,
+  ResetPassword,
+  SignUp,
+  Validate,
+} from "../AUTH";
 
 const router = createBrowserRouter([
   {

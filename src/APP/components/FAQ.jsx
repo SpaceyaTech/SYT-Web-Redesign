@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const FAQ = () => {
   const [activeQuestion, setActiveQuestion] = useState(null);
@@ -21,11 +26,11 @@ const FAQ = () => {
     {
       question: "Does SpaceYaTech pay mentors?",
       answer:
-        "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits",
+        "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits.",
     },
     {
       question: "Can I collaborate with SpaceYaTech?",
-      answer: "Yes, you can collaborate with SpaceYaTech in a number of ways",
+      answer: "Yes, you can collaborate with SpaceYaTech in a number of ways.",
     },
     {
       question: "Can I join the mentorship sessions at any time?",
@@ -57,8 +62,8 @@ const FAQ = () => {
                   : "&:not([data-te-collapse-collapsed]):text-primary"
               } ${
                 activeQuestion === index
-                  ? "box-shadow:inset_0_-1px_0_rgba(229,231,235)"
-                  : "&:not([data-te-collapse-collapsed]):box-shadow:inset_0_-1px_0_rgba(229,231,235)"
+                  ? "boxShadow:inset_0_-1px_0_rgba(229,231,235)"
+                  : "&:not([data-te-collapse-collapsed]):boxShadow:inset_0_-1px_0_rgba(229,231,235)"
               } dark:&:not([data-te-collapse-collapsed]):text-primary-400`}
               type="button"
               data-te-collapse-init
@@ -95,20 +100,13 @@ const FAQ = () => {
       ))}
 
       <div className="flex justify-center mt-4 md:mt-8">
-        <a className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer">
+        <Link
+          to="/about-us"
+          className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer"
+        >
           Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            className="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+          <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function FeatureSection() {
   return (
     <section className="bg-[#E5EFEC] body-font mx-auto w-full max-w-screen-2xl">
@@ -48,9 +50,13 @@ function FeatureSection() {
                     way possible.
                   </p>
                 </div>
-                <a className="mt-3 text-[#009975] inline-flex items-center font-semibold">
+                {/* <Link
+                  to="/"
+                  preventScrollReset={true}
+                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                >
                   View Our resources
-                </a>
+                </Link> */}
               </div>
             </div>
             {/* item 2  */}
@@ -89,9 +95,13 @@ function FeatureSection() {
                   </p>
                 </div>
 
-                <a className="mt-3 text-[#009975] inline-flex items-center font-semibold">
+                {/* <Link
+                  to="/"
+                  preventScrollReset={true}
+                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                >
                   View Our blogs
-                </a>
+                </Link> */}
               </div>
             </div>
             {/* item 3  */}
@@ -135,9 +145,13 @@ function FeatureSection() {
                     exciting events and open-source projects
                   </p>
                 </div>
-                <a className="mt-3 text-[#009975] inline-flex items-center font-semibold">
+                {/* <Link
+                  to="/"
+                  preventScrollReset={true}
+                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                >
                   View Our projects
-                </a>
+                </Link> */}
               </div>
             </div>
           </div>
