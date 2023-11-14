@@ -71,7 +71,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
           ) : (
             <>
             {topEventsData ? (
-              <Events events={topEventsData.results} isVertical={false} />
+              <Events events={topEventsData?.results} isVertical={false} />
             ) : ('')}
             </>
           )}
