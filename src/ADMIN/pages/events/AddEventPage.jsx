@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useEventsCategories } from "../../../hooks/Queries/eventsSection/useEventCategories";
 import useChaptersData from "../../../hooks/Queries/community/useChaptersData";
 import usePostEvents from "../../../hooks/Queries/eventsSection/usePostEvents";
+import "../../../APP/pages/community/sections/eventsSection/SingleEvents/EventAbout.css"
 
 function AddEventPage() {
   const [ selectedEventCategory, setSelectedEventCategory ] = useState('1');
@@ -213,7 +214,7 @@ function AddEventPage() {
                 {...register("category_name")} />
               }
               {errors.category_name && <span className="text-xs text-red-500">{errors.category_name.message}</span>}
-              <div className={`w-full mt-4`}>
+              <div className={`container w-full mt-4`}>
                 <EditorProvider>
                 <Controller
                   name="about"
