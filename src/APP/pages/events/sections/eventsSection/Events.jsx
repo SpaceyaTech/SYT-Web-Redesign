@@ -42,11 +42,15 @@ function Events({ events, isVertical }) {
                   }}
                 >
                   <Link to={`/events/${id}`} className="cursor-pointer">
-                    <img className="rounded-t-lg w-full" src={poster} alt={name} />
+                    <img
+                      className="rounded-t-lg w-full cover h-56 object-cover "
+                      src={poster}
+                      alt={name}
+                    />
 
                     <div className="p-5 text-[#323433]">
                       <h5 className="mb-2 text-sm font-semibold">{name}</h5>
-                      <p className="mb-3 font-semibold text-xs whitespace-nowrap">
+                      <p className="mb-3 font-medium text-xs whitespace-nowrap">
                         {format(new Date(date), "EEE, MMM d, yyyy")}{" "}
                         {format(
                           parse(start_time, "HH:mm:ss", new Date()),
@@ -57,7 +61,7 @@ function Events({ events, isVertical }) {
                       <p className="mb-3 font-normal text-xs">
                         {location}{" "}
                         {mode.toLowerCase() === "physical" && (
-                          <span> •{city}</span>
+                          <span> • {city}</span>
                         )}
                       </p>
                       <button
