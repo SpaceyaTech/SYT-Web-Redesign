@@ -1,16 +1,42 @@
 import React, { useState, Fragment } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
+import { useForm } from "react-hook-form";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import usePostJoinChapter from "../../../../hooks/Queries/chapter/usePostJoinChapter";
 
 function WelcomeSection({ chapter }) {
   const [isOpen, setIsOpen] = useState(false);
   const [Email, setEmail] = useState("");
+  const { 
+    setPostEmail: postJoinChapter,
+    error: joinChapterError,
+    clearError: clearJoinChapterError,
+    status: statusJoinChapter,
+    clearStatus: statusClearJoinChapter,
+  } = usePostJoinChapter(chapter.id);
+
   // content-between md:px-20
   React.useEffect(() => {
     window.scroll(0, 0);
   }, []);
 
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email("Please enter a valid email address.").required("Email address is required."),
+  });
+
+  const { register, control, setValue, handleSubmit, formState: { errors }} = useForm({
+    mode: "onChange",
+    resolver: yupResolver(validationSchema),
+  })
+
   function closeModal() {
+    setEmail("");
+    setValue("email", "");
+    clearJoinChapterError();
+    statusClearJoinChapter();
+    postJoinChapter(null);
     setIsOpen(false);
   }
 
@@ -22,9 +48,8 @@ function WelcomeSection({ chapter }) {
     navigate(-1);
   };
 
-  const handleSubmit = () => {
-    console.log("Form Submitted");
-    closeModal();
+  const handleEmailSubmit = (data) => {
+    postJoinChapter(data);
   };
 
   const websiteLink = chapter.socials.website ? chapter.socials.website : "#";
@@ -246,23 +271,47 @@ function WelcomeSection({ chapter }) {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                    Join {chapter.name} {chapter.city} Chapter
-                  </Dialog.Title>
-                  <form className="mt-8">
+                  
+                  {statusJoinChapter === "success" ? (
+                    <>
+                    <div className="p-4 mb-4 text-base text-[#009975] rounded-lg  dark:text-green-400" role="alert">
+                      <span className="font-bold">Successfully joined {chapter.name} {chapter.city} Chapter!</span> Keep an eye on your email for updates on events, offers, and more.
+                    </div>
+                    <div className="flex flex-col items-center">
+                    <button
+                    type="button"
+                    className="inline-flex justify-center rounded-md border border-[#009975] hover:text-white hover:bg-[#009975] px-4 py-2 text-sm font-medium text-[#009975] focus:outline-none focus-visible:ring-2"
+                    onClick={closeModal}
+                    >
+                      Dismiss
+                    </button>
+                    </div>
+                    </>
+                  ) : (
+                    <>
+                    <Dialog.Title
+                      as="h3"
+                      className="text-lg font-medium leading-6 text-gray-900"
+                    >
+                      Join {chapter.name} {chapter.city} Chapter
+                    </Dialog.Title>
+                    <form onSubmit={handleSubmit(handleEmailSubmit)} className="mt-8">
                     <input
                       type="email"
                       name="email"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#79747E] placeholder-[#49454F] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded sm:text-sm focus:ring-1"
                       placeholder="Your Email Address"
                       value={Email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      {...register('email', {onChange: (e) => {
+                        setEmail(e.target.value);
+                        joinChapterError && clearJoinChapterError();
+                        joinChapterError && postJoinChapter(null);
+                      }})}
                     />
-                  </form>
-
+                    {errors.email && <span className="text-xs text-red-500">{errors.email.message}</span>}
+                    {joinChapterError && joinChapterError.non_field_errors ? (
+                      <span className="text-xs text-red-500">{joinChapterError.non_field_errors[0]}</span>
+                    ) : ('')}
                   <div className="mt-4 space-x-4 float-right">
                     <button
                       type="button"
@@ -272,13 +321,16 @@ function WelcomeSection({ chapter }) {
                       Cancel
                     </button>
                     <button
-                      type="button"
+                      type="submit"
                       className="inline-flex justify-center rounded-md border border-transparent text-white hover:text-[#009975] hover:border-[#009975] bg-[#009975] px-4 py-2 text-sm font-medium hover:bg-white focus:outline-none focus-visible:ring-2"
-                      onClick={handleSubmit}
                     >
                       Join
                     </button>
                   </div>
+                  </form>
+                  </>
+                  )}
+
                 </Dialog.Panel>
               </Transition.Child>
             </div>

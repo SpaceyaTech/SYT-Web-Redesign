@@ -69,7 +69,11 @@ function EventsSection({ showTabs, showAllEventsLink }) {
           {topEventsData?.count === 0 ? (
             <p>No events found!</p>
           ) : (
-            <Events events={topEventsData.results} isVertical={false} />
+            <>
+            {topEventsData ? (
+              <Events events={topEventsData?.results} isVertical={false} />
+            ) : ('')}
+            </>
           )}
         </>
       )}

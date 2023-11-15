@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import SampleBanner from "../../../../../assets/images/community/Nairobi.png";
 
 function ChapterCard({ id, country, city, name, members, banner }) {
   return (
     <div
       className="flex flex-col items-center justify-center h-80 bg-auto bg-no-repeat bg-center border-2 rounded-lg border-white"
       style={{
-       backgroundImage: `url(${banner})`, //current url doesn't render an image: http://34.175.73.57:8000/media/default-chapter.png
-        // backgroundImage: `url(${SampleBanner})`,
+        backgroundImage: `url(${banner})`,
         backgroundSize: "cover",
       }}
     >
