@@ -106,7 +106,7 @@ function PodcastSection() {
       </div>
       <div className="flex items-center justify-center gap-2">
         <a
-          href="/https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n?si=5a7b014ac3e34504"
+          href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#00664E] text-xl font-normal hover:underline"
