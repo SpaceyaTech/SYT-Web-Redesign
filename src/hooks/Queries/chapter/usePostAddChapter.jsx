@@ -52,7 +52,6 @@ const usePostAddChapter = () => {
           setError(response.data);
         }
       }).catch((error) => {
-        console.log(error)
         switch (error.code) {
           case 'ERR_NETWORK':
             setError({ axios: error.message });
