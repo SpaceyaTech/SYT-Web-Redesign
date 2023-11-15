@@ -1,4 +1,4 @@
-import { Fragment, useState, useRef } from "react";
+import React, { Fragment, useState, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 
@@ -32,17 +32,17 @@ function LeadershipSection() {
 
     emailjs
       .send(
-        "service_rvx6y2h",
-        "template_8fq0b3l",
+        "",
+        "",
         {
           from_name: name,
           to_name: "SYT Admin",
           from_email: email,
-          to_email: "felix5olali@gmail.com",
+          to_email: "partnerships@spaceyatech.com",
           message,
           phoneNumber,
         },
-        "maz5XYDLGqV1Eo4h7"
+        ""
       )
       .then(
         (result) => {
@@ -106,7 +106,11 @@ function LeadershipSection() {
 
           {/* Email us Modal */}
           <Transition appear show={isOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={closeModal}>
+            <Dialog
+              as="div"
+              className="relative z-10"
+              onClose={() => closeModal()}
+            >
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -153,7 +157,7 @@ function LeadershipSection() {
                         <p className="pl-2 text-sm md:text-[15px] font-normal leading-5 md:leading-7 my-0 md:my-2">
                           We are excited about the possibility of partnering
                           with you. Share a few details with us and let’s
-                          explore how we can collaborate for mutual success{" "}
+                          explore how we can collaborate for mutual success.
                         </p>
 
                         <div className="flex flex-col gap-4">
