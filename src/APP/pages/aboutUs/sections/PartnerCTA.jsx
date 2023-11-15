@@ -1,7 +1,8 @@
-import AaronAbubakar from "../../../../assets/images/aboutPage/creativeTeam/aaron-abubakar.png";
+import AaronAbubakar from "../../../../assets/images/aboutPage/creativeTeam/aaron-abubakar.jpeg";
 import PamelaOwino from "../../../../assets/images/aboutPage/creativeTeam/pamela-owino.png";
-import EmmyAkinyi from "../../../../assets/images/aboutPage/creativeTeam/emmy-akinyi.png";
-import TempPic from "../../../../assets/images/aboutPage/leadership/james-otieno.png";
+import EmmyAkinyi from "../../../../assets/images/aboutPage/creativeTeam/emmy-akinyi.jpeg";
+import Temitayo from "../../../../assets/images/aboutPage/creativeTeam/temitayo.jpeg";
+// import TempPic from "../../../../assets/images/aboutPage/leadership/james-otieno.png";
 import {
   facebook,
   instagram,
@@ -27,15 +28,15 @@ const CreativeTeamData = [
     title: "Product Designer",
     image: AaronAbubakar,
   },
-  {
-    name: "Robert Okusi",
-    title: "Product Designer",
-    image: TempPic,
-  },
+  // {
+  //   name: "Robert Okusi",
+  //   title: "Product Designer",
+  //   image: TempPic,
+  // },
   {
     name: "Temitayo",
     title: "Product Designer",
-    image: TempPic,
+    image: Temitayo,
   },
 ];
 

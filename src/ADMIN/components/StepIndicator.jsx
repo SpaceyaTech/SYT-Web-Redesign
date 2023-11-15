@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
 function StepIndicator({ steps, currentStep }) {
   const noBorderRight = "border-r-0";
@@ -51,13 +52,14 @@ function StepIndicator({ steps, currentStep }) {
   );
 }
 StepIndicator.propTypes = {
-  steps: [],
-  currentStep: null,
-};
-
-StepIndicator.defaultProps = {
-  steps: [],
-  currentStep: 0,
+  steps: PropTypes.arrayOf(
+    PropTypes.shape({
+      section: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  currentStep: PropTypes.number.isRequired,
 };
 
 export default StepIndicator;

@@ -13,10 +13,10 @@ function Caroussel({ CarousselData }) {
         {CarousselData.map(({ name, title, image }, index) => (
           <div
             key={index}
-            className="relative after:block after:relative after:-mt-36 after:h-36 after:w-full after:content-[''] after:z-0 after:rounded-br-lg after:rounded-bl-lg after:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.5)_29.17%,_rgba(0,0,0,0.94)_97.92%)]"
+            className="relative after:block after:relative after:-mt-36 after:h-36 after:w-full after:content-[''] after:z-0 after:rounded-b-2xl after:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.5)_29.17%,_rgba(0,0,0,0.94)_97.92%)]"
           >
             <img
-              className="rounded-lg max-w-full h-auto"
+              className="rounded-2xl w-[300px] h-[300px] object-cover items-center"
               src={image}
               alt={name}
             />

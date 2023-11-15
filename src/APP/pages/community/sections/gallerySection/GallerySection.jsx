@@ -84,9 +84,14 @@ function GallerySection() {
         </div>
       </div>
       <div className="flex items-center justify-center gap-2 mt-8">
-        <p className="text-lg text-[#009975] text-center font-normal hover:underline">
+        <a
+          href="https://photos.google.com/share/AF1QipMS-aFHdarbFZVIYs7kOFkWL5Cit3EEXG2CbwU0K0wq-8Fw93Akn-IxfAdYSKYb2g?pli=1&key=d2wwd1VtUHdhN29INDVmb1YxN0xtNHpaV2t6LUtB"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-lg text-[#009975] text-center font-normal hover:underline"
+        >
           View More{" "}
-        </p>
+        </a>
         <svg
           width="16"
           height="14"

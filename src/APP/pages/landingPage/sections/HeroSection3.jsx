@@ -68,7 +68,7 @@ const partners = [
 
 const HeroSection3 = () => {
   return (
-    <section className="p-4 lg:p-0 flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
+    <section className="p-3 md:px-10 flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
       {/* Hero Header */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-4">
         {/* hero desc */}
@@ -106,7 +106,7 @@ const HeroSection3 = () => {
         <h2 className="text-3xl font-semibold">Our Partners</h2>
 
         <p className="max-w-[832px] text-center text-base font-normal">
-          At SpaceYaTech, we thrive on innovation, knowledge and he support of
+          At SpaceYaTech, we thrive on innovation, knowledge and the support of
           our dedicated partners. Join us in celebrating the companies and
           individuals who make SpaceYaTech possible.
         </p>

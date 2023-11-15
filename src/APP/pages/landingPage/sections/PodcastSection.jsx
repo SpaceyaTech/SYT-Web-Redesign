@@ -48,7 +48,7 @@ const data = [
     link: "https://open.spotify.com/episode/6GAhWxeZNuDtfQj76o7EhV?si=PFb994_WQzKw2qfXCtsrbQ",
     title: "The Future of Fintech X Saruni Maina",
     description:
-      "Join host Marlyn Mayienga in a captivating conversation with Saruni Maina as they dive into 'The Future of Fintech in Africa.",
+      "Join host Marlyn Mayienga in a captivating conversation with Saruni Maina as they dive into the future of Fintech in Africa.",
   },
 
   {
@@ -79,7 +79,7 @@ function PodcastSection() {
         <h3 className="text-2xl">SpaceYaTech Podcasts</h3>
         <p className="text-center text-xl text-[#323433]">
           A collection from some of the finest tech podcasts this side of the
-          sahara, all for your listening pleasure.
+          Sahara, all for your listening pleasure.
         </p>
       </div>
 
@@ -106,7 +106,7 @@ function PodcastSection() {
       </div>
       <div className="flex items-center justify-center gap-2">
         <a
-          href="/https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n?si=5a7b014ac3e34504"
+          href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#00664E] text-xl font-normal hover:underline"
