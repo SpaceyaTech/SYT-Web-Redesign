@@ -9,10 +9,12 @@ import React, { useEffect, useState } from "react";
 //   uxhiringafrica,
 // } from "../../../../../../assets/images/community";
 import { Link, useParams } from "react-router-dom";
-import { parse, format } from "date-fns";
+import { parse as parseDate, format } from "date-fns";
+import parse from "html-react-parser"
 import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
 import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
+import "./EventAbout.css";
 
 function SingleEvent() {
   React.useEffect(() => {
@@ -123,12 +125,12 @@ function SingleEvent() {
                     <p>{format(new Date(oneEvent.date), "EEE MMM d, yyyy")}</p>
                     <p>
                       {format(
-                        parse(oneEvent.start_time, "HH:mm:ss", new Date()),
+                        parseDate(oneEvent.start_time, "HH:mm:ss", new Date()),
                         "h:mm a"
                       )}{" "}
                       -{" "}
                       {format(
-                        parse(oneEvent.end_time, "HH:mm:ss", new Date()),
+                        parseDate(oneEvent.end_time, "HH:mm:ss", new Date()),
                         "h:mm a"
                       )}{" "}
                       EAT
@@ -258,8 +260,8 @@ function SingleEvent() {
               <p className="text-l text-[#323433] font-normal mb-6">
                 About This Event
               </p>
-              <p className="text-sm text-[#323433] font-light mb-6">
-                {oneEvent.about}
+              <p className="container text-[#323433] font-light mb-6">
+                {parse(oneEvent.about)}
               </p>
             </div>
             <div className="pb-6">
