@@ -1,14 +1,15 @@
-import FredOuko from "../../../../assets/images/aboutPage/leadership/fred-ouko.png";
-import CatherineKiiru from "../../../../assets/images/aboutPage/leadership/catherine-kiiru.png";
-import JamesOtieno from "../../../../assets/images/aboutPage/leadership/james-otieno.png";
+import FredOuko from "../../../../assets/images/aboutPage/leadership/fred-ouko.jpeg";
+import CatherineKiiru from "../../../../assets/images/aboutPage/leadership/catherine-kiiru.jpeg";
+import JamesOtieno from "../../../../assets/images/aboutPage/leadership/james-otieno.jpeg";
 import HudsonObai from "../../../../assets/images/aboutPage/leadership/hudson-obai.png";
 import IanMugenya from "../../../../assets/images/aboutPage/leadership/ian-mugenya.png";
 import MarlynMayienga from "../../../../assets/images/aboutPage/leadership/marlyn-mayienga.png";
-import SharonJebitok from "../../../../assets/images/aboutPage/leadership/sharon-jebitok.png";
-import WaithakaWaweru from "../../../../assets/images/aboutPage/leadership/waithaka-waweru.png";
+import SharonJebitok from "../../../../assets/images/aboutPage/leadership/sharon-jebitok.jpeg";
+import WaithakaWaweru from "../../../../assets/images/aboutPage/leadership/waithaka-waweru.jpeg";
 import JumaLawrence from "../../../../assets/images/aboutPage/leadership/juma-lawrence.png";
 import Caroussel from "../../../components/Caroussel";
 import BuildingCommunity from "../../../../assets/images/aboutPage/building-community.png";
+import RachelMurabula from "../../../../assets/images/aboutPage/leadership/rachel-murabula.jpeg";
 
 const LeadershipData = [
   {
@@ -22,7 +23,7 @@ const LeadershipData = [
     image: CatherineKiiru,
   },
   {
-    name: "James Otieno",
+    name: "Otieno James",
     title: "Community Manager",
     image: JamesOtieno,
   },
@@ -56,6 +57,11 @@ const LeadershipData = [
     title: "Head of Communication",
     image: JumaLawrence,
   },
+  {
+    name: "Rachel Murabula",
+    title: "Lead Android Engineering",
+    image: RachelMurabula,
+  },
 ];
 
 function LeadershipSection() {
@@ -65,8 +71,8 @@ function LeadershipSection() {
         Meet our leadership
       </h1>
 
-      <Caroussel CarousselData={LeadershipData}/>
-      
+      <Caroussel CarousselData={LeadershipData} />
+
       <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-8 md:pb-24 px-4 lg:px-14 xl:px-28 justify-between flex-col md:flex-row">
         <div className="space-y-4 md:w-1/2 mb-14">
           <h2 className="text-[#009975] items-center text-xl">
@@ -91,10 +97,12 @@ function LeadershipSection() {
             mentorship and connected with job opportunities where they can earn
             from their hard work.
           </p>
-          <button className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg">Partner with us</button>
+          <button className="font-semibold text-white bg-[#009975] border-0 py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg">
+            Partner with us
+          </button>
         </div>
         <div className="md:w-1/2">
-          <img src={BuildingCommunity} alt="Space ya Tech Community"/>
+          <img src={BuildingCommunity} alt="Space ya Tech Community" />
         </div>
       </div>
     </section>

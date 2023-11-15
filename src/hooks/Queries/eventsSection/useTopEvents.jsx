@@ -20,7 +20,7 @@ const fetchEventData = async (filterArray) => {
     return response.data;
   } catch (error) {
     console.error("Error fetching events: ", error);
-    throw error;
+    // throw error;
   }
 };
 
@@ -28,7 +28,7 @@ const useTopEvents = (filters) => {
   return useQuery({
     queryKey: ["topEvents"],
     queryFn: () => fetchEventData(filters),
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
 };

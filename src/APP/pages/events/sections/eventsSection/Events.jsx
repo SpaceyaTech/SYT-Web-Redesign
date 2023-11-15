@@ -43,7 +43,7 @@ function Events({ events, isVertical }) {
                 >
                   <Link to={`/events/${id}`} className="cursor-pointer">
                     <img
-                      className="rounded-t-lg w-full cover h-56 object-cover "
+                      className="rounded-t-lg w-full cover h-56 object-cover"
                       src={poster}
                       alt={name}
                     />
