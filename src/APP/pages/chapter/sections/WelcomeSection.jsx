@@ -282,16 +282,17 @@ function WelcomeSection({ chapter }) {
                   {statusJoinChapter === "success" ? (
                     <>
                       <div
-                        className="p-4 mb-4 rounded-lg text-base  text-center"
+                        className="p-2 mb-4 rounded-lg text-base  text-center"
                         role="alert"
                       >
-                        <span className="text-[#009975] font-bold">
+                        <p className="text-[#009975] font-bold">
                           Successfully joined {chapter.name} {chapter.city}{" "}
                           Chapter!
-                        </span>
-                        <br />
-                        Keep an eye on your email for updates on events, offers,
-                        and more.
+                        </p>
+                        <p className="text-xs text-gray-500 mt-2">
+                          Keep an eye out for email updates on events, offers,
+                          and more.
+                        </p>
                       </div>
                       <div className="flex flex-col items-center">
                         <button
