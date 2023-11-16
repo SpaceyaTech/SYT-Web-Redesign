@@ -6,6 +6,7 @@ import {
   james,
   juma,
   marlyn,
+  murabula,
   sharon,
   waithaka,
 } from "../../../assets/images/aboutPage";
@@ -55,5 +56,10 @@ export const LeadershipData = [
     name: "Juma Lawrence",
     title: "Head of Communication",
     image: juma,
+  },
+  {
+    name: "Racheal Murabula",
+    title: "Lead Android Engineer",
+    image: murabula,
   },
 ];

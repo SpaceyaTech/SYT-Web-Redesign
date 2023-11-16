@@ -11,7 +11,10 @@ import juma from "./leadership/juma-lawrence.png";
 import marlyn from "./leadership/marlyn-mayienga.png";
 import sharon from "./leadership/sharon-jebitok.jpeg";
 import waithaka from "./leadership/waithaka-waweru.jpeg";
+import murabula from "./leadership/rachel-murabula.jpeg";
 
+import heroImg from "./heroSec.png";
+import aboutImg2 from "./about-img-2.png";
 import about1 from "./about-img-1.png";
 import about2 from "./about-img-2.png";
 import buildComm from "./building-community.png";
@@ -29,6 +32,7 @@ export {
   james,
   juma,
   marlyn,
+  murabula,
   sharon,
   waithaka,
   about1,
@@ -36,4 +40,6 @@ export {
   buildComm,
   mission,
   vision,
+  heroImg,
+  aboutImg2,
 };

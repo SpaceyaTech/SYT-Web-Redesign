@@ -1,5 +1,6 @@
-import AboutImg1 from "../../../../assets/images/aboutPage/about-img-1.png";
-import AboutImg2 from "../../../../assets/images/aboutPage/about-img-2.png";
+import React from "react";
+
+import { aboutImg2, heroImg } from "../../../../assets/images/aboutPage";
 
 function HeroSection() {
   return (
@@ -22,14 +23,14 @@ function HeroSection() {
           evangelists.
         </p>
         <img
-          src={AboutImg1}
+          src={heroImg}
           alt="space ya tech"
           className="absolute -top-8 md:-top-24 lg:-top-8 xl:-top-28 right-0 md:-right-36 lg:-right-48 xl:-right-48 w-2/6 md:w-auto lg:w-[70%]"
         />
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center md:my-20 min-h-96 px-4 md:px-0">
         <div className="my-10">
-          <img src={AboutImg2} alt="space ya tech" />
+          <img src={aboutImg2} alt="space ya tech" />
         </div>
         <div className="leading-6 md:w-1/2 text-base space-y-4 md:pl-10">
           <p>

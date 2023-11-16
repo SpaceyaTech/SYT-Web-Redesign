@@ -16,8 +16,6 @@ function ChaptersSection() {
     isSuccess,
   } = useChaptersData();
 
-  console.log("chaptersData ", chaptersData);
-
   return (
     <div className="my-2">
       <div
