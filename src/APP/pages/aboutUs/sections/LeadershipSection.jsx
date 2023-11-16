@@ -1,4 +1,3 @@
-
 import React, { Fragment, useState, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
@@ -7,6 +6,13 @@ import { Caroussel } from "../../../components";
 import { closeIcon } from "../../../../assets/images/icons";
 import { LeadershipData } from "../data";
 import { buildComm } from "../../../../assets/images/aboutPage";
+
+// env var
+const SERVICE_ID =
+  import.meta.env.VITE_SERVICE_ID || window._env_.VITE_SERVICE_ID;
+const TEMPLATE_ID =
+  import.meta.env.VITE_TEMPLATE_ID || window._env_.VITE_TEMPLATE_ID;
+const PUBLIC_ID = import.meta.env.VITE_PUBLIC_ID || window._env_.VITE_PUBLIC_ID;
 
 function LeadershipSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +39,8 @@ function LeadershipSection() {
 
     emailjs
       .send(
-        // SERVICE_ID
-        "",
-        //  TEMPLATE_ID
-        "",
+        `${SERVICE_ID}`,
+        `${TEMPLATE_ID}`,
         {
           from_name: name,
           to_name: "SYT Admin",
@@ -45,14 +49,12 @@ function LeadershipSection() {
           message,
           phoneNumber,
         },
-        // PUBLIC_ID
-        ""
+        `${PUBLIC_ID}`
       )
       .then(
         (result) => {
-          alert("Thank you. I will get back to you as soon possible.");
+          alert("Thank you. We will get back to you as soon possible.");
 
-          console.log(result.text);
           setLoading(false);
           setName("");
           setEmail("");
@@ -220,7 +222,6 @@ function LeadershipSection() {
         </div>
         <div className="md:w-1/2">
           <img src={buildComm} alt="Space ya Tech Community" />
-
         </div>
       </div>
     </section>
