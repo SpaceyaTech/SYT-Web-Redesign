@@ -15,7 +15,7 @@ function SearchSection() {
             SpaceYaTech Events
           </h2>
         </div>
-        <div className="flex relative px-4 w-full md:w-3/5">
+        {/* <div className="flex relative px-4 w-full md:w-3/5">
           <div className="relative w-full">
             <input
               type="search"
@@ -45,7 +45,7 @@ function SearchSection() {
               </svg>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
