@@ -1,11 +1,12 @@
 import React from "react";
-import { HeroSection, ProductsSection } from "./sections";
+import { HeroSection, ProductsSection, TechStack } from "./sections";
 
 function Products() {
   return (
     <section className="">
       <HeroSection />
       <ProductsSection />
+      <TechStack />
     </section>
   );
 }
