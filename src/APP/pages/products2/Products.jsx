@@ -1,12 +1,13 @@
 import React from "react";
-import { HeroSection } from "./sections";
+import { HeroSection, ProductsSection } from "./sections";
 
-const Products = () => {
+function Products() {
   return (
     <section className="">
       <HeroSection />
+      <ProductsSection />
     </section>
   );
-};
+}
 
 export default Products;
