@@ -4,12 +4,9 @@ import { upleft } from "../../../../assets/images/icons";
 const ProductsCard = ({ name, desc, img, link, index }) => {
   return (
     <div
-      style={
-        index % 2 === 0
-          ? { flexDirection: "row" }
-          : { flexDirection: "row-reverse" }
-      }
-      className="flex flex-col md:items-center gap-2 md:gap-6 my-3 md:my-0"
+      className={`flex flex-col ${
+        index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+      } md:items-center gap-2 md:gap-6 my-3 md:my-0`}
     >
       {/* desc */}
       <div className="flex-1 flex flex-col gap-1 md:gap-6 max-w-[532px]">
@@ -33,7 +30,7 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
       </div>
 
       {/* pic */}
-      <div className="flex-1  min-h-full pb-14">
+      <div className="flex-1 min-h-full pb-14">
         <img src={img} alt={name} className="w-full h-full object-cover" />
       </div>
 
