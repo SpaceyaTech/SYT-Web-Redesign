@@ -18,51 +18,55 @@ const partners = [
     id: 1,
     img: ctfroom,
     name: "ctfroom",
+    link: "https://ctfroom.com/",
   },
   {
     id: 2,
     img: DevOps,
     name: "DevOps",
+    link: "https://twitter.com/nairobidevops",
   },
   {
     id: 3,
     img: Propel,
     name: "Propel",
+    link: "https://propel.community/",
   },
   {
     id: 4,
     img: moringa,
     name: "moringa",
+    link: "https://moringaschool.com/",
   },
   {
     id: 5,
     img: chimoney,
     name: "chimoney",
+    link: "https://chimoney.io/",
   },
   {
     id: 6,
     img: Kushite,
     name: "Kushite",
+    link: "https://icpkushite.com/",
   },
   {
     id: 7,
-    img: spheron,
-    name: "spheron",
+    img: osca,
+    name: "osca",
+    link: "https://oscafrica.org/",
   },
   {
     id: 8,
-    img: osca,
-    name: "osca",
+    img: cytonn,
+    name: "cytonn",
+    link: "#",
   },
   {
     id: 9,
-    img: cytonn,
-    name: "cytonn",
-  },
-  {
-    id: 10,
     img: reactke,
     name: "reactke",
+    link: "https://www.reactdevske.org/",
   },
 ];
 
@@ -112,8 +116,10 @@ const HeroSection3 = () => {
         </p>
 
         <div className="overflow-auto flex flex-row gap-14 md:px-3 w-full items-center">
-          {partners.map(({ id, img, name }) => (
-            <img src={img} className="object-cover" alt={name} key={id} />
+          {partners.map(({ id, img, name, link }) => (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <img src={img} className="object-cover" alt={name} key={id} />
+            </a>
           ))}
         </div>
       </div>

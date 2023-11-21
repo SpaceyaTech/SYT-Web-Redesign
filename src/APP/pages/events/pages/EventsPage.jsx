@@ -1,7 +1,7 @@
-import React from 'react';
-import SearchSection from '../sections/SearchSection';
-import EventsSection from '../sections/eventsSection/EventsSection';
-import EventCategory from '../sections/eventsSection/EventCategory';
+import React from "react";
+import SearchSection from "../sections/SearchSection";
+import EventsSection from "../sections/eventsSection/EventsSection";
+import EventCategory from "../sections/eventsSection/EventCategory";
 
 function Events() {
   return (
@@ -9,9 +9,8 @@ function Events() {
       <SearchSection />
       <EventsSection showTabs />
       <EventCategory />
-
     </div>
-  )
+  );
 }
 
-export default Events
+export default Events;
