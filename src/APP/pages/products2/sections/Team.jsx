@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import { Tab } from "@headlessui/react";
+import { teams } from "../data";
+import { upleftGreen } from "../../../../assets/images/icons";
+import DeveloperCard from "./DeveloperCard";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+function Team() {
+  let [categories] = useState(teams);
+
+  return (
+    <section className="border border-red-700 p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-4">
+      {/* Header */}
+      <div className="border border-green-600 w-full md:w-1/3 gap-3 md:gap-6">
+        <h3 className="text-[25px] font-medium leading-9 md:text-5xl md:leading-normal">
+          Backed by a team of Global Talents.
+        </h3>
+
+        <a
+          href="/products"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 py-2"
+        >
+          <span className="text-base md:text-[32px] md:leading-normal text-[#009975] font-medium">
+            Join us
+          </span>
+          <img
+            src={upleftGreen}
+            alt="upleft"
+            className="h-6 w-6 md:h-10 md:w-10 object-contain"
+          />
+        </a>
+      </div>
+
+      {/* Tabs */}
+      <div className="border border-green-600 w-full md:w-2/3">
+        <Tab.Group>
+          <Tab.List className="flex space-x-2 justify-between w-full overflow-x-auto bg-transparent p-1">
+            {Object.keys(categories).map((category) => (
+              <Tab
+                key={category}
+                className={({ selected }) =>
+                  classNames(
+                    "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
+                    "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
+                    selected
+                      ? "bg-[#f3f3f3] font-medium"
+                      : "hover:bg-[#f3f3f3] font-normal"
+                  )
+                }
+              >
+                {category}
+              </Tab>
+            ))}
+          </Tab.List>
+          <Tab.Panels className="mt-1 md:mt-2 w-full border border-red-600">
+            {Object.values(categories).map((posts, idx) => (
+              <Tab.Panel
+                key={idx}
+                className={classNames(
+                  "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 w-full border border-green-600"
+                )}
+              >
+                {posts.map((post) => (
+                  <DeveloperCard key={post.id} />
+                ))}
+              </Tab.Panel>
+            ))}
+          </Tab.Panels>
+        </Tab.Group>
+      </div>
+    </section>
+  );
+}
+
+export default Team;

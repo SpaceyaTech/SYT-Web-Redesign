@@ -79,3 +79,148 @@ export const stackCollection = [
     ],
   },
 ];
+
+export const teams = {
+  Design: [
+    {
+      id: 1,
+      title:
+        "Does drinking coffee make you smarter? Does drinking coffee make you smarter? Does drinking coffee make you smarter?",
+      date: "5h ago",
+      commentCount: 5,
+      shareCount: 2,
+    },
+    {
+      id: 2,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 3,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 4,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 5,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 6,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 7,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 8,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 9,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 10,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 11,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 12,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+    {
+      id: 13,
+      title: "So you've bought coffee... now what?",
+      date: "2h ago",
+      commentCount: 3,
+      shareCount: 2,
+    },
+  ],
+  "Front-End Dev": [
+    {
+      id: 1,
+      title: "Is tech making coffee better or worse?",
+      date: "Jan 7",
+      commentCount: 29,
+      shareCount: 16,
+    },
+    {
+      id: 2,
+      title: "The most innovative things happening in coffee",
+      date: "Mar 19",
+      commentCount: 24,
+      shareCount: 12,
+    },
+  ],
+  "Back-End Dev": [
+    {
+      id: 1,
+      title: "Ask Me Anything: 10 answers to your questions about coffee",
+      date: "2d ago",
+      commentCount: 9,
+      shareCount: 5,
+    },
+    {
+      id: 2,
+      title: "The worst advice we've ever heard about coffee",
+      date: "4d ago",
+      commentCount: 1,
+      shareCount: 2,
+    },
+  ],
+  DevOps: [
+    {
+      id: 1,
+      title: "Ask Me Anything: 10 answers to your questions about coffee",
+      date: "2d ago",
+      commentCount: 9,
+      shareCount: 5,
+    },
+    {
+      id: 2,
+      title: "The worst advice we've ever heard about coffee",
+      date: "4d ago",
+      commentCount: 1,
+      shareCount: 2,
+    },
+  ],
+};

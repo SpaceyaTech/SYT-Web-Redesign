@@ -1,13 +1,14 @@
 import React from "react";
-import { HeroSection, ProductsSection, TechStack } from "./sections";
+import { HeroSection, ProductsSection, Team, TechStack } from "./sections";
 
 function Products() {
   return (
-    <section className="">
+    <>
       <HeroSection />
       <ProductsSection />
       <TechStack />
-    </section>
+      <Team />
+    </>
   );
 }
 

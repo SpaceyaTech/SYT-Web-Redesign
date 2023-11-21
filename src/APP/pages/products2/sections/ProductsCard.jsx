@@ -1,11 +1,11 @@
 import React from "react";
-import { mentorlst } from "../../../../assets/images/products";
 import { upleft } from "../../../../assets/images/icons";
 
 function ProductsCard({ name, desc, img, link, index }) {
   return (
     <div
-      className={`flex flex-col md:${
+      className={`flex flex-col
+      md:${
         index % 2 === 0 ? "flex-row" : "flex-row-reverse"
       } md:items-center gap-2 md:gap-6 my-3 md:my-0`}
     >

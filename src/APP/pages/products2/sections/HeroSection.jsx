@@ -2,7 +2,7 @@ import React from "react";
 
 function HeroSection() {
   return (
-    <div className="py-4 md:py-8 flex flex-col gap-6 md:gap-8 items-center justify-center md:max-w-4xl mx-auto">
+    <section className="py-4 md:py-8 flex flex-col gap-6 md:gap-8 items-center justify-center md:max-w-4xl mx-auto">
       {/* text section */}
       <div className="flex flex-col justify-center items-center">
         <h3 className="text-[#009975] text-base md:text-2xl font-normal text-center capitalize">
@@ -25,7 +25,7 @@ function HeroSection() {
           muted
         />
       </div>
-    </div>
+    </section>
   );
 }
 
