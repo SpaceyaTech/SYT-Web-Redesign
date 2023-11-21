@@ -6,7 +6,7 @@ const Products = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <section className="p-3 md:px-10">
+    <section className="md:px-10 xl:max-w-[1440px] mx-auto">
       <HeroSection />
       <ProductsSection />
       <TechStack />
