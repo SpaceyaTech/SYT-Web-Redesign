@@ -6,12 +6,12 @@ const Products = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <>
+    <section className="p-3 md:px-10">
       <HeroSection />
       <ProductsSection />
       <TechStack />
       <Teams />
-    </>
+    </section>
   );
 };
 
