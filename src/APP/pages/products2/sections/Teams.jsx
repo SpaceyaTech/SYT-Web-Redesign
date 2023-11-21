@@ -8,13 +8,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Team() {
+const Teams = () => {
   let [categories] = useState(teams);
 
   return (
-    <section className="border border-red-700 p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-4">
+    <section className="p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-4 mb-4 md:mb-8">
       {/* Header */}
-      <div className="border border-green-600 w-full md:w-1/3 gap-3 md:gap-6">
+      <div className="w-full md:w-1/3 gap-3 md:gap-6">
         <h3 className="text-[25px] font-medium leading-9 md:text-5xl md:leading-normal">
           Backed by a team of Global Talents.
         </h3>
@@ -37,7 +37,7 @@ function Team() {
       </div>
 
       {/* Tabs */}
-      <div className="border border-green-600 w-full md:w-2/3">
+      <div className="w-full md:w-2/3">
         <Tab.Group>
           <Tab.List className="flex space-x-2 justify-between w-full overflow-x-auto bg-transparent p-1">
             {Object.keys(categories).map((category) => (
@@ -57,16 +57,21 @@ function Team() {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className="mt-1 md:mt-2 w-full border border-red-600">
+          <Tab.Panels className="mt-1 md:mt-2 w-full">
             {Object.values(categories).map((posts, idx) => (
               <Tab.Panel
                 key={idx}
                 className={classNames(
-                  "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 w-full border border-green-600"
+                  "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
                 )}
               >
-                {posts.map((post) => (
-                  <DeveloperCard key={post.id} />
+                {posts.map(({ id, name, title, headshot }) => (
+                  <DeveloperCard
+                    key={id}
+                    name={name}
+                    title={title}
+                    headshot={headshot}
+                  />
                 ))}
               </Tab.Panel>
             ))}
@@ -75,6 +80,6 @@ function Team() {
       </div>
     </section>
   );
-}
+};
 
-export default Team;
+export default Teams;

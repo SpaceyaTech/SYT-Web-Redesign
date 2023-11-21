@@ -1,7 +1,7 @@
 import React from "react";
 import { upleft } from "../../../../assets/images/icons";
 
-function ProductsCard({ name, desc, img, link, index }) {
+const ProductsCard = ({ name, desc, img, link, index }) => {
   return (
     <div
       className={`flex flex-col
@@ -49,6 +49,6 @@ function ProductsCard({ name, desc, img, link, index }) {
       </a>
     </div>
   );
-}
+};
 
 export default ProductsCard;

@@ -1,15 +1,18 @@
-import React from "react";
-import { HeroSection, ProductsSection, Team, TechStack } from "./sections";
+import React, { useEffect } from "react";
+import { HeroSection, ProductsSection, Teams, TechStack } from "./sections";
 
-function Products() {
+const Products = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeroSection />
       <ProductsSection />
       <TechStack />
-      <Team />
+      <Teams />
     </>
   );
-}
+};
 
 export default Products;

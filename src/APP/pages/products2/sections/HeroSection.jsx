@@ -1,6 +1,6 @@
 import React from "react";
 
-function HeroSection() {
+const HeroSection = () => {
   return (
     <section className="py-4 md:py-8 flex flex-col gap-6 md:gap-8 items-center justify-center md:max-w-4xl mx-auto">
       {/* text section */}
@@ -27,6 +27,6 @@ function HeroSection() {
       </div>
     </section>
   );
-}
+};
 
 export default HeroSection;
