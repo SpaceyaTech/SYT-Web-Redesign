@@ -13,7 +13,7 @@ const DeveloperCard = ({ name, title, headshot }) => {
       {/* Details */}
       <div className="bg-[#EDFCF3] absolute bottom-0 left-0 w-full h-3/5 flex flex-col items-center justify-end text-center gap-1 pb-5 md:pb-4 rounded-md md:rounded-lg shadow-md md:shadow-transparent">
         <h3 className="text-[15px] leading-5 font-medium md:text-xl md:leading-6 capitalize">
-          {NamedNodeMap}
+          {name}
         </h3>
         <span className="text-xs font-normal md:text-sm capitalize">
           {title}
