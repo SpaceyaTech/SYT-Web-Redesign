@@ -3,8 +3,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
 
 import { Caroussel } from "../../../components";
-import { closeIcon } from "../../../../assets/images/icons";
 import { LeadershipData } from "../data";
+import { closeIcon } from "../../../../assets/images/icons";
 import { buildComm } from "../../../../assets/images/aboutPage";
 
 // env var

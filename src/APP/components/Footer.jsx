@@ -1,197 +1,158 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+import logo from "../../assets/images/sytLogo.png";
+// import backup from "../../assets/images/backup.svg";
 import {
-  facebook,
-  instagram,
   linkedin,
   twitter,
+  spotify,
+  youtube,
 } from "../../assets/images/socials";
-import logo from "../../assets/images/sytLogo.png";
 
 function Footer() {
-  var now = new Date();
-  var year = now.getFullYear();
+  const now = new Date();
+  const year = now.getFullYear();
+
   return (
-    <footer>
-      <div className=" bg-[#252533] mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
-        <div className="md:flex md:justify-between">
-          {/* logo and socials  */}
-          <div className="mb-8 md:mb-0 mr-6 flex flex-col justify-start items-center md:w-1/4 w-1/2">
-            <img
-              src={logo}
-              className="h-24 md:mx-8 mx-0 object-contain"
-              alt="FlowBite Logo"
-            />
-            {/* social logos  */}
-            <div className="flex flex-row items-center  md:justify-between gap-4 justify-start my-4">
-              <a href="/">
-                <img src={facebook} alt="facebook" className="w-7 h-7" />
-              </a>
+    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4 relative">
+      <div className="flex md:flex-row flex-col md:gap-16 gap-8 ">
+        <div className="flex-3 flex flex-col md:items-center items-start">
+          {/* logo */}
+          <img
+            src={logo}
+            alt="logo"
+            className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
+          />
 
-              <a href="/">
-                <img src={instagram} alt="instagram" className="w-7 h-7" />
-              </a>
-
-              <a href="/">
-                <img src={twitter} alt="twitter" className="w-7 h-7" />
-              </a>
-
-              <a href="/">
-                <img src={linkedin} alt="linkedIn" className="w-7 h-7" />
-              </a>
-            </div>
-          </div>
-          {/* quick links  */}
-          <div className="grid grid-cols-3 gap-8 sm:gap-12 sm:grid-cols-4">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
-                Company
-              </h2>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    About us
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Community
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
-                Resources
-              </h2>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    Jobs
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Events
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Mentorship
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
-                Quick Links
-              </h2>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    Contact us
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Donate
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Privacy policy
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Terms of use
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          {/* form  */}
-          <div className="my-0 md:mb-0 flex flex-col">
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider text-[#00FFC3] ">
-                Subscribe to our newsletter
-              </h3>
-              <p className="mt-4 text-base text-white lg:ml-auto">
-                Subscribe to our newsletter to get your weekly dose of news,
-                updates, tips and even special offers
-              </p>
-            </div>
-            <form
-              className="
-      relative
-      my-4
-      max-w-lg
-      space-y-4
-      sm:flex sm:space-y-0 sm:items-end
-    "
+          {/* socials */}
+          <div className="flex items-center md:gap-5 gap-3 py-4">
+            <a
+              href="https://x.com/SpaceYaTech"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <div className="flex-1 flex items-center">
-                {/* <label htmlFor="email" className="sr-only">
-                  Email address
-                </label> */}
-                {/* <div> */}
-                <input
-                  type="email"
-                  id="email"
-                  autoComplete="off"
-                  className="sm:flex-4 flex-auto block sm:w-2/3 w-full px-4 py-3 h-12 sm:py-3.5 text-base font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg sm:rounded-l-lg rounded-r-none sm:text-sm focus:outline-none focus:ring-1 focus:ring-primary"
-                  placeholder="Enter email address"
-                />
+              <img src={twitter} alt="twitter" className="w-7 h-7" />
+            </a>
 
+            <a
+              href="https://linkedin.com/company/spaceyatech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} alt="linkedin" className="w-7 h-7" />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@spaceyatech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={youtube} alt="youtube" className="w-7 h-7" />
+            </a>
+
+            <a
+              href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={spotify} alt="spotify" className="w-7 h-7" />
+            </a>
+          </div>
+        </div>
+
+        {/* Footer links */}
+        <div className="flex-3 flex gap-6 justify-between">
+          <div className="flex flex-col gap-8">
+            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-base leading-9">
+              Company
+            </h2>
+
+            <ul className="flex flex-col gap-5 list-none text-sm font-light">
+              <li>
+                <Link to="/about-us">About Us</Link>
+              </li>
+              <li>
+                <a href="/#faq">FAQs</a>
+              </li>
+              <li>
+                <Link to="/community">Community</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* <div className="flex flex-col gap-8">
+            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+              Resources
+            </h2>
+
+            <ul className="flex flex-col gap-5 list-none text-sm font-light">
+              //To be restored once the jobs section is implemented
+              //<li>Jobs</li>
+              <li><Link to="/allevents">Events</Link></li>
+              <li>Mentorship</li>
+            </ul>
+          </div> */}
+
+          {/* <div className="flex flex-col gap-8">
+            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+              Quick Links
+            </h2>
+
+            <ul className="flex flex-col gap-5 list-none text-sm font-light">
+              <li>Contact Us</li>
+              <li>Donate</li>
+              <li>Privacy Policy</li>
+              <li>Terms of Use</li>
+            </ul>
+          </div> */}
+        </div>
+        {/* <div className="flex-2">
+          <div className="flex flex-col gap-8">
+            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+              Subscribe to our Newsletter
+            </h2>
+
+            <div className="flex flex-col gap-5 text-sm font-light">
+              <p className="text-sm left-6">
+                Subscribe to our newsletter to get your
+                <br />
+                weekly dose of news, updates, tips and even
+                <br />
+                special offers
+              </p>
+
+              <form className="flex pr-4">
+                <input
+                  type="text"
+                  placeholder="Enter email address"
+                  className="px-4 py-3 rounded-lg rounded-r-none flex-3"
+                />
                 <button
                   type="submit"
-                  className="sm:flex-1 flex-auto inline-flex items-center justify-center w-1/3 sm:w-auto px-8 py-3 h-12 sm:text-sm text-lg sm:py-3.5 font-semibold text-white transition-all duration-200 bg-[#009975] border border-transparent rounded-lg sm:rounded-r-lg rounded-l-none hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  className="rounded-r-lg px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-[#009975] border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                 >
                   Subscribe
                 </button>
-              </div>
-              {/* </div> */}
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
-        {/* signature  */}
+        </div> */}
+      </div>
+
+      <div className="sm:mt-14 mt-10">
         <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy; {year} SpaceYaTech | All Rights Reserved.
+          &copy;
+          {year}
+          SpaceYaTech | All Rights Reserved
         </h1>
       </div>
+
+      {/* <img
+        src={backup}
+        alt="backup"
+        className="h-12 w-12 object-contain absolute sm:bottom-14 bottom-0 right-10 cursor-pointer"
+      /> */}
     </footer>
   );
 }

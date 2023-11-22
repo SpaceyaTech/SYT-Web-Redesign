@@ -1,6 +1,7 @@
 import aaron from "./creativeTeam/aaron-abubakar.jpeg";
 import emmy from "./creativeTeam/emmy-akinyi.jpeg";
 import pamela from "./creativeTeam/pamela-owino.png";
+import temitayo from "./creativeTeam/temitayo.jpeg";
 
 import catherine from "./leadership/catherine-kiiru.jpeg";
 import fred from "./leadership/fred-ouko.jpeg";
@@ -14,7 +15,6 @@ import waithaka from "./leadership/waithaka-waweru.jpeg";
 import murabula from "./leadership/rachel-murabula.jpeg";
 
 import heroImg from "./heroSec.png";
-import aboutImg2 from "./about-img-2.png";
 import about1 from "./about-img-1.png";
 import about2 from "./about-img-2.png";
 import buildComm from "./building-community.png";
@@ -25,6 +25,7 @@ export {
   aaron,
   emmy,
   pamela,
+  temitayo,
   catherine,
   fred,
   hudson,
@@ -41,5 +42,4 @@ export {
   mission,
   vision,
   heroImg,
-  aboutImg2,
 };

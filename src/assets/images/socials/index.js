@@ -4,5 +4,6 @@ import { default as twitter } from "./twitter.svg";
 import { default as instagram } from "./instagram.svg";
 import { default as spotify } from "./spotify.png";
 import { default as discord } from "./discord.svg";
+import { default as youtube } from "./youtube.svg";
 
-export { linkedin, facebook, twitter, instagram, spotify, discord };
+export { linkedin, facebook, twitter, instagram, spotify, discord, youtube };

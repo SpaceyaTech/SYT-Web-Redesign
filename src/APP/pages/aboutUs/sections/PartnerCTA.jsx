@@ -1,8 +1,3 @@
-import AaronAbubakar from "../../../../assets/images/aboutPage/creativeTeam/aaron-abubakar.jpeg";
-import PamelaOwino from "../../../../assets/images/aboutPage/creativeTeam/pamela-owino.png";
-import EmmyAkinyi from "../../../../assets/images/aboutPage/creativeTeam/emmy-akinyi.jpeg";
-import Temitayo from "../../../../assets/images/aboutPage/creativeTeam/temitayo.jpeg";
-// import TempPic from "../../../../assets/images/aboutPage/leadership/james-otieno.png";
 import {
   facebook,
   instagram,
@@ -11,34 +6,7 @@ import {
   discord,
 } from "../../../../assets/images/socials";
 import Caroussel from "../../../components/Caroussel";
-
-const CreativeTeamData = [
-  {
-    name: "Emmy Akinyi",
-    title: "UX Team Lead",
-    image: EmmyAkinyi,
-  },
-  {
-    name: "Pamela Owino",
-    title: "Lead Product Designer",
-    image: PamelaOwino,
-  },
-  {
-    name: "Aaron Abubakar",
-    title: "Product Designer",
-    image: AaronAbubakar,
-  },
-  // {
-  //   name: "Robert Okusi",
-  //   title: "Product Designer",
-  //   image: TempPic,
-  // },
-  {
-    name: "Temitayo",
-    title: "Product Designer",
-    image: Temitayo,
-  },
-];
+import { creativeTeamData } from "../data";
 
 function PartnerCTA() {
   return (
@@ -47,7 +15,7 @@ function PartnerCTA() {
         The Creative Team
       </h1>
 
-      <Caroussel CarousselData={CreativeTeamData} />
+      <Caroussel CarousselData={creativeTeamData} />
       <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-28">
         <div className="space-y-4 mb-8 sm:mb-0">
           <h3 className="font-semibold text-md sm:text-xl">Our Reports</h3>

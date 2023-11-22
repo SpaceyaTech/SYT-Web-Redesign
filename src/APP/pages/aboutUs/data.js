@@ -9,6 +9,10 @@ import {
   murabula,
   sharon,
   waithaka,
+  emmy,
+  pamela,
+  aaron,
+  temitayo,
 } from "../../../assets/images/aboutPage";
 
 export const LeadershipData = [
@@ -61,5 +65,28 @@ export const LeadershipData = [
     name: "Racheal Murabula",
     title: "Lead Android Engineer",
     image: murabula,
+  },
+];
+
+export const creativeTeamData = [
+  {
+    name: "Emmy Akinyi",
+    title: "UX Team Lead",
+    image: emmy,
+  },
+  {
+    name: "Pamela Owino",
+    title: "Lead Product Designer",
+    image: pamela,
+  },
+  {
+    name: "Aaron Abubakar",
+    title: "Product Designer",
+    image: aaron,
+  },
+  {
+    name: "Temitayo",
+    title: "Product Designer",
+    image: temitayo,
   },
 ];
