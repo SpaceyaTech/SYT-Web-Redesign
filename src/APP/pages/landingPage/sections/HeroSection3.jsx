@@ -117,8 +117,8 @@ const HeroSection3 = () => {
 
         <div className="overflow-auto flex flex-row gap-14 md:px-3 w-full items-center">
           {partners.map(({ id, img, name, link }) => (
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              <img src={img} className="object-cover" alt={name} key={id} />
+            <a href={link} target="_blank" rel="noopener noreferrer" key={id}>
+              <img src={img} className="object-cover" alt={name} />
             </a>
           ))}
         </div>
