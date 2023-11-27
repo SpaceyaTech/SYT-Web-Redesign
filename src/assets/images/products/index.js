@@ -1,4 +1,5 @@
 import mentorlst from "./mentorlst.png";
+import innovation from "./innovation.mp4";
 
 import figma from "./stacks/figma.png";
 import notion from "./stacks/notion.png";
@@ -22,6 +23,7 @@ import kubernetes from "./stacks/kubernetes.png";
 
 export {
   mentorlst,
+  innovation,
   figma,
   notion,
   whimsical,

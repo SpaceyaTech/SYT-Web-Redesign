@@ -24,7 +24,7 @@ const DeveloperCard = ({ name, title, headshot }) => {
           rel="noopener noreferrer"
           className="text-[#009975] text-[11px] font-normal underline mt-1/2 md:text-sm"
         >
-          View resume
+          View portfolio
         </a>
       </div>
     </div>
