@@ -1,21 +1,21 @@
-import {
-  facebook,
-  instagram,
-  linkedin,
-  twitter,
-  discord,
-} from "../../../../assets/images/socials";
-import Caroussel from "../../../components/Caroussel";
-import { creativeTeamData } from "../data";
+// import {
+//   facebook,
+//   instagram,
+//   linkedin,
+//   twitter,
+//   discord,
+// } from "../../../../assets/images/socials";
+// import Caroussel from "../../../components/Caroussel";
+// import { creativeTeamData } from "../data";
 
 function PartnerCTA() {
   return (
     <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
-      <h1 className="sm:text-3xl text-2xl font-semibold title-font text-[#323433] text-center">
+      {/* <h1 className="sm:text-3xl text-2xl font-semibold title-font text-[#323433] text-center">
         The Creative Team
-      </h1>
+      </h1> */}
 
-      <Caroussel CarousselData={creativeTeamData} />
+      {/* <Caroussel CarousselData={creativeTeamData} /> */}
       <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-28">
         <div className="space-y-4 mb-8 sm:mb-0">
           <h3 className="font-semibold text-md sm:text-xl">Our Reports</h3>
@@ -32,7 +32,7 @@ function PartnerCTA() {
             </a>
           </p>
         </div>
-        <div>
+        {/* <div>
           <h3 className="font-semibold">Follow us on social media </h3>
           <div className="flex items-center w-full space-evenly py-4">
             <a
@@ -75,7 +75,7 @@ function PartnerCTA() {
               <img src={facebook} alt="facebook" className="w-12 h-12" />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
