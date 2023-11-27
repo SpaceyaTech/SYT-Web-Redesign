@@ -16,10 +16,10 @@ function PodcastSection() {
 
       {/* Cards */}
       <div
-        className="px-2 py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto"
+        className="px-3 py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto"
         style={{
           gridTemplateColumns: "max-content",
-          gridTemplateRows: "minmax(520px, 300px)",
+          gridTemplateRows: "minmax(380px, 300px)",
           gridAutoFlow: "column",
           gridAutoColumns: "max-content",
         }}

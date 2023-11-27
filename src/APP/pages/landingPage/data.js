@@ -20,6 +20,16 @@ import {
   reactke,
 } from "../../../assets/images/hero-section";
 
+import {
+  aibunny,
+  harun,
+  regan,
+  singh,
+  tony,
+  wakio,
+  wayne,
+} from "../../../assets/testimonialSection";
+
 export const podcasts = [
   {
     id: 1,
@@ -135,5 +145,64 @@ export const partners = [
     img: reactke,
     name: "reactke",
     link: "https://www.reactdevske.org/",
+  },
+];
+
+export const testimonialData = [
+  {
+    text: "Thank you @SpaceYaTech. You guys are doing so much for the tech ecosystem in Kenya.",
+    user: "Regan Muthomi",
+    vocation: "Lead Data Science Instructor",
+    img: regan,
+    link: "https://twitter.com/regan_codes/status/1597655617375567872",
+    company: "Africa Data School",
+  },
+  {
+    text: "@SpaceYaTech's admin's mix of humor with informative texts is one thing I look forward to reading 😂🙌🏿. Great work admin 👏🏿.",
+    user: "Wayne Gakuo",
+    vocation: "Frontend Engineer",
+    img: wayne,
+    link: "https://twitter.com/wayne_gakuo/status/1661996704055406593",
+    company: "Sky.Garden",
+  },
+  {
+    text: "You are doing amazing things for the kenyan tech community 👏👏.",
+    user: "Wakio Agness",
+    vocation: "Software Engineer Student",
+    img: wakio,
+    link: "https://twitter.com/Pithoneer/status/1711647271987679246",
+    company: "Alx Africa",
+  },
+  {
+    text: "Stopping by to say I love this space.",
+    user: "Tony Kipkemboi",
+    vocation: "Developer Relations",
+    img: tony,
+    link: "https://twitter.com/tonykipkemboi/status/1712538360827490506",
+    company: "Streamlit",
+  },
+  {
+    text: "I had an awesome weekend courtesy to @Mentorlst and @SpaceYaTech.",
+    user: "Fredrick Waihenya",
+    vocation: "Back End Developer",
+    img: aibunny,
+    link: "https://twitter.com/TheAIbunny/status/1708796599793496129",
+    company: "Hasibu Systems",
+  },
+  {
+    text: "I just merged my first open-source pull request! 💪🏾I'm so excited to be a part of the community and contribute to making open-source software better.Thank you @SpaceYaTech and @Mentorlst for this awesome opportunity.💯",
+    user: "Juma Harun",
+    vocation: "Frontend Engineer",
+    img: harun,
+    link: "https://twitter.com/jumaH4run/status/1669785525480222721",
+    company: "Freelance",
+  },
+  {
+    text: "Hey @SpaceYaTech - kudos for all these spaces. Great work providing valuable insights on various tech skills 🙌.",
+    user: "Mahati V Singh",
+    vocation: "Global Tech Recruiter",
+    img: singh,
+    link: "https://twitter.com/MyAspirants/status/1715059439625986302",
+    company: "JPMorgan Chase & Co",
   },
 ];
