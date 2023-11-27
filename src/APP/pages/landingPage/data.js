@@ -8,6 +8,18 @@ import {
   Kristin,
 } from "../../../assets/images/podcast";
 
+import {
+  ctfroom,
+  DevOps,
+  Propel,
+  moringa,
+  chimoney,
+  Kushite,
+  osca,
+  cytonn,
+  reactke,
+} from "../../../assets/images/hero-section";
+
 export const podcasts = [
   {
     id: 1,
@@ -66,5 +78,62 @@ export const podcasts = [
       "Sustainable Entrepreneurship and the Goal to Impact 1 billion Entrepreneurs in Africa",
     description:
       "Listen to how Kristin is helping SMEs across Africa to get off the ground in a sustainable way.",
+  },
+];
+
+export const partners = [
+  {
+    id: 1,
+    img: ctfroom,
+    name: "ctfroom",
+    link: "https://ctfroom.com/",
+  },
+  {
+    id: 2,
+    img: DevOps,
+    name: "DevOps",
+    link: "https://twitter.com/nairobidevops",
+  },
+  {
+    id: 3,
+    img: Propel,
+    name: "Propel",
+    link: "https://propel.community/",
+  },
+  {
+    id: 4,
+    img: moringa,
+    name: "moringa",
+    link: "https://moringaschool.com/",
+  },
+  {
+    id: 5,
+    img: chimoney,
+    name: "chimoney",
+    link: "https://chimoney.io/",
+  },
+  {
+    id: 6,
+    img: Kushite,
+    name: "Kushite",
+    link: "https://icpkushite.com/",
+  },
+  {
+    id: 7,
+    img: osca,
+    name: "osca",
+    link: "https://oscafrica.org/",
+  },
+  {
+    id: 8,
+    img: cytonn,
+    name: "cytonn",
+    link: "#",
+  },
+  {
+    id: 9,
+    img: reactke,
+    name: "reactke",
+    link: "https://www.reactdevske.org/",
   },
 ];

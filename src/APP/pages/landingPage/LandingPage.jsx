@@ -2,8 +2,7 @@ import {
   CTASection,
   FaqSection,
   FeatureSection,
-  // HeroSection2,
-  HeroSection3,
+  HeroSection,
   PodcastSection,
   Services,
   StatsSection,
@@ -16,7 +15,7 @@ function LandingPage() {
   return (
     <div className="text-blue">
       <ScrollToTop />
-      <HeroSection3 />
+      <HeroSection />
       <FeatureSection />
       <Services />
       <PodcastSection />
