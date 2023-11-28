@@ -55,6 +55,14 @@ const Header2 = () => {
           Community
         </Link>
 
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/resources"
+          onClick={() => setShowNavlinks(false)}
+        >
+          Resources
+        </Link>
+
         {/* <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
@@ -71,13 +79,6 @@ const Header2 = () => {
           Blog
         </Link>
 
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
-          to="/resources"
-          onClick={() => setShowNavlinks(false)}
-        >
-          Resources
-        </Link>
 
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
@@ -119,6 +120,13 @@ const Header2 = () => {
           Community
         </Link>
 
+        <Link
+          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+          to="/resources"
+        >
+          Resources
+        </Link>
+
         {/* <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
@@ -133,12 +141,6 @@ const Header2 = () => {
           Blog
         </Link>
 
-        <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
-          to="/resources"
-        >
-          Resources
-        </Link>
 
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
