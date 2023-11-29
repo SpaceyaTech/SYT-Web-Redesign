@@ -64,13 +64,14 @@ const Header2 = () => {
         </Link>
 
         {/* <Link
-          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
+         className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
           onClick={() => setShowNavlinks(false)}
         >
           Products
         </Link>
 
+        {/*
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/blogs"
@@ -134,6 +135,7 @@ const Header2 = () => {
           Products
         </Link>
 
+        {/*
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/blogs"
