@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 
 import { courses, search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
+import BlogPagination from "../../blogs/sections/BlogPagination";
 // import useResourcesData from "../../../../hooks/Queries/resources/useResourcesData";
 
 const DifficultyCard = ({ title, selected }) => {
@@ -110,9 +109,7 @@ function ResourcesSection() {
             </div>
           </div>
 
-          <Stack spacing={2}>
-            <Pagination count={4} shape="rounded" />
-          </Stack>
+          <BlogPagination />
         </div>
       </div>
     </>

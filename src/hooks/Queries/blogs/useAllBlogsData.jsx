@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import { blog1, blog2, blog3 } from "../../../assets/images/blogs-page";
 import axios from "axios";
 
