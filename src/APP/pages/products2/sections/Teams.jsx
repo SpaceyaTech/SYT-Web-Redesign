@@ -65,12 +65,13 @@ const Teams = () => {
                   "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
                 )}
               >
-                {posts.map(({ id, name, title, headshot }) => (
+                {posts.map(({ id, name, title, headshot, portfolio }) => (
                   <DeveloperCard
                     key={id}
                     name={name}
                     title={title}
                     headshot={headshot}
+                    portfolio={portfolio}
                   />
                 ))}
               </Tab.Panel>
