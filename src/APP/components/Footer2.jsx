@@ -68,10 +68,10 @@ function Footer2() {
                 <Link to="/about-us">About Us</Link>
               </li>
               <li>
-                <a href="/#faq">FAQs</a>
+                <Link to="/community">Community</Link>
               </li>
               <li>
-                <Link to="/community">Community</Link>
+                <a href="/products">Products</a>
               </li>
             </ul>
           </div>
@@ -137,9 +137,7 @@ function Footer2() {
 
       <div className="sm:mt-14 mt-10">
         <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy;{" "}
-          {year}{" "}
-          SpaceYaTech | All Rights Reserved
+          &copy; {year} SpaceYaTech | All Rights Reserved
         </h1>
       </div>
 
