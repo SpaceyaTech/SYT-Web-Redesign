@@ -110,11 +110,9 @@ function ResourcesSection() {
             </div>
           </div>
 
-          <div className="">
-            <Stack spacing={2}>
-              <Pagination count={4} shape="rounded" />
-            </Stack>
-          </div>
+          <Stack spacing={2}>
+            <Pagination count={4} shape="rounded" />
+          </Stack>
         </div>
       </div>
     </>
