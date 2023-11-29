@@ -42,7 +42,7 @@ export const products = [
     name: "Colabs",
     desc: "An open-source directory with beginner-friendly open-source projects across all technologies and tech stacks. Browse through hundreds of projects or list your open-source projects and onboard contributors.",
     img: mentorlst,
-    link: "/products",
+    link: "https://spaceyatech.github.io/CoLabs/",
   },
   {
     name: "Mastori",
