@@ -4,15 +4,15 @@ import { arrow, course1 } from "../../../../assets/images/resources-page";
 const ResourceCard = () => {
   const [hovered, setHovered] = useState(false);
   console.log("Hovered: ", hovered);
+
   return (
     <div className="relative">
       <div
         className={`flex flex-col ${
           hovered
-            ? "z-10 absolute top-0 transform transition-all md:ease-in md:duration-700 md:scale-110"
+            ? "md:z-10 md:absolute top-0 md:transform transition-all ease duration-700 md:scale-[1.01]"
             : "z-0"
         }`}
-        onClick={() => setHovered((prev) => !prev)}
       >
         {/* img cover */}
         <div className="h-[150px]">
@@ -26,7 +26,7 @@ const ResourceCard = () => {
             <img
               src={arrow}
               alt=""
-              className={`w-6 h-6 object-contain flex md:hidden transform transition-all ease-in duration-700 ${
+              className={`w-6 h-6 object-contain flex md:hidden transform transition-all ease-in duration-200 ${
                 hovered && "rotate-180"
               }`}
             />
@@ -54,10 +54,13 @@ const ResourceCard = () => {
           <span className="text-xs leading-5 font-normal">Coursera</span>
 
           <a
+            onClick={() => setHovered(false)}
             href="/products"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit mx-auto border border-[#12A97E] rounded-lg py-[10px] px-10 text-sm text-[#009975] font-normal"
+            className={`w-fit  mx-auto border border-[#12A97E] rounded-lg py-[10px] px-10 text-sm text-[#009975] font-normal ${
+              hovered ? "flex" : "hidden"
+            }`}
           >
             Go to site
           </a>

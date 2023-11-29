@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Tab } from "@headlessui/react";
 
 import { courses, search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
-import useResourcesData from "../../../../hooks/Queries/resources/useResourcesData";
+// import useResourcesData from "../../../../hooks/Queries/resources/useResourcesData";
 
 const DifficultyCard = ({ title, selected }) => {
   return (
@@ -57,7 +56,7 @@ function ResourcesSection() {
           />
         </div>
 
-        <div className="border border-red-800 w-full flex items-center flex-col gap-4 md:gap-8">
+        <div className="w-full flex items-center flex-col gap-4 md:gap-8">
           {/* mobile difficulty filter */}
           <div className="flex md:hidden items-center justify-between w-full px-0 sm:px-3">
             <button className="text-xs leading-5 font-medium px-[10px] py-2 border border-[#009975] rounded-lg bg-[#00CC9C] text-white">
@@ -97,7 +96,7 @@ function ResourcesSection() {
               <DifficultyCard title="Intermediate" />
               <DifficultyCard title="advanced" />
             </div>
-            <div className="w-full md:w-4/5 lg:w-3/4 border border-green-300 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:px-2">
+            <div className="w-full md:w-4/5 lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:px-2">
               <ResourceCard />
               <ResourceCard />
               <ResourceCard />
@@ -109,20 +108,7 @@ function ResourcesSection() {
             </div>
           </div>
         </div>
-
-        {/* <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-          <ResourceCard />
-        </div> */}
       </div>
-      {/* )} */}
     </>
   );
 }
