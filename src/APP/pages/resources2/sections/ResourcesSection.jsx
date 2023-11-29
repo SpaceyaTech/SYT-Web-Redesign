@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 import { courses, search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
@@ -106,6 +108,12 @@ function ResourcesSection() {
               <ResourceCard />
               <ResourceCard />
             </div>
+          </div>
+
+          <div className="">
+            <Stack spacing={2}>
+              <Pagination count={4} shape="rounded" />
+            </Stack>
           </div>
         </div>
       </div>
