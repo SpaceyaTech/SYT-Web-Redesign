@@ -13,6 +13,7 @@ import {
   temitayo,
   robert,
   kasyoki,
+  rizwan,
 } from "../../../assets/images/aboutPage";
 import {
   angular,
@@ -153,7 +154,7 @@ export const teams = {
       id: 1,
       name: "Rizwan Hamisi",
       title: "Frontend Developer",
-      headshot: emmy,
+      headshot: rizwan,
       portfolio: "https://www.linkedin.com/in/hamisi-rizwan-2b1a00230",
     },
     {
