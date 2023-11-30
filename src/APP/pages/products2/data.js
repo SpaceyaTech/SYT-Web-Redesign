@@ -11,6 +11,8 @@ import {
   pamela,
   sharon,
   temitayo,
+  robert,
+  kasyoki,
 } from "../../../assets/images/aboutPage";
 import {
   angular,
@@ -128,8 +130,7 @@ export const teams = {
       id: 5,
       name: "Robert Okusi",
       title: "Product Designer",
-      // headshot
-      headshot: fred,
+      headshot: robert,
       portfolio: "https://www.linkedin.com/in/robert-okusi",
     },
     {
@@ -141,14 +142,6 @@ export const teams = {
     },
     {
       id: 7,
-      name: "Olaniran Rasheed",
-      title: "Product Designer",
-      // headshot & linkedIn
-      headshot: fred,
-      portfolio: "https://www.linkedin.com/",
-    },
-    {
-      id: 8,
       name: "Belinda Koech",
       title: "Product Designer",
       headshot: belinda,
@@ -189,7 +182,7 @@ export const teams = {
       id: 5,
       name: "Collins Kasyoki",
       title: "Frontend Developer",
-      headshot: "https://avatars.githubusercontent.com/u/40399921?v=4",
+      headshot: kasyoki,
       portfolio: "https://www.linkedin.com/in/collins-thano",
     },
     {
@@ -280,7 +273,7 @@ export const teams = {
       title: "DevOps",
       headshot:
         "https://media.licdn.com/dms/image/D4D03AQHgS719SVEGkw/profile-displayphoto-shrink_400_400/0/1698877680926?e=1706745600&v=beta&t=_ofudLp8BJN5voqACjZBvUsuPX5JnPAPY95Ovh9xppA",
-      portfolio: "https://www.linkedin.com/in/hudson-obai-3948aa204/",
+      portfolio: "https://www.linkedin.com/in/spencerochieng/",
     },
   ],
 };
