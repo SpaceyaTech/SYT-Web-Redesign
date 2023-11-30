@@ -59,7 +59,7 @@ function ResourcesSection() {
 
         <div className="w-full flex items-center flex-col gap-4 md:gap-8">
           {/* mobile difficulty filter */}
-          <div className="flex md:hidden items-center justify-between w-full px-0 sm:px-3">
+          <div className="flex lg:hidden items-center justify-between md:justify-evenly w-full px-0 sm:px-3">
             <button className="text-xs leading-5 font-medium px-[10px] py-2 border border-[#009975] rounded-lg bg-[#00CC9C] text-white">
               Beginners
             </button>
@@ -92,12 +92,12 @@ function ResourcesSection() {
 
           {/* ResourceCard Wrapper & Desktop Difficulty filters */}
           <div className="flex items-center w-full md:gap-2">
-            <div className="w-1/5 lg:w-1/4 hidden md:flex flex-col gap-8 justify-center items-center">
+            <div className="w-1/5 lg:w-1/4 hidden lg:flex flex-col gap-8 justify-center items-center">
               <DifficultyCard title="beginner" selected />
               <DifficultyCard title="Intermediate" />
               <DifficultyCard title="advanced" />
             </div>
-            <div className="w-full md:w-4/5 lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:px-2">
+            <div className="w-full md:w-full lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:px-2">
               <ResourceCard />
               <ResourceCard />
               <ResourceCard />
