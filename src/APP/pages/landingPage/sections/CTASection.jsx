@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function CTASection() {
@@ -16,9 +17,9 @@ function CTASection() {
         <div className="flex justify-center">
           <Link
             to="/community"
-            className="inline-flex  text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg"
+            className="inline-flex text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg"
           >
-            Join the community
+            <span className="text-white">Join the community</span>
           </Link>
         </div>
       </div>
