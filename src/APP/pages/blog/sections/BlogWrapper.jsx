@@ -1,6 +1,8 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { Ellipse30 } from "../../../../assets/images/blogs-page";
+import htmlParser from "html-react-parser";
+import "../../../../assets/styles/RichTextFormattings.css";
 
 const BlogWrapper = ({ blog }) => {
   const paragraph = blog.body.split("\n");
@@ -31,15 +33,9 @@ const BlogWrapper = ({ blog }) => {
         </div>
 
         <div className="pb-8 pt-6 md:pt-8">
-          <p className="text-[13px] md:text-base font-normal text-[##323433]">
-            {paragraph.map((par, i) => (
-              <React.Fragment key={i}>
-                {par}
-                <br />
-                <br />
-              </React.Fragment>
-            ))}
-          </p>
+          <div className="container text-[13px] md:text-base font-normal text-[##323433]">
+            {htmlParser(blog.body)}
+          </div>
         </div>
 
         {/* <Comments /> */}
