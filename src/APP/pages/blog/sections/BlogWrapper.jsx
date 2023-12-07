@@ -2,7 +2,6 @@ import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { Ellipse30 } from "../../../../assets/images/blogs-page";
 import htmlParser from "html-react-parser";
-import "../../../../assets/styles/RichTextFormattings.css";
 
 const BlogWrapper = ({ blog }) => {
   const paragraph = blog.body.split("\n");
