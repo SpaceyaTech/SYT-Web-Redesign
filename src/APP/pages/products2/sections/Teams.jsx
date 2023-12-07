@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab } from "@headlessui/react";
 import { teams } from "../data";
 import { upleftGreen } from "../../../../assets/images/icons";
@@ -19,10 +20,10 @@ const Teams = () => {
           Backed by a team of Global Talents.
         </h3>
 
-        <a
-          href="/products"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/community"
+          // target="_blank"
+          // rel="noopener noreferrer"
           className="inline-flex items-center gap-2 py-2"
         >
           <span className="text-base md:text-[32px] md:leading-normal text-[#009975] font-medium">
@@ -33,7 +34,7 @@ const Teams = () => {
             alt="upleft"
             className="h-6 w-6 md:h-10 md:w-10 object-contain"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Tabs */}
