@@ -19,6 +19,7 @@ import murabula from "./leadership/rachel-murabula.jpeg";
 import dave from "./frontend/dave-clinton.jpeg";
 import kasyoki from "./frontend/kasyoki.jpg";
 import rizwan from "./frontend/rizwan.jpg";
+import raymond from "./frontend/raymond.jpg";
 
 import heroImg from "./heroSec.png";
 import aboutImg2 from "./about-img-2.png";
@@ -46,6 +47,7 @@ export {
   dave,
   kasyoki,
   rizwan,
+  raymond,
   sharon,
   waithaka,
   about1,

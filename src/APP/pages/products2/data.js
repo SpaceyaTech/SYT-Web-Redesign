@@ -14,6 +14,7 @@ import {
   robert,
   kasyoki,
   rizwan,
+  raymond,
 } from "../../../assets/images/aboutPage";
 import {
   angular,
@@ -47,12 +48,12 @@ export const products = [
     img: mentorlst,
     link: "https://spaceyatech.github.io/CoLabs/",
   },
-  {
-    name: "Mastori",
-    desc: "A platform for mentors, coaches and consultants to meet with mentees, students and clients for 1:1 sessions, group sessions and community virtual events.",
-    img: mentorlst,
-    link: "/products",
-  },
+  // {
+  //   name: "Mastori",
+  //   desc: "A platform for mentors, coaches and consultants to meet with mentees, students and clients for 1:1 sessions, group sessions and community virtual events.",
+  //   img: mentorlst,
+  //   link: "/products",
+  // },
 ];
 
 export const stackCollection = [
@@ -190,8 +191,9 @@ export const teams = {
       id: 6,
       name: "Lawrence Moindi",
       title: "Frontend Developer",
-      headshot: fred,
-      portfolio: "",
+      headshot:
+        "https://media.licdn.com/dms/image/D4D03AQEOYTI8_FXF3Q/profile-displayphoto-shrink_100_100/0/1680982692686?e=1707350400&v=beta&t=Vji_sa-dDdCNCNU4v5MAT5BPb8lc1iCFvMI9qGSWVWk",
+      portfolio: "https://www.linkedin.com/in/lawrence-moindi-55b35773",
     },
     {
       id: 7,
@@ -234,7 +236,7 @@ export const teams = {
       id: 6,
       name: "Raymond Kipkorir",
       title: "Backend Developer",
-      headshot: fred,
+      headshot: raymond,
       portfolio: "https://www.linkedin.com/in/raykipkorir/",
     },
     {
