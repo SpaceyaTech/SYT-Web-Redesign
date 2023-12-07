@@ -48,8 +48,8 @@ const Teams = () => {
                     "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                     "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
                     selected
-                      ? "bg-[#f3f3f3] font-medium"
-                      : "hover:bg-[#f3f3f3] font-normal"
+                      ? "bg-[#009975] font-medium text-white"
+                      : "bg-[#f8f8f8] font-normal"
                   )
                 }
               >
