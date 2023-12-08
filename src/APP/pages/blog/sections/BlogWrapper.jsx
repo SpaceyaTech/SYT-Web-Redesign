@@ -24,7 +24,9 @@ const BlogWrapper = ({ blog }) => {
             />
 
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className=" font-medium text-[#323433]">{blog.author}</h4>
+              <h4 className="font-medium text-[#323433] capitalize">
+                {blog.author}
+              </h4>
 
               <span className="text-[#656767]">{timeAgo}</span>
             </div>
@@ -32,8 +34,11 @@ const BlogWrapper = ({ blog }) => {
         </div>
 
         <div className="pb-8 pt-6 md:pt-8">
-          <div className="container text-[13px] md:text-base font-normal text-[##323433]">
-            {htmlParser(blog.body)}
+          <div
+            className="container text-[13px] md:text-base font-normal text-[##323433]"
+            dangerouslySetInnerHTML={{ __html: blog.body }}
+          >
+            {/* {htmlParser(blog.body)} */}
           </div>
         </div>
 
