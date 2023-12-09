@@ -3,11 +3,16 @@ import { formatDistanceToNow } from "date-fns";
 import { Ellipse30 } from "../../../../assets/images/blogs-page";
 import htmlParser from "html-react-parser";
 
+import "./blogWrapper.css";
+
 const BlogWrapper = ({ blog }) => {
   const paragraph = blog.body.split("\n");
   const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
     addSuffix: true,
   });
+
+  console.log(blog.body);
+
   return (
     <div className="flex flex-row">
       <div className="w-full md:w-3/5 flex flex-col">
