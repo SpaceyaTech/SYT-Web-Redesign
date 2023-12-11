@@ -12,7 +12,7 @@ import {
   sharon,
   temitayo,
   robert,
-  kasyoki,
+  // kasyoki,
   rizwan,
   raymond,
   hellen,
@@ -184,8 +184,8 @@ export const teams = {
     {
       id: 5,
       name: "Collins Kasyoki",
-      title: "Frontend Developer",
-      headshot: kasyoki,
+      title: "Software Developer",
+      headshot: "https://avatars.githubusercontent.com/u/40399921?v=4",
       portfolio: "https://www.linkedin.com/in/collins-thano",
     },
     {
@@ -251,7 +251,7 @@ export const teams = {
     {
       id: 8,
       name: "Collins Kasyoki",
-      title: "Backend Developer",
+      title: "Software Developer",
       headshot: "https://avatars.githubusercontent.com/u/40399921?v=4",
       portfolio: "https://www.linkedin.com/in/collins-thano",
     },
