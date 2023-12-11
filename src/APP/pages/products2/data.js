@@ -15,6 +15,7 @@ import {
   kasyoki,
   rizwan,
   raymond,
+  hellen,
 } from "../../../assets/images/aboutPage";
 import {
   angular,
@@ -229,7 +230,7 @@ export const teams = {
       id: 5,
       name: "Hellen Wainaina",
       title: "Backend Developer",
-      headshot: emmy,
+      headshot: hellen,
       portfolio: "https://www.linkedin.com/in/hellen-wainaina-0946bb20b/",
     },
     {

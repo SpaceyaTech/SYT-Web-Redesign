@@ -20,6 +20,7 @@ import dave from "./frontend/dave-clinton.jpeg";
 import kasyoki from "./frontend/kasyoki.jpg";
 import rizwan from "./frontend/rizwan.jpg";
 import raymond from "./frontend/raymond.jpg";
+import hellen from "./frontend/hellen.jpg";
 
 import heroImg from "./heroSec.png";
 import aboutImg2 from "./about-img-2.png";
@@ -48,6 +49,7 @@ export {
   kasyoki,
   rizwan,
   raymond,
+  hellen,
   sharon,
   waithaka,
   about1,
