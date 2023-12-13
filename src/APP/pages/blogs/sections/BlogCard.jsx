@@ -9,14 +9,14 @@ const BlogCard = ({ blog }) => {
     addSuffix: true,
   });
   return (
-    <div className="flex flex-col items-start w-full">
+    <div className="flex flex-col items-start w-full mb-6">
       <img
         src={blog.image}
         alt="blog"
-        className="flex-1 w-full h-60 object-cover rounded-lg"
+        className="w-full h-60 object-cover rounded-lg"
       />
 
-      <div className="flex-1 py-[6px] flex flex-col gap-[10px] w-full">
+      <div className="py-[6px] flex flex-col gap-[10px] w-full">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
           <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
 
