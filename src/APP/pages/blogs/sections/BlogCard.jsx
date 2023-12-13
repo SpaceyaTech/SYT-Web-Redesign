@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Ellipse30, arrowRight } from "../../../../assets/images/blogs-page";
+import logo from "../../../../assets/images/sytLogo.png";
+import { arrowRight } from "../../../../assets/images/blogs-page";
 import BlogStats from "./BlogStats";
 import { formatDistanceToNow } from "date-fns";
 
@@ -30,9 +31,9 @@ const BlogCard = ({ blog }) => {
         <div className="flex flex-row items-start justify-between">
           <div className="flex gap-[10px]">
             <img
-              src={Ellipse30}
+              src={logo}
               alt="icon"
-              className="w-10 h-10 object-cover rounded-full"
+              className="w-10 h-10 object-cover bg-gray-200 flex items-center justify-center p-1 rounded-full"
             />
 
             <div className="flex flex-col gap-1 text-sm">
@@ -43,12 +44,12 @@ const BlogCard = ({ blog }) => {
           </div>
 
           <button
-            className="flex gap-2 items-center"
+            className="flex gap-2 items-center justify-between"
             onClick={() => {
               navigate(`/blogs/${blog.id}`);
             }}
           >
-            <span className="uppercase text-[#009975] text-sm font-medium">
+            <span className="uppercase text-[#009975] text-sm font-medium m-0">
               read more
             </span>
             <img src={arrowRight} alt="arrow-right" className="w-5 h-5" />

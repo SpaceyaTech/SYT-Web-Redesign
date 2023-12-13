@@ -1,17 +1,13 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
-import { Ellipse30 } from "../../../../assets/images/blogs-page";
-import htmlParser from "html-react-parser";
+import logo from "../../../../assets/images/sytLogo.png";
 
 import "./blogWrapper.css";
 
 const BlogWrapper = ({ blog }) => {
-  const paragraph = blog.body.split("\n");
   const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
     addSuffix: true,
   });
-
-  console.log(blog.body);
 
   return (
     <div className="flex flex-row">
@@ -23,9 +19,9 @@ const BlogWrapper = ({ blog }) => {
 
           <div className="flex gap-[10px]">
             <img
-              src={Ellipse30}
+              src={logo}
               alt="icon"
-              className="w-10 h-10 object-cover rounded-full"
+              className="w-10 h-10 object-cover rounded-full bg-gray-200 flex items-center justify-center p-1 rounded-full"
             />
 
             <div className="flex flex-col gap-1 text-sm">

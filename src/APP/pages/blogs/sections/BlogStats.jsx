@@ -1,4 +1,4 @@
-import { chatText, eye, thumbsUp } from "../../../../assets/images/blogs-page";
+import { thumbsUp } from "../../../../assets/images/blogs-page";
 
 const BlogStats = ({ likes }) => {
   return (
