@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import logo from "../../../../assets/images/sytLogo.png";
-import { arrowRight } from "../../../../assets/images/blogs-page";
-import BlogStats from "./BlogStats";
 import { formatDistanceToNow } from "date-fns";
+import { useNavigate } from "react-router-dom";
+import { arrowRight } from "../../../../assets/images/blogs-page";
+import logo from "../../../../assets/images/sytLogo.png";
+import BlogStats from "./BlogStats";
 
 const BlogCard = ({ blog }) => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const BlogCard = ({ blog }) => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
           <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
 
-          <BlogStats likes={blog.likes} />
+          <BlogStats likes={blog.likes <= 1 ? "" : blog.likes} />
         </div>
 
         <p className="text-base font-normal leading-6 flex flex-wrap text-[#4C4D4D] line-clamp-2">

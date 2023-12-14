@@ -1,5 +1,7 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import BlogStats from "../../blogs/sections/BlogStats";
+
 import logo from "../../../../assets/images/sytLogo.png";
 
 import "./blogWrapper.css";
@@ -17,20 +19,24 @@ const BlogWrapper = ({ blog }) => {
             {blog.title}
           </h3>
 
-          <div className="flex gap-[10px]">
-            <img
-              src={logo}
-              alt="icon"
-              className="w-10 h-10 object-cover rounded-full bg-gray-200 flex items-center justify-center p-1 rounded-full"
-            />
+          <div className="flex items-center justify-between">
+            <div className="flex gap-2">
+              <img
+                src={logo}
+                alt="icon"
+                className="w-10 h-10 object-cover rounded-full bg-gray-200 flex items-center justify-center p-1"
+              />
 
-            <div className="flex flex-col gap-1 text-sm">
-              <h4 className="font-medium text-[#323433] capitalize">
-                {blog.author}
-              </h4>
+              <div className="flex flex-col text-sm">
+                <h4 className="font-medium text-[#323433] capitalize">
+                  {blog.author}
+                </h4>
 
-              <span className="text-[#656767]">{timeAgo}</span>
+                <span className="text-[#656767] text-xs">{timeAgo}</span>
+              </div>
             </div>
+
+            <BlogStats likes={blog.likes} />
           </div>
         </div>
 
