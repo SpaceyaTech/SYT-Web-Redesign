@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function PodcastCard({ img, title, description, link }) {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" className="h-fit">
-      <div className="w-[85vw] md:w-[350px] h-[380px] rounded-md overflow-hidden relative">
+      <div className="w-[85vw] md:w-[350px] h-[380px] rounded-md overflow-hidden relative mx-4">
         <img src={img} alt="podcast" className="w-full h-full object-cover" />
         <div className="absolute bottom-0 left-0 right-0 bg-black opacity-80 h-1/2" />
 

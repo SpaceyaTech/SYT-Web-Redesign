@@ -1,5 +1,7 @@
-import { PodcastCard } from "../../../components";
+import Marquee from "react-fast-marquee";
+
 import { podcasts } from "../data";
+import { PodcastCard } from "../../../components";
 
 function PodcastSection() {
   return (
@@ -15,25 +17,31 @@ function PodcastSection() {
       </div>
 
       {/* Cards */}
-      <div
-        className="px-3 py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto"
+      <Marquee
+        className="px-2 py-6 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-x-auto"
+        direction="right"
+        pauseOnHover
+        autoFill
+        speed={60}
         style={{
           gridTemplateColumns: "max-content",
-          gridTemplateRows: "minmax(380px, 300px)",
+          gridTemplateRows: "minmax(520px, 300px)",
           gridAutoFlow: "column",
           gridAutoColumns: "max-content",
         }}
       >
-        {podcasts.map(({ id, img, description, title, link }) => (
+        {podcasts.map(({ id, img, description, category, title, link }) => (
           <PodcastCard
             key={id}
             img={img}
+            category={category}
             title={title}
             description={description}
             link={link}
           />
         ))}
-      </div>
+      </Marquee>
+
       <div className="flex items-center justify-center gap-2">
         <a
           href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"

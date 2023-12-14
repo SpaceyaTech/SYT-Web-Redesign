@@ -150,6 +150,7 @@ export const partners = [
 
 export const testimonialData = [
   {
+    id: 1,
     text: "Thank you @SpaceYaTech. You guys are doing so much for the tech ecosystem in Kenya.",
     user: "Regan Muthomi",
     vocation: "Lead Data Science Instructor",
@@ -158,6 +159,7 @@ export const testimonialData = [
     company: "Africa Data School",
   },
   {
+    id: 2,
     text: "@SpaceYaTech's admin's mix of humor with informative texts is one thing I look forward to reading 😂🙌🏿. Great work admin 👏🏿.",
     user: "Wayne Gakuo",
     vocation: "Frontend Engineer",
@@ -166,6 +168,7 @@ export const testimonialData = [
     company: "Sky.Garden",
   },
   {
+    id: 3,
     text: "You are doing amazing things for the kenyan tech community 👏👏.",
     user: "Wakio Agness",
     vocation: "Software Engineer Student",
@@ -174,6 +177,7 @@ export const testimonialData = [
     company: "Alx Africa",
   },
   {
+    id: 4,
     text: "Stopping by to say I love this space.",
     user: "Tony Kipkemboi",
     vocation: "Developer Relations",
@@ -182,6 +186,7 @@ export const testimonialData = [
     company: "Streamlit",
   },
   {
+    id: 5,
     text: "I had an awesome weekend courtesy to @Mentorlst and @SpaceYaTech.",
     user: "Fredrick Waihenya",
     vocation: "Back End Developer",
@@ -190,6 +195,7 @@ export const testimonialData = [
     company: "Hasibu Systems",
   },
   {
+    id: 6,
     text: "I just merged my first open-source pull request! 💪🏾I'm so excited to be a part of the community and contribute to making open-source software better.Thank you @SpaceYaTech and @Mentorlst for this awesome opportunity.💯",
     user: "Juma Harun",
     vocation: "Frontend Engineer",
@@ -198,6 +204,7 @@ export const testimonialData = [
     company: "Freelance",
   },
   {
+    id: 7,
     text: "Hey @SpaceYaTech - kudos for all these spaces. Great work providing valuable insights on various tech skills 🙌.",
     user: "Mahati V Singh",
     vocation: "Global Tech Recruiter",

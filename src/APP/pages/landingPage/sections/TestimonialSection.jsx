@@ -1,4 +1,5 @@
 import React from "react";
+import Marquee from "react-fast-marquee";
 
 import { testimonialData } from "../data";
 
@@ -9,7 +10,7 @@ function TestimonialSection() {
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
           What people are saying...
         </h1>
-        <p className="sm:hidden md:block leading-relaxed text-base text-center pl-4 md:pl-2 text-[#323433]">
+        <p className="sm:hidden md:block leading-relaxed mb-2 text-base text-center pl-4 md:pl-2 text-[#323433]">
           Made by techies for techies. SpaceYaTech will allow you to accelerate
           your growth and
           <br />
@@ -17,22 +18,21 @@ function TestimonialSection() {
         </p>
       </div>
 
-      <div
-        className="py-6 px-3 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
+      <Marquee
+        className="py-6 px-3 grid grid-cols-1 md:grid-cols-2 gap-3 overflow-x-auto scrollbar-hide"
+        pauseOnHover
+        speed={40}
         style={{
-          // display: "grid",
-          // gap: "2rem",
           gridTemplateColumns: "max-content",
           gridTemplateRows: "minmax(250px, 300px)",
           gridAutoFlow: "column",
           gridAutoColumns: "max-content",
-          // overflowX: "auto",
         }}
       >
-        {testimonialData.map((testimonial, index) => (
+        {testimonialData.map((testimonial) => (
           <figure
-            key={index}
-            className="flex flex-col w-[320px] sm:w-[480px] items-center justify-center p-2 sm:p-8  bg-white border border-gray-200 rounded-lg shadow-sm"
+            key={testimonial.id}
+            className="flex flex-col w-[320px] h-[340px] sm:h-[300px] sm:w-[480px] items-center justify-center p-2 mx-3 sm:p-8  bg-white border border-gray-200 rounded-lg shadow-sm"
           >
             <a
               href={testimonial.link}
@@ -64,7 +64,7 @@ function TestimonialSection() {
             </a>
           </figure>
         ))}
-      </div>
+      </Marquee>
     </section>
   );
 }
