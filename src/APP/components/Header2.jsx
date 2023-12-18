@@ -55,6 +55,7 @@ const Header2 = () => {
           Community
         </Link>
 
+        {/*
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/resources"
@@ -63,7 +64,7 @@ const Header2 = () => {
           Resources
         </Link>
 
-        {/* <Link
+        <Link
          className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
           onClick={() => setShowNavlinks(false)}
@@ -121,6 +122,7 @@ const Header2 = () => {
           Community
         </Link>
 
+        {/*
         <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/resources"
@@ -128,7 +130,7 @@ const Header2 = () => {
           Resources
         </Link>
 
-        {/* <Link
+        <Link
           className="text-gray-900 hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer focus:text-[#009975] focus:underline"
           to="/products"
         >
