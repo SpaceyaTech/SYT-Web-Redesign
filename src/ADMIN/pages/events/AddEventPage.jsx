@@ -8,7 +8,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useEventsCategories } from "../../../hooks/Queries/eventsSection/useEventCategories";
 import useChaptersData from "../../../hooks/Queries/community/useChaptersData";
 import usePostEvents from "../../../hooks/Queries/eventsSection/usePostEvents";
-import "../../../APP/pages/community/sections/eventsSection/SingleEvents/EventAbout.css"
 
 function AddEventPage() {
   const [ selectedEventCategory, setSelectedEventCategory ] = useState('1');

@@ -10,7 +10,7 @@ const Banner = ({ searchText, setSearchText }) => {
       <div className="absolute inset-0 flex flex-col gap-4 md:gap-8 items-center justify-center w-[80%] mx-auto md:w-[716px]">
         <h2 className="text-3xl font-normal text-white">Blogs</h2>
 
-        <form
+        {/* <form
           className="flex items-center border-2 border-white px-4 py-2 md:py-3 rounded-full w-full gap-1"
           onSubmit={handleSearch}
         >
@@ -24,7 +24,7 @@ const Banner = ({ searchText, setSearchText }) => {
           <button type="submit" className="w-1/10 p-2">
             <img src={search} alt="search" className="w-6 h-6" />
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
