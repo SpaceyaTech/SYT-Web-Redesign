@@ -58,5 +58,5 @@ export {
   mission,
   vision,
   heroImg,
-  aboutImg2,
+  // aboutImg2,
 };
