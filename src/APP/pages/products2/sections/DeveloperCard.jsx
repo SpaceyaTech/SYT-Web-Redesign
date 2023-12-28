@@ -1,6 +1,6 @@
 import React from "react";
 
-const DeveloperCard = ({ name, title, headshot }) => {
+const DeveloperCard = ({ name, title, headshot, portfolio }) => {
   return (
     <div className="relative h-[216px]">
       {/* headshot */}
@@ -19,7 +19,7 @@ const DeveloperCard = ({ name, title, headshot }) => {
           {title}
         </span>
         <a
-          href="/products"
+          href={portfolio}
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#009975] text-[11px] font-normal underline mt-1/2 md:text-sm"
