@@ -1,6 +1,6 @@
 import React from "react";
 
-import { aboutImg2, heroImg } from "../../../../assets/images/aboutPage";
+import { about2, heroImg } from "../../../../assets/images/aboutPage";
 
 function HeroSection() {
   return (
@@ -30,7 +30,7 @@ function HeroSection() {
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center md:my-20 min-h-96 px-4 md:px-0">
         <div className="my-10">
-          <img src={aboutImg2} alt="space ya tech" />
+          <img src={about2} alt="space ya tech" />
         </div>
         <div className="leading-6 md:w-1/2 text-base space-y-4 md:pl-10">
           <p>

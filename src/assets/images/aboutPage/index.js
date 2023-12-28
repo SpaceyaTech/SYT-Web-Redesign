@@ -23,7 +23,7 @@ import raymond from "./frontend/raymond.jpg";
 import hellen from "./frontend/hellen.jpg";
 
 import heroImg from "./heroSec.png";
-import aboutImg2 from "./about-img-2.png";
+// import aboutImg2 from "./about-img-2.png";
 import about1 from "./about-img-1.png";
 import about2 from "./about-img-2.png";
 import buildComm from "./building-community.png";
