@@ -1,6 +1,37 @@
-import { useQuery } from "@tanstack/react-query";
+import { blog1, blog2, blog3 } from "../../../assets/images/blogs-page";
 import axios from "axios";
-// import { blog1, blog2, blog3 } from "../../../assets/images/blogs-page";
+
+export const blogCat = [
+  {
+    id: 1,
+    cat: "Software Development",
+  },
+  {
+    id: 2,
+    cat: "Design",
+  },
+  {
+    id: 3,
+    cat: "Mobile Development",
+  },
+  {
+    id: 4,
+    cat: "UX Design",
+  },
+  {
+    id: 5,
+    cat: "UI Design",
+  },
+  {
+    id: 6,
+    cat: "Technical Writing",
+  },
+];
+
+// interface BlogCategory {
+//   id: number;
+//   name: string;
+// }
 
 const fetchBlogCategories = async () => {
   try {
@@ -22,6 +53,23 @@ const useBlogCategories = () => {
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
 };
+
+// interface Blog {
+//   id: number;
+//   title: string;
+//   description: string;
+//   category: number;
+//   likes: number;
+//   image: string;
+//   created_at: string;
+// }
+
+// interface BlogList {
+//   count: number;
+//   next: string;
+//   previous: string;
+//   results: Blog[]
+// }
 
 const fetchBlogsData = async (page) => {
   let url = `${process.env.REACT_APP_API_BASE_URL}/blog/`;

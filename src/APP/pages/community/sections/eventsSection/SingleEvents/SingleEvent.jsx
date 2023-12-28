@@ -10,10 +10,11 @@ import React, { useEffect, useState } from "react";
 // } from "../../../../../../assets/images/community";
 import { Link, useParams } from "react-router-dom";
 import { parse as parseDate, format } from "date-fns";
-import parse from "html-react-parser";
+import parse from "html-react-parser"
 import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
 import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
+import "./EventAbout.css";
 
 function SingleEvent() {
   React.useEffect(() => {
