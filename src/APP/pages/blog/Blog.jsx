@@ -8,7 +8,7 @@ function Blog() {
   const { data: blogData, isLoading, isError, isSuccess } = useBlogData(id);
 
   return (
-    <>
+    <section className=" max-w-[1440px] mx-auto">
       {isError && <p>Error fetching blog details!</p>}
       {isLoading && <p>Loading blog details...</p>}
       {isSuccess && (
@@ -36,7 +36,7 @@ function Blog() {
           {/* <RelatedBlogs /> */}
         </section>
       )}
-    </>
+    </section>
   );
 }
 
