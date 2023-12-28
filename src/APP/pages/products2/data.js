@@ -164,7 +164,7 @@ export const teams = {
       name: "Sonia Lomo",
       title: "Frontend Developer",
       headshot:
-        "https://media.licdn.com/dms/image/C4D03AQHnuqOwyIoyeA/profile-displayphoto-shrink_400_400/0/1600620855636?e=1706745600&v=beta&t=Qsr_9AS7NAB8O7dKRLyT-s6OXwRoR-4Uw1cQDk7cGO0",
+        "https://media.licdn.com/dms/image/D4D03AQHLQHd_YdNIIw/profile-displayphoto-shrink_400_400/0/1703509213541?e=1709164800&v=beta&t=mdmSQ04f6kKSsngCSKhTl75bdXDZFUPPvFco2QQeZYo",
       portfolio: "https://www.linkedin.com/in/sonia-lomo/",
     },
     {
