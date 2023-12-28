@@ -24,8 +24,7 @@ export default PodcastCard;
 
 PodcastCard.propTypes = {
   img: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  link: PropTypes.number.isRequired,
+  link: PropTypes.string.isRequired,
 };

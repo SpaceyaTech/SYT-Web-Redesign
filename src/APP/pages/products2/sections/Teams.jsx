@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab } from "@headlessui/react";
 import { teams } from "../data";
 import { upleftGreen } from "../../../../assets/images/icons";
@@ -19,10 +20,10 @@ const Teams = () => {
           Backed by a team of Global Talents.
         </h3>
 
-        <a
-          href="/products"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/community"
+          // target="_blank"
+          // rel="noopener noreferrer"
           className="inline-flex items-center gap-2 py-2"
         >
           <span className="text-base md:text-[32px] md:leading-normal text-[#009975] font-medium">
@@ -33,7 +34,7 @@ const Teams = () => {
             alt="upleft"
             className="h-6 w-6 md:h-10 md:w-10 object-contain"
           />
-        </a>
+        </Link>
       </div>
 
       {/* Tabs */}
@@ -48,8 +49,8 @@ const Teams = () => {
                     "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                     "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
                     selected
-                      ? "bg-[#f3f3f3] font-medium"
-                      : "hover:bg-[#f3f3f3] font-normal"
+                      ? "bg-[#009975] font-medium text-white"
+                      : "bg-[#f8f8f8] font-normal"
                   )
                 }
               >
@@ -65,12 +66,13 @@ const Teams = () => {
                   "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
                 )}
               >
-                {posts.map(({ id, name, title, headshot }) => (
+                {posts.map(({ id, name, title, headshot, portfolio }) => (
                   <DeveloperCard
                     key={id}
                     name={name}
                     title={title}
                     headshot={headshot}
+                    portfolio={portfolio}
                   />
                 ))}
               </Tab.Panel>

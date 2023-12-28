@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 import {
   ctfroom,
   DevOps,
@@ -115,13 +116,23 @@ const HeroSection3 = () => {
           individuals who make SpaceYaTech possible.
         </p>
 
-        <div className="overflow-auto flex flex-row gap-14 md:px-3 w-full items-center">
-          {partners.map(({ id, img, name }) => (
-            // <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src={img} className="object-cover" alt={name} key={id} />
-            // </a>
+        <Marquee
+          className="overflow-auto flex flex-row gap-14 w-full items-center"
+          pauseOnHover
+          gradient
+          gradientColor="white"
+          gradientWidth={100}
+        >
+          {partners.map(({ id, img, name, link }) => (
+            <a href={link} target="_blank" rel="noopener noreferrer" key={id}>
+              <img
+                src={img}
+                className="object-cover max-w-none px-7"
+                alt={name}
+              />
+            </a>
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   );

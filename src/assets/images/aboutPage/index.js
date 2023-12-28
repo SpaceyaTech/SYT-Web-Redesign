@@ -1,6 +1,9 @@
 import aaron from "./creativeTeam/aaron-abubakar.jpeg";
 import emmy from "./creativeTeam/emmy-akinyi.jpeg";
 import pamela from "./creativeTeam/pamela-owino.png";
+import temitayo from "./creativeTeam/temitayo.jpeg";
+import belinda from "./creativeTeam/belinda-koech.jpg";
+import robert from "./creativeTeam/robert-okusi.jpg";
 
 import catherine from "./leadership/catherine-kiiru.jpeg";
 import fred from "./leadership/fred-ouko.jpeg";
@@ -13,8 +16,14 @@ import sharon from "./leadership/sharon-jebitok.jpeg";
 import waithaka from "./leadership/waithaka-waweru.jpeg";
 import murabula from "./leadership/rachel-murabula.jpeg";
 
+import dave from "./frontend/dave-clinton.jpeg";
+import kasyoki from "./frontend/kasyoki.jpg";
+import rizwan from "./frontend/rizwan.jpg";
+import raymond from "./frontend/raymond.jpg";
+import hellen from "./frontend/hellen.jpg";
+
 import heroImg from "./heroSec.png";
-import aboutImg2 from "./about-img-2.png";
+// import aboutImg2 from "./about-img-2.png";
 import about1 from "./about-img-1.png";
 import about2 from "./about-img-2.png";
 import buildComm from "./building-community.png";
@@ -26,6 +35,9 @@ export {
   emmy,
   pamela,
   catherine,
+  temitayo,
+  belinda,
+  robert,
   fred,
   hudson,
   ian,
@@ -33,6 +45,11 @@ export {
   juma,
   marlyn,
   murabula,
+  dave,
+  kasyoki,
+  rizwan,
+  raymond,
+  hellen,
   sharon,
   waithaka,
   about1,
