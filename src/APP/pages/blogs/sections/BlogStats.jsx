@@ -1,10 +1,6 @@
-import { thumbsUp } from "../../../../assets/images/blogs-page";
+import { chatText, eye, thumbsUp } from "../../../../assets/images/blogs-page";
 
 const BlogStats = ({ likes }) => {
-  const handleLike = () => {
-    console.log("Clicked");
-  };
-
   return (
     <div className="flex flex-row items-center gap-2">
       {/* <div className="flex flex-row items-center gap-1">
@@ -12,14 +8,9 @@ const BlogStats = ({ likes }) => {
         <span className="text-base text-[#00664E]">240</span>
       </div> */}
 
-      <div className="flex flex-row items-center gap-x-1">
-        <img
-          src={thumbsUp}
-          alt="eye"
-          className="w-5 h-5 object-cover cursor-pointer"
-          onClick={handleLike}
-        />
-        <span className="text-sm text-[#00664E] m-0">{likes}</span>
+      <div className="flex flex-row items-center gap-1">
+        <img src={thumbsUp} alt="eye" className="w-5 h-5 object-cover" />
+        <span className="text-base text-[#00664E]">{likes}</span>
       </div>
 
       {/* <div className="flex flex-row items-center gap-1">

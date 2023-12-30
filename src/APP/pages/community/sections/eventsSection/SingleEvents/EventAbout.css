@@ -1,0 +1,67 @@
+.container ul {
+  list-style: disc;
+  padding: revert;
+}
+
+.container :not(.container) ul {
+  list-style: disc;
+  padding: revert;
+}
+
+.container :not(.container) ol {
+  list-style: revert;
+  padding: revert;
+}
+
+.container ol {
+  list-style: revert;
+  padding: revert;
+}
+
+.container h1 {
+  font-size: revert;
+  font-weight: 500;
+}
+
+.container h1 :not(.container) {
+  font-size: revert;
+  font-weight: 500;
+}
+
+.container h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.container h2 :not(.container) {
+  font-size: revert;
+  font-weight: 500;
+}
+
+.container a {
+  color: revert;
+}
+
+.container :not(.container) a {
+  color: revert;
+}
+
+.container pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.container :not(.container) pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+}
