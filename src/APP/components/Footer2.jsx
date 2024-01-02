@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/sytLogo.png";
-import backup from "../../assets/images/backup.svg";
+// import backup from "../../assets/images/backup.svg";
 import { linkedin, twitter, spotify } from "../../assets/images/socials";
 import youtube from "../../assets/images/socials/youtube.svg";
 
@@ -68,10 +68,10 @@ function Footer2() {
                 <Link to="/about-us">About Us</Link>
               </li>
               <li>
-                <a href="/#faq">FAQs</a>
+                <Link to="/community">Community</Link>
               </li>
               <li>
-                <Link to="/community">Community</Link>
+                <a href="/products">Products</a>
               </li>
             </ul>
           </div>
@@ -137,9 +137,7 @@ function Footer2() {
 
       <div className="sm:mt-14 mt-10">
         <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy;{" "}
-          {year}{" "}
-          SpaceYaTech | All Rights Reserved
+          &copy; {year} SpaceYaTech | All Rights Reserved
         </h1>
       </div>
 

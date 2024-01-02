@@ -1,4 +1,4 @@
-import React from "react";
+import video from "../../../../assets/images/syt.mp4";
 
 const HeroSection = () => {
   return (
@@ -15,9 +15,9 @@ const HeroSection = () => {
       </div>
 
       {/* video section */}
-      <div className="w-full">
+      <div className="w-full md:rounded-2xl overflow-hidden">
         <video
-          src="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
+          src={video}
           controls
           className="h-full w-fit aspect-video"
           autoPlay={false}
