@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assets/images/sytLogo.png";
 import menu from "../../assets/images/hamburger-menu.svg";
-import NavLink from "./NavLink";
 
 const navLinks = [
   {
@@ -51,6 +50,8 @@ const navLinks = [
 const Header2 = () => {
   const [showNavlinks, setShowNavlinks] = useState(false);
 
+  const { pathname } = useLocation();
+
   return (
     <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
       {/* logo */}
@@ -75,16 +76,39 @@ const Header2 = () => {
             : { display: "none" }
         }
       >
-        {navLinks.map(({ link, id, route }) => (
-          <NavLink key={id} link={link} route={route} />
-        ))}
+        {navLinks.map(({ link, id, route }) => {
+          const isActive = pathname === route;
+          return (
+            <Link
+              key={id}
+              className={`${
+                isActive ? "text-[#009975] underline" : "text-gray-900"
+              } hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer`}
+              to={`${route}`}
+              onClick={() => setShowNavlinks(false)}
+            >
+              {link}
+            </Link>
+          );
+        })}
       </nav>
 
       {/* navlinks */}
       <nav className="md:flex hidden items-center gap-5 text-base">
-        {navLinks.map(({ id, link, route }) => (
-          <NavLink key={id} link={link} route={route} />
-        ))}
+        {navLinks.map(({ id, link, route }) => {
+          const isActive = pathname === route;
+          return (
+            <Link
+              key={id}
+              className={`${
+                isActive ? "text-[#009975] underline" : "text-gray-900"
+              } hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer`}
+              to={`${route}`}
+            >
+              {link}
+            </Link>
+          );
+        })}
       </nav>
     </header>
   );
