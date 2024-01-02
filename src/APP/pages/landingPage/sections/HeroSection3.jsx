@@ -1,75 +1,8 @@
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-import {
-  ctfroom,
-  DevOps,
-  Kushite,
-  Propel,
-  bannerImg,
-  chimoney,
-  moringa,
-  osca,
-  reactke,
-  spheron,
-  cytonn,
-} from "../../../../assets/images/hero-section";
 
-const partners = [
-  {
-    id: 1,
-    img: ctfroom,
-    name: "ctfroom",
-    link: "https://ctfroom.com/",
-  },
-  {
-    id: 2,
-    img: DevOps,
-    name: "DevOps",
-    link: "https://twitter.com/nairobidevops",
-  },
-  {
-    id: 3,
-    img: Propel,
-    name: "Propel",
-    link: "https://propel.community/",
-  },
-  {
-    id: 4,
-    img: moringa,
-    name: "moringa",
-    link: "https://moringaschool.com/",
-  },
-  {
-    id: 5,
-    img: chimoney,
-    name: "chimoney",
-    link: "https://chimoney.io/",
-  },
-  {
-    id: 6,
-    img: Kushite,
-    name: "Kushite",
-    link: "https://icpkushite.com/",
-  },
-  {
-    id: 7,
-    img: osca,
-    name: "osca",
-    link: "https://oscafrica.org/",
-  },
-  {
-    id: 8,
-    img: cytonn,
-    name: "cytonn",
-    link: "#",
-  },
-  {
-    id: 9,
-    img: reactke,
-    name: "reactke",
-    link: "https://www.reactdevske.org/",
-  },
-];
+import { partners } from "../data";
+import { bannerImg } from "../../../../assets/images/hero-section";
 
 const HeroSection3 = () => {
   return (

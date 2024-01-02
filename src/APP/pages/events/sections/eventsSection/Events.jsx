@@ -17,17 +17,7 @@ function Events({ events, isVertical }) {
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events && Array.isArray(events)
         ? events.map(
-            ({
-              id,
-              name,
-              date,
-              location,
-              mode,
-              category,
-              poster,
-              city,
-              start_time,
-            }) => {
+            ({ id, name, date, location, mode, poster, city, start_time }) => {
               const buttonColor =
                 mode === "Virtual"
                   ? "bg-red-800 hover:bg-red-800"
@@ -43,7 +33,7 @@ function Events({ events, isVertical }) {
                 >
                   <Link to={`/events/${id}`} className="cursor-pointer">
                     <img
-                      className="rounded-t-lg w-full cover h-56 object-cover"
+                      className="rounded-t-lg w-full h-56 object-contain"
                       src={poster}
                       alt={name}
                     />

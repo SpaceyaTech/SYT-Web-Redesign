@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/sytLogo.png";
 // import backup from "../../assets/images/backup.svg";
-import { linkedin, twitter, spotify } from "../../assets/images/socials";
-import youtube from "../../assets/images/socials/youtube.svg";
+import {
+  linkedin,
+  twitter,
+  spotify,
+  youtube,
+} from "../../assets/images/socials";
 
 function Footer2() {
   const now = new Date();
