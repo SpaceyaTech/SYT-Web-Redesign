@@ -34,6 +34,7 @@ export const podcasts = [
   {
     id: 1,
     img: RichardMulandi,
+    category: "Podcast",
     link: "https://open.spotify.com/episode/7hUJsdPdB0drnyNNTiYim2?si=idIGiZQBQdau9lEdh4Y8Rg",
     title: "Product life-cycle with Product Head at SafeBoda",
     description:
@@ -42,6 +43,7 @@ export const podcasts = [
   {
     id: 2,
     img: Balogun,
+    category: "Podcast",
     link: "https://open.spotify.com/episode/4iHhYqBHMWjPTpOdm6F14z?si=JTp43JZoSgesogJi90X-xQ",
     title: "Tech Makers & Movers with PocketFood",
     description:
@@ -50,6 +52,7 @@ export const podcasts = [
   {
     id: 3,
     img: Melody,
+    category: "Podcast",
     link: "https://open.spotify.com/episode/7u24ofrYpk3umcCss9kgnw?si=0be796e136304358",
     title: "Smart Cities and Sustainable Urban Developement in Africa",
     description:
@@ -57,6 +60,7 @@ export const podcasts = [
   },
   {
     id: 4,
+    category: "Podcast",
     img: Jean,
     link: "https://open.spotify.com/episode/1F6ecP7YS8S1mhWdnuQ0DU?si=2a94751b4c034a02",
     title: "Building a more inclusive Tech Industry in Africa",
@@ -65,6 +69,7 @@ export const podcasts = [
   },
   {
     id: 5,
+    category: "Podcast",
     img: Saruni,
     link: "https://open.spotify.com/episode/6GAhWxeZNuDtfQj76o7EhV?si=PFb994_WQzKw2qfXCtsrbQ",
     title: "The Future of Fintech X Saruni Maina",
@@ -75,6 +80,7 @@ export const podcasts = [
   {
     id: 6,
     img: Vivian,
+    category: "Podcast",
     link: "https://open.spotify.com/episode/0KBLGLilCC5X0SnM4eg9Ko?si=6c129ddf60914838",
     title: "Digging into Website Hosting Sector",
     description:
@@ -83,6 +89,7 @@ export const podcasts = [
   {
     id: 7,
     img: Kristin,
+    category: "Podcast",
     link: "https://open.spotify.com/episode/1XblqFJZJUf9l1uWmkAcvD?si=9bf748e882b848ed",
     title:
       "Sustainable Entrepreneurship and the Goal to Impact 1 billion Entrepreneurs in Africa",
