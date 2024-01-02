@@ -1,5 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { Ellipse30, arrowRight } from "../../../../assets/images/blogs-page";
+import { formatDistanceToNow } from "date-fns";
+import { useNavigate, Link } from "react-router-dom";
+import { arrowRight } from "../../../../assets/images/blogs-page";
+import logo from "../../../../assets/images/sytLogo.png";
+
 import BlogStats from "./BlogStats";
 import { formatDistanceToNow } from "date-fns";
 
@@ -9,7 +12,12 @@ const BlogCard = ({ blog }) => {
     addSuffix: true,
   });
   return (
-    <div className="flex flex-col items-start w-full">
+
+    <Link
+      to={`/blogs/${blog.id}`}
+      className="flex flex-col items-start w-full mb-6"
+    >
+
       <img
         src={blog.image}
         alt="blog"
@@ -55,7 +63,7 @@ const BlogCard = ({ blog }) => {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
