@@ -14,7 +14,7 @@ function Footer2() {
   const year = now.getFullYear();
 
   return (
-    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4 relative">
+    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4 relative max-w-[1440px] mx-auto">
       <div className="flex md:flex-row flex-col md:gap-16 gap-8 ">
         <div className="flex-3 flex flex-col md:items-center items-start">
           {/* logo */}

@@ -6,7 +6,7 @@ import { bannerImg } from "../../../../assets/images/hero-section";
 
 const HeroSection3 = () => {
   return (
-    <section className="p-3 md:px-10 flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
+    <section className="p-3 md:px-10 flex flex-col gap-2">
       {/* Hero Header */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-4">
         {/* hero desc */}

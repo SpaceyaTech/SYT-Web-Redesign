@@ -5,7 +5,7 @@ import { testimonialData } from "../data";
 
 function TestimonialSection() {
   return (
-    <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
+    <section className="pt-16 pb-10">
       <div className="flex flex-col items-center">
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
           What people are saying...

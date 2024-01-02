@@ -13,7 +13,7 @@ function AboutUs() {
   }, []);
 
   return (
-    <div className="text-[#323433]">
+    <div className="text-[#323433] max-w-[1440px] mx-auto">
       <HeroSection />
       <MissionVisionSection />
       <LeadershipSection />
