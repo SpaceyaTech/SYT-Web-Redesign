@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import BlogStats from "../blogs/sections/BlogStats";
 import BlogWrapper from "./sections/BlogWrapper";
 import useBlogData from "../../../hooks/Queries/blog/useBlogData";
 
@@ -19,7 +20,7 @@ function Blog() {
             className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"
           />
 
-          {/* <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center justify-between">
             <p className="text-[#4C4D4D] text-sm  md:text-base font-bold">
               {new Date(blogData.created_at).toLocaleDateString("en-US", {
                 year: "numeric",
@@ -29,7 +30,7 @@ function Blog() {
             </p>
 
             <BlogStats likes={blogData.likes} />
-          </div> */}
+          </div>
 
           <BlogWrapper blog={blogData} />
 
