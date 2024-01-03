@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function PopularItemsSection() {
-  const navigate = useNavigate();
   const products = [
     {
       id: 1,
@@ -70,45 +70,35 @@ function PopularItemsSection() {
   ];
 
   return (
-    <div className="p-10" id="popularItemsSection">
+    <div className="p-4 md:px-10 md:py-6" id="popularItemsSection">
       <h2 className="text-2xl font-bold tracking-tight text-gray-900">
         Popular items from SpaceYaTech
       </h2>
 
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        {products.map((product) => {
-          return (
-            <div
-              key={product.id}
-              className="group relative"
-              onClick={() => navigate(`/shop/item/${product.id}`)}
-            >
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                <img
-                  src={product.imageSrc}
-                  alt="Front of men&#039;s Basic Tee in black."
-                  className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div className="space-y-2">
-                  <h3 className="text-sm text-gray-700">
-                    <a href="#">
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0"
-                      ></span>
-                      {product.name}
-                    </a>
-                  </h3>
-                  <p className="text-sm font-medium text-gray-900">
-                    {product.price}
-                  </p>
-                </div>
+        {products.map((product) => (
+          <Link
+            key={product.id}
+            className="group relative"
+            to={`/shop/item/${product.id}`}
+          >
+            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+              <img
+                src={product.imageSrc}
+                alt="Front of men&#039;s Basic Tee in black."
+                className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
+              />
+            </div>
+            <div className="mt-4 flex justify-between">
+              <div className="space-y-2">
+                <h3 className="text-sm text-gray-700">{product.name}</h3>
+                <p className="text-sm font-medium text-gray-900">
+                  {product.price}
+                </p>
               </div>
             </div>
-          );
-        })}
+          </Link>
+        ))}
       </div>
     </div>
   );

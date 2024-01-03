@@ -64,7 +64,9 @@ function CategoriesSection() {
             </Link>
             <div className="p-2 flex items-center justify-between">
               <p>{category.name}</p>
-              <Link className="text-[#009975] text-sm">Learn more</Link>
+              <Link to="/shop" className="text-[#009975] text-sm">
+                Learn more
+              </Link>
             </div>
           </div>
         ))}
