@@ -43,9 +43,9 @@ const BlogWrapper = ({ blog }) => {
 
         <div className="pb-8 pt-6 md:pt-8">
           <div
-            className="container text-[13px] md:text-base font-normal text-[##323433]"
+            className="container text-[13px] md:text-base font-normal text-[#323433]"
             dangerouslySetInnerHTML={{ __html: blog.body }}
-          ></div>
+          />
         </div>
 
         {/* <Comments /> */}

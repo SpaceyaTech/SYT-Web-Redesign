@@ -46,7 +46,7 @@ function BlogsWrapper() {
               <p>Error loading blog categories!</p>
             )}
             {statusBlogCategories === "loading" && <p>...</p>}
-            {statusBlogCategories === "successs" &&
+            {statusBlogCategories === "success" &&
             blogCategories &&
             Array.isArray(blogCategories)
               ? blogCategories.map((blog) => (
