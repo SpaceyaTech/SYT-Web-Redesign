@@ -2,7 +2,6 @@ import { formatDistanceToNow } from "date-fns";
 import { useNavigate, Link } from "react-router-dom";
 import { arrowRight } from "../../../../assets/images/blogs-page";
 import logo from "../../../../assets/images/sytLogo.png";
-
 import BlogStats from "./BlogStats";
 
 const BlogCard = ({ blog }) => {
@@ -13,19 +12,19 @@ const BlogCard = ({ blog }) => {
   return (
     <Link
       to={`/blogs/${blog.id}`}
-      className="flex flex-col items-start w-full mb-6"
+      className="flex flex-col items-start w-full mb-5"
     >
       <img
         src={blog.image}
         alt="blog"
-        className="flex-1 w-full h-60 object-cover rounded-lg"
+        className="w-full h-60 object-cover rounded-lg"
       />
 
-      <div className="flex-1 py-[6px] flex flex-col gap-[10px] w-full">
+      <div className="py-[6px] flex flex-col gap-[10px] w-full mt-2">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
           <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
 
-          <BlogStats likes={blog.likes} />
+          <BlogStats likes={blog.likes <= 1 ? "" : blog.likes} />
         </div>
 
         <p className="text-base font-normal leading-6 flex flex-wrap text-[#4C4D4D] line-clamp-2">
@@ -37,7 +36,7 @@ const BlogCard = ({ blog }) => {
             <img
               src={logo}
               alt="icon"
-              className="w-10 h-10 object-cover rounded-full"
+              className="w-10 h-10 object-cover bg-gray-200 flex items-center justify-center p-1 rounded-full"
             />
 
             <div className="flex flex-col gap-1 text-sm">
@@ -48,12 +47,12 @@ const BlogCard = ({ blog }) => {
           </div>
 
           <button
-            className="flex gap-2 items-center"
+            className="flex gap-2 items-center justify-between"
             onClick={() => {
               navigate(`/blogs/${blog.id}`);
             }}
           >
-            <span className="uppercase text-[#009975] text-sm font-medium">
+            <span className="uppercase text-[#009975] text-sm font-medium m-0">
               read more
             </span>
             <img src={arrowRight} alt="arrow-right" className="w-5 h-5" />

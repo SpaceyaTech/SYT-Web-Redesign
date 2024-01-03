@@ -1,7 +1,8 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
-import BlogStats from "../../blogs/sections/BlogStats";
 
+// import Comments from "./Comments";
+import BlogStats from "../../blogs/sections/BlogStats";
 import logo from "../../../../assets/images/sytLogo.png";
 
 import "./blogWrapper.css";
@@ -44,15 +45,13 @@ const BlogWrapper = ({ blog }) => {
           <div
             className="container text-[13px] md:text-base font-normal text-[##323433]"
             dangerouslySetInnerHTML={{ __html: blog.body }}
-          >
-            {/* {htmlParser(blog.body)} */}
-          </div>
+          ></div>
         </div>
 
         {/* <Comments /> */}
       </div>
 
-      <div className="w-2/5 hidden md:inline-flex" />
+      <div className="w-2/5 hidden md:inline-flex">{/* Advert?? */}</div>
     </div>
   );
 };
