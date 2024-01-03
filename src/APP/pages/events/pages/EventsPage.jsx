@@ -5,11 +5,11 @@ import EventCategory from "../sections/eventsSection/EventCategory";
 
 function Events() {
   return (
-    <div>
+    <main className="max-w-[1440px] mx-auto">
       <SearchSection />
       <EventsSection showTabs />
       <EventCategory />
-    </div>
+    </main>
   );
 }
 
