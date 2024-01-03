@@ -13,7 +13,7 @@ function CommunityPage() {
   }, []);
 
   return (
-    <div className="w-screen flex flex-col">
+    <div className="w-screen max-w-[1440px] mx-auto flex flex-col">
       <WelcomeSection />
       <EventsSection showAllEventsLink />
       <ChaptersSection />

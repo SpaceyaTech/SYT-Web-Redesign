@@ -28,7 +28,7 @@ function StatsSection() {
   }, []);
 
   return (
-    <section className="bg-[#E5EFEC] body-font mx-auto w-full max-w-screen-2xl">
+    <section className="bg-[#E5EFEC] body-font">
       <div className="container px-5 py-8 mx-auto">
         <div className="flex flex-col text-center w-full mb-10">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
