@@ -22,7 +22,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
     isSuccess: isSuccessTopEvents,
     refetch: refetchTopEvents,
   } = useTopEvents(filters);
-  console.log(topEventsData?.results);
+  // console.log(topEventsData?.results);
   const {
     data: topEventsCities,
     isLoading,

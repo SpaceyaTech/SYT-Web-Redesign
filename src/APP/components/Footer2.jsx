@@ -2,15 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/sytLogo.png";
 // import backup from "../../assets/images/backup.svg";
-import { linkedin, twitter, spotify } from "../../assets/images/socials";
-import youtube from "../../assets/images/socials/youtube.svg";
+import {
+  linkedin,
+  twitter,
+  spotify,
+  youtube,
+} from "../../assets/images/socials";
 
 function Footer2() {
   const now = new Date();
   const year = now.getFullYear();
 
   return (
-    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4 relative">
+    <footer className="bg-[#252533] text-white md:p-12 py-8 px-4 relative max-w-[1440px] mx-auto">
       <div className="flex md:flex-row flex-col md:gap-16 gap-8 ">
         <div className="flex-3 flex flex-col md:items-center items-start">
           {/* logo */}

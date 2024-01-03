@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function CTASection() {
   return (
-    <section className="text-gray-600 body-font relative mx-auto w-full max-w-screen-2xl">
+    <section className="text-gray-600 body-font relative w-full">
       <div className="container px-5 py-12 mx-auto">
         <div className="flex flex-col text-center w-full mb-8 md:mb-12">
           <h1 className="sm:text-3xl text-3xl font-semibold title-font mb-4 text-[#00664E]">
