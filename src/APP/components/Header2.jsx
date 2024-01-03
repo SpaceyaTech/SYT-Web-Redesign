@@ -25,11 +25,11 @@ const navLinks = [
     link: "Products",
     route: "/products",
   },
-  // {
-  //   id: 5,
-  //   link: "Blogs",
-  //   route: "/blogs",
-  // },
+  {
+    id: 5,
+    link: "Blogs",
+    route: "/blogs",
+  },
   // {
   //   id: 6,
   //   link: "Resources",
