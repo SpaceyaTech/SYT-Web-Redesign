@@ -6,7 +6,9 @@ import SearchAndCart from "./sections/SearchAndCart";
 function Shop() {
   return (
     <div>
+      ase
       <Header />
+      jnr
       <SearchAndCart />
       <Outlet />
       <Footer />

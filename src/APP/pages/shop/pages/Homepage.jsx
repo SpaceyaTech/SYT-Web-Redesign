@@ -4,11 +4,11 @@ import PopularItemsSection from "../sections/PopularItemsSection";
 
 function Homepage() {
   return (
-    <div>
+    <main className="max-w-[1440px] mx-auto">
       <Banner />
-      <CategoriesSection/>
+      <CategoriesSection />
       <PopularItemsSection />
-    </div>
+    </main>
   );
 }
 
