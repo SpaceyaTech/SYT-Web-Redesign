@@ -1,4 +1,3 @@
-import { formatDistanceToNow } from "date-fns";
 import { useNavigate, Link } from "react-router-dom";
 import { arrowRight } from "../../../../assets/images/blogs-page";
 import logo from "../../../../assets/images/sytLogo.png";
