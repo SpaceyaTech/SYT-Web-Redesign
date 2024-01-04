@@ -1,12 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import BlogCard from "./BlogCard";
+import BlogPagination from "./BlogPagination";
+import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
   useBlogCategories,
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
-import BlogCard from "./BlogCard";
-import BlogPagination from "./BlogPagination";
+
+function SearchResults({ searchText }) {
+  return (
+    <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
+      Showing results for <span className="text-primary">"{searchText}"</span>
+    </h3>
+  );
+}
 
 function BlogsWrapper() {
+  const { searchText, searchBlog } = useContext(SearchBlogContext);
+
   const [page, setPage] = useState(1);
   const {
     data: blogsData,
@@ -27,13 +38,10 @@ function BlogsWrapper() {
     setPage((prevState) => (prevState = index));
   };
 
-  function SearchResults({ searchText }) {
-    return (
-      <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
-        Showing results for “{searchText}”
-      </h3>
-    );
-  }
+  const allBlogs =
+    searchBlog && Array.isArray(searchBlog.results)
+      ? searchBlog.results.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+      : null;
 
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
@@ -59,13 +67,18 @@ function BlogsWrapper() {
                 ))
               : null}
           </div>
-          <div className="grid sm:grid-cols-2 gap-8 grid-cols-1">
-            {blogsData && Array.isArray(blogsData.results)
-              ? blogsData.results.map((blog) => (
-                  <BlogCard key={blog.id} blog={blog} />
-                ))
-              : null}
+
+          <div className="mx-auto">
+            {searchText && <SearchResults searchText={searchText} />}
           </div>
+
+          {searchBlog?.results.length > 0 ? (
+            <div className="grid sm:grid-cols-2 gap-8 grid-cols-1">
+              {allBlogs}
+            </div>
+          ) : (
+            "No results!"
+          )}
           {Array.isArray(blogsData) &&
           blogsData &&
           blogsData.next !== null &&
