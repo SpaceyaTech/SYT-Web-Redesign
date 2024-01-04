@@ -42,3 +42,23 @@
 .blog-content li {
   text-transform: capitalize;
 }
+
+.blog-content pre {
+  border-radius: 6px;
+  background: #e9e8e8;
+  padding: 8px;
+  overflow: scroll;
+  font-size: 14px;
+}
+
+.blog-content code {
+  background: #e9e8e8;
+  border-radius: 6px;
+  padding: 4px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.blog-content pre code em {
+  font-size: 12px;
+}

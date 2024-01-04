@@ -1,8 +1,9 @@
+import React from "react";
+
 import {
   CTASection,
   FaqSection,
   FeatureSection,
-  // HeroSection2,
   HeroSection3,
   PodcastSection,
   Services,
