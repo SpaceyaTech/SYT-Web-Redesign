@@ -77,7 +77,7 @@ function BlogsWrapper() {
               {allBlogs}
             </div>
           ) : (
-            "No results!"
+            <p className="mx-auto">No results!</p>
           )}
           {Array.isArray(blogsData) &&
           blogsData &&
