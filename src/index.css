@@ -1,21 +1,3 @@
-/* <<<<<<< felix-blog-page-build */
-@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;600;700;800;900&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-  font-family: "Poppins", sans-serif;
-}
-
-::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
-
-/* <<<<<<< felix-blog-page-build */
 @import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;600;700;800;900&display=swap");
 
