@@ -51,8 +51,16 @@ function SingleProductDonatePage() {
             <div className="flex items-center justify-center gap-2">
               <p className="hidden md:inline-block text-xs">Organizers</p>
               <div className="flex items-center justify-center">
-                <img src="/src/assets/images/sytLogo.png" alt="syt logo" className="w-auto h-6"/>
-                <img src="/src/assets/images/kamilimu.png" alt="kamilimu logo" className="w-auto h-6"/>
+                <img
+                  src="/src/assets/images/sytLogo.png"
+                  alt="syt logo"
+                  className="w-auto h-6"
+                />
+                <img
+                  src="/src/assets/images/kamilimu.png"
+                  alt="kamilimu logo"
+                  className="w-auto h-6"
+                />
               </div>
             </div>
           </div>
@@ -60,7 +68,10 @@ function SingleProductDonatePage() {
         <div className="md:col-span-2 space-y-4 md:p-4 self-start md:border md:rounded-xl">
           <div>
             <p className="text-lg font-semibold">
-              KES 100,000<span className="text-xs font-medium text-gray-500 mx-1">of Ksh. 250,000 raised </span>
+              KES 100,000
+              <span className="text-xs font-medium text-gray-500 mx-1">
+                of Ksh. 250,000 raised{" "}
+              </span>
             </p>
             <div className="relative">
               <input
@@ -93,10 +104,16 @@ function SingleProductDonatePage() {
           </div>
           <hr className="text-gray-400 hidden md:block" />
           <div className="space-y-3">
-            <p className="hidden md:block">Or Make a difference with a dollar</p>
+            <p className="hidden md:block">
+              Or Make a difference with a dollar
+            </p>
             <div className="flex flex-col md:flex-row items-center gap-3 text-sm">
-              <button className="block bg-[#009975] text-white text-sm font-semibold py-4 w-full rounded-md">Donate Token $1 </button>
-              <button className="block border border-[#009975] text-[#009975] text-sm font-semibold py-4 w-full rounded-md">Share Link</button>
+              <button className="block bg-primary text-white text-sm font-semibold py-4 w-full rounded-md">
+                Donate Token $1{" "}
+              </button>
+              <button className="block border border-[#009975] text-primary text-sm font-semibold py-4 w-full rounded-md">
+                Share Link
+              </button>
             </div>
           </div>
         </div>
@@ -115,7 +132,7 @@ function SingleProductDonatePage() {
               inceptos himenaeos. Curabitur tempus urna at turpis condimentum
               lobortis...
             </p>
-            <p className="text-[#009975] underline">Read more</p>
+            <p className="text-primary underline">Read more</p>
           </div>
         </div>
       </div>

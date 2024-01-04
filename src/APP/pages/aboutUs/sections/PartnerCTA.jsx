@@ -51,14 +51,14 @@ function PartnerCTA() {
       <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-28">
         <div className="space-y-4 mb-8 sm:mb-0">
           <h3 className="font-semibold text-md sm:text-xl">Our Reports</h3>
-          {/* <p><a href="/" className="text-[#009975] text-sm sm:text-base">Annual SpaceYaTech  Report - 2022</a></p>
-          <p><a href="/" className="text-[#009975] text-sm sm:text-base">Mentorlst Leadership and Growth</a></p> */}
+          {/* <p><a href="/" className="text-primary text-sm sm:text-base">Annual SpaceYaTech  Report - 2022</a></p>
+          <p><a href="/" className="text-primary text-sm sm:text-base">Mentorlst Leadership and Growth</a></p> */}
           <p>
             <a
               href="/src/assets/reports/spaceyatech-internship-program.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#009975] text-sm sm:text-base"
+              className="text-primary text-sm sm:text-base"
             >
               SpaceYaTech Internship Program - 2023
             </a>

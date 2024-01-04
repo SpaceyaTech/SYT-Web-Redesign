@@ -21,7 +21,7 @@ const ResourceCard = ({ resource }) => {
         className="flex items-center gap-2 text-xs leading-5  py-1 px-2 border transition-all duration-300 ease-in border-white hover:border-[#009975] rounded-lg"
       >
         {/* <button className="flex items-center gap-2 text-xs leading-5"> */}
-        <span className="text-[#009975] uppercase">explore</span>
+        <span className="text-primary uppercase">explore</span>
         <img src={arrowRight} alt="arrow-right" />
         {/* </button> */}
       </Link>

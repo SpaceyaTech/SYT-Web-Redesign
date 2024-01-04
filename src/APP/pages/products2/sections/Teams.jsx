@@ -26,7 +26,7 @@ const Teams = () => {
           // rel="noopener noreferrer"
           className="inline-flex items-center gap-2 py-2"
         >
-          <span className="text-base md:text-[32px] md:leading-normal text-[#009975] font-medium">
+          <span className="text-base md:text-[32px] md:leading-normal text-primary font-medium">
             Join us
           </span>
           <img
@@ -49,7 +49,7 @@ const Teams = () => {
                     "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                     "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
                     selected
-                      ? "bg-[#009975] font-medium text-white"
+                      ? "bg-primary font-medium text-white"
                       : "bg-[#f8f8f8] font-normal"
                   )
                 }

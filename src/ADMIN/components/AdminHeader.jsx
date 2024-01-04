@@ -43,31 +43,31 @@ function AdminHeader() {
         </div>
         <div className="md:flex flex-1 gap-12">
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer rounded"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer rounded"
             to="/admin"
           >
             Dashboard
           </Link>
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/admin"
           >
             Blogs
           </Link>
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/admin/all-chapters"
           >
             Chapters
           </Link>
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/admin/events"
           >
             Events
           </Link>
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/admin/calendar"
           >
             Calendar
@@ -75,13 +75,13 @@ function AdminHeader() {
         </div>
         <div className="md:flex gap-8 items-center ">
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/"
           >
             <img src={bell} alt="notification icon" />
           </Link>
           <Link
-            className="text-[#7E8180] hover:text-[#009975] transition-all duration-300 cursor-pointer"
+            className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/about-us"
           >
             <img src={profile} alt="profile pic" className="rounded-full" />

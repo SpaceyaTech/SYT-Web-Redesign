@@ -60,7 +60,7 @@ function BlogsWrapper() {
               ? blogCategories.map((blog) => (
                   <span
                     key={blog.id}
-                    className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-[#009975] hover:text-white active:bg-[#009975] active:text-white w-fit whitespace-normal"
+                    className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal"
                   >
                     {blog.name}
                   </span>

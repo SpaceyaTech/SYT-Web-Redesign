@@ -117,6 +117,10 @@
     color: #009975;
   }
 
+  .bg-primary {
+    background-color: #009975;
+  }
+
   /* Footer */
   .flex-1 {
     flex-grow: 1;

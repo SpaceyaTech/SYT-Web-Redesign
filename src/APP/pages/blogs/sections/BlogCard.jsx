@@ -52,7 +52,7 @@ const BlogCard = ({ blog }) => {
               navigate(`/blogs/${blog.id}`);
             }}
           >
-            <span className="uppercase text-[#009975] text-sm font-medium m-0">
+            <span className="uppercase text-primary text-sm font-medium m-0">
               read more
             </span>
             <img src={arrowRight} alt="arrow-right" className="w-5 h-5" />

@@ -82,8 +82,8 @@ const Header2 = () => {
             <Link
               key={id}
               className={`${
-                isActive ? "text-[#009975] underline" : "text-gray-900"
-              } hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer`}
+                isActive ? "text-primary underline" : "text-gray-900"
+              } hover:text-primary hover:underline transition-all duration-300 cursor-pointer`}
               to={`${route}`}
               onClick={() => setShowNavlinks(false)}
             >
@@ -101,8 +101,8 @@ const Header2 = () => {
             <Link
               key={id}
               className={`${
-                isActive ? "text-[#009975] underline" : "text-gray-900"
-              } hover:text-[#009975] hover:underline transition-all duration-300 cursor-pointer`}
+                isActive ? "text-primary underline" : "text-gray-900"
+              } hover:text-primary hover:underline transition-all duration-300 cursor-pointer`}
               to={`${route}`}
             >
               {link}
