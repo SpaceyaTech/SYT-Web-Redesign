@@ -11,12 +11,10 @@ const BlogCard = ({ blog }) => {
     addSuffix: true,
   });
   return (
-
     <Link
       to={`/blogs/${blog.id}`}
       className="flex flex-col items-start w-full mb-6"
     >
-
       <img
         src={blog.image}
         alt="blog"
@@ -37,7 +35,7 @@ const BlogCard = ({ blog }) => {
         <div className="flex flex-row items-start justify-between">
           <div className="flex gap-[10px]">
             <img
-              src={Ellipse30}
+              src={logo}
               alt="icon"
               className="w-10 h-10 object-cover rounded-full"
             />

@@ -16,6 +16,7 @@ import { default as Blogs } from "../APP/pages/blogs/Blogs";
 import { default as Blog } from "../APP/pages/blog/Blog";
 import { default as SingleProductDonation } from "../APP/pages/donate/pages/SingleProductDonatePage";
 import { default as IndividualChapter } from "../APP/pages/chapter/pages/IndividualChapter";
+import { default as PageNotFound } from "../APP/pages/pageNotFound/PageNotFound";
 
 export {
   LandingPage,
@@ -36,4 +37,5 @@ export {
   EventsSection,
   SingleProductDonation,
   IndividualChapter,
+  PageNotFound,
 };
