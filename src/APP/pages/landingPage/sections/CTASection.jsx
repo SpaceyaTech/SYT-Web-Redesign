@@ -16,7 +16,7 @@ function CTASection() {
         <div className="flex justify-center">
           <Link
             to="/community"
-            className="inline-flex  text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg"
+            className="inline-flex  text-white bg-primary border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg"
           >
             Join the community
           </Link>

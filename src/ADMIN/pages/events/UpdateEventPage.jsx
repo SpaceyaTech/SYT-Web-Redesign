@@ -194,7 +194,7 @@ function UpdateEventPage() {
             <a
               href="/admin/events"
               type="button"
-              className="hover:bg-[#009975] text-center text-[#7E8180] hover:text-white rounded-lg border hover:border-0 py-3 px-5 sm:px-8 w-full sm:w-52 border-[#7E8180] focus:outline-none"
+              className="hover:bg-primary text-center text-[#7E8180] hover:text-white rounded-lg border hover:border-0 py-3 px-5 sm:px-8 w-full sm:w-52 border-[#7E8180] focus:outline-none"
             >
               Cancel
             </a>
@@ -202,7 +202,7 @@ function UpdateEventPage() {
             <a
               href="/admin/events/add-event"
               type="submit"
-              className="bg-[#009975] text-center text-white rounded-lg border-0 py-3 px-5 sm:px-8 w-full sm:w-52 hover:bg-white hover:border hover:border-[#009975] hover:text-[#009975] focus:outline-none"
+              className="bg-primary text-center text-white rounded-lg border-0 py-3 px-5 sm:px-8 w-full sm:w-52 hover:bg-white hover:border hover:border-[#009975] hover:text-primary focus:outline-none"
             >
               Update Event
             </a>

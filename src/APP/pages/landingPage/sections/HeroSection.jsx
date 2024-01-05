@@ -19,7 +19,7 @@ function HeroSection() {
             the way young Africans get started in technology.
           </p>
           <div className="flex justify-center">
-            <button className="inline-flex  text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg">
+            <button className="inline-flex  text-white bg-primary border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg">
               Join the community
             </button>
           </div>

@@ -9,11 +9,11 @@ function PodcastCard({ img, category = "Podcast", title, description, link }) {
         <div className="absolute bottom-0 left-0 right-0 bg-black opacity-80 h-1/2" />
 
         <div className="absolute bottom-0 inset-x-0 text-white flex flex-col gap-2 px-6 py-4">
-          <h5 className="text-[#009975] font-medium text-xs md:text-sm capitalize">
+          <h5 className="text-primary font-medium text-xs md:text-sm capitalize">
             {category}
           </h5>
-          <h3 className="font-semibold text-base">{title}</h3>
-          <p className="font-normal text-sm">{description}</p>
+          <h3 className="font-semibold text-base line-clamp-2">{title}</h3>
+          <p className="font-normal text-sm line-clamp-3">{description}</p>
         </div>
       </div>
     </a>

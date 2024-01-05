@@ -1,18 +1,6 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-// interface Blog {
-//   id: number;
-//   title: string;
-//   description: string;
-//   body: string;
-//   // category: string; //We need to return real category alongside id
-//   image: string;
-//   created_at: string;
-//   likes: string;
-//   author?: string;
-// }
-
 const fetchBlogData = async (id) => {
   try {
     const response = await axios.get(

@@ -5,11 +5,11 @@ const HeroSection = () => {
   return (
     <div className="bg-[#E5EFEC] py-9 px-6 border-[0.5px] border-solid border-[#00664E] rounded-2xl relative md:mb-32 mb-12">
       <div className="flex flex-col gap-2 md:w-2/5 w-full ">
-        <h5 className="text-xl text-[#009975] font-normal">Resources</h5>
+        <h5 className="text-xl text-primary font-normal">Resources</h5>
 
         <h3 className="md:text-3xl text-xl md:leading-[46px] leading-9 font-medium">
           Discover{" "}
-          <span className="text-[#009975]">tech tools and resources</span> to
+          <span className="text-primary">tech tools and resources</span> to
           boost your productivity
         </h3>
         <p className="md:mb-10 md:text-base text-sm font-normal">
@@ -36,11 +36,11 @@ export default HeroSection;
 //   return (
 //     <div className="bg-[#E5EFEC] py-9 px-6 border-[0.5px] border-solid border-[#00664E] rounded-2xl relative md:mb-32 mb-12">
 //       <div className="flex flex-col gap-2 md:w-2/5 w-full ">
-//         <h5 className="text-xl text-[#009975] font-normal">Resources</h5>
+//         <h5 className="text-xl text-primary font-normal">Resources</h5>
 
 //         <h3 className="md:text-3xl text-xl md:leading-[46px] leading-9 font-medium">
 //           Discover{" "}
-//           <span className="text-[#009975]">tech tools and resources</span> to
+//           <span className="text-primary">tech tools and resources</span> to
 //           boost your productivity
 //         </h3>
 //         <p className="md:mb-10 md:text-base text-sm font-normal">
