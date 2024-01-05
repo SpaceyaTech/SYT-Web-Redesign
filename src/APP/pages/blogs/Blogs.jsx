@@ -1,17 +1,14 @@
-import { useState } from "react";
+import React from "react";
 
-import Banner from "./sections/Banner";
-import BlogsWrapper from "./sections/BlogsWrapper";
+import { Banner, BlogsWrapper } from "./sections";
 
-const Blogs = () => {
-  const [searchText, setSearchText] = useState("");
-
+function Blogs() {
   return (
     <section className="flex flex-col items-center gap-4 max-w-[1440px] mx-auto">
-      <Banner searchText={searchText} setSearchText={setSearchText} />
-      <BlogsWrapper searchText={searchText} />
+      <Banner />
+      <BlogsWrapper />
     </section>
   );
-};
+}
 
 export default Blogs;

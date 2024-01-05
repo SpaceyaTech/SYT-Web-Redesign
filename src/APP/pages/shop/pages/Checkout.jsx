@@ -1,26 +1,26 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useState } from 'react';
-import ItemHeader from '../sections/ItemHeader';
-import Sample1 from '../../../../assets/images/shop-page/sample1.png';
-import Sample2 from '../../../../assets/images/shop-page/sample2.png';
-import Counter from '../../../components/Counter';
+import { useState } from "react";
+import ItemHeader from "../sections/ItemHeader";
+import Sample1 from "../../../../assets/images/shop-page/sample1.png";
+import Sample2 from "../../../../assets/images/shop-page/sample2.png";
+import Counter from "../../../components/Counter";
 
 const products = [
   {
     id: 1,
-    name: 'SYT Hoodie',
-    href: '#',
-    color: 'Salmon',
-    price: '90.00',
+    name: "SYT Hoodie",
+    href: "#",
+    color: "Salmon",
+    price: "90.00",
     quantity: 1,
     imageSrc: Sample1,
   },
   {
     id: 2,
-    name: 'SYT Bookmark',
-    href: '#',
-    color: 'Blue',
-    price: '32.00',
+    name: "SYT Bookmark",
+    href: "#",
+    color: "Blue",
+    price: "32.00",
     quantity: 1,
     imageSrc: Sample2,
   },
@@ -28,18 +28,18 @@ const products = [
 ];
 
 function Checkout() {
-//   const [open, setOpen] = useState(true);
+  //   const [open, setOpen] = useState(true);
 
   const steps = [
-    { description: 'Provide your MPESA mobile number', key: 1 },
+    { description: "Provide your MPESA mobile number", key: 1 },
     {
       description:
-        'Click submit and a prompt will appear on your phone with a request to confirm transaction by providing your MPESA PIN',
+        "Click submit and a prompt will appear on your phone with a request to confirm transaction by providing your MPESA PIN",
       key: 2,
     },
     {
       description:
-        'Once completed, you will receive the confirmation SMS for this transaction',
+        "Once completed, you will receive the confirmation SMS for this transaction",
       key: 3,
     },
   ];
@@ -52,7 +52,9 @@ function Checkout() {
         <div className="flex flex-col md:flex-row justify-between space-y-8 sm:space-y-0">
           {/* form */}
           <div className="w-full min-w-40">
-            <h1 className="text-xl sm:text-3xl font-medium mb-3">Shipping Address</h1>
+            <h1 className="text-xl sm:text-3xl font-medium mb-3">
+              Shipping Address
+            </h1>
             <form className="w-full max-w-2xl min-h-full flex flex-col justify-evenly">
               <div className="flex flex-wrap -mx-3 mb-1">
                 <div className="w-full px-3">
@@ -154,14 +156,14 @@ function Checkout() {
 
           {/* order summary */}
           <div className="bg-[#F5FFFD] min-w-40 w-full p-4 md:p-8">
-            <h2 className="text-xl font-medium sm:font-semibold">Order Summary</h2>
+            <h2 className="text-xl font-medium sm:font-semibold">
+              Order Summary
+            </h2>
             <div className="mt-8">
               <div className="flow-root">
                 <ul className="-my-6 divide-y divide-gray-200 border-b">
                   {products.map(
-                    ({
-                      id, imageSrc, name, href, price, color, quantity
-                    }) => (
+                    ({ id, imageSrc, name, href, price, color, quantity }) => (
                       <li
                         key={id}
                         className="flex py-6 space-x-4 sm:space-x-24"
@@ -176,15 +178,11 @@ function Checkout() {
 
                         <div className="text-base space-y-2">
                           <p className="">
-                            {' '}
+                            {" "}
                             <a href={href}>{name}</a>
                           </p>
 
-                          <p className="">
-                            Ksh
-                            {' '}
-                            {price}
-                          </p>
+                          <p className="">Ksh {price}</p>
                           <Counter className="h-8 w-24" />
                         </div>
                       </li>
@@ -212,12 +210,18 @@ function Checkout() {
 
         {/* Payment */}
         <div className="w-full sm:w-2/3 space-y-4 text-left">
-          <h1 className="text-lg sm:text-3xl font-semibold sm:font-medium">Payment</h1>
+          <h1 className="text-lg sm:text-3xl font-semibold sm:font-medium">
+            Payment
+          </h1>
           <h3 className="font-bold">Lipa na MPESA</h3>
           <p className="text-sm">Follow the steps below to complete payment</p>
 
           <ol className="space-y-1">
-            {steps.map(({ description, key }) => <li className="text-xs" key={key}>{description}</li>)}
+            {steps.map(({ description, key }) => (
+              <li className="text-xs" key={key}>
+                {description}
+              </li>
+            ))}
           </ol>
 
           <h3 className="font-bold">Input your mpesa number</h3>
@@ -234,7 +238,7 @@ function Checkout() {
           </div>
           <button
             type="button"
-            className=" md:w-1/2 w-full h-[62px] bg-[#009975] hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
+            className=" md:w-1/2 w-full h-[62px] bg-primary hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
           >
             Pay and place order
           </button>

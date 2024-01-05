@@ -81,14 +81,14 @@ function LogIn() {
 
             <a
               href="#!"
-              className="text-[#009975] hover:text-[#00664E] text-base"
+              className="text-primary hover:text-[#00664E] text-base"
             >
               Forgot password?
             </a>
           </div>
           <button
             type="submit"
-            className="bg-[#009975] hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
+            className="bg-primary hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
           >
             Login
           </button>
@@ -96,7 +96,7 @@ function LogIn() {
             New here?
             <a
               href="/auth/signup"
-              className="text-[#009975] hover:text-[#00664E] text-base"
+              className="text-primary hover:text-[#00664E] text-base"
             >
               {" "}
               Create an account

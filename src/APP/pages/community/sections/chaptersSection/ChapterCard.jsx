@@ -16,7 +16,7 @@ function ChapterCard({ id, country, city, name, members, banner }) {
         <Link to={`/chapter/${id}`}>
           <button
             type="button"
-            className="py-2 px-12 border-2 border-solid my-8 rounded-lg flex items-center justify-center text-xs capitalize transition-all duration-300 ease-in hover:text-white hover:bg-[#009975]"
+            className="py-2 px-12 border-2 border-solid my-8 rounded-lg flex items-center justify-center text-xs capitalize transition-all duration-300 ease-in hover:text-white hover:bg-primary"
           >
             JOIN
           </button>

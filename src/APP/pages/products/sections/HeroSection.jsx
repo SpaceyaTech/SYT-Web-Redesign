@@ -5,7 +5,7 @@ const HeroSection = () => {
     <div className="relative flex lg:flex-row flex-col justify-end items-center">
       <div className="border border-gray-300 border-solid rounded-lg lg:w-2/3 lg:h-72 p-6 flex bg-[#E5EFEC] lg:absolute left-0 top-32">
         <div className="flex-1 flex flex-col gap-4 ml-6">
-          <h4 className="text-[#009975] font-light lg:text-xl text-sm">
+          <h4 className="text-primary font-light lg:text-xl text-sm">
             Our Products
           </h4>
 

@@ -53,7 +53,7 @@ function FeatureSection() {
                 {/* <Link
                   to="/"
                   preventScrollReset={true}
-                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                  className="mt-3 text-primary inline-flex items-center font-semibold"
                 >
                   View Our resources
                 </Link> */}
@@ -98,7 +98,7 @@ function FeatureSection() {
                 {/* <Link
                   to="/"
                   preventScrollReset={true}
-                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                  className="mt-3 text-primary inline-flex items-center font-semibold"
                 >
                   View Our blogs
                 </Link> */}
@@ -148,7 +148,7 @@ function FeatureSection() {
                 {/* <Link
                   to="/"
                   preventScrollReset={true}
-                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                  className="mt-3 text-primary inline-flex items-center font-semibold"
                 >
                   View Our projects
                 </Link> */}

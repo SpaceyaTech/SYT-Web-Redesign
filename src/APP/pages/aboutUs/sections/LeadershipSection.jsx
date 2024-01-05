@@ -80,7 +80,7 @@ function LeadershipSection() {
 
       <div className="bg-[#E5EFEC] flex -mt-36 pt-40 pb-8 md:pb-24 px-4 lg:px-14 xl:px-28 justify-between flex-col md:flex-row">
         <div className="space-y-4 md:w-1/2 mb-14">
-          <h2 className="text-[#009975] items-center text-xl">
+          <h2 className="text-primary items-center text-xl">
             Committed to building community
           </h2>
           <h3 className=" md:text-3xl text-2xl font-semibold text-gray-900 leading-8 md:leading-10">
@@ -104,7 +104,7 @@ function LeadershipSection() {
           </p>
 
           <button
-            className="font-semibold text-white bg-[#009975] hover:border-[#009975] hover:border hover:text-[#009975] hover:bg-transparent border py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg transition-all ease-in duration-150"
+            className="font-semibold text-white bg-primary hover:border-[#009975] hover:border hover:text-primary hover:bg-transparent border py-3 px-8 w-full md:w-auto focus:outline-none rounded-lg text-lg transition-all ease-in duration-150"
             type="button"
             onClick={openModal}
           >
@@ -208,7 +208,7 @@ function LeadershipSection() {
 
                         <button
                           type="submit"
-                          className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-[#009975] px-8 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+                          className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-primary px-8 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
                         >
                           {loading ? "Submitting..." : "Submit"}
                         </button>
