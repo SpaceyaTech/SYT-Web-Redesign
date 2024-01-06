@@ -63,32 +63,32 @@ function BlogsWrapper() {
       {isLoading && <p>Loading blogs...</p>}
       {isSuccess && (
         <>
-          <div className="w-max overflow-scroll md:overflow-auto flex flex-row items-center gap-3 md:mb-2">
+          <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
             {statusBlogCategories === "error" && (
               <p>Error loading blog categories!</p>
             )}
             {statusBlogCategories === "loading" && <p>...</p>}
-            <span
-              className={`bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal ${
+            <button
+              className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${
                 "" === selectedCat && "bg-primary text-white "
               }`}
               onClick={() => handleFilter("")}
             >
               All
-            </span>
+            </button>
             {statusBlogCategories === "success" &&
             blogCategories &&
             Array.isArray(blogCategories)
               ? blogCategories.map((blog) => (
-                  <span
+                  <button
                     key={blog.id}
                     onClick={() => handleFilter(blog.id)}
-                    className={`bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal ${
+                    className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${
                       blog.id === selectedCat && "bg-primary text-white "
                     }`}
                   >
                     {blog.name}
-                  </span>
+                  </button>
                 ))
               : null}
           </div>
