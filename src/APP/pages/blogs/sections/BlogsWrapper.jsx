@@ -17,8 +17,9 @@ function SearchResults({ searchText }) {
 
 function BlogsWrapper() {
   const { searchText, searchBlog } = useContext(SearchBlogContext);
-
+  const [selectedCat, setSelectedCat] = useState("");
   const [page, setPage] = useState(1);
+
   const {
     data: blogsData,
     refetch: refetchBlogsData,
@@ -38,9 +39,22 @@ function BlogsWrapper() {
     setPage((prevState) => (prevState = index));
   };
 
+  const handleFilter = (categoryId) => {
+    setSelectedCat(categoryId);
+  };
+
+  const filterBlogsByCat = (blogs, category) => {
+    const filtered = blogs.filter((blog) => blog.category === category);
+    return filtered;
+  };
+
+  const filteredBlogs = selectedCat
+    ? filterBlogsByCat(searchBlog?.results, selectedCat)
+    : searchBlog?.results;
+
   const allBlogs =
-    searchBlog && Array.isArray(searchBlog.results)
-      ? searchBlog.results.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+    filteredBlogs && Array.isArray(filteredBlogs)
+      ? filteredBlogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
       : null;
 
   return (
@@ -54,13 +68,24 @@ function BlogsWrapper() {
               <p>Error loading blog categories!</p>
             )}
             {statusBlogCategories === "loading" && <p>...</p>}
+            <span
+              className={`bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal ${
+                "" === selectedCat && "bg-primary text-white "
+              }`}
+              onClick={() => handleFilter("")}
+            >
+              All
+            </span>
             {statusBlogCategories === "success" &&
             blogCategories &&
             Array.isArray(blogCategories)
               ? blogCategories.map((blog) => (
                   <span
                     key={blog.id}
-                    className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal"
+                    onClick={() => handleFilter(blog.id)}
+                    className={`bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal ${
+                      blog.id === selectedCat && "bg-primary text-white "
+                    }`}
                   >
                     {blog.name}
                   </span>

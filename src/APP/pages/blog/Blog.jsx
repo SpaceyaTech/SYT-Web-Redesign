@@ -28,7 +28,7 @@ function Blog() {
 
           <BlogWrapper blog={blogData} />
 
-          <RelatedBlogs />
+          <RelatedBlogs categoryId={blogData.category} />
         </section>
       )}
     </div>

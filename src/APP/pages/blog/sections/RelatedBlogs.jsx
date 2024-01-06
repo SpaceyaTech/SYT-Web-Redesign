@@ -1,4 +1,5 @@
 import { blog1, blog2 } from "../../../../assets/images/blogs-page";
+import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData";
 import BlogCard from "../../blogs/sections/BlogCard";
 
 export const blogCard = [
@@ -20,7 +21,11 @@ export const blogCard = [
   },
 ];
 
-const RelatedBlogs = () => {
+function RelatedBlogs({ categoryId }) {
+  const { data, isLoading, isError, isSuccess } =
+    useRelatedBlogsData(categoryId);
+
+  console.log("Related blogs: ", data);
   return (
     <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
       {blogCard.map((blog) => (
@@ -28,6 +33,6 @@ const RelatedBlogs = () => {
       ))}
     </div>
   );
-};
+}
 
 export default RelatedBlogs;
