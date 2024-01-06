@@ -2,11 +2,17 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import BlogWrapper from "./sections/BlogWrapper";
+import RelatedBlogs from "./sections/RelatedBlogs";
 import useBlogData from "../../../hooks/Queries/blog/useBlogData";
 
 function Blog() {
-  const { id } = useParams();
-  const { data: blogData, isLoading, isError, isSuccess } = useBlogData(id);
+  const { title_slug } = useParams();
+  const {
+    data: blogData,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useBlogData(title_slug);
 
   return (
     <div className="w-screen max-w-[1440px] mx-auto">
@@ -22,7 +28,7 @@ function Blog() {
 
           <BlogWrapper blog={blogData} />
 
-          {/* <RelatedBlogs /> */}
+          <RelatedBlogs />
         </section>
       )}
     </div>

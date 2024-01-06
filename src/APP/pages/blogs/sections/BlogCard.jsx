@@ -1,3 +1,4 @@
+import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 
@@ -5,14 +6,17 @@ import { arrowRight } from "../../../../assets/images/blogs-page";
 import logo from "../../../../assets/images/sytLogo.png";
 import BlogStats from "./BlogStats";
 
-const BlogCard = ({ blog }) => {
+function BlogCard({ blog }) {
   const navigate = useNavigate();
-  const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
-    addSuffix: true,
-  });
+  const timeAgo =
+    blog?.created_at &&
+    formatDistanceToNow(new Date(blog?.created_at), {
+      addSuffix: true,
+    });
+
   return (
     <Link
-      to={`/blogs/${blog.id}`}
+      to={`/blogs/${blog.title_slug}`}
       className="flex flex-col items-start w-full mb-5"
     >
       <img
@@ -28,7 +32,7 @@ const BlogCard = ({ blog }) => {
           <BlogStats likes={blog.likes <= 1 ? "" : blog.likes} />
         </div>
 
-        <p className="text-base font-normal leading-6 flex flex-wrap text-[#4C4D4D] line-clamp-2">
+        <p className="text-base font-normal leading-6 text-[#4C4D4D] line-clamp-3">
           {blog.description}
         </p>
 
@@ -41,7 +45,9 @@ const BlogCard = ({ blog }) => {
             />
 
             <div className="flex flex-col gap-1 text-sm">
-              <h4 className=" font-medium text-[#323433]">{blog.author}</h4>
+              <h4 className="capitalize font-medium text-[#323433]">
+                {blog.author}
+              </h4>
 
               <span className="text-[#656767]">{timeAgo}</span>
             </div>
@@ -50,7 +56,7 @@ const BlogCard = ({ blog }) => {
           <button
             className="flex gap-2 items-center justify-between"
             onClick={() => {
-              navigate(`/blogs/${blog.id}`);
+              navigate(`/blogs/${blog.title_slug}`);
             }}
           >
             <span className="uppercase text-primary text-sm font-medium m-0">
@@ -62,6 +68,6 @@ const BlogCard = ({ blog }) => {
       </div>
     </Link>
   );
-};
+}
 
 export default BlogCard;
