@@ -6,6 +6,7 @@ import {
   useBlogsData,
   useBlogCategories,
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
+import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
 
 function SearchResults({ searchText }) {
   return (
@@ -43,14 +44,9 @@ function BlogsWrapper() {
     setSelectedCat(categoryId);
   };
 
-  const filterBlogsByCat = (blogs, category) => {
-    const filtered = blogs.filter((blog) => blog.category === category);
-    return filtered;
-  };
+  const filteredBlogsByCat = filterBlogsByCat(searchBlog?.results, selectedCat);
 
-  const filteredBlogs = selectedCat
-    ? filterBlogsByCat(searchBlog?.results, selectedCat)
-    : searchBlog?.results;
+  const filteredBlogs = selectedCat ? filteredBlogsByCat : searchBlog?.results;
 
   const allBlogs =
     filteredBlogs && Array.isArray(filteredBlogs)
