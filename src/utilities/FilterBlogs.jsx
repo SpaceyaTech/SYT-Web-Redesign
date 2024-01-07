@@ -1,4 +1,8 @@
 export const filterBlogsByCat = (blogs, category) => {
+  if (!Array.isArray(blogs)) {
+    return [];
+  }
+
   const filtered = blogs.filter((blog) => blog.category === category);
   return filtered;
 };
