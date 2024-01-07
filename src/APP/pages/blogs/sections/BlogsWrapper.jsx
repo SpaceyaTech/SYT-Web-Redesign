@@ -1,3 +1,5 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useContext } from "react";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
@@ -65,8 +67,9 @@ function BlogsWrapper() {
             )}
             {statusBlogCategories === "loading" && <p>...</p>}
             <button
+              type="button"
               className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${
-                "" === selectedCat && "bg-primary text-white "
+                selectedCat === "" && "bg-primary text-white "
               }`}
               onClick={() => handleFilter("")}
             >
@@ -77,6 +80,7 @@ function BlogsWrapper() {
             Array.isArray(blogCategories)
               ? blogCategories.map((blog) => (
                   <button
+                    type="button"
                     key={blog.id}
                     onClick={() => handleFilter(blog.id)}
                     className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${

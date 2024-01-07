@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData";
 import BlogCard from "../../blogs/sections/BlogCard";
@@ -8,10 +9,15 @@ function RelatedBlogs({ categoryId }) {
 
   const {
     data: relatedBlogsData,
+    refetch: refetchRelatedBlogsData,
     isLoading,
     isError,
     isSuccess,
   } = useRelatedBlogsData(categoryId);
+
+  useEffect(() => {
+    refetchRelatedBlogsData();
+  }, [title_slug]);
 
   const filteredRelatedBlogs = filterRelatedBlogs(
     relatedBlogsData?.blogs,
