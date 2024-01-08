@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
+import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -58,7 +59,12 @@ function BlogsWrapper() {
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
       {isError && <p>Error loading blogs!</p>}
-      {isLoading && <p>Loading blogs...</p>}
+      {isLoading && (
+        <div className="w-full flex flex-col items-center justify-center gap-5 py-10">
+          <Loader />
+          <p className="text-lg font-medium text-primary">Loading blogs...</p>
+        </div>
+      )}
       {isSuccess && (
         <>
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
