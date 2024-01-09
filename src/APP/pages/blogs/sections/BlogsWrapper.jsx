@@ -1,11 +1,15 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useContext } from "react";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
+import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
   useBlogCategories,
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
+import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
 
 function SearchResults({ searchText }) {
   return (
@@ -17,8 +21,9 @@ function SearchResults({ searchText }) {
 
 function BlogsWrapper() {
   const { searchText, searchBlog } = useContext(SearchBlogContext);
-
+  const [selectedCat, setSelectedCat] = useState("");
   const [page, setPage] = useState(1);
+
   const {
     data: blogsData,
     refetch: refetchBlogsData,
@@ -38,32 +43,58 @@ function BlogsWrapper() {
     setPage((prevState) => (prevState = index));
   };
 
+  const handleFilter = (categoryId) => {
+    setSelectedCat(categoryId);
+  };
+
+  const filteredBlogsByCat = filterBlogsByCat(searchBlog?.results, selectedCat);
+
+  const filteredBlogs = selectedCat ? filteredBlogsByCat : searchBlog?.results;
+
   const allBlogs =
-    searchBlog && Array.isArray(searchBlog.results)
-      ? searchBlog.results.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+    filteredBlogs && Array.isArray(filteredBlogs)
+      ? filteredBlogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
       : null;
 
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
       {isError && <p>Error loading blogs!</p>}
-      {isLoading && <p>Loading blogs...</p>}
+      {isLoading && (
+        <div className="w-full flex flex-col items-center justify-center gap-5 py-10">
+          <Loader />
+          <p className="text-lg font-medium text-primary">Loading blogs...</p>
+        </div>
+      )}
       {isSuccess && (
         <>
-          <div className="w-max overflow-scroll md:overflow-auto flex flex-row items-center gap-3 md:mb-2">
+          <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
             {statusBlogCategories === "error" && (
               <p>Error loading blog categories!</p>
             )}
             {statusBlogCategories === "loading" && <p>...</p>}
+            <button
+              type="button"
+              className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${
+                selectedCat === "" && "bg-primary text-white "
+              }`}
+              onClick={() => handleFilter("")}
+            >
+              All
+            </button>
             {statusBlogCategories === "success" &&
             blogCategories &&
             Array.isArray(blogCategories)
               ? blogCategories.map((blog) => (
-                  <span
+                  <button
+                    type="button"
                     key={blog.id}
-                    className="bg-gray-100 text-black text-sm py-1 px-3 rounded-2xl cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white active:bg-primary active:text-white w-fit whitespace-normal"
+                    onClick={() => handleFilter(blog.id)}
+                    className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${
+                      blog.id === selectedCat && "bg-primary text-white "
+                    }`}
                   >
                     {blog.name}
-                  </span>
+                  </button>
                 ))
               : null}
           </div>

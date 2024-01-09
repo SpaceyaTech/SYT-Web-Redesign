@@ -1,12 +1,13 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 
 import { partners } from "../data";
 import { bannerImg } from "../../../../assets/images/hero-section";
 
-const HeroSection3 = () => {
+function HeroSection3() {
   return (
-    <section className="p-3 md:px-10 flex flex-col gap-2">
+    <section className="p-3 md:px-10 flex flex-col gap-2 max-w-[1440px] mx-auto">
       {/* Hero Header */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-4">
         {/* hero desc */}
@@ -69,6 +70,6 @@ const HeroSection3 = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection3;
