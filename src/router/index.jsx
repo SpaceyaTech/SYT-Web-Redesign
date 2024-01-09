@@ -21,8 +21,9 @@ import {
   SingleProductDonation,
   IndividualChapter,
   Error403,
-  Error400,
+  Error404,
 } from "../APP";
+
 import {
   AllChaptersPage,
   AdminLayout,
@@ -31,6 +32,7 @@ import {
   AddEventPage,
   UpdateEventPage,
 } from "../ADMIN";
+
 import {
   ForgotPassword,
   LogIn,
@@ -188,7 +190,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "*",
-        element: <Error403 />,
+        element: <Error404 />,
       },
     ],
   },
