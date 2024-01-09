@@ -15,7 +15,7 @@ import ScrollToTop from "../../../utilities/ScrollToTop";
 
 function LandingPage() {
   return (
-    <div className="w-screen max-w-[1440px] mx-auto">
+    <div className="w-screen">
       <ScrollToTop />
       <HeroSection3 />
       <FeatureSection />

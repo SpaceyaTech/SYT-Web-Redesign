@@ -29,6 +29,11 @@ import {
   wakio,
   wayne,
 } from "../../../assets/testimonialSection";
+import {
+  mentorship,
+  openSource,
+  twitter,
+} from "../../../assets/images/services-section";
 
 export const podcasts = [
   {
@@ -218,5 +223,32 @@ export const testimonialData = [
     img: singh,
     link: "https://twitter.com/MyAspirants/status/1715059439625986302",
     company: "JPMorgan Chase & Co",
+  },
+];
+
+export const services = [
+  {
+    id: 1,
+    img: twitter,
+    title: "Weekly Twitter Spaces",
+    description:
+      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    link: "https://x.com/SpaceYaTech",
+  },
+  {
+    id: 2,
+    img: openSource,
+    title: "Open-Source Projects",
+    description:
+      "We run full-stack, open-source projects, where UI/UX designers, developers and dev-ops engineers work together.",
+    link: "https://spaceyatech.github.io/CoLabs/",
+  },
+  {
+    id: 3,
+    img: mentorship,
+    title: "Mentorship Programs",
+    description:
+      "We host community-led mentorship programs where beginners are mentored by experienced professionals and given guidance on getting started in tech.",
+    link: "https://x.com/SpaceYaTech",
   },
 ];
