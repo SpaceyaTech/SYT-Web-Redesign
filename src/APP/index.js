@@ -16,8 +16,9 @@ import Blogs from "./pages/blogs/Blogs";
 import Blog from "./pages/blog/Blog";
 import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
-import Error404 from "./pages/errorPages/Error404";
 import Error400 from "./pages/errorPages/Error400";
+import Error403 from "./pages/errorPages/Error403";
+import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
 
 export {
@@ -39,7 +40,8 @@ export {
   EventsSection,
   SingleProductDonation,
   IndividualChapter,
-  Error404,
   Error400,
+  Error403,
+  Error404,
   Error500,
 };

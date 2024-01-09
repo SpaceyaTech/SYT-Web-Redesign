@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { error404 } from "../../../assets/images/errorPage";
+import { error404 } from "../../../assets/images/errorPages";
 
 function Error404() {
   const navigate = useNavigate();

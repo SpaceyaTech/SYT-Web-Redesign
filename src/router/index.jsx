@@ -20,7 +20,7 @@ import {
   EventsPage,
   SingleProductDonation,
   IndividualChapter,
-  Error404,
+  Error403,
   Error400,
 } from "../APP";
 import {
@@ -118,7 +118,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ase",
-        element: <Error400 />,
+        element: <Error403 />,
       },
     ],
   },
@@ -188,7 +188,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "*",
-        element: <Error404 />,
+        element: <Error403 />,
       },
     ],
   },

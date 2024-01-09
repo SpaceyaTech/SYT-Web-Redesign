@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { bgError500, error500 } from "../../../assets/images/errorPage";
+import { bgError500, error500 } from "../../../assets/images/errorPages";
 
 function Error500() {
   return (
