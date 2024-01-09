@@ -37,7 +37,7 @@ function Blog() {
 
             <BlogWrapper blog={blogData} />
 
-            <RelatedBlogs categoryId={blogData?.category?.id} />
+            <RelatedBlogs blogId={blogData?.id} categoryId={blogData?.category?.id} />
           </section>
         </>
       )}

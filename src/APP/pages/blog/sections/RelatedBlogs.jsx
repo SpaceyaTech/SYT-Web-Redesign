@@ -4,7 +4,7 @@ import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData"
 import BlogCard from "../../blogs/sections/BlogCard";
 import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
 
-function RelatedBlogs({ categoryId }) {
+function RelatedBlogs({ blogId, categoryId }) {
   const { title_slug } = useParams();
 
   const {
@@ -33,7 +33,12 @@ function RelatedBlogs({ categoryId }) {
         <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
           {Array.isArray(filteredRelatedBlogs) &&
           filteredRelatedBlogs.length > 0 ? (
-            filteredRelatedBlogs.map((blog) => (
+            filteredRelatedBlogs.filter(function(blog){
+              if(blog.id === blogId ) {
+                return false;
+              }
+              return true;
+            }).map((blog) => (
               <BlogCard key={blog.id} blog={blog} />
             ))
           ) : (
