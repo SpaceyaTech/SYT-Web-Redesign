@@ -17,10 +17,10 @@ function Error500() {
           <img
             src={error500}
             alt="error-500"
-            className="lg:flex hidden object-contain w-full h-2/3 border"
+            className="lg:flex hidden object-contain w-full h-2/3"
           />
 
-          <div className="hidden lg:flex justify-center text-left flex-col gap-3 p-4">
+          <div className="hidden lg:flex justify-center text-left flex-col gap-3 p-4 mb-16">
             <h3 className="text-3xl font-semibold ">
               Sorry... <br />
               It’s not you. <br />
