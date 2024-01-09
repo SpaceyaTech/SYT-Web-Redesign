@@ -57,15 +57,15 @@ function CategoriesSection() {
             return (
               <div key={category.id} className="w-60 sm:w-80 shrink-0">
                 <Link to={`/shop/category/${category.href}`}>
-                <img
-                  src={category.imgURL}
-                  className="object-cover object-center w-60 sm:w-80 h-60 rounded-xl"
-                  alt=""
-                />
+                  <img
+                    src={category.imgURL}
+                    className="object-cover object-center w-60 sm:w-80 h-60 rounded-xl"
+                    alt=""
+                  />
                 </Link>
                 <div className="p-2 flex items-center justify-between">
                   <p>{category.name}</p>
-                  <Link className="text-[#009975] text-sm">Learn more</Link>
+                  <Link className="text-primary text-sm">Learn more</Link>
                 </div>
               </div>
             );

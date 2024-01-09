@@ -18,7 +18,7 @@ const CommentInput = () => {
 
       <button
         type="submit"
-        className="bg-[#009975] text-white py-3 px-6 md:px-8 rounded-lg w-fit"
+        className="bg-primary text-white py-3 px-6 md:px-8 rounded-lg w-fit"
       >
         Comment
       </button>

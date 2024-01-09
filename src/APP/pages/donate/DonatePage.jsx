@@ -1,49 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import RangeInput from './RangeInput';
+import React from "react";
+import { Link } from "react-router-dom";
+import RangeInput from "./RangeInput";
 
 // this is the donate page with products and donation progress bar
 function DonatePage() {
   const projects = [
     {
       id: 1,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 2,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 3,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 4,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 5,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 6,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 7,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
     {
       id: 8,
-      name: 'Mastori CMS Platform',
-      info: 'A standalone content management platform for tech blogs and news where everyone contributes.',
+      name: "Mastori CMS Platform",
+      info: "A standalone content management platform for tech blogs and news where everyone contributes.",
     },
   ];
   return (
@@ -93,8 +93,8 @@ function DonatePage() {
                 </p>
               </div>
               <p className="text-gray-600 mb-5">
-                A standalone content management platform for tech blogs and
-                news where everyone contributes.
+                A standalone content management platform for tech blogs and news
+                where everyone contributes.
               </p>
               <RangeInput />
               <div className="flex items-center justify-between my-2">
@@ -103,7 +103,7 @@ function DonatePage() {
                   to={`/donate/${project?.id}`}
                   className="flex items-center gap-2"
                 >
-                  <p className="text-[#009975]">View Project</p>
+                  <p className="text-primary">View Project</p>
                   <svg
                     width="16"
                     height="14"

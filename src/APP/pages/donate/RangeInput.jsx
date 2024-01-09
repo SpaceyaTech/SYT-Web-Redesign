@@ -32,7 +32,7 @@ export default function RangeInput() {
         />
         <label
           htmlFor="medium-range"
-          className="absolute -top-3 transform -translate-x-1/2 text-xs font-medium text-[#009975]"
+          className="absolute -top-3 transform -translate-x-1/2 text-xs font-medium text-primary"
           style={tooltipPosition}
         >
           {value}%
