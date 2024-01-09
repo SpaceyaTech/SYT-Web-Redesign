@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
+import Error500 from "../../errorPages/Error500";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -45,7 +46,7 @@ function BlogsWrapper() {
 
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
-      {isError && <p>Error loading blogs!</p>}
+      {isError && <Error500 />}
       {isLoading && <p>Loading blogs...</p>}
       {isSuccess && (
         <>

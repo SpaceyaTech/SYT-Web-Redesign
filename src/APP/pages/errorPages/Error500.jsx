@@ -67,7 +67,7 @@ function Error500() {
 
         <Link
           to="/"
-          className="bg-[#00664E] text-base rounded-lg text-white w-max py-2 px-10"
+          className="bg-primary text-base rounded-lg text-white w-max py-2 px-10"
         >
           Go Home
         </Link>

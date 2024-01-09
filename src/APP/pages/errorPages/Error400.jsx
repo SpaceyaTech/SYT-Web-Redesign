@@ -13,10 +13,6 @@ function Error400() {
       />
 
       <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 text-center max-w-lg">
-        <h3 className="text-[#006643] capitalize text-2xl sm:text-3xl font-medium">
-          page not found
-        </h3>
-
         <p className="px-6 text-base sm:text-lg font-normal">
           There was a problem with your request. If you continue to see this
           error, please{" "}
@@ -28,7 +24,7 @@ function Error400() {
 
         <Link
           to="/"
-          className="bg-[#00664E] text-base rounded-lg text-white w-max py-2 px-10 mt-4"
+          className="bg-primary text-base rounded-lg text-white w-max py-2 px-10 mt-4"
         >
           Go Home
         </Link>
