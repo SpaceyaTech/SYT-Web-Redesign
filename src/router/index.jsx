@@ -21,6 +21,7 @@ import {
   SingleProductDonation,
   IndividualChapter,
   PageNotFound,
+  Error500,
 } from "../APP";
 import {
   AllChaptersPage,
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LogIn />,
+      },
+      {
+        path: "/ase",
+        element: <Error500 />,
       },
     ],
   },
