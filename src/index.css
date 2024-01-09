@@ -134,6 +134,12 @@
     flex-grow: 2;
   }
 
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .flex-half {
     flex: 1;
   }

@@ -3,7 +3,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
+
+import Error500 from "../../errorPages/Error500";
+
 import { Loader } from "../../../components";
+
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -14,7 +18,8 @@ import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
 function SearchResults({ searchText }) {
   return (
     <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
-      Showing results for <span className="text-primary">"{searchText}"</span>
+      Showing results for
+      <span className="text-primary">"{searchText}"</span>
     </h3>
   );
 }
@@ -58,6 +63,7 @@ function BlogsWrapper() {
 
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
+
       {isError && <p>Error loading blogs!</p>}
       {isLoading && (
         <div className="w-full flex flex-col items-center justify-center gap-5 py-10">
@@ -65,6 +71,7 @@ function BlogsWrapper() {
           <p className="text-lg font-medium text-primary">Loading blogs...</p>
         </div>
       )}
+
       {isSuccess && (
         <>
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">

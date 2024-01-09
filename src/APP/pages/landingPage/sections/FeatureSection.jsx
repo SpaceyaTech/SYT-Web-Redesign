@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function FeatureSection() {
@@ -162,3 +163,4 @@ function FeatureSection() {
 }
 
 export default FeatureSection;
+

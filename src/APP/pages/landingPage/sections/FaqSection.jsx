@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { FAQ } from "../../../components";
 /* eslint-disable react/no-unescaped-entities */
 function FaqSection() {
@@ -23,3 +25,4 @@ function FaqSection() {
 }
 
 export default FaqSection;
+

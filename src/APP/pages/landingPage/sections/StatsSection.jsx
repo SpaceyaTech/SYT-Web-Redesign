@@ -4,7 +4,8 @@ import axios from "axios";
 function StatsSection() {
   const [isError, setError] = useState();
   const [TotalMembers, setTotalMembers] = useState(0);
-
+  
+  
   const getAllChapters = async () => {
     try {
       const response = await axios.get(
