@@ -178,7 +178,7 @@ function Footer() {
 
                 <button
                   type="submit"
-                  className="sm:flex-1 flex-auto inline-flex items-center justify-center w-1/3 sm:w-auto px-8 py-3 h-12 sm:text-sm text-lg sm:py-3.5 font-semibold text-white transition-all duration-200 bg-[#009975] border border-transparent rounded-lg sm:rounded-r-lg rounded-l-none hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  className="sm:flex-1 flex-auto inline-flex items-center justify-center w-1/3 sm:w-auto px-8 py-3 h-12 sm:text-sm text-lg sm:py-3.5 font-semibold text-white transition-all duration-200 bg-primary border border-transparent rounded-lg sm:rounded-r-lg rounded-l-none hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                 >
                   Subscribe
                 </button>

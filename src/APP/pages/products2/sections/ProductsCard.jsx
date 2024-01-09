@@ -20,7 +20,7 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex flex-row items-center justify-center gap-2 bg-[#009975] py-3 px-4 h-fit rounded-lg w-fit"
+          className="hidden md:flex flex-row items-center justify-center gap-2 bg-primary py-3 px-4 h-fit rounded-lg w-fit"
         >
           <span className="text-base font-medium text-white capitalize">
             View product
@@ -39,7 +39,7 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-row items-center justify-center gap-2 bg-[#009975] py-3 px-4 h-fit rounded-lg md:hidden w-fit"
+        className="flex flex-row items-center justify-center gap-2 bg-primary py-3 px-4 h-fit rounded-lg md:hidden w-fit"
       >
         <span className="text-base font-medium text-white capitalize">
           View product

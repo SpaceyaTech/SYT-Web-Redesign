@@ -3,7 +3,6 @@ import SearchIcon from "../../../../assets/images/icons/search-icon.svg";
 import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
 
 function ItemHeader({ show }) {
-
   return (
     <div className="px-8 sm:px-0 m-auto max-w-screen-2xl flex justify-between md:space-x-48">
       {/* Breadcrumb */}
@@ -15,13 +14,13 @@ function ItemHeader({ show }) {
           <li>
             <a
               href="#"
-              className="after:content-['>'] after:ml-2 text-[#656767] hover:text-[#009975]"
+              className="after:content-['>'] after:ml-2 text-[#656767] hover:text-primary"
             >
               Home
             </a>
           </li>
-          {/* <li><a href="#" className="after:content-['>'] after:ml-2 text-[#656767] hover:text-[#009975]">Item</a></li> */}
-          <li className="text-[#009975]" aria-current="page">
+          {/* <li><a href="#" className="after:content-['>'] after:ml-2 text-[#656767] hover:text-primary">Item</a></li> */}
+          <li className="text-primary" aria-current="page">
             Item
           </li>
         </ol>
@@ -41,11 +40,7 @@ function ItemHeader({ show }) {
             <img src={SearchIcon} alt="search" />
           </span>
         </label>
-        <button
-          type="button"
-          className="ml-6"
-          onClick={show}
-        >
+        <button type="button" className="ml-6" onClick={show}>
           <img src={CartIcon} alt="cart" />
         </button>
       </div>

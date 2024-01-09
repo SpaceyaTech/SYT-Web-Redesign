@@ -47,4 +47,27 @@ const useBlogsData = (page) => {
   });
 };
 
-export { useBlogsData, useBlogCategories };
+// Search blog
+const fetchSearchBlog = async (keyword) => {
+  // if (keyword === "") return;
+
+  const url = `${process.env.REACT_APP_API_BASE_URL}/blog/?keyword=${keyword}`;
+
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const useSearchBlog = (keyword) => {
+  return useQuery({
+    queryKey: ["searchBlog"],
+    queryFn: () => fetchSearchBlog(keyword),
+    refetchOnWindowFocus: false,
+    staleTime: 5 * 60 * 60,
+  });
+};
+
+export { useBlogsData, useBlogCategories, useSearchBlog };

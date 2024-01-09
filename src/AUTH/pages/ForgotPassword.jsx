@@ -51,7 +51,7 @@ function ForgotPassword() {
           <a
             href="#!"
             type="submit"
-            className="bg-[#009975] hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
+            className="bg-primary hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
           >
             Submit
           </a>

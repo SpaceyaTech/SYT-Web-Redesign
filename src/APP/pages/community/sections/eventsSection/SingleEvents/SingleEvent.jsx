@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 // } from "../../../../../../assets/images/community";
 import { Link, useParams } from "react-router-dom";
 import { parse as parseDate, format } from "date-fns";
-import parse from "html-react-parser"
+import parse from "html-react-parser";
 import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
 import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
@@ -172,7 +172,7 @@ function SingleEvent() {
                 </p>
 
                 <Link to={oneEvent.link}>
-                  <button className="flex items-center justify-center h-6 text-white bg-[#009975]  font-medium rounded-md text-xs px-2.5 text-center w-full ">
+                  <button className="flex items-center justify-center h-6 text-white bg-primary  font-medium rounded-md text-xs px-2.5 text-center w-full ">
                     RSVP
                   </button>
                 </Link>

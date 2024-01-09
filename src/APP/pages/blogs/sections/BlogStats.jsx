@@ -1,4 +1,4 @@
-import { chatText, eye, thumbsUp } from "../../../../assets/images/blogs-page";
+import { thumbsUp } from "../../../../assets/images/blogs-page";
 
 const BlogStats = ({ likes }) => {
   return (
@@ -10,7 +10,7 @@ const BlogStats = ({ likes }) => {
 
       <div className="flex flex-row items-center gap-1">
         <img src={thumbsUp} alt="eye" className="w-5 h-5 object-cover" />
-        <span className="text-base text-[#00664E]">{likes}</span>
+        <span className="text-base text-[#00664E] leading-5 m-0">{likes}</span>
       </div>
 
       {/* <div className="flex flex-row items-center gap-1">
