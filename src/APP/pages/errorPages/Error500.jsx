@@ -39,7 +39,7 @@ function Error500() {
               to="/"
               className="bg-[#00664E] rounded-lg text-white w-max py-2 px-10"
             >
-              Go home
+              Go Home
             </Link>
           </div>
         </div>
@@ -69,7 +69,7 @@ function Error500() {
           to="/"
           className="bg-[#00664E] text-base rounded-lg text-white w-max py-2 px-10"
         >
-          Go home
+          Go Home
         </Link>
       </div>
     </section>

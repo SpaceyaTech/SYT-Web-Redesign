@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 import { error404 } from "../../../assets/images/errorPage";
 
-function PageNotFound() {
+function Error404() {
   const navigate = useNavigate();
 
   return (
     <section className="max-w-[1440px] mx-auto flex flex-col items-center gap-0 pb-10 md:pb-8">
       <img
         src={error404}
-        alt="pageNotFound"
+        alt="Error404"
         className="p-4 mt-5 md:my-10 sm:px-12 sm:my-0 h-[400px] md:h-[540px] object-contain w-full sm:w-fit"
       />
 
@@ -19,7 +19,7 @@ function PageNotFound() {
           page not found
         </h3>
 
-        <p className="px-4 text-base sm:text-lg font-normal">
+        <p className="px-6 text-base sm:text-lg font-normal">
           Either your internet is misbehaving or we couldn’t find the file you
           are trying to access.
         </p>
@@ -38,4 +38,4 @@ function PageNotFound() {
   );
 }
 
-export default PageNotFound;
+export default Error404;

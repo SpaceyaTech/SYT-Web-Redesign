@@ -20,8 +20,8 @@ import {
   EventsPage,
   SingleProductDonation,
   IndividualChapter,
-  PageNotFound,
-  Error500,
+  Error404,
+  Error400,
 } from "../APP";
 import {
   AllChaptersPage,
@@ -118,7 +118,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ase",
-        element: <Error500 />,
+        element: <Error400 />,
       },
     ],
   },
@@ -188,7 +188,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "*",
-        element: <PageNotFound />,
+        element: <Error404 />,
       },
     ],
   },
