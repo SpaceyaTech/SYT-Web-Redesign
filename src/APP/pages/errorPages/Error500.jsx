@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { bgError500, error500 } from "../../../assets/images/errorPages";
+import { bgError500, error500svg } from "../../../assets/images/errorPages";
 
 function Error500() {
   return (
@@ -15,9 +15,9 @@ function Error500() {
 
         <div className="flex flex-row items-end absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
           <img
-            src={error500}
+            src={error500svg}
             alt="error-500"
-            className="lg:flex hidden object-contain w-full h-2/3"
+            className="lg:flex hidden object-contain w-full h-[720px]"
           />
 
           <div className="hidden lg:flex justify-center text-left flex-col gap-3 p-4 mb-16">
@@ -45,7 +45,7 @@ function Error500() {
         </div>
 
         <img
-          src={error500}
+          src={error500svg}
           alt="error-500"
           className="flex lg:hidden object-contain absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-3/4"
         />
