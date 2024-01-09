@@ -11,7 +11,8 @@ import {
 function SearchResults({ searchText }) {
   return (
     <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
-      Showing results for <span className="text-primary">"{searchText}"</span>
+      Showing results for
+      <span className="text-primary">"{searchText}"</span>
     </h3>
   );
 }
