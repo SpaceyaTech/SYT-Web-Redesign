@@ -1,9 +1,11 @@
+import React from 'react';
+
 import { FAQ } from "../../../components";
 /* eslint-disable react/no-unescaped-entities */
 function FaqSection() {
   return (
-    <section className="bg-[#00664E] body-font w-full" id="faq">
-      <div className="container px-5 py-8 mx-auto">
+    <section className="bg-[#00664E] body-font w-full " id="faq">
+      <div className="container px-5 py-8 max-w-[1440px] mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h2 className="text-xs text-[#BDF16D] tracking-widest font-medium title-font mb-1">
             Got questions?
@@ -23,3 +25,4 @@ function FaqSection() {
 }
 
 export default FaqSection;
+
