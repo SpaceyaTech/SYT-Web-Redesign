@@ -20,6 +20,7 @@ import {
   Checkout,
   SingleEvent,
   SingleProductDonation,
+
 } from "../APP";
 // import {
 //   AllChaptersPage,
@@ -36,6 +37,7 @@ import {
 //   SignUp,
 //   Validate,
 // } from "../AUTH";
+
 
 const router = createBrowserRouter([
   {
@@ -63,7 +65,7 @@ const router = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path: "/blogs/:id",
+        path: "/blogs/:title_slug",
         element: <Blog />,
       },
       {
@@ -116,6 +118,7 @@ const router = createBrowserRouter([
       // },
     ],
   },
+
   // {
   //   path: "/admin",
   //   element: <AdminLayout />,
@@ -176,6 +179,7 @@ const router = createBrowserRouter([
   //     },
   //   ],
   // },
+
 ]);
 
 export default router;
