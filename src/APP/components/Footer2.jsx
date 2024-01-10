@@ -81,63 +81,76 @@ function Footer2() {
               </ul>
             </div>
 
-            {/* <div className="flex flex-col gap-8">
-            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
-              Resources
-            </h2>
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+                Resources
+              </h2>
 
-            <ul className="flex flex-col gap-5 list-none text-sm font-light">
-              //To be restored once the jobs section is implemented
-              //<li>Jobs</li>
-              <li><Link to="/allevents">Events</Link></li>
-              <li>Mentorship</li>
-            </ul>
-          </div> */}
+              <ul className="flex flex-col gap-5 list-none text-sm font-light">
+                {/* To be restored once the jobs section is implemented  */}
+                <li>Jobs</li>
+                <li>
+                  {/* <Link to="/allevents"> */}
+                  Events
+                  {/* </Link> */}
+                </li>
+                <li>
+                  <a
+                    href="http://mentorlst.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Mentorship
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-            {/* <div className="flex flex-col gap-8">
-            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
-              Quick Links
-            </h2>
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+                Quick Links
+              </h2>
 
-            <ul className="flex flex-col gap-5 list-none text-sm font-light">
-              <li>Contact Us</li>
-              <li>Donate</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
-            </ul>
-          </div> */}
-          </div>
-          {/* <div className="flex-2">
-          <div className="flex flex-col gap-8">
-            <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
-              Subscribe to our Newsletter
-            </h2>
-
-            <div className="flex flex-col gap-5 text-sm font-light">
-              <p className="text-sm left-6">
-                Subscribe to our newsletter to get your
-                <br />
-                weekly dose of news, updates, tips and even
-                <br />
-                special offers
-              </p>
-
-              <form className="flex pr-4">
-                <input
-                  type="text"
-                  placeholder="Enter email address"
-                  className="px-4 py-3 rounded-lg rounded-r-none flex-3"
-                />
-                <button
-                  type="submit"
-                  className="rounded-r-lg px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <ul className="flex flex-col gap-5 list-none text-sm font-light">
+                <li>Contact Us</li>
+                <li>Donate</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Use</li>
+              </ul>
             </div>
           </div>
-        </div> */}
+          <div className="flex-2">
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+                Subscribe to our Newsletter
+              </h2>
+
+              <div className="flex flex-col gap-5 text-sm font-light">
+                <p className="text-sm left-6">
+                  Subscribe to our newsletter to get your
+                  <br />
+                  weekly dose of news, updates, tips and even
+                  <br />
+                  special offers
+                </p>
+
+                <form className="flex pr-4">
+                  <input
+                    type="email"
+                    placeholder="Enter email address"
+                    className="px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-r-lg px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div className="sm:mt-14 mt-10">

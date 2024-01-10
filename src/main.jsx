@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
 import router from "./router";
+import { SearchBlogProvider } from "./context/searchBlog";
 import { AuthContextProvider } from "./utils/AuthContext";
 import { SearchBlogProvider } from "./context/searchBlog";
 

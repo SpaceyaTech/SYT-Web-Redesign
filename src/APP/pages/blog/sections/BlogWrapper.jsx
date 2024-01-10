@@ -8,7 +8,8 @@ import logo from "../../../../assets/images/sytLogo.png";
 import "./blogWrapper.css";
 
 const BlogWrapper = ({ blog }) => {
-  const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
+
+  const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
   });
 

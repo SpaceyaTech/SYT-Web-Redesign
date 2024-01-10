@@ -1,5 +1,6 @@
+import React from "react";
 /* eslint-disable react/prop-types */
-const ProductCard = ({ product }) => {
+function ProductCard({ product }) {
   const { header, desc, button } = product;
   return (
     <div className="flex flex-col items-center gap-10 p-6 border-2 border-gray-900 rounded-2xl">
@@ -10,6 +11,6 @@ const ProductCard = ({ product }) => {
       </button>
     </div>
   );
-};
+}
 
 export default ProductCard;
