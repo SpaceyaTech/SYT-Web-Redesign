@@ -37,7 +37,10 @@ function Blog() {
 
             <BlogWrapper blog={blogData} />
 
-            <RelatedBlogs blogId={blogData?.id} categoryId={blogData?.category?.id} />
+            <RelatedBlogs
+              blogId={blogData?.id}
+              categoryId={blogData?.category?.id}
+            />
           </section>
         </>
       )}
@@ -46,4 +49,3 @@ function Blog() {
 }
 
 export default Blog;
-

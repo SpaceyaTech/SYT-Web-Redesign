@@ -163,4 +163,3 @@ function FeatureSection() {
 }
 
 export default FeatureSection;
-

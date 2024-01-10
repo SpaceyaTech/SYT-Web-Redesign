@@ -136,9 +136,9 @@ function Footer2() {
 
                 <form className="flex pr-4">
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Enter email address"
-                    className="px-4 py-3 rounded-lg rounded-r-none flex-3"
+                    className="px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
                   />
                   <button
                     type="submit"

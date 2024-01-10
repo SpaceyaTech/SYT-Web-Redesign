@@ -20,7 +20,6 @@ import {
   Checkout,
   SingleEvent,
   SingleProductDonation,
-
 } from "../APP";
 // import {
 //   AllChaptersPage,
@@ -37,7 +36,6 @@ import {
 //   SignUp,
 //   Validate,
 // } from "../AUTH";
-
 
 const router = createBrowserRouter([
   {
@@ -179,7 +177,6 @@ const router = createBrowserRouter([
   //     },
   //   ],
   // },
-
 ]);
 
 export default router;
