@@ -17,6 +17,7 @@ function BlogCard({ blog }) {
   return (
     <Link
       to={`/blogs/${blog.title_slug}`}
+
       className="flex flex-col items-start w-full mb-5"
     >
       <img

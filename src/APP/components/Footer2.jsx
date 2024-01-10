@@ -150,6 +150,7 @@ function Footer2() {
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="sm:mt-14 mt-10">
