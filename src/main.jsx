@@ -6,8 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
 import router from "./router";
-import { AuthContextProvider } from "./utils/AuthContext";
 import { SearchBlogProvider } from "./context/searchBlog";
+import { AuthContextProvider } from "./utils/AuthContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {

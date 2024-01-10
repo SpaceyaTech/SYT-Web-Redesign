@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Events from "./Events";
-import { format, endOfWeek, add, sub } from "date-fns";
+// import { format, endOfWeek, add, sub } from "date-fns";
 import filterRecentTime from "./helpers/FilterRecentTime";
 import {
   useEventsCategories,
