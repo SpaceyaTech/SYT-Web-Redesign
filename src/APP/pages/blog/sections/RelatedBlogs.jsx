@@ -29,7 +29,7 @@ function RelatedBlogs({ blogId, categoryId }) {
       {isError && <p>Error loading blogs!</p>}
       {isLoading && <p>Loading blogs...</p>}
 
-      {isSuccess && (
+      {isSuccess && filteredRelatedBlogs.length > 0 && (
         <>
           <h2 className="text-2xl text-gray-500 font-semibold underline decoration-green-600 underline-offset-2">
             Related Blogs
