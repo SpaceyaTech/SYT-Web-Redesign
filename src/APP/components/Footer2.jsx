@@ -60,7 +60,6 @@ function Footer2() {
               </a>
             </div>
           </div>
-
           {/* Footer links */}
           <div className="flex-3 flex gap-6 justify-between">
             <div className="flex flex-col gap-8">
@@ -136,9 +135,9 @@ function Footer2() {
 
                 <form className="flex pr-4">
                   <input
-                    type="email"
+                    type="text"
                     placeholder="Enter email address"
-                    className="px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
+                    className="px-4 py-3 rounded-lg rounded-r-none flex-3"
                   />
                   <button
                     type="submit"
@@ -149,7 +148,8 @@ function Footer2() {
                 </form>
               </div>
             </div>
-          </div>
+          </div>{" "}
+          */}
         </div>
 
         <div className="sm:mt-14 mt-10">

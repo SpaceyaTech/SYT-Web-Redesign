@@ -6,6 +6,7 @@ import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 import Error500 from "../../errorPages/Error500";
 import { Loader } from "../../../components";
+
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -75,6 +76,7 @@ function BlogsWrapper() {
               <p>Error loading blog categories!</p>
             )}
             {statusBlogCategories === "loading" && <p>...</p>}
+
             <button
               type="button"
               className={`bg-gray-100 min-w-fit w-fit text-black text-base py-2 px-4 rounded-[40px] cursor-pointer transition-all duration-500 ease-in hover:bg-primary hover:text-white whitespace-normal ${

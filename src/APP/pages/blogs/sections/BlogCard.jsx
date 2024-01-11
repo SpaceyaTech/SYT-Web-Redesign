@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
@@ -8,6 +9,7 @@ import BlogStats from "./BlogStats";
 
 function BlogCard({ blog }) {
   const navigate = useNavigate();
+
   const timeAgo =
     blog?.created_at &&
     formatDistanceToNow(new Date(blog?.created_at), {
@@ -48,12 +50,12 @@ function BlogCard({ blog }) {
               <h4 className="capitalize font-medium text-[#323433]">
                 {blog.author}
               </h4>
-
               <span className="text-[#656767]">{timeAgo}</span>
             </div>
           </div>
 
           <button
+            type="button"
             className="flex gap-2 items-center justify-between"
             onClick={() => {
               navigate(`/blogs/${blog.title_slug}`);

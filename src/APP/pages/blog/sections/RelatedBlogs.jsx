@@ -32,18 +32,16 @@ function RelatedBlogs({ blogId, categoryId }) {
       {isSuccess && (
         <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
           {Array.isArray(filteredRelatedBlogs) &&
-          filteredRelatedBlogs.length > 0 ? (
-            filteredRelatedBlogs.filter(function(blog){
-              if(blog.id === blogId ) {
-                return false;
-              }
-              return true;
-            }).map((blog) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))
-          ) : (
-            <p>No related blogs found!</p>
-          )}
+          filteredRelatedBlogs.length > 0
+            ? filteredRelatedBlogs
+                .filter(function (blog) {
+                  if (blog.id === blogId) {
+                    return false;
+                  }
+                  return true;
+                })
+                .map((blog) => <BlogCard key={blog.id} blog={blog} />)
+            : ""}
         </div>
       )}
     </>
