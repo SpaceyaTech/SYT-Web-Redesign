@@ -20,6 +20,10 @@ import {
   Checkout,
   SingleEvent,
   SingleProductDonation,
+  Error500,
+  Error404,
+  Error400,
+  Error403,
 } from "../APP";
 // import {
 //   AllChaptersPage,
@@ -115,6 +119,22 @@ const router = createBrowserRouter([
       //   element: <LogIn />,
       // },
     ],
+  },
+  {
+    path: "/error-400",
+    element: <Error400 />,
+  },
+  {
+    path: "/error-403",
+    element: <Error403 />,
+  },
+  {
+    path: "/*",
+    element: <Error404 />,
+  },
+  {
+    path: "/error-500",
+    element: <Error500 />,
   },
 
   // {
