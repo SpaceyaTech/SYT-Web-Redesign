@@ -37,7 +37,7 @@ const products = [
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
-export default function Example() {
+export default function SingleItemPage() {
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
 

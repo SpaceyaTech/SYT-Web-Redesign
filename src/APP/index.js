@@ -1,5 +1,5 @@
 import LandingPage from "./pages/landingPage/LandingPage";
-import Homepage from "./pages/shop/pages/Homepage";
+import Homepage from "./pages/shop/Homepage";
 import SingleItemPage from "./pages/shop/pages/SingleItemPage";
 import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
@@ -20,6 +20,7 @@ import Error400 from "./pages/errorPages/Error400";
 import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
+import ProductDisplay from "./pages/shop/pages/ProductDisplay";
 
 export {
   LandingPage,
@@ -44,4 +45,5 @@ export {
   Error403,
   Error404,
   Error500,
+  ProductDisplay,
 };
