@@ -4,7 +4,7 @@ import ItemHeader from "../sections/ItemHeader";
 import Sample1 from "../../../../assets/images/shop-page/sample1.png";
 import Sample2 from "../../../../assets/images/shop-page/sample2.png";
 import Counter from "../../../components/Counter";
-import useOrderSummary from "../../../../hooks/Queries/shop/useOrdersList"
+import { useOrderSummary } from "../../../../hooks/Queries/shop/useOrdersList";
 
 const products = [
   {
@@ -43,9 +43,9 @@ const steps = [
 ];
 
 function Checkout() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const { data: orderSummary, status } = useOrderSummary();
+  const { data: orderSummary, status } = useOrderSummary();
 
   return (
     <>

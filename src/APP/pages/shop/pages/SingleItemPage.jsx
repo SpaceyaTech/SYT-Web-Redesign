@@ -13,6 +13,7 @@ import DeleteIcon from "../../../../assets/images/icons/delete-icon.svg";
 import Counter from "../../../components/Counter";
 import ItemHeader from "../sections/ItemHeader";
 import useProductsInCart from "../../../../hooks/Queries/shop/useCartProducts";
+import { useSingleOrder } from "../../../../hooks/Queries/shop/useOrdersList";
 
 const products = [
   {
@@ -44,7 +45,9 @@ export default function SingleItemPage() {
 
   const navigate = useNavigate();
   const { data: cartProducts, status } = useProductsInCart();
-  console.log("cart Products", cartProducts);
+  const { data: singleOrder } = useSingleOrder();
+
+  // console.log("cart Products", cartProducts);
   return (
     <>
       <ItemHeader show={() => setOpen((prev) => !prev)} />
