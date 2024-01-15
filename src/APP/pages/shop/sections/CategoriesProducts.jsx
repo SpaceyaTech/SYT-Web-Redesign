@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ItemHeader from "./ItemHeader";
+import useSwagList from "../../../../hooks/Queries/shop/useSwagList";
 
 function CategoriesProducts() {
   const params = useParams();
@@ -72,6 +73,9 @@ function CategoriesProducts() {
     },
   ]);
   const [open, setOpen] = useState(true);
+
+  const { data: swagList, status } = useSwagList();
+
 
   return (
     <>

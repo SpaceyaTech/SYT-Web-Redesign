@@ -4,6 +4,7 @@ import ItemHeader from "../sections/ItemHeader";
 import Sample1 from "../../../../assets/images/shop-page/sample1.png";
 import Sample2 from "../../../../assets/images/shop-page/sample2.png";
 import Counter from "../../../components/Counter";
+import useOrderSummary from "../../../../hooks/Queries/shop/useOrdersList"
 
 const products = [
   {
@@ -27,26 +28,28 @@ const products = [
   // More products...
 ];
 
-function Checkout() {
-  //   const [open, setOpen] = useState(true);
+const steps = [
+  { description: "Provide your MPESA mobile number", key: 1 },
+  {
+    description:
+      "Click submit and a prompt will appear on your phone with a request to confirm transaction by providing your MPESA PIN",
+    key: 2,
+  },
+  {
+    description:
+      "Once completed, you will receive the confirmation SMS for this transaction",
+    key: 3,
+  },
+];
 
-  const steps = [
-    { description: "Provide your MPESA mobile number", key: 1 },
-    {
-      description:
-        "Click submit and a prompt will appear on your phone with a request to confirm transaction by providing your MPESA PIN",
-      key: 2,
-    },
-    {
-      description:
-        "Once completed, you will receive the confirmation SMS for this transaction",
-      key: 3,
-    },
-  ];
+function Checkout() {
+    const [open, setOpen] = useState(false);
+
+    const { data: orderSummary, status } = useOrderSummary();
 
   return (
     <>
-      {/* <ItemHeader show={() => setOpen((prev) => !prev)} /> */}
+      <ItemHeader show={() => setOpen((prev) => !prev)} />
 
       <div className="px-8 sm:px-0 m-auto mb-10 max-w-screen-2xl justify-between w-full space-y-10 md:space-y-20 text-[#323433]">
         <div className="flex flex-col md:flex-row justify-between space-y-8 sm:space-y-0">

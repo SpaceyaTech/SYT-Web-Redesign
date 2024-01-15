@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ItemHeader from "./ItemHeader";
 
 function CategoriesSection() {
   const [categories, setCategories] = useState([
@@ -48,15 +49,18 @@ function CategoriesSection() {
       href: "hoodies",
     },
   ]);
+  const [open, setOpen] = useState(true);
 
   return (
     <>
-      <div className="pt-10 px-14 max-w-screen-2xl mx-auto">
-        <h2 className="text-3xl font-medium tracking-tight text-gray-900 mb-10">
+      <ItemHeader show={() => setOpen((prev) => !prev)} />
+
+      <div className="pt-10 px-4 sm:px-14 max-w-screen-2xl mx-auto">
+        <h2 className="text-xl sm:text-3xl font-medium tracking-tight text-gray-900 mb-10">
           Categories
         </h2>
 
-        <div className="flex space-x-3 sm:space-x-0 overflow-x-scroll lg:overflow-x-hidden lg:grid lg:grid-cols-3 sm:gap-y-8 sm:gap-x-8 p-3 overflow-y-hidden">
+        <div className="grid grid-row-[minmax(300px,_256px)] grid-flow-col auto-cols-max gap-4 p-0 overflow-x-scroll sm:overflow-x-hidden md:grid-cols-3 md:grid-rows-2 md:gap-y-8 md:gap-x-8 md:p-3 overflow-y-hidden">
           {categories.map((category) => {
             return (
               <div
@@ -71,8 +75,10 @@ function CategoriesSection() {
                   />
                 </Link>
                 <div className="p-2 flex items-center justify-between">
-                  <p className="text-2xl">{category.name}</p>
-                  <Link className="text-primary text-sm">
+                  <p className="text-xl sm:text-2xl font-medium">
+                    {category.name}
+                  </p>
+                  <Link className="text-primary text-xs sm:text-sm">
                     View More{" "}
                     <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
                   </Link>
