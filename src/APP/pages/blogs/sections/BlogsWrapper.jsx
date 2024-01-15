@@ -19,7 +19,9 @@ function SearchResults({ searchText }) {
   return (
     <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
       Showing results for
-      <span className="text-primary">"{searchText}"</span>
+
+      <span className="text-primary"> "{searchText}"</span>
+
     </h3>
   );
 }
@@ -29,8 +31,6 @@ function BlogsWrapper() {
 
   const [selectedCat, setSelectedCat] = useState("");
   const [page, setPage] = useState(1);
-
-  const navigate = useNavigate();
 
   const {
     data: blogsData,
@@ -66,7 +66,7 @@ function BlogsWrapper() {
 
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
-      {isError && navigate("/error-500")}
+      {isError && <Error500 />}
       {isLoading && (
         <div className="w-full flex flex-col items-center justify-center gap-5 py-10">
           <Loader />
