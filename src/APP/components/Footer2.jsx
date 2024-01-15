@@ -16,8 +16,8 @@ function Footer2() {
   return (
     <footer className="bg-[#252533] text-white ">
       <div className="md:p-12 py-8 px-4 relative max-w-[1440px] mx-auto">
-        <div className="flex md:flex-row flex-col md:gap-16 gap-8 ">
-          <div className="flex-3 flex flex-col md:items-center items-start">
+        <div className="flex lg:flex-row flex-col md:gap-16 gap-8 ">
+          <div className="flex-3 flex flex-col lg:items-center items-start">
             {/* logo */}
             <img
               src={logo}
@@ -134,15 +134,15 @@ function Footer2() {
                   special offers
                 </p>
 
-                <form className="flex pr-4">
+                <form className="flex items-center">
                   <input
                     type="email"
                     placeholder="Enter email address"
-                    className="px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
+                    className="w-auto px-2 md:px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
                   />
                   <button
                     type="submit"
-                    className="rounded-r-lg px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    className="rounded-r-lg px-2 md:px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                   >
                     Subscribe
                   </button>
@@ -150,7 +150,6 @@ function Footer2() {
               </div>
             </div>
           </div>
-
         </div>
 
         <div className="sm:mt-14 mt-10">
