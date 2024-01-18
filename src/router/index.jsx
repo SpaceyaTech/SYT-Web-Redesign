@@ -16,7 +16,7 @@ import {
   DonatePage,
   Homepage,
   Resources,
-  SingleItemPage,
+  ProductDisplay,
   Checkout,
   SingleEvent,
   SingleProductDonation,
@@ -78,22 +78,22 @@ const router = createBrowserRouter([
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
-      // {
-      //   path: "/shop",
-      //   element: <Homepage />,
-      // },
-      // {
-      //   path: "/shop/category/:category",
-      //   element: <Categories />,
-      // },
-      // {
-      //   path: "/shop/item/:id",
-      //   element: <SingleItemPage />,
-      // },
-      // {
-      //   path: "/shop/checkout",
-      //   element: <Checkout />,
-      // },
+      {
+        path: "/shop",
+        element: <Homepage />,
+      },
+      {
+        path: "/shop/category/:category",
+        element: <Categories />,
+      },
+      {
+        path: "/shop/item/:id",
+        element: <ProductDisplay />,
+      },
+      {
+        path: "/shop/checkout",
+        element: <Checkout />,
+      },
       // {
       //   path: "/resources",
       //   element: <Resources />,
