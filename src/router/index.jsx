@@ -24,6 +24,7 @@ import {
   Error404,
   Error400,
   Error403,
+  Gallery,
 } from "../APP";
 // import {
 //   AllChaptersPage,
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/community",
         element: <CommunityPage />,
+      },
+      {
+        path: "/Gallery",
+        element: <Gallery />,
       },
       {
         path: "/blogs",
