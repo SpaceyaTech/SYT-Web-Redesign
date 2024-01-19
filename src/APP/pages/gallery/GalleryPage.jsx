@@ -1,9 +1,15 @@
 import React from "react";
+import processPhotos from "../../../utilities/processPhotos";
+import { photosData } from "./data";
+import ImageCard from "./sections/ImageCard";
 
-function Gallery() {
+function GalleryPage() {
+  const photos = processPhotos(photosData);
+
+  console.log(photos);
   return (
-    <main className="max-w-[1440px] border mx-auto flex flex-col gap-5">
-      <div className="flex flex-col gap-1 pt-2">
+    <main className="max-w-[1440px] border mx-auto flex flex-col gap-8">
+      <div className="flex flex-col gap-2 pt-2">
         <button
           className="flex items-center gap-1 text-sm font-medium"
           type="button"
@@ -21,18 +27,28 @@ function Gallery() {
             />
           </svg>
 
-          <span className="">Back</span>
+          <span className="text-black text-base">BACK</span>
         </button>
 
-        <h3 className="text-2xl md:text-3xl font-normal">
-          SpaceYaTech Gallery
-        </h3>
+        <div className="flex flex-col gap-3 items-center text-center md:items-start md:text-left max-w-4xl">
+          <h3 className="text-2xl md:text-3xl font-normal">
+            SpaceYaTech Gallery
+          </h3>
 
-        <p className="">Description</p>
+          <p className="text-base font-normal text-[#323433]">
+            SpaceYaTech is a fast growing tech community born out of a need for
+            a space for young techies to find communities to help them
+            accelerate in their careers. The community targets all sectors in
+            the tech industry and provides online communities to network, learn
+            and grow for techies at all stages in their career.
+          </p>
+        </div>
       </div>
-      <div className="">gallery</div>
+      <div className="border overflow-y-auto gap-3 h-full">
+        <ImageCard photos={photos} />
+      </div>
     </main>
   );
 }
 
-export default Gallery;
+export default GalleryPage;

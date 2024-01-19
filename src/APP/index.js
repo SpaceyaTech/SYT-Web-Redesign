@@ -21,7 +21,7 @@ import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
 import ProductDisplay from "./pages/shop/pages/ProductDisplay";
-import Gallery from "./pages/gallery/Gallery";
+import GalleryPage from "./pages/gallery/GalleryPage";
 
 export {
   LandingPage,
@@ -47,5 +47,5 @@ export {
   Error404,
   Error500,
   ProductDisplay,
-  Gallery,
+  GalleryPage,
 };
