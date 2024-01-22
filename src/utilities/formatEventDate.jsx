@@ -4,7 +4,6 @@ export default function formatEventDates(
   end_date,
   end_time
 ) {
-  console.log("Data: ", start_date, start_time, end_date, end_time);
   const startDate = new Date(`${start_date}T${start_time}`);
   const endDate = new Date(`${end_date}T${end_time}`);
 

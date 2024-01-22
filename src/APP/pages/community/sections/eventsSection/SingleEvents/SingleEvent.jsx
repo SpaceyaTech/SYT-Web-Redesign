@@ -54,9 +54,6 @@ function SingleEvent() {
         )
       : "";
 
-  console.log("One Event: ", oneEvent);
-  console.log("Date: ", date);
-
   return (
     <>
       {isError && <p>Error fetching event!</p>}
