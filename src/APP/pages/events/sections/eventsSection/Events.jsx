@@ -57,7 +57,7 @@ function Events({ events, isVertical }) {
 
                     <div className="p-5 text-[#323433]">
                       <h5 className="mb-2 text-sm font-semibold">{name}</h5>
-                      <p className="mb-3 font-medium text-xs whitespace-nowrap">
+                      <p className="mb-3 font-medium text-xs whitespace-wrap">
                         {date} EAT
                       </p>
                       <p className="mb-3 font-normal text-xs">
