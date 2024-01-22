@@ -106,10 +106,10 @@ const router = createBrowserRouter([
       //   path: "/donate/:id",
       //   element: <SingleProductDonation />,
       // },
-      // {
-      //   path: "/events/:id", // New route path
-      //   element: <SingleEvent />,
-      // },
+      {
+        path: "/events/:id",
+        element: <SingleEvent />,
+      },
       // {
       //   path: "/signup",
       //   element: <SignUp />,
