@@ -9,8 +9,9 @@ import React, { useEffect, useState } from "react";
 //   uxhiringafrica,
 // } from "../../../../../../assets/images/community";
 import { Link, useParams } from "react-router-dom";
-import { parse as parseDate, format } from "date-fns";
+import { format } from "date-fns";
 import parse from "html-react-parser";
+import { Loader } from "../../../../../components";
 import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
 import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
@@ -57,7 +58,12 @@ function SingleEvent() {
   return (
     <>
       {isError && <p>Error fetching event!</p>}
-      {isLoading && <p>Loading event...</p>}
+      {isLoading && (
+        <div className="flex flex-col items-center justify-center gap-4 py-10">
+          <Loader />
+          <p className="text-lg font-medium text-primary">Loading event...</p>
+        </div>
+      )}
       {isSuccess && typeof oneEvent !== "undefined" ? (
         <div className="w-screen flex flex-col ">
           <div
