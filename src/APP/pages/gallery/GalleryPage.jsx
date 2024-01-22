@@ -2,14 +2,14 @@ import React from "react";
 import processPhotos from "../../../utilities/processPhotos";
 import { photosData } from "./data";
 import ImageCard from "./sections/ImageCard";
+import ImageCardsss from "./sections/ImageCardsss";
 
 function GalleryPage() {
   const photos = processPhotos(photosData);
 
-  console.log(photos);
   return (
-    <main className="max-w-[1440px] border mx-auto flex flex-col gap-8">
-      <div className="flex flex-col gap-2 pt-2">
+    <main className="max-w-[1440px] mx-auto flex flex-col gap-8 ">
+      <div className="flex flex-col gap-2 pt-2 px-5 md:px-10">
         <button
           className="flex items-center gap-1 text-sm font-medium"
           type="button"
@@ -30,10 +30,8 @@ function GalleryPage() {
           <span className="text-black text-base">BACK</span>
         </button>
 
-        <div className="flex flex-col gap-3 items-center text-center md:items-start md:text-left max-w-4xl">
-          <h3 className="text-2xl md:text-3xl font-normal">
-            SpaceYaTech Gallery
-          </h3>
+        <div className="flex flex-col gap-3 items-center text-center mt-5 md:items-start md:text-left max-w-4xl">
+          <h3 className="text-3xl font-normal">SpaceYaTech Gallery</h3>
 
           <p className="text-base font-normal text-[#323433]">
             SpaceYaTech is a fast growing tech community born out of a need for
@@ -44,9 +42,16 @@ function GalleryPage() {
           </p>
         </div>
       </div>
-      <div className="border overflow-y-auto gap-3 h-full">
-        <ImageCard photos={photos} />
+
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-0 grid-flow-dense">
+        {photosData.map((photo) => (
+          <ImageCard key={photo.id} photo={photo} />
+        ))}
       </div>
+
+      {/* <div className="overflow-y-auto h-full">
+        <ImageCardsss photos={photos} />
+      </div> */}
     </main>
   );
 }

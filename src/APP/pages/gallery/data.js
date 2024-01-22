@@ -5,6 +5,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 800,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 2,
@@ -12,6 +14,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 780,
+    date: "Aug 12, 2022",
+    event: "Droidcon Meetup",
   },
   {
     id: 3,
@@ -19,6 +23,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 800,
+    date: "Dec 25, 2022",
+    event: "Christmas Party",
   },
   {
     id: 4,
@@ -26,6 +32,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 700,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
 
   {
@@ -34,6 +42,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 800,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 6,
@@ -41,6 +51,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 780,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 7,
@@ -48,6 +60,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 800,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 8,
@@ -55,6 +69,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 720,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 9,
@@ -62,6 +78,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 800,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 10,
@@ -69,6 +87,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 780,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 11,
@@ -76,6 +96,8 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 800,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
   {
     id: 12,
@@ -83,5 +105,7 @@ export const photosData = [
     alt: "image",
     width: 1080,
     height: 720,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
   },
 ];

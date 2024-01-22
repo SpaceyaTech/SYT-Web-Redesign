@@ -9,6 +9,8 @@ const processPhotos = (photoArr) =>
     return {
       key: photo.id,
       src: photo.src,
+      date: photo.date,
+      event: photo.event,
       alt,
       width,
       height,
