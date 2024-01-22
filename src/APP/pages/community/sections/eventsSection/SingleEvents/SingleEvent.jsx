@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import {
-//   singleEvents,
-//   community,
-//   MasterBase,
-//   mpesapayments,
-//   techrecruiters,
-//   mentorlst,
-//   uxhiringafrica,
-// } from "../../../../../../assets/images/community";
 import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
 import parse from "html-react-parser";
+
 import { Loader } from "../../../../../components";
 import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
