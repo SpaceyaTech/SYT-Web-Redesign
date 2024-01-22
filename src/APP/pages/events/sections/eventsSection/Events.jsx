@@ -1,7 +1,7 @@
-import { parse, format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import formatEventDates from "../../../../../utilities/formatEventDate";
 
 function Events({ events, isVertical }) {
   const verticalContainer =
@@ -17,7 +17,24 @@ function Events({ events, isVertical }) {
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events && Array.isArray(events)
         ? events.map(
-            ({ id, name, date, location, mode, poster, city, start_time }) => {
+            ({
+              id,
+              name,
+              start_date,
+              start_time,
+              end_date,
+              end_time,
+              location,
+              mode,
+              poster,
+              city,
+            }) => {
+              const date = formatEventDates(
+                start_date,
+                start_time,
+                end_date,
+                end_time
+              );
               const buttonColor =
                 mode === "Virtual"
                   ? "bg-red-800 hover:bg-red-800"
@@ -41,12 +58,7 @@ function Events({ events, isVertical }) {
                     <div className="p-5 text-[#323433]">
                       <h5 className="mb-2 text-sm font-semibold">{name}</h5>
                       <p className="mb-3 font-medium text-xs whitespace-nowrap">
-                        {format(new Date(date), "EEE, MMM d, yyyy")}{" "}
-                        {format(
-                          parse(start_time, "HH:mm:ss", new Date()),
-                          "h:mm a"
-                        )}{" "}
-                        EAT
+                        {date} EAT
                       </p>
                       <p className="mb-3 font-normal text-xs">
                         {location}{" "}
