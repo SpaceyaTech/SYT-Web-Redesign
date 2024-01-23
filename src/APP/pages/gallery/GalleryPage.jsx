@@ -49,9 +49,9 @@ function GalleryPage() {
         ))}
       </div>
 
-      {/* <div className="overflow-y-auto h-full">
+      <div className="overflow-y-auto h-full">
         <ImageCardsss photos={photos} />
-      </div> */}
+      </div>
     </main>
   );
 }
