@@ -19,7 +19,11 @@ function Banner() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button type="submit" className="w-1/10 p-2">
+          <button
+            type="submit"
+            className="w-1/10 p-2"
+            onClick={(e) => e.preventDefault()}
+          >
             <img src={search} alt="search" className="w-6 h-6" />
           </button>
         </form>
