@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
+
 import EventsUpdateSection from "./EventsUpdateSection";
 import EventsTab from "./EventsTab";
 import Events from "./Events";
-// import {
-//   community,
-//   MasterBase,
-//   mpesapayments,
-//   techrecruiters,
-//   mentorlst,
-//   uxhiringafrica,
-// } from '../../../../../assets/images/community';
 import { useAllCities } from "../../../../../hooks/Queries/eventsSection/useEventCategories";
 import useTopEvents from "../../../../../hooks/Queries/eventsSection/useTopEvents";
 
 function EventsSection({ showTabs, showAllEventsLink }) {
   const [filters, setFilters] = useState({});
+
   const {
     data: topEventsData,
     isLoading: isLoadingTopEvents,
@@ -22,7 +16,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
     isSuccess: isSuccessTopEvents,
     refetch: refetchTopEvents,
   } = useTopEvents(filters);
-  // console.log(topEventsData?.results);
+
   const {
     data: topEventsCities,
     isLoading,
@@ -48,7 +42,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
   }, [filters]);
 
   return (
-    <div className="p-6">
+    <div className="p-2 md:p-6">
       {isErrorTopEvents && <p>Error loading cities!</p>}
       {isLoadingTopEvents && <p>Loading cities...</p>}
       {isSuccessTopEvents && (

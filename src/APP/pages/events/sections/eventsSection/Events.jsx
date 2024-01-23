@@ -1,23 +1,44 @@
-import { parse, format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import formatEventDates from "../../../../../utilities/formatEventDate";
+
 function Events({ events, isVertical }) {
   const verticalContainer =
     "my-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
-  const horizontalContainer = "flex overflow-auto my-6";
+  const horizontalContainer =
+    "flex overflow-x-auto px-0 md:px-4 justify-between gap-2 sm:gap-4 w-full";
 
   // Event Card classes
   const verticalWrapper =
     "max-w-sm bg-white border border-gray-200 rounded-lg h-auto";
-  const horizontalWrapper = "m-6 bg-white rounded-lg w-72";
+  const horizontalWrapper =
+    "m-3 md:m-6 bg-white rounded-lg w-4/5 sm:w-72 flex flex-shrink-0";
 
   return (
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events && Array.isArray(events)
         ? events.map(
-            ({ id, name, start_date, location, mode, poster, city, start_time }) => {
+            ({
+              id,
+              name,
+              start_date,
+              start_time,
+              end_date,
+              end_time,
+              location,
+              mode,
+              poster,
+              city,
+            }) => {
+              const date = formatEventDates(
+                start_date,
+                start_time,
+                end_date,
+                end_time
+              );
+
               const buttonColor =
                 mode === "Virtual"
                   ? "bg-red-800 hover:bg-red-800"
@@ -38,15 +59,11 @@ function Events({ events, isVertical }) {
                       alt={name}
                     />
 
-                    <div className="p-5 text-[#323433]">
+                    <div className="p-5 text-[#323433] w-full">
                       <h5 className="mb-2 text-sm font-semibold">{name}</h5>
-                      <p className="mb-3 font-medium text-xs whitespace-nowrap">
-                        {format(new Date(start_date), "EEE, MMM d, yyyy")}{" "}
-                        {format(
-                          parse(start_time, "HH:mm:ss", new Date()),
-                          "h:mm a"
-                        )}{" "}
-                        EAT
+
+                      <p className="mb-3 font-medium text-xs whitespace-wrap">
+                        {date} EAT
                       </p>
                       <p className="mb-3 font-normal text-xs">
                         {location}{" "}
@@ -78,6 +95,6 @@ Events.defaultProps = {
 };
 
 Events.propTypes = {
-  events: PropTypes.array.isRequired,
+  events: PropTypes.array,
   isVertical: PropTypes.bool.isRequired,
 };
