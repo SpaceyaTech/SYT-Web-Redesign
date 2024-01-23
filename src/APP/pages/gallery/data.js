@@ -109,15 +109,6 @@ export const photosData = [
     event: "SYT Meetup",
   },
   {
-    id: 12,
-    src: "https://images.pexels.com/photos/14440667/pexels-photo-14440667.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    alt: "image",
-    width: 1080,
-    height: 720,
-    date: "Jan 12, 2023",
-    event: "SYT Meetup",
-  },
-  {
     id: 13,
     src: "https://images.pexels.com/photos/14158744/pexels-photo-14158744.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     alt: "image",
@@ -219,6 +210,15 @@ export const photosData = [
   {
     id: 24,
     src: "https://images.pexels.com/photos/15074403/pexels-photo-15074403/free-photo-of-retro-cameras-on-stand-for-selling.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    alt: "image",
+    width: 1080,
+    height: 720,
+    date: "Jan 12, 2023",
+    event: "SYT Meetup",
+  },
+  {
+    id: 25,
+    src: "https://images.pexels.com/photos/14440667/pexels-photo-14440667.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     alt: "image",
     width: 1080,
     height: 720,
