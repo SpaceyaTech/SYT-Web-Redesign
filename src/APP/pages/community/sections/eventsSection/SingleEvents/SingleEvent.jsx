@@ -64,10 +64,12 @@ function SingleEvent() {
           />
           <div className="px-20">
             <div className="flex flex-row justify-between pt-10 pb-2 ">
+
               <h2>
                 {typeof oneEvent !== "undefined" &&
                   format(new Date(oneEvent?.start_date), "EEE d MMM, yyyy")}
               </h2>
+
               <div className="flex flex-row justify-between ">
                 <div className="">
                   <svg
@@ -133,7 +135,9 @@ function SingleEvent() {
                     </p>
                   </div>
                   <div className="text-sm text-[#323433] font-light mb-6 ml-8">
+
                     <p>{date} EAT</p>
+
                   </div>
                 </div>
                 <div>

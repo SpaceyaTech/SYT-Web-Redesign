@@ -18,6 +18,7 @@ function Events({ events, isVertical }) {
     <div className={isVertical ? verticalContainer : horizontalContainer}>
       {events && Array.isArray(events)
         ? events.map(
+
             ({
               id,
               name,
@@ -36,6 +37,7 @@ function Events({ events, isVertical }) {
                 end_date,
                 end_time
               );
+
               const buttonColor =
                 mode === "Virtual"
                   ? "bg-red-800 hover:bg-red-800"
@@ -58,8 +60,10 @@ function Events({ events, isVertical }) {
 
                     <div className="p-5 text-[#323433]">
                       <h5 className="mb-2 text-sm font-semibold">{name}</h5>
+
                       <p className="mb-3 font-medium text-xs whitespace-wrap">
                         {date} EAT
+
                       </p>
                       <p className="mb-3 font-normal text-xs">
                         {location}{" "}
