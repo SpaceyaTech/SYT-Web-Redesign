@@ -4,16 +4,18 @@ const processPhotos = (photoArr) =>
   photoArr.map((photo) => {
     const width = breakpoints[0];
     const height = (photo.height / photo.width) * width;
-    const alt = photo.alt;
+    const { alt } = photo;
+    const { date } = photo;
+    const { event } = photo;
 
     return {
       key: photo.id,
       src: photo.src,
-      date: photo.date,
-      event: photo.event,
       alt,
       width,
       height,
+      date,
+      event,
       srcSet: breakpoints.map((breakpoint) => {
         const height = Math.round((photo.height / photo.width) * breakpoint);
         return {
