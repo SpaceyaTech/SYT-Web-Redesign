@@ -56,7 +56,6 @@ function PartnerCTA() {
           <p>
             <a
               href="/src/assets/reports/spaceyatech-internship-program.pdf"
-              download="SpaceYaTech_Internship_Program_2023.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary text-sm sm:text-base"
