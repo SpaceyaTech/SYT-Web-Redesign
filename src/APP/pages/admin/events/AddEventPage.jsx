@@ -20,9 +20,9 @@ import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { useEventsCategories } from "../../../hooks/Queries/eventsSection/useEventCategories";
-import useChaptersData from "../../../hooks/Queries/community/useChaptersData";
-import usePostEvents from "../../../hooks/Queries/eventsSection/usePostEvents";
+import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
+import useChaptersData from "../../../../hooks/Queries/community/useChaptersData";
+import usePostEvents from "../../../../hooks/Queries/eventsSection/usePostEvents";
 
 function AddEventPage() {
   const [selectedEventCategory, setSelectedEventCategory] = useState("1");

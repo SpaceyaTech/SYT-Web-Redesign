@@ -1,5 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable quotes */
 import { createBrowserRouter } from "react-router-dom";
 
 import {
@@ -20,22 +18,17 @@ import {
   Checkout,
   SingleEvent,
   SingleProductDonation,
+  ForgotPassword,
+  LogIn,
+  ResetPassword,
+  SignUp,
+  //   AllChaptersPage,
+  //   AdminLayout,
+  //   AllEventsPage,
+  //   AddChapterPage,
+  //   AddEventPage,
+  //   UpdateEventPage,
 } from "../APP";
-// import {
-//   AllChaptersPage,
-//   AdminLayout,
-//   AllEventsPage,
-//   AddChapterPage,
-//   AddEventPage,
-//   UpdateEventPage,
-// } from "../ADMIN";
-// import {
-//   ForgotPassword,
-//   LogIn,
-//   ResetPassword,
-//   SignUp,
-//   Validate,
-// } from "../AUTH";
 
 const router = createBrowserRouter([
   {
@@ -114,6 +107,22 @@ const router = createBrowserRouter([
       //   path: "/login",
       //   element: <LogIn />,
       // },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
     ],
   },
 
@@ -148,32 +157,6 @@ const router = createBrowserRouter([
   //     {
   //       path: "/admin/events/update-event",
   //       element: <UpdateEventPage />,
-  //     },
-  //   ],
-  // },
-  // {
-  //   path: "/auth",
-  //   element: <Layout />,
-  //   children: [
-  //     {
-  //       path: "/auth/login",
-  //       element: <LogIn />,
-  //     },
-  //     {
-  //       path: "/auth/signup",
-  //       element: <SignUp />,
-  //     },
-  //     {
-  //       path: "/auth/validate",
-  //       element: <Validate />,
-  //     },
-  //     {
-  //       path: "/auth/forgot-password",
-  //       element: <ForgotPassword />,
-  //     },
-  //     {
-  //       path: "/auth/reset-password",
-  //       element: <ResetPassword />,
   //     },
   //   ],
   // },

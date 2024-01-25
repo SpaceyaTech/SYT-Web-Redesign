@@ -1,9 +1,9 @@
 import React from "react";
-import ForgotPasswordImg from "../../assets/images/auth/forgot-password.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import EmailIcon from "../../assets/images/auth/email-icon.svg";
-import MessageIcon from "../../assets/images/auth/message-icon.svg";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import ForgotPasswordImg from "../../../assets/images/auth/forgot-password.svg";
+import EmailIcon from "../../../assets/images/auth/email-icon.svg";
+import MessageIcon from "../../../assets/images/auth/message-icon.svg";
 
 function ForgotPassword() {
   return (

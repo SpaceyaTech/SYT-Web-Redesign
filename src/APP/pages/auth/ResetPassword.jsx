@@ -1,5 +1,5 @@
 import React from "react";
-import ResetPasswordImg from "../../assets/images/auth/reset-password.svg";
+import ResetPasswordImg from "../../../assets/images/auth/reset-password.svg";
 
 function ResetPassword() {
   return (

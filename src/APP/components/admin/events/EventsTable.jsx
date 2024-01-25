@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchIcon from "../../../assets/images/icons/search-icon.svg";
+import SearchIcon from "../../../../assets/images/icons/search-icon.svg";
 
 const initialData = [
   {

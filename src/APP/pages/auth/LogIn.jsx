@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Navigate } from "react-router-dom";
-import LoginImg from "../../assets/images/auth/login.svg";
-import useAuth from "../../hooks/useAuth";
+import privateAxios from "../../../api/privateAxios";
+import LoginImg from "../../../assets/images/auth/login.svg";
+import useAuth from "../../../hooks/useAuth";
 
 function LogIn() {
   const { auth, setAuth } = useAuth();
@@ -15,8 +15,8 @@ function LogIn() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/token/`,
+      const response = await privateAxios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/token/`,
         {
           username,
           password,
@@ -31,7 +31,7 @@ function LogIn() {
   };
 
   if (auth?.access) {
-    return <Navigate to="/admin" />;
+    return <Navigate to="/shop" />;
   }
 
   return (
@@ -80,7 +80,7 @@ function LogIn() {
             </label>
 
             <a
-              href="#!"
+              href="/forgot-password"
               className="text-primary hover:text-[#00664E] text-base"
             >
               Forgot password?
@@ -90,12 +90,12 @@ function LogIn() {
             type="submit"
             className="bg-primary hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
           >
-            Login
+            Log In
           </button>
           <p>
             New here?
             <a
-              href="/auth/signup"
+              href="/signup"
               className="text-primary hover:text-[#00664E] text-base"
             >
               {" "}
