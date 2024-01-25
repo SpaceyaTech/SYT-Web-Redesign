@@ -8,6 +8,7 @@ import "./index.css";
 import router from "./router";
 import { SearchBlogProvider } from "./context/searchBlog";
 import { AuthContextProvider } from "./utils/AuthContext";
+import { ErrorBoundary } from "./APP";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,13 +20,15 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <QueryClientProvider client={queryClient}>
-        <SearchBlogProvider>
-          <RouterProvider router={router} />
-          <ReactQueryDevtools position="bottom-right" />
-        </SearchBlogProvider>
-      </QueryClientProvider>
-    </AuthContextProvider>
+    <ErrorBoundary>
+      <AuthContextProvider>
+        <QueryClientProvider client={queryClient}>
+          <SearchBlogProvider>
+            <RouterProvider router={router} />
+            <ReactQueryDevtools position="bottom-right" />
+          </SearchBlogProvider>
+        </QueryClientProvider>
+      </AuthContextProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
