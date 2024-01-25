@@ -1,10 +1,14 @@
 import LandingPage from "./pages/landingPage/LandingPage";
+
 import Homepage from "./pages/shop/Homepage";
+
 import SingleItemPage from "./pages/shop/pages/SingleItemPage";
 import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
 import Resources from "./pages/resources/Resources";
+
 import Checkout from "./pages/shop/pages/OrderSummary";
+
 import AboutUs from "./pages/aboutUs/AboutUs";
 import CommunityPage from "./pages/community/CommunityPage";
 import DonatePage from "./pages/donate/DonatePage";
@@ -20,9 +24,11 @@ import Error400 from "./pages/errorPages/Error400";
 import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
+
 import ErrorBoundary from "./pages/errorPages/ErrorBoundary";
 import ProductDisplay from "./pages/shop/pages/ProductDisplay";
 import GalleryPage from "./pages/gallery/GalleryPage";
+
 
 export {
   LandingPage,
@@ -50,4 +56,5 @@ export {
   ErrorBoundary,
   ProductDisplay,
   GalleryPage,
+
 };

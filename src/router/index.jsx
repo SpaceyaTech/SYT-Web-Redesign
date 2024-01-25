@@ -68,6 +68,7 @@ const router = createBrowserRouter([
         element: <GalleryPage />,
       },
       {
+
         path: "/blogs",
         element: <Blogs />,
       },
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
+
       {
         path: "/shop",
         element: <Homepage />,
@@ -124,6 +126,7 @@ const router = createBrowserRouter([
       //   element: <LogIn />,
       // },
     ],
+
   },
   {
     path: "/error-400",
@@ -132,6 +135,7 @@ const router = createBrowserRouter([
   {
     path: "/error-403",
     element: <Error403 />,
+
   },
   {
     path: "/*",

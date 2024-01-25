@@ -9,7 +9,6 @@ import router from "./router";
 import { SearchBlogProvider } from "./context/searchBlog";
 import { AuthContextProvider } from "./utils/AuthContext";
 import { ErrorBoundary } from "./APP";
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

@@ -1,5 +1,4 @@
 import React from "react";
-
 import { bgError500, error500svg } from "../../../assets/images/errorPages";
 
 function Error500() {
@@ -40,6 +39,7 @@ function Error500() {
             >
               Go Home
             </a>
+
           </div>
         </div>
 
