@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import { bgError500, error500svg } from "../../../assets/images/errorPages";
 
 function Error500() {
@@ -30,17 +28,18 @@ function Error500() {
             <p className="text-xl font-normal mb-2">
               We’re experiencing an internal server problem. Please try again
               after a few minutes or{" "}
-              <Link to="/" className="text-primary hover:underline">
+              <a href="/" className="text-primary hover:underline">
                 contact us.
-              </Link>
+              </a>
             </p>
 
-            <Link
-              to="/"
+            <a
+              href="/"
               className="bg-[#00664E] rounded-lg text-white w-max py-2 px-10"
             >
               Go Home
-            </Link>
+            </a>
+
           </div>
         </div>
 
@@ -60,17 +59,17 @@ function Error500() {
         <p className="text-base font-normal mb-2 max-w-lg ">
           We’re experiencing an internal server problem. Please try again after
           a few minutes or{" "}
-          <Link to="/" className="text-primary hover:underline">
+          <a href="/" className="text-primary hover:underline">
             contact us.
-          </Link>
+          </a>
         </p>
 
-        <Link
-          to="/"
+        <a
+          href="/"
           className="bg-primary text-base rounded-lg text-white w-max py-2 px-10"
         >
           Go Home
-        </Link>
+        </a>
       </div>
     </section>
   );

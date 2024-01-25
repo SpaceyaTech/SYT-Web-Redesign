@@ -25,6 +25,7 @@ import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
 
+import ErrorBoundary from "./pages/errorPages/ErrorBoundary";
 import ProductDisplay from "./pages/shop/pages/ProductDisplay";
 import GalleryPage from "./pages/gallery/GalleryPage";
 
@@ -52,6 +53,7 @@ export {
   Error403,
   Error404,
   Error500,
+  ErrorBoundary,
   ProductDisplay,
   GalleryPage,
 

@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 
@@ -14,17 +14,11 @@ function Blog() {
   const navigate = useNavigate();
   const {
     data: blogData,
-    refetch: refetchBlogData,
 
     isLoading,
     isError,
     isSuccess,
   } = useBlogData(title_slug);
-
-
-  useEffect(() => {
-    refetchBlogData();
-  }, [title_slug]);
 
   return (
     <div className="w-screen max-w-[1440px] mx-auto">

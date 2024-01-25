@@ -4,6 +4,7 @@ import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData"
 import BlogCard from "../../blogs/sections/BlogCard";
 import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
 
+
 function RelatedBlogs({ blogId, categoryId }) {
   const { title_slug } = useParams();
 
@@ -24,15 +25,16 @@ function RelatedBlogs({ blogId, categoryId }) {
     title_slug
   );
 
+
   return (
     <>
       {isError && <p>Error loading blogs!</p>}
       {isLoading && <p>Loading blogs...</p>}
 
-
       {isSuccess && filteredRelatedBlogs.length > 0 && (
         <>
-          <h2 className="text-2xl text-black font-semibold underline decoration-green-600 underline-offset-2">
+          <h2 className="text-2xl text-gray-500 font-semibold underline decoration-green-600 underline-offset-2">
+
             {filteredRelatedBlogs.length > 1
               ? "Related Articles"
               : "Related Article"}
@@ -53,7 +55,6 @@ function RelatedBlogs({ blogId, categoryId }) {
             )}
           </div>
         </>
-
       )}
     </>
   );
