@@ -46,7 +46,6 @@ function EventCategory() {
 
   // Handle filter by recent buttons
   const filterRecents = (times) => {
-    console.log('Here');
     setFilters((prevState) => {
       return {
         ...prevState,
