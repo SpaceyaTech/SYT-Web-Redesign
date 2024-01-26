@@ -33,7 +33,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
   const updateRecentFilter = (dateFilterString) => {
     setFilters((prevState) => ({
       ...prevState,
-      date: dateFilterString,
+      start_date: dateFilterString,
     }));
   };
 
