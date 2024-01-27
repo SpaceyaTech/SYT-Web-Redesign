@@ -122,11 +122,13 @@ function Footer2() {
                     Mentorship
                   </a>
                 </li>
+
                 <li>
                   <a href="/gallery" className="hover:underline text-white">
                     Gallery
                   </a>
                 </li>
+
               </ul>
             </div>
 
@@ -158,6 +160,7 @@ function Footer2() {
                   special offers
                 </p>
 
+
                 <form className="flex items-center">
                   <input
                     type="email"
@@ -167,6 +170,7 @@ function Footer2() {
                   <button
                     type="submit"
                     className="rounded-r-lg px-2 md:px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+
                   >
                     Subscribe
                   </button>
@@ -174,6 +178,7 @@ function Footer2() {
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="sm:mt-14 mt-10">
