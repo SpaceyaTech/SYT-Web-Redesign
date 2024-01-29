@@ -14,7 +14,6 @@ function ResourcesSection() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(searchText);
   };
 
   return (

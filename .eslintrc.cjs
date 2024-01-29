@@ -22,6 +22,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    linebreak-style: 0,
     semi: 0,
     "comma-dangle": 0,
     "prettier/prettier": "error",
