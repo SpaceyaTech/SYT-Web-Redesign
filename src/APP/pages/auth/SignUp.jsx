@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import privateAxios from "../../../api/privateAxios";
+import publicAxios from "../../../api/publicAxios";
 import SignUpImg from "../../../assets/images/auth/signup.svg";
 import useAuth from "../../../hooks/useAuth";
 
@@ -18,8 +18,8 @@ function SignUp() {
 
   const getToken = async () => {
     try {
-      const response = await privateAxios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/token/`,
+      const response = await publicAxios.post(
+        "/token/",
         {
           username,
           password,
@@ -38,7 +38,7 @@ function SignUp() {
     setIsLoading(true);
 
     try {
-      const response = await privateAxios.post(
+      const response = await publicAxios.post(
         `${process.env.REACT_APP_API_BASE_URL}/users/`,
         {
           username,

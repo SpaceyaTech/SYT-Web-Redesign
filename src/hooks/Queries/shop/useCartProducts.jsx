@@ -1,6 +1,6 @@
 // https://apis.spaceyatech.com/api/cart/swaggs/
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const fetchProductsInCart = async () => {
   try {
@@ -14,12 +14,12 @@ const fetchProductsInCart = async () => {
   }
 };
 
-const useProductsInCart = () => {
-  return useQuery({
+const useProductsInCart = () =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  useQuery({
     queryKey: ["productsInCart"],
     queryFn: () => fetchProductsInCart(),
     refetchOnWindowFocus: true,
   });
-};
 
 export default useProductsInCart;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import privateAxios from "../../../api/privateAxios";
+import publicAxios from "../../../api/publicAxios";
 import LoginImg from "../../../assets/images/auth/login.svg";
 import useAuth from "../../../hooks/useAuth";
 
@@ -15,8 +15,8 @@ function LogIn() {
     e.preventDefault();
 
     try {
-      const response = await privateAxios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/token/`,
+      const response = await publicAxios.post(
+        "/token/",
         {
           username,
           password,

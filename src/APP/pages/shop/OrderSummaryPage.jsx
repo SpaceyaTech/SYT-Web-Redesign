@@ -1,10 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
-import ItemHeader from "../sections/ItemHeader";
-import Sample1 from "../../../../assets/images/shop-page/sample1.png";
-import Sample2 from "../../../../assets/images/shop-page/sample2.png";
-import Counter from "../../../components/Counter";
-import { useOrderSummary } from "../../../../hooks/Queries/shop/useOrdersList";
+import Sample1 from "../../../assets/images/shop-page/sample1.png";
+import Sample2 from "../../../assets/images/shop-page/sample2.png";
+import { useOrderSummary } from "../../../hooks/Queries/shop/useOrdersList";
+import Counter from "../../components/Counter";
+import ItemHeader from "./sections/ItemHeader";
 
 const products = [
   {
@@ -46,6 +46,7 @@ function Checkout() {
   const [open, setOpen] = useState(false);
 
   const { data: orderSummary, status } = useOrderSummary();
+
 
   return (
     <>
@@ -185,7 +186,10 @@ function Checkout() {
                             <a href={href}>{name}</a>
                           </p>
 
-                          <p className="">Ksh {price}</p>
+                          <p className="">
+                            Ksh
+                            {price}
+                          </p>
                           <Counter className="h-8 w-24" />
                         </div>
                       </li>

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import AdminLayout from "./components/admin/AdminLayout";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import AllBlogsPage from "./pages/admin/blogs/AllBlogsPage";
@@ -28,10 +29,10 @@ import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
 import Resources from "./pages/resources/Resources";
 import Homepage from "./pages/shop/Homepage";
-import Categories from "./pages/shop/pages/Categories";
-import Checkout from "./pages/shop/pages/OrderSummary";
-import ProductDisplay from "./pages/shop/pages/ProductDisplay";
-import SingleItemPage from "./pages/shop/pages/SingleItemPage";
+import Checkout from "./pages/shop/OrderSummaryPage";
+import ProductDisplay from "./pages/shop/ProductDisplayPage";
+import CategoriesProducts from "./pages/shop/sections/CategoriesProducts";
+import SingleItemPage from "./pages/shop/SingleItemPage";
 
 export {
   AddChapterPage,
@@ -44,12 +45,12 @@ export {
   LandingPage,
   Homepage,
   Checkout,
+  CategoriesProducts,
   SingleItemPage,
   Layout,
   Products,
   Resources,
   AboutUs,
-  Categories,
   CommunityPage,
   DonatePage,
   SingleEvent,

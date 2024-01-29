@@ -1,12 +1,10 @@
 // https://apis.spaceyatech.com/api/orders//
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import publicAxios from "../../../api/publicAxios";
 
 const fetchOrders = async () => {
   try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_BASE_URL}/orders/`
-    );
+    const response = await publicAxios.get("/orders/");
     return response.data;
   } catch (error) {
     console.error("Error fetching order summary: ", error);
@@ -14,21 +12,18 @@ const fetchOrders = async () => {
   }
 };
 
-const useOrderSummary = () => {
-  return useQuery({
+const useOrderSummary = () =>
+  useQuery({
     queryKey: ["orders"],
-    queryFn: () => useSingleOrder(),
+    queryFn: () => fetchOrders(),
     refetchOnWindowFocus: true,
     staleTime: 5 * 60 * 60,
   });
-};
 
 // https://apis.spaceyatech.com/api/orders/{orders_pk}/items/
 const fetchSingleOrder = async (id) => {
   try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_BASE_URL}/orders/${id}/items/`
-    );
+    const response = await publicAxios.get(`/orders/${id}/items/`);
     return response.data;
   } catch (error) {
     console.error("Error fetching order item: ", error);
@@ -36,13 +31,12 @@ const fetchSingleOrder = async (id) => {
   }
 };
 
-const useSingleOrder = (id) => {
-  return useQuery({
+const useSingleOrder = (id) =>
+  useQuery({
     queryKey: ["singleOrder"],
     queryFn: () => fetchSingleOrder(id),
     refetchOnWindowFocus: true,
     staleTime: 5 * 60 * 60,
   });
-};
 
 export { useOrderSummary, useSingleOrder };

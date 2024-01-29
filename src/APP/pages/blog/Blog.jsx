@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-
 import BlogWrapper from "./sections/BlogWrapper";
 import RelatedBlogs from "./sections/RelatedBlogs";
 import { Loader } from "../../components";
@@ -49,4 +48,3 @@ function Blog() {
 }
 
 export default Blog;
-
