@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { error403 } from "../../../assets/images/errorPages";
 
@@ -16,18 +15,18 @@ function Error403() {
         <p className="px-6 text-base sm:text-lg font-normal">
           You don’t have permission to view this resource. If you believe there
           has been a mistake, please{" "}
-          <Link to="/" className="text-primary hover:underline">
+          <a href="/" className="text-primary hover:underline">
             contact us.
-          </Link>
+          </a>
           .
         </p>
 
-        <Link
-          to="/"
+        <a
+          href="/"
           className="bg-primary text-base rounded-lg text-white w-max py-2 px-10 mt-4"
         >
           Go Home
-        </Link>
+        </a>
       </div>
     </section>
   );
