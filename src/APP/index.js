@@ -26,6 +26,7 @@ import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
 
 import ErrorBoundary from "./pages/errorPages/ErrorBoundary";
+
 import ProductDisplay from "./pages/shop/pages/ProductDisplay";
 import GalleryPage from "./pages/gallery/GalleryPage";
 

@@ -16,6 +16,7 @@ import {
   DonatePage,
   Homepage,
   Resources,
+
   ProductDisplay,
   Checkout,
   SingleEvent,
@@ -25,6 +26,7 @@ import {
   Error400,
   Error403,
   GalleryPage,
+
 } from "../APP";
 // import {
 //   AllChaptersPage,
@@ -64,6 +66,7 @@ const router = createBrowserRouter([
         element: <CommunityPage />,
       },
       {
+
         path: "/Gallery",
         element: <GalleryPage />,
       },
@@ -105,6 +108,7 @@ const router = createBrowserRouter([
         path: "/events/:id", // New route path
         element: <SingleEvent />,
       },
+
       // {
       //   path: "/resources",
       //   element: <Resources />,
@@ -118,6 +122,8 @@ const router = createBrowserRouter([
       //   element: <SingleProductDonation />,
       // },
       // {
+
+
       //   path: "/signup",
       //   element: <SignUp />,
       // },
@@ -145,6 +151,7 @@ const router = createBrowserRouter([
     path: "/error-500",
     element: <Error500 />,
   },
+
 
   // {
   //   path: "/admin",

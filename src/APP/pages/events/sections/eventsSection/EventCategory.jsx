@@ -49,7 +49,7 @@ function EventCategory() {
     setFilters((prevState) => {
       return {
         ...prevState,
-        date: filterRecentTime(times),
+        start_date: filterRecentTime(times),
       };
     });
     setSelectedRecentButton((prevState) => {
