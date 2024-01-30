@@ -94,10 +94,10 @@ const router = createBrowserRouter([
         path: "/shop/checkout",
         element: <Checkout />,
       },
-      // {
-      //   path: "/resources",
-      //   element: <Resources />,
-      // },
+      {
+        path: "/resources",
+        element: <Resources />,
+      },
       // {
       //   path: "/donate",
       //   element: <DonatePage />,
