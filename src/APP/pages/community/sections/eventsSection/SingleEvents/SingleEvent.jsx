@@ -56,7 +56,7 @@ function SingleEvent() {
           <p className="text-lg font-medium text-primary">Loading event...</p>
         </div>
       )}
-      {isSuccess && typeof oneEvent !== "undefined" ? (
+      {isSuccess && typeof oneEvent !== "undefined" && (
         <div className="w-screen flex flex-col ">
           <div
             className="bg-cover bg-no-repeat py-24 px-30 h-full md:py-44"
@@ -64,7 +64,6 @@ function SingleEvent() {
           />
           <div className="px-20">
             <div className="flex flex-row justify-between pt-10 pb-2 ">
-
               <h2>
                 {typeof oneEvent !== "undefined" &&
                   format(new Date(oneEvent?.start_date), "EEE d MMM, yyyy")}
@@ -135,9 +134,7 @@ function SingleEvent() {
                     </p>
                   </div>
                   <div className="text-sm text-[#323433] font-light mb-6 ml-8">
-
                     <p>{date} EAT</p>
-
                   </div>
                 </div>
                 <div>
@@ -276,8 +273,6 @@ function SingleEvent() {
             </div>
           </div>
         </div>
-      ) : (
-        ""
       )}
     </>
   );

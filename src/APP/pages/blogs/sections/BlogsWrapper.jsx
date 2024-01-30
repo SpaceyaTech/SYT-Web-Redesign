@@ -107,7 +107,7 @@ function BlogsWrapper() {
                     {blog.name}
                   </button>
                 ))
-              : null}
+              : ""}
           </div>
 
           <div className="mx-auto">
@@ -133,7 +133,9 @@ function BlogsWrapper() {
               blogs_per_page={blogsData.results.length}
               onPageChange={handlePageChange}
             />
-          ) : null}
+          ) : (
+            ""
+          )}
         </>
       )}
     </div>
