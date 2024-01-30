@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
 import router from "./router";
+import { SearchBlogProvider } from "./context/searchBlog";
 import { AuthContextProvider } from "./utils/AuthContext";
 
 const queryClient = new QueryClient({
@@ -20,8 +21,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-        <ReactQueryDevtools position="bottom-right" />
+        <SearchBlogProvider>
+          <RouterProvider router={router} />
+          <ReactQueryDevtools position="bottom-right" />
+        </SearchBlogProvider>
       </QueryClientProvider>
     </AuthContextProvider>
   </React.StrictMode>

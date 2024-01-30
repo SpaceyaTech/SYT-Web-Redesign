@@ -4,38 +4,45 @@ import { createBrowserRouter } from "react-router-dom";
 
 import {
   AboutUs,
-  Categories,
   CommunityPage,
-  DonatePage,
-  Homepage,
   LandingPage,
   Layout,
   Products,
-  Resources,
-  SingleItemPage,
-  Checkout,
-  SingleEvent,
   Blog,
   Blogs,
   EventsPage,
-  SingleProductDonation,
   IndividualChapter,
+  Categories,
+  DonatePage,
+  Homepage,
+  Resources,
+
+  ProductDisplay,
+  Checkout,
+  SingleEvent,
+  SingleProductDonation,
+  Error500,
+  Error404,
+  Error400,
+  Error403,
+  GalleryPage,
+
 } from "../APP";
-import {
-  AllChaptersPage,
-  AdminLayout,
-  AllEventsPage,
-  AddChapterPage,
-  AddEventPage,
-  UpdateEventPage,
-} from "../ADMIN";
-import {
-  ForgotPassword,
-  LogIn,
-  ResetPassword,
-  SignUp,
-  Validate,
-} from "../AUTH";
+// import {
+//   AllChaptersPage,
+//   AdminLayout,
+//   AllEventsPage,
+//   AddChapterPage,
+//   AddEventPage,
+//   UpdateEventPage,
+// } from "../ADMIN";
+// import {
+//   ForgotPassword,
+//   LogIn,
+//   ResetPassword,
+//   SignUp,
+//   Validate,
+// } from "../AUTH";
 
 const router = createBrowserRouter([
   {
@@ -47,28 +54,8 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: "/shop",
-        element: <Homepage />,
-      },
-      {
-        path: "/shop/category/:category",
-        element: <Categories />,
-      },
-      {
-        path: "/shop/item/:id",
-        element: <SingleItemPage />,
-      },
-      {
-        path: "/shop/checkout",
-        element: <Checkout />,
-      },
-      {
         path: "/products",
         element: <Products />,
-      },
-      {
-        path: "/resources",
-        element: <Resources />,
       },
       {
         path: "/about-us",
@@ -79,23 +66,17 @@ const router = createBrowserRouter([
         element: <CommunityPage />,
       },
       {
-        path: "/donate",
-        element: <DonatePage />,
+
+        path: "/Gallery",
+        element: <GalleryPage />,
       },
       {
-        path: "/donate/:id",
-        element: <SingleProductDonation />,
-      },
-      {
-        path: "/events/:id", // New route path
-        element: <SingleEvent />,
-      },
-      {
+
         path: "/blogs",
         element: <Blogs />,
       },
       {
-        path: "/blogs/:id",
+        path: "/blogs/:title_slug",
         element: <Blog />,
       },
       {
@@ -106,184 +87,131 @@ const router = createBrowserRouter([
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
+
       {
-        path: "/signup",
-        element: <SignUp />,
+        path: "/shop",
+        element: <Homepage />,
       },
       {
-        path: "/login",
-        element: <LogIn />,
+        path: "/shop/category/:category",
+        element: <Categories />,
       },
+      {
+        path: "/shop/item/:id",
+        element: <ProductDisplay />,
+      },
+      {
+        path: "/shop/checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "/events/:id", // New route path
+        element: <SingleEvent />,
+      },
+
+      // {
+      //   path: "/resources",
+      //   element: <Resources />,
+      // },
+      // {
+      //   path: "/donate",
+      //   element: <DonatePage />,
+      // },
+      // {
+      //   path: "/donate/:id",
+      //   element: <SingleProductDonation />,
+      // },
+      // {
+
+
+      //   path: "/signup",
+      //   element: <SignUp />,
+      // },
+      // {
+      //   path: "/login",
+      //   element: <LogIn />,
+      // },
     ],
+
   },
   {
-    path: "/admin",
-    element: <AdminLayout />,
-    children: [
-      {
-        path: "/admin",
-        element: <AllChaptersPage />,
-      },
-      {
-        path: "/admin/all-chapters",
-        element: <AllChaptersPage />,
-      },
-      {
-        path: "/admin/events",
-        element: <AllEventsPage />,
-      },
-      {
-        path: "/admin/add-chapters",
-        element: <AddChapterPage />,
-      },
-      {
-        path: "/admin/events",
-        element: <AllEventsPage />,
-      },
-      {
-        path: "/admin/events/add-event",
-        element: <AddEventPage />,
-      },
-      {
-        path: "/admin/events/update-event",
-        element: <UpdateEventPage />,
-      },
-    ],
+    path: "/error-400",
+    element: <Error400 />,
   },
   {
-    path: "/auth",
-    element: <Layout />,
-    children: [
-      {
-        path: "/auth/login",
-        element: <LogIn />,
-      },
-      {
-        path: "/auth/signup",
-        element: <SignUp />,
-      },
-      {
-        path: "/auth/validate",
-        element: <Validate />,
-      },
-      {
-        path: "/auth/forgot-password",
-        element: <ForgotPassword />,
-      },
-      {
-        path: "/auth/reset-password",
-        element: <ResetPassword />,
-      },
-    ],
+    path: "/error-403",
+    element: <Error403 />,
   },
+  {
+    path: "/*",
+    element: <Error404 />,
+  },
+  {
+    path: "/error-500",
+    element: <Error500 />,
+  },
+
+
+  // {
+  //   path: "/admin",
+  //   element: <AdminLayout />,
+  //   children: [
+  //     {
+  //       path: "/admin",
+  //       element: <AllChaptersPage />,
+  //     },
+  //     {
+  //       path: "/admin/all-chapters",
+  //       element: <AllChaptersPage />,
+  //     },
+  //     {
+  //       path: "/admin/events",
+  //       element: <AllEventsPage />,
+  //     },
+  //     {
+  //       path: "/admin/add-chapters",
+  //       element: <AddChapterPage />,
+  //     },
+  //     {
+  //       path: "/admin/events",
+  //       element: <AllEventsPage />,
+  //     },
+  //     {
+  //       path: "/admin/events/add-event",
+  //       element: <AddEventPage />,
+  //     },
+  //     {
+  //       path: "/admin/events/update-event",
+  //       element: <UpdateEventPage />,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/auth",
+  //   element: <Layout />,
+  //   children: [
+  //     {
+  //       path: "/auth/login",
+  //       element: <LogIn />,
+  //     },
+  //     {
+  //       path: "/auth/signup",
+  //       element: <SignUp />,
+  //     },
+  //     {
+  //       path: "/auth/validate",
+  //       element: <Validate />,
+  //     },
+  //     {
+  //       path: "/auth/forgot-password",
+  //       element: <ForgotPassword />,
+  //     },
+  //     {
+  //       path: "/auth/reset-password",
+  //       element: <ResetPassword />,
+  //     },
+  //   ],
+  // },
 ]);
 
 export default router;
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable quotes */
-// import { createBrowserRouter } from "react-router-dom";
-
-// import {
-//   AboutUs,
-//   Categories,
-//   CommunityPage,
-//   DonatePage,
-//   Homepage,
-//   LandingPage,
-//   Layout,
-//   Products,
-//   Resources,
-//   SingleItemPage,
-//   Checkout,
-//   SingleEvent,
-//   Blog,
-//   Blogs,
-//   EventsPage,
-//   SingleProductDonation,
-// } from "../APP";
-// import { AllChaptersPage, AdminLayout } from "../ADMIN";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Layout />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <LandingPage />,
-//       },
-//       {
-//         path: "/shop",
-//         element: <Homepage />,
-//       },
-//       {
-//         path: "/shop/category/:category",
-//         element: <Categories />,
-//       },
-//       {
-//         path: "/shop/item/:id",
-//         element: <SingleItemPage />,
-//       },
-//       {
-//         path: "/shop/checkout",
-//         element: <Checkout />,
-//       },
-//       {
-//         path: "/products",
-//         element: <Products />,
-//       },
-//       {
-//         path: "/resources",
-//         element: <Resources />,
-//       },
-//       {
-//         path: "/about-us",
-//         element: <AboutUs />,
-//       },
-//       {
-//         path: "/community",
-//         element: <CommunityPage />,
-//       },
-//       {
-//         path: "/donate",
-//         element: <DonatePage />,
-//       },
-//       {
-//         path: "/donate/:id",
-//         element: <SingleProductDonation />,
-//       },
-//       {
-//         path: "/events/:id", // New route path
-//         element: <SingleEvent />,
-//       },
-//       {
-//         path: "/blogs",
-//         element: <Blogs />,
-//       },
-//       {
-//         path: "/blogs/:id",
-//         element: <Blog />,
-//       },
-//       {
-//         path: "/allevents",
-//         element: <EventsPage />,
-//       },
-//     ],
-//   },
-//   {
-//     path: "/admin",
-//     element: <AdminLayout />,
-//     children: [
-//       {
-//         path: "/admin",
-//         element: <AllChaptersPage />,
-//       },
-//       {
-//         path: "/admin/all-chapters",
-//         element: <AllChaptersPage />,
-//       },
-//     ],
-//   },
-// ]);
-
-// export default router;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   eachDayOfInterval,
   format,
@@ -11,58 +11,58 @@ import {
   startOfToday,
   subDays,
   addDays,
-} from 'date-fns';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "date-fns";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 const meetings = [
   {
     id: 1,
-    title: 'How to Master Database Engineering using SQL',
-    location: 'Twitter Spaces',
-    tag: 'red-800',
-    startDatetime: '2023-09-11T13:00',
-    endDatetime: '2023-09-11T14:30',
+    title: "How to Master Database Engineering using SQL",
+    location: "Twitter Spaces",
+    tag: "red-800",
+    startDatetime: "2023-09-11T13:00",
+    endDatetime: "2023-09-11T14:30",
   },
   {
     id: 2,
-    title: 'How to Master Database Engineering using SQL',
-    location: 'Sarit Center, Nairobi',
-    tag: 'blue-800',
-    startDatetime: '2023-09-09T13:00',
-    endDatetime: '2023-09-09T14:30',
+    title: "How to Master Database Engineering using SQL",
+    location: "Sarit Center, Nairobi",
+    tag: "blue-800",
+    startDatetime: "2023-09-09T13:00",
+    endDatetime: "2023-09-09T14:30",
   },
   {
     id: 3,
-    title: 'How to Master Database Engineering using SQL',
-    location: 'Twitter Spaces',
-    tag: 'red-800',
-    startDatetime: '2023-09-20T17:00',
-    endDatetime: '2023-09-20T18:30',
+    title: "How to Master Database Engineering using SQL",
+    location: "Twitter Spaces",
+    tag: "red-800",
+    startDatetime: "2023-09-20T17:00",
+    endDatetime: "2023-09-20T18:30",
   },
   {
     id: 4,
-    title: 'How to Master Database Engineering using SQL',
-    location: 'Twitter Spaces',
-    tag: 'red-800',
-    startDatetime: '2023-09-09T13:00',
-    endDatetime: '2023-09-09T14:30',
+    title: "How to Master Database Engineering using SQL",
+    location: "Twitter Spaces",
+    tag: "red-800",
+    startDatetime: "2023-09-09T13:00",
+    endDatetime: "2023-09-09T14:30",
   },
   {
     id: 5,
-    title: 'How to Master Database Engineering using SQL',
-    location: 'Sarit Center, Nairobi',
-    tag: 'blue-800',
-    startDatetime: '2023-09-13T14:00',
-    endDatetime: '2023-09-13T14:30',
+    title: "How to Master Database Engineering using SQL",
+    location: "Sarit Center, Nairobi",
+    tag: "blue-800",
+    startDatetime: "2023-09-13T14:00",
+    endDatetime: "2023-09-13T14:30",
   },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 function EventCard({ event }) {
@@ -73,15 +73,13 @@ function EventCard({ event }) {
     <div className="bg-[#CCFFF3] w-64 rounded h-32 px-4 py-2">
       <h1 className="font-medium text-sm sm:text-base">{event.title}</h1>
       <p className="font-medium text-xs pt-2 sm:pt-1">
-        {' '}
+        {" "}
         <time dateTime={event.startDatetime}>
-          {format(startDateTime, 'h:mm a')}
-        </time>
-        {' '}
-        -
-        {' '}
+          {format(startDateTime, "h:mm a")}
+        </time>{" "}
+        -{" "}
         <time dateTime={event.endDatetime}>
-          {format(endDateTime, 'h:mm a')}
+          {format(endDateTime, "h:mm a")}
         </time>
       </p>
       <div className="pt-2 sm:pt-5 flex justify-between">
@@ -95,8 +93,8 @@ function EventCard({ event }) {
 function Calendar() {
   const today = startOfToday();
   const [selectedDay, setSelectedDay] = useState(today);
-  const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'));
-  const firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date());
+  const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
+  const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
   const [startDate, setStartDate] = useState(subDays(new Date(), 4));
   const endDate = addDays(startDate, 10);
 
@@ -110,7 +108,9 @@ function Calendar() {
     setStartDate(addDays(startDate, 11));
   }
 
-  const selectedDayMeetings = meetings.filter((meeting) => isSameDay(parseISO(meeting.startDatetime), selectedDay));
+  const selectedDayMeetings = meetings.filter((meeting) =>
+    isSameDay(parseISO(meeting.startDatetime), selectedDay)
+  );
 
   return (
     <div className="mx-5 sm:mx-0 my-12 grid grid-cols-4 border rounded">
@@ -141,13 +141,13 @@ function Calendar() {
         </button>
         <button
           type="button"
-          className="rounded px-4 py-1 text-xs bg-white border hover:bg-[#F5FFFD] border-[#79747E] hover:border-[#009975] hover:text-[#009975]"
+          className="rounded px-4 py-1 text-xs bg-white border hover:bg-[#F5FFFD] border-[#79747E] hover:border-[#009975] hover:text-primary"
         >
           Daily
         </button>
         <button
           type="button"
-          className="rounded px-4 py-1 text-xs bg-white border hover:bg-[#F5FFFD] border-[#79747E] hover:border-[#009975] hover:text-[#009975]"
+          className="rounded px-4 py-1 text-xs bg-white border hover:bg-[#F5FFFD] border-[#79747E] hover:border-[#009975] hover:text-primary"
         >
           Monthly
         </button>
@@ -164,38 +164,40 @@ function Calendar() {
                 type="button"
                 onClick={() => setSelectedDay(day)}
                 className={classNames(
-                  isEqual(day, selectedDay) && 'text-white',
-                  !isEqual(day, selectedDay)
-                    && isToday(day)
-                    && 'border-[#0061CC]',
-                  !isEqual(day, selectedDay)
-                    && !isToday(day)
-                    && isSameMonth(day, firstDayCurrentMonth)
-                    && 'text-[#323433]',
-                  !isEqual(day, selectedDay)
-                    && !isToday(day)
-                    && !isSameMonth(day, firstDayCurrentMonth)
-                    && 'text-gray-500',
-                  isEqual(day, selectedDay)
-                    && isToday(day)
-                    && 'text-black bg-[#0061CC]',
-                  isEqual(day, selectedDay) && !isToday(day) && 'bg-[#0061CC]',
-                  !isEqual(day, selectedDay) && 'hover:bg-gray-200',
-                  isToday(day)
-                    && 'font-normal text-[#323433] border-2 border-[#0061CC]',
-                  'mx-auto flex h-14 w-12 items-center justify-center rounded-lg flex-col space-y-1'
+                  isEqual(day, selectedDay) && "text-white",
+                  !isEqual(day, selectedDay) &&
+                    isToday(day) &&
+                    "border-[#0061CC]",
+                  !isEqual(day, selectedDay) &&
+                    !isToday(day) &&
+                    isSameMonth(day, firstDayCurrentMonth) &&
+                    "text-[#323433]",
+                  !isEqual(day, selectedDay) &&
+                    !isToday(day) &&
+                    !isSameMonth(day, firstDayCurrentMonth) &&
+                    "text-gray-500",
+                  isEqual(day, selectedDay) &&
+                    isToday(day) &&
+                    "text-black bg-[#0061CC]",
+                  isEqual(day, selectedDay) && !isToday(day) && "bg-[#0061CC]",
+                  !isEqual(day, selectedDay) && "hover:bg-gray-200",
+                  isToday(day) &&
+                    "font-normal text-[#323433] border-2 border-[#0061CC]",
+                  "mx-auto flex h-14 w-12 items-center justify-center rounded-lg flex-col space-y-1"
                 )}
               >
-                <time dateTime={format(day, 'yyyy-MM-dd')}>
-                  {format(day, 'eee')}
+                <time dateTime={format(day, "yyyy-MM-dd")}>
+                  {format(day, "eee")}
                 </time>
-                <time dateTime={format(day, 'yyyy-MM-dd')}>
-                  {format(day, 'd')}
+                <time dateTime={format(day, "yyyy-MM-dd")}>
+                  {format(day, "d")}
                 </time>
               </button>
 
               <div className="w-1 h-1 mx-auto mt-1">
-                {meetings.some((meeting) => isSameDay(parseISO(meeting.startDatetime), day)) && <div className="w-1 h-1 rounded-full bg-[#0061CC]" />}
+                {meetings.some((meeting) =>
+                  isSameDay(parseISO(meeting.startDatetime), day)
+                ) && <div className="w-1 h-1 rounded-full bg-[#0061CC]" />}
               </div>
             </div>
           ))}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function CTASection() {
   return (
-    <section className="text-gray-600 body-font relative mx-auto w-full max-w-screen-2xl">
+    <section className="text-gray-600 body-font relative w-full max-w-[1440px] mx-auto">
       <div className="container px-5 py-12 mx-auto">
         <div className="flex flex-col text-center w-full mb-8 md:mb-12">
           <h1 className="sm:text-3xl text-3xl font-semibold title-font mb-4 text-[#00664E]">
@@ -16,9 +16,9 @@ function CTASection() {
         <div className="flex justify-center">
           <Link
             to="/community"
-            className="inline-flex bg-[#009975] border-0 py-3 px-8 focus:outline-none rounded-lg text-lg"
+            className="inline-flex  text-white bg-primary border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg"
           >
-            <span className="text-white">Join the community</span>
+            Join the community
           </Link>
         </div>
       </div>

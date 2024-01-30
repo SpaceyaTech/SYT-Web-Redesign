@@ -1,21 +1,32 @@
-import { default as LandingPage } from "../APP/pages/landingPage/LandingPage";
-import { default as Homepage } from "../APP/pages/shop/pages/Homepage";
-import { default as SingleItemPage } from "../APP/pages/shop/pages/SingleItemPage";
-import { default as Layout } from "../APP/pages/Layout";
-import { default as Resources } from "../APP/pages/resources2/Resources";
-import { default as Products } from "../APP/pages/products2/Products";
-import { default as Checkout } from "../APP/pages/shop/pages/Checkout";
-import { default as AboutUs } from "../APP/pages/aboutUs/AboutUs";
-import { default as CommunityPage } from "../APP/pages/community/CommunityPage";
-import { default as DonatePage } from "../APP/pages/donate/DonatePage";
-import { default as Categories } from "../APP/pages/shop/pages/Categories";
-import { default as SingleEvent } from "../APP/pages/community/sections/eventsSection/SingleEvents/SingleEvent";
-import { default as EventsPage } from "../APP/pages/events/pages/EventsPage";
-import { default as EventsSection } from "../APP/pages/events/sections/eventsSection/EventsSection";
-import { default as Blogs } from "../APP/pages/blogs/Blogs";
-import { default as Blog } from "../APP/pages/blog/Blog";
-import { default as SingleProductDonation } from "../APP/pages/donate/pages/SingleProductDonatePage";
-import { default as IndividualChapter } from "../APP/pages/chapter/pages/IndividualChapter";
+import LandingPage from "./pages/landingPage/LandingPage";
+
+import Homepage from "./pages/shop/Homepage";
+
+import SingleItemPage from "./pages/shop/pages/SingleItemPage";
+import Layout from "./pages/Layout";
+import Products from "./pages/products2/Products";
+import Resources from "./pages/resources/Resources";
+
+import Checkout from "./pages/shop/pages/OrderSummary";
+
+import AboutUs from "./pages/aboutUs/AboutUs";
+import CommunityPage from "./pages/community/CommunityPage";
+import DonatePage from "./pages/donate/DonatePage";
+import Categories from "./pages/shop/pages/Categories";
+import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
+import EventsPage from "./pages/events/pages/EventsPage";
+import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
+import Blogs from "./pages/blogs/Blogs";
+import Blog from "./pages/blog/Blog";
+import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
+import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
+import Error400 from "./pages/errorPages/Error400";
+import Error403 from "./pages/errorPages/Error403";
+import Error404 from "./pages/errorPages/Error404";
+import Error500 from "./pages/errorPages/Error500";
+
+import ProductDisplay from "./pages/shop/pages/ProductDisplay";
+import GalleryPage from "./pages/gallery/GalleryPage";
 
 export {
   LandingPage,
@@ -36,4 +47,10 @@ export {
   EventsSection,
   SingleProductDonation,
   IndividualChapter,
+  Error400,
+  Error403,
+  Error404,
+  Error500,
+  ProductDisplay,
+  GalleryPage,
 };

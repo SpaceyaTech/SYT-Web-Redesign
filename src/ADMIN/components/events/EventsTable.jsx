@@ -1,86 +1,86 @@
-import React, { useState } from 'react';
-import SearchIcon from '../../../assets/images/icons/search-icon.svg';
+import React, { useState } from "react";
+import SearchIcon from "../../../assets/images/icons/search-icon.svg";
 
 const initialData = [
   {
     id: 1,
     eventName:
-      '(Next Stop, Pottersville) (Next Stop, Pottersville) (Next Stop, Pottersville)',
-    city: 'New York',
-    date: '2023-09-10',
-    from: '10:00',
-    to: '18:00',
-    chapter: 'Central Park',
+      "(Next Stop, Pottersville) (Next Stop, Pottersville) (Next Stop, Pottersville)",
+    city: "New York",
+    date: "2023-09-10",
+    from: "10:00",
+    to: "18:00",
+    chapter: "Central Park",
     rsvp: 75,
   },
   {
     id: 2,
-    eventName: 'Art Exhibition',
-    city: 'Paris',
-    date: '2023-09-15',
-    from: '09:00',
-    to: '17:00',
-    chapter: 'Louvre Museum',
+    eventName: "Art Exhibition",
+    city: "Paris",
+    date: "2023-09-15",
+    from: "09:00",
+    to: "17:00",
+    chapter: "Louvre Museum",
     rsvp: 25,
   },
   {
     id: 3,
-    eventName: 'Tech Conference',
-    city: 'San Francisco',
-    date: '2023-09-20',
-    from: '08:00',
-    to: '16:00',
-    chapter: 'Moscone Center',
+    eventName: "Tech Conference",
+    city: "San Francisco",
+    date: "2023-09-20",
+    from: "08:00",
+    to: "16:00",
+    chapter: "Moscone Center",
     rsvp: 90,
   },
   {
     id: 4,
-    eventName: 'Food Festival',
-    city: 'London',
-    date: '2023-09-25',
-    from: '11:00',
-    to: '19:00',
-    chapter: 'Hyde Park',
+    eventName: "Food Festival",
+    city: "London",
+    date: "2023-09-25",
+    from: "11:00",
+    to: "19:00",
+    chapter: "Hyde Park",
     rsvp: 10,
   },
   {
     id: 5,
-    eventName: '(Next Stop, Pottersville)',
-    city: 'New York',
-    date: '2023-09-10',
-    from: '10:00',
-    to: '18:00',
-    chapter: 'Central Park',
+    eventName: "(Next Stop, Pottersville)",
+    city: "New York",
+    date: "2023-09-10",
+    from: "10:00",
+    to: "18:00",
+    chapter: "Central Park",
     rsvp: 75,
   },
   {
     id: 6,
-    eventName: 'Art Exhibition',
-    city: 'Paris',
-    date: '2023-09-15',
-    from: '09:00',
-    to: '17:00',
-    chapter: 'Louvre Museum',
+    eventName: "Art Exhibition",
+    city: "Paris",
+    date: "2023-09-15",
+    from: "09:00",
+    to: "17:00",
+    chapter: "Louvre Museum",
     rsvp: 25,
   },
   {
     id: 7,
-    eventName: 'Tech Conference',
-    city: 'San Francisco',
-    date: '2023-09-20',
-    from: '08:00',
-    to: '16:00',
-    chapter: 'Moscone Center',
+    eventName: "Tech Conference",
+    city: "San Francisco",
+    date: "2023-09-20",
+    from: "08:00",
+    to: "16:00",
+    chapter: "Moscone Center",
     rsvp: 90,
   },
   {
     id: 8,
-    eventName: 'Food Festival',
-    city: 'London',
-    date: '2023-09-25',
-    from: '11:00',
-    to: '19:00',
-    chapter: 'Hyde Park',
+    eventName: "Food Festival",
+    city: "London",
+    date: "2023-09-25",
+    from: "11:00",
+    to: "19:00",
+    chapter: "Hyde Park",
     rsvp: 10,
   },
 ];
@@ -91,7 +91,7 @@ function EventsTable() {
   const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelectRow = (event, id) => {
     if (event.target.checked) {
@@ -137,9 +137,10 @@ function EventsTable() {
   };
 
   const filteredData = data.filter(
-    (row) => row.eventName.toLowerCase().includes(searchQuery)
-      || row.city.toLowerCase().includes(searchQuery)
-      || row.chapter.toLowerCase().includes(searchQuery)
+    (row) =>
+      row.eventName.toLowerCase().includes(searchQuery) ||
+      row.city.toLowerCase().includes(searchQuery) ||
+      row.chapter.toLowerCase().includes(searchQuery)
   );
 
   const indexOfLastRow = currentPage * rowsPerPage;
@@ -218,8 +219,8 @@ function EventsTable() {
                   key={row.id}
                   className={
                     selectedRows.includes(row.id)
-                      ? 'bg-[#F5FFFD] text-[#009975]'
-                      : 'hover:bg-[#F7F7F7] text-[#656767] text-sm'
+                      ? "bg-[#F5FFFD] text-primary"
+                      : "hover:bg-[#F7F7F7] text-[#656767] text-sm"
                   }
                 >
                   <td className="hidden sm:table-cell py-4">
@@ -248,12 +249,7 @@ function EventsTable() {
             <div>
               <p className="text-sm text-[#656767] font-normal">
                 <span>
-                  Page
-                  {' '}
-                  {currentPage}
-                  {' '}
-                  of
-                  {' '}
+                  Page {currentPage} of{" "}
                   {Math.ceil(filteredData.length / rowsPerPage)}
                 </span>
               </p>

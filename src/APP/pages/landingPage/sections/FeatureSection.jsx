@@ -1,9 +1,10 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function FeatureSection() {
   return (
-    <section className="bg-[#E5EFEC] body-font mx-auto w-full max-w-screen-2xl">
-      <div className="container px-5 py-8 mx-auto">
+    <section className="bg-[#E5EFEC] body-font w-full">
+      <div className="container px-5 py-8 mx-auto max-w-[1440px]">
         <div className="flex flex-col text-center w-full mb-10">
           <h2 className="text-xs text-[#00664E] tracking-widest font-medium title-font mb-1">
             Holistic growth
@@ -53,7 +54,7 @@ function FeatureSection() {
                 {/* <Link
                   to="/"
                   preventScrollReset={true}
-                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                  className="mt-3 text-primary inline-flex items-center font-semibold"
                 >
                   View Our resources
                 </Link> */}
@@ -98,7 +99,7 @@ function FeatureSection() {
                 {/* <Link
                   to="/"
                   preventScrollReset={true}
-                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                  className="mt-3 text-primary inline-flex items-center font-semibold"
                 >
                   View Our blogs
                 </Link> */}
@@ -148,7 +149,7 @@ function FeatureSection() {
                 {/* <Link
                   to="/"
                   preventScrollReset={true}
-                  className="mt-3 text-[#009975] inline-flex items-center font-semibold"
+                  className="mt-3 text-primary inline-flex items-center font-semibold"
                 >
                   View Our projects
                 </Link> */}

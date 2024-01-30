@@ -1,8 +1,9 @@
+import React from "react";
+
 import {
   CTASection,
   FaqSection,
   FeatureSection,
-  // HeroSection2,
   HeroSection3,
   PodcastSection,
   Services,
@@ -14,7 +15,7 @@ import ScrollToTop from "../../../utilities/ScrollToTop";
 
 function LandingPage() {
   return (
-    <div className="text-blue">
+    <div className="w-screen">
       <ScrollToTop />
       <HeroSection3 />
       <FeatureSection />

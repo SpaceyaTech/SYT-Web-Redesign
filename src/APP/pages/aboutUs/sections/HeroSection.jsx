@@ -7,7 +7,7 @@ function HeroSection() {
     <div className="px-0 sm:px-14 xl:px-28 sm:m-auto max-w-screen-2xl">
       <div className="md:bg-[#E5EFEC] md:border-solid md:border md:border-[#00664E] rounded-2xl relative md:pt-10 lg:pt-5 xl:pt-10 px-4 md:px-7 md:pb-14 lg:pb-7 xl:pb-14 mt-16 md:my-32 w-full md:w-[85%] min-h-96">
         <div className="bg-[#E5EFEC] border-solid border border-[#00664E] md:border-none space-y-4 py-8 lg:py-0 pl-4 md:pl-0 mb-4 rounded-lg">
-          <h2 className="mt-3 text-[#009975] inline-flex items-center font-medium text-xl">
+          <h2 className="mt-3 text-primary inline-flex items-center font-medium text-xl">
             About us
           </h2>
           <h3 className="md:text-3xl text-md mb-4 font-semibold w-3/5 md:w-1/2 lg:w-3/5 xl:w-1/2 leading-6 md:leading-10">

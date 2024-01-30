@@ -1,33 +1,62 @@
-import { blog1, blog2 } from "../../../../assets/images/blogs-page";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData";
 import BlogCard from "../../blogs/sections/BlogCard";
+import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
 
-export const blogCard = [
-  {
-    id: 1,
-    image: blog1,
-    title: "The Future of Virtual Reality in Education",
-    desc: "This article delves into the potential of virtual reality to revolutionize education, making learning more immersive and engaging for students",
-    author: "Sharon Makena",
-    date: "3 days ago",
-  },
-  {
-    id: 2,
-    image: blog2,
-    title: "Protopie for Ae enthusiasts",
-    desc: "This article introduces Protopie, a design and animation tool for creating interactive prototypes. The author discusses...",
-    author: "Jane Njeri",
-    date: "6 days ago",
-  },
-];
+function RelatedBlogs({ blogId, categoryId }) {
+  const { title_slug } = useParams();
 
-const RelatedBlogs = () => {
-  return (
-    <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
-      {blogCard.map((blog) => (
-        <BlogCard key={blog.id} blog={blog} />
-      ))}
-    </div>
+  const {
+    data: relatedBlogsData,
+    refetch: refetchRelatedBlogsData,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useRelatedBlogsData(categoryId);
+
+  useEffect(() => {
+    refetchRelatedBlogsData();
+  }, [title_slug]);
+
+  const filteredRelatedBlogs = filterRelatedBlogs(
+    relatedBlogsData?.blogs,
+    title_slug
   );
-};
+
+  return (
+    <>
+      {isError && <p>Error loading blogs!</p>}
+      {isLoading && <p>Loading blogs...</p>}
+
+
+      {isSuccess && filteredRelatedBlogs.length > 0 && (
+        <>
+          <h2 className="text-2xl text-black font-semibold underline decoration-green-600 underline-offset-2">
+            {filteredRelatedBlogs.length > 1
+              ? "Related Articles"
+              : "Related Article"}
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
+            {Array.isArray(filteredRelatedBlogs) &&
+            filteredRelatedBlogs.length > 0 ? (
+              filteredRelatedBlogs
+                .filter(function (blog) {
+                  if (blog.id === blogId) {
+                    return false;
+                  }
+                  return true;
+                })
+                .map((blog) => <BlogCard key={blog.id} blog={blog} />)
+            ) : (
+              <p className="text-lg italic">No related blogs found!</p>
+            )}
+          </div>
+        </>
+
+      )}
+    </>
+  );
+}
 
 export default RelatedBlogs;

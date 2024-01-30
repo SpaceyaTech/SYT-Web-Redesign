@@ -1,85 +1,19 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
-import {
-  ctfroom,
-  DevOps,
-  Kushite,
-  Propel,
-  bannerImg,
-  chimoney,
-  moringa,
-  osca,
-  reactke,
-  spheron,
-  cytonn,
-} from "../../../../assets/images/hero-section";
 
-const partners = [
-  {
-    id: 1,
-    img: ctfroom,
-    name: "ctfroom",
-    link: "https://ctfroom.com/",
-  },
-  {
-    id: 2,
-    img: DevOps,
-    name: "DevOps",
-    link: "https://twitter.com/nairobidevops",
-  },
-  {
-    id: 3,
-    img: Propel,
-    name: "Propel",
-    link: "https://propel.community/",
-  },
-  {
-    id: 4,
-    img: moringa,
-    name: "moringa",
-    link: "https://moringaschool.com/",
-  },
-  {
-    id: 5,
-    img: chimoney,
-    name: "chimoney",
-    link: "https://chimoney.io/",
-  },
-  {
-    id: 6,
-    img: Kushite,
-    name: "Kushite",
-    link: "https://icpkushite.com/",
-  },
-  {
-    id: 7,
-    img: osca,
-    name: "osca",
-    link: "https://oscafrica.org/",
-  },
-  {
-    id: 8,
-    img: cytonn,
-    name: "cytonn",
-    link: "#",
-  },
-  {
-    id: 9,
-    img: reactke,
-    name: "reactke",
-    link: "https://www.reactdevske.org/",
-  },
-];
+import { partners } from "../data";
+import { bannerImg } from "../../../../assets/images/hero-section";
 
-const HeroSection3 = () => {
+function HeroSection3() {
   return (
-    <section className="p-3 md:px-10 flex flex-col mx-auto gap-2 xl:max-w-[1440px]">
+    <section className="p-3 md:px-10 flex flex-col gap-2 max-w-[1440px] mx-auto">
       {/* Hero Header */}
       <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-4">
         {/* hero desc */}
         <div className="flex-1 flex flex-col gap-6">
           <h1 className="md:text-[40px] text-2xl leading-8 md:leading-normal font-medium text-gray-900 text-center md:text-left">
-            Accelerate your <span className="text-[#009975]">growth</span> and
+            Accelerate your <span className="text-primary">growth</span> and
             unlock your potential in the tech ecosphere
           </h1>
           <p className="text-sm md:text-xl font-normal leading-relaxed text-center md:text-left">
@@ -90,7 +24,7 @@ const HeroSection3 = () => {
           <Link
             to="/community"
             preventScrollReset={true}
-            className="text-white bg-[#009975] border-0 py-3 px-8 focus:outline-none rounded-lg text-lg w-full md:w-fit text-center"
+            className="text-white bg-primary border-0 py-3 px-8 focus:outline-none rounded-lg text-lg w-full md:w-fit text-center"
           >
             Join the community
           </Link>
@@ -136,6 +70,6 @@ const HeroSection3 = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection3;

@@ -4,7 +4,8 @@ import axios from "axios";
 function StatsSection() {
   const [isError, setError] = useState();
   const [TotalMembers, setTotalMembers] = useState(0);
-
+  
+  
   const getAllChapters = async () => {
     try {
       const response = await axios.get(
@@ -28,8 +29,8 @@ function StatsSection() {
   }, []);
 
   return (
-    <section className="bg-[#E5EFEC] body-font mx-auto w-full max-w-screen-2xl">
-      <div className="container px-5 py-8 mx-auto">
+    <section className="bg-[#E5EFEC] body-font">
+      <div className="container px-5 py-8 mx-auto max-w-[1440px]">
         <div className="flex flex-col text-center w-full mb-10">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
             Our Impact

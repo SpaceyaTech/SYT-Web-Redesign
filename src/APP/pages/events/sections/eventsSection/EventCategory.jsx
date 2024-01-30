@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Events from "./Events";
-import { format, endOfWeek, add, sub } from "date-fns";
+// import { format, endOfWeek, add, sub } from "date-fns";
 import filterRecentTime from "./helpers/FilterRecentTime";
 import {
   useEventsCategories,
@@ -49,7 +49,7 @@ function EventCategory() {
     setFilters((prevState) => {
       return {
         ...prevState,
-        date: filterRecentTime(times),
+        start_date: filterRecentTime(times),
       };
     });
     setSelectedRecentButton((prevState) => {
@@ -196,9 +196,9 @@ function EventCategory() {
           <button
             className={`${
               selectedRecentButton !== null && selectedRecentButton == "today"
-                ? "bg-[#009975] text-white"
+                ? "bg-primary text-white"
                 : "bg-[#F7F7F7] text-[#4C4D4D]"
-            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full whitespace-nowrap`}
+            } hover:bg-primary hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full whitespace-nowrap`}
             onClick={() => filterRecents("today")}
           >
             Today
@@ -207,9 +207,9 @@ function EventCategory() {
             className={`${
               selectedRecentButton !== null &&
               selectedRecentButton == "thisweek"
-                ? "bg-[#009975] text-white"
+                ? "bg-primary text-white"
                 : "bg-[#F7F7F7] text-[#4C4D4D]"
-            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`}
+            } hover:bg-primary hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`}
             onClick={() => filterRecents("thisweek")}
           >
             This week
@@ -217,9 +217,9 @@ function EventCategory() {
           <button
             className={`${
               selectedRecentButton !== null && selectedRecentButton == "weekend"
-                ? "bg-[#009975] text-white"
+                ? "bg-primary text-white"
                 : "bg-[#F7F7F7] text-[#4C4D4D]"
-            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium file:px-4 rounded-full ml-4 whitespace-nowrap`}
+            } hover:bg-primary hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium file:px-4 rounded-full ml-4 whitespace-nowrap`}
             onClick={() => filterRecents("weekend")}
           >
             This weekend
@@ -227,9 +227,9 @@ function EventCategory() {
           <button
             className={`${
               selectedRecentButton !== null && selectedRecentButton == "recent"
-                ? "bg-[#009975] text-white"
+                ? "bg-primary text-white"
                 : "bg-[#F7F7F7] text-[#4C4D4D]"
-            } hover:bg-[#009975] hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`}
+            } hover:bg-primary hover:text-white text-sm px-5 py-3.5 text-center inline-flex items-center h-8 font-medium rounded-full ml-4 whitespace-nowrap`}
             onClick={() => filterRecents("recent")}
           >
             Recent
@@ -262,7 +262,7 @@ function EventCategory() {
                 fill="#009975"
               />
             </svg>
-            <p className="text-sm font-normal text-[#009975] ml-2">
+            <p className="text-sm font-normal text-primary ml-2">
               {" "}
               FILTER EVENTS
             </p>
@@ -279,7 +279,7 @@ function EventCategory() {
             <>
               <Events events={events.results} />
               {events.next && (
-                <button className="bg-transparent self-center active:bg-green-600 active:text-white font-normal w-fit text-[#009975] py-2 px-4 md:px-28 border-2 border-[#009975] rounded my-12">
+                <button className="bg-transparent self-center active:bg-green-600 active:text-white font-normal w-fit text-primary py-2 px-4 md:px-28 border-2 border-[#009975] rounded my-12">
                   SEE MORE
                 </button>
               )}

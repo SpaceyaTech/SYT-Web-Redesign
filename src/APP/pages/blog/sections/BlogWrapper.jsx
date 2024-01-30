@@ -1,13 +1,15 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
-import BlogStats from "../../blogs/sections/BlogStats";
 
+// import Comments from "./Comments";
+import BlogStats from "../../blogs/sections/BlogStats";
 import logo from "../../../../assets/images/sytLogo.png";
 
 import "./blogWrapper.css";
 
 const BlogWrapper = ({ blog }) => {
-  const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
+
+  const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
   });
 
@@ -36,23 +38,23 @@ const BlogWrapper = ({ blog }) => {
               </div>
             </div>
 
-            <BlogStats likes={blog.likes} />
+            <BlogStats likes={blog.likes} blogId={blog.id} />
           </div>
         </div>
 
         <div className="pb-8 pt-6 md:pt-8">
-          <div
-            className="container text-[13px] md:text-base font-normal text-[##323433]"
-            dangerouslySetInnerHTML={{ __html: blog.body }}
-          >
-            {/* {htmlParser(blog.body)} */}
+          <div className="container text-[13px] md:text-base font-normal text-[#323433]">
+            <div
+              className="blog-content"
+              dangerouslySetInnerHTML={{ __html: blog.body }}
+            />
           </div>
         </div>
 
         {/* <Comments /> */}
       </div>
 
-      <div className="w-2/5 hidden md:inline-flex" />
+      <div className="w-2/5 hidden md:inline-flex">{/* Advert?? */}</div>
     </div>
   );
 };

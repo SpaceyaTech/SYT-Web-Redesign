@@ -243,7 +243,7 @@ function WelcomeSection({ chapter }) {
           <div>
             <button
               type="button"
-              className="text-[#323433] bg-white hover:text-white hover:bg-[#009975] font-medium rounded-lg text-base px-5 md:px-14  py-3.5 text-center inline-flex items-center mt-8"
+              className="text-[#323433] bg-white hover:text-white hover:bg-primary font-medium rounded-lg text-base px-5 md:px-14  py-3.5 text-center inline-flex items-center mt-8"
               onClick={openModal}
             >
               Join Chapter
@@ -285,7 +285,7 @@ function WelcomeSection({ chapter }) {
                         className="p-2 mb-4 rounded-lg text-base  text-center"
                         role="alert"
                       >
-                        <p className="text-[#009975] font-bold">
+                        <p className="text-primary font-bold">
                           Successfully joined {chapter.name} {chapter.city}{" "}
                           Chapter!
                         </p>
@@ -297,7 +297,7 @@ function WelcomeSection({ chapter }) {
                       <div className="flex flex-col items-center">
                         <button
                           type="button"
-                          className="inline-flex justify-center rounded-md border border-[#009975] hover:text-white hover:bg-[#009975] px-4 py-2 text-sm font-medium text-[#009975] focus:outline-none focus-visible:ring-2"
+                          className="inline-flex justify-center rounded-md border border-[#009975] hover:text-white hover:bg-primary px-4 py-2 text-sm font-medium text-primary focus:outline-none focus-visible:ring-2"
                           onClick={closeModal}
                         >
                           Dismiss
@@ -353,7 +353,7 @@ function WelcomeSection({ chapter }) {
                           </button>
                           <button
                             type="submit"
-                            className="inline-flex justify-center rounded-md border border-transparent text-white hover:text-[#009975] hover:border-[#009975] bg-[#009975] px-4 py-2 text-sm font-medium hover:bg-white focus:outline-none focus-visible:ring-2"
+                            className="inline-flex justify-center rounded-md border border-transparent text-white hover:text-primary hover:border-[#009975] bg-primary px-4 py-2 text-sm font-medium hover:bg-white focus:outline-none focus-visible:ring-2"
                           >
                             Join
                           </button>
