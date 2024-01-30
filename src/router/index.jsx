@@ -141,6 +141,7 @@ const router = createBrowserRouter([
   {
     path: "/error-403",
     element: <Error403 />,
+
   },
   {
     path: "/*",
