@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/sytLogo.png";
 // import backup from "../../assets/images/backup.svg";
@@ -10,10 +10,28 @@ import {
   instagram,
   facebook,
 } from "../../assets/images/socials";
+import axios from "axios";
 
 function Footer2() {
   const now = new Date();
   const year = now.getFullYear();
+
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/newsletters`,
+        { email },
+        { headers: { "Content-Type": "application/json" } }
+      );
+
+      return response.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
   return (
     <footer className="bg-[#252533] text-white ">
@@ -128,7 +146,6 @@ function Footer2() {
                     Gallery
                   </a>
                 </li>
-
               </ul>
             </div>
 
@@ -160,17 +177,17 @@ function Footer2() {
                   special offers
                 </p>
 
-
-                <form className="flex items-center">
+                <form className="flex items-center" onSubmit={handleSubmit}>
                   <input
                     type="email"
                     placeholder="Enter email address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-auto px-2 md:px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
                   />
                   <button
                     type="submit"
                     className="rounded-r-lg px-2 md:px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-
                   >
                     Subscribe
                   </button>
@@ -178,7 +195,6 @@ function Footer2() {
               </div>
             </div>
           </div>
-
         </div>
 
         <div className="sm:mt-14 mt-10">
