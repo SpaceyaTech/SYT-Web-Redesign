@@ -5,7 +5,7 @@ import Homepage from "./pages/shop/Homepage";
 import SingleItemPage from "./pages/shop/pages/SingleItemPage";
 import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
-import Resources from "./pages/resources/Resources";
+import Resources from "./pages/resources2/Resources";
 
 import Checkout from "./pages/shop/pages/OrderSummary";
 
