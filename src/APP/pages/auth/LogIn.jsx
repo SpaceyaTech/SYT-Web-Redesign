@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import publicAxios from "../../../api/publicAxios";
 import LoginImg from "../../../assets/images/auth/login.svg";
 import useAuth from "../../../hooks/useAuth";
 
 function LogIn() {
   const { auth, setAuth } = useAuth();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(null);
@@ -31,7 +32,8 @@ function LogIn() {
   };
 
   if (auth?.access) {
-    return <Navigate to="/shop" />;
+    // return <Navigate to="/shop" />;
+    navigate(-1);
   }
 
   return (
@@ -95,7 +97,7 @@ function LogIn() {
           <p>
             New here?
             <a
-              href="/signup"
+              href="/register"
               className="text-primary hover:text-[#00664E] text-base"
             >
               {" "}

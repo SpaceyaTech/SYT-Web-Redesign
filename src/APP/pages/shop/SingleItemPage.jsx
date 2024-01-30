@@ -14,6 +14,7 @@ import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
 import { useSingleOrder } from "../../../hooks/Queries/shop/useOrdersList";
 import { useSingleSwag } from "../../../hooks/Queries/shop/useSwagList";
 import useAuth from "../../../hooks/useAuth";
+import NotificationModal from "../../components/auth/NotificationModal";
 import Counter from "../../components/Counter";
 import ItemHeader from "./sections/ItemHeader";
 
@@ -44,6 +45,8 @@ const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 export default function SingleItemPage() {
   const { auth } = useAuth();
   const [open, setOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [message, setMessage] = useState("");
   const params = useParams();
 
   const navigate = useNavigate();
@@ -53,11 +56,25 @@ export default function SingleItemPage() {
 
   useEffect(() => {
     refetch();
-  }, [params.id]);
+  }, [params]);
 
   const handleAddToCart = () => {
-    setOpen(true);
-    
+    if (auth?.access) {
+      navigate("/shop/checkout");
+      setOpen(true);
+    } else {
+      setMessage("to add items to cart");
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleBuyNow = () => {
+    if (auth?.access) navigate("/shop/checkout");
+    else {
+      setMessage("to make an order");
+
+      setIsModalOpen(true);
+    }
   };
 
   return (
@@ -137,13 +154,13 @@ export default function SingleItemPage() {
 
             <Counter className="h-12 w-32" />
 
-            {/* <button
+            <button
               type="button"
               className="w-full h-[62px] bg-primary text-[#F7F7F7] text-sm font-medium rounded-lg"
-              onClick={() => navigate("/shop/checkout")}
+              onClick={handleBuyNow}
             >
               Buy Now
-            </button> */}
+            </button>
             <button
               type="button"
               className="w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-[#009975]"
@@ -333,6 +350,14 @@ export default function SingleItemPage() {
           </div>
         </Dialog>
       </Transition.Root>
+
+      {/* Notification Modal */}
+
+      <NotificationModal
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+        message={message}
+      />
     </>
   );
 }
