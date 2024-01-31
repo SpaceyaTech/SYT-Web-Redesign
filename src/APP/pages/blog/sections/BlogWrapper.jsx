@@ -37,7 +37,7 @@ const BlogWrapper = ({ blog }) => {
               </div>
             </div>
 
-            <BlogStats likes={blog.likes} />
+            <BlogStats likes={blog.likes} blogId={blog.id} />
           </div>
         </div>
 

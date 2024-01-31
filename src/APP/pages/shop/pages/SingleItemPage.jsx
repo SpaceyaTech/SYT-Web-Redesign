@@ -12,6 +12,8 @@ import CloseIcon from "../../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../../assets/images/icons/delete-icon.svg";
 import Counter from "../../../components/Counter";
 import ItemHeader from "../sections/ItemHeader";
+import useProductsInCart from "../../../../hooks/Queries/shop/useCartProducts";
+import { useSingleOrder } from "../../../../hooks/Queries/shop/useOrdersList";
 
 const products = [
   {
@@ -37,10 +39,15 @@ const products = [
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
-export default function Example() {
+export default function SingleItemPage() {
   const [open, setOpen] = useState(true);
-  const navigate = useNavigate();
+  const [ProductsInCart, setProductsInCart] = useState(null);
 
+  const navigate = useNavigate();
+  const { data: cartProducts, status } = useProductsInCart();
+  const { data: singleOrder } = useSingleOrder();
+
+  // console.log("cart Products", cartProducts);
   return (
     <>
       <ItemHeader show={() => setOpen((prev) => !prev)} />
@@ -122,6 +129,7 @@ export default function Example() {
           <button
             type="button"
             className="w-full h-[62px] bg-primary text-[#F7F7F7] text-sm font-medium rounded-lg"
+            onClick={() => setOpen(true)}
           >
             Buy Now
           </button>
@@ -163,80 +171,80 @@ export default function Example() {
                 >
                   <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                     <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl py-6 sm:py-12 px-2 sm:px-10">
-                      <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-                        <div className="flex items-start justify-between">
-                          <Dialog.Title className="text-3xl font-semibold">
-                            Your cart{" "}
-                            <span className="text-[#00CC9C]">(4)</span>
-                          </Dialog.Title>
-                          <div className="ml-3 flex h-7 items-center">
-                            <button
-                              type="button"
-                              className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                              onClick={() => setOpen(false)}
-                            >
-                              <span className="sr-only">Close panel</span>
-                              <img src={CloseIcon} alt="close" />
-                            </button>
-                          </div>
+                      <div className="flex items-start justify-between">
+                        <Dialog.Title className="text-3xl font-semibold">
+                          Your cart <span className="text-[#00CC9C]">(4)</span>
+                        </Dialog.Title>
+                        <div className="ml-3 flex h-7 items-center">
+                          <button
+                            type="button"
+                            className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                            onClick={() => setOpen(false)}
+                          >
+                            <span className="sr-only">Close panel</span>
+                            <img src={CloseIcon} alt="close" />
+                          </button>
                         </div>
+                      </div>
 
+                      <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                         {/* Items in Cart */}
                         <div className="mt-8">
                           <div className="flow-root">
                             <ul className="-my-6 divide-y divide-gray-200 border-b">
-                              {products.map(
-                                ({
-                                  id,
-                                  imageSrc,
-                                  name,
-                                  href,
-                                  price,
-                                  color,
-                                  quantity,
-                                }) => (
-                                  <li
-                                    key={id}
-                                    className="flex py-6 space-x-4 sm:space-x-16"
-                                  >
-                                    <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                                      <img
-                                        src={imageSrc}
-                                        alt={name}
-                                        className="h-full w-full object-cover object-center"
-                                      />
-                                    </div>
+                              {status === "success" &&
+                                products.map(
+                                  ({
+                                    id,
+                                    imageSrc,
+                                    name,
+                                    href,
+                                    price,
+                                    color,
+                                    quantity,
+                                  }) => (
+                                    <li
+                                      key={id}
+                                      className="flex py-6 space-x-4 sm:space-x-16"
+                                    >
+                                      <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
+                                        <img
+                                          src={imageSrc}
+                                          alt={name}
+                                          className="h-full w-full object-cover object-center"
+                                        />
+                                      </div>
 
-                                    <div className="ml-4 flex flex-1 flex-col space-y-14">
-                                      <div className="flex justify-between text-base font-medium text-gray-900">
-                                        <h3>
-                                          <p className="text-base md:text-xl">
-                                            {" "}
-                                            <a href={href}>{name}</a>
+                                      <div className="ml-4 flex flex-1 flex-col space-y-14">
+                                        <div className="flex justify-between text-base font-medium text-gray-900">
+                                          <h3>
+                                            <p className="text-base md:text-xl">
+                                              {" "}
+                                              <a href={href}>{name}</a>
+                                            </p>
+                                          </h3>
+                                          <button
+                                            type="button"
+                                            className="flex justify-end"
+                                          >
+                                            <img
+                                              src={DeleteIcon}
+                                              alt="delete button"
+                                            />
+                                          </button>
+                                        </div>
+                                        <div className="flex flex-1 items-end justify-between text-sm">
+                                          <p className="text-xl md:text-2xl font-bold">
+                                            Ksh
+                                            {price}
                                           </p>
-                                        </h3>
-                                        <button
-                                          type="button"
-                                          className="flex justify-end"
-                                        >
-                                          <img
-                                            src={DeleteIcon}
-                                            alt="delete button"
-                                          />
-                                        </button>
-                                      </div>
-                                      <div className="flex flex-1 items-end justify-between text-sm">
-                                        <p className="text-xl md:text-2xl font-bold">
-                                          Ksh
-                                          {price}
-                                        </p>
 
-                                        <Counter className="h-8 sm:h-12 w-24 sm:w-32" />
+                                          <Counter className="h-8 sm:h-12 w-24 sm:w-32" />
+                                        </div>
                                       </div>
-                                    </div>
-                                  </li>
-                                )
-                              )}
+                                    </li>
+                                  )
+                                )}
                             </ul>
                           </div>
                         </div>
@@ -281,17 +289,17 @@ export default function Example() {
                           <h2>Sub Total</h2>
                           <h2>Ksh 3600</h2>
                         </div>
-                        <div className="flex flex-col md:flex-row space-y-6 md:space-x-10">
+                        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
                           <button
                             type="button"
-                            className=" md:w-1/2 w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-2 outline-[#009975]"
+                            className="md:w-1/2 w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-2 outline-[#009975]"
                             onClick={() => navigate("/shop")}
                           >
                             Continue shopping
                           </button>
                           <button
                             type="button"
-                            className=" md:w-1/2 w-full h-[62px] bg-primary hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
+                            className="md:w-1/2 w-full h-[62px] bg-primary hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
                             onClick={() => navigate("/shop/checkout")}
                           >
                             Checkout

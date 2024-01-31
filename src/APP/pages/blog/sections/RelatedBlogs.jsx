@@ -29,11 +29,17 @@ function RelatedBlogs({ blogId, categoryId }) {
       {isError && <p>Error loading blogs!</p>}
       {isLoading && <p>Loading blogs...</p>}
 
-      {isSuccess && (
-        <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
-          {Array.isArray(filteredRelatedBlogs) &&
-          filteredRelatedBlogs.length > 0
-            ? filteredRelatedBlogs
+      {isSuccess && filteredRelatedBlogs.length > 0 && (
+        <>
+          <h2 className="text-2xl text-gray-500 font-semibold underline decoration-green-600 underline-offset-2">
+            {filteredRelatedBlogs.length > 1
+              ? "Related Articles"
+              : "Related Article"}
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
+            {Array.isArray(filteredRelatedBlogs) &&
+            filteredRelatedBlogs.length > 0 ? (
+              filteredRelatedBlogs
                 .filter(function (blog) {
                   if (blog.id === blogId) {
                     return false;
@@ -41,8 +47,11 @@ function RelatedBlogs({ blogId, categoryId }) {
                   return true;
                 })
                 .map((blog) => <BlogCard key={blog.id} blog={blog} />)
-            : ""}
-        </div>
+            ) : (
+              <p className="text-lg italic">No related blogs found!</p>
+            )}
+          </div>
+        </>
       )}
     </>
   );

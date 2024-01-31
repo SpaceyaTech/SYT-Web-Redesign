@@ -1,24 +1,22 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
-import Error500 from "../../errorPages/Error500";
 import { Loader } from "../../../components";
-
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
   useBlogCategories,
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
 import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
-
 function SearchResults({ searchText }) {
   return (
     <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
       Showing results for
-      <span className="text-primary">"{searchText}"</span>
+      <span className="text-primary"> "{searchText}"</span>
     </h3>
   );
 }

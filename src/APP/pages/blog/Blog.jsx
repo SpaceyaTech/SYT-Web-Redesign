@@ -1,5 +1,7 @@
+
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 
 import BlogWrapper from "./sections/BlogWrapper";
 import RelatedBlogs from "./sections/RelatedBlogs";
@@ -8,8 +10,11 @@ import useBlogData from "../../../hooks/Queries/blog/useBlogData";
 
 function Blog() {
   const { title_slug } = useParams();
+
+  const navigate = useNavigate();
   const {
     data: blogData,
+
     isLoading,
     isError,
     isSuccess,
@@ -17,7 +22,8 @@ function Blog() {
 
   return (
     <div className="w-screen max-w-[1440px] mx-auto">
-      {isError && <p>Error fetching blog details!</p>}
+      {isError && navigate("/error-500")}
+
       {isLoading && (
         <div className="flex flex-col items-center justify-center gap-4 py-10">
           <Loader />
