@@ -69,13 +69,14 @@ function Footer2() {
                   <img src={youtube} alt="youtube" className="w-7 h-7" />
                 </a>
 
-              <a
-                href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={spotify} alt="spotify" className="w-7 h-7" />
-              </a>
+                <a
+                  href="https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={spotify} alt="spotify" className="w-7 h-7" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -160,7 +161,7 @@ function Footer2() {
 
                 <form className="flex items-center">
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Enter email address"
                     className="w-auto px-2 md:px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
                   />
@@ -173,7 +174,7 @@ function Footer2() {
                 </form>
               </div>
             </div>
-          </div>{" "}
+          </div>
         </div>
 
         <div className="sm:mt-14 mt-10">
