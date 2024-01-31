@@ -18,16 +18,14 @@ import {
   SignUp,
   CategoriesProducts,
   Checkout,
-  // DonatePage,
-  // Resources,
-  // SingleEvent,
-  // SingleProductDonation,
-  //   AllChaptersPage,
-  //   AdminLayout,
-  //   AllEventsPage,
-  //   AddChapterPage,
-  //   AddEventPage,
-  //   UpdateEventPage,
+  SingleEvent,
+  SingleProductDonation,
+  Error500,
+  Error404,
+  Error400,
+  Error403,
+  GalleryPage,
+
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -52,6 +50,12 @@ const router = createBrowserRouter([
         element: <CommunityPage />,
       },
       {
+
+        path: "/Gallery",
+        element: <GalleryPage />,
+      },
+      {
+
         path: "/blogs",
         element: <Blogs />,
       },
@@ -67,6 +71,7 @@ const router = createBrowserRouter([
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
+
       {
         path: "/shop",
         element: <Homepage />,
@@ -83,6 +88,11 @@ const router = createBrowserRouter([
         path: "/shop/checkout",
         element: <Checkout />,
       },
+      {
+        path: "/events/:id", // New route path
+        element: <SingleEvent />,
+      },
+
       // {
       //   path: "/resources",
       //   element: <Resources />,
@@ -96,10 +106,8 @@ const router = createBrowserRouter([
       //   element: <SingleProductDonation />,
       // },
       // {
-      //   path: "/events/:id", // New route path
-      //   element: <SingleEvent />,
-      // },
-      // {
+
+
       //   path: "/signup",
       //   element: <SignUp />,
       // },
@@ -124,7 +132,25 @@ const router = createBrowserRouter([
         element: <ResetPassword />,
       },
     ],
+
   },
+  {
+    path: "/error-400",
+    element: <Error400 />,
+  },
+  {
+    path: "/error-403",
+    element: <Error403 />,
+  },
+  {
+    path: "/*",
+    element: <Error404 />,
+  },
+  {
+    path: "/error-500",
+    element: <Error500 />,
+  },
+
 
   // {
   //   path: "/admin",

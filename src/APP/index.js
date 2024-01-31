@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-import AdminLayout from "./components/admin/AdminLayout";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import AllBlogsPage from "./pages/admin/blogs/AllBlogsPage";
 import AddChapterPage from "./pages/admin/chapters/AddChapterPage";
@@ -24,6 +22,7 @@ import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
 import EventsPage from "./pages/events/pages/EventsPage";
 import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
+import GalleryPage from "./pages/gallery/GalleryPage";
 import LandingPage from "./pages/landingPage/LandingPage";
 import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
@@ -41,7 +40,6 @@ export {
   AllChaptersPage,
   AllEventsPage,
   UpdateEventPage,
-  AdminLayout,
   LandingPage,
   Homepage,
   Checkout,
@@ -69,4 +67,5 @@ export {
   LogIn,
   ResetPassword,
   SignUp,
+  GalleryPage,
 };

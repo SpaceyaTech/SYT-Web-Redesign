@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
-// import {
-//   singleEvents,
-//   community,
-//   MasterBase,
-//   mpesapayments,
-//   techrecruiters,
-//   mentorlst,
-//   uxhiringafrica,
-// } from "../../../../../../assets/images/community";
 import { Link, useParams } from "react-router-dom";
-import { parse as parseDate, format } from "date-fns";
+import { format } from "date-fns";
 import parse from "html-react-parser";
+
+import { Loader } from "../../../../../components";
 import Events from "../../../../events/sections/eventsSection/Events";
 import { useOneEvent } from "../../../../../../hooks/Queries/singleEvent/useSingleEvent";
 import { fetchEvents } from "../../../../../../hooks/Queries/eventsSection/useEventCategories";
+import formatEventDates from "../../../../../../utilities/formatEventDate";
 
 function SingleEvent() {
   React.useEffect(() => {
@@ -43,10 +37,25 @@ function SingleEvent() {
     }
   }, [oneEvent]);
 
+  const date =
+    typeof oneEvent !== "undefined"
+      ? formatEventDates(
+          oneEvent?.start_date,
+          oneEvent?.start_time,
+          oneEvent?.end_date,
+          oneEvent?.end_time
+        )
+      : "";
+
   return (
     <>
       {isError && <p>Error fetching event!</p>}
-      {isLoading && <p>Loading event...</p>}
+      {isLoading && (
+        <div className="flex flex-col items-center justify-center gap-4 py-10">
+          <Loader />
+          <p className="text-lg font-medium text-primary">Loading event...</p>
+        </div>
+      )}
       {isSuccess && typeof oneEvent !== "undefined" ? (
         <div className="w-screen flex flex-col ">
           <div
@@ -55,7 +64,12 @@ function SingleEvent() {
           />
           <div className="px-20">
             <div className="flex flex-row justify-between pt-10 pb-2 ">
-              <h2>{format(new Date(oneEvent.date), "EEE MMM d, yyyy")}</h2>
+
+              <h2>
+                {typeof oneEvent !== "undefined" &&
+                  format(new Date(oneEvent?.start_date), "EEE d MMM, yyyy")}
+              </h2>
+
               <div className="flex flex-row justify-between ">
                 <div className="">
                   <svg
@@ -121,19 +135,9 @@ function SingleEvent() {
                     </p>
                   </div>
                   <div className="text-sm text-[#323433] font-light mb-6 ml-8">
-                    <p>{format(new Date(oneEvent.date), "EEE MMM d, yyyy")}</p>
-                    <p>
-                      {format(
-                        parseDate(oneEvent.start_time, "HH:mm:ss", new Date()),
-                        "h:mm a"
-                      )}{" "}
-                      -{" "}
-                      {format(
-                        parseDate(oneEvent.end_time, "HH:mm:ss", new Date()),
-                        "h:mm a"
-                      )}{" "}
-                      EAT
-                    </p>
+
+                    <p>{date} EAT</p>
+
                   </div>
                 </div>
                 <div>
