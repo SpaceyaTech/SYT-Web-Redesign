@@ -22,11 +22,22 @@ const useOrderSummary = () =>
 
 // https://apis.spaceyatech.com/api/orders/{orders_pk}/items/
 const fetchSingleOrder = async (id) => {
+  const authObject = JSON.parse(localStorage.getItem("auth")) || {};
+  const { access } = authObject;
+
   try {
-    const response = await publicAxios.get(`/orders/${id}/items/`);
+    const response = await publicAxios.get(`/orders/${id}/items/`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${access}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching order item: ", error);
+    if (error.response.status === 401) {
+      localStorage.removeItem("auth");
+    }
     throw error;
   }
 };

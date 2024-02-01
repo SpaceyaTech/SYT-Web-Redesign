@@ -3,7 +3,7 @@ import { useState } from "react";
 import Sample1 from "../../../assets/images/shop-page/sample1.png";
 import Sample2 from "../../../assets/images/shop-page/sample2.png";
 import { useOrderSummary } from "../../../hooks/Queries/shop/useOrdersList";
-import Counter from "../../components/Counter";
+import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
 
 const products = [

@@ -8,7 +8,7 @@ const privateAxios = axios.create({
 });
 
 let isRefreshing = false;
-let refreshTokenPromise = null;
+let refreshPromise = null;
 
 let failedQueue = [];
 
@@ -38,23 +38,22 @@ privateAxios.interceptors.response.use(
         if (!isRefreshing) {
           isRefreshing = true;
 
-          refreshTokenPromise = publicAxios
+          refreshPromise = publicAxios
             .post("/token/refresh", {
-              refreshTokenString: JSON.parse(
-                localStorage.getItem("auth") || "{}"
-              ).refreshToken,
+              refreshString: JSON.parse(localStorage.getItem("auth") || "{}")
+                .refresh,
             })
             .then((response) => {
-              if (response.data.accessToken) {
+              if (response.data.access) {
                 const authObject = {
                   ...JSON.parse(localStorage.getItem("auth") || "{}"),
-                  accessToken: response.data.accessToken,
-                  refreshToken: response.data.refreshToken,
+                  access: response.data.access,
+                  refresh: response.data.refresh,
                 };
 
                 localStorage.setItem("auth", JSON.stringify(authObject));
-                originalRequest.headers.Authorization = `Bearer ${authObject.accessToken}`;
-                processQueue(null, response.data.accessToken);
+                originalRequest.headers.Authorization = `Bearer ${authObject.access}`;
+                processQueue(null, response.data.access);
 
                 return response;
               }

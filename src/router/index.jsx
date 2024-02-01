@@ -19,13 +19,11 @@ import {
   CategoriesProducts,
   Checkout,
   SingleEvent,
-  SingleProductDonation,
   Error500,
   Error404,
   Error400,
   Error403,
   GalleryPage,
-
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -50,12 +48,10 @@ const router = createBrowserRouter([
         element: <CommunityPage />,
       },
       {
-
         path: "/Gallery",
         element: <GalleryPage />,
       },
       {
-
         path: "/blogs",
         element: <Blogs />,
       },
@@ -107,7 +103,6 @@ const router = createBrowserRouter([
       // },
       // {
 
-
       //   path: "/signup",
       //   element: <SignUp />,
       // },
@@ -132,7 +127,6 @@ const router = createBrowserRouter([
         element: <ResetPassword />,
       },
     ],
-
   },
   {
     path: "/error-400",
@@ -150,7 +144,6 @@ const router = createBrowserRouter([
     path: "/error-500",
     element: <Error500 />,
   },
-
 
   // {
   //   path: "/admin",
