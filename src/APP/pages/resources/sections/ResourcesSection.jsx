@@ -5,6 +5,8 @@ import useResourcesData from "../../../../hooks/Queries/resources/useResourcesDa
 
 function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
+  const [filteredText, setFilteredText] = useState([]);
+
   const {
     data: resourceTypes,
     isLoading,
@@ -14,7 +16,16 @@ function ResourcesSection() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearchText("");
+    setSearchText(searchText);
+
+    const filterSearch = resourceTypes.filter(
+      (search) =>
+        search.name.toLowerCase().includes(searchText.toLowerCase()) ||
+        search.description.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    setFilteredText(filterSearch);
+    console.log(filteredText);
   };
 
   return (
@@ -45,7 +56,7 @@ function ResourcesSection() {
 
               <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
                 {resourceTypes && Array.isArray(resourceTypes)
-                  ? resourceTypes.map((resource) => (
+                  ? resourceTypes.map((resource, filterSearch) => (
                       <ResourceCard key={resource.id} resource={resource} />
                     ))
                   : ""}
