@@ -88,11 +88,11 @@ const router = createBrowserRouter([
         path: "/events/:id", // New route path
         element: <SingleEvent />,
       },
-
       // {
       //   path: "/resources",
       //   element: <Resources />,
       // },
+
       // {
       //   path: "/donate",
       //   element: <DonatePage />,
@@ -135,6 +135,7 @@ const router = createBrowserRouter([
   {
     path: "/error-403",
     element: <Error403 />,
+
   },
   {
     path: "/*",

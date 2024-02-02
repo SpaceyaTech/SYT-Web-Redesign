@@ -1,5 +1,6 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
+import { Controller, useForm } from "react-hook-form";
 import {
   BtnBold,
   BtnBulletList,
@@ -16,12 +17,10 @@ import {
   EditorProvider,
   Toolbar,
 } from "react-simple-wysiwyg";
-import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 
-import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
 import useChaptersData from "../../../../hooks/Queries/community/useChaptersData";
+import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
 import usePostEvents from "../../../../hooks/Queries/eventsSection/usePostEvents";
 
 function AddEventPage() {
@@ -317,7 +316,7 @@ function AddEventPage() {
                       {errors.category_name.message}
                     </span>
                   )}
-                  <div className={`container w-full mt-4`}>
+                  <div className="container w-full mt-4">
                     <EditorProvider>
                       <Controller
                         name="about"

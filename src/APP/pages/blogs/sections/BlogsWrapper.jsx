@@ -1,13 +1,9 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useContext } from "react";
-// import { useNavigate } from "react-router-dom";
 
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 
 import { Loader } from "../../../components";
-
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -15,7 +11,6 @@ import {
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
 
 import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
-
 import Error500 from "../../errorPages/Error500";
 
 function SearchResults({ searchText }) {
@@ -77,6 +72,7 @@ function BlogsWrapper() {
       {isSuccess && (
         <>
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
+
             {statusBlogCategories === "error" && (
               <p>Error loading blog categories!</p>
             )}
@@ -107,7 +103,7 @@ function BlogsWrapper() {
                     {blog.name}
                   </button>
                 ))
-              : null}
+              : ""}
           </div>
 
           <div className="mx-auto">
@@ -133,7 +129,9 @@ function BlogsWrapper() {
               blogs_per_page={blogsData.results.length}
               onPageChange={handlePageChange}
             />
-          ) : null}
+          ) : (
+            ""
+          )}
         </>
       )}
     </div>

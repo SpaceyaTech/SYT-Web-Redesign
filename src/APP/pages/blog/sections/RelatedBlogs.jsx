@@ -4,6 +4,7 @@ import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData"
 import BlogCard from "../../blogs/sections/BlogCard";
 import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
 
+
 function RelatedBlogs({ blogId, categoryId }) {
   const { title_slug } = useParams();
 
@@ -23,6 +24,7 @@ function RelatedBlogs({ blogId, categoryId }) {
     relatedBlogsData?.blogs,
     title_slug
   );
+
 
   return (
     <>

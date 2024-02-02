@@ -8,7 +8,7 @@ function Events({ events, isVertical }) {
   const verticalContainer =
     "my-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
   const horizontalContainer =
-    "flex overflow-x-auto px-0 md:px-4 justify-between gap-2 sm:gap-4 w-full";
+    "flex overflow-x-auto px-0 md:px-4 gap-2 sm:gap-4 w-full";
 
   // Event Card classes
   const verticalWrapper =
