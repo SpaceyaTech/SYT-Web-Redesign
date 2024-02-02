@@ -42,13 +42,14 @@ const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 export default function SingleItemPage() {
   const { auth } = useAuth();
   const params = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [selectedSize, setSelectedSize] = useState(null);
+  const [Payload, setPayload] = useState({});
 
   const { data: singleOrder } = useSingleOrder(params.id);
   const { data: singleSwag, isSuccess, refetch } = useSingleSwag(params.id);
@@ -56,25 +57,26 @@ export default function SingleItemPage() {
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
 
-  // console.log("singleSwag", singleSwag);
+  console.log("singleSwag", params);
   useEffect(() => {
+    if (isSuccess) {
+      setPayload({
+        swagg_id: singleSwag.id,
+        product: {
+          name: singleSwag.name,
+          description: singleSwag.description,
+          price: singleSwag.price,
+          size: selectedSize,
+        },
+        quantity: count,
+      });
+    }
     refetch();
-  }, [params]);
-
-  const payload = {
-    swagg_id: singleSwag.id,
-    product: {
-      name: singleSwag.name,
-      description: singleSwag.description,
-      price: singleSwag.price,
-      size: selectedSize,
-    },
-    quantity: count,
-  };
+  }, [params.id]);
 
   const handleAddToCart = () => {
     if (auth?.access) {
-      addItemsToCart(payload);
+      addItemsToCart(Payload);
       setOpen(true);
     } else {
       setMessage("to add items to cart");
@@ -84,7 +86,7 @@ export default function SingleItemPage() {
 
   const handleBuyNow = () => {
     if (auth?.access) {
-      addItemsToCart(payload);
+      addItemsToCart(Payload);
       setOpen(true);
     } else {
       setMessage("to make an order");

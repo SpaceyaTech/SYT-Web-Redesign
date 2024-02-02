@@ -1,24 +1,32 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
 import SampleImg from "../../../assets/images/shop-page/main-sample.png";
 import Sample3 from "../../../assets/images/shop-page/sample3.png";
 import { useDeleteSwag } from "../../../hooks/Mutations/shop/useCartSwagg";
 import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
+import useAuth from "../../../hooks/useAuth";
 import Counter from "./Counter";
 
 function CartDrawer({ open, setOpen }) {
-  const { data: cartProducts, isSuccess } = useProductsInCart();
-  const [count, setCount] = useState(1);
+  const { auth } = useAuth();
   const navigate = useNavigate();
+  const [count, setCount] = useState(1);
+
+  const { data: cartProducts, isSuccess } = useProductsInCart();
 
   const { mutate: deleteSwag } = useDeleteSwag();
-  console.log("deleteSwag", cartProducts);
 
   const handleDeleteSwag = (cartItemId) => {
     deleteSwag(cartItemId);
+  };
+
+  const handleCheckout = () => {
+    if (auth?.access) {
+      navigate("/shop/checkout");
+    }
   };
 
   return (
@@ -54,7 +62,7 @@ function CartDrawer({ open, setOpen }) {
                       <Dialog.Title className="text-3xl font-semibold">
                         Your cart{" "}
                         <span className="text-primary">
-                          ({cartProducts.cart_items?.length})
+                          ({isSuccess ? cartProducts.cart_items?.length : 0})
                         </span>
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
@@ -104,7 +112,11 @@ function CartDrawer({ open, setOpen }) {
                                         <h3>
                                           <p className="text-base md:text-xl">
                                             {" "}
-                                            <a href={productId}>{name}</a>
+                                            <Link
+                                              to={`/shop/item/${productId}`}
+                                            >
+                                              {name}
+                                            </Link>
                                           </p>
                                         </h3>
                                         <button
@@ -178,7 +190,9 @@ function CartDrawer({ open, setOpen }) {
                     <div className="bg-[#F5FFFD] space-y-4 mx-4 p-8 rounded-lg ">
                       <div className="text-xl md:text-2xl font-bold flex justify-between">
                         <h2>Sub Total</h2>
-                        <h2>Ksh {cartProducts.total_price}</h2>
+                        <h2>
+                          Ksh {isSuccess ? cartProducts.total_price : "00"}
+                        </h2>
                       </div>
                       <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
                         <button
@@ -191,7 +205,7 @@ function CartDrawer({ open, setOpen }) {
                         <button
                           type="button"
                           className="md:w-1/2 w-full h-[62px] bg-primary hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
-                          onClick={() => navigate("/shop/checkout")}
+                          onClick={handleCheckout}
                         >
                           Checkout
                         </button>

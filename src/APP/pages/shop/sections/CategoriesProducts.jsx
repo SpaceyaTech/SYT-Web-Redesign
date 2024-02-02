@@ -83,8 +83,6 @@ function CategoriesProducts() {
     );
   }, [swagList, params]);
 
-  // console.log(products);
-
   return (
     <>
       <ItemHeader show={() => setOpen((prev) => !prev)} />
