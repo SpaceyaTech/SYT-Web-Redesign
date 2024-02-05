@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
+import Levels from "./Levels";
 import useResourcesData from "../../../../hooks/Queries/resources/useResourcesData";
 
 function ResourcesSection() {
@@ -16,7 +17,6 @@ function ResourcesSection() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearchText(searchText);
 
     const filterSearch = resourceTypes.filter(
       (search) =>
@@ -25,7 +25,6 @@ function ResourcesSection() {
     );
 
     setFilteredText(filterSearch);
-    console.log(filteredText);
   };
 
   return (
@@ -54,9 +53,17 @@ function ResourcesSection() {
                 />
               </div>
 
+              <div className="flex justify-center items-start gap-4">
+                {resourceTypes && Array.isArray(resourceTypes)
+                  ? resourceTypes.map((resource) => (
+                      <Levels key={resource.id} resource={resource} />
+                    ))
+                  : ""}
+              </div>
+
               <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
                 {resourceTypes && Array.isArray(resourceTypes)
-                  ? resourceTypes.map((resource, filterSearch) => (
+                  ? resourceTypes.map((resource) => (
                       <ResourceCard key={resource.id} resource={resource} />
                     ))
                   : ""}

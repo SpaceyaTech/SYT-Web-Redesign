@@ -10,7 +10,6 @@ import { useQuery } from "@tanstack/react-query";
 const fetchResourcesData = async () => {
   try {
     const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/`);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching resources:", error);
