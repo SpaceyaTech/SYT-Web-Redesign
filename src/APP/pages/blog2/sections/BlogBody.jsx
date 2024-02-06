@@ -5,7 +5,7 @@ import RelatedBlog from "./RelatedBlog";
 
 function BlogBody() {
   return (
-    <div className="flex flex-col md:flex-row gap-5 w-full pb-8 px-3 md:px-0">
+    <div className="flex flex-col md:flex-row gap-5 w-full pb-8 px-3 ">
       <div className="w-full md:w-[70%] flex flex-col gap-5">
         {/* <div className="container text-[13px] md:text-base font-normal text-[#323433]"> */}
         {/* <div
