@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Ellipse30 } from "../../../../assets/images/blogs-page";
+import { Ellipse30, blog1 } from "../../../../assets/images/blogs-page";
+import BlogStats from "../../blogs/sections/BlogStats";
+import {
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+} from "../../../../assets/images/socials";
 
 function BlogHeader() {
   return (
@@ -29,6 +36,36 @@ function BlogHeader() {
           </span>
 
           <small className="text-[#656767] text-xs">September 14, 2023</small>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 py-5">
+        <img
+          src={blog1}
+          alt="blog1"
+          className="object-cover w-full h-[540px] rounded-xl"
+        />
+
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center gap-3">
+            <button type="button" onClick={() => {}}>
+              <img src={facebook} alt="facebook" className="" />
+            </button>
+
+            <button type="button" onClick={() => {}}>
+              <img src={instagram} alt="instagram" className="" />
+            </button>
+
+            <button type="button" onClick={() => {}}>
+              <img src={twitter} alt="twitter" className="" />
+            </button>
+
+            <button type="button" onClick={() => {}}>
+              <img src={linkedin} alt="linkedin" className="" />
+            </button>
+          </div>
+
+          <BlogStats likes={12} blogId={1} />
         </div>
       </div>
     </div>
