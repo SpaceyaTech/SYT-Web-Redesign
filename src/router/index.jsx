@@ -11,6 +11,7 @@ import {
   EventsPage,
   IndividualChapter,
   Homepage,
+  // Resources,
   ProductDisplay,
   ForgotPassword,
   LogIn,
@@ -102,7 +103,6 @@ const router = createBrowserRouter([
       //   element: <SingleProductDonation />,
       // },
       // {
-
       //   path: "/signup",
       //   element: <SignUp />,
       // },
