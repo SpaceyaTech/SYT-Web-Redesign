@@ -24,7 +24,6 @@ const useSwagList = () =>
 const fetchSingleSwag = async (id) => {
   try {
     const response = await publicAxios.get(`/swaggs/${id}`);
-    console.log("response.data", response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching swag list: ", error);
