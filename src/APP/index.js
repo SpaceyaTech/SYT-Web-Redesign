@@ -18,6 +18,9 @@ import EventsPage from "./pages/events/pages/EventsPage";
 import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
 import Blogs from "./pages/blogs/Blogs";
 import Blog from "./pages/blog/Blog";
+
+import Blog2 from "./pages/blog2/Blog2";
+
 import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
 import Error400 from "./pages/errorPages/Error400";
@@ -45,6 +48,7 @@ export {
   SingleEvent,
   Blogs,
   Blog,
+  Blog2,
   EventsPage,
   EventsSection,
   SingleProductDonation,
