@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 
+
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 import { Loader } from "../../../components";
@@ -24,7 +25,6 @@ function SearchResults({ searchText }) {
 
 function BlogsWrapper() {
   const { searchText, searchBlog } = useContext(SearchBlogContext);
-
   const [selectedCat, setSelectedCat] = useState("");
   const [page, setPage] = useState(1);
 
@@ -72,7 +72,6 @@ function BlogsWrapper() {
       {isSuccess && (
         <>
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
-
             {statusBlogCategories === "error" && (
               <p>Error loading blog categories!</p>
             )}
