@@ -1,7 +1,5 @@
 
 import React from "react"; // , { useState }
-
-
 import { Link } from "react-router-dom";
 
 function EventsUpdateSection({

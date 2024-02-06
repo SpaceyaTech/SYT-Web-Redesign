@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
-
 import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
@@ -11,6 +10,7 @@ import {
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
 
 import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
+
 import Error500 from "../../errorPages/Error500";
 
 function SearchResults({ searchText }) {

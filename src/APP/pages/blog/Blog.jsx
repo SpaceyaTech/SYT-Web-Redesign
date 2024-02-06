@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
-
 import BlogWrapper from "./sections/BlogWrapper";
 import RelatedBlogs from "./sections/RelatedBlogs";
 import { Loader } from "../../components";
@@ -18,11 +16,6 @@ function Blog() {
     isError,
     isSuccess,
   } = useBlogData(title_slug);
-
-
-  useEffect(() => {
-    refetchBlogData();
-  }, [title_slug]);
 
   return (
     <div className="w-screen max-w-[1440px] mx-auto">
