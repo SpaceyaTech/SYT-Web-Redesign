@@ -1,11 +1,12 @@
 import React from "react";
 import Advert from "./Advert";
 import { glovo } from "../../../../assets/images/blogs-page";
+import RelatedBlog from "./RelatedBlog";
 
 function BlogBody() {
   return (
-    <div className="flex flex-row gap-5 w-full pb-8">
-      <div className="w-[70%] flex flex-col gap-5">
+    <div className="flex flex-col md:flex-row gap-5 w-full pb-8 px-3 md:px-0">
+      <div className="w-full md:w-[70%] flex flex-col gap-5">
         {/* <div className="container text-[13px] md:text-base font-normal text-[#323433]"> */}
         {/* <div
               className="blog-content"
@@ -95,11 +96,23 @@ function BlogBody() {
         {/* </div> */}
       </div>
 
-      <div className="w-[30%] border mt-16">
-        <div className="">Related Articles</div>
+      <div className="w-full md:w-[30%] flex flex-col justify-around">
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[#29CC6A] text-lg font-bold leading-normal">
+            Related Articles
+          </h3>
+          <div className="flex flex-col gap-4">
+            <RelatedBlog />
+            <RelatedBlog />
+          </div>
+        </div>
 
-        <div className="">
-          <img src={glovo} alt="glovo" />
+        <div className="hidden md:flex">
+          <img
+            src={glovo}
+            alt="glovo"
+            className="object-cover w-full aspect-auto"
+          />
         </div>
       </div>
     </div>

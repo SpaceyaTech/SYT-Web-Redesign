@@ -12,19 +12,19 @@ import {
 function BlogHeader() {
   return (
     <div className="flex flex-col">
-      <div className="w-[864px]">
-        <h1 className="py-3 text-4xl font-bold leading-normal">
+      <div className="md:w-[864px] px-3 md:px-0">
+        <h1 className="py-3 text-2xl md:text-4xl font-bold leading-normal text-center md:text-left">
           Kenya is protecting its forests and reparian lands using modern drone
           technology
         </h1>
 
-        <p className="text-lg leading-normal">
+        <p className="text-base md:text-lg leading-normal text-center md:text-left">
           The Kenyan ministry of forestry partnered with OneAgric, an IoT firm
           that specializes in aerial mapping using drone technology, to map our
           public forests and protect gazetted riparian lands from encroachment
         </p>
 
-        <div className="flex items-center gap-2 my-3">
+        <div className="flex items-center gap-2 mt-5 md:my-3">
           <img
             src={Ellipse30}
             alt="ellipse"
@@ -43,10 +43,10 @@ function BlogHeader() {
         <img
           src={blog1}
           alt="blog1"
-          className="object-cover w-full h-[540px] rounded-xl"
+          className="object-cover w-full md:h-[540px] md:rounded-xl"
         />
 
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-between px-3 md:px-0">
           <div className="flex flex-row items-center gap-3">
             <button type="button" onClick={() => {}}>
               <img src={facebook} alt="facebook" className="" />
