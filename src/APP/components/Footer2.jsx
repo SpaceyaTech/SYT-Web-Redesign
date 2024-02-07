@@ -95,7 +95,10 @@ function Footer2() {
                   <Link to="/community">Community</Link>
                 </li>
                 <li>
-                  <a href="/products">Products</a>
+                  <Link to="/products">Products</Link>
+                </li>
+                <li>
+                  <Link to="/shop">Shop</Link>
                 </li>
               </ul>
             </div>

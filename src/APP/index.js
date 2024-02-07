@@ -1,45 +1,55 @@
-import LandingPage from "./pages/landingPage/LandingPage";
-
-import Homepage from "./pages/shop/Homepage";
-
-import SingleItemPage from "./pages/shop/pages/SingleItemPage";
-import Layout from "./pages/Layout";
-import Products from "./pages/products2/Products";
-import Resources from "./pages/resources2/Resources";
-
-import Checkout from "./pages/shop/pages/OrderSummary";
-
 import AboutUs from "./pages/aboutUs/AboutUs";
-import CommunityPage from "./pages/community/CommunityPage";
-import DonatePage from "./pages/donate/DonatePage";
-import Categories from "./pages/shop/pages/Categories";
-import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
-import EventsPage from "./pages/events/pages/EventsPage";
-import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
-import Blogs from "./pages/blogs/Blogs";
+import AllBlogsPage from "./pages/admin/blogs/AllBlogsPage";
+import AddChapterPage from "./pages/admin/chapters/AddChapterPage";
+import AllChaptersPage from "./pages/admin/chapters/AllChaptersPage";
+import AddEventPage from "./pages/admin/events/AddEventPage";
+import AllEventsPage from "./pages/admin/events/AllEventsPage";
+import UpdateEventPage from "./pages/admin/events/UpdateEventPage";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import LogIn from "./pages/auth/LogIn";
+import ResetPassword from "./pages/auth/ResetPassword";
+import SignUp from "./pages/auth/SignUp";
 import Blog from "./pages/blog/Blog";
-import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
+import Blogs from "./pages/blogs/Blogs";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
+import CommunityPage from "./pages/community/CommunityPage";
+import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
+import DonatePage from "./pages/donate/DonatePage";
+import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
 import Error400 from "./pages/errorPages/Error400";
 import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
-
 import ErrorBoundary from "./pages/errorPages/ErrorBoundary";
-
-import ProductDisplay from "./pages/shop/pages/ProductDisplay";
+import EventsPage from "./pages/events/pages/EventsPage";
+import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
 import GalleryPage from "./pages/gallery/GalleryPage";
+import LandingPage from "./pages/landingPage/LandingPage";
+import Layout from "./pages/Layout";
+import Products from "./pages/products2/Products";
+import Resources from "./pages/resources/Resources";
+import Homepage from "./pages/shop/Homepage";
+import Checkout from "./pages/shop/OrderSummaryPage";
+import ProductDisplay from "./pages/shop/ProductDisplayPage";
+import CategoriesProducts from "./pages/shop/sections/CategoriesProducts";
+import SingleItemPage from "./pages/shop/SingleItemPage";
 
 export {
+  AddChapterPage,
+  AddEventPage,
+  AllBlogsPage,
+  AllChaptersPage,
+  AllEventsPage,
+  UpdateEventPage,
   LandingPage,
   Homepage,
   Checkout,
+  CategoriesProducts,
   SingleItemPage,
   Layout,
   Products,
   Resources,
   AboutUs,
-  Categories,
   CommunityPage,
   DonatePage,
   SingleEvent,
@@ -55,5 +65,9 @@ export {
   Error500,
   ErrorBoundary,
   ProductDisplay,
+  ForgotPassword,
+  LogIn,
+  ResetPassword,
+  SignUp,
   GalleryPage,
 };

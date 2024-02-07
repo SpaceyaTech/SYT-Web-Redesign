@@ -1,8 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/sytLogo.png";
-import bell from "../../assets/images/icons/bell-icon.svg";
-import profile from "../../assets/images/adminPage/profile-pic.png";
+import logo from "../../../assets/images/sytLogo.png";
+import bell from "../../../assets/images/icons/bell-icon.svg";
+import profile from "../../../assets/images/adminPage/profile-pic.png";
 
 function AdminHeader() {
   return (

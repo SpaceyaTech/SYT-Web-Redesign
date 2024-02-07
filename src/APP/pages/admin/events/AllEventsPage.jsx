@@ -1,6 +1,6 @@
 import React from "react";
-import Calendar from "../../components/events/Calendar";
-import EventsTable from "../../components/events/EventsTable";
+import Calendar from "../../../components/admin/events/Calendar";
+import EventsTable from "../../../components/admin/events/EventsTable";
 
 function AllEventsPage() {
   return (

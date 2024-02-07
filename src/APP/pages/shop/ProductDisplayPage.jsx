@@ -1,6 +1,6 @@
 import React from "react";
+import PopularItemsSection from "./sections/PopularItemsSection";
 import SingleItemPage from "./SingleItemPage";
-import PopularItemsSection from "../sections/PopularItemsSection";
 
 function ProductDisplay() {
   return (

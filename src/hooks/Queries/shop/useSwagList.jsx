@@ -1,12 +1,12 @@
 // https://apis.spaceyatech.com/api/swaggs/
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import publicAxios from "../../../api/publicAxios";
 
 const fetchSwag = async () => {
   try {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_BASE_URL}/swaggs/`
-    );
+    const response = await publicAxios.get("/swaggs/");
+    console.log("response.data", response.data);
+
     return response.data;
   } catch (error) {
     console.error("Error fetching swag list: ", error);
@@ -14,12 +14,28 @@ const fetchSwag = async () => {
   }
 };
 
-const useSwagList = () => {
-  return useQuery({
+const useSwagList = () =>
+  useQuery({
     queryKey: ["swagList"],
     queryFn: () => fetchSwag(),
     refetchOnWindowFocus: false,
   });
+
+const fetchSingleSwag = async (id) => {
+  try {
+    const response = await publicAxios.get(`/swaggs/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching swag list: ", error);
+    throw error;
+  }
 };
 
-export default useSwagList;
+const useSingleSwag = (id) =>
+  useQuery({
+    queryKey: ["single swag"],
+    queryFn: () => fetchSingleSwag(id),
+    refetchOnWindowFocus: false,
+  });
+
+export { useSwagList, useSingleSwag };

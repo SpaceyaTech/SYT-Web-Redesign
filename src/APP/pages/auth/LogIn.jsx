@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { Navigate } from "react-router-dom";
-import LoginImg from "../../assets/images/auth/login.svg";
-import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import publicAxios from "../../../api/publicAxios";
+import LoginImg from "../../../assets/images/auth/login.svg";
+import useAuth from "../../../hooks/useAuth";
 
 function LogIn() {
   const { auth, setAuth } = useAuth();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(null);
@@ -15,8 +16,8 @@ function LogIn() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/token/`,
+      const response = await publicAxios.post(
+        "/token/",
         {
           username,
           password,
@@ -31,7 +32,8 @@ function LogIn() {
   };
 
   if (auth?.access) {
-    return <Navigate to="/admin" />;
+    // return <Navigate to="/shop" />;
+    navigate(-1);
   }
 
   return (
@@ -80,7 +82,7 @@ function LogIn() {
             </label>
 
             <a
-              href="#!"
+              href="/forgot-password"
               className="text-primary hover:text-[#00664E] text-base"
             >
               Forgot password?
@@ -90,12 +92,12 @@ function LogIn() {
             type="submit"
             className="bg-primary hover:bg-[#00664E] text-white text-xl rounded border-0 py-3 px-5 sm:px-8 w-full focus:outline-none"
           >
-            Login
+            Log In
           </button>
           <p>
             New here?
             <a
-              href="/auth/signup"
+              href="/register"
               className="text-primary hover:text-[#00664E] text-base"
             >
               {" "}

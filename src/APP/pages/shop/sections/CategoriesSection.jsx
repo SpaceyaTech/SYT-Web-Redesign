@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 import ItemHeader from "./ItemHeader";
 
 function CategoriesSection() {
@@ -51,6 +52,24 @@ function CategoriesSection() {
   ]);
   const [open, setOpen] = useState(true);
 
+  const { data, isLoading, isError, isSuccess } = useSwagList();
+
+  // setCategories(data.results.map((item) => item.category));
+  // eslint-disable-next-line prefer-const
+  let categoriesHash = {};
+  isSuccess &&
+    data.forEach((item) => {
+      if (!categoriesHash[item.category]) {
+        categoriesHash[item.category] = item.image;
+      }
+    });
+
+  // eslint-disable-next-line prefer-const
+  let categoryList = Object.keys(categoriesHash).map((item) => ({
+    name: item.toLowerCase(),
+    imgURL: categoriesHash[item],
+  }));
+
   return (
     <>
       <ItemHeader show={() => setOpen((prev) => !prev)} />
@@ -61,31 +80,32 @@ function CategoriesSection() {
         </h2>
 
         <div className="grid grid-row-[minmax(300px,_256px)] grid-flow-col auto-cols-max gap-4 p-0 overflow-x-scroll sm:overflow-x-hidden md:grid-cols-3 md:grid-rows-2 md:gap-y-8 md:gap-x-8 md:p-3 overflow-y-hidden">
-          {categories.map((category) => {
-            return (
-              <div
-                key={category.id}
-                className="w-60 lg:w-[420px] h-72 hover:opacity-75"
-              >
-                <Link to={`/shop/category/${category.href}`}>
-                  <img
-                    src={category.imgURL}
-                    className="object-cover object-center rounded-2xl h-64 w-60 lg:w-[420px]"
-                    alt={category.name}
-                  />
+          {categoryList.map((category) => (
+            <div
+              key={crypto.randomUUID()}
+              className="w-60 lg:w-[420px] h-72 hover:opacity-75"
+            >
+              <Link to={`/shop/category/${category.name}`}>
+                <img
+                  src={category.imgURL}
+                  className="object-cover object-center rounded-2xl h-64 w-60 lg:w-[420px]"
+                  alt={category.name}
+                />
+              </Link>
+              <div className="p-2 flex items-center justify-between">
+                <p className="text-xl sm:text-2xl font-medium capitalize">
+                  {category.name}
+                </p>
+                <Link
+                  to={`/shop/category/${category.name}`}
+                  className="text-primary text-xs sm:text-sm"
+                >
+                  View More
+                  <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
                 </Link>
-                <div className="p-2 flex items-center justify-between">
-                  <p className="text-xl sm:text-2xl font-medium">
-                    {category.name}
-                  </p>
-                  <Link className="text-primary text-xs sm:text-sm">
-                    View More{" "}
-                    <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
-                  </Link>
-                </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </>
