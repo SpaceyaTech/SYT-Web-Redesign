@@ -20,12 +20,12 @@ const ResourcesButtons = ({ resource }) => {
             <div className="flex justify-center items-center gap-4">
               {resourceTypes && Array.isArray(resourceTypes)
                 ? resourceTypes.map((resource) => (
-                    <div
+                    <button
                       className="bg-slate-100 cursor-pointer no-wrap rounded-full px-4 py-1"
                       key={resource.id}
                     >
                       {resource.category}
-                    </div>
+                    </button>
                   ))
                 : ""}
             </div>

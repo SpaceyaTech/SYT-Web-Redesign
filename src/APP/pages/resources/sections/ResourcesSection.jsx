@@ -1,18 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
 import ResourcesButtons from "./ResourcesButtons";
+import Sidebar from "./Sidebar";
 import useResourcesData from "../../../../hooks/Queries/resources/useResourcesData";
 
 function ResourcesSection() {
-  const [searchText, setSearchText] = useState("");
-
   const {
     data: resourceTypes,
     isLoading,
     isError,
     isSuccess,
   } = useResourcesData();
+
+  // Filter data to display
+
+  const categoryList = [...new Set(resourceTypes.map((el) => el.category))];
+
+  const [searchText, setSearchText] = useState("");
+  const [dataFilter, setDataFilter] = useState([]);
+  const [filterBy, setFilterBy] = useState("");
+
+  useEffect(() => {
+    setDataFilter(resourceTypes);
+  }, [resourceTypes]);
+
+  const handleFilterResources = (category) => {
+    console.log(category);
+    setFilterBy(category);
+    /* const filter = resourceTypes.filter(
+      (el) => el.category.toLowerCase() === category.toLowerCase()
+    ); */
+
+    /* setDataFilter(() => {
+      return [...filter];
+    }); */
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -23,17 +50,47 @@ function ResourcesSection() {
       ) : (
         isSuccess && (
           <div className="flex gap-4">
-            <div className="flex flex-col gap-4">
-              <div className="border-2 rounded-xl p-4">Level 1</div>
-              <div className="border-2 p-4">Level 2</div>
-              <div className="border-2 p-4">Level 3</div>
-            </div>
-            <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
-              {resourceTypes && Array.isArray(resourceTypes)
-                ? resourceTypes.map((resource) => (
-                    <ResourceCard key={resource.id} resource={resource} />
-                  ))
-                : ""}
+            <div className="">
+              <div className="flex flex-col gap-12">
+                <div className="flex self-stretch flex-row mx-auto border-[#CBCDCC] border-2 rounded-[30px] px-4">
+                  <input
+                    type="text"
+                    placeholder="Search resources"
+                    className="h-10 md:w-[50vw] w-[70vw] border-none outline-none"
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                  />
+                  <img
+                    src={search}
+                    alt="search"
+                    className="p-2 cursor-pointer"
+                    onClick={handleSearch}
+                  />
+                </div>
+              </div>
+
+              <div className="my-8">
+                <ResourcesButtons
+                  key={el}
+                  category={el}
+                  isActive={el.toLowerCase() === filterBy.toLowerCase()}
+                  onClick={() => handleFilterProduct(el)}
+                />
+              </div>
+
+              <div className="flex gap-6">
+                <div className="">
+                  <Sidebar />
+                </div>
+
+                <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
+                  {resourceTypes && Array.isArray(resourceTypes)
+                    ? resourceTypes.map((resource) => (
+                        <ResourceCard key={resource.id} resource={resource} />
+                      ))
+                    : ""}
+                </div>
+              </div>
             </div>
           </div>
         )
