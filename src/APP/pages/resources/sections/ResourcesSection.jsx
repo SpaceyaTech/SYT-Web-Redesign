@@ -3,6 +3,7 @@ import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
 import ResourcesButtons from "./ResourcesButtons";
 import Sidebar from "./Sidebar";
+import ResourceFeature from "./ResourceFeature";
 import useResourcesData from "../../../../hooks/Queries/resources/useResourcesData";
 
 function ResourcesSection() {
@@ -14,9 +15,8 @@ function ResourcesSection() {
   } = useResourcesData();
 
   // Filter data to display
-
-  const categoryList = [...new Set(resourceTypes.map((el) => el.category))];
-
+  const categoryList = [...new Set(resourceTypes?.map((el) => el.category))];
+  console.log(categoryList);
   const [searchText, setSearchText] = useState("");
   const [dataFilter, setDataFilter] = useState([]);
   const [filterBy, setFilterBy] = useState("");
@@ -25,21 +25,21 @@ function ResourcesSection() {
     setDataFilter(resourceTypes);
   }, [resourceTypes]);
 
-  const handleFilterResources = (category) => {
-    console.log(category);
+  const handleResourceFilter = (category) => {
     setFilterBy(category);
-    /* const filter = resourceTypes.filter(
+    const filter = resourceTypes.filter(
       (el) => el.category.toLowerCase() === category.toLowerCase()
-    ); */
-
-    /* setDataFilter(() => {
+    );
+    setDataFilter(() => {
       return [...filter];
-    }); */
+    });
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
   };
+
+  const loadingArrayFeature = new Array(10).fill(null);
 
   return (
     <>
@@ -69,14 +69,44 @@ function ResourcesSection() {
                 </div>
               </div>
 
-              <div className="my-8">
-                <ResourcesButtons
-                  key={el}
-                  category={el}
-                  isActive={el.toLowerCase() === filterBy.toLowerCase()}
-                  onClick={() => handleFilterProduct(el)}
-                />
+              <div className="flex justify-center items-center my-8">
+                {categoryList ? (
+                  categoryList.map((el) => {
+                    return (
+                      <ResourcesButtons
+                        key={el}
+                        category={el.category}
+                        isActive={el.toLowerCase() === filterBy.toLowerCase()}
+                        onClick={() => handleResourceFilter(el)}
+                      />
+                    );
+                  })
+                ) : (
+                  <div className="">
+                    <p>Loading...</p>
+                  </div>
+                )}
               </div>
+
+              {/* <div className="">
+                {dataFilter
+                  ? dataFilter.map((el) => {
+                      return (
+                        <ResourceFeature
+                          key={el.id}
+                          id={el.id}
+                          name={el.name}
+                          category={el.category}
+                          level={el.level}
+                          image={el.image}
+                          description={el.description}
+                        />
+                      );
+                    })
+                  : loadingArrayFeature.map((el, index) => (
+                      <ResourceFeature key={index} loading="Loading" />
+                    ))}
+              </div> */}
 
               <div className="flex gap-6">
                 <div className="">
