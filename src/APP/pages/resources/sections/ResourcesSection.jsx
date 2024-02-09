@@ -16,7 +16,8 @@ function ResourcesSection() {
 
   // Filter data to display
   const categoryList = [...new Set(resourceTypes?.map((el) => el.category))];
-  console.log(categoryList);
+  const levelList = [...new Set(resourceTypes?.map((el) => el.level))];
+
   const [searchText, setSearchText] = useState("");
   const [dataFilter, setDataFilter] = useState([]);
   const [filterBy, setFilterBy] = useState("");
@@ -25,11 +26,14 @@ function ResourcesSection() {
     setDataFilter(resourceTypes);
   }, [resourceTypes]);
 
-  const handleResourceFilter = (category) => {
+  const handleResourceFilter = (category, level) => {
     setFilterBy(category);
     const filter = resourceTypes.filter(
-      (el) => el.category.toLowerCase() === category.toLowerCase()
+      (el) =>
+        el.category.toLowerCase() === category.toLowerCase() ||
+        el.level.toLowerCase() === level.toLowerCase()
     );
+
     setDataFilter(() => {
       return [...filter];
     });
@@ -69,13 +73,13 @@ function ResourcesSection() {
                 </div>
               </div>
 
-              <div className="flex justify-center items-center my-8">
+              <div className="flex justify-center items-center sm:flex flex-wrap gap-3 my-6">
                 {categoryList ? (
                   categoryList.map((el) => {
                     return (
                       <ResourcesButtons
                         key={el}
-                        category={el.category}
+                        category={el}
                         isActive={el.toLowerCase() === filterBy.toLowerCase()}
                         onClick={() => handleResourceFilter(el)}
                       />
@@ -88,34 +92,29 @@ function ResourcesSection() {
                 )}
               </div>
 
-              {/* <div className="">
-                {dataFilter
-                  ? dataFilter.map((el) => {
+              <div className="lg:flex hidden gap-4">
+                <div className="flex flex-col gap-5 cursor-pointer">
+                  {levelList ? (
+                    levelList.map((el) => {
                       return (
-                        <ResourceFeature
-                          key={el.id}
-                          id={el.id}
-                          name={el.name}
-                          category={el.category}
-                          level={el.level}
-                          image={el.image}
-                          description={el.description}
+                        <Sidebar
+                          key={el}
+                          level={el}
+                          isActive={el.toLowerCase() === filterBy.toLowerCase()}
+                          onClick={() => handleResourceFilter(el)}
                         />
                       );
                     })
-                  : loadingArrayFeature.map((el, index) => (
-                      <ResourceFeature key={index} loading="Loading" />
-                    ))}
-              </div> */}
-
-              <div className="flex gap-6">
-                <div className="">
-                  <Sidebar />
+                  ) : (
+                    <div className="">
+                      <p>Loading...</p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="grid md:grid-cols-4 sm:grid-cols-2 md:gap-16 sm:gap-12 gap-8 grid-cols-1">
-                  {resourceTypes && Array.isArray(resourceTypes)
-                    ? resourceTypes.map((resource) => (
+                  {dataFilter && Array.isArray(dataFilter)
+                    ? dataFilter.map((resource) => (
                         <ResourceCard key={resource.id} resource={resource} />
                       ))
                     : ""}
@@ -130,3 +129,25 @@ function ResourcesSection() {
 }
 
 export default ResourcesSection;
+
+{
+  /* <div className="">
+    {dataFilter
+      ? dataFilter.map((el) => {
+          return (
+            <ResourceFeature
+              key={el.id}
+              id={el.id}
+              name={el.name}
+              category={el.category}
+              level={el.level}
+              image={el.image}
+              description={el.description}
+            />
+          );
+        })
+      : loadingArrayFeature.map((el, index) => (
+          <ResourceFeature key={index} loading="Loading" />
+        ))}
+  </div> */
+}
