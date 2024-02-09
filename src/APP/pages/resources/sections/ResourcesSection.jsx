@@ -29,9 +29,8 @@ function ResourcesSection() {
   const handleResourceFilter = (category, level) => {
     setFilterBy(category);
     const filter = resourceTypes.filter(
-      (el) =>
-        el.category.toLowerCase() === category.toLowerCase() ||
-        el.level.toLowerCase() === level.toLowerCase()
+      (el) => el.category.toLowerCase() === category.toLowerCase()
+      //el.level.toLowerCase() === level.toLowerCase()
     );
 
     setDataFilter(() => {
