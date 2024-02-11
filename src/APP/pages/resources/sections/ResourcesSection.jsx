@@ -27,16 +27,28 @@ function ResourcesSection() {
   }, [resourceTypes]);
 
   const handleResourceFilter = (category, level) => {
+    // If --- will be implemented to improve the quality of code
+
     setFilterBy(category);
     const filter = resourceTypes.filter(
       (el) => el.category.toLowerCase() === category.toLowerCase()
-      //el.level.toLowerCase() === level.toLowerCase()
     );
 
     setDataFilter(() => {
       return [...filter];
     });
   };
+
+  /* const handleLevelsFilter = (level) => {
+    setFilterBy(level);
+    const filter = resourceTypes.filter(
+      (el) => el.level.toLowerCase() === level.toLowerCase()
+    );
+
+    setDataFilter(() => {
+      return [...filter];
+    });
+  }; */
 
   const handleSearch = (e) => {
     e.preventDefault();
