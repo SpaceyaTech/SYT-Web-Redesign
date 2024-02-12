@@ -49,7 +49,7 @@ function Teams() {
           <div className="flex flex-col items-center justify-center gap-4 py-10">
             <Loader />
             <p className="text-lg font-medium text-primary">
-              Loading blog details...
+              Loading team details...
             </p>
           </div>
         )}
