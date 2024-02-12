@@ -282,3 +282,286 @@ export const teams = {
     },
   ],
 };
+
+export const backendTeamData = [
+  {
+    id: 1,
+    name: "Design",
+    developers: [
+      {
+        id: 6,
+        stacks: [1],
+        name: "Fred Ouko",
+        title: "Product Designer",
+        portfolio: "https://www.linkedin.com/in/fred-ouko-918293bb",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 5,
+        stacks: [1],
+        name: "Pamela Owino",
+        title: "Lead Product Designer",
+        portfolio: "https://www.linkedin.com/in/owino-pamela",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/pamela-owino.png",
+      },
+      {
+        id: 4,
+        stacks: [1],
+        name: "Emmy Akinyi",
+        title: "UX Team Lead",
+        portfolio: "https://www.linkedin.com/in/emmy-akinyi-16ab301a2",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/emmy-akinyi.jpeg",
+      },
+      {
+        id: 7,
+        stacks: [1],
+        name: "Aaron Abubakar",
+        title: "Product Designer",
+        portfolio: "https://www.linkedin.com/in/aroni-abubakari-b1a126146",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/aaron-abubakar.jpeg",
+      },
+      {
+        id: 8,
+        stacks: [1],
+        name: "Robert Okusi",
+        title: "Product Designer",
+        portfolio: "https://www.linkedin.com/in/robert-okusi",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/robert-okusi.jpg",
+      },
+      {
+        id: 9,
+        stacks: [1],
+        name: "Temitayo Adeleye",
+        title: "Product Designer",
+        portfolio: "https://www.linkedin.com/in/adeleye-temitayo-1964b5b9",
+        image: "https://apis.spaceyatech.com/media/product_teams/temitayo.jpeg",
+      },
+      {
+        id: 10,
+        stacks: [1],
+        name: "Belinda Koech",
+        title: "Product Designer",
+        portfolio: "https://www.linkedin.com/in/thisisbesh",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/belinda-koech.jpg",
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Front End Dev",
+    developers: [
+      {
+        id: 1,
+        stacks: [3, 6],
+        name: "JD",
+        title: "CoLabs /Certyfied Lead",
+        portfolio: "https://www.linkedin.com/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 2,
+        stacks: [3],
+        name: "Rizwan Hamisi",
+        title: "Frontend Lead",
+        portfolio: "https://www.linkedin.com/in/hamisi-rizwan-2b1a00230",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 3,
+        stacks: [3],
+        name: "Webala Daniel",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/daniel-webala-8b4992184/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 11,
+        stacks: [3],
+        name: "David Clinton",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/clintondavid46/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/dave-clinton.jpeg",
+      },
+      {
+        id: 12,
+        stacks: [3, 4],
+        name: "Collins Kasyoki",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/collins-thano",
+        image: "https://apis.spaceyatech.com/media/product_teams/kasyoki.jpg",
+      },
+      {
+        id: 13,
+        stacks: [3],
+        name: "Catherine Kiiru",
+        title: "Frondend  Developer",
+        portfolio: "https://www.linkedin.com/in/catherine-kiiru-47b2688b/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/catherine-kiiru.jpeg",
+      },
+      {
+        id: 14,
+        stacks: [3],
+        name: "Ian Mugenya",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/ian-mugenya/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/ian-mugenya.png",
+      },
+      {
+        id: 15,
+        stacks: [3],
+        name: "Sharon Jebitok",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/sharon-jebitok/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/sharon-jebitok.jpeg",
+      },
+      {
+        id: 21,
+        stacks: [3],
+        name: "Sonia Somo",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/sonia-lomo/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 22,
+        stacks: [3],
+        name: "Felix Nyalenda",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/felix-olali-1652aa231",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 23,
+        stacks: [3],
+        name: "Lawrence Moindi",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/lawrence-moindi-55b35773",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "Back End Dev",
+    developers: [
+      {
+        id: 16,
+        stacks: [4],
+        name: "Hellen Wainaina",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/hellen-wainaina-0946bb20b/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 17,
+        stacks: [4],
+        name: "Raymond Kipkorir",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/raykipkorir/",
+        image: "https://apis.spaceyatech.com/media/product_teams/raymond.jpg",
+      },
+      {
+        id: 19,
+        stacks: [4, 5],
+        name: "Waithaka Waweru",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/waithaka-waweru/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/waithaka-waweru.jpeg",
+      },
+      {
+        id: 12,
+        stacks: [3, 4],
+        name: "Collins Kasyoki",
+        title: "Frontend Developer",
+        portfolio: "https://www.linkedin.com/in/collins-thano",
+        image: "https://apis.spaceyatech.com/media/product_teams/kasyoki.jpg",
+      },
+      {
+        id: 20,
+        stacks: [4, 5],
+        name: "James Otieno",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/james-oduor/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/james-otieno.jpeg",
+      },
+      {
+        id: 24,
+        stacks: [4],
+        name: "Fredrick Waihenya",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/waihenya/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "DevOps",
+    developers: [
+      {
+        id: 18,
+        stacks: [5],
+        name: "Hudson Obai",
+        title: "DevOps Lead",
+        portfolio: "https://www.linkedin.com/in/hudson-obai-3948aa204/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+      {
+        id: 19,
+        stacks: [4, 5],
+        name: "Waithaka Waweru",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/waithaka-waweru/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/waithaka-waweru.jpeg",
+      },
+      {
+        id: 20,
+        stacks: [4, 5],
+        name: "James Otieno",
+        title: "Backend Developer",
+        portfolio: "https://www.linkedin.com/in/james-oduor/",
+        image:
+          "https://apis.spaceyatech.com/media/product_teams/james-otieno.jpeg",
+      },
+      {
+        id: 25,
+        stacks: [5],
+        name: "Spencer Ochieng",
+        title: "DevOps",
+        portfolio: "https://www.linkedin.com/in/spencerochieng/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Web3",
+    developers: [
+      {
+        id: 1,
+        stacks: [3, 6],
+        name: "JD",
+        title: "CoLabs /Certyfied Lead",
+        portfolio: "https://www.linkedin.com/",
+        image: "https://apis.spaceyatech.com/media/default.svg",
+      },
+    ],
+  },
+  {
+    id: 7,
+    name: "UX Team Lead",
+    developers: [],
+  },
+];
