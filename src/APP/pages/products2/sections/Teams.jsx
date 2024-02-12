@@ -1,16 +1,20 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Tab } from "@headlessui/react";
-import { backendTeamData, teams } from "../data";
+import React from "react";
+import { Link } from "react-router-dom";
+
 import { upleftGreen } from "../../../../assets/images/icons";
+import { backendTeamData } from "../data";
 import DeveloperCard from "./DeveloperCard";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Teams = () => {
-  let [categories] = useState(teams);
+function Teams() {
+  const filteredTeams = backendTeamData.filter(
+    (team) => team.developers.length > 0
+  );
+  console.log("New team: ", filteredTeams);
 
   return (
     <section className="p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-4 mb-4 md:mb-8">
@@ -39,53 +43,13 @@ const Teams = () => {
 
       {/* Tabs */}
       <div className="w-full md:w-2/3">
-        {/* <Tab.Group>
-          <Tab.List className="flex space-x-2 justify-between w-full overflow-x-auto bg-transparent p-1">
-            {Object.keys(categories).map((category) => (
-              <Tab
-                key={category}
-                className={({ selected }) =>
-                  classNames(
-                    "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
-                    "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
-                    selected
-                      ? "bg-primary font-medium text-white"
-                      : "bg-[#f8f8f8] font-normal"
-                  )
-                }
-              >
-                {category}
-              </Tab>
-            ))}
-          </Tab.List>
-          <Tab.Panels className="mt-1 md:mt-2 w-full">
-            {Object.values(categories).map((posts, idx) => (
-              <Tab.Panel
-                key={idx}
-                className={classNames(
-                  "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
-                )}
-              >
-                {posts.map(({ id, name, title, headshot, portfolio }) => (
-                  <DeveloperCard
-                    key={id}
-                    name={name}
-                    title={title}
-                    headshot={headshot}
-                    portfolio={portfolio}
-                  />
-                ))}
-              </Tab.Panel>
-            ))}
-          </Tab.Panels>
-        </Tab.Group> */}
-
         <Tab.Group>
           <Tab.List className="flex space-x-2 justify-between w-full overflow-x-auto bg-transparent p-1">
-            {backendTeamData.map(({ id, name }) => (
+            {filteredTeams.map(({ id, name }) => (
               <Tab
                 key={id}
                 className={({ selected }) =>
+                  // eslint-disable-next-line implicit-arrow-linebreak
                   classNames(
                     "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                     "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
@@ -100,23 +64,22 @@ const Teams = () => {
             ))}
           </Tab.List>
           <Tab.Panels className="mt-1 md:mt-2 w-full">
-            {backendTeamData.map(({ id, developers }) => (
+            {filteredTeams.map(({ id, developers }) => (
               <Tab.Panel
                 key={id}
                 className={classNames(
                   "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
                 )}
               >
-                {developers.length > 0 &&
-                  developers.map(({ id, name, title, portfolio, image }) => (
-                    <DeveloperCard
-                      key={id}
-                      name={name}
-                      title={title}
-                      headshot={image}
-                      portfolio={portfolio}
-                    />
-                  ))}
+                {developers.map(({ id, name, title, portfolio, image }) => (
+                  <DeveloperCard
+                    key={id}
+                    name={name}
+                    title={title}
+                    headshot={image}
+                    portfolio={portfolio}
+                  />
+                ))}
               </Tab.Panel>
             ))}
           </Tab.Panels>
@@ -124,6 +87,6 @@ const Teams = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Teams;
