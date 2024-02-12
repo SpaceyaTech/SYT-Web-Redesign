@@ -26,7 +26,7 @@ function ResourcesSection() {
     setDataFilter(resourceTypes);
   }, [resourceTypes]);
 
-  const handleResourceFilter = (category, level) => {
+  const handleResourceFilter = (category) => {
     // If --- will be implemented to improve the quality of code
 
     setFilterBy(category);
@@ -39,7 +39,7 @@ function ResourcesSection() {
     });
   };
 
-  /* const handleLevelsFilter = (level) => {
+  const handleLevelsFilter = (level) => {
     setFilterBy(level);
     const filter = resourceTypes.filter(
       (el) => el.level.toLowerCase() === level.toLowerCase()
@@ -48,12 +48,26 @@ function ResourcesSection() {
     setDataFilter(() => {
       return [...filter];
     });
-  }; */
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
+    // >>> Perform search <<<
+
+    const results = dataFilter.filter((text) =>
+      text.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    console.log(results);
+
+    /*
+    setDataFilter(() => {
+      return [...results];
+      setSearchText("");
+    }); */
   };
 
+  // >>>-- To be implemented as loading feature --<<<
   const loadingArrayFeature = new Array(10).fill(null);
 
   return (
@@ -103,8 +117,8 @@ function ResourcesSection() {
                 )}
               </div>
 
-              <div className="lg:flex hidden gap-4">
-                <div className="flex flex-col gap-5 cursor-pointer">
+              <div className="flex gap-4">
+                <div className="lg:flex flex-col cursor-pointer">
                   {levelList ? (
                     levelList.map((el) => {
                       return (
@@ -112,7 +126,7 @@ function ResourcesSection() {
                           key={el}
                           level={el}
                           isActive={el.toLowerCase() === filterBy.toLowerCase()}
-                          onClick={() => handleResourceFilter(el)}
+                          onClick={() => handleLevelsFilter(el)}
                         />
                       );
                     })

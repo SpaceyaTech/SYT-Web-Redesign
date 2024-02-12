@@ -3,7 +3,7 @@ import { courses } from "../../../../assets/images/resources-page";
 const Sidebar = ({ level, isActive, onClick }) => {
   return (
     <button
-      className={`border-[1px] rounded-xl flex flex-col items-center py-5 px-3 ${
+      className={`border-[1px] rounded-xl hidden md:flex flex-col items-center justify-center mt-4 w-[100px] h-[100px] ${
         isActive && "border-[1px] border-purple-600"
       }`}
       onClick={onClick}
