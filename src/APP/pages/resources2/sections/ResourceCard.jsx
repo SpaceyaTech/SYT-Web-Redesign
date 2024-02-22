@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { arrow, course1 } from "../../../../assets/images/resources-page";
 
 const ResourceCard = () => {
   const [hovered, setHovered] = useState(false);
 
+  useEffect(() => {}, [hovered]);
+
   return (
     <div className="relative">
       <div
-        className={`flex flex-col ${
+        className={`flex flex-col transition-all ease-linear duration-[2000ms] ${
           hovered
-            ? "md:z-10 md:absolute top-0 md:transform transition-all transition-out ease-out duration-700 md:scale-[1.01]"
+            ? "md:z-10 md:absolute top-0 md:transform  md:scale-[1.01]"
             : "z-0"
         }`}
         onMouseLeave={() => setHovered(false)}
+        onMouseEnter={() => {
+          console.log("On mouse Enter");
+          setHovered((prev) => !prev);
+        }}
+        // ref={}
       >
         {/* img cover */}
         <div className="h-[150px]">
@@ -55,7 +62,12 @@ const ResourceCard = () => {
             </div>
           </div>
 
-          <span className="text-xs leading-5 font-normal">Coursera</span>
+          <div className="flex items-center justify-between">
+            <span className="text-xs leading-5 font-normal">Coursera</span>
+            <span className="text-xs leading-5 font-normal text-primary">
+              Beginner
+            </span>
+          </div>
 
           <a
             onClick={() => setHovered(false)}
