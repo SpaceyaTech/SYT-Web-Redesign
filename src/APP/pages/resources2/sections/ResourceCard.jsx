@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { arrow, course1 } from "../../../../assets/images/resources-page";
 
-const ResourceCard = () => {
+function ResourceCard() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {}, [hovered]);
@@ -16,10 +16,8 @@ const ResourceCard = () => {
         }`}
         onMouseLeave={() => setHovered(false)}
         onMouseEnter={() => {
-          console.log("On mouse Enter");
           setHovered((prev) => !prev);
         }}
-        // ref={}
       >
         {/* img cover */}
         <div className="h-[150px]">
@@ -36,17 +34,13 @@ const ResourceCard = () => {
               className={`w-6 h-6 object-contain flex md:hidden transform transition-all transition-out ease-in duration-200 cursor-pointer ${
                 hovered && "rotate-180"
               }`}
-              onClick={() => setHovered((prev) => !prev)}
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <p
-              className="text-base font-bold text-[#323433C9] cursor-pointer"
-              onClick={() => setHovered((prev) => !prev)}
-            >
+            <h4 className="text-base font-bold text-[#323433C9] cursor-pointer">
               React: Creating and Hosting a Full-stack Site
-            </p>
+            </h4>
 
             {/* Show/Hide div */}
             <div className={`${hovered ? "flex" : "hidden"} flex-col gap-2`}>
@@ -84,6 +78,6 @@ const ResourceCard = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ResourceCard;
