@@ -1,25 +1,11 @@
+/* eslint-disable implicit-arrow-linebreak */
 import React, { useState } from "react";
 import { Tab } from "@headlessui/react";
 
+import { resourcesData } from "./data";
 import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
-import { resourcesData } from "./data";
 
-// function DifficultyCard({ title, selected }) {
-//   return (
-//     <div
-//       className={`flex flex-col justify-center items-center border ${
-//         selected ? "border-green-700" : "border-gray-200"
-//       } rounded-3xl gap-3 p-6 lg:w-48`}
-//     >
-//       <div className="w-24 h-24 bg-[#F5FFFD] flex justify-center items-center rounded-full">
-//         <img src={courses} alt="" className="w-11 object-cover" />
-//       </div>
-
-//       <h4 className="text-base font-normal capitalize">{title}</h4>
-//     </div>
-//   );
-// }
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -44,11 +30,24 @@ function ResourcesSection() {
 
       <Tab.Group>
         <Tab.List className="flex space-x-2 justify-between w-full overflow-x-auto bg-transparent p-1">
+          <Tab
+            className={({ selected }) =>
+              classNames(
+                "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
+                "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
+                selected
+                  ? "bg-primary font-medium text-white"
+                  : "bg-[#f8f8f8] font-normal"
+              )
+            }
+          >
+            All
+          </Tab>
+
           {resourcesData.map(({ id, topic }) => (
             <Tab
               key={id}
               className={({ selected }) =>
-                // eslint-disable-next-line implicit-arrow-linebreak
                 classNames(
                   "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                   "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
@@ -64,11 +63,43 @@ function ResourcesSection() {
         </Tab.List>
 
         <Tab.Panels>
+          <Tab.Panel
+            className={classNames(
+              "bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
+            )}
+          >
+            {resourcesData
+              .flatMap(({ resources }) => resources)
+              .map(
+                ({
+                  id,
+                  type,
+                  title,
+                  description,
+                  image,
+                  origin,
+                  level,
+                  link,
+                }) => (
+                  <ResourceCard
+                    key={id}
+                    type={type}
+                    title={title}
+                    description={description}
+                    image={image}
+                    origin={origin}
+                    level={level}
+                    link={link}
+                  />
+                )
+              )}
+          </Tab.Panel>
+
           {resourcesData.map(({ id, resources }) => (
             <Tab.Panel
               key={id}
               className={classNames(
-                "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
+                "bg-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
               )}
             >
               {resources.map(
@@ -81,6 +112,7 @@ function ResourcesSection() {
                   origin,
                   level,
                   topic,
+                  link,
                 }) => (
                   <ResourceCard
                     key={id}
@@ -91,6 +123,7 @@ function ResourcesSection() {
                     origin={origin}
                     level={level}
                     topic={topic}
+                    link={link}
                   />
                 )
               )}

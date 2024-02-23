@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { arrow, course1 } from "../../../../assets/images/resources-page";
+import { arrow, arrowRight } from "../../../../assets/images/resources-page";
 
 function ResourceCard({
   type,
@@ -8,18 +8,28 @@ function ResourceCard({
   image,
   origin,
   level,
-  topic,
+  link,
 }) {
   const [hovered, setHovered] = useState(false);
+
+  const color = (lev) => {
+    if (lev === "beginner") {
+      return "text-primary";
+    }
+    if (lev === "intermediate") {
+      return "text-gray-500";
+    }
+    return "text-red-500";
+  };
 
   useEffect(() => {}, [hovered]);
 
   return (
     <div className="relative">
       <div
-        className={`flex flex-col transition-all ease-linear duration-[2000ms] ${
+        className={`flex flex-col transition-all ease-linear duration-200 ${
           hovered
-            ? "md:z-10 md:absolute top-0 md:transform  md:scale-[1.01]"
+            ? "md:z-10 md:absolute top-0 md:transform  md:scale-[1.02]"
             : "z-0"
         }`}
         onMouseLeave={() => setHovered(false)}
@@ -28,7 +38,7 @@ function ResourceCard({
         }}
       >
         {/* img cover */}
-        <div className="h-[150px]">
+        <div className="h-[180px]">
           <img src={image} alt={title} className="object-cover h-full w-full" />
         </div>
 
@@ -39,7 +49,7 @@ function ResourceCard({
             <img
               src={arrow}
               alt="arrow"
-              className={`w-6 h-6 object-contain flex md:hidden transform transition-all transition-out ease-in duration-200 cursor-pointer ${
+              className={`w-6 h-6 object-contain transform transition-all ease-in duration-500 cursor-pointer ${
                 hovered && "rotate-180"
               }`}
             />
@@ -53,22 +63,26 @@ function ResourceCard({
             {/* Show/Hide div */}
             <div className={`${hovered ? "flex" : "hidden"} flex-col gap-2`}>
               <span className="text-base font-normal">Description</span>
-              <p className="text-[11px] leading-4 text-[#4C4D4D] font-normal">
+              <p className="text-[11px] leading-4 text-[#4C4D4D] font-normal line-clamp-5">
                 {description}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between p-2">
             <span className="text-xs leading-5 font-normal">{origin}</span>
-            <span className="text-xs leading-5 font-normal text-primary capitalize">
+            <span
+              className={`text-xs leading-5 font-normal capitalize ${color(
+                level
+              )}`}
+            >
               {level}
             </span>
           </div>
 
           <a
             onClick={() => setHovered(false)}
-            href="/resources"
+            href={link}
             target="_blank"
             rel="noopener noreferrer"
             className={`w-fit  mx-auto border border-[#12A97E] rounded-lg py-[10px] px-10 text-sm text-[#009975] transition-all duration-500 ease-in hover:text-white hover:bg-[#009975] font-normal ${
