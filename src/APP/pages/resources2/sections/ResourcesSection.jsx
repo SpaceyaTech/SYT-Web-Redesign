@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Tab } from "@headlessui/react";
 
-import { courses, search } from "../../../../assets/images/resources-page";
+import { search } from "../../../../assets/images/resources-page";
 import ResourceCard from "./ResourceCard";
+import { resourcesData } from "./data";
 
 // function DifficultyCard({ title, selected }) {
 //   return (
@@ -18,6 +20,9 @@ import ResourceCard from "./ResourceCard";
 //     </div>
 //   );
 // }
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
@@ -37,7 +42,62 @@ function ResourcesSection() {
         </div>
       </div>
 
-      <div className="border">resources page</div>
+      <Tab.Group>
+        <Tab.List className="flex space-x-2 justify-between w-full overflow-x-auto bg-transparent p-1">
+          {resourcesData.map(({ id, topic }) => (
+            <Tab
+              key={id}
+              className={({ selected }) =>
+                // eslint-disable-next-line implicit-arrow-linebreak
+                classNames(
+                  "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
+                  "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
+                  selected
+                    ? "bg-primary font-medium text-white"
+                    : "bg-[#f8f8f8] font-normal"
+                )
+              }
+            >
+              {topic}
+            </Tab>
+          ))}
+        </Tab.List>
+
+        <Tab.Panels>
+          {resourcesData.map(({ id, resources }) => (
+            <Tab.Panel
+              key={id}
+              className={classNames(
+                "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
+              )}
+            >
+              {resources.map(
+                ({
+                  id,
+                  type,
+                  title,
+                  description,
+                  image,
+                  origin,
+                  level,
+                  topic,
+                }) => (
+                  <ResourceCard
+                    key={id}
+                    type={type}
+                    title={title}
+                    description={description}
+                    image={image}
+                    origin={origin}
+                    level={level}
+                    topic={topic}
+                  />
+                )
+              )}
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+      </Tab.Group>
     </>
   );
 }
