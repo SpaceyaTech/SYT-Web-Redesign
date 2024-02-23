@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 import ItemHeader from "./ItemHeader";
-import useSwagList from "../../../../hooks/Queries/shop/useSwagList";
 
 function CategoriesProducts() {
   const params = useParams();
-  const navigate = useNavigate();
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -74,8 +73,15 @@ function CategoriesProducts() {
   ]);
   const [open, setOpen] = useState(true);
 
-  const { data: swagList, status } = useSwagList();
+  const { data: swagList, isSuccess } = useSwagList();
 
+  useEffect(() => {
+    setProducts(
+      swagList?.filter(
+        (item) => item.category.toLowerCase() === params?.category.toLowerCase()
+      ) || []
+    );
+  }, [swagList, params]);
 
   return (
     <>
@@ -87,16 +93,16 @@ function CategoriesProducts() {
           </h2>
 
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {products.map((product) => {
-              return (
-                <div
+            {isSuccess &&
+              products.map((product) => (
+                <Link
                   key={product.id}
                   className="group relative"
-                  onClick={() => navigate(`/shop/item/${product.id}`)}
+                  to={`/shop/item/${product.id}`}
                 >
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                     <img
-                      src={product.imageSrc}
+                      src={product.image}
                       alt="Front of men&#039;s Basic Tee in black."
                       className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
                     />
@@ -104,22 +110,15 @@ function CategoriesProducts() {
                   <div className="mt-4 flex justify-between">
                     <div className="space-y-2">
                       <h3 className="text-xl font-normal text-gray-700">
-                        <a href="#">
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-0"
-                          ></span>
-                          {product.name}
-                        </a>
+                        {product.name}
                       </h3>
                       <p className="text-base font-medium text-gray-700">
                         {product.price}
                       </p>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                </Link>
+              ))}
           </div>
         </div>
       </div>

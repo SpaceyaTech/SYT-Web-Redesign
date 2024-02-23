@@ -1,13 +1,9 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useContext } from "react";
-// import { useNavigate } from "react-router-dom";
+
 
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
-
 import { Loader } from "../../../components";
-
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -29,7 +25,6 @@ function SearchResults({ searchText }) {
 
 function BlogsWrapper() {
   const { searchText, searchBlog } = useContext(SearchBlogContext);
-
   const [selectedCat, setSelectedCat] = useState("");
   const [page, setPage] = useState(1);
 

@@ -1,30 +1,25 @@
-
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
-
+import useBlogData from "../../../hooks/Queries/blog/useBlogData";
+import { Loader } from "../../components";
 import BlogWrapper from "./sections/BlogWrapper";
 import RelatedBlogs from "./sections/RelatedBlogs";
-import { Loader } from "../../components";
-import useBlogData from "../../../hooks/Queries/blog/useBlogData";
 
 function Blog() {
-  const { title_slug } = useParams();
+  const { titleSlug } = useParams();
 
   const navigate = useNavigate();
   const {
     data: blogData,
     refetch: refetchBlogData,
-
     isLoading,
     isError,
     isSuccess,
-  } = useBlogData(title_slug);
-
+  } = useBlogData(titleSlug);
 
   useEffect(() => {
     refetchBlogData();
-  }, [title_slug]);
+  }, [titleSlug]);
 
   return (
     <div className="w-screen max-w-[1440px] mx-auto">
@@ -39,22 +34,20 @@ function Blog() {
         </div>
       )}
       {isSuccess && (
-        <>
-          <section className="flex flex-col p-4 md:p-8 lg:p-10">
-            <img
-              src={blogData.image}
-              alt={blogData.title}
-              className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"
-            />
+        <section className="flex flex-col p-4 md:p-8 lg:p-10">
+          <img
+            src={blogData.image}
+            alt={blogData.title}
+            className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"
+          />
 
-            <BlogWrapper blog={blogData} />
+          <BlogWrapper blog={blogData} />
 
-            <RelatedBlogs
-              blogId={blogData?.id}
-              categoryId={blogData?.category?.id}
-            />
-          </section>
-        </>
+          <RelatedBlogs
+            blogId={blogData?.id}
+            categoryId={blogData?.category?.id}
+          />
+        </section>
       )}
     </div>
   );

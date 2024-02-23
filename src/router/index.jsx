@@ -1,5 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable quotes */
 import { createBrowserRouter } from "react-router-dom";
 
 import {
@@ -12,35 +10,22 @@ import {
   Blogs,
   EventsPage,
   IndividualChapter,
-  Categories,
-  DonatePage,
   Homepage,
   Resources,
   ProductDisplay,
+  ForgotPassword,
+  LogIn,
+  ResetPassword,
+  SignUp,
+  CategoriesProducts,
   Checkout,
   SingleEvent,
-  SingleProductDonation,
   Error500,
   Error404,
   Error400,
   Error403,
   GalleryPage,
 } from "../APP";
-// import {
-//   AllChaptersPage,
-//   AdminLayout,
-//   AllEventsPage,
-//   AddChapterPage,
-//   AddEventPage,
-//   UpdateEventPage,
-// } from "../ADMIN";
-// import {
-//   ForgotPassword,
-//   LogIn,
-//   ResetPassword,
-//   SignUp,
-//   Validate,
-// } from "../AUTH";
 
 const router = createBrowserRouter([
   {
@@ -72,7 +57,7 @@ const router = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path: "/blogs/:title_slug",
+        path: "/blogs/:titleSlug",
         element: <Blog />,
       },
       {
@@ -90,7 +75,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop/category/:category",
-        element: <Categories />,
+        element: <CategoriesProducts />,
       },
       {
         path: "/shop/item/:id",
@@ -108,7 +93,6 @@ const router = createBrowserRouter([
         path: "/resources",
         element: <Resources />,
       },
-
       // {
       //   path: "/donate",
       //   element: <DonatePage />,
@@ -118,7 +102,6 @@ const router = createBrowserRouter([
       //   element: <SingleProductDonation />,
       // },
       // {
-
       //   path: "/signup",
       //   element: <SignUp />,
       // },
@@ -126,6 +109,22 @@ const router = createBrowserRouter([
       //   path: "/login",
       //   element: <LogIn />,
       // },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/register",
+        element: <SignUp />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/reset-password",
+        element: <ResetPassword />,
+      },
     ],
   },
   {
@@ -176,32 +175,6 @@ const router = createBrowserRouter([
   //     {
   //       path: "/admin/events/update-event",
   //       element: <UpdateEventPage />,
-  //     },
-  //   ],
-  // },
-  // {
-  //   path: "/auth",
-  //   element: <Layout />,
-  //   children: [
-  //     {
-  //       path: "/auth/login",
-  //       element: <LogIn />,
-  //     },
-  //     {
-  //       path: "/auth/signup",
-  //       element: <SignUp />,
-  //     },
-  //     {
-  //       path: "/auth/validate",
-  //       element: <Validate />,
-  //     },
-  //     {
-  //       path: "/auth/forgot-password",
-  //       element: <ForgotPassword />,
-  //     },
-  //     {
-  //       path: "/auth/reset-password",
-  //       element: <ResetPassword />,
   //     },
   //   ],
   // },

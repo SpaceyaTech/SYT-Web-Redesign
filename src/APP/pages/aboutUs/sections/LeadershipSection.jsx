@@ -187,8 +187,9 @@ function LeadershipSection() {
                           />
 
                           <input
-                            type="telephone"
+                            type="tel"
                             placeholder="Phone number"
+                            pattern="[0-9\s]{10,13}"
                             required
                             className="w-full outline-none text-base font-normal placeholder:text-gray-600 border border-[#79747E] rounded-[4px] pl-4 py-2"
                             value={phoneNumber}
