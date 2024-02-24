@@ -5,7 +5,7 @@ import RelatedBlog from "./RelatedBlog";
 
 function BlogBody() {
   return (
-    <div className="flex flex-col md:flex-row gap-5 w-full pb-8 px-3 ">
+    <div className="flex flex-col md:flex-row gap-5 w-full pb-8 px-3">
       <div className="w-full md:w-[70%] flex flex-col gap-5">
         {/* <div className="container text-[13px] md:text-base font-normal text-[#323433]"> */}
         {/* <div
@@ -52,7 +52,7 @@ function BlogBody() {
           unparalleled depth and interactivity.
         </p>
 
-        <Advert />
+        {/* <Advert /> */}
 
         <p className="">
           This article delves into the potential of virtual reality to
@@ -96,7 +96,7 @@ function BlogBody() {
         {/* </div> */}
       </div>
 
-      <div className="w-full md:w-[30%] flex flex-col justify-around">
+      <div className="w-full md:w-[30%] flex flex-col border pt-20 gap-10 md:gap-64">
         <div className="flex flex-col gap-4">
           <h3 className="text-[#29CC6A] text-lg font-bold leading-normal">
             Related Articles
