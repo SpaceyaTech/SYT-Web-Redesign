@@ -96,7 +96,7 @@ function BlogBody() {
         {/* </div> */}
       </div>
 
-      <div className="w-full md:w-[30%] flex flex-col border pt-20 gap-10 md:gap-64">
+      <div className="w-full md:w-[30%] flex flex-col pt-20 gap-10 md:gap-64">
         <div className="flex flex-col gap-4">
           <h3 className="text-[#29CC6A] text-lg font-bold leading-normal">
             Related Articles
