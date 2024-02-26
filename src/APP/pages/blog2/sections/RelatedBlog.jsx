@@ -1,23 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-import { iphone } from "../../../../assets/images/blogs-page";
+import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData";
+import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
 
-function RelatedBlog() {
+import RelatedBlogCard from "./RelatedBlogCard";
+
+function RelatedBlog({ blogId, categoryId }) {
+  const { titleSlug } = useParams();
+
+  const {
+    data: relatedBlogsData,
+    refetch: refetchRelatedBlogsData,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useRelatedBlogsData(categoryId);
+
+  useEffect(() => {
+    refetchRelatedBlogsData();
+  }, [titleSlug]);
+
+  const filteredRelatedBlogs = filterRelatedBlogs(
+    relatedBlogsData?.blogs,
+    titleSlug
+  );
+
   return (
-    <Link className="flex flex-row items-center gap-2 w-64" to="/blogs2">
-      <img src={iphone} alt="" className="object-cover h-20 w-20" />
+    <>
+      {isError && <p>Error loading blogs!</p>}
+      {isLoading && <p>Loading blogs...</p>}
 
-      <div className="flex flex-col">
-        <h4 className="text-sm font-semibold line-clamp-2">
-          iOS 18 is Apple’s answer to the Galaxy.
-        </h4>
-        <p className="text-xs font-medium text-[#323433] capitalize">
-          Sharon Makena
-        </p>
-        <small className="text-xs text-[#656767]">10 Jan 2024</small>
-      </div>
-    </Link>
+      {isSuccess && filteredRelatedBlogs.length > 0 && (
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[#29CC6A] text-lg font-bold leading-normal">
+            {filteredRelatedBlogs.length > 1
+              ? "Related Articles"
+              : "Related Article"}
+          </h3>
+          <div className="flex flex-col gap-4">
+            {Array.isArray(filteredRelatedBlogs) &&
+            filteredRelatedBlogs.length > 0 ? (
+              filteredRelatedBlogs
+                .filter(function (blog) {
+                  if (blog.id === blogId) {
+                    return false;
+                  }
+                  return true;
+                })
+                .map((blog) => <RelatedBlogCard key={blog.id} blog={blog} />)
+            ) : (
+              <p className="text-lg italic">No related blogs found!</p>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
