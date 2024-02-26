@@ -35,7 +35,7 @@ function BlogHeader() {
             Sharon Makena
           </span>
 
-          <small className="text-[#656767] text-xs">September 14, 2023</small>
+          <small className="text-[#656767] text-xs">3 days ago</small>
         </div>
       </div>
 
