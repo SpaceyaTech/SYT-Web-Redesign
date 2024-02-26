@@ -1,7 +1,9 @@
 import React from "react";
-import Advert from "./Advert";
+
 import { glovo } from "../../../../assets/images/blogs-page";
+
 import RelatedBlog from "./RelatedBlog";
+import NextRead from "./NextRead";
 
 function BlogBody() {
   return (
@@ -93,7 +95,8 @@ function BlogBody() {
           places, or even delve into complex scientific concepts with
           unparalleled depth and interactivity.
         </p>
-        {/* </div> */}
+        {/* read next */}
+        <NextRead />
       </div>
 
       <div className="w-full md:w-[30%] flex flex-col pt-20 gap-10 md:gap-64">

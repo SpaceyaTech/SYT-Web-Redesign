@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Advert, BlogHeader, BlogBody, NextRead } from "./sections";
+import { Advert, BlogHeader, BlogBody } from "./sections";
 
 function Blog2() {
   return (
@@ -8,7 +8,6 @@ function Blog2() {
       <Advert />
       <BlogHeader />
       <BlogBody />
-      <NextRead />
     </div>
   );
 }
