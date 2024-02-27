@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "knip": "knip"
   },
   "dependencies": {
     "@coreui/react": "^4.11.1",
@@ -33,7 +34,6 @@
     "react-fast-marquee": "^1.6.2",
     "react-hook-form": "^7.48.2",
     "react-photo-album": "^2.3.0",
-    "react-query": "^3.39.3",
     "react-router-dom": "^6.11.2",
     "react-share": "^5.1.0",
     "react-simple-wysiwyg": "^2.2.5",
@@ -53,13 +53,12 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
     "husky": "^8.0.0",
-    "lint-staged": "^13.2.2",
+    "knip": "^4.3.1",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.3.2"
+    "vite": "^4.5.1"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [

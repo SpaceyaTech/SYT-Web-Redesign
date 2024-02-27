@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-
 const fetchBlogData = async (title_slug) => {
   try {
     const response = await axios.get(

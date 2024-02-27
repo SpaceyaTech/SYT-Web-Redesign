@@ -1,14 +1,13 @@
-import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import React from "react";
 
 // import Comments from "./Comments";
-import BlogStats from "../../blogs/sections/BlogStats";
 import logo from "../../../../assets/images/sytLogo.png";
+import BlogStats from "../../blogs/sections/BlogStats";
 
 import "./blogWrapper.css";
 
-const BlogWrapper = ({ blog }) => {
-
+function BlogWrapper({ blog }) {
   const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
   });
@@ -57,6 +56,6 @@ const BlogWrapper = ({ blog }) => {
       <div className="w-2/5 hidden md:inline-flex">{/* Advert?? */}</div>
     </div>
   );
-};
+}
 
 export default BlogWrapper;

@@ -4,8 +4,14 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: "airbnb",
-  plugins: ["prettier"],
+  extends: [
+    "airbnb",
+    "airbnb/hooks",
+    "eslint:recommended",
+    // "plugin:prettier/recommended",
+    "plugin:react/recommended",
+  ],
+  plugins: ["react", "prettier"],
   overrides: [
     {
       env: {
@@ -24,8 +30,30 @@ module.exports = {
   rules: {
     semi: 0,
     "comma-dangle": 0,
-    "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     quotes: ["error", "double"],
+    "linebreak-style": ["error", "unix"],
+    "no-console": "error",
+    "react/react-in-jsx-scope": 0,
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+        ],
+        alphabetize: { order: "asc", caseInsensitive: true },
+      },
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
   },
 };
