@@ -12,7 +12,7 @@ import {
   EventsPage,
   IndividualChapter,
   Homepage,
-  Resources,
+  // Resources,
   ProductDisplay,
   ForgotPassword,
   LogIn,

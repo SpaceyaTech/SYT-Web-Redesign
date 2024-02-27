@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function RelatedBlogCard({ blog }) {

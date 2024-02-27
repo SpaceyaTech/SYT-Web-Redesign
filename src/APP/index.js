@@ -10,16 +10,12 @@ import LogIn from "./pages/auth/LogIn";
 import ResetPassword from "./pages/auth/ResetPassword";
 import SignUp from "./pages/auth/SignUp";
 import Blog from "./pages/blog/Blog";
+import Blog2 from "./pages/blog2/Blog2";
 import Blogs from "./pages/blogs/Blogs";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
 import CommunityPage from "./pages/community/CommunityPage";
 import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
-import EventsPage from "./pages/events/pages/EventsPage";
-import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
-import Blogs from "./pages/blogs/Blogs";
-import Blog from "./pages/blog/Blog";
-import Blog2 from "./pages/blog2/Blog2";
-
+import DonatePage from "./pages/donate/DonatePage";
 import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
 import Error400 from "./pages/errorPages/Error400";
 import Error403 from "./pages/errorPages/Error403";

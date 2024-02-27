@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import React from "react";
 import { Link } from "react-router-dom";
 
-import BlogStats from "../../blogs/sections/BlogStats";
 import logo from "../../../../assets/images/sytLogo.png";
+import BlogStats from "../../blogs/sections/BlogStats";
 
 function BlogUMightLike({ blog, block }) {
   const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
@@ -25,7 +25,9 @@ function BlogUMightLike({ blog, block }) {
 
       <div className="h-1/2 flex flex-col gap-2 py-2">
         <div className="flex items-center justify-between pr-3">
-          <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
+          <h3 className="text-xl text-[#323433] font-semibold line-clamp-1">
+            {blog.title}
+          </h3>
 
           <BlogStats likes={blog.likes} blogId={blog.id} />
         </div>
