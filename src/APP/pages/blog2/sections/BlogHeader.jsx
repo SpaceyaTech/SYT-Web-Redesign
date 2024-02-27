@@ -10,6 +10,7 @@ import {
   linkedin,
   twitter,
 } from "../../../../assets/images/socials";
+import ShareBlog from "./ShareBlog";
 
 function BlogHeader({
   id,
@@ -58,23 +59,7 @@ function BlogHeader({
         />
 
         <div className="flex flex-row items-center justify-between px-3 ">
-          <div className="flex flex-row items-center gap-3">
-            <button type="button" onClick={() => {}}>
-              <img src={facebook} alt="facebook" className="" />
-            </button>
-
-            <button type="button" onClick={() => {}}>
-              <img src={instagram} alt="instagram" className="" />
-            </button>
-
-            <button type="button" onClick={() => {}}>
-              <img src={twitter} alt="twitter" className="" />
-            </button>
-
-            <button type="button" onClick={() => {}}>
-              <img src={linkedin} alt="linkedin" className="" />
-            </button>
-          </div>
+          <ShareBlog />
 
           <BlogStats likes={likes} blogId={id} />
         </div>

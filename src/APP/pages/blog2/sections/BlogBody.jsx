@@ -3,7 +3,7 @@ import React from "react";
 
 import { glovo } from "../../../../assets/images/blogs-page";
 
-import RelatedBlog from "./RelatedBlog";
+import RelatedBlogs from "./RelatedBlogs";
 import NextRead from "./NextRead";
 
 import "./blogBody.css";
@@ -21,19 +21,21 @@ function BlogBody({ id, categoryId, blogBody }) {
           {/* <Advert /> */}
         </div>
         {/* read next */}
+
+        <div className="flex md:hidden">
+          <RelatedBlogs blogId={id} categoryId={categoryId} />
+        </div>
         <NextRead />
       </div>
 
-      <div className="w-full md:w-[30%] flex flex-col pt-20 gap-10 md:gap-64">
-        <RelatedBlog blogId={id} categoryId={categoryId} />
+      <div className="w-full md:w-[30%] hidden md:flex flex-col pt-20 gap-10 md:gap-64">
+        <RelatedBlogs blogId={id} categoryId={categoryId} />
 
-        <div className="hidden md:flex">
-          <img
-            src={glovo}
-            alt="glovo"
-            className="object-cover w-full aspect-auto"
-          />
-        </div>
+        <img
+          src={glovo}
+          alt="glovo"
+          className="object-cover w-full aspect-auto"
+        />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import { Link } from "react-router-dom";
 
 import BlogStats from "../../blogs/sections/BlogStats";
 import logo from "../../../../assets/images/sytLogo.png";
@@ -10,7 +11,8 @@ function BlogUMightLike({ blog, block }) {
     addSuffix: true,
   });
   return (
-    <div
+    <Link
+      to={`/blogs2/${blog.title_slug}`}
       className={`${
         block ? "block" : "hidden"
       } flex flex-col min-w-full snap-center`}
@@ -48,7 +50,7 @@ function BlogUMightLike({ blog, block }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

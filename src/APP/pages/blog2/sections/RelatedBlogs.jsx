@@ -6,7 +6,7 @@ import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
 
 import RelatedBlogCard from "./RelatedBlogCard";
 
-function RelatedBlog({ blogId, categoryId }) {
+function RelatedBlogs({ blogId, categoryId }) {
   const { titleSlug } = useParams();
 
   const {
@@ -59,4 +59,4 @@ function RelatedBlog({ blogId, categoryId }) {
   );
 }
 
-export default RelatedBlog;
+export default RelatedBlogs;

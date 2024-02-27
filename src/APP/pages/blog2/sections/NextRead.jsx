@@ -31,7 +31,7 @@ function NextRead() {
         You might like these
       </h4>
 
-      <div className="flex items-center md:justify-between gap-0 md:gap-5 w-full">
+      <div className="flex items-center md:justify-between gap-1 md:gap-5 w-full">
         {/* left */}
         <button
           className="w-6 md:w-10 h-6 md:h-10"
