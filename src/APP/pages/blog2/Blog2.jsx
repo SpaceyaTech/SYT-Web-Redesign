@@ -44,6 +44,7 @@ function Blog2() {
             createdAt={blogData?.created_at}
             id={blogData?.id}
             likes={blogData?.likes}
+            titleSlug={blogData?.title_slug}
           />
           <BlogBody
             id={blogData?.id}

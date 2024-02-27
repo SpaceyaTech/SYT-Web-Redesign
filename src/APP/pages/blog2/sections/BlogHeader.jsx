@@ -4,12 +4,6 @@ import React from "react";
 
 import logo from "../../../../assets/images/sytLogo.png";
 import BlogStats from "../../blogs/sections/BlogStats";
-import {
-  facebook,
-  instagram,
-  linkedin,
-  twitter,
-} from "../../../../assets/images/socials";
 import ShareBlog from "./ShareBlog";
 
 function BlogHeader({
@@ -20,13 +14,14 @@ function BlogHeader({
   image,
   author,
   createdAt,
+  titleSlug,
 }) {
   const timeAgo = formatDistanceToNow(new Date(createdAt), {
     addSuffix: true,
   });
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <div className="md:w-[864px] px-3 ">
         <h1 className="py-3 text-2xl md:text-4xl font-bold leading-normal text-center md:text-left">
           {title}
@@ -59,7 +54,10 @@ function BlogHeader({
         />
 
         <div className="flex flex-row items-center justify-between px-3 ">
-          <ShareBlog />
+          <ShareBlog
+            url={`https://spaceyatech.com/blogs/${titleSlug}`}
+            title={title}
+          />
 
           <BlogStats likes={likes} blogId={id} />
         </div>
