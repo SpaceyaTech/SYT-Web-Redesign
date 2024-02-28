@@ -16,6 +16,7 @@ import CommunityPage from "./pages/community/CommunityPage";
 import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
 import DonatePage from "./pages/donate/DonatePage";
 import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
+import Welcome from "./pages/email-templates/Welcome";
 import Error400 from "./pages/errorPages/Error400";
 import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
@@ -70,4 +71,5 @@ export {
   ResetPassword,
   SignUp,
   GalleryPage,
+  Welcome,
 };

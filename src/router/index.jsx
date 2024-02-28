@@ -25,6 +25,7 @@ import {
   Error400,
   Error403,
   GalleryPage,
+  Welcome,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -143,6 +144,10 @@ const router = createBrowserRouter([
   {
     path: "/error-500",
     element: <Error500 />,
+  },
+  {
+    path: "/welcome",
+    element: <Welcome />,
   },
 
   // {

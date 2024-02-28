@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import logo from "../../assets/images/sytLogo.png";
 import menu from "../../assets/images/hamburger-menu.svg";
+import logo from "../../assets/images/sytLogo.png";
 
 const navLinks = [
   {
