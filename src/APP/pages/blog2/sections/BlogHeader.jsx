@@ -50,7 +50,7 @@ function BlogHeader({
         <img
           src={image}
           alt={title}
-          className="object-cover overflow-hidden w-full md:h-[320px] md:rounded-xl px-4 md:px-0"
+          className="object-contain overflow-hidden w-full lg:rounded-xl px-4 md:px-0"
         />
 
         <div className="flex flex-row items-center justify-between px-3 ">
