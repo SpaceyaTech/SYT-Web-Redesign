@@ -1,0 +1,97 @@
+import React from "react";
+
+import { bgLayer, email } from "../../../assets/images/emails";
+import { facebook, linkedin, twitter } from "../../../assets/images/socials";
+import logo from "../../../assets/images/sytLogo.png";
+
+function PasswordConfirmationSuccess() {
+  return (
+    <main className="bg-[#F4FFFC] md:py-4">
+      <section className="bg-white max-w-[640px] md:rounded-2xl md:shadow-inner mx-auto flex items-center flex-col gap-8 px-4 md:px-0 py-6 md:py-12">
+        <div className="h-40 md:h-60 w-full bg-[#009975] rounded-2xl overflow-hidden">
+          <div
+            style={{ backgroundImage: `url(${bgLayer})` }}
+            className="h-full w-full bg-cover px-4 md:px-8 py-3 md:py-6 flex flex-col gap-3"
+          >
+            <h2 className="bg-gradient-to-r from-[#AAE3BD] to-[#CEFCF1] text-transparent bg-clip-text text-3xl md:text-5xl leading-tight font-bold">
+              Welcome to <br /> SpaceYaTech
+            </h2>
+
+            <p className="text-white text-base md:text-xl font-light leading-snug">
+              Africa’s fastest growing open-source{" "}
+              <br className="hidden md:flex" />
+              community
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-4 px-4 max-w-xl md:mb-6 text-[#333333]">
+          <p className="text-sm font-normal">
+            Your account has been approved and you can now log in to the
+            SpaceYaTech network.
+          </p>
+
+          <span className="text-center text-sm font-normal">
+            You can access Spaceyatech online or on any device by going to{" "}
+            <a
+              href="http://spaceyatech.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              https://spaceyatech.com
+            </a>
+          </span>
+        </div>
+
+        <div className="h-4 bg-[#F4FFFC] w-full" />
+
+        <div className="flex items-center justify-between w-full max-w-xl">
+          <img
+            src={logo}
+            alt="logo"
+            className="h-12 md:h-16 w-12 md:w-16 object-cover"
+          />
+
+          <div className="flex items-center gap-6">
+            <a
+              href="https://x.com/SpaceYaTech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={twitter}
+                alt="twitter"
+                className="h-8 w-8 object-cover"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/spaceyatech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={facebook}
+                alt="facebook"
+                className="h-8 w-8 object-cover"
+              />
+            </a>
+            <a
+              href="https://linkedin.com/company/spaceyatech"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={linkedin}
+                alt="linkedIn"
+                className="h-8 w-8 object-cover"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export default PasswordConfirmationSuccess;

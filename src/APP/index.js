@@ -19,6 +19,8 @@ import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage"
 import {
   PasswordResetSuccess,
   PasswordResetRequest,
+  PasswordConfirmationRequest,
+  PasswordConfirmationSuccess,
   Welcome,
 } from "./pages/email-templates";
 import Error400 from "./pages/errorPages/Error400";
@@ -78,4 +80,6 @@ export {
   Welcome,
   PasswordResetSuccess,
   PasswordResetRequest,
+  PasswordConfirmationRequest,
+  PasswordConfirmationSuccess,
 };
