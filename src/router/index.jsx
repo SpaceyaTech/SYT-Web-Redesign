@@ -25,7 +25,7 @@ import {
   Error400,
   Error403,
   GalleryPage,
-  Welcome,
+  PasswordResetRequest,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -147,7 +147,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/welcome",
-    element: <Welcome />,
+    element: <PasswordResetRequest />,
   },
 
   // {
