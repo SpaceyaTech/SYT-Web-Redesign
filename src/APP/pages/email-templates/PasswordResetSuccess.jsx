@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
 
 import { facebook, linkedin, twitter } from "../../../assets/images/socials";
 import logo from "../../../assets/images/sytLogo.png";
 
-function PasswordResetRequest() {
+function PasswordResetSuccess() {
   return (
     <main className="bg-[#F4FFFC] md:py-4">
       <section className="bg-white max-w-[640px] md:rounded-2xl md:shadow-inner mx-auto flex items-center flex-col gap-8 px-4 md:px-0 py-6 md:py-12">
@@ -11,32 +12,22 @@ function PasswordResetRequest() {
 
         <div className="flex flex-col items-start gap-6 max-w-xl md:mb-6">
           <h2 className="text-xl md:text-3xl font-medium">
-            Password reset request{" "}
+            Your SpaceYaTech password has changed
           </h2>
-
-          <div className="flex flex-col justify-between gap-4">
-            <h4 className="text-[#263238] text-sm leading-6 md:text-base font-normal">
-              Hello Hudson Obai,
-            </h4>
-            <p className="text-[#263238] text-sm leading-6 md:text-base font-normal">
-              You are getting this email because we received a password reset
-              request for your SpaceYaTech account.
-            </p>
-
-            <button
-              type="button"
-              className="md:mt-6 px-10 py-3 uppercase w-full sm:w-fit text-white text-base bg-[#009975] rounded-xl"
+          <p className="text-[#263238] text-sm leading-6 md:text-base font-normal">
+            Hello Hudson Obai,
+            <br />
+            <br />
+            Your SpaceYaTech password was changed successfully.
+            <br />
+            If you didn&apos;t request this password change{" "}
+            <a
+              href="mailto:info@spaceyatech,com"
+              className="underline uppercase text-primary font-semibold"
             >
-              Reset Password
-            </button>
-
-            <p className="text-[#263238] text-sm leading-6 md:text-base font-normal">
-              Please note that the reset link is valid for 60 minutes
-              <br />
-              If you did not request a password reset, you can ignore this
-              email.
-            </p>
-          </div>
+              CONTACT US
+            </a>
+          </p>
 
           <span className="text-base font-medium">SpaceYaTech Team</span>
         </div>
@@ -91,4 +82,4 @@ function PasswordResetRequest() {
   );
 }
 
-export default PasswordResetRequest;
+export default PasswordResetSuccess;

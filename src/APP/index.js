@@ -16,7 +16,11 @@ import CommunityPage from "./pages/community/CommunityPage";
 import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
 import DonatePage from "./pages/donate/DonatePage";
 import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
-import { PasswordResetRequest, Welcome } from "./pages/email-templates";
+import {
+  PasswordResetSuccess,
+  PasswordResetRequest,
+  Welcome,
+} from "./pages/email-templates";
 import Error400 from "./pages/errorPages/Error400";
 import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
@@ -72,5 +76,6 @@ export {
   SignUp,
   GalleryPage,
   Welcome,
+  PasswordResetSuccess,
   PasswordResetRequest,
 };
