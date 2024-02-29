@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import { useRelatedBlogsData } from "../../../../hooks/Queries/blog/useBlogData";
-import BlogCard from "../../blogs/sections/BlogCard";
 import { filterRelatedBlogs } from "../../../../utilities/FilterBlogs";
+import RelatedBlogCard from "./RelatedBlogCard";
 
 function RelatedBlogs({ blogId, categoryId }) {
-  const { title_slug } = useParams();
+  const { titleSlug } = useParams();
 
   const {
     data: relatedBlogsData,
@@ -17,11 +18,11 @@ function RelatedBlogs({ blogId, categoryId }) {
 
   useEffect(() => {
     refetchRelatedBlogsData();
-  }, [title_slug]);
+  }, [refetchRelatedBlogsData, titleSlug]);
 
   const filteredRelatedBlogs = filterRelatedBlogs(
     relatedBlogsData?.blogs,
-    title_slug
+    titleSlug
   );
 
   return (
@@ -31,7 +32,7 @@ function RelatedBlogs({ blogId, categoryId }) {
 
       {isSuccess && filteredRelatedBlogs.length > 0 && (
         <>
-          <h2 className="text-2xl text-gray-500 font-semibold underline decoration-green-600 underline-offset-2">
+          <h2 className="text-2xl text-black font-semibold underline decoration-green-600 underline-offset-2">
             {filteredRelatedBlogs.length > 1
               ? "Related Articles"
               : "Related Article"}
@@ -46,7 +47,7 @@ function RelatedBlogs({ blogId, categoryId }) {
                   }
                   return true;
                 })
-                .map((blog) => <BlogCard key={blog.id} blog={blog} />)
+                .map((blog) => <RelatedBlogCard key={blog.id} blog={blog} />)
             ) : (
               <p className="text-lg italic">No related blogs found!</p>
             )}

@@ -5,9 +5,9 @@ import { useNavigate, Link } from "react-router-dom";
 
 import { arrowRight } from "../../../../assets/images/blogs-page";
 import logo from "../../../../assets/images/sytLogo.png";
-import BlogStats from "./BlogStats";
+import { BlogStats } from "../../blogs/sections";
 
-function BlogCard({ blog }) {
+function RelatedBlogCard({ blog }) {
   const navigate = useNavigate();
 
   const timeAgo =
@@ -22,7 +22,7 @@ function BlogCard({ blog }) {
       className="flex flex-col items-start w-full mb-5"
     >
       <img
-        src={blog.image}
+        src={`https://apis.spaceyatech.com/${blog.image}`}
         alt={blog.title}
         className="w-full h-60 object-cover rounded-lg"
       />
@@ -72,4 +72,4 @@ function BlogCard({ blog }) {
   );
 }
 
-export default BlogCard;
+export default RelatedBlogCard;
