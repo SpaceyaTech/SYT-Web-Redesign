@@ -6,14 +6,20 @@ import logo from "../../../assets/images/sytLogo.png";
 
 function Welcome() {
   return (
-    <main className="bg-[#F4FFFC] p-20">
-      <section className="bg-white max-w-[640px] rounded-2xl shadow-inner mx-auto flex items-center flex-col gap-8 px-2 md:px-0 py-12">
+    <main className="bg-[#F4FFFC] md:py-4">
+      <section className="bg-white max-w-[640px] md:rounded-2xl md:shadow-inner mx-auto flex items-center flex-col gap-8 px-4 md:px-0 py-6 md:py-12">
         <img src={logo} alt="logo" className="h-16 w-16 object-contain" />
 
-        <img src={wave} alt="wave" className="w-40 h-40 object-cover" />
-        <div className="flex flex-col items-start gap-6 max-w-xl mb-6">
-          <h2 className="text-3xl font-medium">Welcome to the community!</h2>
-          <p className="text-base font-normal">
+        <img
+          src={wave}
+          alt="wave"
+          className="w-20 md:w-40 h-20 md:h-40 object-cover"
+        />
+        <div className="flex flex-col items-start gap-6 max-w-xl md:mb-6">
+          <h2 className="text-xl md:text-3xl font-medium">
+            Welcome to the community!
+          </h2>
+          <p className="text-[#263238] text-sm leading-6 md:text-base font-normal">
             You’re in safe hands.
             <br />
             <br />
@@ -28,14 +34,20 @@ function Welcome() {
 
           <button
             type="button"
-            className="mx-auto mt-6 px-11 py-4 w-fit text-white text-base bg-[#009975] rounded-xl"
+            className="mx-auto md:mt-6 md:px-11 py-4 w-full md:w-fit text-white text-base bg-[#009975] rounded-xl"
           >
             Join Community
           </button>
         </div>
 
+        <div className="h-4 bg-[#F4FFFC] w-full" />
+
         <div className="flex items-center justify-between w-full max-w-xl">
-          <img src={logo} alt="logo" className="h-16 w-16 object-cover" />
+          <img
+            src={logo}
+            alt="logo"
+            className="h-12 md:h-16 w-12 md:w-16 object-cover"
+          />
 
           <div className="flex items-center gap-6">
             <a
