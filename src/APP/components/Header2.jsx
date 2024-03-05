@@ -30,11 +30,11 @@ const navLinks = [
     link: "Blogs",
     route: "/blogs",
   },
-  // {
-  //   id: 6,
-  //   link: "Resources",
-  //   route: "/resources",
-  // },
+  {
+    id: 6,
+    link: "Resources",
+    route: "/resources",
+  },
   // {
   //   id: 7,
   //   link: "Shop",
