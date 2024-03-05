@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import { useRef, useEffect } from "react";
 
 import { glovo } from "../../../../assets/images/blogs-page";
 
@@ -9,13 +9,22 @@ import NextRead from "./NextRead";
 import "./blogBody.css";
 
 function BlogBody({ id, categoryId, blogBody }) {
+  const BodyRef = useRef(null);
+
+  useEffect(() => {
+    if (BodyRef.current) {
+      BodyRef.current.innerHTML += blogBody ?? "";
+    }
+  }, [blogBody]);
+
   return (
     <div className="flex flex-col md:flex-row gap-5 w-full pb-8 px-3">
       <div className="w-full md:w-[70%] flex flex-col gap-5">
         <div className="container text-[13px] md:text-base font-normal text-[#323433]">
           <div
+            ref={BodyRef}
             className="blog-content"
-            dangerouslySetInnerHTML={{ __html: blogBody }}
+            // dangerouslySetInnerHTML={{ __html: blogBody }}
           />
 
           {/* <Advert /> */}

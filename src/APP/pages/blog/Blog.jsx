@@ -21,6 +21,8 @@ function Blog() {
     refetchBlogData();
   }, [titleSlug]);
 
+  console.log(blogData)
+  
   return (
     <div className="w-screen max-w-[1440px] mx-auto">
       {isError && navigate("/error-500")}
