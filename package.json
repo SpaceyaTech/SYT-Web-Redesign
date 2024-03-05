@@ -34,6 +34,7 @@
     "react-dom": "^18.2.0",
     "react-fast-marquee": "^1.6.2",
     "react-hook-form": "^7.48.2",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-photo-album": "^2.3.0",
     "react-router-dom": "^6.11.2",
     "react-share": "^5.1.0",
