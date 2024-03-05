@@ -7,7 +7,7 @@ function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
   const {
     data: resourceTypes,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useResourcesData();
@@ -20,7 +20,7 @@ function ResourcesSection() {
   return (
     <>
       {isError && <p>Error loading resource categories!</p>}
-      {isLoading && <p>Loading resource categories...</p>}
+      {isPending && <p>Loading resource categories...</p>}
       {isSuccess && (
         <>
           <div className="flex flex-col gap-12">

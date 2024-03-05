@@ -11,7 +11,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
 
   const {
     data: topEventsData,
-    isLoading: isLoadingTopEvents,
+    isPending: isLoadingTopEvents,
     isError: isErrorTopEvents,
     isSuccess: isSuccessTopEvents,
     refetch: refetchTopEvents,
@@ -19,7 +19,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
 
   const {
     data: topEventsCities,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useAllCities();
@@ -57,7 +57,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
       {showTabs && <EventsTab updateRecentFilter={updateRecentFilter} />}
 
       {isError && <p>Error loading top events!</p>}
-      {isLoading && <p>Loading top events...</p>}
+      {isPending && <p>Loading top events...</p>}
       {isSuccess && (
         <>
           {topEventsData?.count === 0 ? (

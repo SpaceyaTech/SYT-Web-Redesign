@@ -10,7 +10,7 @@ function RelatedBlogs({ blogId, categoryId }) {
   const {
     data: relatedBlogsData,
     refetch: refetchRelatedBlogsData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useRelatedBlogsData(categoryId);
@@ -27,7 +27,7 @@ function RelatedBlogs({ blogId, categoryId }) {
   return (
     <>
       {isError && <p>Error loading blogs!</p>}
-      {isLoading && <p>Loading blogs...</p>}
+      {isPending && <p>Loading blogs...</p>}
 
       {isSuccess && filteredRelatedBlogs.length > 0 && (
         <>

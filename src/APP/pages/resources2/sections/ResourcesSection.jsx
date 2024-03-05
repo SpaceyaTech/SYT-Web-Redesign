@@ -25,7 +25,7 @@ function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
   // const {
   //   data: resourceTypes,
-  //   isLoading,
+  //   isPending,
   //   isError,
   //   isSuccess,
   // } = useResourcesData();
@@ -38,7 +38,7 @@ function ResourcesSection() {
   return (
     <>
       {/* {isError && <p>Error loading resource categories!</p>}
-      {isLoading && <p>Loading resource categories...</p>} */}
+      {isPending && <p>Loading resource categories...</p>} */}
       {/* {isSuccess && ( */}
       <div className="flex flex-col gap-12">
         <div className="flex self-stretch flex-row mx-auto w-full md:w-fit border-[#CBCDCC] border-2 rounded-[36px] px-4 py-3">

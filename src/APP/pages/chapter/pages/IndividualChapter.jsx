@@ -11,7 +11,7 @@ function IndividualChapter() {
   const { id } = useParams();
   const {
     data: chapterData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useIndividualChapterData(id);
@@ -19,7 +19,7 @@ function IndividualChapter() {
   return (
     <>
       {isError && <p>Error loading chapter details!</p>}
-      {isLoading === "loading" && <p>Loading chapter details...</p>}
+      {isPending === "loading" && <p>Loading chapter details...</p>}
       {isSuccess && (
         <div>
           <WelcomeSection chapter={chapterData} />
