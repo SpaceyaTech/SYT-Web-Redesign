@@ -28,7 +28,7 @@ function HeroSection() {
           className="absolute -top-8 md:-top-24 lg:-top-8 xl:-top-28 right-0 md:-right-36 lg:-right-48 xl:-right-48 w-2/6 md:w-auto lg:w-[70%]"
         />
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center md:my-20 min-h-96 px-4 md:px-0">
+      <div className="flex flex-col md:flex-row justify-between items-center md:my-20 min-h-96 px-4 ">
         <div className="my-10">
           <img src={about2} alt="space ya tech" />
         </div>

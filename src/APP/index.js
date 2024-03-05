@@ -10,6 +10,7 @@ import LogIn from "./pages/auth/LogIn";
 import ResetPassword from "./pages/auth/ResetPassword";
 import SignUp from "./pages/auth/SignUp";
 import Blog from "./pages/blog/Blog";
+import Blog2 from "./pages/blog2/Blog2";
 import Blogs from "./pages/blogs/Blogs";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
 import CommunityPage from "./pages/community/CommunityPage";
@@ -55,6 +56,7 @@ export {
   SingleEvent,
   Blogs,
   Blog,
+  Blog2,
   EventsPage,
   EventsSection,
   SingleProductDonation,
