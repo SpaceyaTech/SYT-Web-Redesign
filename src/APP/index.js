@@ -10,6 +10,7 @@ import LogIn from "./pages/auth/LogIn";
 import ResetPassword from "./pages/auth/ResetPassword";
 import SignUp from "./pages/auth/SignUp";
 import Blog from "./pages/blog/Blog";
+import Blog2 from "./pages/blog2/Blog2";
 import Blogs from "./pages/blogs/Blogs";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
 import CommunityPage from "./pages/community/CommunityPage";
@@ -27,7 +28,7 @@ import GalleryPage from "./pages/gallery/GalleryPage";
 import LandingPage from "./pages/landingPage/LandingPage";
 import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
-import Resources from "./pages/resources/Resources";
+import Resources from "./pages/resources2/Resources";
 import Homepage from "./pages/shop/Homepage";
 import Checkout from "./pages/shop/OrderSummaryPage";
 import ProductDisplay from "./pages/shop/ProductDisplayPage";
@@ -55,6 +56,7 @@ export {
   SingleEvent,
   Blogs,
   Blog,
+  Blog2,
   EventsPage,
   EventsSection,
   SingleProductDonation,

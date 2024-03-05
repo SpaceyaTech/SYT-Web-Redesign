@@ -7,11 +7,12 @@ import {
   Layout,
   Products,
   Blog,
+  Blog2,
   Blogs,
   EventsPage,
   IndividualChapter,
   Homepage,
-  // Resources,
+  Resources,
   ProductDisplay,
   ForgotPassword,
   LogIn,
@@ -57,8 +58,12 @@ const router = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path: "/blogs/:title_slug",
+        path: "/blogs/:titleSlug",
         element: <Blog />,
+      },
+      {
+        path: "/blogs2/:titleSlug",
+        element: <Blog2 />,
       },
       {
         path: "/allevents",
@@ -89,11 +94,10 @@ const router = createBrowserRouter([
         path: "/events/:id", // New route path
         element: <SingleEvent />,
       },
-      // {
-      //   path: "/resources",
-      //   element: <Resources />,
-      // },
-
+      {
+        path: "/resources",
+        element: <Resources />,
+      },
       // {
       //   path: "/donate",
       //   element: <DonatePage />,
@@ -135,7 +139,6 @@ const router = createBrowserRouter([
   {
     path: "/error-403",
     element: <Error403 />,
-
   },
   {
     path: "/*",

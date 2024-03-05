@@ -1,9 +1,19 @@
-import { default as linkedin } from "./linkedIn.svg";
-import { default as facebook } from "./facebook.svg";
-import { default as twitter } from "./twitter.svg";
-import { default as instagram } from "./instagram.svg";
-import { default as spotify } from "./spotify.png";
-import { default as discord } from "./discord.svg";
-import { default as youtube } from "./youtube.svg";
+import linkedin from "./linkedIn.svg";
+import facebook from "./facebook.svg";
+import twitter from "./twitter.svg";
+import instagram from "./instagram.svg";
+import spotify from "./spotify.png";
+import discord from "./discord.svg";
+import youtube from "./youtube.svg";
+import whatsapp from "./whatsapp.svg";
 
-export { linkedin, facebook, twitter, instagram, spotify, discord, youtube };
+export {
+  linkedin,
+  facebook,
+  twitter,
+  instagram,
+  spotify,
+  discord,
+  youtube,
+  whatsapp,
+};
