@@ -12,7 +12,7 @@ import {
   EventsPage,
   IndividualChapter,
   Homepage,
-  // Resources,
+  Resources,
   ProductDisplay,
   ForgotPassword,
   LogIn,
@@ -94,11 +94,10 @@ const router = createBrowserRouter([
         path: "/events/:id", // New route path
         element: <SingleEvent />,
       },
-      // {
-      //   path: "/resources",
-      //   element: <Resources />,
-      // },
-
+      {
+        path: "/resources",
+        element: <Resources />,
+      },
       // {
       //   path: "/donate",
       //   element: <DonatePage />,
