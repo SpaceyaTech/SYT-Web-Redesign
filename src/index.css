@@ -15,6 +15,7 @@
   background: transparent;
 }
 
+/* Remove unnecessary classes */
 @layer utilities {
   .blur-1 {
     /* Vector */
