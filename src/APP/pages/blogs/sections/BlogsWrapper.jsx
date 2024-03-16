@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 
-
-import BlogCard from "./BlogCard";
-import BlogPagination from "./BlogPagination";
-import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -11,8 +7,12 @@ import {
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
 
 import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
+import { Loader } from "../../../components";
 
 import Error500 from "../../errorPages/Error500";
+import BlogCard from "./BlogCard";
+import BlogPagination from "./BlogPagination";
+import FeaturedBlogs from "./FeaturedBlogs";
 
 function SearchResults({ searchText }) {
   return (
@@ -71,6 +71,8 @@ function BlogsWrapper() {
       )}
       {isSuccess && (
         <>
+          <FeaturedBlogs />
+
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
             {statusBlogCategories === "error" && (
               <p>Error loading blog categories!</p>
