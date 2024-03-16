@@ -71,7 +71,7 @@ function BlogsWrapper() {
       )}
       {isSuccess && (
         <>
-          <FeaturedBlogs />
+          {!searchText && <FeaturedBlogs />}
 
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
             {statusBlogCategories === "error" && (
@@ -112,7 +112,7 @@ function BlogsWrapper() {
           </div>
 
           {searchBlog?.results.length > 0 ? (
-            <div className="grid sm:grid-cols-2 gap-8 grid-cols-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {allBlogs}
             </div>
           ) : (
