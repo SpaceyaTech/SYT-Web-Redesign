@@ -13,7 +13,7 @@ function FeaturedBlogs() {
   const readNextBlogs = filteredReadNextBlogs(
     blogsData?.results,
     titleSlug
-  ).slice(6, 8);
+  ).slice(0, 2);
 
   const handleToggle = () => {
     setCurrentIndex((prev) => (prev === 0 ? 1 : 0));
@@ -38,11 +38,11 @@ export default FeaturedBlogs;
 function FeaturedBlogCard({ blog, currentIndex, handleToggle }) {
   return (
     <div
-      className={`min-w-full snap-center my-6 md:my-10 aspect-video bg-center bg-cover size-full rounded-lg md:rounded-2xl relative px-4 md:px-10 py-6 md:py-12 flex flex-col gap-5 items-start justify-end ${
+      className={`min-w-full snap-center my-6 md:my-10 aspect-video bg-center bg-no-repeat bg-cover size-full rounded-lg md:rounded-2xl relative px-4 md:px-10 py-6 md:py-12 flex flex-col gap-5 items-start justify-end ${
         currentIndex !== 0 ? "-translate-x-full" : ""
       }`}
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${blog.image}")`,
+        backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("${blog.image}")`,
       }}
     >
       <h4 className="text-[#29CC6A] text-base md:text-xl font-semibold">
