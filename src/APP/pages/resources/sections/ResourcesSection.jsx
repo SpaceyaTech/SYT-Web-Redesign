@@ -10,6 +10,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+// million-ignore
 function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
   // const {
