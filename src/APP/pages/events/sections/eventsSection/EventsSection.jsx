@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import EventsUpdateSection from "./EventsUpdateSection";
-import EventsTab from "./EventsTab";
-import Events from "./Events";
 import { useAllCities } from "../../../../../hooks/Queries/eventsSection/useEventCategories";
 import useTopEvents from "../../../../../hooks/Queries/eventsSection/useTopEvents";
+import { Loader } from "../../../../components";
+import Error500 from "../../../errorPages/Error500";
+import Events from "./Events";
+import EventsTab from "./EventsTab";
+import EventsUpdateSection from "./EventsUpdateSection";
 
 function EventsSection({ showTabs, showAllEventsLink }) {
   const [filters, setFilters] = useState({});
@@ -44,7 +46,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
   return (
     <div className="p-2 md:p-6">
       {isErrorTopEvents && <p>Error loading cities!</p>}
-      {isLoadingTopEvents && <p>Loading cities...</p>}
+      {isLoadingTopEvents && <p className="text-primary">Loading cities...</p>}
       {isSuccessTopEvents && (
         <EventsUpdateSection
           cityFilter={filters}
@@ -56,8 +58,13 @@ function EventsSection({ showTabs, showAllEventsLink }) {
 
       {showTabs && <EventsTab updateRecentFilter={updateRecentFilter} />}
 
-      {isError && <p>Error loading top events!</p>}
-      {isPending && <p>Loading top events...</p>}
+      {isError && <Error500 />}
+      {isPending && (
+        <div className="flex flex-col items-center justify-center gap-4 py-10">
+          <Loader />
+          <p className="text-lg font-medium text-primary">Loading events...</p>
+        </div>
+      )}
       {isSuccess && (
         <>
           {topEventsData?.count === 0 ? (

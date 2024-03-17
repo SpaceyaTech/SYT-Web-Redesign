@@ -7,6 +7,8 @@ import {
 } from "../../../../../assets/images/community";
 import ChapterCard from "./ChapterCard";
 import useChaptersData from "../../../../../hooks/Queries/community/useChaptersData";
+import { Loader } from "../../../../components";
+import Error500 from "../../../errorPages/Error500";
 
 function ChaptersSection() {
   const {
@@ -29,8 +31,15 @@ function ChaptersSection() {
             like-minded individuals
           </p>
           <div className="grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-1 lg:grid-cols-3">
-            {isError && <p>Error loading chapter details!</p>}
-            {isPending && <p>Loading chapters...</p>}
+            {isError && <Error500 />}
+            {isPending && (
+              <div className="flex flex-col items-center justify-center gap-4 py-10">
+                <Loader />
+                <p className="text-lg font-medium text-primary">
+                  Loading chapters...
+                </p>
+              </div>
+            )}
             {isSuccess && Array.isArray(chaptersData) && chaptersData
               ? chaptersData.map(
                   ({ country, members, banner, id, name, city }) => (

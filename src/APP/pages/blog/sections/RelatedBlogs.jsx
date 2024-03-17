@@ -17,7 +17,7 @@ function RelatedBlogs({ blogId, categoryId }) {
 
   useEffect(() => {
     refetchRelatedBlogsData();
-  }, [refetchRelatedBlogsData, title_slug,]);
+  }, [refetchRelatedBlogsData, title_slug]);
 
   const filteredRelatedBlogs = filterRelatedBlogs(
     relatedBlogsData?.blogs,
