@@ -20,8 +20,6 @@ function BlogWrapper({ blog }) {
     addSuffix: true,
   });
 
-  console.log(blog);
-
   return (
     <div className="flex flex-row">
       <div className="w-full md:w-3/5 flex flex-col">
