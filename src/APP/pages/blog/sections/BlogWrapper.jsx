@@ -7,6 +7,8 @@ import BlogStats from "../../blogs/sections/BlogStats";
 
 import "./blogWrapper.css";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 function BlogWrapper({ blog }) {
   const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
@@ -22,10 +24,11 @@ function BlogWrapper({ blog }) {
 
           <div className="flex items-center justify-between">
             <div className="flex gap-2">
-              <img
+              <LazyLoadImage
                 src={logo}
                 alt="icon"
                 className="w-10 h-10 object-cover rounded-full bg-gray-200 flex items-center justify-center p-1"
+                effect="blur"
               />
 
               <div className="flex flex-col text-sm">

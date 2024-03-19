@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 function Caroussel({ CarousselData }) {
   return (
     <section className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl pl-4 lg:pl-14 xl:pl-28">
@@ -15,10 +17,11 @@ function Caroussel({ CarousselData }) {
             key={index}
             className="relative after:block after:relative after:-mt-36 after:h-36 after:w-full after:content-[''] after:z-0 after:rounded-b-2xl after:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.5)_29.17%,_rgba(0,0,0,0.94)_97.92%)]"
           >
-            <img
+            <LazyLoadImage
               className="rounded-2xl w-[300px] h-[300px] object-cover items-center"
               src={image}
               alt={name}
+              effect="blur"
             />
             <div className="absolute -translate-x-2/4 -translate-y-1/4 left-2/4 top-3/4 text-white text-center z-10 font-medium w-4/5">
               <p className="pb-2 text-xl">{name}</p>

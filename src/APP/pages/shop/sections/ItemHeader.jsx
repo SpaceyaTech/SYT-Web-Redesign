@@ -5,6 +5,7 @@ import { Fragment, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
 import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ItemHeader({ show }) {
   const { pathname } = useLocation();
@@ -115,10 +116,11 @@ function ItemHeader({ show }) {
                                   selected ? "font-medium" : "font-normal"
                                 }`}
                               >
-                                <img
+                                <LazyLoadImage
                                   src={item.image}
                                   alt={item.name}
                                   className="h-12 w-12 rounded"
+                                  effect="blur"
                                 />{" "}
                                 <span>{item.name}</span>
                               </div>
@@ -147,7 +149,7 @@ function ItemHeader({ show }) {
           </div>
         )}
         <button type="button" className="ml-6 items-end" onClick={show}>
-          <img src={CartIcon} alt="cart" />
+          <LazyLoadImage src={CartIcon} alt="cart" effect="blur" />
         </button>
       </div>
     </div>

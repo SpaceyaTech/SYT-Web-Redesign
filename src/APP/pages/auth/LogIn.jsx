@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import publicAxios from "../../../api/publicAxios";
 import LoginImg from "../../../assets/images/auth/login.svg";
 import useAuth from "../../../hooks/useAuth";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function LogIn() {
   const { auth, setAuth } = useAuth();
@@ -45,7 +46,12 @@ function LogIn() {
         <h2 className="text-2xl">
           It&apos;s always a pleasure to see you again
         </h2>
-        <img src={LoginImg} alt="Log in" className="m-auto" />
+        <LazyLoadImage
+          src={LoginImg}
+          alt="Log in"
+          className="m-auto"
+          effect="blur"
+        />
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">

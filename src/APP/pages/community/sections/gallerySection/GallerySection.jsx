@@ -12,6 +12,7 @@ import {
   galleryimage8,
   galleryimage9,
 } from "../../../../../assets/images/community";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // const photos = [{ image:galleryimage1}, { image:galleryimage2 }, { image: galleryimage3 }, { image: galleryimage4}, { image: galleryimage5 }, { image: galleryimage6}, { image: galleryimage7}, { image: galleryimage8}]
 function GallerySection() {
@@ -22,63 +23,71 @@ function GallerySection() {
         <div className="-m-1 flex  md:-m-2">
           <div className="flex w-3/8 flex-wrap">
             <div className="w-1/3">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage1}
+                effect="blur"
               />
             </div>
             <div className="w-1/3">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage7}
+                effect="blur"
               />
             </div>
             <div className="w-1/3">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage9}
+                effect="blur"
               />
             </div>
             <div className="w-full">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage2}
+                effect="blur"
               />
             </div>
           </div>
           <div className="flex w-3/8 flex-wrap">
             <div className="w-full">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage4}
+                effect="blur"
               />
             </div>
             <div className="w-1/2">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage6}
+                effect="blur"
               />
             </div>
             <div className="w-1/2">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage5}
+                effect="blur"
               />
             </div>
           </div>
           <div className="flex w-1/4 flex-wrap">
             <div className="w-full">
-              <img
+              <LazyLoadImage
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage3}
+                effect="blur"
               />
             </div>
           </div>

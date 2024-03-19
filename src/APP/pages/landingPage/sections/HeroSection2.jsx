@@ -5,6 +5,7 @@ import kamilimu from "../../../../assets/images/kamilimu.png";
 import cytonn from "../../../../assets/images/cytonn.png";
 import osca from "../../../../assets/images/osca.png";
 import spheron from "../../../../assets/images/spheron.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const partners = [spheron, gdg_image, react_ke, kamilimu, cytonn, osca];
 
@@ -31,10 +32,11 @@ function HeroSection2() {
 
         {/* image */}
         <div className="w-full md:w-2/5 bg-white">
-          <img
+          <LazyLoadImage
             src={hero_image}
             alt="hero image"
             className="px-10 md:p-0 object-contain object-center md:object-right max-h-[532px] w-full"
+            effect="blur"
           />
         </div>
       </div>
@@ -48,11 +50,12 @@ function HeroSection2() {
         </h4>
         <div className="mx-auto overflow-x-scroll md:max-w-4/5 flex items-center justify-between gap-4 md:gap-16">
           {partners.map((partner) => (
-            <img
+            <LazyLoadImage
               src={partner}
               alt="partner"
               className="h-[50px] object-contain"
               key={partner}
+              effect="blur"
             />
           ))}
         </div>

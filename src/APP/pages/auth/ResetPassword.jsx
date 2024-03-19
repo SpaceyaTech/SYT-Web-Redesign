@@ -1,5 +1,6 @@
 import React from "react";
 import ResetPasswordImg from "../../../assets/images/auth/reset-password.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ResetPassword() {
   return (
@@ -11,7 +12,12 @@ function ResetPassword() {
         <h2 className="text-2xl mb-4">
           Let&apos;s create a new password for your account
         </h2>
-        <img src={ResetPasswordImg} alt="Reset Password" className="m-auto" />
+        <LazyLoadImage
+          src={ResetPasswordImg}
+          alt="Reset Password"
+          className="m-auto"
+          effect="blur"
+        />
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assets/images/sytLogo.png";
 import menu from "../../assets/images/hamburger-menu.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const navLinks = [
   {
@@ -56,17 +57,23 @@ const Header2 = () => {
     <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
       {/* logo */}
       <Link to="/">
-        <img src={logo} alt="logo" className="md:w-16 w-12" />
+        <LazyLoadImage
+          src={logo}
+          alt="logo"
+          className="md:w-16 w-12"
+          effect="blur"
+        />
       </Link>
 
       {/* mobile menu */}
-      <img
+      <LazyLoadImage
         src={menu}
         alt="logo"
         className="md:hidden"
         onClick={() => setShowNavlinks((prev) => !prev)}
+        effect="blur"
       />
-
+      
       {/* mobile navlinks */}
       <nav
         className="flex flex-col items-start justify-start gap-6 text-base absolute top-[90px] left-0 bg-white border-b w-full h-fit z-[1] p-5 pl-12"

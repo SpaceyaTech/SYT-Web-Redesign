@@ -13,6 +13,7 @@ import DetailsContainer from "./DetailsContainer";
 //   paragraph:
 //     "The SpaceYaTech Nairobi Chapter is led by a capable team of developers and designers from Kenya. ",
 // };
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ImpactSection({ organizers, city, country }) {
   // content-between md:px-20
@@ -29,10 +30,11 @@ function ImpactSection({ organizers, city, country }) {
               className="relative w-full h-72 rounded-lg overflow-auto mr-6 md:mr-0"
               key={id}
             >
-              <img
+              <LazyLoadImage
                 className="absolute inset-0 w-full h-full object-cover"
                 src={image}
                 alt="Image"
+                effect="blur"
               />
               <div className="absolute inset-0" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black to-transparent opacity-50 h-1/2" />

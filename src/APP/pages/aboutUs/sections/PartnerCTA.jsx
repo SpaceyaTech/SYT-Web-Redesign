@@ -11,6 +11,7 @@
 //   discord,
 // } from "../../../../assets/images/socials";
 // import Caroussel from "../../../components/Caroussel";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // const CreativeTeamData = [
 //   {
@@ -72,7 +73,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={twitter} alt="twitter" className="w-12 h-12" />
+              <LazyLoadImage src={twitter} alt="twitter" className="w-12 h-12" effect="blur" />
             </a>
 
             <a
@@ -80,7 +81,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={linkedin} alt="linkedin" className="w-12 h-12" />
+              <LazyLoadImage src={linkedin} alt="linkedin" className="w-12 h-12" effect="blur" />
             </a>
 
             <a
@@ -88,7 +89,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={discord} alt="discord" className="w-12 h-12 p-3" />
+              <LazyLoadImage src={discord} alt="discord" className="w-12 h-12 p-3" effect="blur" />
             </a>
 
             <a
@@ -96,7 +97,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={instagram} alt="instagram" className="w-12 h-12" />
+              <LazyLoadImage src={instagram} alt="instagram" className="w-12 h-12" effect="blur" />
             </a>
 
             <a
@@ -104,7 +105,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={facebook} alt="facebook" className="w-12 h-12" />
+              <LazyLoadImage src={facebook} alt="facebook" className="w-12 h-12" effect="blur" />
             </a>
           </div>
         </div> */}

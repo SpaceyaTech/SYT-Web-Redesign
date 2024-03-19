@@ -9,6 +9,7 @@ import { useDeleteSwag } from "../../../hooks/Mutations/shop/useCartSwagg";
 import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
 import useAuth from "../../../hooks/useAuth";
 import Counter from "./Counter";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CartDrawer({ open, setOpen }) {
   const { auth } = useAuth();
@@ -72,7 +73,11 @@ function CartDrawer({ open, setOpen }) {
                           onClick={() => setOpen(false)}
                         >
                           <span className="sr-only">Close panel</span>
-                          <img src={CloseIcon} alt="close" />
+                          <LazyLoadImage
+                            src={CloseIcon}
+                            alt="close"
+                            effect="blur"
+                          />
                         </button>
                       </div>
                     </div>
@@ -100,10 +105,11 @@ function CartDrawer({ open, setOpen }) {
                                     className="flex py-6 space-x-4 sm:space-x-16"
                                   >
                                     <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                                      <img
+                                      <LazyLoadImage
                                         src={`https://apis.spaceyatech.com${image}`}
                                         alt={name}
                                         className="h-full w-full object-cover object-center"
+                                        effect="blur"
                                       />
                                     </div>
 
@@ -126,9 +132,10 @@ function CartDrawer({ open, setOpen }) {
                                             handleDeleteSwag(id);
                                           }}
                                         >
-                                          <img
+                                          <LazyLoadImage
                                             src={DeleteIcon}
                                             alt="delete button"
+                                            effect="blur"
                                           />
                                         </button>
                                       </div>
@@ -160,10 +167,11 @@ function CartDrawer({ open, setOpen }) {
                         </p>
                         <div className="flex pb-8 pt-10 space-x-4 sm:space-x-16 sm:px-8">
                           <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                            <img
+                            <LazyLoadImage
                               src={Sample3}
                               alt="Mentorlst Hoodie"
                               className="h-full w-full"
+                              effect="blur"
                             />
                           </div>
                           <div className="flex flex-col flex-1 ">
