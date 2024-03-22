@@ -1,6 +1,7 @@
 import React from "react";
 
 import ScrollToTop from "../../../utilities/ScrollToTop";
+import LandingWrapper from "../../components/LandingWrapper";
 import {
   CTASection,
   FaqSection,
@@ -19,7 +20,9 @@ function LandingPage() {
       <ScrollToTop />
       <HeroSection />
       <Partners />
-      <FeatureSection />
+      <LandingWrapper title="what we do">
+        <FeatureSection />
+      </LandingWrapper>
       <Services />
       <PodcastSection />
       <StatsSection />
