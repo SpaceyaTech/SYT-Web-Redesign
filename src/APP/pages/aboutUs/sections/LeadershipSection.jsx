@@ -6,6 +6,7 @@ import { Caroussel } from "../../../components";
 import { closeIcon } from "../../../../assets/images/icons";
 import { LeadershipData } from "../data";
 import { buildComm } from "../../../../assets/images/aboutPage";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // env var
 const SERVICE_ID =
@@ -143,10 +144,11 @@ function LeadershipSection() {
                   >
                     <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-md bg-white p-4 md:p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
                       <button type="button" onClick={closeModal}>
-                        <img
+                        <LazyLoadImage
                           src={closeIcon}
                           alt="close"
                           className="object-contain w-4 h-4"
+                          effect="blur"
                         />
                       </button>
                       <form
@@ -222,7 +224,11 @@ function LeadershipSection() {
           </Transition>
         </div>
         <div className="md:w-1/2">
-          <img src={buildComm} alt="Space ya Tech Community" />
+          <LazyLoadImage
+            src={buildComm}
+            alt="Space ya Tech Community"
+            effect="blur"
+          />
         </div>
       </div>
     </section>

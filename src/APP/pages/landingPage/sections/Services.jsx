@@ -4,13 +4,14 @@ import React from "react";
 
 import { services } from "../data";
 import { serviceImg } from "../../../../assets/images/services-section";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function SytServices({ service }) {
   const { img, title, description, link } = service;
   return (
     <div className="p-4 flex flex-col md:flex-row">
       <div className="inline-flex items-center justify-center mb-4 flex-shrink-0">
-        <img src={img} alt={title} />
+        <LazyLoadImage src={img} alt={title} effect="blur" />
       </div>
       <div className="flex-grow pl-6">
         <h2 className="text-[#F7F7F7] text-2xl title-font font-medium mb-2">
@@ -47,10 +48,11 @@ function Services() {
   return (
     <section className="text-gray-600 body-font flex items-center bg-[#F7F7F7] mx-auto justify-center">
       <div className="flex-half w-1/2 hidden md:flex justify-end">
-        <img
+        <LazyLoadImage
           className="object-cover object-center rounded"
           alt="services"
           src={serviceImg}
+          effect="blur"
         />
       </div>
 

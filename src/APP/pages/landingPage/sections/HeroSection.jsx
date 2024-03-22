@@ -4,6 +4,7 @@ import react_ke from "../../../../assets/images/reactke.png";
 import kamilimu from "../../../../assets/images/kamilimu.png";
 import cytonn from "../../../../assets/images/cytonn.png";
 import osca from "../../../../assets/images/osca.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function HeroSection() {
   return (
@@ -62,52 +63,58 @@ function HeroSection() {
 
               {/* logo 2  */}
               <div className="flex justify-center items-center">
-                <img
+                <LazyLoadImage
                   className="object-cover object-center"
                   alt="gdg"
                   src={gdg_image}
+                  effect="blur"
                 />
               </div>
               {/* logo 3  */}
               <div className="flex justify-center items-center">
-                <img
+                <LazyLoadImage
                   className="object-cover object-center"
                   alt="react-ke"
                   src={react_ke}
+                  effect="blur"
                 />
               </div>
               {/* logo 4  */}
               <div className="flex justify-center items-center">
-                <img
+                <LazyLoadImage
                   className="object-cover object-center"
                   alt="kamilimu"
                   src={kamilimu}
+                  effect="blur"
                 />
               </div>
               {/* logo 5  */}
               <div className="flex justify-center items-center">
-                <img
+                <LazyLoadImage
                   className="object-cover object-center"
                   alt="cytonn"
                   src={cytonn}
+                  effect="blur"
                 />
               </div>
               {/* logo 6 */}
               <div className="flex justify-center items-center">
-                <img
+                <LazyLoadImage
                   className="object-cover object-center"
                   alt="osca"
                   src={osca}
+                  effect="blur"
                 />
               </div>
             </div>
           </div>
         </div>
         <div className="hidden md:block lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img
+          <LazyLoadImage
             className="object-cover object-center rounded"
             alt="hero"
             src={hero_image}
+            effect="blur"
           />
         </div>
       </div>

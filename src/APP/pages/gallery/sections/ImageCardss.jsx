@@ -1,14 +1,16 @@
 // import React from "react";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // function ImageCard({ photo }) {
 //   const { width, src, alt, date, event, height } = photo;
 //   return (
 //     <div className={`relative border w-[${width}px]`}>
-//       <img
+//       <LazyLoadImage
 //         src={src}
 //         alt={alt}
 //         className="aspect-video object-cover"
 //         loading="lazy"
+//         effect="blur"
 //       />
 
 //       <div className="absolute top-0 right-0 w-full h-full flex opacity-0 transition-all duration-500 ease-linear hover:opacity-100">

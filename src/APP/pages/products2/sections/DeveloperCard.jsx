@@ -1,13 +1,15 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const DeveloperCard = ({ name, title, headshot, portfolio }) => {
   return (
     <div className="relative h-[216px]">
       {/* headshot */}
-      <img
+      <LazyLoadImage
         src={headshot}
         alt={name}
         className="h-[120px] w-[120px] rounded-xl object-cover z-10 absolute top-0 left-1/2 transform -translate-x-1/2 shadow-md md:shadow-transparent"
+        effect="blur"
       />
 
       {/* Details */}

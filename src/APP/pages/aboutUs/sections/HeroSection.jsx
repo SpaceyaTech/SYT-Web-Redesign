@@ -1,6 +1,6 @@
 import React from "react";
-
 import { about2, heroImg } from "../../../../assets/images/aboutPage";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function HeroSection() {
   return (
@@ -22,15 +22,16 @@ function HeroSection() {
           vibrant community of innovators of tech, users of tech and tech
           evangelists.
         </p>
-        <img
+        <LazyLoadImage
           src={heroImg}
           alt="space ya tech"
           className="absolute -top-8 md:-top-24 lg:-top-8 xl:-top-28 right-0 md:-right-36 lg:-right-48 xl:-right-48 w-2/6 md:w-auto lg:w-[70%]"
+          effect="blur"
         />
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center md:my-20 min-h-96 px-4 ">
         <div className="my-10">
-          <img src={about2} alt="space ya tech" />
+          <LazyLoadImage src={about2} alt="space ya tech" effect="blur" />
         </div>
         <div className="leading-6 md:w-1/2 text-base space-y-4 md:pl-10">
           <p>

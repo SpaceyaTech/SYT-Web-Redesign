@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchIcon from "../../../../assets/images/icons/search-icon.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const initialData = [
   {
@@ -163,7 +164,7 @@ function EventsTable() {
             />
             <span className="sr-only">Search</span>
             <span className="absolute inset-y-0 right-1 flex items-center pr-2">
-              <img src={SearchIcon} alt="search" />
+              <LazyLoadImage src={SearchIcon} alt="search" effect="blur" />
             </span>
           </label>
         </div>

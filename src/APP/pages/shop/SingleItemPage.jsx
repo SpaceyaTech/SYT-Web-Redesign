@@ -15,6 +15,8 @@ import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 const products = [
   {
     id: 1,
@@ -100,15 +102,16 @@ export default function SingleItemPage() {
       {isSuccess ? (
         <div className="px-8 sm:px-0 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
           <div className="md:pb-14 md:w-1/2 space-y-6">
-            <img
+            <LazyLoadImage
               src={singleSwag.image}
               alt={singleSwag.name}
               className="m-auto md:min-w-full "
+              effect="blur"
             />
             <div className="flex justify-between">
               {VariationData.map((pic) => (
                 <div key={crypto.randomUUID()} className="w-[70px] sm:w-auto">
-                  <img src={pic} alt="recommendation" />
+                  <LazyLoadImage src={pic} alt="recommendation" effect="blur" />
                 </div>
               ))}
             </div>
@@ -130,12 +133,13 @@ export default function SingleItemPage() {
             <div className="flex justify-start space-x-6">
               {VariationData.map((pic) => (
                 <div key={crypto.randomUUID()}>
-                  <img
+                  <LazyLoadImage
                     src={pic}
                     alt=""
                     height="96px"
                     width="96px"
                     className="rounded-full"
+                    effect="blur"
                   />
                 </div>
               ))}

@@ -2,6 +2,7 @@
 import { formatDistanceToNow } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function RelatedBlogCard({ blog }) {
   const timeAgo = formatDistanceToNow(new Date(blog.created_at), {
@@ -12,10 +13,11 @@ function RelatedBlogCard({ blog }) {
       className="flex flex-row items-center gap-2 w-64"
       to={`/blogs2/${blog.title_slug}`}
     >
-      <img
+      <LazyLoadImage
         src={`https://apis.spaceyatech.com${blog.image}`}
         alt={blog.title}
         className="object-cover h-20 w-20"
+        effect="blur"
       />
 
       <div className="flex flex-col">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import formatEventDates from "../../../../../utilities/formatEventDate";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Events({ events, isVertical }) {
   const verticalContainer =
@@ -53,10 +54,11 @@ function Events({ events, isVertical }) {
                   }}
                 >
                   <Link to={`/events/${id}`} className="cursor-pointer">
-                    <img
+                    <LazyLoadImage
                       className="rounded-t-lg w-full h-56 object-contain"
                       src={poster}
                       alt={name}
+                      effect="blur"
                     />
 
                     <div className="p-5 text-[#323433] w-full">

@@ -2,6 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 import { testimonialData } from "../data";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function TestimonialSection() {
   return (
@@ -45,10 +46,11 @@ function TestimonialSection() {
                 </p>
               </blockquote>
               <figcaption className=" flex items-center pl-4">
-                <img
+                <LazyLoadImage
                   className="rounded-full w-20 h-20"
                   src={testimonial.img}
-                  alt=""
+                  alt="testimonial"
+                  effect="blur"
                 />
                 <div className="text-left pl-8">
                   <p className="font-medium">{testimonial.user}</p>

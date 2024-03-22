@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 
 import { partners } from "../data";
 import { bannerImg } from "../../../../assets/images/hero-section";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function HeroSection3() {
   return (
@@ -32,10 +33,11 @@ function HeroSection3() {
 
         {/* hero img */}
         <div className="flex-1">
-          <img
+          <LazyLoadImage
             src={bannerImg}
             alt="banner"
             className="w-full h-full object-cover"
+            effect="blur"
           />
         </div>
       </div>
@@ -59,10 +61,11 @@ function HeroSection3() {
         >
           {partners.map(({ id, img, name, link }) => (
             <a href={link} target="_blank" rel="noopener noreferrer" key={id}>
-              <img
+              <LazyLoadImage
                 src={img}
                 className="object-cover max-w-none px-7"
                 alt={name}
+                effect="blur"
               />
             </a>
           ))}

@@ -7,6 +7,7 @@ import RelatedBlogs from "./RelatedBlogs";
 import NextRead from "./NextRead";
 
 import "./blogBody.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlogBody({ id, categoryId, blogBody }) {
   return (
@@ -31,10 +32,11 @@ function BlogBody({ id, categoryId, blogBody }) {
       <div className="w-full md:w-[30%] hidden md:flex flex-col pt-20 gap-10 md:gap-64">
         <RelatedBlogs blogId={id} categoryId={categoryId} />
 
-        <img
+        <LazyLoadImage
           src={glovo}
           alt="glovo"
           className="object-cover w-full aspect-auto"
+          effect="blur"
         />
       </div>
     </div>

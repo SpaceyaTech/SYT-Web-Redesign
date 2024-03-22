@@ -4,6 +4,7 @@ import React from "react";
 import ForgotPasswordImg from "../../../assets/images/auth/forgot-password.svg";
 import EmailIcon from "../../../assets/images/auth/email-icon.svg";
 import MessageIcon from "../../../assets/images/auth/message-icon.svg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ForgotPassword() {
   return (
@@ -13,7 +14,12 @@ function ForgotPassword() {
           Forgot Password?
         </h1>
         <h2 className="text-2xl mb-4">Let&apos;s recover your account</h2>
-        <img src={ForgotPasswordImg} alt="Forgot Password" className="m-auto" />
+        <LazyLoadImage
+          src={ForgotPasswordImg}
+          alt="Forgot Password"
+          className="m-auto"
+          effect="blur"
+        />
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">
@@ -25,7 +31,7 @@ function ForgotPassword() {
         </p>
         <form className="space-y-6">
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
-            <img src={EmailIcon} alt="Email Icon" />
+            <LazyLoadImage src={EmailIcon} alt="Email Icon" effect="blur" />
             <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via Email</span>
               <input
@@ -37,7 +43,7 @@ function ForgotPassword() {
             </label>
           </div>
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
-            <img src={MessageIcon} alt="Message Icon" />
+            <LazyLoadImage src={MessageIcon} alt="Message Icon" effect="blur" />
             <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via SMS</span>
               <input

@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import publicAxios from "../../../api/publicAxios";
 import SignUpImg from "../../../assets/images/auth/signup.svg";
 import useAuth from "../../../hooks/useAuth";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function SignUp() {
   const { auth, setAuth } = useAuth();
@@ -71,7 +72,12 @@ function SignUp() {
           Shop!
         </h1>
         <h2 className="text-2xl">Let&apos;s get you started</h2>
-        <img src={SignUpImg} alt="Sign Up Page" className="m-auto" />
+        <LazyLoadImage
+          src={SignUpImg}
+          alt="Sign Up Page"
+          className="m-auto"
+          effect="blur"
+        />
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">

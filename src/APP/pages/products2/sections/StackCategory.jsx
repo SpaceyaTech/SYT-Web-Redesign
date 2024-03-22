@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const StackCategory = ({ category, stack }) => {
   return (
@@ -8,11 +9,12 @@ const StackCategory = ({ category, stack }) => {
       </h3>
       <div className="flex flex-row items-center gap-6 md:gap-4 px-3 flex-wrap justify-center">
         {stack.map(({ url, alt }) => (
-          <img
+          <LazyLoadImage
             key={alt}
             src={url}
             alt={alt}
             className="h-16 md:h-20 w-16 md:w-20 object-contain"
+            effect="blur"
           />
         ))}
       </div>
