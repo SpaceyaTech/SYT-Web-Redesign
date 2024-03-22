@@ -1,14 +1,4 @@
 import {
-  RichardMulandi,
-  Balogun,
-  Saruni,
-  Vivian,
-  Jean,
-  Melody,
-  Kristin,
-} from "../../../assets/images/podcast";
-
-import {
   ctfroom,
   DevOps,
   Propel,
@@ -21,6 +11,22 @@ import {
 } from "../../../assets/images/hero-section";
 
 import {
+  RichardMulandi,
+  Balogun,
+  Saruni,
+  Vivian,
+  Jean,
+  Melody,
+  Kristin,
+} from "../../../assets/images/podcast";
+
+import {
+  mentorship,
+  openSource,
+  twitter,
+} from "../../../assets/images/services-section";
+
+import {
   aibunny,
   harun,
   regan,
@@ -29,11 +35,6 @@ import {
   wakio,
   wayne,
 } from "../../../assets/testimonialSection";
-import {
-  mentorship,
-  openSource,
-  twitter,
-} from "../../../assets/images/services-section";
 
 export const podcasts = [
   {

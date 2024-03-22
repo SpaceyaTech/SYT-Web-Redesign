@@ -6,6 +6,7 @@ import {
   FaqSection,
   FeatureSection,
   HeroSection,
+  Partners,
   PodcastSection,
   Services,
   StatsSection,
@@ -17,6 +18,7 @@ function LandingPage() {
     <div className="w-screen bg-landingPageBg">
       <ScrollToTop />
       <HeroSection />
+      <Partners />
       <FeatureSection />
       <Services />
       <PodcastSection />
