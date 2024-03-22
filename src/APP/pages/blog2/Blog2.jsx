@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { Advert, BlogHeader, BlogBody } from "./sections";
 import useBlogData from "../../../hooks/Queries/blog/useBlogData";
 import { Loader } from "../../components";
+import { Advert, BlogHeader, BlogBody } from "./sections";
 
 function Blog2() {
   const { titleSlug } = useParams();
@@ -19,7 +19,7 @@ function Blog2() {
 
   useEffect(() => {
     refetchBlogData();
-  }, [titleSlug]);
+  }, [refetchBlogData, titleSlug]);
 
   return (
     <div className="max-w-[1024px] mx-auto">

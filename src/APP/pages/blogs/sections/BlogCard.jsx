@@ -1,15 +1,12 @@
 /* eslint-disable react/prop-types */
 import { formatDistanceToNow } from "date-fns";
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { arrowRight } from "../../../../assets/images/blogs-page";
 import logo from "../../../../assets/images/sytLogo.png";
 import BlogStats from "./BlogStats";
 
 function BlogCard({ blog }) {
-  const navigate = useNavigate();
-
   const timeAgo =
     blog?.created_at &&
     formatDistanceToNow(new Date(blog?.created_at), {
@@ -24,15 +21,11 @@ function BlogCard({ blog }) {
       <img
         src={blog.image}
         alt={blog.title}
-        className="w-full h-60 object-cover rounded-lg"
+        className="w-full h-60 object-cover rounded-lg asp"
       />
 
       <div className="py-[6px] flex flex-col gap-[10px] w-full mt-2">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
-          <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
-
-          <BlogStats likes={blog.likes <= 1 ? "" : blog.likes} />
-        </div>
+        <h3 className="text-xl text-[#323433] font-semibold">{blog.title}</h3>
 
         <p className="text-base font-normal leading-6 text-[#4C4D4D] line-clamp-3">
           {blog.description}
@@ -54,18 +47,9 @@ function BlogCard({ blog }) {
             </div>
           </div>
 
-          <button
-            type="button"
-            className="flex gap-2 items-center justify-between"
-            onClick={() => {
-              navigate(`/blogs/${blog.title_slug}`);
-            }}
-          >
-            <span className="uppercase text-primary text-sm font-medium m-0">
-              read more
-            </span>
-            <img src={arrowRight} alt="arrow-right" className="w-5 h-5" />
-          </button>
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
+            <BlogStats likes={blog.likes <= 1 ? "" : blog.likes} />
+          </div>
         </div>
       </div>
     </Link>
