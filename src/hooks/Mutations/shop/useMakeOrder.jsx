@@ -20,11 +20,13 @@ const useMakeOrder = () => {
     {
       onSuccess: (data) => {
         console.log("Added to cart: ", data);
+        toast("✅ Order placed successfully 🛒!")
         queryClient.invalidateQueries(["productsInCart"]);
       },
       onError: (error) => {
         // eslint-disable-next-line no-console
         console.error("Unable to add availability");
+        toast("❌ Unable to place order", { type: "error" });
         if (error.response.status === 401) {
           logout();
         }

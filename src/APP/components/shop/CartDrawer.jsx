@@ -116,7 +116,7 @@ function CartDrawer({ open, setOpen }) {
                             {LocalCart?.map(
                               ({ payload: { id, product, quantity } }) => (
                                 <li
-                                  key={id}
+                                  key={crypto.randomUUID()}
                                   className="flex py-6 space-x-4 sm:space-x-16"
                                 >
                                   <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
@@ -152,7 +152,7 @@ function CartDrawer({ open, setOpen }) {
                                     </div>
                                     <div className="flex flex-1 items-end justify-between text-sm">
                                       <p className="text-xl md:text-2xl font-bold">
-                                        {formatPrice(product.price * quantity)}
+                                        {formatPrice(product.price)}
                                       </p>
 
                                       {/* Count thing reason out */}
