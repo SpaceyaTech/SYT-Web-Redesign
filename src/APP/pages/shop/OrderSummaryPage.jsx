@@ -1,6 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
-import { useState, Fragment } from "react";
+import { useHookstate } from "@hookstate/core";
+import { localstored } from "@hookstate/localstored";
+import { useState, Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Sample1 from "../../../assets/images/shop-page/sample1.png";
 import Sample2 from "../../../assets/images/shop-page/sample2.png";
@@ -9,6 +11,7 @@ import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
 import { useOrderSummary } from "../../../hooks/Queries/shop/useOrdersList";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
+import CartDrawer from "../../components/shop/CartDrawer";
 
 // const products = [
 //   {
@@ -68,6 +71,16 @@ function Checkout() {
   const [isOpen, setIsOpen] = useState(false);
   // const { data: orderSummary, status } = useOrderSummary();
 
+  const state = useHookstate(
+    [],
+    localstored({
+      // key is optional,
+      // if it is not defined, the extension requires and
+      // uses the identifier from the @hookstate/identifiable
+      key: "cart-items",
+    })
+  );
+
   const handleSubmit = (e) => {
     const payload = {
       address,
@@ -80,7 +93,16 @@ function Checkout() {
     setIsOpen(false);
   };
 
-  console.log("products ", products);
+  console.log("products ", state);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+  useEffect(() => {
+    let totalPrice = state.reduce((acc, { payload: { product, quantity } }) => {
+      return acc + product.price.get() * quantity.get();
+    }, 0);
+
+    setTotalPrice(totalPrice);
+  }, [state]);
 
   return (
     <>
@@ -205,44 +227,38 @@ function Checkout() {
             <div className="mt-8">
               <div className="flow-root">
                 <ul className="-my-6 divide-y divide-gray-200 border-b">
-                  {isSuccess &&
-                    products.cart_items?.map(
-                      ({
-                        id,
-                        product: { id: productId, image, name, price },
-                        quantity,
-                      }) => (
-                        <li
-                          key={id}
-                          className="flex py-6 space-x-4 sm:space-x-24"
-                        >
-                          <div className="h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg">
-                            <img
-                              src={`https://apis.spaceyatech.com${image}`}
-                              alt={name}
-                              className="h-full w-full object-cover object-center"
-                            />
-                          </div>
+                  {state?.map(
+                    ({ payload: { swagg_id, product, quantity } }) => (
+                      <li
+                        key={swagg_id.get()}
+                        className="flex py-6 space-x-4 sm:space-x-24"
+                      >
+                        <div className="h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg">
+                          <img
+                            src={product.image.get()}
+                            alt={product.name.get()}
+                            className="h-full w-full object-cover object-center"
+                          />
+                        </div>
 
-                          <div className="text-base space-y-2">
-                            <p className="">
-                              {" "}
-                              <Link to={`/shop/item/${productId}`}>{name}</Link>
-                            </p>
+                        <div className="text-base space-y-2">
+                          <p className="">
+                            {" "}
+                            <Link to={`/shop/item/${product.id.get()}`}>
+                              {product.name.get()}
+                            </Link>
+                          </p>
 
-                            <p className="">
-                              Ksh
-                              {price}
-                            </p>
-                            <Counter
-                              className="h-8 w-24"
-                              count={quantity}
-                              setCount={setCount}
-                            />
-                          </div>
-                        </li>
-                      )
-                    )}
+                          <p className="">KES {product.price.get()}</p>
+                          <Counter
+                            className="h-8 w-24"
+                            count={quantity.get()}
+                            setCount={setCount}
+                          />
+                        </div>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
               <div className="flex border-b space-x-4 sm:space-x-24 mt-10 pb-6 font-semibold sm:font-medium text-base">
@@ -252,21 +268,20 @@ function Checkout() {
                 </div>
                 <div className="space-y-4">
                   <p>
-                    Ksh
-                    {isSuccess && products.total_price}
+                    KES {/* {products?.total_price} */}
+                    {totalPrice}
                   </p>
                   <p>
-                    Ksh
-                    {isSuccess && products.total_price * 0.1}
+                    KES {/* {products?.total_price * 0.1} */}
+                    100
                   </p>
                 </div>
               </div>
               <div className="flex space-x-24 py-5 sm:text-xl">
                 <h3 className="w-32 text-lg">Total</h3>
                 <h3 className="font-bold sm:font-semibold">
-                  Ksh{" "}
-                  {isSuccess &&
-                    products.total_price * 0.1 + products.total_price}
+                  {/* KES {products?.total_price * 0.1 + products?.total_price} */}
+                  KES {totalPrice + 100}
                 </h3>
               </div>
             </div>
@@ -293,11 +308,12 @@ function Checkout() {
           <div className="flex flex-wrap mb-1 mt-4">
             <div className=" md:w-1/2 w-full">
               <input
-                value=""
-                id="phone-number"
+                value={phoneNumber}
+                id="mpesa-number"
                 className="block w-full py-3 px-4 mb-3 h-14 border border-[#79747E] rounded-md text-sm shadow-sm leading-tight placeholder-[#49454F] focus:outline-none focus:border-[#009975] focus:ring-1 focus:ring-[#009975] disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                 type="telephone"
                 placeholder="+254 7"
+                onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
           </div>
@@ -349,7 +365,7 @@ function Checkout() {
                       role="alert"
                     >
                       <p className="text-sm mt-6">
-                        Ksh {products.total_price * 0.1 + products.total_price}{" "}
+                        KES {products.total_price * 0.1 + products.total_price}{" "}
                       </p>
                     </div>
                   </Dialog.Panel>
@@ -359,6 +375,9 @@ function Checkout() {
           </Dialog>
         </Transition>
       )}
+
+      {/* Drawer */}
+      <CartDrawer open={open} setOpen={setOpen} />
     </>
   );
 }

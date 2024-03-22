@@ -1,5 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { useHookstate } from "@hookstate/core";
+import { localstored } from "@hookstate/localstored";
+import { Fragment, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
@@ -9,25 +11,53 @@ import { useDeleteSwag } from "../../../hooks/Mutations/shop/useCartSwagg";
 import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
 import useAuth from "../../../hooks/useAuth";
 import Counter from "./Counter";
+import formatPrice from "../../../utilities/FormatPrice";
 
 function CartDrawer({ open, setOpen }) {
+  const state = useHookstate(
+    [],
+    localstored({
+      // key is optional,
+      // if it is not defined, the extension requires and
+      // uses the identifier from the @hookstate/identifiable
+      key: "cart-items",
+    })
+  );
+
   const { auth } = useAuth();
   const navigate = useNavigate();
   const [count, setCount] = useState(1);
+  const [LocalCart, setLocalCart] = useState([]);
+
+  useEffect(() => {
+    setLocalCart(state.get());
+  }, [state]);
+
+  console.log("LocalCart", LocalCart);
 
   const { data: cartProducts, isSuccess } = useProductsInCart();
 
-  const { mutate: deleteSwag } = useDeleteSwag();
+  // const { mutate: deleteSwag } = useDeleteSwag();
 
   const handleDeleteSwag = (cartItemId) => {
-    deleteSwag(cartItemId);
+    // deleteSwag(cartItemId);
   };
 
   const handleCheckout = () => {
-    if (auth?.access) {
-      navigate("/shop/checkout");
-    }
+    // if (auth?.access) {
+    navigate("/shop/checkout");
+    // }
   };
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let totalPrice = state.reduce((acc, { payload: { product, quantity } }) => {
+      return acc + product.price.get() * quantity.get();
+    }, 0);
+
+    setTotalPrice(totalPrice);
+  }, [state]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -62,7 +92,8 @@ function CartDrawer({ open, setOpen }) {
                       <Dialog.Title className="text-3xl font-semibold">
                         Your cart{" "}
                         <span className="text-primary">
-                          ({isSuccess ? cartProducts.cart_items?.length : 0})
+                          {/* ({isSuccess ? cartProducts.cart_items?.length : 0}) */}
+                          ({state.length || 0})
                         </span>
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
@@ -82,7 +113,61 @@ function CartDrawer({ open, setOpen }) {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul className="-my-6 divide-y divide-gray-200 border-b">
-                            {isSuccess &&
+                            {LocalCart?.map(
+                              ({ payload: { id, product, quantity } }) => (
+                                <li
+                                  key={id}
+                                  className="flex py-6 space-x-4 sm:space-x-16"
+                                >
+                                  <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
+                                    <img
+                                      src={product.image}
+                                      alt={product.name}
+                                      className="h-full w-full object-cover object-center"
+                                    />
+                                  </div>
+
+                                  <div className="ml-4 flex flex-1 flex-col space-y-14">
+                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                      <h3>
+                                        <p className="text-base md:text-xl">
+                                          {" "}
+                                          <Link to={`/shop/item/${product.id}`}>
+                                            {product.name}
+                                          </Link>
+                                        </p>
+                                      </h3>
+                                      <button
+                                        type="button"
+                                        className="flex justify-end"
+                                        onClick={() => {
+                                          handleDeleteSwag(id);
+                                        }}
+                                      >
+                                        <img
+                                          src={DeleteIcon}
+                                          alt="delete button"
+                                        />
+                                      </button>
+                                    </div>
+                                    <div className="flex flex-1 items-end justify-between text-sm">
+                                      <p className="text-xl md:text-2xl font-bold">
+                                        {formatPrice(product.price * quantity)}
+                                      </p>
+
+                                      {/* Count thing reason out */}
+                                      <Counter
+                                        className="h-8 sm:h-12 w-24 sm:w-32"
+                                        setCount={setCount}
+                                        count={quantity}
+                                      />
+                                    </div>
+                                  </div>
+                                </li>
+                              )
+                            )}
+
+                            {/* {isSuccess &&
                               cartProducts.cart_items?.map(
                                 ({
                                   id,
@@ -134,11 +219,11 @@ function CartDrawer({ open, setOpen }) {
                                       </div>
                                       <div className="flex flex-1 items-end justify-between text-sm">
                                         <p className="text-xl md:text-2xl font-bold">
-                                          Ksh {price}
+                                          KES {price}
                                         </p>
 
-                                        {/* Count thing reason out */}
-                                        <Counter
+                                        // {/* Count thing reason out */}
+                            {/* <Counter
                                           className="h-8 sm:h-12 w-24 sm:w-32"
                                           setCount={setCount}
                                           count={quantity}
@@ -147,7 +232,7 @@ function CartDrawer({ open, setOpen }) {
                                     </div>
                                   </li>
                                 )
-                              )}
+                              )}  */}
                           </ul>
                         </div>
                       </div>
@@ -172,7 +257,7 @@ function CartDrawer({ open, setOpen }) {
                             </p>
                             <div className="flex flex-1 flex-col sm:flex-row justify-between items-start sm:items-center">
                               <p className="text-xl md:text-2xl font-bold text-center">
-                                Ksh 1500
+                                KES 1500
                               </p>
                               <button
                                 type="button"
@@ -191,7 +276,8 @@ function CartDrawer({ open, setOpen }) {
                       <div className="text-xl md:text-2xl font-bold flex justify-between">
                         <h2>Sub Total</h2>
                         <h2>
-                          Ksh {isSuccess ? cartProducts.total_price : "00"}
+                          {/* {isSuccess ? cartProducts.total_price : "00"} */}
+                          {formatPrice(totalPrice)}
                         </h2>
                       </div>
                       <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
@@ -211,7 +297,8 @@ function CartDrawer({ open, setOpen }) {
                         </button>
                       </div>
                       <p className="text-center">
-                        By selecting ‘Check Out’ you are agreeing to our{" "}
+                        By selecting <i className="text-[#00664E]">Checkout</i>{" "}
+                        you are agreeing to our{" "}
                         <a
                           href="#!"
                           className="font-medium underline cursor-pointer text-primary hover:text-[#00664E]"

@@ -1,7 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { useHookstate } from "@hookstate/core";
+import { localstored } from "@hookstate/localstored";
 import { Fragment, useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
-
 import Sample1 from "../../../assets/images/shop-page/sample1.png";
 import Sample2 from "../../../assets/images/shop-page/sample2.png";
 import SmallSample1 from "../../../assets/images/shop-page/small-sample-colored.png";
@@ -15,27 +17,27 @@ import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
 
-const products = [
-  {
-    id: 1,
-    name: "SYT Hoodie",
-    href: "#",
-    color: "Salmon",
-    price: "90.00",
-    quantity: 1,
-    imageSrc: Sample1,
-  },
-  {
-    id: 2,
-    name: "SYT Bookmark",
-    href: "#",
-    color: "Blue",
-    price: "32.00",
-    quantity: 1,
-    imageSrc: Sample2,
-  },
-  // More products...
-];
+// const products = [
+//   {
+//     id: 1,
+//     name: "SYT Hoodie",
+//     href: "#",
+//     color: "Salmon",
+//     price: "90.00",
+//     quantity: 1,
+//     imageSrc: Sample1,
+//   },
+//   {
+//     id: 2,
+//     name: "SYT Bookmark",
+//     href: "#",
+//     color: "Blue",
+//     price: "32.00",
+//     quantity: 1,
+//     imageSrc: Sample2,
+//   },
+//   // More products...
+// ];
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
@@ -53,11 +55,20 @@ export default function SingleItemPage() {
 
   const { data: singleOrder } = useSingleOrder(params.id);
   const { data: singleSwag, isSuccess, refetch } = useSingleSwag(params.id);
-  const { mutate: addItemsToCart, isLoading } = useAddSwagToCart();
+  // const { mutate: addItemsToCart, isLoading } = useAddSwagToCart();
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const state = useHookstate(
+    [],
+    localstored({
+      // key is optional,
+      // if it is not defined, the extension requires and
+      // uses the identifier from the @hookstate/identifiable
+      key: "cart-items",
+    })
+  );
 
-  console.log("singleSwag", params);
+  console.log("singleSwag", singleSwag);
   useEffect(() => {
     if (isSuccess) {
       setPayload({
@@ -67,6 +78,7 @@ export default function SingleItemPage() {
           description: singleSwag.description,
           price: singleSwag.price,
           size: selectedSize,
+          // image: singleSwag.image,
         },
         quantity: count,
       });
@@ -75,23 +87,67 @@ export default function SingleItemPage() {
   }, [params.id]);
 
   const handleAddToCart = () => {
-    if (auth?.access) {
-      addItemsToCart(Payload);
-      setOpen(true);
-    } else {
-      setMessage("to add items to cart");
-      setIsModalOpen(true);
+    // if (auth?.access) {
+    // addItemsToCart(Payload);
+    // } else {
+    // console.log("Payload", {
+    //   swagg_id: singleSwag.id,
+    //   product: {
+    //     name: singleSwag.name,
+    //     description: singleSwag.description,
+    //     price: singleSwag.price,
+    //     size: selectedSize,
+    //   },
+    //   quantity: count,
+    // });
+    if (state) {
+      const existingItem = state.find(
+        ({ payload }) =>
+          payload.swagg_id.get() === singleSwag.id &&
+          payload.product.size.get() === selectedSize
+      );
+
+      if (existingItem) {
+        existingItem.payload.quantity.set(
+          existingItem.payload.quantity.get() + count
+        );
+      } else {
+        state.merge([
+          {
+            payload: {
+              swagg_id: singleSwag.id,
+              product: {
+                name: singleSwag.name,
+                description: singleSwag.description,
+                price: singleSwag.price,
+                size: selectedSize,
+                image: singleSwag.image,
+              },
+              quantity: count,
+            },
+          },
+        ]);
+      }
     }
+
+    toast("✅ Item added to cart 🛒!");
+    // setIsModalOpen(true);
+    setOpen(true);
+
+    // }
   };
 
+  // useEffect(() => {
+  // }, []);
+
   const handleBuyNow = () => {
-    if (auth?.access) {
-      addItemsToCart(Payload);
-      setOpen(true);
-    } else {
-      setMessage("to make an order");
-      setIsModalOpen(true);
-    }
+    // if (auth?.access) {
+    //   addItemsToCart(Payload);
+    setOpen(true);
+    // } else {
+    // toast("make an order ✅");
+    setIsModalOpen(true);
+    // }
   };
 
   return (
@@ -181,15 +237,78 @@ export default function SingleItemPage() {
         <p>Error Fetching Item</p>
       )}
 
+      {/* {state &&
+        state?.map((taskState) => (
+          <p key={crypto.randomUUID()}>
+            <input
+              value={taskState.name.get()}
+              onChange={(e) => taskState.name.set(e.target.value)}
+            />
+          </p>
+        ))} */}
+
       {/* Drawer */}
       <CartDrawer open={open} setOpen={setOpen} />
 
       {/* Notification Modal */}
-      <NotificationModal
+      {/* <NotificationModal
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
         message={message}
-      />
+      /> */}
     </>
   );
 }
+
+// import { useHookstate } from "@hookstate/core";
+// import { localstored } from "@hookstate/localstored";
+
+// const SingleItemPage = () => {
+//   const state = useHookstate(
+//     [],
+//     localstored({
+//       // key is optional,
+//       // if it is not defined, the extension requires and
+//       // uses the identifier from the @hookstate/identifiable
+//       key: "state-key",
+//     })
+//   );
+
+//   console.log("state length: ", state.length);
+
+//   return (
+//     <>
+//       {state.map((taskState, taskIndex) => {
+//         return (
+//           <p key={taskIndex}>
+//             <input
+//               value={taskState.name.first.get()}
+//               onChange={(e) => taskState.name.set(e.target.value)}
+//             />
+//           </p>
+//         );
+//       })}
+//       <p>
+//         <button
+//           onClick={() =>
+//             state.merge([
+//               {
+//                 name: {
+//                   first: "First Task",
+//                   Second: "Second name",
+//                   third: {
+//                     fourth: "Fourth name",
+//                   },
+//                 },
+//               },
+//             ])
+//           }
+//         >
+//           Add task
+//         </button>
+//       </p>
+//     </>
+//   );
+// };
+
+// export default SingleItemPage;

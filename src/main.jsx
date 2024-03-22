@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import { ErrorBoundary } from "./APP";
@@ -24,6 +25,32 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <QueryClientProvider client={queryClient}>
           <SearchBlogProvider>
             <RouterProvider router={router} />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 5000,
+                success: {
+                  style: {
+                    background: "#289643",
+                    color: "white",
+                  },
+                  iconTheme: {
+                    primary: "white",
+                    secondary: "black",
+                  },
+                },
+                error: {
+                  style: {
+                    background: "#E5352B",
+                    color: "white",
+                  },
+                  iconTheme: {
+                    primary: "white",
+                    secondary: "black",
+                  },
+                },
+              }}
+            />
             <ReactQueryDevtools position="bottom-right" />
           </SearchBlogProvider>
         </QueryClientProvider>
