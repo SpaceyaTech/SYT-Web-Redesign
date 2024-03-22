@@ -8,6 +8,8 @@ import {
   osca,
   cytonn,
   reactke,
+  gdg,
+  spheron,
 } from "../../../assets/images/hero-section";
 
 import {
@@ -142,6 +144,12 @@ export const partners = [
     link: "https://icpkushite.com/",
   },
   {
+    id: 11,
+    img: spheron,
+    name: "spheron",
+    link: "/",
+  },
+  {
     id: 7,
     img: osca,
     name: "osca",
@@ -158,6 +166,12 @@ export const partners = [
     img: reactke,
     name: "reactke",
     link: "https://www.reactdevske.org/",
+  },
+  {
+    id: 10,
+    img: gdg,
+    name: "gdg",
+    link: "/",
   },
 ];
 

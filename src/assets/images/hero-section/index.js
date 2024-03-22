@@ -3,6 +3,7 @@ import chimoney from "./partners/chimoney.png";
 import ctfroom from "./partners/CTFROOM.png";
 import cytonn from "./partners/cytonn.png";
 import DevOps from "./partners/DevOps.png";
+import gdg from "./partners/gdg.png";
 import Kushite from "./partners/Kushite.png";
 import moringa from "./partners/moringa.png";
 import osca from "./partners/osca.png";
@@ -22,4 +23,5 @@ export {
   Propel,
   reactke,
   spheron,
+  gdg,
 };

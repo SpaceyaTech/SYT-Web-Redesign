@@ -17,7 +17,7 @@ function Partners() {
           <img
             key={id}
             src={img}
-            className="object-cover max-w-none grayscale transition-all duration-200 ease-in hover:grayscale-0"
+            className="object-cover h-11 grayscale transition-all duration-200 ease-in hover:grayscale-0"
             alt={name}
           />
         ))}
