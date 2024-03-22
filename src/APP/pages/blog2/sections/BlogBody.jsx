@@ -36,11 +36,13 @@ function BlogBody({ id, categoryId, blogBody }) {
       <div className="w-full md:w-[30%] hidden md:flex flex-col pt-20 gap-10 md:gap-64">
         <RelatedBlogs blogId={id} categoryId={categoryId} />
 
-        <img
-          src={glovo}
-          alt="glovo"
-          className="object-cover w-full aspect-auto"
-        />
+        <div className="w-full cursor-pointer">
+          <img
+            src={glovo}
+            alt="glovo"
+            className="object-cover w-full aspect-auto"
+          />
+        </div>
       </div>
     </div>
   );

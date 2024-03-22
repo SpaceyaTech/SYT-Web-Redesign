@@ -6,7 +6,6 @@ import {
   LandingPage,
   Layout,
   Products,
-  Blog,
   Blog2,
   Blogs,
   EventsPage,
@@ -59,10 +58,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs/:titleSlug",
-        element: <Blog />,
-      },
-      {
-        path: "/blogs2/:titleSlug",
         element: <Blog2 />,
       },
       {
