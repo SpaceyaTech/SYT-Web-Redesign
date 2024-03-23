@@ -3,7 +3,7 @@ import { partners } from "../data";
 
 function Partners() {
   return (
-    <section className="py-6 md:py-16 flex flex-col gap-4 md:gap-8">
+    <section className="my-8 py-6 md:py-16 flex flex-col gap-6 md:gap-8 border-blue-500">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
         <h4 className="min-w-fit text-sm md:text-3xl font-semibold">

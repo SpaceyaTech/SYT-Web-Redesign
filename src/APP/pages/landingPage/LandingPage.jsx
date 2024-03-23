@@ -20,9 +20,9 @@ function LandingPage() {
       <ScrollToTop />
       <HeroSection />
       <Partners />
-      <LandingWrapper title="what we do">
-        <FeatureSection />
-      </LandingWrapper>
+      {/* <LandingWrapper title="what we do"> */}
+      <FeatureSection />
+      {/* </LandingWrapper> */}
       <Services />
       <PodcastSection />
       <StatsSection />
