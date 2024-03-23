@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { ViewMoreBtn } from "../../../components";
 
 function OurEvents() {
@@ -39,7 +41,10 @@ export default OurEvents;
 
 function UpcomingEventCard() {
   return (
-    <div className="bg-white border flex items-center flex-col md:flex-row justify-start w-full rounded-xl p-4 gap-4">
+    <Link
+      to="/"
+      className="bg-white border flex items-center flex-col md:flex-row justify-start w-full rounded-xl p-4 gap-4"
+    >
       <div className="border bg-white p-1 rounded-lg w-full md:w-fit">
         <div className="flex-center flex-col bg-green-light text-green-dark aspect-video md:size-[120px] rounded-[4px] font-bold">
           <span className="text-sm">Feb</span>
@@ -104,6 +109,6 @@ function UpcomingEventCard() {
           <span className="text-sm font-normal">2 weeks away</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
