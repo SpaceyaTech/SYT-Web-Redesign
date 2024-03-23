@@ -7,3 +7,4 @@ export { default as PodcastSection } from "./PodcastSection";
 export { default as Services } from "./Services";
 export { default as StatsSection } from "./StatsSection";
 export { default as TestimonialSection } from "./TestimonialSection";
+export { default as WhatWeDo } from "./WhatWeDo";

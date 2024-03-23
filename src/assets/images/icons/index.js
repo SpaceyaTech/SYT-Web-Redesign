@@ -1,3 +1,4 @@
+import arrowRight from "./arrow-right.svg";
 import bellIcon from "./bell-icon.svg";
 import cartIcon from "./cart-icon.svg";
 import closeIcon from "./close-icon.svg";
@@ -7,6 +8,7 @@ import upleft from "./up-left.svg";
 import upleftGreen from "./upleft-green.svg";
 
 export {
+  arrowRight,
   bellIcon,
   cartIcon,
   closeIcon,

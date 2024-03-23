@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import {
   ctfroom,
   DevOps,
@@ -10,7 +12,8 @@ import {
   reactke,
   gdg,
   spheron,
-} from "../../../assets/images/hero-section";
+  mastercraft,
+} from "@/assets/images/hero-section";
 
 import {
   RichardMulandi,
@@ -20,13 +23,13 @@ import {
   Jean,
   Melody,
   Kristin,
-} from "../../../assets/images/podcast";
+} from "@/assets/images/podcast";
 
 import {
   mentorship,
   openSource,
   twitter,
-} from "../../../assets/images/services-section";
+} from "@/assets/images/services-section";
 
 import {
   aibunny,
@@ -36,7 +39,7 @@ import {
   tony,
   wakio,
   wayne,
-} from "../../../assets/testimonialSection";
+} from "@/assets/testimonialSection";
 
 export const podcasts = [
   {
@@ -265,5 +268,48 @@ export const services = [
     description:
       "We host community-led mentorship programs where beginners are mentored by experienced professionals and given guidance on getting started in tech.",
     link: "https://x.com/SpaceYaTech",
+  },
+];
+
+export const whatWeDoData = [
+  {
+    id: 1,
+    title: "The Mastercraft Program",
+    description:
+      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    image: mastercraft,
+    link: "/",
+  },
+  {
+    id: 2,
+    title: "Colabs",
+    description:
+      "Contribute to open-source projects tailored to your current skills and where you want to get. We work within the community to list beginner-friendly open-sourced projects.",
+    image: mastercraft,
+    link: "/",
+  },
+  {
+    id: 3,
+    title: "Learning Resources",
+    description:
+      "We run full-stack, open-source projects, where product managers, product designers, developers and dev-ops engineers work together to learn the in and outs of the industry.",
+    image: mastercraft,
+    link: "/",
+  },
+  {
+    id: 4,
+    title: "Weekly Twitter Spaces",
+    description:
+      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    image: mastercraft,
+    link: "/",
+  },
+  {
+    id: 5,
+    title: "SpaceYaPodcasts",
+    description:
+      "We host weekly podcasts every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    image: mastercraft,
+    link: "/",
   },
 ];

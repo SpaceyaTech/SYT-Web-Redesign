@@ -5,7 +5,7 @@ function FeatureSection() {
     <section className="bg-green-light w-full relative py-4">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 absolute -top-6">
         <h4 className="mx-auto min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
-          What We Do
+          How we work
         </h4>
       </div>
 

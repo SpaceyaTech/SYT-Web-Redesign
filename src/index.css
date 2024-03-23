@@ -136,6 +136,12 @@
     justify-content: center;
   }
 
+  .flex-start {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+
   .flex-half {
     flex: 1;
   }

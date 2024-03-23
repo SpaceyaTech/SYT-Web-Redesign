@@ -12,6 +12,7 @@ export default {
         green: {
           dark: "#00664E",
           light: "#E5EFEC",
+          header: "#1F7964",
         },
       },
     },

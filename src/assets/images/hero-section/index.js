@@ -1,4 +1,5 @@
 import bannerImg from "./bannerImg.png";
+import mastercraft from "./mastercraft.png";
 import chimoney from "./partners/chimoney.png";
 import ctfroom from "./partners/CTFROOM.png";
 import cytonn from "./partners/cytonn.png";
@@ -18,6 +19,7 @@ export {
   cytonn,
   DevOps,
   Kushite,
+  mastercraft,
   moringa,
   osca,
   Propel,
