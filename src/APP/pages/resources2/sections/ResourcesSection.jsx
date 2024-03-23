@@ -30,7 +30,6 @@ function ResourcesSection() {
             src={search}
             alt="search"
             className="p-2 cursor-pointer"
-            effect="blur"
           />
         </div>
       </div>

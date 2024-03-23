@@ -22,7 +22,6 @@ function BlogUMightLike({ blog, block }) {
         src={blog.image}
         alt={blog.title}
         className="h-48 w-full object-cover aspect-video rounded-lg"
-        effect="blur"
       />
 
       <div className="h-1/2 flex flex-col gap-2 py-2">
@@ -43,7 +42,6 @@ function BlogUMightLike({ blog, block }) {
             src={logo}
             alt="ellipse"
             className="w-10 h-10 object-cover rounded-full flex items-center justify-center"
-            effect="blur"
           />
 
           <div className="flex flex-col">

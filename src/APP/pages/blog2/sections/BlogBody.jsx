@@ -36,7 +36,6 @@ function BlogBody({ id, categoryId, blogBody }) {
           src={glovo}
           alt="glovo"
           className="object-cover w-full aspect-auto"
-          effect="blur"
         />
       </div>
     </div>

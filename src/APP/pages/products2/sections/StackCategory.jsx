@@ -14,7 +14,6 @@ const StackCategory = ({ category, stack }) => {
             src={url}
             alt={alt}
             className="h-16 md:h-20 w-16 md:w-20 object-contain"
-            effect="blur"
           />
         ))}
       </div>

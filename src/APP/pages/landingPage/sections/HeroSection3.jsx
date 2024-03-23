@@ -37,7 +37,6 @@ function HeroSection3() {
             src={bannerImg}
             alt="banner"
             className="w-full h-full object-cover"
-            effect="blur"
           />
         </div>
       </div>
@@ -65,7 +64,6 @@ function HeroSection3() {
                 src={img}
                 className="object-cover max-w-none px-7"
                 alt={name}
-                effect="blur"
               />
             </a>
           ))}

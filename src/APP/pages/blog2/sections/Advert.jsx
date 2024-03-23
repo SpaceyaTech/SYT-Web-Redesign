@@ -5,12 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 function Advert() {
   return (
     <div className="hidden md:flex h-32 w-full">
-      <LazyLoadImage
-        src={advert}
-        alt="advert"
-        className="h-full w-full"
-        effect="blur"
-      />
+      <LazyLoadImage src={advert} alt="advert" className="h-full w-full" />
     </div>
   );
 }

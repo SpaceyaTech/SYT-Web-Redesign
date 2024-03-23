@@ -46,12 +46,7 @@ function LogIn() {
         <h2 className="text-2xl">
           It&apos;s always a pleasure to see you again
         </h2>
-        <LazyLoadImage
-          src={LoginImg}
-          alt="Log in"
-          className="m-auto"
-          effect="blur"
-        />
+        <LazyLoadImage src={LoginImg} alt="Log in" className="m-auto" />
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">

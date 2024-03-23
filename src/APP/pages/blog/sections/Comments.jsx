@@ -15,7 +15,6 @@ const CommentCard = () => {
             src={Ellipse30}
             alt="author"
             className="w-8 h-8 rounded-full object-contain"
-            effect="blur"
           />
 
           <div className="flex flex-col md:flex-row md:gap-10 text-[13px] leading-5 md:text-base font-normal text-black">
@@ -29,7 +28,6 @@ const CommentCard = () => {
             src={reply}
             alt="reply"
             className="w-4 h-4 object-contain"
-            effect="blur"
           />
           <span className="text-[13px] text-[#00664E] capitalize">Reply</span>
         </button>
@@ -46,7 +44,6 @@ const CommentCard = () => {
           src={chatText}
           alt="chatText"
           className="w-4 h-4 object-contain"
-          effect="blur"
         />
         <span className="text-xs font-normal text-[#00664E]">35</span>
       </button>

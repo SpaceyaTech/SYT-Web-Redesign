@@ -9,7 +9,6 @@ const Loader = () => {
         height={60}
         alt="loader"
         className="object-contain"
-        effect="blur"
       />
     </div>
   );

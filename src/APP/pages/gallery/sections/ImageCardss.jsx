@@ -10,7 +10,7 @@
 //         alt={alt}
 //         className="aspect-video object-cover"
 //         loading="lazy"
-//         effect="blur"
+//
 //       />
 
 //       <div className="absolute top-0 right-0 w-full h-full flex opacity-0 transition-all duration-500 ease-linear hover:opacity-100">

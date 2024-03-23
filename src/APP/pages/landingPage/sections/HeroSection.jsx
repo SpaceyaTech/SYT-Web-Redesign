@@ -67,7 +67,6 @@ function HeroSection() {
                   className="object-cover object-center"
                   alt="gdg"
                   src={gdg_image}
-                  effect="blur"
                 />
               </div>
               {/* logo 3  */}
@@ -76,7 +75,6 @@ function HeroSection() {
                   className="object-cover object-center"
                   alt="react-ke"
                   src={react_ke}
-                  effect="blur"
                 />
               </div>
               {/* logo 4  */}
@@ -85,7 +83,6 @@ function HeroSection() {
                   className="object-cover object-center"
                   alt="kamilimu"
                   src={kamilimu}
-                  effect="blur"
                 />
               </div>
               {/* logo 5  */}
@@ -94,7 +91,6 @@ function HeroSection() {
                   className="object-cover object-center"
                   alt="cytonn"
                   src={cytonn}
-                  effect="blur"
                 />
               </div>
               {/* logo 6 */}
@@ -103,7 +99,6 @@ function HeroSection() {
                   className="object-cover object-center"
                   alt="osca"
                   src={osca}
-                  effect="blur"
                 />
               </div>
             </div>
@@ -114,7 +109,6 @@ function HeroSection() {
             className="object-cover object-center rounded"
             alt="hero"
             src={hero_image}
-            effect="blur"
           />
         </div>
       </div>

@@ -58,7 +58,6 @@ function Events({ events, isVertical }) {
                       className="rounded-t-lg w-full h-56 object-contain"
                       src={poster}
                       alt={name}
-                      effect="blur"
                     />
 
                     <div className="p-5 text-[#323433] w-full">

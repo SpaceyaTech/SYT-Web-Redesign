@@ -26,7 +26,6 @@ function Footer2() {
               src={logo}
               alt="logo"
               className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
-              effect="blur"
             />
             {/* socials */}
             <div className="flex flex-col items-center">
@@ -40,7 +39,6 @@ function Footer2() {
                     src={facebook}
                     alt="facebook"
                     className="w-7 h-7"
-                    effect="blur"
                   />
                 </a>
                 <a
@@ -52,7 +50,6 @@ function Footer2() {
                     src={instagram}
                     alt="instagram"
                     className="w-7 h-7"
-                    effect="blur"
                   />
                   {/* < src={instagram} alt="instagram" className="w-7 h-7" /> */}
                 </a>
@@ -65,7 +62,6 @@ function Footer2() {
                     src={twitter}
                     alt="twitter"
                     className="w-7 h-7"
-                    effect="blur"
                   />
                 </a>
 
@@ -78,7 +74,6 @@ function Footer2() {
                     src={linkedin}
                     alt="linkedIn"
                     className="w-7 h-7"
-                    effect="blur"
                   />
                 </a>
               </div>
@@ -92,7 +87,6 @@ function Footer2() {
                     src={youtube}
                     alt="youtube"
                     className="w-7 h-7"
-                    effect="blur"
                   />
                 </a>
 
@@ -105,7 +99,6 @@ function Footer2() {
                     src={spotify}
                     alt="spotify"
                     className="w-7 h-7"
-                    effect="blur"
                   />
                 </a>
               </div>
@@ -221,7 +214,7 @@ function Footer2() {
           src={backup}
           alt="backup"
           className="w-7 h-7"
-          effect="blur"
+
         /> */}
       </div>
     </footer>

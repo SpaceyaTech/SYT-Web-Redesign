@@ -50,7 +50,6 @@ function TestimonialSection() {
                   className="rounded-full w-20 h-20"
                   src={testimonial.img}
                   alt="testimonial"
-                  effect="blur"
                 />
                 <div className="text-left pl-8">
                   <p className="font-medium">{testimonial.user}</p>
