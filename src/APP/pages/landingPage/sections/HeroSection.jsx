@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
-    <section className="pt-5 md:pt-14 flex items-center justify-center flex-col md:gap-9 max-w-[1440px] mx-auto">
+    <section className="py-16 flex items-center justify-center flex-col md:gap-10 max-w-1440 mx-auto">
       {/* Hero section Description */}
-      <div className="px-3 md:px-0 max-w-[625px] flex flex-col items-center gap-4 ">
+      <div className="px-3 md:px-0 max-w-[625px] flex flex-col items-center gap-4">
         <h1 className="md:text-[40px] text-2xl leading-tight  font-medium text-gray-900 text-center">
           Accelerating <span className="text-primary">growth </span>
           and

@@ -15,6 +15,9 @@ export default {
           header: "#1F7964",
         },
       },
+      maxWidth: {
+        1440: "1440px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

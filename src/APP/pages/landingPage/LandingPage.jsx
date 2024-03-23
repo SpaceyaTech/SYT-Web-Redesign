@@ -7,6 +7,7 @@ import {
   FaqSection,
   FeatureSection,
   HeroSection,
+  OurEvents,
   Partners,
   PodcastSection,
   Services,
@@ -17,13 +18,16 @@ import {
 
 function LandingPage() {
   return (
-    <div className="w-screen bg-landingPageBg">
+    <div className="w-screen bg-landingPageBg bg-gray-100">
       <ScrollToTop />
       <HeroSection />
       <Partners />
       <FeatureSection />
       <LandingWrapper title="what we do">
         <WhatWeDo />
+      </LandingWrapper>
+      <LandingWrapper title="our events">
+        <OurEvents />
       </LandingWrapper>
       <Services />
       <PodcastSection />
