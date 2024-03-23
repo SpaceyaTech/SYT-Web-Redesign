@@ -33,7 +33,7 @@ function WhatWeDoCard({ card, index }) {
       }`}
     >
       <div
-        className={`bg-green-light rounded-lg md:rounded-xl flex items-center justify-between flex-row p-3 sm:p-6 ${
+        className={`bg-green-light rounded-lg md:rounded-xl size-full flex items-center justify-between flex-row p-3 sm:p-6 ${
           index === 0 && " md:py-20 md:gap-5"
         }`}
       >
