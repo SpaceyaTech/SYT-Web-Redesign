@@ -1,6 +1,7 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import React from "react";
 
-import ScrollToTop from "@/utilities/ScrollToTop";
 import LandingWrapper from "../../components/LandingWrapper";
 import {
   CTASection,
@@ -9,12 +10,34 @@ import {
   HeroSection,
   OurEvents,
   Partners,
-  PodcastSection,
-  Services,
   StatsSection,
   TestimonialSection,
   WhatWeDo,
 } from "./sections";
+import ScrollToTop from "@/utilities/ScrollToTop";
+
+const components = [
+  {
+    title: "what we do",
+    component: <WhatWeDo />,
+  },
+  {
+    title: "our events",
+    component: <OurEvents />,
+  },
+  {
+    title: "our impact",
+    component: <StatsSection />,
+  },
+  {
+    title: "testimonials",
+    component: <TestimonialSection />,
+  },
+  {
+    title: "faq",
+    component: <FaqSection />,
+  },
+];
 
 function LandingPage() {
   return (
@@ -23,27 +46,14 @@ function LandingPage() {
       <HeroSection />
       <Partners />
       <FeatureSection />
-      <LandingWrapper title="what we do">
-        <WhatWeDo />
-      </LandingWrapper>
-      <LandingWrapper title="our events">
-        <OurEvents />
-      </LandingWrapper>
-      <LandingWrapper title="our impact">
-        <StatsSection />
-      </LandingWrapper>
-
-      <LandingWrapper title="testimonials">
-        <TestimonialSection />
-      </LandingWrapper>
-
-      <LandingWrapper title="faq">
-        <FaqSection />
-      </LandingWrapper>
-
-      <Services />
-      <PodcastSection />
-      <CTASection />
+      {components.map(({ component, title }) => (
+        <LandingWrapper key={title} title={title}>
+          {component}
+        </LandingWrapper>
+      ))}
+      <div className="p-2 md:p-8">
+        <CTASection />
+      </div>
     </div>
   );
 }

@@ -1,12 +1,8 @@
 // eslint-disable-next-line no-unused-vars
-import {
-  faChevronDown,
-  faChevronUp,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { questions } from "../pages/landingPage/data";
 
 function FAQ() {
