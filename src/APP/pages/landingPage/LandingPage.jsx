@@ -36,9 +36,13 @@ function LandingPage() {
       <LandingWrapper title="testimonials">
         <TestimonialSection />
       </LandingWrapper>
+
+      <LandingWrapper title="faq">
+        <FaqSection />
+      </LandingWrapper>
+
       <Services />
       <PodcastSection />
-      <FaqSection />
       <CTASection />
     </div>
   );
