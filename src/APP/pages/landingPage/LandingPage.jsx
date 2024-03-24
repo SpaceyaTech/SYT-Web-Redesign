@@ -29,10 +29,15 @@ function LandingPage() {
       <LandingWrapper title="our events">
         <OurEvents />
       </LandingWrapper>
+      <LandingWrapper title="our impact">
+        <StatsSection />
+      </LandingWrapper>
+
+      <LandingWrapper title="testimonials">
+        <TestimonialSection />
+      </LandingWrapper>
       <Services />
       <PodcastSection />
-      <StatsSection />
-      <TestimonialSection />
       <FaqSection />
       <CTASection />
     </div>
