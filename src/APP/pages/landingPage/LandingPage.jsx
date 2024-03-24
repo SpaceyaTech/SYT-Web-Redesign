@@ -51,7 +51,7 @@ function LandingPage() {
           {component}
         </LandingWrapper>
       ))}
-      <div className="p-2 md:p-8 md:pb-20">
+      <div className="p-2 pb-10 md:p-8 md:pb-20">
         <CTASection />
       </div>
     </div>
