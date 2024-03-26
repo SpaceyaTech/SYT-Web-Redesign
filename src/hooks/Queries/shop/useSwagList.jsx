@@ -5,7 +5,7 @@ import publicAxios from "../../../api/publicAxios";
 const fetchSwag = async () => {
   try {
     const response = await publicAxios.get("/swaggs/");
-    console.log("response.data", response.data);
+    console.log("useSwagList", response.data);
 
     return response.data;
   } catch (error) {

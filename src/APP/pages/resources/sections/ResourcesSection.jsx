@@ -1,20 +1,35 @@
 /* eslint-disable implicit-arrow-linebreak */
-import React, { useState } from "react";
 import { Tab } from "@headlessui/react";
+import React, { useState } from "react";
 
-import { resourcesData } from "./data";
 import { search } from "../../../../assets/images/resources-page";
+import { resourcesData } from "./data";
 import ResourceCard from "./ResourceCard";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+// million-ignore
 function ResourcesSection() {
   const [searchText, setSearchText] = useState("");
+  // const {
+  //   data: resourceTypes,
+  //   isPending,
+  //   isError,
+  //   isSuccess,
+  // } = useResourcesData();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(searchText);
+  };
 
   return (
     <>
+      {/* {isError && <p>Error loading resource categories!</p>}
+      {isPending && <p>Loading resource categories...</p>} */}
+      {/* {isSuccess && ( */}
       <div className="flex flex-col gap-8 md:gap-12">
         <div className="flex self-stretch flex-row mx-auto w-full md:w-fit border-[#CBCDCC] border-2 rounded-[36px] px-4 py-3">
           <input
