@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import menu from "../../assets/images/hamburger-menu.svg";
+import { cancel, menu } from "../../assets/images/icons";
 import logo from "../../assets/images/sytLogo.png";
 
 const navLinks = [
@@ -61,12 +61,21 @@ function Header() {
         </Link>
 
         {/* mobile menu */}
-        <img
-          src={menu}
-          alt="logo"
-          className="md:hidden"
-          onClick={() => setShowNavlinks((prev) => !prev)}
-        />
+        {showNavlinks ? (
+          <img
+            src={cancel}
+            alt="cancel"
+            className="md:hidden"
+            onClick={() => setShowNavlinks(false)}
+          />
+        ) : (
+          <img
+            src={menu}
+            alt="menu"
+            className="md:hidden"
+            onClick={() => setShowNavlinks(true)}
+          />
+        )}
 
         {/* mobile navlinks */}
         <nav
