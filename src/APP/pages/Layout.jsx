@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { Header2, Footer2 } from "../components";
+import { Header, Footer2 } from "../components";
 
 function ScrollToTopOnLinkClick() {
   const { pathname } = useLocation();
@@ -15,7 +15,7 @@ function ScrollToTopOnLinkClick() {
 function Layout() {
   return (
     <div className="w-screen overflow-hidden">
-      <Header2 />
+      <Header />
       <ScrollToTopOnLinkClick />
       <Outlet />
       <Footer2 />

@@ -5,7 +5,6 @@ export { default as FAQ } from "./FAQ";
 export { default as Footer } from "./Footer";
 export { default as Footer2 } from "./Footer2";
 export { default as Header } from "./Header";
-export { default as Header2 } from "./Header2";
 export { default as Loader } from "./Loader";
 export { default as PodcastCard } from "./PodcastCard";
 export { default as ViewMoreBtn } from "./ViewMoreBtn";
