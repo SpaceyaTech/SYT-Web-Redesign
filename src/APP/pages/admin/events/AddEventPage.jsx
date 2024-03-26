@@ -31,12 +31,7 @@ function AddEventPage() {
 
   const { data: eventsCategories, status: statusEventsCategories } =
     useEventsCategories();
-  const {
-    data: chaptersData,
-    isLoading,
-    isError,
-    isSuccess,
-  } = useChaptersData();
+  const { data: chaptersData, isError, isSuccess } = useChaptersData();
   const {
     setEventData: postEvent,
     error: errorPostEvent,

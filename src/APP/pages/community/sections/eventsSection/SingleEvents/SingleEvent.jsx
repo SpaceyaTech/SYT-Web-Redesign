@@ -17,7 +17,7 @@ function SingleEvent() {
   const [similarEvents, setSimilarEvents] = useState({});
 
   const { id } = useParams();
-  const { data: oneEvent, isLoading, isError, isSuccess } = useOneEvent(id);
+  const { data: oneEvent, isPending, isError, isSuccess } = useOneEvent(id);
 
   useEffect(() => {
     if (typeof oneEvent !== "undefined") {
@@ -50,7 +50,7 @@ function SingleEvent() {
   return (
     <>
       {isError && <p>Error fetching event!</p>}
-      {isLoading && (
+      {isPending && (
         <div className="flex flex-col items-center justify-center gap-4 py-10">
           <Loader />
           <p className="text-lg font-medium text-primary">Loading event...</p>

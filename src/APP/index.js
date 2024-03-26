@@ -28,7 +28,7 @@ import GalleryPage from "./pages/gallery/GalleryPage";
 import LandingPage from "./pages/landingPage/LandingPage";
 import Layout from "./pages/Layout";
 import Products from "./pages/products2/Products";
-import Resources from "./pages/resources2/Resources";
+import Resources from "./pages/resources/Resources";
 import Homepage from "./pages/shop/Homepage";
 import Checkout from "./pages/shop/OrderSummaryPage";
 import ProductDisplay from "./pages/shop/ProductDisplayPage";
