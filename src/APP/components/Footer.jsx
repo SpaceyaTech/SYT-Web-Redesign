@@ -11,7 +11,7 @@ function Footer() {
   var year = now.getFullYear();
   return (
     <footer>
-      <div className=" bg-[#252533] mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
+      <div className=" bg-secondary mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           {/* logo and socials  */}
           <div className="mb-8 md:mb-0 mr-6 flex flex-col justify-start items-center md:w-1/4 w-1/2">

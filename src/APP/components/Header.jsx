@@ -53,7 +53,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className="bg-[#252533] ">
+    <div className="bg-secondary">
       <header className="py-2.5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
         {/* logo */}
         <Link to="/" className="md:w-[60px] w-12">
@@ -70,12 +70,8 @@ function Header() {
 
         {/* mobile navlinks */}
         <nav
-          className="flex flex-col items-start justify-start gap-6 text-base absolute top-[70px] left-0 bg-gray-100 border-b w-full h-fit z-[1] p-5 pl-12"
-          style={
-            showNavlinks
-              ? { display: "flex", height: "calc(100vh - 65px)" }
-              : { display: "none" }
-          }
+          className="flex flex-col items-start justify-start gap-6 text-base absolute top-[65px] left-0 bg-secondary rounded-b-lg border-t w-full h-fit z-[1] p-5"
+          style={showNavlinks ? { display: "flex" } : { display: "none" }}
         >
           {navLinks.map(({ link, id, route }) => {
             const isActive = pathname === route;
@@ -83,7 +79,7 @@ function Header() {
               <Link
                 key={id}
                 className={`${
-                  isActive ? "text-primary font-bold" : "text-gray-900"
+                  isActive ? "text-primary" : "text-white"
                 } hover:text-primary transition-all duration-300 cursor-pointer`}
                 to={`${route}`}
                 onClick={() => setShowNavlinks(false)}
@@ -102,7 +98,7 @@ function Header() {
               <Link
                 key={id}
                 className={`${
-                  isActive ? "text-primary font-bold" : "text-white"
+                  isActive ? "text-primary" : "text-white"
                 } hover:text-primary transition-all duration-300 cursor-pointer`}
                 to={`${route}`}
               >
