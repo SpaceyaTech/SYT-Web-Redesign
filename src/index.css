@@ -186,7 +186,7 @@
   left: 0px;
   top: 277px;
 
-  background: #d9d9d9;
+  background: #cfe2dc;
   opacity: 0.25;
 }
 
@@ -199,7 +199,7 @@
   left: 87px;
   top: 207px;
 
-  background: #d9d9d9;
+  background: #63968b;
 }
 
 /* Ellipse 117 */
@@ -247,7 +247,7 @@
   left: 134px;
   top: 347px;
 
-  background: #d9d9d9;
+  background: #63968b;
 }
 
 /* Ellipse 133 */
@@ -272,7 +272,7 @@
   left: 300px;
   top: 394px;
 
-  background: url(.jpg), #d9d9d9;
+  background: url(.jpg), #63968b;
 }
 
 /* Ellipse 172 */
@@ -284,7 +284,7 @@
   left: 435px;
   top: 458px;
 
-  background: #d9d9d9;
+  background: #63968b;
 }
 
 /* Ellipse 173 */
@@ -345,7 +345,7 @@
   left: 283px;
   top: 335px;
 
-  background: #d9d9d9;
+  background: #63968b;
 }
 
 /* Ellipse 136 */
@@ -418,7 +418,7 @@
   left: 278px;
   top: 116px;
 
-  background: #d9d9d9;
+  background: #60968b;
 }
 
 /* Ellipse 127 */
@@ -431,7 +431,6 @@
   top: 116px;
 
   background: url(.jpg);
-  opacity: 0.15;
 }
 
 /* Ellipse 128 */
@@ -455,7 +454,7 @@
   left: 479px;
   top: 56px;
 
-  background: #d9d9d9;
+  background: #b3cbc4;
   opacity: 0.45;
 }
 
@@ -468,19 +467,19 @@
   left: 406px;
   top: 152px;
 
-  background: #d9d9d9;
+  background: #63968b;
 }
 
 /* Ellipse 131 */
 
-.ellipse131 {
+.ellipse1311 {
   position: absolute;
   width: 150px;
   height: 150px;
   left: 450px;
   top: 199px;
 
-  background: #cafe16;
+  background: #609a8f;
   opacity: 0.75;
 }
 
@@ -493,7 +492,7 @@
   left: 242px;
   top: 108px;
 
-  background: url(.jpg), #d9d9d9;
+  background: url(.jpg), #60968b;
 }
 
 /* Ellipse 123 */
@@ -505,7 +504,7 @@
   left: 361px;
   top: 26px;
 
-  background: #d9d9d9;
+  background: #60968b;
 }
 
 /* Ellipse 137 */
@@ -517,7 +516,7 @@
   left: 575px;
   top: 30px;
 
-  background: #d9d9d9;
+  background: #60968b;
 }
 
 /* Ellipse 138 */
@@ -613,7 +612,7 @@
   left: 716px;
   top: 391px;
 
-  background: #d9d9d9;
+  background: #668c83;
 }
 
 /* Ellipse 177 */
@@ -625,7 +624,7 @@
   left: 762px;
   top: 336px;
 
-  background: url(.jpg), #d9d9d9;
+  background: url(.jpg), #668c83;
 }
 
 /* Ellipse 178 */
@@ -686,7 +685,7 @@
   left: 1019px;
   top: 336px;
 
-  background: #d9d9d9;
+  background: #6d837d;
 }
 
 /* Ellipse 158 */
@@ -698,7 +697,7 @@
   left: 1072px;
   top: 325px;
 
-  background: #d9d9d9;
+  background: #81918d;
   opacity: 0.85;
 }
 
@@ -747,7 +746,7 @@
   left: 1266px;
   top: 325px;
 
-  background: #d9d9d9;
+  background: #acb0af;
   opacity: 0.55;
 }
 
@@ -760,7 +759,7 @@
   left: 1193px;
   top: 350px;
 
-  background: #d9d9d9;
+  background: #707b79;
 }
 
 /* Ellipse 170 */
@@ -772,7 +771,7 @@
   left: 1091px;
   top: 450px;
 
-  background: #d9d9d9;
+  background: #6d837d;
 }
 
 /* Ellipse 171 */
@@ -784,7 +783,7 @@
   left: 1403px;
   top: 229px;
 
-  background: #d9d9d9;
+  background: #737574;
 }
 
 /* Ellipse 166 */
@@ -832,7 +831,7 @@
   left: 881px;
   top: 159px;
 
-  background: #d9d9d9;
+  background: #698981;
 }
 
 /* Ellipse 149 */
@@ -844,7 +843,7 @@
   left: 805px;
   top: 45px;
 
-  background: rgba(202, 254, 22, 0.5);
+  background: #ced8d6;
   opacity: 0.55;
 }
 
@@ -905,7 +904,7 @@
   left: 1039px;
   top: 39px;
 
-  background: #d9d9d9;
+  background: #d1d6d6;
   opacity: 0.25;
 }
 
@@ -918,7 +917,7 @@
   left: 1005px;
   top: 45px;
 
-  background: #d9d9d9;
+  background: #6b8781;
 }
 
 /* Ellipse 163 */
@@ -930,7 +929,7 @@
   left: 1198px;
   top: 83px;
 
-  background: #d9d9d9;
+  background: #6f7e7b;
 }
 
 /* Ellipse 154 */
@@ -967,12 +966,12 @@
   left: 741px;
   top: 54px;
 
-  background: #d9d9d9;
+  background: #649186;
 }
 
 /* Rectangle 18291 */
 
-.rectangle18291 {
+/* .rectangle18291 {
   position: absolute;
   width: 1436px;
   height: 523px;
@@ -985,7 +984,7 @@
     #737373 96.48%,
     #00664e 96.48%
   );
-}
+} */
 
 /* Ellipse 147 */
 
