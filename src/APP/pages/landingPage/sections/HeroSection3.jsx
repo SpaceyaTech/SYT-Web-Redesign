@@ -34,8 +34,8 @@ function HeroSection3() {
 
         {/* hero img */}
 
-        <div className="flex flex-col items-center border border-yellow-500 min-w-[1440px] min-h-[700px] rounded-[70%] relative">
-          <div className="relative creative-shapes">
+        <div className="flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-10">
+          <div className="relative creative-shapes my-10">
             <div className="ellipse115 rounded-full" />
             <div className="ellipse116 rounded-full" />
             <div className="ellipse117 rounded-full" />
@@ -60,7 +60,7 @@ function HeroSection3() {
             <div className="ellipse128 rounded-full" />
             <div className="ellipse129 rounded-full" />
             <div className="ellipse130 rounded-full" />
-            <div className="ellipse131 rounded-full" />
+            <div className="ellipse1311 rounded-full" />
             <div className="ellipse122 rounded-full" />
             <div className="ellipse123 rounded-full" />
             <div className="ellipse137 rounded-full" />
