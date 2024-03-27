@@ -278,7 +278,7 @@ export const whatWeDoData = [
     description:
       "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
     image: mastercraft,
-    link: "/",
+    link: "/products",
   },
   {
     id: 2,
@@ -286,7 +286,7 @@ export const whatWeDoData = [
     description:
       "Contribute to open-source projects tailored to your current skills and where you want to get. We work within the community to list beginner-friendly open-sourced projects.",
     image: mastercraft,
-    link: "/",
+    link: "/products",
   },
   {
     id: 3,
@@ -294,7 +294,7 @@ export const whatWeDoData = [
     description:
       "We run full-stack, open-source projects, where product managers, product designers, developers and dev-ops engineers work together to learn the in and outs of the industry.",
     image: mastercraft,
-    link: "/",
+    link: "/products",
   },
   {
     id: 4,
@@ -302,7 +302,7 @@ export const whatWeDoData = [
     description:
       "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
     image: mastercraft,
-    link: "/",
+    link: "/products",
   },
   {
     id: 5,
@@ -310,7 +310,7 @@ export const whatWeDoData = [
     description:
       "We host weekly podcasts every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
     image: mastercraft,
-    link: "/",
+    link: "/products",
   },
 ];
 

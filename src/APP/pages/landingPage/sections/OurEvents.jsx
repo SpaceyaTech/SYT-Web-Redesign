@@ -1,9 +1,31 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { ViewMoreBtn } from "../../../components";
+import {
+  calculateDistanceToDate,
+  formatEventTime,
+  startEventDate,
+} from "../../../../utilities/formatEventDate";
+import { Loader, ViewMoreBtn } from "../../../components";
+import Error500 from "../../errorPages/Error500";
+import useTopEvents from "@/hooks/Queries/eventsSection/useTopEvents";
 
 function OurEvents() {
+  const {
+    data: topEvents,
+    isPending,
+    isError,
+    isSuccess,
+    refetch: refetchTopEvents,
+  } = useTopEvents("");
+
+  useEffect(() => {
+    refetchTopEvents();
+  }, [refetchTopEvents]);
+
   return (
     <section className="w-full max-w-1440 mx-auto flex-center flex-col gap-8 px-3 pt-2">
       <div className="flex-center gap-4 flex-col w-full max-w-2xl text-center">
@@ -24,14 +46,30 @@ function OurEvents() {
           <h4 className="text-green-dark text-[32px] leading-normal font-semibold">
             Upcoming Events
           </h4>
-          <ViewMoreBtn link="/" />
+          <ViewMoreBtn link="/all-events" />
         </div>
 
-        <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
-          {Array.from({ length: 8 }).map((card, i) => (
-            <UpcomingEventCard key={i} />
-          ))}
-        </div>
+        {isError && <Error500 />}
+        {isPending && (
+          <div className="flex flex-col items-center justify-center gap-4 py-10">
+            <Loader />
+            <p className="text-lg font-medium text-primary">
+              Loading events...
+            </p>
+          </div>
+        )}
+
+        {isSuccess && (
+          <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
+            {topEvents?.count === 0 ? (
+              <p className="">No events found!</p>
+            ) : (
+              topEvents?.results.map((event) => (
+                <UpcomingEventCard key={event.id} event={event} />
+              ))
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -39,22 +77,26 @@ function OurEvents() {
 
 export default OurEvents;
 
-function UpcomingEventCard() {
+function UpcomingEventCard({ event }) {
+  const [month, day] = startEventDate(event.start_date);
+  const eventTime = formatEventTime(event);
+  const daysAway = calculateDistanceToDate(event.start_date);
+
   return (
     <Link
-      to="/"
+      to={`/events/${event.id}`}
       className="bg-white border flex items-center flex-col md:flex-row justify-start w-full rounded-xl p-4 gap-4"
     >
       <div className="border bg-white p-1 rounded-lg w-full md:w-fit">
         <div className="flex-center flex-col bg-green-light text-green-dark aspect-video md:size-[120px] rounded-[4px] font-bold">
-          <span className="text-sm">Feb</span>
-          <h4 className="text-5xl">24</h4>
+          <span className="text-sm">{month}</span>
+          <h4 className="text-5xl">{day}</h4>
         </div>
       </div>
 
       <div className="flex-start flex-col gap-2.5 w-full">
         <h5 className="text-green-dark text-base leading-tight font-semibold uppercase text-nowrap md:text-wrap">
-          Code Africa Conference
+          {event.name}
         </h5>
 
         <div className="flex items-center gap-2 text-gray-500">
@@ -71,7 +113,7 @@ function UpcomingEventCard() {
             />
           </svg>
 
-          <span className="text-sm font-normal">UON, Nairobi</span>
+          <span className="text-sm font-normal">{event.location}</span>
         </div>
 
         <div className="flex items-center gap-2 text-gray-500">
@@ -88,7 +130,7 @@ function UpcomingEventCard() {
             />
           </svg>
 
-          <span className="text-sm font-normal">2:00 PM - 4:00 PM</span>
+          <span className="text-sm font-normal">{eventTime}</span>
         </div>
 
         <div className="flex items-center gap-2 text-gray-500">
@@ -106,7 +148,7 @@ function UpcomingEventCard() {
             />
           </svg>
 
-          <span className="text-sm font-normal">2 weeks away</span>
+          <span className="text-sm font-normal">{daysAway}</span>
         </div>
       </div>
     </Link>

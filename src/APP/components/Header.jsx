@@ -62,19 +62,21 @@ function Header() {
 
         {/* mobile menu */}
         {showNavlinks ? (
-          <img
-            src={cancel}
-            alt="cancel"
+          <button
+            type="button"
             className="md:hidden"
             onClick={() => setShowNavlinks(false)}
-          />
+          >
+            <img src={cancel} alt="cancel" />
+          </button>
         ) : (
-          <img
-            src={menu}
-            alt="menu"
+          <button
+            type="button"
             className="md:hidden"
             onClick={() => setShowNavlinks(true)}
-          />
+          >
+            <img src={menu} alt="menu" />
+          </button>
         )}
 
         {/* mobile navlinks */}
@@ -89,7 +91,7 @@ function Header() {
                 key={id}
                 className={`${
                   isActive ? "text-primary" : "text-white"
-                } hover:text-primary transition-all duration-300 cursor-pointer`}
+                } hover:text-primary transition-all font-normal duration-300 cursor-pointer`}
                 to={`${route}`}
                 onClick={() => setShowNavlinks(false)}
               >
@@ -108,7 +110,7 @@ function Header() {
                 key={id}
                 className={`${
                   isActive ? "text-primary" : "text-white"
-                } hover:text-primary transition-all duration-300 cursor-pointer`}
+                } hover:text-primary transition-all font-normal duration-300 cursor-pointer`}
                 to={`${route}`}
               >
                 {link}

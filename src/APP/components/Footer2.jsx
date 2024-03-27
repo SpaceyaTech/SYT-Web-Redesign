@@ -112,7 +112,7 @@ function Footer2() {
                 {/* To be restored once the jobs section is implemented  */}
                 <li>Jobs</li>
                 <li>
-                  {/* <Link to="/allevents"> */}
+                  {/* <Link to="/all-events"> */}
                   Events
                   {/* </Link> */}
                 </li>
