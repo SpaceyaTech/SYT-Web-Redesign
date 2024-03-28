@@ -16,6 +16,7 @@ import NotificationModal from "../../components/auth/NotificationModal";
 import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
+import formatPrice from "../../../utilities/FormatPrice";
 
 // const products = [
 //   {
@@ -39,56 +40,68 @@ import ItemHeader from "./sections/ItemHeader";
 //   // More products...
 // ];
 
+// {
+//   "swagg_id": "0d0aacc0-9ed8-4c13-8038-41a8f42642cd",
+//   "product": {
+//     "name": "Tech-Infused Comfort",
+//     "description": "Meet our Signature T-Shirt, engineered with tech-savvy comfort in mind. Crafted from premium materials, it seamlessly blends style with innovation. Perfect for work or play, its breathable fabric keeps you cool while you conquer coding challenges or unwind after a long day of programming. Elevate your wardrobe with our tech-inspired tee and embrace the future of fashion.",
+//     "price": "1000",
+//     "size": "S"
+//   },
+//   "quantity": 2
+// }
+
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
 export default function SingleItemPage() {
+  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+
   const { auth } = useAuth();
-  const params = useParams();
+  const { id } = useParams();
   // const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(sizes[2]);
   const [Payload, setPayload] = useState({});
 
-  const { data: singleOrder } = useSingleOrder(params.id);
-  const { data: singleSwag, isSuccess, refetch } = useSingleSwag(params.id);
-  // const { mutate: addItemsToCart, isLoading } = useAddSwagToCart();
+  const { data: singleOrder } = useSingleOrder(id);
+  const { data: singleSwag, isSuccess, refetch } = useSingleSwag(id);
+  const { mutate: addItemsToCart, isLoading } = useAddSwagToCart();
 
-  const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-  const state = useHookstate(
-    [],
-    localstored({
-      // key is optional,
-      // if it is not defined, the extension requires and
-      // uses the identifier from the @hookstate/identifiable
-      key: "cart-items",
-    })
-  );
+  // const state = useHookstate(
+  //   [],
+  //   localstored({
+  //     // key is optional,
+  //     // if it is not defined, the extension requires and
+  //     // uses the identifier from the @hookstate/identifiable
+  //     key: "cart-items",
+  //   })
+  // );
 
-  console.log("singleSwag", singleSwag);
+  // console.log("singleSwag", singleSwag);
   useEffect(() => {
-    if (isSuccess) {
-      setPayload({
-        swagg_id: singleSwag.id,
-        product: {
-          name: singleSwag.name,
-          description: singleSwag.description,
-          price: singleSwag.price,
-          size: selectedSize,
-          // image: singleSwag.image,
-        },
-        quantity: count,
-      });
-    }
+    setPayload({
+      swagg_id: singleSwag?.id,
+      product: {
+        name: singleSwag?.name,
+        description: singleSwag?.description,
+        price: singleSwag?.price,
+        size: selectedSize,
+        // image: singleSwag.image,
+      },
+      quantity: count,
+    });
+
     refetch();
-  }, [params.id]);
+  }, [isSuccess]);
 
   const handleAddToCart = () => {
     // if (auth?.access) {
-    // addItemsToCart(Payload);
+    addItemsToCart(Payload);
+    // console.log("Payload Passed ✅", Payload);
     // } else {
     // console.log("Payload", {
     //   swagg_id: singleSwag.id,
@@ -100,37 +113,37 @@ export default function SingleItemPage() {
     //   },
     //   quantity: count,
     // });
-    if (state) {
-      const existingItem = state.find(
-        ({ payload }) =>
-          payload.swagg_id.get() === singleSwag.id &&
-          payload.product.size.get() === selectedSize
-      );
+    // if (state) {
+    //   const existingItem = state.find(
+    //     ({ payload }) =>
+    //       payload.swagg_id.get() === singleSwag.id &&
+    //       payload.product.size.get() === selectedSize
+    //   );
 
-      if (existingItem) {
-        existingItem.payload.quantity.set(
-          existingItem.payload.quantity.get() + count
-        );
-      } else {
-        state.merge([
-          {
-            payload: {
-              swagg_id: singleSwag.id,
-              product: {
-                name: singleSwag.name,
-                description: singleSwag.description,
-                price: singleSwag.price,
-                size: selectedSize,
-                image: singleSwag.image,
-              },
-              quantity: count,
-            },
-          },
-        ]);
-      }
-    }
+    //   if (existingItem) {
+    //     existingItem.payload.quantity.set(
+    //       existingItem.payload.quantity.get() + count
+    //     );
+    //   } else {
+    //     state.merge([
+    //       {
+    //         payload: {
+    //           swagg_id: singleSwag.id,
+    //           product: {
+    //             name: singleSwag.name,
+    //             description: singleSwag.description,
+    //             price: singleSwag.price,
+    //             size: selectedSize,
+    //             image: singleSwag.image,
+    //           },
+    //           quantity: count,
+    //         },
+    //       },
+    //     ]);
+    //   }
+    // }
 
-    toast("✅ Item added to cart 🛒!");
+    // toast("✅ Item added to cart 🛒!");
     // setIsModalOpen(true);
     setOpen(true);
 
@@ -140,15 +153,15 @@ export default function SingleItemPage() {
   // useEffect(() => {
   // }, []);
 
-  const handleBuyNow = () => {
-    // if (auth?.access) {
-    //   addItemsToCart(Payload);
-    setOpen(true);
-    // } else {
-    // toast("make an order ✅");
-    setIsModalOpen(true);
-    // }
-  };
+  // const handleBuyNow = () => {
+  //   // if (auth?.access) {
+  //   //   addItemsToCart(Payload);
+  //   setOpen(true);
+  //   // } else {
+  //   // toast("make an order ✅");
+  //   setIsModalOpen(true);
+  //   // }
+  // };
 
   return (
     <>
@@ -179,7 +192,7 @@ export default function SingleItemPage() {
             </h3>
             <p className="text-sm md:text-base">{singleSwag.description}</p>
             <p className="text-xl md:text-2xl font-semibold md:font-bold">
-              Ksh {singleSwag.price}
+              {formatPrice(singleSwag.price)}
             </p>
             <h4 className="text-base md:text-xl">Choose color</h4>
 
@@ -216,17 +229,17 @@ export default function SingleItemPage() {
             </div>
 
             <Counter className="h-12 w-32" count={count} setCount={setCount} />
-
+            {/* 
             <button
               type="button"
               className="w-full h-[62px] bg-primary text-[#F7F7F7] text-sm font-medium rounded-lg"
               onClick={handleBuyNow}
             >
               Buy Now
-            </button>
+            </button> */}
             <button
               type="button"
-              className="w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-[#009975]"
+              className="w-full h-[62px] bg-[#F5FFFD] text-primary hover:bg-primary hover:text-[#F7F7F7] text-sm font-medium rounded-lg outline outline-[#009975]"
               onClick={handleAddToCart}
             >
               Add to cart

@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { useHookstate } from "@hookstate/core";
-import { localstored } from "@hookstate/localstored";
+// import { useHookstate } from "@hookstate/core";
+// import { localstored } from "@hookstate/localstored";
 import { Fragment, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
@@ -14,33 +14,33 @@ import Counter from "./Counter";
 import formatPrice from "../../../utilities/FormatPrice";
 
 function CartDrawer({ open, setOpen }) {
-  const state = useHookstate(
-    [],
-    localstored({
-      // key is optional,
-      // if it is not defined, the extension requires and
-      // uses the identifier from the @hookstate/identifiable
-      key: "cart-items",
-    })
-  );
+  // const state = useHookstate(
+  //   [],
+  //   localstored({
+  //     // key is optional,
+  //     // if it is not defined, the extension requires and
+  //     // uses the identifier from the @hookstate/identifiable
+  //     key: "cart-items",
+  //   })
+  // );
 
   const { auth } = useAuth();
   const navigate = useNavigate();
   const [count, setCount] = useState(1);
   const [LocalCart, setLocalCart] = useState([]);
 
-  useEffect(() => {
-    setLocalCart(state.get());
-  }, [state]);
+  // useEffect(() => {
+  //   setLocalCart(state.get());
+  // }, [state]);
 
-  console.log("LocalCart", LocalCart);
 
   const { data: cartProducts, isSuccess } = useProductsInCart();
+  console.log("cartProducts: eyes ", cartProducts);
 
-  // const { mutate: deleteSwag } = useDeleteSwag();
+  const { mutate: deleteSwag } = useDeleteSwag();
 
   const handleDeleteSwag = (cartItemId) => {
-    // deleteSwag(cartItemId);
+    deleteSwag(cartItemId);
   };
 
   const handleCheckout = () => {
@@ -51,13 +51,13 @@ function CartDrawer({ open, setOpen }) {
 
   const [totalPrice, setTotalPrice] = useState(0);
 
-  useEffect(() => {
-    let totalPrice = state.reduce((acc, { payload: { product, quantity } }) => {
-      return acc + product.price.get() * quantity.get();
-    }, 0);
+  // useEffect(() => {
+  //   let totalPrice = state.reduce((acc, { payload: { product, quantity } }) => {
+  //     return acc + product.price.get() * quantity.get();
+  //   }, 0);
 
-    setTotalPrice(totalPrice);
-  }, [state]);
+  //   setTotalPrice(totalPrice);
+  // }, [state]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -92,8 +92,8 @@ function CartDrawer({ open, setOpen }) {
                       <Dialog.Title className="text-3xl font-semibold">
                         Your cart{" "}
                         <span className="text-primary">
-                          {/* ({isSuccess ? cartProducts.cart_items?.length : 0}) */}
-                          ({state.length || 0})
+                          ({isSuccess ? cartProducts.cart_items?.length : 0})
+                          {/* ({state.length || 0}) */}
                         </span>
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
@@ -113,7 +113,7 @@ function CartDrawer({ open, setOpen }) {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul className="-my-6 divide-y divide-gray-200 border-b">
-                            {LocalCart?.map(
+                            {/* {LocalCart?.map(
                               ({ payload: { id, product, quantity } }) => (
                                 <li
                                   key={crypto.randomUUID()}
@@ -155,7 +155,7 @@ function CartDrawer({ open, setOpen }) {
                                         {formatPrice(product.price)}
                                       </p>
 
-                                      {/* Count thing reason out */}
+                               
                                       <Counter
                                         className="h-8 sm:h-12 w-24 sm:w-32"
                                         setCount={setCount}
@@ -165,9 +165,9 @@ function CartDrawer({ open, setOpen }) {
                                   </div>
                                 </li>
                               )
-                            )}
+                            )} */}
 
-                            {/* {isSuccess &&
+                            {isSuccess &&
                               cartProducts.cart_items?.map(
                                 ({
                                   id,
@@ -219,11 +219,11 @@ function CartDrawer({ open, setOpen }) {
                                       </div>
                                       <div className="flex flex-1 items-end justify-between text-sm">
                                         <p className="text-xl md:text-2xl font-bold">
-                                          KES {price}
+                                          {formatPrice(price)}
                                         </p>
 
-                                        // {/* Count thing reason out */}
-                            {/* <Counter
+                                        {/* Count thing reason out */}
+                                        <Counter
                                           className="h-8 sm:h-12 w-24 sm:w-32"
                                           setCount={setCount}
                                           count={quantity}
@@ -232,7 +232,7 @@ function CartDrawer({ open, setOpen }) {
                                     </div>
                                   </li>
                                 )
-                              )}  */}
+                              )}
                           </ul>
                         </div>
                       </div>

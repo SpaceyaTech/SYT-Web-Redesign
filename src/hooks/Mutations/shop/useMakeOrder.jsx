@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
 import privateAxios from "../../../api/privateAxios";
 import useAuth from "../../useAuth";
 
@@ -20,7 +21,7 @@ const useMakeOrder = () => {
     {
       onSuccess: (data) => {
         console.log("Added to cart: ", data);
-        toast("✅ Order placed successfully 🛒!")
+        toast("Order placed successfully 🛒!", { type: "success" });
         queryClient.invalidateQueries(["productsInCart"]);
       },
       onError: (error) => {
