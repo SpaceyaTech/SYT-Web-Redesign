@@ -1,4 +1,3 @@
-
 import React from "react"; // , { useState }
 import { Link } from "react-router-dom";
 
@@ -51,7 +50,7 @@ function EventsUpdateSection({
       </div>
       <div>
         {showAllEventsLink && (
-          <Link to="/allevents">
+          <Link to="/all-events">
             <div className="flex items-center mr-6">
               <h2 className="text-sm text-primary text-center font-normal mr-2 hover:underline">
                 ALL EVENTS

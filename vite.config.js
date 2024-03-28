@@ -1,3 +1,4 @@
+import path from "path";
 import react from "@vitejs/plugin-react";
 import million from "million/compiler";
 import { defineConfig, loadEnv } from "vite";
@@ -15,6 +16,11 @@ export default defineConfig(({ mode }) => {
     server: {
       watch: {
         usePolling: true,
+      },
+    },
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
       },
     },
   };
