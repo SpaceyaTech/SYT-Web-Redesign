@@ -4,7 +4,7 @@ import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 function PopularItemsSection() {
   const navigate = useNavigate();
 
-  const { data: products, isLoading, isError, isSuccess } = useSwagList();
+  const { data: products, isPending, isError, isSuccess } = useSwagList();
 
   return (
     <div className="p-10">

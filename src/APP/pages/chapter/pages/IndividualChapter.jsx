@@ -1,25 +1,35 @@
 import { React } from "react";
 import { useParams } from "react-router-dom";
-import WelcomeSection from "../sections/WelcomeSection";
+
+import useIndividualChapterData from "../../../../hooks/Queries/chapter/useIndividualChapter";
+import { Loader } from "../../../components";
+import Error500 from "../../errorPages/Error500";
 import AboutChapterSection from "../sections/AboutChapterSection";
-import UpcomingEventSection from "../sections/UpcomingEventSection";
 import ImpactSection from "../sections/ImpactSection";
 import OrganizersSection from "../sections/OrganizersSection";
-import useIndividualChapterData from "../../../../hooks/Queries/chapter/useIndividualChapter";
+import UpcomingEventSection from "../sections/UpcomingEventSection";
+import WelcomeSection from "../sections/WelcomeSection";
 
 function IndividualChapter() {
   const { id } = useParams();
   const {
     data: chapterData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useIndividualChapterData(id);
 
   return (
     <>
-      {isError && <p>Error loading chapter details!</p>}
-      {isLoading === "loading" && <p>Loading chapter details...</p>}
+      {isError && <Error500 />}
+      {isPending === "loading" && (
+        <div className="flex flex-col items-center justify-center gap-4 py-10">
+          <Loader />
+          <p className="text-lg font-medium text-primary">
+            Loading event details...
+          </p>
+        </div>
+      )}
       {isSuccess && (
         <div>
           <WelcomeSection chapter={chapterData} />

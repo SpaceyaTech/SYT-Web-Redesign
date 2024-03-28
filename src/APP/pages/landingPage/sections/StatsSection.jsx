@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+/* eslint-disable no-console */
 import axios from "axios";
+import { useState, useEffect } from "react";
+import formatNumber from "../../../../utilities/formatNumber";
+
+import { briefcase, teams } from "@/assets/images/icons";
 
 function StatsSection() {
-  const [isError, setError] = useState();
-  const [TotalMembers, setTotalMembers] = useState(0);
-  
-  
+  const [totalMembers, setTotalMembers] = useState(0);
+
   const getAllChapters = async () => {
     try {
       const response = await axios.get(
@@ -18,9 +20,9 @@ function StatsSection() {
         0
       );
 
-      setTotalMembers(total);
-    } catch (error) {
-      setError(error.message);
+      setTotalMembers(formatNumber(total));
+    } catch (err) {
+      console.error(err.message);
     }
   };
 
@@ -29,36 +31,80 @@ function StatsSection() {
   }, []);
 
   return (
-    <section className="bg-[#E5EFEC] body-font">
-      <div className="container px-5 py-8 mx-auto max-w-[1440px]">
-        <div className="flex flex-col text-center w-full mb-10">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
-            Our Impact
-          </h1>
-          <div className="flex flex-col md:flex-row justify-around items-center mt-2 md:mt-8">
-            <div className="flex gap-x-4 py-4 md:py-0 border-l-[#00664E] w-full justify-center">
-              <h1 className="sm:text-5xl text-4xl font-extrabold title-font text-[#323433]">
-                10
-              </h1>
-              <h1 className="sm:text-5xl text-4xl font-medium title-font text-[#323433]">
-                Projects
-              </h1>
+    <section className="max-w-1440 w-full mx-auto flex flex-col items-center gap-9 pt-2">
+      <h3 className="w-full max-w-lg text-green-header text-center font-semibold text-xl md:text-3xl">
+        A community geared towards holistic results{" "}
+      </h3>
+
+      <div className="w-full flex flex-col gap-6 p-2">
+        <div className="flex items-center flex-wrap md:flex-nowrap gap-4">
+          <div className="w-full flex-center flex-col gap-5">
+            <img src={teams} alt="teams" className="size-10 object-contain" />
+            <div className="flex-center flex-col gap-2">
+              <h4 className="text-green-dark text-3xl font-semibold">
+                {totalMembers}
+              </h4>
+
+              <h6 className="text-lg font-semibold">Members</h6>
+
+              <p className="text-base font-normal text-center">
+                Spanning our communities and following
+              </p>
             </div>
-            {/* <div className="flex gap-x-4 py-4 md:py-0 border-b-2 border-l-[#00664E] w-full justify-center">
-              <h1 className="sm:text-5xl text-4xl font-extrabold title-font text-[#323433]">
-                30K
-              </h1>
-              <h1 className="sm:text-5xl text-4xl font-medium title-font text-[#323433]">
-                Donations
-              </h1>
-            </div> */}
-            <div className="flex gap-x-4 py-4 md:py-0 w-full justify-center">
-              <h1 className="sm:text-5xl text-4xl font-extrabold title-font text-[#323433]">
-                {TotalMembers}
-              </h1>
-              <h1 className="sm:text-5xl text-4xl font-medium title-font text-[#323433]">
-                Members
-              </h1>
+          </div>
+
+          <hr className="w-1/2 h-0.5 flex md:hidden rounded-sm bg-green-dark md:bg-gray-400 mx-auto" />
+
+          <div className="w-full flex-center flex-col gap-5">
+            <img src={teams} alt="teams" className="size-10 object-contain" />
+            <div className="flex-center flex-col gap-2">
+              <h4 className="text-green-dark text-3xl font-semibold">23</h4>
+
+              <h6 className="text-lg font-semibold">Students</h6>
+
+              <p className="text-base font-normal text-center">
+                Benefiting from our{" "}
+                <span className="font-semibold text-green-dark">
+                  {" "}
+                  Mastercraft Program
+                </span>{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr className="w-1/2 md:w-full h-0.5 rounded-sm bg-green-dark md:bg-gray-400 mx-auto" />
+
+        <div className="flex items-center flex-wrap md:flex-nowrap gap-4">
+          <div className="w-full flex-center flex-col gap-5">
+            <img src={teams} alt="teams" className="size-10 object-contain" />
+            <div className="flex-center flex-col gap-2">
+              <h4 className="text-green-dark text-3xl font-semibold">43</h4>
+
+              <h6 className="text-lg font-semibold">Team Size</h6>
+
+              <p className="text-base font-normal text-center">
+                Of pros making SpaceYaTech tick{" "}
+              </p>
+            </div>
+          </div>
+
+          <hr className="w-1/2 h-[2px] flex md:hidden rounded-sm bg-green-dark md:bg-gray-400 mx-auto" />
+
+          <div className="w-full flex-center flex-col gap-5">
+            <img
+              src={briefcase}
+              alt="teams"
+              className="size-10 object-contain"
+            />
+            <div className="flex-center flex-col gap-2">
+              <h4 className="text-green-dark text-3xl font-semibold">5</h4>
+
+              <h6 className="text-lg font-semibold">Projects</h6>
+
+              <p className="text-base font-normal text-center">
+                Completed over a span of 2 years
+              </p>
             </div>
           </div>
         </div>

@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 
-
-import BlogCard from "./BlogCard";
-import BlogPagination from "./BlogPagination";
-import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -11,8 +7,11 @@ import {
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
 
 import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
+import { Loader } from "../../../components";
 
 import Error500 from "../../errorPages/Error500";
+import BlogCard from "./BlogCard";
+import BlogPagination from "./BlogPagination";
 
 function SearchResults({ searchText }) {
   return (
@@ -31,7 +30,7 @@ function BlogsWrapper() {
   const {
     data: blogsData,
     refetch: refetchBlogsData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useBlogsData(page);
@@ -63,7 +62,7 @@ function BlogsWrapper() {
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
       {isError && <Error500 />}
-      {isLoading && (
+      {isPending && (
         <div className="w-full flex flex-col items-center justify-center gap-5 py-10">
           <Loader />
           <p className="text-lg font-medium text-primary">Loading blogs...</p>

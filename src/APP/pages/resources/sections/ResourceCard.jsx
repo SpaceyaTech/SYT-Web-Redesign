@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { arrow, arrowRight } from "../../../../assets/images/resources-page";
 
+// million-ignore
 function ResourceCard({
   type,
   title,

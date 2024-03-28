@@ -8,6 +8,7 @@ import { ErrorBoundary } from "./APP";
 import { AuthContextProvider } from "./context/AuthContext";
 import { SearchBlogProvider } from "./context/searchBlog";
 import router from "./router";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
