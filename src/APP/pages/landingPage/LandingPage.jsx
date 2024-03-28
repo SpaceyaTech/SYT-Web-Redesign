@@ -15,6 +15,7 @@ import {
   WhatWeDo,
 } from "./sections";
 import ScrollToTop from "@/utilities/ScrollToTop";
+import HeroSection3 from "./sections/HeroSection3";
 
 const components = [
   {
