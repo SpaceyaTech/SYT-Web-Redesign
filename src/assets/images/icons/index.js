@@ -1,11 +1,13 @@
 import arrowRight from "./arrow-right.svg";
+import arrowCircleLeft from "./ArrowCircleLeft.svg";
+import arrowCircleRight from "./ArrowCircleRight.svg";
 import bellIcon from "./bell-icon.svg";
 import briefcase from "./briefcase.svg";
-import cancel from "./cancel.svg"
+import cancel from "./cancel.svg";
 import cartIcon from "./cart-icon.svg";
 import closeIcon from "./close-icon.svg";
 import deleteIcon from "./delete-icon.svg";
-import menu from './menu.svg'
+import menu from "./menu.svg";
 import searchIcon from "./search-icon.svg";
 import teams from "./teams.svg";
 import upleft from "./up-left.svg";
@@ -24,4 +26,6 @@ export {
   upleft,
   upleftGreen,
   teams,
+  arrowCircleLeft,
+  arrowCircleRight,
 };

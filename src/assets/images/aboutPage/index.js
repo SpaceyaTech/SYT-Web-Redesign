@@ -28,6 +28,9 @@ import about2 from "./about-img-2.png";
 import buildComm from "./building-community.png";
 import mission from "./mission-bg.png";
 import vision from "./vision-bg.png";
+import SYTHero from "./SYT-hero.png";
+import LittleMore from "./bit-more.png"
+import PartnerWithUs from "./partner-with-us.png"
 
 export {
   aaron,
@@ -57,4 +60,7 @@ export {
   mission,
   vision,
   heroImg,
+  SYTHero,
+  LittleMore,
+  PartnerWithUs
 };
