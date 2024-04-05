@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         element: <Blog2 />,
       },
       {
-        path: "/allevents",
+        path: "/all-events",
         element: <EventsPage />,
       },
       {

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 
 import { glovo } from "../../../../assets/images/blogs-page";
 

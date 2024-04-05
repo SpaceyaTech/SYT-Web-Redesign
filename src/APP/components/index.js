@@ -1,23 +1,10 @@
-import { default as FAQ } from "./FAQ";
-import { default as Footer } from "./Footer";
-import { default as Footer2 } from "./Footer2";
-import { default as Header } from "./Header";
-import { default as Header2 } from "./Header2";
-import { default as Caroussel } from "./Caroussel";
-import { default as Counter } from "./shop/Counter";
-import { default as CartDrawer } from "./shop/CartDrawer";
-import { default as PodcastCard } from "./PodcastCard";
-import { default as Loader } from "./Loader";
-
-export {
-  FAQ,
-  Footer,
-  Footer2,
-  Header,
-  Header2,
-  Caroussel,
-  Counter,
-  PodcastCard,
-  Loader,
-  CartDrawer,
-};
+export { default as Caroussel } from "./Caroussel";
+export { default as CartDrawer } from "./shop/CartDrawer";
+export { default as Counter } from "./shop/Counter";
+export { default as FAQ } from "./FAQ";
+export { default as Footer } from "./Footer";
+export { default as Footer2 } from "./Footer2";
+export { default as Header } from "./Header";
+export { default as Loader } from "./Loader";
+export { default as PodcastCard } from "./PodcastCard";
+export { default as ViewMoreBtn } from "./ViewMoreBtn";

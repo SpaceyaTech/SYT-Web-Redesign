@@ -16,7 +16,7 @@ function Footer2() {
   const year = now.getFullYear();
 
   return (
-    <footer className="bg-[#252533] text-white ">
+    <footer className="bg-secondary text-white ">
       <div className="md:p-12 py-8 px-4 relative max-w-[1440px] mx-auto">
         <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
           <div className="flex-3 flex flex-col sm:items-start items-center">
@@ -112,7 +112,7 @@ function Footer2() {
                 {/* To be restored once the jobs section is implemented  */}
                 <li>Jobs</li>
                 <li>
-                  {/* <Link to="/allevents"> */}
+                  {/* <Link to="/all-events"> */}
                   Events
                   {/* </Link> */}
                 </li>

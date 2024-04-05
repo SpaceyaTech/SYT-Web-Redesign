@@ -1,5 +1,7 @@
-import { defineConfig, loadEnv } from "vite";
+import path from "path";
 import react from "@vitejs/plugin-react";
+import million from "million/compiler";
+import { defineConfig, loadEnv } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -10,10 +12,15 @@ export default defineConfig(({ mode }) => {
         env.REACT_APP_API_BASE_URL
       ),
     },
-    plugins: [react()],
+    plugins: [million.vite({ auto: true }), react()],
     server: {
       watch: {
         usePolling: true,
+      },
+    },
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
       },
     },
   };
