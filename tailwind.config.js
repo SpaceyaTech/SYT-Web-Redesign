@@ -15,6 +15,9 @@ export default {
           light: "#E5EFEC",
           header: "#1F7964",
         },
+        grey: {
+          neutral: "#656767",
+        },
       },
       maxWidth: {
         1440: "1440px",

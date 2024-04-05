@@ -1,10 +1,16 @@
 /* eslint-disable linebreak-style */
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { LittleMore } from "../../../../assets/images/aboutPage";
 
 function MissionVisionSection() {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto mt-24 px-4 md:px-0">
+      <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
+        <div className="w-full h-0.5 rounded-sm bg-gray-300" />
+        <h4 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+          A bit more about us
+        </h4>
+        <div className="w-full h-0.5 bg-gray-300" />
+      </div>
       <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
         <div
           style={{
@@ -13,13 +19,7 @@ function MissionVisionSection() {
           }}
           className="h-full rounded-xl"
         >
-          {/* <LazyLoadImage
-          effect="blur"
-          src={LittleMore}
-          alt="mission and vision"
-          className="object-cover"
-        /> */}
-          <div className="w-1/2 text-white space-y-4 pl-12 pb-10 pt-48">
+          <div className="md:w-1/2 text-white space-y-4 p-4 md:pl-12 pb-10 md:pt-48 pt-6">
             <h2 className="md:text-4xl text-2xl font-medium">
               Empowering the next generation of African innovators in tech
             </h2>

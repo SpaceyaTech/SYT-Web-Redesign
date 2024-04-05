@@ -1,6 +1,13 @@
-import React, { useRef } from "react";
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
-import { arrowCircleLeft, arrowCircleRight } from "../../assets/images/icons";
+import { useRef } from "react";
+import {
+  arrowCircleLeft,
+  arrowCircleRight,
+  greyLinkedin,
+  greyTwitter,
+} from "../../assets/images/icons";
 
 function Caroussel({ CarousselData }) {
   const carouselRef = useRef();
@@ -21,7 +28,7 @@ function Caroussel({ CarousselData }) {
           gridAutoColumns: "max-content",
         }}
       >
-        {CarousselData.map(({ name, title, image }) => (
+        {CarousselData.map(({ name, title, image, linkedin, twitter }) => (
           <div
             key={crypto.randomUUID()}
             className="border bg-white p-2 max-w-[400px] rounded-2xl md:rounded-[20px]"
@@ -32,10 +39,46 @@ function Caroussel({ CarousselData }) {
               alt={name}
             />
             <div className="bg-green-light flex flex-col gap-2 w-full h-2/6 p-3 rounded-b-2xl">
-              <p className=" text-xl">{name}</p>
-              <p className="text-base">{title}</p>
-              <p className="text-base">{title}</p>
-              <p className="text-base">{title}</p>
+              <p className=" text-2xl font-medium">{name}</p>
+              <p className="flex gap-4 items-center text-base font-light text-grey-neutral space-x-4">
+                <FontAwesomeIcon icon={faBriefcase} />
+                {title}
+              </p>
+              <p className="flex items-center text-base font-light text-grey-neutral space-x-4">
+                <img
+                  src={greyLinkedin}
+                  alt="Linkedin logo"
+                  width="16"
+                  height="16"
+                />
+
+                <a
+                  href={linkedin.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className=""
+                >
+                  {linkedin.username}
+                </a>
+              </p>
+              {twitter.username && (
+                <p className="flex items-center text-base font-light text-grey-neutral space-x-4">
+                  <img
+                    src={greyTwitter}
+                    alt="Twitter logo"
+                    width="16"
+                    height="16"
+                  />
+                  <a
+                    href={twitter.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className=""
+                  >
+                    {twitter.username}
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         ))}

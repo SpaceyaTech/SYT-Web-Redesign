@@ -1,12 +1,12 @@
-import React, { Fragment, useState, useRef } from "react";
-import { Dialog, Transition } from "@headlessui/react";
 import emailjs from "@emailjs/browser";
+import { Dialog, Transition } from "@headlessui/react";
+import React, { Fragment, useState, useRef } from "react";
 
-import { Caroussel } from "../../../components";
-import { closeIcon } from "../../../../assets/images/icons";
-import { LeadershipData } from "../data";
-import { PartnerWithUs } from "../../../../assets/images/aboutPage";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { PartnerWithUs } from "../../../../assets/images/aboutPage";
+import { closeIcon } from "../../../../assets/images/icons";
+import { Caroussel } from "../../../components";
+import { LeadershipData } from "../data";
 
 // env var
 const SERVICE_ID =
@@ -71,25 +71,34 @@ function LeadershipSection() {
         }
       );
   };
-  
+
   return (
-    <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl">
+    <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl sm:mt-24 px-4 md:px-0">
+      <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-6">
+        <div className="w-full h-0.5 rounded-sm bg-gray-300" />
+        <h4 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+          Our leadership
+        </h4>
+        <div className="w-full h-0.5 bg-gray-300" />
+      </div>
+
       <h2 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
-        A community is only as good<br/> as the leadership
+        A community is only as good
+        <br /> as the leadership
       </h2>
 
       <Caroussel CarousselData={LeadershipData} />
-      <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
+      <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2 mt-12">
         <div className="bg-[#E5EFEC] rounded-xl flex justify-between flex-col md:flex-row">
           <div className="md:w-1/2">
             <LazyLoadImage
               effect="blur"
               src={PartnerWithUs}
               alt="Space ya Tech Community"
-              className="rounded-l-xl w-full object-cover"
+              className="md:rounded-l-xl rounded-t-xl w-full object-cover"
             />
           </div>
-          <div className="space-y-4 md:w-1/2 px-6 flex flex-col justify-center">
+          <div className="space-y-4 md:w-1/2 px-6 flex flex-col justify-center md:my-0 my-6">
             <h3 className="w-fit text-green-dark text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
               Partner with us
             </h3>
