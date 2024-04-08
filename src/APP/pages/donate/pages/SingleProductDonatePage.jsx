@@ -21,7 +21,6 @@ function SingleProductDonatePage() {
               src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt="img"
               className="object-cover w-full h-full rounded-2xl"
-              effect="blur"
             />
           </div>
           <div className="flex items-center justify-between">
@@ -31,25 +30,21 @@ function SingleProductDonatePage() {
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                   alt="img-1"
-                  effect="blur"
                 />
                 <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                   alt="img-2"
-                  effect="blur"
                 />
                 <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
                   alt="img-3"
-                  effect="blur"
                 />
                 <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
                   alt="img-4"
-                  effect="blur"
                 />
               </div>
               <p className="inline-block text-xs">100 donors</p>
@@ -61,13 +56,11 @@ function SingleProductDonatePage() {
                   src="/src/assets/images/sytLogo.png"
                   alt="syt logo"
                   className="w-auto h-6"
-                  effect="blur"
                 />
                 <LazyLoadImage
                   src="/src/assets/images/kamilimu.png"
                   alt="kamilimu logo"
                   className="w-auto h-6"
-                  effect="blur"
                 />
               </div>
             </div>

@@ -44,7 +44,6 @@ function ResourceCard({
             src={image}
             alt={title}
             className="object-cover h-full w-full"
-            effect="blur"
           />
         </div>
 
@@ -58,7 +57,6 @@ function ResourceCard({
               className={`w-6 h-6 object-contain transform transition-all ease-in duration-500 cursor-pointer ${
                 hovered && "rotate-180"
               }`}
-              effect="blur"
             />
           </div>
 

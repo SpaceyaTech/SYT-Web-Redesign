@@ -38,7 +38,6 @@ function Teams() {
             src={upleftGreen}
             alt="upleft"
             className="h-6 w-6 md:h-10 md:w-10 object-contain"
-            effect="blur"
           />
         </Link>
       </div>

@@ -73,7 +73,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={twitter} alt="twitter" className="w-12 h-12" effect="blur" />
+              <LazyLoadImage src={twitter} alt="twitter" className="w-12 h-12" />
             </a>
 
             <a
@@ -81,7 +81,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={linkedin} alt="linkedin" className="w-12 h-12" effect="blur" />
+              <LazyLoadImage src={linkedin} alt="linkedin" className="w-12 h-12" />
             </a>
 
             <a
@@ -89,7 +89,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={discord} alt="discord" className="w-12 h-12 p-3" effect="blur" />
+              <LazyLoadImage src={discord} alt="discord" className="w-12 h-12 p-3" />
             </a>
 
             <a
@@ -97,7 +97,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={instagram} alt="instagram" className="w-12 h-12" effect="blur" />
+              <LazyLoadImage src={instagram} alt="instagram" className="w-12 h-12" />
             </a>
 
             <a
@@ -105,7 +105,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={facebook} alt="facebook" className="w-12 h-12" effect="blur" />
+              <LazyLoadImage src={facebook} alt="facebook" className="w-12 h-12" />
             </a>
           </div>
         </div> */}

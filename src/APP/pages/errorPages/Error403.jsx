@@ -11,7 +11,6 @@ function Error403() {
         src={error403}
         alt="Error403"
         className="px-4 mt-5 md:my-10 sm:px-12 sm:my-0 h-[400px] md:h-[540px] w-full sm:w-fit"
-        effect="blur"
       />
 
       <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 text-center max-w-lg">

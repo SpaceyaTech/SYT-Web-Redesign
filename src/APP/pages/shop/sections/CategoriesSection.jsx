@@ -91,7 +91,6 @@ function CategoriesSection() {
                   src={category.imgURL}
                   className="object-cover object-center rounded-2xl h-64 w-60 lg:w-[420px]"
                   alt={category.name}
-                  effect="blur"
                 />
               </Link>
               <div className="p-2 flex items-center justify-between">

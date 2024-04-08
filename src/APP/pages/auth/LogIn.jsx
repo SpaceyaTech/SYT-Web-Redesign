@@ -50,7 +50,6 @@ function LogIn() {
           src={LoginImg}
           alt="Log in"
           className="m-auto"
-          effect="blur"
         />
       </div>
 

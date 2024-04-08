@@ -9,7 +9,6 @@ function Advert() {
         src={advert}
         alt="advert"
         className="h-full w-full"
-        effect="blur"
       />
     </div>
   );

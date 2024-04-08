@@ -40,7 +40,6 @@ function Blog() {
             src={blogData.image}
             alt={blogData.title}
             className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"
-            effect="blur"
           />
 
           <BlogWrapper blog={blogData} />

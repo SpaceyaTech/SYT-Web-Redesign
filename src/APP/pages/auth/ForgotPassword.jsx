@@ -18,7 +18,6 @@ function ForgotPassword() {
           src={ForgotPasswordImg}
           alt="Forgot Password"
           className="m-auto"
-          effect="blur"
         />
       </div>
 
@@ -31,7 +30,7 @@ function ForgotPassword() {
         </p>
         <form className="space-y-6">
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
-            <LazyLoadImage src={EmailIcon} alt="Email Icon" effect="blur" />
+            <LazyLoadImage src={EmailIcon} alt="Email Icon" />
             <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via Email</span>
               <input
@@ -43,7 +42,7 @@ function ForgotPassword() {
             </label>
           </div>
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
-            <LazyLoadImage src={MessageIcon} alt="Message Icon" effect="blur" />
+            <LazyLoadImage src={MessageIcon} alt="Message Icon" />
             <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via SMS</span>
               <input

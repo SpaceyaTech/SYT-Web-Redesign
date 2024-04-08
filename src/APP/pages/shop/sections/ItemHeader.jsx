@@ -120,7 +120,6 @@ function ItemHeader({ show }) {
                                   src={item.image}
                                   alt={item.name}
                                   className="h-12 w-12 rounded"
-                                  effect="blur"
                                 />{" "}
                                 <span>{item.name}</span>
                               </div>
@@ -149,7 +148,7 @@ function ItemHeader({ show }) {
           </div>
         )}
         <button type="button" className="ml-6 items-end" onClick={show}>
-          <LazyLoadImage src={CartIcon} alt="cart" effect="blur" />
+          <LazyLoadImage src={CartIcon} alt="cart" />
         </button>
       </div>
     </div>

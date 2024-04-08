@@ -16,7 +16,6 @@ function ResetPassword() {
           src={ResetPasswordImg}
           alt="Reset Password"
           className="m-auto"
-          effect="blur"
         />
       </div>
 

@@ -106,7 +106,6 @@ function CategoriesProducts() {
                       src={product.image}
                       alt="Front of men&#039;s Basic Tee in black."
                       className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
-                      effect="blur"
                     />
                   </div>
                   <div className="mt-4 flex justify-between">

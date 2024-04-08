@@ -27,7 +27,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage1}
-                effect="blur"
               />
             </div>
             <div className="w-1/3">
@@ -35,7 +34,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage7}
-                effect="blur"
               />
             </div>
             <div className="w-1/3">
@@ -43,7 +41,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage9}
-                effect="blur"
               />
             </div>
             <div className="w-full">
@@ -51,7 +48,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage2}
-                effect="blur"
               />
             </div>
           </div>
@@ -61,7 +57,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage4}
-                effect="blur"
               />
             </div>
             <div className="w-1/2">
@@ -69,7 +64,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage6}
-                effect="blur"
               />
             </div>
             <div className="w-1/2">
@@ -77,7 +71,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage5}
-                effect="blur"
               />
             </div>
           </div>
@@ -87,7 +80,6 @@ function GallerySection() {
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage3}
-                effect="blur"
               />
             </div>
           </div>

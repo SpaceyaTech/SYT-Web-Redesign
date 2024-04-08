@@ -11,7 +11,7 @@ function SytServices({ service }) {
   return (
     <div className="p-4 flex flex-col md:flex-row">
       <div className="inline-flex items-center justify-center mb-4 flex-shrink-0">
-        <LazyLoadImage src={img} alt={title} effect="blur" />
+        <LazyLoadImage src={img} alt={title} />
       </div>
       <div className="flex-grow pl-6">
         <h2 className="text-[#F7F7F7] text-2xl title-font font-medium mb-2">
@@ -52,7 +52,6 @@ function Services() {
           className="object-cover object-center rounded"
           alt="services"
           src={serviceImg}
-          effect="blur"
         />
       </div>
 

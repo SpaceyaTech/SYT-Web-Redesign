@@ -106,12 +106,11 @@ export default function SingleItemPage() {
               src={singleSwag.image}
               alt={singleSwag.name}
               className="m-auto md:min-w-full "
-              effect="blur"
             />
             <div className="flex justify-between">
               {VariationData.map((pic) => (
                 <div key={crypto.randomUUID()} className="w-[70px] sm:w-auto">
-                  <LazyLoadImage src={pic} alt="recommendation" effect="blur" />
+                  <LazyLoadImage src={pic} alt="recommendation" />
                 </div>
               ))}
             </div>
@@ -139,7 +138,6 @@ export default function SingleItemPage() {
                     height="96px"
                     width="96px"
                     className="rounded-full"
-                    effect="blur"
                   />
                 </div>
               ))}

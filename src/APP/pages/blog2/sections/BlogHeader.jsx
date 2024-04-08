@@ -37,7 +37,6 @@ function BlogHeader({
             src={logo}
             alt={author}
             className="w-10 h-10 object-cover rounded-full flex items-center justify-center"
-            effect="blur"
           />
 
           <span className="text-sm md:text-base font-medium text-[#323433] capitalize">
@@ -53,7 +52,6 @@ function BlogHeader({
           src={image}
           alt={title}
           className="object-contain overflow-hidden w-full lg:rounded-xl px-4 md:px-0"
-          effect="blur"
         />
 
         <div className="flex flex-row items-center justify-between px-3 ">

@@ -222,7 +222,6 @@ function Checkout() {
                               src={`https://apis.spaceyatech.com${image}`}
                               alt={name}
                               className="h-full w-full object-cover object-center"
-                              effect="blur"
                             />
                           </div>
 

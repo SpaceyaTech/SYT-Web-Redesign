@@ -20,7 +20,6 @@ function Footer() {
               src={logo}
               alt="FlowBite Logo"
               className="h-24 md:mx-8 mx-0 object-contain"
-              effect="blur"
             />
             {/* social logos  */}
             <div className="flex flex-row items-center  md:justify-between gap-4 justify-start my-4">
@@ -29,7 +28,6 @@ function Footer() {
                   src={facebook}
                   alt="facebook"
                   className="w-7 h-7"
-                  effect="blur"
                 />
               </a>
 
@@ -38,7 +36,6 @@ function Footer() {
                   src={instagram}
                   alt="instagram"
                   className="w-7 h-7"
-                  effect="blur"
                 />
               </a>
 
@@ -47,7 +44,6 @@ function Footer() {
                   src={twitter}
                   alt="twitter"
                   className="w-7 h-7"
-                  effect="blur"
                 />
               </a>
 
@@ -56,7 +52,6 @@ function Footer() {
                   src={linkedin}
                   alt="linkedIn"
                   className="w-7 h-7"
-                  effect="blur"
                 />
               </a>
             </div>

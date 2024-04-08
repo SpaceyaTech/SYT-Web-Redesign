@@ -18,7 +18,6 @@ function AdminHeader() {
               src={logo}
               alt="logo"
               className="md:w-16 w-12 md:hidden"
-              effect="blur"
             />
           </Link>
         </div>
@@ -27,7 +26,7 @@ function AdminHeader() {
             className="transition-all duration-300 cursor-pointer"
             to="/notification"
           >
-            <LazyLoadImage src={bell} alt="notification icon" effect="blur" />
+            <LazyLoadImage src={bell} alt="notification icon" />
           </Link>
           <Link
             className="transition-all duration-300 cursor-pointer"
@@ -37,7 +36,6 @@ function AdminHeader() {
               src={profile}
               alt="profile pic"
               className="rounded-full"
-              effect="blur"
             />
           </Link>
         </div>
@@ -49,12 +47,7 @@ function AdminHeader() {
           {/* logo */}
 
           <Link to="/">
-            <LazyLoadImage
-              src={logo}
-              alt="logo"
-              className="md:w-16 w-12"
-              effect="blur"
-            />
+            <LazyLoadImage src={logo} alt="logo" className="md:w-16 w-12" />
           </Link>
         </div>
         <div className="md:flex flex-1 gap-12">
@@ -94,7 +87,7 @@ function AdminHeader() {
             className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/"
           >
-            <LazyLoadImage src={bell} alt="notification icon" effect="blur" />
+            <LazyLoadImage src={bell} alt="notification icon" />
           </Link>
           <Link
             className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
@@ -104,7 +97,6 @@ function AdminHeader() {
               src={profile}
               alt="profile pic"
               className="rounded-full"
-              effect="blur"
             />
           </Link>
         </div>

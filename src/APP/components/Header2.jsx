@@ -57,12 +57,7 @@ const Header2 = () => {
     <header className="py-5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
       {/* logo */}
       <Link to="/">
-        <LazyLoadImage
-          src={logo}
-          alt="logo"
-          className="md:w-16 w-12"
-          effect="blur"
-        />
+        <LazyLoadImage src={logo} alt="logo" className="md:w-16 w-12" />
       </Link>
 
       {/* mobile menu */}
@@ -71,9 +66,8 @@ const Header2 = () => {
         alt="logo"
         className="md:hidden"
         onClick={() => setShowNavlinks((prev) => !prev)}
-        effect="blur"
       />
-      
+
       {/* mobile navlinks */}
       <nav
         className="flex flex-col items-start justify-start gap-6 text-base absolute top-[90px] left-0 bg-white border-b w-full h-fit z-[1] p-5 pl-12"

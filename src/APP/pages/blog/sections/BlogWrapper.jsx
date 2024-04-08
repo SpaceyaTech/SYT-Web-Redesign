@@ -28,7 +28,6 @@ function BlogWrapper({ blog }) {
                 src={logo}
                 alt="icon"
                 className="w-10 h-10 object-cover rounded-full bg-gray-200 flex items-center justify-center p-1"
-                effect="blur"
               />
 
               <div className="flex flex-col text-sm">

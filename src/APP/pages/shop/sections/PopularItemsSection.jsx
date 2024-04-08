@@ -28,7 +28,6 @@ function PopularItemsSection() {
                       src={image}
                       alt={name}
                       className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
-                      effect="blur"
                     />
                   </div>
                   <div className="mt-4 flex justify-between">

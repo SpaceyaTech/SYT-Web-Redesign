@@ -17,7 +17,6 @@ function RelatedBlogCard({ blog }) {
         src={`https://apis.spaceyatech.com${blog.image}`}
         alt={blog.title}
         className="object-cover h-20 w-20"
-        effect="blur"
       />
 
       <div className="flex flex-col">

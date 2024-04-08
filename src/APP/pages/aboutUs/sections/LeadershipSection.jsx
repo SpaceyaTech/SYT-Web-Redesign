@@ -148,7 +148,6 @@ function LeadershipSection() {
                           src={closeIcon}
                           alt="close"
                           className="object-contain w-4 h-4"
-                          effect="blur"
                         />
                       </button>
                       <form
@@ -224,11 +223,7 @@ function LeadershipSection() {
           </Transition>
         </div>
         <div className="md:w-1/2">
-          <LazyLoadImage
-            src={buildComm}
-            alt="Space ya Tech Community"
-            effect="blur"
-          />
+          <LazyLoadImage src={buildComm} alt="Space ya Tech Community" />
         </div>
       </div>
     </section>

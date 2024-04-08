@@ -36,7 +36,6 @@ function HeroSection2() {
             src={hero_image}
             alt="hero image"
             className="px-10 md:p-0 object-contain object-center md:object-right max-h-[532px] w-full"
-            effect="blur"
           />
         </div>
       </div>
@@ -55,7 +54,6 @@ function HeroSection2() {
               alt="partner"
               className="h-[50px] object-contain"
               key={partner}
-              effect="blur"
             />
           ))}
         </div>

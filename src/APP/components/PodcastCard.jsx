@@ -10,7 +10,6 @@ function PodcastCard({ img, category = "Podcast", title, description, link }) {
           src={img}
           alt={title}
           className="w-full h-full object-cover"
-          effect="blur"
         />
         <div className="absolute bottom-0 left-0 right-0 bg-black opacity-80 h-1/2" />
 

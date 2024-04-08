@@ -30,7 +30,6 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
             src={upleft}
             alt="view btn"
             className="w-6 h-6 object-contain"
-            effect="blur"
           />
         </a>
       </div>
@@ -41,7 +40,6 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           src={img}
           alt={name}
           className="w-full h-full object-cover"
-          effect="blur"
         />
       </div>
 
@@ -59,7 +57,6 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           src={upleft}
           alt="view btn"
           className="w-6 h-6 object-contain"
-          effect="blur"
         />
       </a>
     </div>

@@ -21,7 +21,6 @@ function Caroussel({ CarousselData }) {
               className="rounded-2xl w-[300px] h-[300px] object-cover items-center"
               src={image}
               alt={name}
-              effect="blur"
             />
             <div className="absolute -translate-x-2/4 -translate-y-1/4 left-2/4 top-3/4 text-white text-center z-10 font-medium w-4/5">
               <p className="pb-2 text-xl">{name}</p>

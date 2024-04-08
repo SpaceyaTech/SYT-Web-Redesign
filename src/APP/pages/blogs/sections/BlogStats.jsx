@@ -37,7 +37,7 @@ const BlogStats = ({ blogId, likes }) => {
   return (
     <div className="flex flex-row items-center gap-2">
       {/* <div className="flex flex-row items-center gap-1">
-        <LazyLoadImage src={eye} alt="eye" className="w-5 h-5 object-cover" effect="blur" />
+        <LazyLoadImage src={eye} alt="eye" className="w-5 h-5 object-cover" />
         <span className="text-base text-[#00664E]">240</span>
       </div> */}
 
@@ -46,7 +46,6 @@ const BlogStats = ({ blogId, likes }) => {
           src={thumbsUp}
           alt="eye"
           className="w-5 h-5 object-cover cursor-pointer"
-          effect="blur"
           onClick={() => {
             blogId ? addLikeToBlog(blogId) : "";
           }}
@@ -57,7 +56,7 @@ const BlogStats = ({ blogId, likes }) => {
       </div>
 
       {/* <div className="flex flex-row items-center gap-1">
-        <LazyLoadImage src={chatText} alt="eye" className="w-5 h-5 object-cover" effect="blur" />
+        <LazyLoadImage src={chatText} alt="eye" className="w-5 h-5 object-cover" />
         <span className="text-base text-[#00664E]">35</span>
       </div> */}
     </div>

@@ -73,11 +73,7 @@ function CartDrawer({ open, setOpen }) {
                           onClick={() => setOpen(false)}
                         >
                           <span className="sr-only">Close panel</span>
-                          <LazyLoadImage
-                            src={CloseIcon}
-                            alt="close"
-                            effect="blur"
-                          />
+                          <LazyLoadImage src={CloseIcon} alt="close" />
                         </button>
                       </div>
                     </div>
@@ -109,7 +105,6 @@ function CartDrawer({ open, setOpen }) {
                                         src={`https://apis.spaceyatech.com${image}`}
                                         alt={name}
                                         className="h-full w-full object-cover object-center"
-                                        effect="blur"
                                       />
                                     </div>
 
@@ -135,7 +130,6 @@ function CartDrawer({ open, setOpen }) {
                                           <LazyLoadImage
                                             src={DeleteIcon}
                                             alt="delete button"
-                                            effect="blur"
                                           />
                                         </button>
                                       </div>
@@ -171,7 +165,6 @@ function CartDrawer({ open, setOpen }) {
                               src={Sample3}
                               alt="Mentorlst Hoodie"
                               className="h-full w-full"
-                              effect="blur"
                             />
                           </div>
                           <div className="flex flex-col flex-1 ">
