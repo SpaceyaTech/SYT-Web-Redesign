@@ -1,34 +1,108 @@
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import { useRef } from "react";
+import {
+  arrowCircleLeft,
+  arrowCircleRight,
+  greyLinkedin,
+  greyTwitter,
+} from "../../assets/images/icons";
+
 function Caroussel({ CarousselData }) {
+  const carouselRef = useRef();
+
+  const scroll = (scrollOffset) => {
+    carouselRef.current.scrollLeft += scrollOffset;
+  };
+
   return (
-    <section className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl pl-4 lg:pl-14 xl:pl-28">
+    <section className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
       <div
+        ref={carouselRef}
         className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
         style={{
           gridTemplateColumns: "max-content",
-          gridTemplateRows: "minmax(250px, 300px)",
+          gridTemplateRows: "minmax(588px, 400px)",
           gridAutoFlow: "column",
           gridAutoColumns: "max-content",
         }}
       >
-        {CarousselData.map(({ name, title, image }, index) => (
+        {CarousselData.map(({ name, title, image, linkedin, twitter }) => (
           <div
-            key={index}
-            className="relative after:block after:relative after:-mt-36 after:h-36 after:w-full after:content-[''] after:z-0 after:rounded-b-2xl after:bg-[linear-gradient(180deg,_rgba(0,0,0,0)_0%,_rgba(0,0,0,0.5)_29.17%,_rgba(0,0,0,0.94)_97.92%)]"
+            key={crypto.randomUUID()}
+            className="border bg-white p-2 max-w-[400px] rounded-2xl md:rounded-[20px]"
           >
             <img
-              className="rounded-2xl w-[300px] h-[300px] object-cover items-center"
+              className="rounded-t-2xl h-4/6 w-[400px] object-cover"
               src={image}
               alt={name}
             />
-            <div className="absolute -translate-x-2/4 -translate-y-1/4 left-2/4 top-3/4 text-white text-center z-10 font-medium w-4/5">
-              <p className="pb-2 text-xl">{name}</p>
-              <p className="text-base">{title}</p>
+            <div className="bg-green-light flex flex-col gap-2 w-full h-2/6 p-3 rounded-b-2xl">
+              <p className=" text-2xl font-medium">{name}</p>
+              <p className="flex gap-4 items-center text-base font-light text-grey-neutral space-x-4">
+                <FontAwesomeIcon icon={faBriefcase} />
+                {title}
+              </p>
+              <p className="flex items-center text-base font-light text-grey-neutral space-x-4">
+                <img
+                  src={greyLinkedin}
+                  alt="Linkedin logo"
+                  width="16"
+                  height="16"
+                />
+
+                <a
+                  href={linkedin.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className=""
+                >
+                  {linkedin.username}
+                </a>
+              </p>
+              {twitter.username && (
+                <p className="flex items-center text-base font-light text-grey-neutral space-x-4">
+                  <img
+                    src={greyTwitter}
+                    alt="Twitter logo"
+                    width="16"
+                    height="16"
+                  />
+                  <a
+                    href={twitter.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className=""
+                  >
+                    {twitter.username}
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         ))}
       </div>
+      <div className="flex justify-center gap-4">
+        <button type="button" onClick={() => scroll(-400)}>
+          <img src={arrowCircleLeft} alt="left" />
+        </button>
+        <button type="button" onClick={() => scroll(400)}>
+          <img src={arrowCircleRight} alt="right" />
+        </button>
+      </div>
     </section>
   );
 }
+
+Caroussel.propTypes = {
+  CarousselData: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Caroussel;

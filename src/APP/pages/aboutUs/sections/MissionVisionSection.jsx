@@ -1,36 +1,77 @@
-import React from "react";
-
-import { mission, vision } from "../../../../assets/images/aboutPage";
+/* eslint-disable linebreak-style */
+import { LittleMore } from "../../../../assets/images/aboutPage";
 
 function MissionVisionSection() {
   return (
-    <div className="flex flex-col md:flex-row mx-4 my-8 sm:my-2 md:m-auto px-0 sm:px-14 xl:px-28 min-h-[24rem] md:pb-16 text-center justify-between max-w-screen-2xl">
-      <div
-        style={{
-          background: `url(${mission}) no-repeat center`,
-          backgroundSize: "contain",
-        }}
-        className="md:w-[45%] pt-6 md:pt-20 mb-10 md:mb-0 h-[200px] md:h-auto"
-      >
-        <h2 className="text-2xl font-semibold title-font my-4">Our Mission</h2>
-        <p className="m-auto w-[85%] sm:w-[65%] lg:w-[85%] ">
-          To help 10,000 young Africans to transition to tech in the next three
-          years by being a pool of resources, mentorship and capacity building.
-        </p>
+    <div className="max-w-screen-xl mx-auto mt-24 px-4 md:px-0">
+      <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
+        <div className="w-full h-0.5 rounded-sm bg-gray-300" />
+        <h4 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+          A bit more about us
+        </h4>
+        <div className="w-full h-0.5 bg-gray-300" />
       </div>
-      <div
-        style={{
-          background: `url(${vision}) no-repeat center`,
-          backgroundSize: "contain",
-        }}
-        className="md:w-[45%] pt-2 md:pt-20 h-[200px] md:h-auto"
-      >
-        <h2 className="text-2xl font-semibold title-font my-4 ">Our Vision</h2>
-        <p className="m-auto w-[95%] sm:w-[65%] lg:w-[95%]">
-          To be the best tech community, focused on innovation and actually
-          leveraging on technology to build solutions for Africa and to help our
-          community members to level up their tech skills in the process.
-        </p>
+      <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
+        <div
+          style={{
+            background: `url(${LittleMore}) no-repeat center`,
+            backgroundSize: "cover",
+          }}
+          className="h-full rounded-xl"
+        >
+          <div className="md:w-1/2 text-white space-y-4 p-4 md:pl-12 pb-10 md:pt-48 pt-6">
+            <h2 className="md:text-4xl text-2xl font-medium">
+              Empowering the next generation of African innovators in tech
+            </h2>
+
+            <p className="">
+              Our activities center around designing and building software and
+              hardware solutions for the most salient needs we see in the
+              society, through a unique open-source model that gets our
+              community members paid for their skills.
+            </p>
+            <p>
+              SpaceYaTech also aims to develop capacity in the fields of
+              software development and design to help build the future workforce
+              and start-up founders in Africa.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mission And vision */}
+      <div className="flex flex-col md:flex-row my-8 gap-4">
+        <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
+          <div className="bg-green-light rounded-lg md:rounded-xl size-full flex items-center justify-between flex-row p-3 sm:p-6 md:py-20 md:gap-5">
+            <div className="flex-center md:flex-start flex-col p-3 sm:p-8 gap-3">
+              <h4 className="text-green-header capitalize text-base md:text-xl font-semibold text-center md:text-start">
+                Our Mission
+              </h4>
+
+              <p className="text-sm md:text-base font-normal text-center md:text-start">
+                To help 10,000 young Africans to transition to tech in the next
+                three years by being a pool of resources, mentorship and
+                capacity building.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
+          <div className="bg-green-light rounded-lg md:rounded-xl size-full flex items-center justify-between flex-row p-3 sm:p-6 md:py-20 md:gap-5">
+            <div className="flex-center md:flex-start flex-col p-3 sm:p-8 gap-3">
+              <h4 className="text-green-header capitalize text-base md:text-xl font-semibold text-center md:text-start">
+                Our Vision
+              </h4>
+
+              <p className="text-sm md:text-base font-normal text-center md:text-start">
+                To be the best tech community, focused on innovation and
+                actually leveraging on technology to build solutions for Africa
+                and to help our community members to level up their tech skills
+                in the process.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
