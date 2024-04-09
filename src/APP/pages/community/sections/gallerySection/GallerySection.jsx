@@ -12,13 +12,60 @@ import {
   galleryimage8,
   galleryimage9,
 } from "../../../../../assets/images/community";
+import { arrowRight } from "../../../../../assets/images/icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-// const photos = [{ image:galleryimage1}, { image:galleryimage2 }, { image: galleryimage3 }, { image: galleryimage4}, { image: galleryimage5 }, { image: galleryimage6}, { image: galleryimage7}, { image: galleryimage8}]
+const photos = [
+  { image: galleryimage1 },
+  // { image: galleryimage2 },
+  // { image: galleryimage3 },
+  { image: galleryimage4 },
+  { image: galleryimage5 },
+  { image: galleryimage6 },
+  { image: galleryimage7 },
+  { image: galleryimage8 },
+];
 function GallerySection() {
   return (
-    <div className="pb-8 text-center">
-      <h2 className="mb-10 text-3xl font-medium">Gallery</h2>
-      <div>
+    <div className="pb-10 sm:pb-24 text-center">
+      <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
+        <div className="w-full h-0.5 rounded-sm bg-gray-300" />
+        <h3 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+          Our Gallery
+        </h3>
+        <div className="w-full h-0.5 bg-gray-300" />
+      </div>
+      <h2 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
+        A memory bank of our special
+        <br /> moments
+      </h2>
+      <div className="overflow-x-auto flex gap-8 mt-10">
+        {photos.map((photo) => (
+          <LazyLoadImage
+            key={crypto.randomUUID()}
+            src={photo.image}
+            alt="gallery"
+            className="block h-[530px] max-w-[384px] rounded-xl object-cover object-center"
+          />
+        ))}
+      </div>
+
+      <Link
+        to="/gallery"
+        className="flex items-center border rounded-full bg-white p-1 w-fit mx-auto"
+      >
+        <div className="flex items-center bg-green-light rounded-full px-3 py-1.5 gap-2">
+          <span className="capitalize text-green-header text-sm font-semibold">
+            View more
+          </span>
+          <LazyLoadImage
+            src={arrowRight}
+            alt="arrow-right"
+            className="size-5"
+          />
+        </div>
+      </Link>
+      {/* <div>
         <div className="-m-1 flex  md:-m-2">
           <div className="flex w-3/8 flex-wrap">
             <div className="w-1/3">
@@ -83,8 +130,8 @@ function GallerySection() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex items-center justify-center gap-2 mt-8">
+      </div> */}
+      {/* <div className="flex items-center justify-center gap-2 mt-8">
         <Link
           to="/gallery"
           // "https://photos.google.com/share/AF1QipMS-aFHdarbFZVIYs7kOFkWL5Cit3EEXG2CbwU0K0wq-8Fw93Akn-IxfAdYSKYb2g?pli=1&key=d2wwd1VtUHdhN29INDVmb1YxN0xtNHpaV2t6LUtB"
@@ -106,7 +153,7 @@ function GallerySection() {
             />
           </svg>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }
