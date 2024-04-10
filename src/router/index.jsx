@@ -9,7 +9,6 @@ import {
   Blog2,
   CategoriesProducts,
   Checkout,
-  CommunityPage,
   Error400,
   Error403,
   Error404,
@@ -19,16 +18,14 @@ import {
   GalleryPage,
   Homepage,
   IndividualChapter,
-  LandingPage,
-  Layout,
   LogIn,
   ProductDisplay,
-  Products,
   ResetPassword,
   Resources,
   SignUp,
   // SingleEvent,
   SingleEvent2,
+  Blogs,
 } from "../APP";
 
 const router = createBrowserRouter([
