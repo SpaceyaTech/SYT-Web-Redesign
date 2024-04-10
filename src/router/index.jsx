@@ -2,8 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 
 import {
   AboutUs,
-  Blog,
-  Blogs,
+  CommunityPage,
+  LandingPage,
+  Layout,
+  Products,
   Blog2,
   CategoriesProducts,
   Checkout,
@@ -60,10 +62,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs/:titleSlug",
-        element: <Blog />,
-      },
-      {
-        path: "/blogs2/:titleSlug",
         element: <Blog2 />,
       },
       {
