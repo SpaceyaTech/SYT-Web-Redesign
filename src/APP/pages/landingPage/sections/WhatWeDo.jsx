@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import { ViewMoreBtn } from "../../../components";
+import { Button } from "../../../components";
 import { whatWeDoData } from "../data";
 
 function WhatWeDo() {
@@ -50,7 +50,7 @@ function WhatWeDoCard({ card, index }) {
             {description}
           </p>
 
-          <ViewMoreBtn link={link} />
+          <Button link={link} title="View More" />
         </div>
 
         <img

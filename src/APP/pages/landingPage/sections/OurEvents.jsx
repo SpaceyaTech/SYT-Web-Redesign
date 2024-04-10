@@ -9,7 +9,7 @@ import {
   formatEventTime,
   startEventDate,
 } from "../../../../utilities/formatEventDate";
-import { Loader, ViewMoreBtn } from "../../../components";
+import { Loader, Button } from "../../../components";
 import Error500 from "../../errorPages/Error500";
 import useTopEvents from "@/hooks/Queries/eventsSection/useTopEvents";
 
@@ -46,7 +46,7 @@ function OurEvents() {
           <h4 className="text-green-dark text-[32px] leading-normal font-semibold">
             Upcoming Events
           </h4>
-          <ViewMoreBtn link="/all-events" />
+          <Button link="/all-events" title="view more" />
         </div>
 
         {isError && <Error500 />}
