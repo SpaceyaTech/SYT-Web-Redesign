@@ -1,13 +1,16 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/prop-types */
 import React from "react";
 import { eventsPhysicalBg, eventsVirtualBg } from "@/assets/images/community";
 
-function Hero() {
-  const isVirtual = true;
+function Hero({ event }) {
+  const isVirtual = event?.mode === "Virtual";
 
   return (
     <div className="w-full bg-white p-1.5 md:p-2 border rounded-xl md:rounded-[20px]">
       <div
-        className={`rounded-md md:rounded-xl bg-cover bg-transparent bg-no-repeat h-40 sm:h-60 md:h-[360px] overflow-hidden lg:h-[512px] flex items-end justify-center pb-3 md:pb-8 lg:pb-12
+        className={`rounded-md md:rounded-xl bg-right md:bg-cover bg-transparent bg-no-repeat h-96 overflow-hidden lg:h-[512px] flex items-end justify-center pb-4 lg:pb-12
 ${isVirtual ? "text-white" : "text-green-header"}
       `}
         style={{
@@ -16,17 +19,16 @@ ${isVirtual ? "text-white" : "text-green-header"}
           })`,
         }}
       >
-        <div className="flex-center flex-col gap-2 md:gap-4 w-4/5 md:w-1/3 lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-center">
-            Bridging the Experience Gap in Tech
+        <div className="flex-center flex-col gap-3 p-1 lg:gap-4 w-full md:w-2/3 lg:w-1/2">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-center">
+            {event?.name}
           </h2>
 
-          <p className="text-center text-base font-light line-clamp-2 lg:px-4">
-            Going from ground zero to employable in the most realistic way
-            possible
-          </p>
+          {/* <p className="text-center text-base font-normal line-clamp-2 lg:px-4">
+            {event?.about.slice(0, 50)}...
+          </p> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 lg:gap-x-16 lg:gap-y-6">
             <div className="flex items-center gap-2">
               <svg
                 width="25"
@@ -56,10 +58,10 @@ ${isVirtual ? "text-white" : "text-green-header"}
                 </defs>
               </svg>
 
-              <span className="text-base font-light">6th May</span>
+              <span className="text-base font-normal">{event?.start_date}</span>
             </div>
 
-            <div className="flex items-center gap-2 place-self-end">
+            <div className="flex items-center gap-2 lg:place-self-end">
               <svg
                 width="25"
                 height="25"
@@ -87,7 +89,7 @@ ${isVirtual ? "text-white" : "text-green-header"}
                 </defs>
               </svg>
 
-              <span className="text-base font-light">0800HRS</span>
+              <span className="text-base font-normal">{event?.start_time}</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -130,10 +132,12 @@ ${isVirtual ? "text-white" : "text-green-header"}
                 </defs>
               </svg>
 
-              <span className="text-base font-light">UON, Nairobi</span>
+              <span className="text-base font-normal">
+                {event?.mode === "Physical" ? event?.location : event?.mode}
+              </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 lg:place-self-end">
               <svg
                 width="21"
                 height="21"
@@ -161,13 +165,15 @@ ${isVirtual ? "text-white" : "text-green-header"}
                 />
               </svg>
 
-              <span className="text-base font-light">Development</span>
+              <span className="text-base font-normal">
+                {event?.category.name}
+              </span>
             </div>
           </div>
 
           <button
             type="button"
-            className={`py-2 px-8 rounded-lg ${
+            className={`py-2 px-20 rounded-lg ${
               isVirtual
                 ? "text-green-header bg-white"
                 : "text-white bg-gradient-to-b to-primary from-green-dark "

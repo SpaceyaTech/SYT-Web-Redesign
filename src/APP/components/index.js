@@ -8,3 +8,4 @@ export { default as Footer2 } from "./Footer2";
 export { default as Header } from "./Header";
 export { default as Loader } from "./Loader";
 export { default as PodcastCard } from "./PodcastCard";
+export { default as LandingWrapper } from "./LandingWrapper";
