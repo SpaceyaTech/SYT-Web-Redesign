@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/images/sytLogo.png";
 import bell from "../../../assets/images/icons/bell-icon.svg";
 import profile from "../../../assets/images/adminPage/profile-pic.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function AdminHeader() {
   return (
@@ -13,7 +14,11 @@ function AdminHeader() {
           {/* logo */}
 
           <Link to="/">
-            <img src={logo} alt="logo" className="md:w-16 w-12 md:hidden" />
+            <LazyLoadImage 
+              src={logo}
+              alt="logo"
+              className="md:w-16 w-12 md:hidden"
+            />
           </Link>
         </div>
         <div className="flex gap-5 items-center">
@@ -21,13 +26,17 @@ function AdminHeader() {
             className="transition-all duration-300 cursor-pointer"
             to="/notification"
           >
-            <img src={bell} alt="notification icon" />
+            <LazyLoadImage  src={bell} alt="notification icon" />
           </Link>
           <Link
             className="transition-all duration-300 cursor-pointer"
             to="/profile"
           >
-            <img src={profile} alt="profile pic" className="rounded-full" />
+            <LazyLoadImage 
+              src={profile}
+              alt="profile pic"
+              className="rounded-full"
+            />
           </Link>
         </div>
       </nav>
@@ -38,7 +47,7 @@ function AdminHeader() {
           {/* logo */}
 
           <Link to="/">
-            <img src={logo} alt="logo" className="md:w-16 w-12" />
+            <LazyLoadImage  src={logo} alt="logo" className="md:w-16 w-12" />
           </Link>
         </div>
         <div className="md:flex flex-1 gap-12">
@@ -78,13 +87,17 @@ function AdminHeader() {
             className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/"
           >
-            <img src={bell} alt="notification icon" />
+            <LazyLoadImage  src={bell} alt="notification icon" />
           </Link>
           <Link
             className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/about-us"
           >
-            <img src={profile} alt="profile pic" className="rounded-full" />
+            <LazyLoadImage 
+              src={profile}
+              alt="profile pic"
+              className="rounded-full"
+            />
           </Link>
         </div>
       </nav>

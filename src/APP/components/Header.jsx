@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
-
 import { cancel, menu } from "../../assets/images/icons";
 import logo from "../../assets/images/sytLogo.png";
 
@@ -57,7 +57,7 @@ function Header() {
       <header className="py-2.5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
         {/* logo */}
         <Link to="/" className="md:w-[60px] w-12">
-          <img src={logo} alt="logo" className="w-full" />
+          <LazyLoadImage src={logo} alt="logo" className="w-full" />
         </Link>
 
         {/* mobile menu */}
@@ -67,7 +67,7 @@ function Header() {
             className="md:hidden"
             onClick={() => setShowNavlinks(false)}
           >
-            <img src={cancel} alt="cancel" />
+            <LazyLoadImage src={cancel} alt="cancel" />
           </button>
         ) : (
           <button
@@ -75,7 +75,7 @@ function Header() {
             className="md:hidden"
             onClick={() => setShowNavlinks(true)}
           >
-            <img src={menu} alt="menu" />
+            <LazyLoadImage src={menu} alt="menu" />
           </button>
         )}
 

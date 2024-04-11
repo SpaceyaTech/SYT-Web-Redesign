@@ -5,6 +5,7 @@ import React from "react";
 
 import { Button } from "../../../components";
 import { whatWeDoData } from "../data";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function WhatWeDo() {
   return (
@@ -53,7 +54,8 @@ function WhatWeDoCard({ card, index }) {
           <Button link={link} title="View More" />
         </div>
 
-        <img
+        <LazyLoadImage 
+          effect="blur"
           src={image}
           alt={title}
           className={`${

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useRef, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { glovo } from "../../../../assets/images/blogs-page";
 
@@ -37,7 +38,7 @@ function BlogBody({ id, categoryId, blogBody }) {
         <RelatedBlogs blogId={id} categoryId={categoryId} />
 
         <div className="w-full cursor-pointer">
-          <img
+          <LazyLoadImage
             src={glovo}
             alt="glovo"
             className="object-cover w-full aspect-auto"

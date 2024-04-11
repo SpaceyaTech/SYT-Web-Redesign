@@ -4,6 +4,7 @@ import useBlogData from "../../../hooks/Queries/blog/useBlogData";
 import { Loader } from "../../components";
 import BlogWrapper from "./sections/BlogWrapper";
 import RelatedBlogs from "./sections/RelatedBlogs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Blog() {
   const { titleSlug } = useParams();
@@ -35,7 +36,7 @@ function Blog() {
       )}
       {isSuccess && (
         <section className="flex flex-col p-4 md:p-8 lg:p-10">
-          <img
+          <LazyLoadImage 
             src={blogData.image}
             alt={blogData.title}
             className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"

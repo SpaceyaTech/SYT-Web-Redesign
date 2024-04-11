@@ -1,6 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, Link } from "react-router-dom";
+
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
 import SampleImg from "../../../assets/images/shop-page/main-sample.png";
@@ -128,7 +130,7 @@ function CartDrawer({ open, setOpen }) {
                           onClick={() => setOpen(false)}
                         >
                           <span className="sr-only">Close panel</span>
-                          <img src={CloseIcon} alt="close" />
+                          <LazyLoadImage src={CloseIcon} alt="close" />
                         </button>
                       </div>
                     </div>
@@ -162,7 +164,7 @@ function CartDrawer({ open, setOpen }) {
                                     className="flex py-6 space-x-4 sm:space-x-16"
                                   >
                                     <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                                      <img
+                                      <LazyLoadImage
                                         src={`https://apis.spaceyatech.com${
                                           cartProduct.image ||
                                           cartProduct.product?.image
@@ -201,7 +203,7 @@ function CartDrawer({ open, setOpen }) {
                                             );
                                           }}
                                         >
-                                          <img
+                                          <LazyLoadImage
                                             src={DeleteIcon}
                                             alt="delete button"
                                           />
@@ -237,7 +239,7 @@ function CartDrawer({ open, setOpen }) {
                         </p>
                         <div className="flex pb-8 pt-10 space-x-4 sm:space-x-16 sm:px-8">
                           <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                            <img
+                            <LazyLoadImage
                               src={Sample3}
                               alt="Mentorlst Hoodie"
                               className="h-full w-full"
