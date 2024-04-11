@@ -1,56 +1,27 @@
 // eslint-disable-next-line no-unused-vars
-
-import { useState } from "react";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronDown,
-  faChevronUp,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const FAQ = () => {
+import { questions } from "../pages/landingPage/data";
+
+function FAQ() {
   const [activeQuestion, setActiveQuestion] = useState(null);
-
-  const questions = [
-    {
-      question: "Is SpaceYaTech free?",
-      answer:
-        "Yes, SpaceYaTech is totally free for anyone who wishes to learn technology and contribute to Open Source",
-    },
-    {
-      question: "Does SpaceYaTech only mentor developers?",
-      answer:
-        "No, SpaceYaTech mentors anyone who is involved in modern technology. This includes developers, designers, product managers, and more. SpaceYaTech believes that everyone has the potential to learn and grow in the tech industry, and they are committed to providing mentorship to anyone who wants it.",
-    },
-    {
-      question: "Does SpaceYaTech pay mentors?",
-      answer:
-        "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits.",
-    },
-    {
-      question: "Can I collaborate with SpaceYaTech?",
-      answer: "Yes, you can collaborate with SpaceYaTech in a number of ways.",
-    },
-    {
-      question: "Can I join the mentorship sessions at any time?",
-      answer:
-        "No, you cannot join the mentorship sessions at any time. SpaceYaTech's mentorship sessions are offered on a rolling basis, and there are limited spots available. To be considered for a mentorship session, you must submit an application and be selected by SpaceYaTech.",
-    },
-  ];
 
   const toggleQuestion = (index) => {
     setActiveQuestion(activeQuestion === index ? null : index);
   };
 
   return (
-    <div className="flex-col justify-center items-center">
+    <div className="flex-col justify-center items-center gap-4 w-full max-w-6xl">
       {questions.map((question, index) => (
         <div
-          key={index}
-          className="rounded-none border border-t-0 border-l-0 border-r-0 border-neutral-200"
+          key={question.id}
+          className={`rounded-xl bg-white ${
+            activeQuestion === index && "mb-4"
+          }`}
         >
-          <h2 className="mb-4 text-white" id={`flush-heading${index + 1}`}>
+          <h2 className="mb-4 font-semibold" id={`flush-heading${index + 1}`}>
             <button
               className={`group relative flex w-full items-center rounded-none border-0 py-4 px-5  text-left text-base transition ${
                 activeQuestion === index
@@ -74,7 +45,7 @@ const FAQ = () => {
             >
               {question.question}
               <span
-                className={`ml-auto h-10 w-10 shrink-0 bg-[#CCFFF3] text-black rounded-md flex items-center justify-center overflow-hidden ${
+                className={`ml-auto h-10 w-10 shrink-0 text-black rounded-md flex items-center justify-center overflow-hidden ${
                   activeQuestion === index ? "text-primary" : ""
                 }`}
               >
@@ -94,23 +65,12 @@ const FAQ = () => {
             aria-labelledby={`flush-heading${index + 1}`}
             data-te-parent="#accordionFlushExample"
           >
-            <div className="py-4 px-5 text-white">{question.answer}</div>
+            <div className="py-4 px-5">{question.answer}</div>
           </div>
         </div>
       ))}
-
-      <div className="flex justify-center mt-4 md:mt-8">
-        <Link
-          to="/about-us"
-          className="mt-3 text-[#00664E] inline-flex items-center bg-white p-3 rounded-lg cursor-pointer"
-        >
-          Learn More
-          <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-        </Link>
-      </div>
     </div>
   );
-};
+}
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default FAQ;

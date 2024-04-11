@@ -1,9 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Fragment, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
-import Sample1 from "../../../assets/images/shop-page/sample1.png";
-import Sample2 from "../../../assets/images/shop-page/sample2.png";
 import SmallSample1 from "../../../assets/images/shop-page/small-sample-colored.png";
 import SmallSample2 from "../../../assets/images/shop-page/small-sample-greyscale.png";
 import { useAddSwagToCart } from "../../../hooks/Mutations/shop/useCartSwagg";
@@ -15,36 +12,12 @@ import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
-const products = [
-  {
-    id: 1,
-    name: "SYT Hoodie",
-    href: "#",
-    color: "Salmon",
-    price: "90.00",
-    quantity: 1,
-    imageSrc: Sample1,
-  },
-  {
-    id: 2,
-    name: "SYT Bookmark",
-    href: "#",
-    color: "Blue",
-    price: "32.00",
-    quantity: 1,
-    imageSrc: Sample2,
-  },
-  // More products...
-];
-
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
 export default function SingleItemPage() {
   const { auth } = useAuth();
   const params = useParams();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
   const [open, setOpen] = useState(false);
@@ -53,14 +26,14 @@ export default function SingleItemPage() {
   const [selectedSize, setSelectedSize] = useState(null);
   const [Payload, setPayload] = useState({});
 
-  const { data: singleOrder } = useSingleOrder(params.id);
+  // const { data: singleOrder } = useSingleOrder(params.id);
   const { data: singleSwag, isSuccess, refetch } = useSingleSwag(params.id);
-  const { mutate: addItemsToCart, isLoading } = useAddSwagToCart();
+  const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-
-  console.log("singleSwag", params);
+  console.log("singleSwag: ", singleSwag);
   useEffect(() => {
+    localStorage.setItem("swagList", []);
     if (isSuccess) {
       setPayload({
         swagg_id: singleSwag.id,
@@ -69,31 +42,57 @@ export default function SingleItemPage() {
           description: singleSwag.description,
           price: singleSwag.price,
           size: selectedSize,
+          image: singleSwag.image,
         },
         quantity: count,
       });
+      console.log("touched stffff", Payload);
     }
     refetch();
   }, [params.id]);
 
-  const handleAddToCart = () => {
-    if (auth?.access) {
-      addItemsToCart(Payload);
-      setOpen(true);
+  const addToLocalStorage = () => {
+    let swagList = [];
+    let swagListJSON;
+    if (localStorage.getItem("swagList")) {
+      // Get the existing list from localStorage
+      swagList = JSON.parse(localStorage.getItem("swagList"));
+      console.log("singleSwag: ", swagList);
+
+      // Also check for matching swagg_id that already exist in local storage
+      if (Payload !== {}) swagList.push(Payload);
+      swagListJSON = JSON.stringify(swagList);
+      console.log("swagListJSON: ", swagListJSON);
+      localStorage.setItem("swagList", swagListJSON);
     } else {
-      setMessage("to add items to cart");
-      setIsModalOpen(true);
+      swagList.push(Payload);
+      swagListJSON = JSON.stringify(swagList);
+      console.log("swagListJSON: ", swagListJSON);
+
+      localStorage.setItem("swagList", swagListJSON);
     }
   };
 
+  const handleAddToCart = () => {
+    console.log("Payload: ", Payload);
+
+    // Send to backend not giving a usable response
+    addItemsToCart(Payload);
+
+    // Add to local storage
+    addToLocalStorage();
+
+    setOpen(true);
+  };
+
   const handleBuyNow = () => {
-    if (auth?.access) {
-      addItemsToCart(Payload);
-      setOpen(true);
-    } else {
-      setMessage("to make an order");
-      setIsModalOpen(true);
-    }
+    // Send to backend not giving a usable response
+    addItemsToCart(Payload);
+
+    // Add to local storage
+    addToLocalStorage();
+
+    navigate("/shop/checkout");
   };
 
   return (
@@ -183,15 +182,8 @@ export default function SingleItemPage() {
         <p>Error Fetching Item</p>
       )}
 
-      {/* Drawer */}
+      {/* Cart Drawer */}
       <CartDrawer open={open} setOpen={setOpen} />
-
-      {/* Notification Modal */}
-      <NotificationModal
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
-        message={message}
-      />
     </>
   );
 }

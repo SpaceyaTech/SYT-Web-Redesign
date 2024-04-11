@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
@@ -16,19 +16,71 @@ function CartDrawer({ open, setOpen }) {
   const navigate = useNavigate();
   const [count, setCount] = useState(1);
 
-  const { data: cartProducts, isSuccess } = useProductsInCart();
+  // Get the JSON string from localStorage
+  const [cartProducts, setCartProducts] = useState([]);
 
-  const { mutate: deleteSwag } = useDeleteSwag();
+  useEffect(() => {
+    const storage = localStorage.getItem("swagList")
+      ? JSON.parse(localStorage.getItem("swagList"))
+      : null;
+    setCartProducts(storage);
+  }, [cartProducts]);
+
+  // const { data: cartProducts, isSuccess } = useProductsInCart();
+  useEffect(() => {
+    // Function to handle storage changes
+    const handleStorageChange = (e) => {
+      if (e.key === "swagList") {
+        setCartProducts(JSON.parse(e.newValue));
+        console.log(JSON.parse(e.newValue));
+      }
+    };
+
+    // Add event listener
+    window.addEventListener("storage", handleStorageChange);
+
+    // Remove event listener on cleanup
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  // const { mutate: deleteSwag } = useDeleteSwag();
+
+  const deleteFromLocalStorage = (cartItemId) => {
+    // Parse it back to an array of objects
+    const swagList = cartProducts;
+
+    const idxToDelete = swagList.findIndex(
+      (swag) => swag.swagg_id === cartItemId
+    );
+
+    // Check if the object was found
+    if (idxToDelete !== -1) {
+      // Remove the object from the swagList
+      swagList.splice(idxToDelete, 1);
+
+      // Convert the updated list to a JSON string
+      setCartProducts(JSON.stringify(swagList));
+
+      // Store the updated list back to localStorage
+      localStorage.setItem("swagList", cartProducts);
+    } else {
+      console.log("Swag not found in swagList");
+    }
+  };
 
   const handleDeleteSwag = (cartItemId) => {
-    deleteSwag(cartItemId);
+    // deleteSwag(cartItemId);
+    deleteFromLocalStorage(cartItemId);
   };
 
   const handleCheckout = () => {
-    if (auth?.access) {
-      navigate("/shop/checkout");
-    }
+    // if (auth?.access) {
+    navigate("/shop/checkout");
+    // }
   };
+  console.log("cartProducts: ", cartProducts);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -63,7 +115,11 @@ function CartDrawer({ open, setOpen }) {
                       <Dialog.Title className="text-3xl font-semibold">
                         Your cart{" "}
                         <span className="text-primary">
-                          ({isSuccess ? cartProducts.cart_items?.length : 0})
+                          {/* ({isSuccess  */}(
+                          {(cartProducts?.cart_items
+                            ? cartProducts.cart_items?.length
+                            : cartProducts?.length) || 0}
+                          )
                         </span>
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
@@ -83,27 +139,39 @@ function CartDrawer({ open, setOpen }) {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul className="-my-6 divide-y divide-gray-200 border-b">
-                            {isSuccess &&
-                              cartProducts.cart_items?.map(
-                                ({
-                                  id,
-                                  product: {
-                                    id: productId,
-                                    image,
-                                    name,
-                                    price,
-                                    size,
-                                  },
-                                  quantity,
-                                }) => (
+                            {/* {isSuccess && */}
+                            {cartProducts?.length > 0 &&
+                              (cartProducts?.cart_items
+                                ? cartProducts.cart_items
+                                : cartProducts
+                              )?.map(
+                                // ({
+                                //   id,
+                                //   product: {
+                                //     id: productId,
+                                //     image,
+                                //     name,
+                                //     price,
+                                //     size,
+                                //   },
+                                //   quantity,
+                                // })
+                                (cartProduct) => (
                                   <li
-                                    key={id}
+                                    // key={cartProduct.id || cartProduct.swagg_id}
+                                    key={crypto.randomUUID()}
                                     className="flex py-6 space-x-4 sm:space-x-16"
                                   >
                                     <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
                                       <LazyLoadImage
-                                        src={`https://apis.spaceyatech.com${image}`}
-                                        alt={name}
+                                        src={`https://apis.spaceyatech.com${
+                                          cartProduct.image ||
+                                          cartProduct.product?.image
+                                        }`}
+                                        alt={
+                                          cartProduct.name ||
+                                          cartProduct.product?.name
+                                        }
                                         className="h-full w-full object-cover object-center"
                                       />
                                     </div>
@@ -114,9 +182,13 @@ function CartDrawer({ open, setOpen }) {
                                           <p className="text-base md:text-xl">
                                             {" "}
                                             <Link
-                                              to={`/shop/item/${productId}`}
+                                              to={`/shop/item/${
+                                                cartProduct.productId ||
+                                                cartProduct.swagg_id
+                                              }`}
                                             >
-                                              {name}
+                                              {cartProduct.name ||
+                                                cartProduct.product?.name}
                                             </Link>
                                           </p>
                                         </h3>
@@ -124,7 +196,10 @@ function CartDrawer({ open, setOpen }) {
                                           type="button"
                                           className="flex justify-end"
                                           onClick={() => {
-                                            handleDeleteSwag(id);
+                                            handleDeleteSwag(
+                                              cartProduct.id ||
+                                                cartProduct.swagg_id
+                                            );
                                           }}
                                         >
                                           <LazyLoadImage
@@ -135,14 +210,16 @@ function CartDrawer({ open, setOpen }) {
                                       </div>
                                       <div className="flex flex-1 items-end justify-between text-sm">
                                         <p className="text-xl md:text-2xl font-bold">
-                                          Ksh {price}
+                                          Ksh{" "}
+                                          {cartProduct.price ||
+                                            cartProduct.product?.price}
                                         </p>
 
                                         {/* Count thing reason out */}
                                         <Counter
                                           className="h-8 sm:h-12 w-24 sm:w-32"
                                           setCount={setCount}
-                                          count={quantity}
+                                          count={cartProduct.quantity}
                                         />
                                       </div>
                                     </div>
@@ -192,7 +269,8 @@ function CartDrawer({ open, setOpen }) {
                       <div className="text-xl md:text-2xl font-bold flex justify-between">
                         <h2>Sub Total</h2>
                         <h2>
-                          Ksh {isSuccess ? cartProducts.total_price : "00"}
+                          Ksh {/* {isSuccess  */}
+                          {cartProducts?.total_price || "00"}
                         </h2>
                       </div>
                       <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">

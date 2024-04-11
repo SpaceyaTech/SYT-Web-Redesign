@@ -3,57 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
+import CartDrawer from "../../../components/shop/CartDrawer";
 import ItemHeader from "./ItemHeader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CategoriesSection() {
-  const [categories, setCategories] = useState([
-    {
-      id: 1,
-      name: "Hoodies",
-      imgURL:
-        "https://images.unsplash.com/photo-1588618575327-87bfc763efd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=865&q=80",
-      href: "hoodies",
-    },
-    {
-      id: 2,
-      name: "T-Shirts",
-      imgURL:
-        "https://images.unsplash.com/photo-1588618575327-87bfc763efd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=865&q=80",
-      href: "t-shirts",
-    },
-    {
-      id: 3,
-      name: "Stickers",
-      imgURL:
-        "https://images.unsplash.com/photo-1588618575327-87bfc763efd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=865&q=80",
-      href: "stickers",
-    },
-    {
-      id: 4,
-      name: "Cups",
-      imgURL:
-        "https://images.unsplash.com/photo-1588618575327-87bfc763efd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=865&q=80",
-      href: "cups",
-    },
-    {
-      id: 5,
-      name: "Bookmarks",
-      imgURL:
-        "https://images.unsplash.com/photo-1588618575327-87bfc763efd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=865&q=80",
-      href: "bookmarks",
-    },
-    {
-      id: 6,
-      name: "Hoodies",
-      imgURL:
-        "https://images.unsplash.com/photo-1588618575327-87bfc763efd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=865&q=80",
-      href: "hoodies",
-    },
-  ]);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  const { data, isLoading, isError, isSuccess } = useSwagList();
+  const { data, isPending, isError, isSuccess } = useSwagList();
 
   // setCategories(data.results.map((item) => item.category));
   // eslint-disable-next-line prefer-const
@@ -109,6 +66,9 @@ function CategoriesSection() {
           ))}
         </div>
       </div>
+
+      {/* Cart Drawer */}
+      <CartDrawer open={open} setOpen={setOpen} />
     </>
   );
 }

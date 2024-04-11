@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { arrow, arrowRight } from "../../../../assets/images/resources-page";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+// million-ignore
 function ResourceCard({
   type,
   title,

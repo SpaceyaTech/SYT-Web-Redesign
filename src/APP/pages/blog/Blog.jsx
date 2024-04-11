@@ -13,7 +13,7 @@ function Blog() {
   const {
     data: blogData,
     refetch: refetchBlogData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useBlogData(titleSlug);
@@ -26,7 +26,7 @@ function Blog() {
     <div className="w-screen max-w-[1440px] mx-auto">
       {isError && navigate("/error-500")}
 
-      {isLoading && (
+      {isPending && (
         <div className="flex flex-col items-center justify-center gap-4 py-10">
           <Loader />
           <p className="text-lg font-medium text-primary">

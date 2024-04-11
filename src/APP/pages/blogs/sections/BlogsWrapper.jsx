@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 
-
-import BlogCard from "./BlogCard";
-import BlogPagination from "./BlogPagination";
-import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../../context/searchBlog";
 import {
   useBlogsData,
@@ -11,8 +7,12 @@ import {
 } from "../../../../hooks/Queries/blogs/useAllBlogsData";
 
 import { filterBlogsByCat } from "../../../../utilities/FilterBlogs";
+import { Loader } from "../../../components";
 
 import Error500 from "../../errorPages/Error500";
+import BlogCard from "./BlogCard";
+import BlogPagination from "./BlogPagination";
+import FeaturedBlogs from "./FeaturedBlogs";
 
 function SearchResults({ searchText }) {
   return (
@@ -31,7 +31,7 @@ function BlogsWrapper() {
   const {
     data: blogsData,
     refetch: refetchBlogsData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useBlogsData(page);
@@ -63,7 +63,7 @@ function BlogsWrapper() {
   return (
     <div className="flex flex-col items-start md:items-center gap-6 px-4 pt-4 xl:px-14 w-full mb-10">
       {isError && <Error500 />}
-      {isLoading && (
+      {isPending && (
         <div className="w-full flex flex-col items-center justify-center gap-5 py-10">
           <Loader />
           <p className="text-lg font-medium text-primary">Loading blogs...</p>
@@ -71,6 +71,8 @@ function BlogsWrapper() {
       )}
       {isSuccess && (
         <>
+          {!searchText && <FeaturedBlogs />}
+
           <div className="w-full md:w-fit overflow-x-auto md:overflow-auto flex flex-row items-center gap-4 md:px-3 md:gap-3 md:mb-2">
             {statusBlogCategories === "error" && (
               <p>Error loading blog categories!</p>
@@ -110,7 +112,7 @@ function BlogsWrapper() {
           </div>
 
           {searchBlog?.results.length > 0 ? (
-            <div className="grid sm:grid-cols-2 gap-8 grid-cols-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {allBlogs}
             </div>
           ) : (

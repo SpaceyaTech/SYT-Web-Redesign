@@ -1,5 +1,5 @@
 import { formatDistanceToNow } from "date-fns";
-import React from "react";
+import { useRef, useEffect } from "react";
 
 // import Comments from "./Comments";
 import logo from "../../../../assets/images/sytLogo.png";
@@ -10,6 +10,14 @@ import "./blogWrapper.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlogWrapper({ blog }) {
+  const BodyRef = useRef(null);
+
+  useEffect(() => {
+    if (BodyRef.current) {
+      BodyRef.current.innerHTML += blog?.body ?? "";
+    }
+  }, [blog?.body]);
+
   const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
   });
@@ -45,10 +53,7 @@ function BlogWrapper({ blog }) {
 
         <div className="pb-8 pt-6 md:pt-8">
           <div className="container text-[13px] md:text-base font-normal text-[#323433]">
-            <div
-              className="blog-content"
-              dangerouslySetInnerHTML={{ __html: blog.body }}
-            />
+            <div ref={BodyRef} className="blog-content" />
           </div>
         </div>
 

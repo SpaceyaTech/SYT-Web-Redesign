@@ -1,33 +1,42 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+import React from "react";
 import { Link } from "react-router-dom";
+
+import { bannerImg } from "@/assets/images/hero-section";
 
 function CTASection() {
   return (
-    <section className="text-gray-600 body-font relative w-full max-w-[1440px] mx-auto">
-      <div className="container px-5 py-12 mx-auto">
-        <div className="flex flex-col text-center w-full mb-8 md:mb-12">
-          <h1 className="sm:text-3xl text-3xl font-semibold title-font mb-4 text-[#00664E]">
-            Join, thrive, grow
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-normal">
-            You miss all the shots you do not take. Invest your time in horning
-            your craft.
-          </p>
-        </div>
-        <div className="flex justify-center">
-          <Link
-            to="/community"
-            className="inline-flex  text-white bg-primary border-0 py-3 px-8 focus:outline-none  rounded-lg text-lg"
-          >
-            Join the community
-          </Link>
-        </div>
+    <section className="bg-white w-full max-w-6xl mx-auto relative rounded-[20px] p-2">
+      <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 absolute -top-6">
+        <h4 className="mx-auto min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+          one last bit
+        </h4>
       </div>
 
-      <div className="w-ful h-full absolute top-0 left-0">
-        <div className="relative ">
-          <div className="sm:blur-1 blur-sm-1" />
-          <div className="sm:blur-2 blur-sm-2" />
-          <div className="sm:blur-3 blur-sm-3" />
+      <div className="border rounded-2xl mx-auto bg-green-light px-4 py-8 sm:p-8 flex-between flex-col lg:flex-row gap-20">
+        <img
+          src={bannerImg}
+          alt="banner"
+          className="size-96 object-contain hidden md:flex"
+        />
+
+        <div className="flex-center flex-col lg:flex-start gap-4 md:pr-3">
+          <h1 className="md:text-[40px] text-2xl leading-tight font-medium text-gray-900 text-center lg:text-start">
+            Accelerating growth and potential of tech enthusiasts
+          </h1>
+
+          <p className="text-sm md:text-lg font-normal leading-normal text-center lg:text-start">
+            SpaceYaTech is the fastest growing Africa, open-source community
+            looking to change the way young Africans get started in technology.
+          </p>
+
+          <Link
+            to="/community"
+            className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
+          >
+            Join SpaceYaTech
+          </Link>
         </div>
       </div>
     </section>
