@@ -1,6 +1,7 @@
 import React from "react";
-import { advert } from "../../../../assets/images/blogs-page";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
+import { advert } from "../../../../assets/images/blogs-page";
 
 function Advert() {
   return (

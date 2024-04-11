@@ -1,46 +1,3 @@
-// import AaronAbubakar from "../../../../assets/images/aboutPage/creativeTeam/aaron-abubakar.jpeg";
-// import PamelaOwino from "../../../../assets/images/aboutPage/creativeTeam/pamela-owino.png";
-// import EmmyAkinyi from "../../../../assets/images/aboutPage/creativeTeam/emmy-akinyi.jpeg";
-// import Temitayo from "../../../../assets/images/aboutPage/creativeTeam/temitayo.jpeg";
-// import TempPic from "../../../../assets/images/aboutPage/leadership/james-otieno.png";
-// import {
-//   facebook,
-//   instagram,
-//   linkedin,
-//   twitter,
-//   discord,
-// } from "../../../../assets/images/socials";
-// import Caroussel from "../../../components/Caroussel";
-// import { LazyLoadImage } from "react-lazy-load-image-component";
-
-// const CreativeTeamData = [
-//   {
-//     name: "Emmy Akinyi",
-//     title: "UX Team Lead",
-//     image: EmmyAkinyi,
-//   },
-//   {
-//     name: "Pamela Owino",
-//     title: "Lead Product Designer",
-//     image: PamelaOwino,
-//   },
-//   {
-//     name: "Aaron Abubakar",
-//     title: "Product Designer",
-//     image: AaronAbubakar,
-//   },
-// {
-//   name: "Robert Okusi",
-//   title: "Product Designer",
-//   image: TempPic,
-// },
-//   {
-//     name: "Temitayo",
-//     title: "Product Designer",
-//     image: Temitayo,
-//   },
-// ];
-
 function PartnerCTA() {
   return (
     <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
@@ -73,7 +30,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={twitter} alt="twitter" className="w-12 h-12"  />
+              <LazyLoadImage src={twitter} alt="twitter" className="w-12 h-12" />
             </a>
 
             <a
@@ -81,7 +38,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={linkedin} alt="linkedin" className="w-12 h-12"  />
+              <LazyLoadImage src={linkedin} alt="linkedin" className="w-12 h-12" />
             </a>
 
             <a
@@ -89,7 +46,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={discord} alt="discord" className="w-12 h-12 p-3"  />
+              <LazyLoadImage src={discord} alt="discord" className="w-12 h-12 p-3" />
             </a>
 
             <a
@@ -97,7 +54,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={instagram} alt="instagram" className="w-12 h-12"  />
+              <LazyLoadImage src={instagram} alt="instagram" className="w-12 h-12" />
             </a>
 
             <a
@@ -105,7 +62,7 @@ function PartnerCTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LazyLoadImage src={facebook} alt="facebook" className="w-12 h-12"  />
+              <LazyLoadImage src={facebook} alt="facebook" className="w-12 h-12" />
             </a>
           </div>
         </div> */}
