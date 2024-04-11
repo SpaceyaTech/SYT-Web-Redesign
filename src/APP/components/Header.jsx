@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 
 import { cancel, menu } from "../../assets/images/icons";
 import logo from "../../assets/images/sytLogo.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const navLinks = [
   {

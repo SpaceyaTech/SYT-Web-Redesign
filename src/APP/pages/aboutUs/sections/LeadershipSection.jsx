@@ -1,14 +1,12 @@
 import emailjs from "@emailjs/browser";
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState, useRef } from "react";
-
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { PartnerWithUs } from "../../../../assets/images/aboutPage";
 import { closeIcon } from "../../../../assets/images/icons";
 import { Caroussel } from "../../../components";
 import { LeadershipData } from "../data";
-import { buildComm } from "../../../../assets/images/aboutPage";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // env var
 const SERVICE_ID =
