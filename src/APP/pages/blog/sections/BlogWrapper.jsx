@@ -1,5 +1,5 @@
 import { formatDistanceToNow } from "date-fns";
-import React from "react";
+import { useRef, useEffect } from "react";
 
 // import Comments from "./Comments";
 import logo from "../../../../assets/images/sytLogo.png";
@@ -10,6 +10,14 @@ import "./blogWrapper.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlogWrapper({ blog }) {
+  const BodyRef = useRef(null);
+
+  useEffect(() => {
+    if (BodyRef.current) {
+      BodyRef.current.innerHTML += blog?.body ?? "";
+    }
+  }, [blog?.body]);
+
   const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
   });
@@ -24,7 +32,7 @@ function BlogWrapper({ blog }) {
 
           <div className="flex items-center justify-between">
             <div className="flex gap-2">
-              <LazyLoadImage
+              <LazyLoadImage 
                 src={logo}
                 alt="icon"
                 className="w-10 h-10 object-cover rounded-full bg-gray-200 flex items-center justify-center p-1"
@@ -45,10 +53,7 @@ function BlogWrapper({ blog }) {
 
         <div className="pb-8 pt-6 md:pt-8">
           <div className="container text-[13px] md:text-base font-normal text-[#323433]">
-            <div
-              className="blog-content"
-              dangerouslySetInnerHTML={{ __html: blog.body }}
-            />
+            <div ref={BodyRef} className="blog-content" />
           </div>
         </div>
 

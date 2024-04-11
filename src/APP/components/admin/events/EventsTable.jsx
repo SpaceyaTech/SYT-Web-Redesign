@@ -164,7 +164,7 @@ function EventsTable() {
             />
             <span className="sr-only">Search</span>
             <span className="absolute inset-y-0 right-1 flex items-center pr-2">
-              <LazyLoadImage src={SearchIcon} alt="search" />
+              <LazyLoadImage  src={SearchIcon} alt="search" />
             </span>
           </label>
         </div>

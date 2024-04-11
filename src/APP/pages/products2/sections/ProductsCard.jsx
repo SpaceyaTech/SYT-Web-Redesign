@@ -26,7 +26,7 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           <span className="text-base font-medium text-white capitalize">
             View product
           </span>
-          <LazyLoadImage
+          <LazyLoadImage 
             src={upleft}
             alt="view btn"
             className="w-6 h-6 object-contain"
@@ -36,7 +36,7 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
 
       {/* pic */}
       <div className="flex-1 min-h-full pb-14">
-        <LazyLoadImage
+        <LazyLoadImage 
           src={img}
           alt={name}
           className="w-full h-full object-cover"
@@ -53,7 +53,7 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
         <span className="text-base font-medium text-white capitalize">
           View product
         </span>
-        <LazyLoadImage
+        <LazyLoadImage 
           src={upleft}
           alt="view btn"
           className="w-6 h-6 object-contain"

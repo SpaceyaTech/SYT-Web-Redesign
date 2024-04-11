@@ -116,7 +116,7 @@ function ItemHeader({ show }) {
                                   selected ? "font-medium" : "font-normal"
                                 }`}
                               >
-                                <LazyLoadImage
+                                <LazyLoadImage 
                                   src={item.image}
                                   alt={item.name}
                                   className="h-12 w-12 rounded"
@@ -148,7 +148,7 @@ function ItemHeader({ show }) {
           </div>
         )}
         <button type="button" className="ml-6 items-end" onClick={show}>
-          <LazyLoadImage src={CartIcon} alt="cart" />
+          <LazyLoadImage  src={CartIcon} alt="cart" />
         </button>
       </div>
     </div>

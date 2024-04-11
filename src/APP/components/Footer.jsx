@@ -12,11 +12,12 @@ function Footer() {
   var year = now.getFullYear();
   return (
     <footer>
-      <div className=" bg-[#252533] mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
+      <div className=" bg-secondary mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           {/* logo and socials  */}
           <div className="mb-8 md:mb-0 mr-6 flex flex-col justify-start items-center md:w-1/4 w-1/2">
             <LazyLoadImage
+              effect="blur"
               src={logo}
               alt="FlowBite Logo"
               className="h-24 md:mx-8 mx-0 object-contain"
@@ -25,6 +26,7 @@ function Footer() {
             <div className="flex flex-row items-center  md:justify-between gap-4 justify-start my-4">
               <a href="/">
                 <LazyLoadImage
+                  effect="blur"
                   src={facebook}
                   alt="facebook"
                   className="w-7 h-7"
@@ -33,6 +35,7 @@ function Footer() {
 
               <a href="/">
                 <LazyLoadImage
+                  effect="blur"
                   src={instagram}
                   alt="instagram"
                   className="w-7 h-7"
@@ -41,6 +44,7 @@ function Footer() {
 
               <a href="/">
                 <LazyLoadImage
+                  effect="blur"
                   src={twitter}
                   alt="twitter"
                   className="w-7 h-7"
@@ -49,6 +53,7 @@ function Footer() {
 
               <a href="/">
                 <LazyLoadImage
+                  effect="blur"
                   src={linkedin}
                   alt="linkedIn"
                   className="w-7 h-7"

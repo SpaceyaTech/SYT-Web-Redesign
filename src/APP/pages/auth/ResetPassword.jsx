@@ -12,7 +12,7 @@ function ResetPassword() {
         <h2 className="text-2xl mb-4">
           Let&apos;s create a new password for your account
         </h2>
-        <LazyLoadImage
+        <LazyLoadImage 
           src={ResetPasswordImg}
           alt="Reset Password"
           className="m-auto"

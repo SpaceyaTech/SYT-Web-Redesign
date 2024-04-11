@@ -21,7 +21,7 @@ function HeroSection() {
         </p>
       </div>
 
-      <LazyLoadImage
+      <LazyLoadImage 
         src={earthMoon}
         alt="earth & moon"
         className="absolute md:right-12 right-8 -top-16 md:-top-32 lg:-top-40 object-contain w-32 md:w-96 lg:w-fit md:z-10"

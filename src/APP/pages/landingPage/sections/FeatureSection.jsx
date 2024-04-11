@@ -1,24 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function FeatureSection() {
   return (
-    <section className="bg-[#E5EFEC] body-font w-full">
-      <div className="container px-5 py-8 mx-auto max-w-[1440px]">
-        <div className="flex flex-col text-center w-full mb-10">
-          <h2 className="text-xs text-[#00664E] tracking-widest font-medium title-font mb-1">
-            Holistic growth
-          </h2>
-          <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433]">
-            Fostering the <span className="text-[#00664E]">growth</span> of the
+    <section className="bg-green-light w-full relative py-4">
+      <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 absolute -top-6">
+        <h4 className="mx-auto min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+          How we work
+        </h4>
+      </div>
+
+      <div className="px-4 py-8 mx-auto max-w-7xl">
+        <div className="flex flex-col items-center w-full gap-12">
+          <h1 className="text-xl md:text-3xl leading-loose font-semibold max-w-md md:max-w-2xl border text-center">
+            Fostering the <span className="text-primary">growth</span> of the
             next generation of techies in Africa
           </h1>
 
           {/* items  */}
-          <div className="flex flex-wrap sm:m-4 mx-4  mt-4 md:space-y-0 space-y-6">
+          <div className="flex flex-col items-center md:flex-row gap-4 lg:gap-10 w-full p-4">
             {/* item 1  */}
-            <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full mb-5 flex-shrink-0">
+            <div className="flex-center flex-col gap-3 md:gap-4 w-72">
+              <div className="size-16 flex-center">
                 <svg
                   width={69}
                   height={66}
@@ -41,28 +43,21 @@ function FeatureSection() {
                   />
                 </svg>
               </div>
-              <div className="flex-grow">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                  Learn
-                </h2>
-                <div className="border-l-4 border-l-[#00664E]">
-                  <p className="leading-relaxed text-base pl-4 md:pl-2 text-[#323433]">
-                    Get your feet wet in technology in the easiest and fastest
-                    way possible.
-                  </p>
-                </div>
-                {/* <Link
-                  to="/"
-                  preventScrollReset={true}
-                  className="mt-3 text-primary inline-flex items-center font-semibold"
-                >
-                  View Our resources
-                </Link> */}
-              </div>
+
+              <h4 className="text-center md:text-lg text-base font-semibold">
+                Learn
+              </h4>
+
+              <p className="text-center text-sm md:text-base font-normal">
+                Get your feet wet in technology in the easiest and fastest way
+                possible.
+              </p>
             </div>
+            <hr className="w-28 md:w-1 h-1 md:h-28 rounded-full bg-green-dark mx-auto" />
+
             {/* item 2  */}
-            <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full mb-5 flex-shrink-0">
+            <div className="flex-center flex-col gap-3 md:gap-4 w-72">
+              <div className="size-16 flex-center">
                 <svg
                   width={69}
                   height={66}
@@ -85,29 +80,21 @@ function FeatureSection() {
                   <circle opacity="0.2" cx={42} cy={46} r={20} fill="#00664E" />
                 </svg>
               </div>
-              <div className="flex-grow">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                  Thrive
-                </h2>
-                <div className="border-l-4 border-l-[#00664E]">
-                  <p className="leading-relaxed text-base pl-4 md:pl-2 text-[#323433]">
-                    Master the most important concepts in your field and make
-                    them stick.
-                  </p>
-                </div>
 
-                {/* <Link
-                  to="/"
-                  preventScrollReset={true}
-                  className="mt-3 text-primary inline-flex items-center font-semibold"
-                >
-                  View Our blogs
-                </Link> */}
-              </div>
+              <h4 className="text-center md:text-lg text-base font-semibold">
+                Thrive
+              </h4>
+
+              <p className="text-center text-sm md:text-base font-normal">
+                Master the most important concepts in your field and make them
+                stick.
+              </p>
             </div>
+            <hr className="w-28 md:w-1 h-1 md:h-28 rounded-full bg-green-dark mx-auto" />
+
             {/* item 3  */}
-            <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-              <div className="w-20 h-20 inline-flex items-center justify-center rounded-full mb-5 flex-shrink-0">
+            <div className="flex-center flex-col gap-3 md:gap-4 w-72">
+              <div className="size-16 flex-center">
                 <svg
                   width={69}
                   height={67}
@@ -136,24 +123,15 @@ function FeatureSection() {
                   />
                 </svg>
               </div>
-              <div className="flex-grow">
-                <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                  Grow
-                </h2>
-                <div className="border-l-4 border-l-[#00664E]">
-                  <p className="leading-relaxed text-base pl-4 md:pl-2 text-[#323433]">
-                    Build your portfolio and grow your network by taking part in
-                    exciting events and open-source projects
-                  </p>
-                </div>
-                {/* <Link
-                  to="/"
-                  preventScrollReset={true}
-                  className="mt-3 text-primary inline-flex items-center font-semibold"
-                >
-                  View Our projects
-                </Link> */}
-              </div>
+
+              <h4 className="text-center text-base md:text-lg font-semibold">
+                Grow
+              </h4>
+
+              <p className="text-center text-sm md:text-base font-normal">
+                Build your portfolio and grow your network by taking part in
+                exciting events and open-source projects
+              </p>
             </div>
           </div>
         </div>

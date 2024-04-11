@@ -13,7 +13,7 @@ function Blog() {
   const {
     data: blogData,
     refetch: refetchBlogData,
-    isLoading,
+    isPending,
     isError,
     isSuccess,
   } = useBlogData(titleSlug);
@@ -26,7 +26,7 @@ function Blog() {
     <div className="w-screen max-w-[1440px] mx-auto">
       {isError && navigate("/error-500")}
 
-      {isLoading && (
+      {isPending && (
         <div className="flex flex-col items-center justify-center gap-4 py-10">
           <Loader />
           <p className="text-lg font-medium text-primary">
@@ -36,7 +36,7 @@ function Blog() {
       )}
       {isSuccess && (
         <section className="flex flex-col p-4 md:p-8 lg:p-10">
-          <LazyLoadImage
+          <LazyLoadImage 
             src={blogData.image}
             alt={blogData.title}
             className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"

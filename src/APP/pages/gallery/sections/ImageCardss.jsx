@@ -5,7 +5,7 @@
 //   const { width, src, alt, date, event, height } = photo;
 //   return (
 //     <div className={`relative border w-[${width}px]`}>
-//       <LazyLoadImage
+//       <LazyLoadImage 
 //         src={src}
 //         alt={alt}
 //         className="aspect-video object-cover"

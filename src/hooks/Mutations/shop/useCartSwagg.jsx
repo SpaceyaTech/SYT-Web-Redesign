@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import privateAxios from "../../../api/privateAxios";
+import publicAxios from "../../../api/publicAxios";
 import useAuth from "../../useAuth";
 
 // !!! choose colorSwagg
@@ -9,10 +9,10 @@ const useAddSwagToCart = () => {
 
   return useMutation(
     async (cartItems) => {
-      const response = await privateAxios.post("/cart/swaggs/", cartItems, {
+      const response = await publicAxios.post("/cart/swaggs/", cartItems, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${auth?.access}`,
+          // Authorization: `Bearer ${auth?.access}`,
         },
       });
       return response.data;
@@ -39,10 +39,10 @@ const useDeleteSwag = () => {
 
   return useMutation(
     async (id) => {
-      const response = await privateAxios.delete(`/cart/swaggs/${id}/`, {
+      const response = await publicAxios.delete(`/cart/swaggs/${id}/`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${auth?.access}`,
+          // Authorization: `Bearer ${auth?.access}`,
         },
       });
       console.log("response ", response.data);

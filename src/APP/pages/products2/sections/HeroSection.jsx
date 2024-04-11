@@ -1,8 +1,8 @@
 import video from "../../../../assets/images/syt.mp4";
 
-const HeroSection = () => {
+function HeroSection() {
   return (
-    <section className="py-4 md:py-8 flex flex-col gap-6 md:gap-8 items-center justify-center md:max-w-4xl mx-auto">
+    <section className="py-4 md:py-12 flex flex-col gap-6 md:gap-8 items-center justify-center md:max-w-4xl mx-auto">
       {/* text section */}
       <div className="flex flex-col justify-center items-center">
         <h3 className="text-primary text-base md:text-2xl font-normal text-center capitalize">
@@ -27,6 +27,6 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection;

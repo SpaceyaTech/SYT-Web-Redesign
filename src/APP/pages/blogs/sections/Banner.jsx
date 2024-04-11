@@ -25,7 +25,7 @@ function Banner() {
             className="w-1/10 p-2"
             onClick={(e) => e.preventDefault()}
           >
-            <LazyLoadImage src={search} alt="search" className="w-6 h-6" />
+            <LazyLoadImage  src={search} alt="search" className="w-6 h-6" />
           </button>
         </form>
       </div>

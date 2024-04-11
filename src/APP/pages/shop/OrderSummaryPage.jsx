@@ -7,31 +7,10 @@ import Sample2 from "../../../assets/images/shop-page/sample2.png";
 import useMakeOrder from "../../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
 import { useOrderSummary } from "../../../hooks/Queries/shop/useOrdersList";
+import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
-// const products = [
-//   {
-//     id: 1,
-//     name: "SYT Hoodie",
-//     href: "#",
-//     color: "Salmon",
-//     price: "90.00",
-//     quantity: 1,
-//     imageSrc: Sample1,
-//   },
-//   {
-//     id: 2,
-//     name: "SYT Bookmark",
-//     href: "#",
-//     color: "Blue",
-//     price: "32.00",
-//     quantity: 1,
-//     imageSrc: Sample2,
-//   },
-//   // More products...
-// ];
 
 const steps = [
   { description: "Provide your MPESA mobile number", key: 1 },
@@ -51,7 +30,7 @@ function Checkout() {
   const { data: products, isSuccess } = useProductsInCart();
   const {
     mutate: makeOrder,
-    isLoading,
+    isPending,
     isSuccess: successfulOrder,
   } = useMakeOrder();
 
@@ -218,7 +197,7 @@ function Checkout() {
                           className="flex py-6 space-x-4 sm:space-x-24"
                         >
                           <div className="h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg">
-                            <LazyLoadImage
+                            <LazyLoadImage 
                               src={`https://apis.spaceyatech.com${image}`}
                               alt={name}
                               className="h-full w-full object-cover object-center"
@@ -307,7 +286,7 @@ function Checkout() {
             className=" md:w-1/2 w-full h-[62px] bg-primary hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
             onClick={handleSubmit}
           >
-            {isLoading ? "Loading" : "Pay and place order"}
+            {isPending ? "Loading" : "Pay and place order"}
           </button>
         </div>
       </div>
@@ -360,6 +339,9 @@ function Checkout() {
           </Dialog>
         </Transition>
       )}
+
+      {/* Cart Drawer */}
+      <CartDrawer open={open} setOpen={setOpen} />
     </>
   );
 }

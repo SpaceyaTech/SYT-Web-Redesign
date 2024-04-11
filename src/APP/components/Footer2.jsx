@@ -1,4 +1,3 @@
-import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import {
@@ -21,7 +20,7 @@ function Footer2() {
         <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
           <div className="flex-3 flex flex-col sm:items-start items-center">
             {/* logo */}
-            <LazyLoadImage
+            <LazyLoadImage 
               src={logo}
               alt="logo"
               className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
@@ -34,7 +33,7 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={facebook}
                     alt="facebook"
                     className="w-7 h-7"
@@ -45,7 +44,7 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={instagram}
                     alt="instagram"
                     className="w-7 h-7"
@@ -57,7 +56,7 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={twitter}
                     alt="twitter"
                     className="w-7 h-7"
@@ -69,7 +68,7 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={linkedin}
                     alt="linkedIn"
                     className="w-7 h-7"
@@ -82,7 +81,7 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={youtube}
                     alt="youtube"
                     className="w-7 h-7"
@@ -94,7 +93,7 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={spotify}
                     alt="spotify"
                     className="w-7 h-7"
@@ -209,7 +208,7 @@ function Footer2() {
             &copy; {year} SpaceYaTech | All Rights Reserved
           </h1>
         </div>
-        {/* <LazyLoadImage
+        {/* <LazyLoadImage 
           src={backup}
           alt="backup"
           className="w-7 h-7"
