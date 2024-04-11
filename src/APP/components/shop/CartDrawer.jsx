@@ -2,6 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, Link } from "react-router-dom";
+
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
 import SampleImg from "../../../assets/images/shop-page/main-sample.png";

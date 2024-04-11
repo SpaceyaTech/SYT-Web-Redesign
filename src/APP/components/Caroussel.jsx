@@ -2,13 +2,13 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useRef } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import {
   arrowCircleLeft,
   arrowCircleRight,
   greyLinkedin,
   greyTwitter,
 } from "../../assets/images/icons";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Caroussel({ CarousselData }) {
   const carouselRef = useRef();
