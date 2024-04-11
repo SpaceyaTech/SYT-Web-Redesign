@@ -1,7 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/sytLogo.png";
-// import backup from "../../assets/images/backup.svg";
 import {
   linkedin,
   twitter,
@@ -10,6 +9,7 @@ import {
   instagram,
   facebook,
 } from "../../assets/images/socials";
+import logo from "../../assets/images/sytLogo.png";
 
 function Footer2() {
   const now = new Date();
@@ -21,12 +21,11 @@ function Footer2() {
         <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
           <div className="flex-3 flex flex-col sm:items-start items-center">
             {/* logo */}
-            <img
+            <LazyLoadImage
               src={logo}
               alt="logo"
               className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
             />
-
             {/* socials */}
             <div className="flex flex-col items-center">
               <div className="flex items-center md:gap-5 gap-3 py-4">
@@ -35,21 +34,34 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={facebook} alt="facebook" className="w-7 h-7" />
+                  <LazyLoadImage
+                    src={facebook}
+                    alt="facebook"
+                    className="w-7 h-7"
+                  />
                 </a>
                 <a
                   href="https://www.instagram.com/spaceyatech/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={instagram} alt="instagram" className="w-7 h-7" />
+                  <LazyLoadImage
+                    src={instagram}
+                    alt="instagram"
+                    className="w-7 h-7"
+                  />
+                  {/* < src={instagram} alt="instagram" className="w-7 h-7" /> */}
                 </a>
                 <a
                   href="https://x.com/SpaceYaTech"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={twitter} alt="twitter" className="w-7 h-7" />
+                  <LazyLoadImage
+                    src={twitter}
+                    alt="twitter"
+                    className="w-7 h-7"
+                  />
                 </a>
 
                 <a
@@ -57,7 +69,11 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={linkedin} alt="linkedin" className="w-7 h-7" />
+                  <LazyLoadImage
+                    src={linkedin}
+                    alt="linkedIn"
+                    className="w-7 h-7"
+                  />
                 </a>
               </div>
               <div className="flex items-center md:gap-5 gap-3">
@@ -66,7 +82,11 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={youtube} alt="youtube" className="w-7 h-7" />
+                  <LazyLoadImage
+                    src={youtube}
+                    alt="youtube"
+                    className="w-7 h-7"
+                  />
                 </a>
 
                 <a
@@ -74,7 +94,11 @@ function Footer2() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={spotify} alt="spotify" className="w-7 h-7" />
+                  <LazyLoadImage
+                    src={spotify}
+                    alt="spotify"
+                    className="w-7 h-7"
+                  />
                 </a>
               </div>
             </div>
@@ -185,12 +209,12 @@ function Footer2() {
             &copy; {year} SpaceYaTech | All Rights Reserved
           </h1>
         </div>
+        {/* <LazyLoadImage
+          src={backup}
+          alt="backup"
+          className="w-7 h-7"
 
-        {/* <img
-        src={backup}
-        alt="backup"
-        className="h-12 w-12 object-contain absolute sm:bottom-14 bottom-0 right-10 cursor-pointer"
-      /> */}
+        /> */}
       </div>
     </footer>
   );

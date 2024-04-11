@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 import CartDrawer from "../../../components/shop/CartDrawer";
 import ItemHeader from "./ItemHeader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CategoriesSection() {
   const [open, setOpen] = useState(false);
@@ -43,7 +44,7 @@ function CategoriesSection() {
               className="w-60 lg:w-[420px] h-72 hover:opacity-75"
             >
               <Link to={`/shop/category/${category.name}`}>
-                <img
+                <LazyLoadImage 
                   src={category.imgURL}
                   className="object-cover object-center rounded-2xl h-64 w-60 lg:w-[420px]"
                   alt={category.name}

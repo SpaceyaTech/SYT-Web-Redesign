@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { arrow, arrowRight } from "../../../../assets/images/resources-page";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // million-ignore
 function ResourceCard({
@@ -40,14 +41,18 @@ function ResourceCard({
       >
         {/* img cover */}
         <div className="h-[180px]">
-          <img src={image} alt={title} className="object-cover h-full w-full" />
+          <LazyLoadImage 
+            src={image}
+            alt={title}
+            className="object-cover h-full w-full"
+          />
         </div>
 
         {/* desc */}
         <div className="bg-white p-2 flex flex-col gap-[10px] border shadow-md rounded-b-xl">
           <div className="flex justify-between items-center">
             <h5 className="text-base font-normal">{type}</h5>
-            <img
+            <LazyLoadImage 
               src={arrow}
               alt="arrow"
               className={`w-6 h-6 object-contain transform transition-all ease-in duration-500 cursor-pointer ${

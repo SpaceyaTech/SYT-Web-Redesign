@@ -6,6 +6,7 @@ import { upleftGreen } from "../../../../assets/images/icons";
 import useStackData from "../../../../hooks/Queries/stack/useStackData";
 import { Loader } from "../../../components";
 import DeveloperCard from "./DeveloperCard";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -33,7 +34,8 @@ function Teams() {
           <span className="text-base md:text-[32px] md:leading-normal text-primary font-medium">
             Join us
           </span>
-          <img
+          <LazyLoadImage
+            effect="blur"
             src={upleftGreen}
             alt="upleft"
             className="h-6 w-6 md:h-10 md:w-10 object-contain"

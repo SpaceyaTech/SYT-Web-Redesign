@@ -4,13 +4,14 @@ import {
   reply,
 } from "../../../../assets/images/blogs-page";
 import CommentInput from "./CommentInput";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CommentCard = () => {
   return (
     <div className="flex flex-col gap-3 items-start border-b border-[#25253380] pb-3">
       <div className="flex flex-row w-full items-center justify-between gap-4">
         <div className="flex gap-2 md:gap-3">
-          <img
+          <LazyLoadImage 
             src={Ellipse30}
             alt="author"
             className="w-8 h-8 rounded-full object-contain"
@@ -23,7 +24,11 @@ const CommentCard = () => {
         </div>
 
         <button className="flex flex-row gap-1">
-          <img src={reply} alt="reply" className="w-4 h-4 object-contain" />
+          <LazyLoadImage 
+            src={reply}
+            alt="reply"
+            className="w-4 h-4 object-contain"
+          />
           <span className="text-[13px] text-[#00664E] capitalize">Reply</span>
         </button>
       </div>
@@ -35,7 +40,11 @@ const CommentCard = () => {
         faucibus facilisis tortor enim nulla turpis.
       </p>
       <button className="flex flex-row gap-1">
-        <img src={chatText} alt="chatText" className="w-4 h-4 object-contain" />
+        <LazyLoadImage 
+          src={chatText}
+          alt="chatText"
+          className="w-4 h-4 object-contain"
+        />
         <span className="text-xs font-normal text-[#00664E]">35</span>
       </button>
     </div>

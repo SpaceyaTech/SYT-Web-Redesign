@@ -1,8 +1,8 @@
 import emailjs from "@emailjs/browser";
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState, useRef } from "react";
-
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { PartnerWithUs } from "../../../../assets/images/aboutPage";
 import { closeIcon } from "../../../../assets/images/icons";
 import { Caroussel } from "../../../components";
@@ -95,7 +95,7 @@ function LeadershipSection() {
               effect="blur"
               src={PartnerWithUs}
               alt="Space ya Tech Community"
-              className="md:rounded-l-xl rounded-t-xl w-full object-cover"
+              className="md:rounded-l-xl object-cover size-full"
             />
           </div>
           <div className="space-y-4 md:w-1/2 px-6 flex flex-col justify-center md:my-0 my-6">
@@ -155,7 +155,7 @@ function LeadershipSection() {
                     >
                       <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-md bg-white p-4 md:p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
                         <button type="button" onClick={closeModal}>
-                          <img
+                          <LazyLoadImage
                             src={closeIcon}
                             alt="close"
                             className="object-contain w-4 h-4"

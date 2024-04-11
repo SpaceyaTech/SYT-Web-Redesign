@@ -10,6 +10,7 @@ import { useOrderSummary } from "../../../hooks/Queries/shop/useOrdersList";
 import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const steps = [
   { description: "Provide your MPESA mobile number", key: 1 },
@@ -196,7 +197,7 @@ function Checkout() {
                           className="flex py-6 space-x-4 sm:space-x-24"
                         >
                           <div className="h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg">
-                            <img
+                            <LazyLoadImage 
                               src={`https://apis.spaceyatech.com${image}`}
                               alt={name}
                               className="h-full w-full object-cover object-center"

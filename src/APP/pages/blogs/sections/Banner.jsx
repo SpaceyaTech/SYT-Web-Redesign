@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { search } from "../../../../assets/images/blogs-page";
 import { SearchBlogContext } from "../../../../context/searchBlog";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Banner() {
   const { searchText, setSearchText } = useContext(SearchBlogContext);
@@ -24,7 +25,7 @@ function Banner() {
             className="w-1/10 p-2"
             onClick={(e) => e.preventDefault()}
           >
-            <img src={search} alt="search" className="w-6 h-6" />
+            <LazyLoadImage  src={search} alt="search" className="w-6 h-6" />
           </button>
         </form>
       </div>
