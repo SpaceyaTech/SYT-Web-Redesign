@@ -1,7 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/sytLogo.png";
-// import backup from "../../assets/images/backup.svg";
 import {
   linkedin,
   twitter,
@@ -10,7 +9,7 @@ import {
   instagram,
   facebook,
 } from "../../assets/images/socials";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import logo from "../../assets/images/sytLogo.png";
 
 function Footer2() {
   const now = new Date();
