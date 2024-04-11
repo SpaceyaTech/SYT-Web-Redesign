@@ -2,7 +2,6 @@
 import { useRef, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { glovo } from "../../../../assets/images/blogs-page";
 
 import NextRead from "./NextRead";
