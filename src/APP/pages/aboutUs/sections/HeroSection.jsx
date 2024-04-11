@@ -19,7 +19,7 @@ function HeroSection() {
           </p>
         </div>
         <div>
-          <LazyLoadImage src={SYTHero} alt="space ya tech" />
+          <LazyLoadImage effect="blur" src={SYTHero} alt="space ya tech" />
         </div>
       </div>
     </div>

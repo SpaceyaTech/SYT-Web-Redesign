@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
-
 import { cancel, menu } from "../../assets/images/icons";
 import logo from "../../assets/images/sytLogo.png";
 

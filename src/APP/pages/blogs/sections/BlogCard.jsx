@@ -8,11 +8,10 @@ import logo from "../../../../assets/images/sytLogo.png";
 import BlogStats from "./BlogStats";
 
 function BlogCard({ blog }) {
-  const timeAgo =
-    blog?.created_at &&
-    formatDistanceToNow(new Date(blog?.created_at), {
-      addSuffix: true,
-    });
+  const timeAgo = blog?.created_at;
+  formatDistanceToNow(new Date(blog?.created_at), {
+    addSuffix: true,
+  });
 
   return (
     <Link

@@ -2,6 +2,7 @@
 import { useRef, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { glovo } from "../../../../assets/images/blogs-page";
 
 import NextRead from "./NextRead";
@@ -37,11 +38,13 @@ function BlogBody({ id, categoryId, blogBody }) {
       <div className="w-full md:w-[30%] hidden md:flex flex-col pt-20 gap-10 md:gap-64">
         <RelatedBlogs blogId={id} categoryId={categoryId} />
 
-        <LazyLoadImage
-          src={glovo}
-          alt="glovo"
-          className="object-cover w-full aspect-auto"
-        />
+        <div className="w-full cursor-pointer">
+          <LazyLoadImage
+            src={glovo}
+            alt="glovo"
+            className="object-cover w-full aspect-auto"
+          />
+        </div>
       </div>
     </div>
   );

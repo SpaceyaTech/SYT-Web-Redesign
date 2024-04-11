@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, useParams } from "react-router-dom";
 import SmallSample1 from "../../../assets/images/shop-page/small-sample-colored.png";
 import SmallSample2 from "../../../assets/images/shop-page/small-sample-greyscale.png";
@@ -101,7 +102,7 @@ export default function SingleItemPage() {
       {isSuccess ? (
         <div className="px-8 sm:px-0 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
           <div className="md:pb-14 md:w-1/2 space-y-6">
-            <LazyLoadImage
+            <LazyLoadImage 
               src={singleSwag.image}
               alt={singleSwag.name}
               className="m-auto md:min-w-full "
@@ -109,7 +110,7 @@ export default function SingleItemPage() {
             <div className="flex justify-between">
               {VariationData.map((pic) => (
                 <div key={crypto.randomUUID()} className="w-[70px] sm:w-auto">
-                  <LazyLoadImage src={pic} alt="recommendation" />
+                  <LazyLoadImage  src={pic} alt="recommendation" />
                 </div>
               ))}
             </div>
@@ -131,7 +132,7 @@ export default function SingleItemPage() {
             <div className="flex justify-start space-x-6">
               {VariationData.map((pic) => (
                 <div key={crypto.randomUUID()}>
-                  <LazyLoadImage
+                  <LazyLoadImage 
                     src={pic}
                     alt=""
                     height="96px"

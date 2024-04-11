@@ -54,7 +54,7 @@ function Events({ events, isVertical }) {
                   }}
                 >
                   <Link to={`/events/${id}`} className="cursor-pointer">
-                    <LazyLoadImage
+                    <LazyLoadImage 
                       className="rounded-t-lg w-full h-56 object-contain"
                       src={poster}
                       alt={name}

@@ -7,7 +7,7 @@ function PartnerCard({ image, backgroundColor, link }) {
       className="flex flex-col items-center p-8 justify-between h-80 border-2 rounded-2xl"
       style={{ backgroundColor: `${backgroundColor}` }}
     >
-      <LazyLoadImage src={image} />
+      <LazyLoadImage  src={image} />
       <a
         href={link}
         target="_blank"

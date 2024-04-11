@@ -14,7 +14,7 @@ function ForgotPassword() {
           Forgot Password?
         </h1>
         <h2 className="text-2xl mb-4">Let&apos;s recover your account</h2>
-        <LazyLoadImage
+        <LazyLoadImage 
           src={ForgotPasswordImg}
           alt="Forgot Password"
           className="m-auto"
@@ -30,7 +30,7 @@ function ForgotPassword() {
         </p>
         <form className="space-y-6">
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
-            <LazyLoadImage src={EmailIcon} alt="Email Icon" />
+            <LazyLoadImage  src={EmailIcon} alt="Email Icon" />
             <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via Email</span>
               <input
@@ -42,7 +42,7 @@ function ForgotPassword() {
             </label>
           </div>
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
-            <LazyLoadImage src={MessageIcon} alt="Message Icon" />
+            <LazyLoadImage  src={MessageIcon} alt="Message Icon" />
             <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via SMS</span>
               <input

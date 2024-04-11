@@ -197,7 +197,7 @@ function Checkout() {
                           className="flex py-6 space-x-4 sm:space-x-24"
                         >
                           <div className="h-24 w-32 flex-shrink-0 overflow-hidden rounded-lg">
-                            <LazyLoadImage
+                            <LazyLoadImage 
                               src={`https://apis.spaceyatech.com${image}`}
                               alt={name}
                               className="h-full w-full object-cover object-center"

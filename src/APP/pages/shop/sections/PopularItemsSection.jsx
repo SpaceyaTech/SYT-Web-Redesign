@@ -24,7 +24,7 @@ function PopularItemsSection() {
                   onClick={() => navigate(`/shop/item/${id}`)}
                 >
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                    <LazyLoadImage
+                    <LazyLoadImage 
                       src={image}
                       alt={name}
                       className="w-full h-60 object-cover object-center lg:h-full lg:w-full"

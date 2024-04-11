@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, Link } from "react-router-dom";
 import CloseIcon from "../../../assets/images/icons/close-icon.svg";
 import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
@@ -9,7 +10,6 @@ import { useDeleteSwag } from "../../../hooks/Mutations/shop/useCartSwagg";
 import useProductsInCart from "../../../hooks/Queries/shop/useCartProducts";
 import useAuth from "../../../hooks/useAuth";
 import Counter from "./Counter";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CartDrawer({ open, setOpen }) {
   const { auth } = useAuth();

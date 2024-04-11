@@ -36,7 +36,7 @@ function Blog() {
       )}
       {isSuccess && (
         <section className="flex flex-col p-4 md:p-8 lg:p-10">
-          <LazyLoadImage
+          <LazyLoadImage 
             src={blogData.image}
             alt={blogData.title}
             className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"

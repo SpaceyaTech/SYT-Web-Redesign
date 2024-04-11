@@ -44,7 +44,7 @@ function CategoriesSection() {
               className="w-60 lg:w-[420px] h-72 hover:opacity-75"
             >
               <Link to={`/shop/category/${category.name}`}>
-                <LazyLoadImage
+                <LazyLoadImage 
                   src={category.imgURL}
                   className="object-cover object-center rounded-2xl h-64 w-60 lg:w-[420px]"
                   alt={category.name}

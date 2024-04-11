@@ -95,7 +95,7 @@ function LeadershipSection() {
               effect="blur"
               src={PartnerWithUs}
               alt="Space ya Tech Community"
-              className="md:rounded-l-xl rounded-t-xl w-full object-cover"
+              className="md:rounded-l-xl object-cover size-full"
             />
           </div>
           <div className="space-y-4 md:w-1/2 px-6 flex flex-col justify-center md:my-0 my-6">

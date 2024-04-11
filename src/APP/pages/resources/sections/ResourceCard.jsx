@@ -41,7 +41,7 @@ function ResourceCard({
       >
         {/* img cover */}
         <div className="h-[180px]">
-          <LazyLoadImage
+          <LazyLoadImage 
             src={image}
             alt={title}
             className="object-cover h-full w-full"
@@ -52,7 +52,7 @@ function ResourceCard({
         <div className="bg-white p-2 flex flex-col gap-[10px] border shadow-md rounded-b-xl">
           <div className="flex justify-between items-center">
             <h5 className="text-base font-normal">{type}</h5>
-            <LazyLoadImage
+            <LazyLoadImage 
               src={arrow}
               alt="arrow"
               className={`w-6 h-6 object-contain transform transition-all ease-in duration-500 cursor-pointer ${

@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import Marquee from "react-fast-marquee";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { testimonialData } from "../data";
 
 function TestimonialSection() {

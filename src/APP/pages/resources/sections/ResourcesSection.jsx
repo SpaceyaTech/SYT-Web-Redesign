@@ -41,7 +41,7 @@ function ResourcesSection() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <LazyLoadImage
+          <LazyLoadImage 
             src={search}
             alt="search"
             className="p-2 cursor-pointer"
