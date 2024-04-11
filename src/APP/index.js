@@ -15,7 +15,6 @@ import Blogs from "./pages/blogs/Blogs";
 import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
 import CommunityPage from "./pages/community/CommunityPage";
 import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
-import SingleEvent2 from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent2";
 import DonatePage from "./pages/donate/DonatePage";
 import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
 import Error400 from "./pages/errorPages/Error400";
@@ -55,7 +54,6 @@ export {
   CommunityPage,
   DonatePage,
   SingleEvent,
-  SingleEvent2,
   Blogs,
   Blog,
   Blog2,

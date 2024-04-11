@@ -1,6 +1,5 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
+import PropTypes from "prop-types";
 import React from "react";
 import { eventsPhysicalBg, eventsVirtualBg } from "@/assets/images/community";
 
@@ -188,3 +187,42 @@ ${isVirtual ? "text-white" : "text-green-header"}
 }
 
 export default Hero;
+
+Hero.propTypes = {
+  event: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    about: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    mode: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    start_date: PropTypes.string.isRequired,
+    end_date: PropTypes.string.isRequired,
+    start_time: PropTypes.string.isRequired,
+    end_time: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    category: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    chapter: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      about: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+      socials: PropTypes.shape({
+        Twitter: PropTypes.string,
+      }),
+      members: PropTypes.number.isRequired,
+    }).isRequired,
+    created_at: PropTypes.string.isRequired,
+    updated_at: PropTypes.string.isRequired,
+  }),
+};
+
+Hero.defaultProps = {
+  event: {},
+};

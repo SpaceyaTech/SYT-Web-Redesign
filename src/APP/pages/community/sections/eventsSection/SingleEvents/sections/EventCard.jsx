@@ -1,12 +1,15 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import LocationTag from "./LocationTag";
 import { eventCardPhysical, eventCardVirtual } from "@/assets/images/community";
+import { Link } from "react-router-dom";
 
 function EventCard({ event }) {
   const isVirtual = event?.mode === "Virtual";
   return (
-    <article
+    <Link
+      to={`/events/${event?.id}`}
       className="w-full h-[530px] flex flex-col rounded-xl bg-cover bg-no-repeat overflow-hidden"
       style={{
         backgroundImage: `url(${
@@ -180,8 +183,47 @@ function EventCard({ event }) {
           Join
         </button>
       </div>
-    </article>
+    </Link>
   );
 }
 
 export default EventCard;
+
+EventCard.propTypes = {
+  event: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    about: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    mode: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    start_date: PropTypes.string.isRequired,
+    end_date: PropTypes.string.isRequired,
+    start_time: PropTypes.string.isRequired,
+    end_time: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    category: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    chapter: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      about: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+      socials: PropTypes.shape({
+        Twitter: PropTypes.string,
+      }),
+      members: PropTypes.number.isRequired,
+    }).isRequired,
+    created_at: PropTypes.string.isRequired,
+    updated_at: PropTypes.string.isRequired,
+  }),
+};
+
+EventCard.defaultProps = {
+  event: {},
+};

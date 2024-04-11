@@ -23,8 +23,7 @@ import {
   ResetPassword,
   Resources,
   SignUp,
-  // SingleEvent,
-  SingleEvent2,
+  SingleEvent,
   Blogs,
 } from "../APP";
 
@@ -87,8 +86,8 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "/events/:id", // New route path
-        element: <SingleEvent2 />,
+        path: "/events/:id",
+        element: <SingleEvent />,
       },
       {
         path: "/resources",

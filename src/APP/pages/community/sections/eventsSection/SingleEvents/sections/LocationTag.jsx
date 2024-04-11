@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 function LocationTag({ isVirtual }) {
@@ -43,3 +44,7 @@ function LocationTag({ isVirtual }) {
 }
 
 export default LocationTag;
+
+LocationTag.propTypes = {
+  isVirtual: PropTypes.bool.isRequired,
+};

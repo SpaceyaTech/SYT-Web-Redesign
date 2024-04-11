@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 function EventDescription({ eventDesc }) {
@@ -9,3 +10,7 @@ function EventDescription({ eventDesc }) {
 }
 
 export default EventDescription;
+
+EventDescription.propTypes = {
+  eventDesc: PropTypes.string.isRequired,
+};
