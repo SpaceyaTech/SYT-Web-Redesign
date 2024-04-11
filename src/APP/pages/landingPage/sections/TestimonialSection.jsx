@@ -1,73 +1,51 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import Marquee from "react-fast-marquee";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { testimonialData } from "../data";
 
 function TestimonialSection() {
   return (
-    <section className="pt-16 pb-10">
-      <div className="flex flex-col items-center">
-        <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#323433] my-4">
-          What people are saying...
-        </h1>
-        <p className="sm:hidden md:block leading-relaxed text-base text-center pl-4 md:pl-2 text-[#323433]">
-          Made by techies for techies. SpaceYaTech will allow you to accelerate
-          your growth and
-          <br />
-          free you from tutorial hell as per word on the street...
-        </p>
-      </div>
+    <section className="max-w-1440 w-full mx-auto flex flex-col items-center gap-8 pt-2">
+      <h3 className="w-full max-w-md text-green-header text-center font-semibold text-xl md:text-3xl">
+        What people are saying about us{" "}
+      </h3>
 
-      <Marquee
-        className="py-6 px-3 grid grid-cols-1 md:grid-cols-2 gap-3 overflow-x-auto scrollbar-hide"
-        pauseOnHover
-        speed={40}
-        style={{
-          gridTemplateColumns: "max-content",
-          gridTemplateRows: "minmax(250px, 300px)",
-          gridAutoFlow: "column",
-          gridAutoColumns: "max-content",
-        }}
-      >
-        {testimonialData.map((testimonial) => (
-          <figure
-            key={testimonial.id}
-            className="flex flex-col w-[320px] h-[340px] sm:h-[300px] sm:w-[480px] items-center justify-center p-2 mx-3 sm:p-8 bg-white border border-gray-200 rounded-lg shadow-sm"
-          >
-            <a
-              href={testimonial.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <blockquote className=" text-gray-500 mb-10 dark:text-gray-400">
-                <p className=" leading-relaxed font-normal text-base text-[#323433]">
-                  {testimonial.text}
-                </p>
-              </blockquote>
-              <figcaption className=" flex items-center pl-4">
-                <img
-                  className="rounded-full w-20 h-20"
-                  src={testimonial.img}
-                  alt=""
-                />
-                <div className="text-left pl-8">
-                  <p className="font-medium">{testimonial.user}</p>
-                  <p className=" font-light text-neutral-900">
-                    {testimonial.vocation}
-                    at
-                    <br />{" "}
-                    <span className="text-[#00664E] font-medium">
-                      {testimonial.company}
-                    </span>
-                  </p>
-                </div>
-              </figcaption>
-            </a>
-          </figure>
-        ))}
+      <Marquee pauseOnHover speed={40} autoFill={false}>
+        <div className="flex items-center gap-4 px-2">
+          {testimonialData.map(({ id, text, user, vocation, img }) => (
+            <TestimonialCard
+              img={img}
+              key={id}
+              text={text}
+              user={user}
+              vocation={vocation}
+            />
+          ))}
+        </div>
       </Marquee>
     </section>
   );
 }
 
 export default TestimonialSection;
+
+function TestimonialCard({ img, text, user, vocation }) {
+  return (
+    <div className="border-2 bg-white rounded-xl aspect-video px-8 py-8 flex-between flex-col gap-2 min-h-64 max-w-md w-screen sm:w-full md:gap-4">
+      <p className="text-wrap text-sm font-normal text-left w-full">{text}</p>
+      <div className="flex-between flex-row w-full">
+        <div className="flex flex-col text-sm gap-1 capitalize">
+          <h6 className="font-light">{user}</h6>
+          <p className="font-normal">{vocation}</p>
+        </div>
+
+        <LazyLoadImage
+          className="rounded-full size-12 object-contain"
+          src={img}
+          alt={user}
+        />
+      </div>
+    </div>
+  );
+}

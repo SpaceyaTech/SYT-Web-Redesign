@@ -1,13 +1,5 @@
-import {
-  RichardMulandi,
-  Balogun,
-  Saruni,
-  Vivian,
-  Jean,
-  Melody,
-  Kristin,
-} from "../../../assets/images/podcast";
-
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import {
   ctfroom,
   DevOps,
@@ -18,7 +10,26 @@ import {
   osca,
   cytonn,
   reactke,
-} from "../../../assets/images/hero-section";
+  gdg,
+  spheron,
+  mastercraft,
+} from "@/assets/images/hero-section";
+
+import {
+  RichardMulandi,
+  Balogun,
+  Saruni,
+  Vivian,
+  Jean,
+  Melody,
+  Kristin,
+} from "@/assets/images/podcast";
+
+import {
+  mentorship,
+  openSource,
+  twitter,
+} from "@/assets/images/services-section";
 
 import {
   aibunny,
@@ -28,12 +39,7 @@ import {
   tony,
   wakio,
   wayne,
-} from "../../../assets/testimonialSection";
-import {
-  mentorship,
-  openSource,
-  twitter,
-} from "../../../assets/images/services-section";
+} from "@/assets/testimonialSection";
 
 export const podcasts = [
   {
@@ -141,6 +147,12 @@ export const partners = [
     link: "https://icpkushite.com/",
   },
   {
+    id: 11,
+    img: spheron,
+    name: "spheron",
+    link: "/",
+  },
+  {
     id: 7,
     img: osca,
     name: "osca",
@@ -157,6 +169,12 @@ export const partners = [
     img: reactke,
     name: "reactke",
     link: "https://www.reactdevske.org/",
+  },
+  {
+    id: 10,
+    img: gdg,
+    name: "gdg",
+    link: "/",
   },
 ];
 
@@ -250,5 +268,80 @@ export const services = [
     description:
       "We host community-led mentorship programs where beginners are mentored by experienced professionals and given guidance on getting started in tech.",
     link: "https://x.com/SpaceYaTech",
+  },
+];
+
+export const whatWeDoData = [
+  {
+    id: 1,
+    title: "The Mastercraft Program",
+    description:
+      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    image: mastercraft,
+    link: "/products",
+  },
+  {
+    id: 2,
+    title: "Colabs",
+    description:
+      "Contribute to open-source projects tailored to your current skills and where you want to get. We work within the community to list beginner-friendly open-sourced projects.",
+    image: mastercraft,
+    link: "/products",
+  },
+  {
+    id: 3,
+    title: "Learning Resources",
+    description:
+      "We run full-stack, open-source projects, where product managers, product designers, developers and dev-ops engineers work together to learn the in and outs of the industry.",
+    image: mastercraft,
+    link: "/products",
+  },
+  {
+    id: 4,
+    title: "Weekly Twitter Spaces",
+    description:
+      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    image: mastercraft,
+    link: "/products",
+  },
+  {
+    id: 5,
+    title: "SpaceYaPodcasts",
+    description:
+      "We host weekly podcasts every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
+    image: mastercraft,
+    link: "/products",
+  },
+];
+
+export const questions = [
+  {
+    id: 1,
+    question: "Is SpaceYaTech free?",
+    answer:
+      "Yes, SpaceYaTech is totally free for anyone who wishes to learn technology and contribute to Open Source",
+  },
+  {
+    id: 2,
+    question: "Does SpaceYaTech only mentor developers?",
+    answer:
+      "No, SpaceYaTech mentors anyone who is involved in modern technology. This includes developers, designers, product managers, and more. SpaceYaTech believes that everyone has the potential to learn and grow in the tech industry, and they are committed to providing mentorship to anyone who wants it.",
+  },
+  {
+    id: 3,
+    question: "Does SpaceYaTech pay mentors?",
+    answer:
+      "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits.",
+  },
+  {
+    id: 4,
+    question: "Can I collaborate with SpaceYaTech?",
+    answer: "Yes, you can collaborate with SpaceYaTech in a number of ways.",
+  },
+  {
+    id: 5,
+    question: "Can I join the mentorship sessions at any time?",
+    answer:
+      "No, you cannot join the mentorship sessions at any time. SpaceYaTech's mentorship sessions are offered on a rolling basis, and there are limited spots available. To be considered for a mentorship session, you must submit an application and be selected by SpaceYaTech.",
   },
 ];

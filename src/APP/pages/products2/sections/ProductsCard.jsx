@@ -1,5 +1,6 @@
 import React from "react";
 import { upleft } from "../../../../assets/images/icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ProductsCard = ({ name, desc, img, link, index }) => {
   return (
@@ -25,13 +26,21 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           <span className="text-base font-medium text-white capitalize">
             View product
           </span>
-          <img src={upleft} alt="view btn" className="w-6 h-6 object-contain" />
+          <LazyLoadImage 
+            src={upleft}
+            alt="view btn"
+            className="w-6 h-6 object-contain"
+          />
         </a>
       </div>
 
       {/* pic */}
       <div className="flex-1 min-h-full pb-14">
-        <img src={img} alt={name} className="w-full h-full object-cover" />
+        <LazyLoadImage 
+          src={img}
+          alt={name}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       {/* view btn */}
@@ -44,7 +53,11 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
         <span className="text-base font-medium text-white capitalize">
           View product
         </span>
-        <img src={upleft} alt="view btn" className="w-6 h-6 object-contain" />
+        <LazyLoadImage 
+          src={upleft}
+          alt="view btn"
+          className="w-6 h-6 object-contain"
+        />
       </a>
     </div>
   );

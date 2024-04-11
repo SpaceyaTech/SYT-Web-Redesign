@@ -17,3 +17,14 @@ export const filterRelatedBlogs = (relatedBlogs, titleSlug) => {
     .slice(0, 2);
   return filteredBlogs;
 };
+
+export const filteredReadNextBlogs = (blogsArray, titleSlug) => {
+  if (!Array.isArray(blogsArray)) {
+    return [];
+  }
+
+  const filteredBlogs = blogsArray.filter(
+    (blog) => blog.title_slug !== titleSlug
+  );
+  return filteredBlogs;
+};
