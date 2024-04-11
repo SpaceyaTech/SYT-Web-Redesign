@@ -65,7 +65,7 @@ function OurEvents() {
           </div>
         )}
         {isPending && (
-          <div className="flex flex-col items-center justify-center gap-4 py-10">
+          <div className="flex flex-col items-center justify-center size-full gap-4 py-10">
             <Loader />
             <p className="text-lg font-medium text-primary">
               Loading events...
