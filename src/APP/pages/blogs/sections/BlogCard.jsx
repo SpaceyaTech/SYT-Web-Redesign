@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { formatDistanceToNow } from "date-fns";
 import React from "react";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
@@ -21,7 +22,9 @@ function BlogCard({ blog }) {
       <LazyLoadImage
         src={blog.image}
         alt={blog.title}
+
         className="w-full h-60 object-cover rounded-lg asp"
+
       />
 
       <div className="py-[6px] flex flex-col gap-[10px] w-full mt-2">
