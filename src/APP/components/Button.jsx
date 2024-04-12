@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 import { arrowRight } from "@/assets/images/icons";
 
-function ViewMoreBtn({ link }) {
+function Button({ link, title }) {
   return (
     <Link to={link} className="border rounded-full bg-white p-1 w-fit">
       <div className="flex-center bg-green-light rounded-full px-3 py-1.5 gap-2">
         <span className="capitalize text-green-header text-sm font-semibold">
-          Learn more
+          {title}
         </span>
         <img src={arrowRight} alt="arrow-right" className="size-5" />
       </div>
@@ -16,4 +16,4 @@ function ViewMoreBtn({ link }) {
   );
 }
 
-export default ViewMoreBtn;
+export default Button;
