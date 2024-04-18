@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { LandingWrapper, Loader } from "../../../../../components";
-import { EventDescription, GoBackBtn, Hero, SimilarEvents } from "./sections";
+import { GoBackBtn, LandingWrapper, Loader } from "../../../../../components";
+import { EventDescription, Hero, SimilarEvents } from "./sections";
 import { useOneEvent } from "@/hooks/Queries/singleEvent/useSingleEvent";
 
 function SingleEvent() {

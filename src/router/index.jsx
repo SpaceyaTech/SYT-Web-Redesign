@@ -25,6 +25,7 @@ import {
   SignUp,
   SingleEvent,
   Blogs,
+  EventsPage2,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -61,8 +62,12 @@ const router = createBrowserRouter([
         element: <Blog2 />,
       },
       {
-        path: "/all-events",
+        path: "/events",
         element: <EventsPage />,
+      },
+      {
+        path: "/all-events",
+        element: <EventsPage2 />,
       },
       {
         path: "/chapter/:id",

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const fetchEvents = async (catName) => {
+const fetchEvents = async (catName = "") => {
   try {
     const url = `${process.env.REACT_APP_API_BASE_URL}/events/?category=${catName}`;
     const response = await axios.get(url);

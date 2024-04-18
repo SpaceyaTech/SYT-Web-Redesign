@@ -7,9 +7,11 @@ import cancel from "./cancel.svg";
 import cartIcon from "./cart-icon.svg";
 import closeIcon from "./close-icon.svg";
 import deleteIcon from "./delete-icon.svg";
+import funnel from "./funnel.svg";
 import greyLinkedin from "./linkedin-grey.svg";
 import menu from "./menu.svg";
 import searchIcon from "./search-icon.svg";
+import search from "./search.svg";
 import teams from "./teams.svg";
 import greyTwitter from "./twitter-grey.svg";
 import upleft from "./up-left.svg";
@@ -23,8 +25,10 @@ export {
   cancel,
   closeIcon,
   deleteIcon,
+  funnel,
   menu,
   searchIcon,
+  search,
   upleft,
   upleftGreen,
   teams,

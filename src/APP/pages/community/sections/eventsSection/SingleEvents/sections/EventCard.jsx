@@ -1,15 +1,14 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { Link } from "react-router-dom";
 
 import LocationTag from "./LocationTag";
 import { eventCardPhysical, eventCardVirtual } from "@/assets/images/community";
-import { Link } from "react-router-dom";
 
 function EventCard({ event }) {
   const isVirtual = event?.mode === "Virtual";
   return (
-    <Link
-      to={`/events/${event?.id}`}
+    <div
       className="w-full h-[530px] flex flex-col rounded-xl bg-cover bg-no-repeat overflow-hidden"
       style={{
         backgroundImage: `url(${
@@ -176,14 +175,14 @@ function EventCard({ event }) {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="w-full border border-primary py-2 rounded-lg text-primary hover:bg-primary hover:text-white transition-all ease-in duration-500 text-base font-bold"
+        <Link
+          to={`/events/${event?.id}`}
+          className="w-full border border-primary py-2 rounded-lg text-primary hover:bg-primary hover:text-white transition-all ease-in duration-500 text-base font-bold flex-center"
         >
-          Join
-        </button>
+          Learn More
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 
