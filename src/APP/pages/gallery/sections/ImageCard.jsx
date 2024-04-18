@@ -2,7 +2,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable linebreak-style */
 /* eslint-disable import/no-unresolved */
-import React, { useState } from "react";
+import { useState } from "react";
 
 import PhotoAlbum from "react-photo-album";
 
@@ -17,18 +17,25 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 function ImageCard({ photos }) {
   const [index, setIndex] = useState(-1);
+
   return (
     <div>
       <PhotoAlbum
         photos={photos}
-        layout="masonry"
-        spacing={0}
+        layout="rows"
+        // spacing={8}
         onClick={({ index }) => setIndex(index)}
+        // columns={3}
+        // padding={8}
         // targetRowHeight={450}
         renderPhoto={({ wrapperStyle, renderDefaultPhoto }) => (
-          <div style={wrapperStyle} className="relative">
+          <div
+            style={wrapperStyle}
+            className="bg-white px-2 mx-2 uppercase text-grey-neutral font-medium text-xs"
+          >
+            <p className="float-right py-2">22/12/2024</p>
             {renderDefaultPhoto({ wrapped: true })}
-
+            <p className="py-2">Collection 2024 | SYT MEETUP</p>
             {/* <div className="absolute top-0 right-0 w-full h-full flex opacity-0 transition-all duration-500 ease-linear hover:opacity-100">
               <div className="bg-transparent w-1/2 h-full" />
               <div className="bg-[#00664E] text-white w-1/2 h-full flex items-center justify-center flex-col gap-2">

@@ -1,30 +1,30 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-import { Link } from "react-router-dom";
-import {
-  galleryimage1,
-  galleryimage2,
-  galleryimage3,
-  galleryimage4,
-  galleryimage5,
-  galleryimage6,
-  galleryimage7,
-  galleryimage8,
-  galleryimage9,
-} from "../../../../../assets/images/community";
-import { arrowRight } from "../../../../../assets/images/icons";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
+// import {
+//   galleryimage1,
+//   galleryimage2,
+//   galleryimage3,
+//   galleryimage4,
+//   galleryimage5,
+//   galleryimage6,
+//   galleryimage7,
+//   galleryimage8,
+//   galleryimage9,
+// } from "../../../../../assets/images/community";
+import { arrowRight } from "../../../../../assets/images/icons";
+import photosData from "../../../gallery/data";
 
-const photos = [
-  { image: galleryimage1 },
-  // { image: galleryimage2 },
-  // { image: galleryimage3 },
-  { image: galleryimage4 },
-  { image: galleryimage5 },
-  { image: galleryimage6 },
-  { image: galleryimage7 },
-  { image: galleryimage8 },
-];
+// const photos = [
+//   { image: galleryimage1 },
+//   // { image: galleryimage2 },
+//   // { image: galleryimage3 },
+//   { image: galleryimage4 },
+//   { image: galleryimage5 },
+//   { image: galleryimage6 },
+//   { image: galleryimage7 },
+//   { image: galleryimage8 },
+// ];
 function GallerySection() {
   return (
     <div className="pb-10 sm:pb-24 text-center">
@@ -40,11 +40,11 @@ function GallerySection() {
         <br /> moments
       </h2>
       <div className="overflow-x-auto flex gap-8 mt-10">
-        {photos.map((photo) => (
+        {photosData.slice(0, 6).map((photo) => (
           <LazyLoadImage
             key={crypto.randomUUID()}
-            src={photo.image}
-            alt="gallery"
+            src={photo.src}
+            alt={photo.alt}
             className="block h-[530px] max-w-[384px] rounded-xl object-cover object-center"
           />
         ))}
@@ -60,7 +60,7 @@ function GallerySection() {
           </span>
           <LazyLoadImage
             src={arrowRight}
-            alt="arrow-right"
+            alt="arrow right"
             className="size-5"
           />
         </div>
