@@ -1,6 +1,7 @@
 import Akinyi from "./Akinyi.png";
 import akinyiux from "./akinyiux.png";
 import community from "./community.png";
+import darkEventCard from "./darkEventCard.png";
 import eakinyi from "./eakinyi.png";
 import Emmy from "./Emmy.png";
 import eventCardPhysical from "./event-card-bg-physical.png";
@@ -20,6 +21,7 @@ import google from "./google.png";
 import google2 from "./google2.png";
 import Group from "./Group.png";
 import individualchapter from "./individualchapter.png";
+import lightEventCard from "./lightEventCard.png";
 import MasterBase from "./MasterBase.png";
 import mentorlst from "./mentorlst.png";
 import Mombasa from "./Mombasa.png";
@@ -76,4 +78,6 @@ export {
   eventCardPhysical,
   eventsPhysicalBg,
   eventsVirtualBg,
+  lightEventCard,
+  darkEventCard,
 };

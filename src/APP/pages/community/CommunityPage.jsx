@@ -13,13 +13,15 @@ function CommunityPage() {
   }, []);
 
   return (
-    <div className="max-w-[1440px] mx-auto">
-      <WelcomeSection />
-      <EventsSection showAllEventsLink />
-      {/* <ChaptersSection /> */}
-      {/* <PartnerSection /> */}
-      <GallerySection />
-    </div>
+    <section className="bg-[#d9d9d9]/30 ">
+      <div className="max-w-[1440px] mx-auto">
+        <WelcomeSection />
+        <EventsSection showAllEventsLink />
+        {/* <ChaptersSection /> */}
+        {/* <PartnerSection /> */}
+        <GallerySection />
+      </div>
+    </section>
   );
 }
 

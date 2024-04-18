@@ -6,6 +6,8 @@ export default {
     extend: {
       fontFamily: {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
       },
       backgroundImage: {
         landingPageBg: "url('/landing-bg.png')",
