@@ -3,6 +3,10 @@ import akinyiux from "./akinyiux.png";
 import community from "./community.png";
 import eakinyi from "./eakinyi.png";
 import Emmy from "./Emmy.png";
+import eventCardPhysical from "./event-card-bg-physical.png";
+import eventCardVirtual from "./event-card-bg-virtual.png";
+import eventsVirtualBg from "./events-bg-physical.png";
+import eventsPhysicalBg from "./events-bg-virtual.png";
 import galleryimage1 from "./galleryimage1.png";
 import galleryimage2 from "./galleryimage2.png";
 import galleryimage3 from "./galleryimage3.png";
@@ -68,4 +72,8 @@ export {
   Emmy,
   Pam,
   NewHero,
+  eventCardVirtual,
+  eventCardPhysical,
+  eventsPhysicalBg,
+  eventsVirtualBg,
 };

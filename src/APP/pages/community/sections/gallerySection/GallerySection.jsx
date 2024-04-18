@@ -69,28 +69,28 @@ function GallerySection() {
         <div className="-m-1 flex  md:-m-2">
           <div className="flex w-3/8 flex-wrap">
             <div className="w-1/3">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage1}
               />
             </div>
             <div className="w-1/3">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage7}
               />
             </div>
             <div className="w-1/3">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage9}
               />
             </div>
             <div className="w-full">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage2}
@@ -99,21 +99,21 @@ function GallerySection() {
           </div>
           <div className="flex w-3/8 flex-wrap">
             <div className="w-full">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage4}
               />
             </div>
             <div className="w-1/2">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage6}
               />
             </div>
             <div className="w-1/2">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage5}
@@ -122,7 +122,7 @@ function GallerySection() {
           </div>
           <div className="flex w-1/4 flex-wrap">
             <div className="w-full">
-              <img
+              <LazyLoadImage 
                 alt="gallery"
                 className="block h-full w-full  object-cover object-center"
                 src={galleryimage3}

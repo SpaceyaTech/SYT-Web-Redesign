@@ -5,6 +5,7 @@ import {
   twitter,
 } from "../../assets/images/socials";
 import logo from "../../assets/images/sytLogo.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Footer() {
   var now = new Date();
@@ -15,27 +16,48 @@ function Footer() {
         <div className="md:flex md:justify-between">
           {/* logo and socials  */}
           <div className="mb-8 md:mb-0 mr-6 flex flex-col justify-start items-center md:w-1/4 w-1/2">
-            <img
+            <LazyLoadImage
+              effect="blur"
               src={logo}
-              className="h-24 md:mx-8 mx-0 object-contain"
               alt="FlowBite Logo"
+              className="h-24 md:mx-8 mx-0 object-contain"
             />
             {/* social logos  */}
             <div className="flex flex-row items-center  md:justify-between gap-4 justify-start my-4">
               <a href="/">
-                <img src={facebook} alt="facebook" className="w-7 h-7" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={facebook}
+                  alt="facebook"
+                  className="w-7 h-7"
+                />
               </a>
 
               <a href="/">
-                <img src={instagram} alt="instagram" className="w-7 h-7" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={instagram}
+                  alt="instagram"
+                  className="w-7 h-7"
+                />
               </a>
 
               <a href="/">
-                <img src={twitter} alt="twitter" className="w-7 h-7" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={twitter}
+                  alt="twitter"
+                  className="w-7 h-7"
+                />
               </a>
 
               <a href="/">
-                <img src={linkedin} alt="linkedIn" className="w-7 h-7" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={linkedin}
+                  alt="linkedIn"
+                  className="w-7 h-7"
+                />
               </a>
             </div>
           </div>

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import Marquee from "react-fast-marquee";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { testimonialData } from "../data";
 
 function TestimonialSection() {
@@ -40,7 +40,7 @@ function TestimonialCard({ img, text, user, vocation }) {
           <p className="font-normal">{vocation}</p>
         </div>
 
-        <img
+        <LazyLoadImage
           className="rounded-full size-12 object-contain"
           src={img}
           alt={user}

@@ -7,6 +7,9 @@ import { arrowRight } from "../../../../assets/images/blogs-page";
 import logo from "../../../../assets/images/sytLogo.png";
 import { BlogStats } from "../../blogs/sections";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 function RelatedBlogCard({ blog }) {
   const navigate = useNavigate();
 
@@ -21,7 +24,9 @@ function RelatedBlogCard({ blog }) {
       to={`/blogs/${blog.title_slug}`}
       className="flex flex-col items-start w-full mb-5"
     >
-      <img
+
+      <LazyLoadImage 
+
         src={`https://apis.spaceyatech.com/${blog.image}`}
         alt={blog.title}
         className="w-full h-60 object-cover rounded-lg"
@@ -40,7 +45,9 @@ function RelatedBlogCard({ blog }) {
 
         <div className="flex flex-row items-start justify-between">
           <div className="flex gap-[10px]">
-            <img
+
+            <LazyLoadImage 
+
               src={logo}
               alt="icon"
               className="w-10 h-10 object-cover bg-gray-200 flex items-center justify-center p-1 rounded-full"
@@ -64,7 +71,13 @@ function RelatedBlogCard({ blog }) {
             <span className="uppercase text-primary text-sm font-medium m-0">
               read more
             </span>
-            <img src={arrowRight} alt="arrow-right" className="w-5 h-5" />
+
+            <LazyLoadImage 
+              src={arrowRight}
+              alt="arrow-right"
+              className="w-5 h-5"
+            />
+
           </button>
         </div>
       </div>

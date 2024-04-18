@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ChapterCard({ id, country, city, name, members, banner }) {
   return (
     <div className="relative h-80 border-2 rounded-lg border-white overflow-hidden">
-      <img src={banner} alt={name} className="w-full h-full object-cover" />
+      <LazyLoadImage 
+        src={banner}
+        alt={name}
+        className="w-full h-full object-cover"
+      />
       <div className="absolute bottom-0 left-0 right-0 bg-black opacity-60 h-full" />
 
       <div className="absolute bottom-14 inset-x-0 text-white flex flex-col items-center">

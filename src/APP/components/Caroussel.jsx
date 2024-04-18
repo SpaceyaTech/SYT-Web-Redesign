@@ -2,6 +2,7 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useRef } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import {
   arrowCircleLeft,
   arrowCircleRight,
@@ -33,7 +34,7 @@ function Caroussel({ CarousselData }) {
             key={crypto.randomUUID()}
             className="border bg-white p-2 max-w-[400px] rounded-2xl md:rounded-[20px]"
           >
-            <img
+            <LazyLoadImage
               className="rounded-t-2xl h-4/6 w-[400px] object-cover"
               src={image}
               alt={name}

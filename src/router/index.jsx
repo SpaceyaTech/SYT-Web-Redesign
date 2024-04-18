@@ -6,26 +6,25 @@ import {
   LandingPage,
   Layout,
   Products,
-  Blog,
   Blog2,
-  Blogs,
-  EventsPage,
-  IndividualChapter,
-  Homepage,
-  Resources,
-  ProductDisplay,
-  ForgotPassword,
-  LogIn,
-  ResetPassword,
-  SignUp,
   CategoriesProducts,
   Checkout,
-  SingleEvent,
-  Error500,
-  Error404,
   Error400,
   Error403,
+  Error404,
+  Error500,
+  EventsPage,
+  ForgotPassword,
   GalleryPage,
+  Homepage,
+  IndividualChapter,
+  LogIn,
+  ProductDisplay,
+  ResetPassword,
+  Resources,
+  SignUp,
+  SingleEvent,
+  Blogs,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -59,10 +58,6 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs/:titleSlug",
-        element: <Blog />,
-      },
-      {
-        path: "/blogs2/:titleSlug",
         element: <Blog2 />,
       },
       {
@@ -91,7 +86,7 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "/events/:id", // New route path
+        path: "/events/:id",
         element: <SingleEvent />,
       },
       {

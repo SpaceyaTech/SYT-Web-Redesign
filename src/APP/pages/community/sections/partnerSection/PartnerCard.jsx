@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function PartnerCard({ image, backgroundColor, link }) {
   return (
@@ -6,7 +7,7 @@ function PartnerCard({ image, backgroundColor, link }) {
       className="flex flex-col items-center p-8 justify-between h-80 border-2 rounded-2xl"
       style={{ backgroundColor: `${backgroundColor}` }}
     >
-      <img src={image} />
+      <LazyLoadImage  src={image} />
       <a
         href={link}
         target="_blank"

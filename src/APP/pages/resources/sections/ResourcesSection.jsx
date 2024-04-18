@@ -6,6 +6,8 @@ import { search } from "../../../../assets/images/resources-page";
 import { resourcesData } from "./data";
 import ResourceCard from "./ResourceCard";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -39,7 +41,11 @@ function ResourcesSection() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <img src={search} alt="search" className="p-2 cursor-pointer" />
+          <LazyLoadImage 
+            src={search}
+            alt="search"
+            className="p-2 cursor-pointer"
+          />
         </div>
       </div>
 
