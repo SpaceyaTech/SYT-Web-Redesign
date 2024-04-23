@@ -76,7 +76,7 @@ function EventsSection() {
         <input
           type="text"
           placeholder="Search Event"
-          className="flex-grow p-3 outline-none text-gray-400"
+          className="md:flex-grow p-3 outline-none text-gray-400"
         />
         <button
           type="submit"

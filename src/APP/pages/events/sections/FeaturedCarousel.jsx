@@ -5,7 +5,7 @@ import FeaturedEventCard from "./FeaturedEventCard";
 export default function FeaturedCarousel() {
   return (
     <Carousel
-      className="w-full h-96 md:h-[540px] overflow-hidden"
+      className="w-full h-96 md:h-[540px] overflow-hidden hidden md:inline-block"
       prevArrow={() => {}}
       nextArrow={() => {}}
       autoplay
@@ -16,7 +16,7 @@ export default function FeaturedCarousel() {
       }}
       loop
       navigation={({ setActiveIndex, activeIndex, length }) => (
-        <div className="absolute bottom-6 sm:bottom-12 md:bottom-[200px] left-2/4 z-50 flex -translate-x-2/4 gap-2 bg-black px-3 py-1.5 rounded-xl">
+        <div className="absolute bottom-6 sm:bottom-12 md:bottom-16 left-2/4 z-50 flex -translate-x-2/4 gap-2 bg-black px-3 py-1.5 rounded-xl">
           {new Array(length).fill("").map((_, i) => (
             <span
               key={i}
