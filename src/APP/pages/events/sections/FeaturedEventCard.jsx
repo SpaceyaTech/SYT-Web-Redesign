@@ -10,7 +10,7 @@ function FeaturedEventCard() {
           backgroundImage: `url(${featuredEvent})`,
         }}
       >
-        <div className="size-full p-6 flex flex-col items-center justify-end text-white bg-gradient-to-b from-transparent via-green-dark/20 to-green-dark">
+        <div className="size-full p-6 pb-28 flex flex-col items-center justify-end text-white bg-gradient-to-b from-transparent via-green-dark/20 to-green-dark">
           <div className="flex-center flex-col gap-4 max-w-xl w-full">
             <h4 className="text-3xl font-semibold text-center">
               Bridging the Experience Gap in Tech

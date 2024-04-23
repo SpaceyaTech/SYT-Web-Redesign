@@ -1,7 +1,7 @@
 import React from "react";
 
 import { GoBackBtn } from "../../../components";
-import { EventsSection, FeaturedEventCard } from "../sections";
+import { EventsSection, FeaturedCarousel } from "../sections";
 
 function EventsPage2() {
   return (
@@ -9,7 +9,7 @@ function EventsPage2() {
       <div className="max-w-1216 mx-auto flex flex-col gap-3 md:gap-6 w-full md:p-3">
         <GoBackBtn />
 
-        <FeaturedEventCard />
+        <FeaturedCarousel />
 
         <EventsSection />
       </div>

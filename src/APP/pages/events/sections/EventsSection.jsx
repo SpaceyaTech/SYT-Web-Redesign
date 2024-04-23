@@ -1,5 +1,5 @@
 import { Tab } from "@headlessui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { funnel, search } from "../../../../assets/images/icons";
 import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
@@ -10,56 +10,14 @@ function classNames(...classes) {
 }
 
 function EventsSection() {
-  let [categories] = useState({
-    Recent: [
-      {
-        id: 1,
-        title: "Does drinking coffee make you smarter?",
-        date: "5h ago",
-        commentCount: 5,
-        shareCount: 2,
-      },
-      {
-        id: 2,
-        title: "So you've bought coffee... now what?",
-        date: "2h ago",
-        commentCount: 3,
-        shareCount: 2,
-      },
-    ],
-    Popular: [
-      {
-        id: 1,
-        title: "Is tech making coffee better or worse?",
-        date: "Jan 7",
-        commentCount: 29,
-        shareCount: 16,
-      },
-      {
-        id: 2,
-        title: "The most innovative things happening in coffee",
-        date: "Mar 19",
-        commentCount: 24,
-        shareCount: 12,
-      },
-    ],
-    Trending: [
-      {
-        id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
-      },
-      {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: "4d ago",
-        commentCount: 1,
-        shareCount: 2,
-      },
-    ],
-  });
+  const {
+    data: eventsCategories,
+    isError,
+    isSuccess,
+    refetch: refetchEventCategories,
+  } = useEventsCategories();
+
+  console.log("EventsData: ", eventsCategories);
 
   const event = {
     id: 15,
@@ -96,23 +54,23 @@ function EventsSection() {
     updated_at: "2024-02-04T05:58:11.134736+03:00",
   };
 
-  const {
-    data: eventsCategories,
-    isError,
-    isSuccess,
-    refetch: refetchEventCategories,
-  } = useEventsCategories();
+  // const {
+  //   data: eventsData,
+  //   isError,
+  //   isSuccess,
+  //   refetch: refetchEventData,
+  // } = useEventsData();
 
   useEffect(() => {
     refetchEventCategories();
   }, [refetchEventCategories]);
 
   return (
-    <section className="border border-red-300 mt-2 py-6 flex flex-col items-center justify-between gap-4">
+    <section className="mt-2 py-6 flex flex-col items-center justify-between gap-4">
       {/* search events */}
       <form
         action=""
-        className="flex items-center border w-7/12 rounded-xl bg-white overflow-clip"
+        className="flex items-center border w-7/12 mb-3 rounded-xl bg-white overflow-clip"
       >
         <img src={search} alt="search" className="py-3 pl-6" />
         <input
@@ -129,7 +87,7 @@ function EventsSection() {
       </form>
 
       {/* Tabs */}
-      <div className="border w-full flex items-center flex-col">
+      <div className="w-full flex items-center flex-col">
         <Tab.Group>
           <div className="flex items-center justify-between mb-6 gap-12">
             {isSuccess && (
@@ -178,9 +136,9 @@ function EventsSection() {
           </div>
 
           <Tab.Panels className="mt-2 w-full">
-            {Object.values(categories).map((posts, idx) => (
+            {Array.from({ length: 5 }).map((i) => (
               <Tab.Panel
-                key={idx}
+                key={crypto.randomUUID()}
                 className={classNames(
                   "w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8"
                 )}
