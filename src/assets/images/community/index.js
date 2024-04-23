@@ -1,10 +1,11 @@
 import Akinyi from "./Akinyi.png";
 import akinyiux from "./akinyiux.png";
 import community from "./community.png";
+import darkEventCard from "./darkEventCard.png";
 import eakinyi from "./eakinyi.png";
 import Emmy from "./Emmy.png";
-import eventCardVirtual from "./event-card-bg-virtual.png";
 import eventCardPhysical from "./event-card-bg-physical.png";
+import eventCardVirtual from "./event-card-bg-virtual.png";
 import eventsVirtualBg from "./events-bg-physical.png";
 import eventsPhysicalBg from "./events-bg-virtual.png";
 import galleryimage1 from "./galleryimage1.png";
@@ -20,6 +21,7 @@ import google from "./google.png";
 import google2 from "./google2.png";
 import Group from "./Group.png";
 import individualchapter from "./individualchapter.png";
+import lightEventCard from "./lightEventCard.png";
 import MasterBase from "./MasterBase.png";
 import mentorlst from "./mentorlst.png";
 import Mombasa from "./Mombasa.png";
@@ -27,6 +29,7 @@ import mpesapayments from "./mpesapayments.png";
 import Nairobi from "./Nairobi.png";
 import nairobi1 from "./nairobi1.png";
 import nairobi2 from "./nairobi2.png";
+import NewHero from "./NewHero.png";
 import Pam from "./Pam.png";
 import singleEvents from "./singleEvents.png";
 import Tanzania from "./Tanzania.png";
@@ -68,10 +71,13 @@ export {
   Akinyi,
   akinyiux,
   eakinyi,
+  Emmy,
+  Pam,
+  NewHero,
   eventCardVirtual,
   eventCardPhysical,
   eventsPhysicalBg,
   eventsVirtualBg,
-  Emmy,
-  Pam,
+  lightEventCard,
+  darkEventCard,
 };

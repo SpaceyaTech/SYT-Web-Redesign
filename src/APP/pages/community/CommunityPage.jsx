@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import EventsSection from "../events/sections/eventsSection/EventsSection";
 import {
   WelcomeSection,
   ChaptersSection,
   PartnerSection,
   GallerySection,
 } from "./sections";
-import EventsSection from "../events/sections/eventsSection/EventsSection";
 
 function CommunityPage() {
   useEffect(() => {
@@ -13,13 +13,15 @@ function CommunityPage() {
   }, []);
 
   return (
-    <div className="w-screen max-w-[1440px] mx-auto flex flex-col">
-      <WelcomeSection />
-      <EventsSection showAllEventsLink />
-      <ChaptersSection />
-      <PartnerSection />
-      <GallerySection />
-    </div>
+    <section className="bg-[#d9d9d9]/30 ">
+      <div className="max-w-[1440px] mx-auto">
+        <WelcomeSection />
+        <EventsSection showAllEventsLink />
+        {/* <ChaptersSection /> */}
+        {/* <PartnerSection /> */}
+        <GallerySection />
+      </div>
+    </section>
   );
 }
 
