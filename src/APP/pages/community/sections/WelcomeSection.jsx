@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+
 import { NewHero } from "../../../../assets/images/community";
 import JoinSYTModal from "./JoinSYTModal";
-import { useState } from "react";
 
 function WelcomeSection() {
   const [isOpen, setIsOpen] = useState(false);

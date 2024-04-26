@@ -1,11 +1,21 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
+import JoinSYTModal from "../../community/sections/JoinSYTModal";
 import { bannerImg } from "@/assets/images/hero-section";
 
 function CTASection() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
   return (
     <section className="bg-white w-full max-w-6xl mx-auto relative rounded-[20px] p-2">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 absolute -top-6">
@@ -31,14 +41,17 @@ function CTASection() {
             looking to change the way young Africans get started in technology.
           </p>
 
-          <Link
-            to="/community"
+          <button
+            type="button"
+            onClick={openModal}
             className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
           >
             Join SpaceYaTech
-          </Link>
+          </button>
         </div>
       </div>
+
+      <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
     </section>
   );
 }

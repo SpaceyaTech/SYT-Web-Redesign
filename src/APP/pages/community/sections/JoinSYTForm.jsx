@@ -1,7 +1,6 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { sytLogoGreen } from "../../../../assets/images/icons";
-import { GoBackBtn } from "../../../components";
+import { arrowRight, sytLogoGreen } from "../../../../assets/images/icons";
 
 function JoinSYTForm({ closeModal }) {
   const handleSubmit = (e) => {
@@ -12,7 +11,7 @@ function JoinSYTForm({ closeModal }) {
 
     console.log("Data: ", data);
 
-    // closeModal();
+    closeModal();
   };
   return (
     <div className="w-full md:w-1/2 flex flex-col items-center  md:justify-start p-5 gap-8 md:p-12">
@@ -22,16 +21,14 @@ function JoinSYTForm({ closeModal }) {
         className="size-24 object-contain flex md:hidden"
       />
       <div className="flex flex-col w-full gap-8">
-        <GoBackBtn />
-
         <h2 className="text-2xl font-semibold">Join the Community</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="name" className="text-sm font-medium">
-              Full name
-            </label>
-
+          <label
+            htmlFor="name"
+            className="text-sm font-medium flex flex-col gap-1.5"
+          >
+            Full name
             <input
               type="text"
               placeholder="John Doe"
@@ -40,13 +37,13 @@ function JoinSYTForm({ closeModal }) {
               required
               className="px-3 py-2.5 outline-none border rounded-md text-sm "
             />
-          </div>
+          </label>
 
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="email" className="text-sm font-medium">
-              Email address
-            </label>
-
+          <label
+            htmlFor="email"
+            className="text-sm font-medium flex flex-col gap-1.5"
+          >
+            Email address
             <input
               type="email"
               placeholder="john.doe@example.com"
@@ -55,13 +52,13 @@ function JoinSYTForm({ closeModal }) {
               required
               className="px-3 py-2.5 outline-none border rounded-md text-sm "
             />
-          </div>
+          </label>
 
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="work" className="text-sm font-medium">
-              What would best describe your work?
-            </label>
-
+          <label
+            htmlFor="work"
+            className="text-sm font-medium flex flex-col gap-1.5"
+          >
+            What would best describe your work?
             <textarea
               type="text"
               placeholder="What would best describe your work?"
@@ -70,13 +67,13 @@ function JoinSYTForm({ closeModal }) {
               required
               className="px-3 py-2.5 outline-none border rounded-md text-sm "
             />
-          </div>
+          </label>
 
-          <div className="flex flex-col gap-1.5">
-            <label htmlFor="interest" className="text-sm font-medium">
-              What would best describe your interest?
-            </label>
-
+          <label
+            htmlFor="interest"
+            className="text-sm font-medium flex flex-col gap-1.5"
+          >
+            What would best describe your interest?
             <textarea
               type="text"
               placeholder="What would best describe your interest?"
@@ -85,7 +82,7 @@ function JoinSYTForm({ closeModal }) {
               required
               className="px-3 py-2.5 outline-none border rounded-md text-sm "
             />
-          </div>
+          </label>
 
           <button
             type="submit"

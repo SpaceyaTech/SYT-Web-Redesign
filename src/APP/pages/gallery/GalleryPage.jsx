@@ -13,7 +13,7 @@ function GalleryPage() {
   return (
     <main className="bg-[#d9d9d9]/30 font-spaceGrotesk pb-12">
       <div className="max-w-[1440px] mx-auto flex flex-col gap-8">
-        <div className="flex items-center justify-between pt-8">
+        <div className="flex md:items-center flex-col md:flex-row gap-4 justify-between pt-8 pl-2 md:pl-0">
           <Link
             to="/community"
             className="border rounded-full bg-white p-1 w-fit"

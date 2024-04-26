@@ -2,7 +2,6 @@ import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { sytLogoGreen } from "../../../../../../../assets/images/icons";
-import { GoBackBtn } from "../../../../../../components";
 
 function RSVPForm({ closeModal }) {
   const handleSubmit = (e) => {
@@ -14,18 +13,16 @@ function RSVPForm({ closeModal }) {
 
     console.log("Name: ", name, "Email: ", email);
 
-    // closeModal();
+    closeModal();
   };
   return (
     <div className="w-full md:w-1/2 flex flex-col items-center  md:justify-start p-5 gap-8 md:p-12">
       <LazyLoadImage
         src={sytLogoGreen}
         alt="logo"
-        className="size-24 object-contain flex md:hidden"
+        className="size-24 object-contain md:self-start"
       />
       <div className="flex flex-col w-full gap-8">
-        <GoBackBtn />
-
         <h2 className="text-2xl font-semibold">Event RSVP</h2>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
