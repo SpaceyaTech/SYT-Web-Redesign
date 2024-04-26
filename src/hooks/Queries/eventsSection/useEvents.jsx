@@ -13,11 +13,11 @@ const fetchEvents = async (catName = "") => {
   }
 };
 
-export const useEventsData = (catName) => {
+export default function useEventsData(catName) {
   return useQuery({
     queryKey: ["eventsData"],
     queryFn: () => fetchEvents(catName),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60,
   });
-};
+}

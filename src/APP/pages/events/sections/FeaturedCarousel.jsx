@@ -5,7 +5,7 @@ import FeaturedEventCard from "./FeaturedEventCard";
 export default function FeaturedCarousel() {
   return (
     <Carousel
-      className="w-full h-96 md:h-[540px] overflow-hidden hidden md:inline-block"
+      className="w-full h-96 md:h-[540px] hidden md:flex overflow-hidden"
       prevArrow={() => {}}
       nextArrow={() => {}}
       autoplay
