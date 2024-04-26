@@ -1,8 +1,19 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { NewHero } from "../../../../assets/images/community";
+import JoinSYTModal from "./JoinSYTModal";
+import { useState } from "react";
 
 function WelcomeSection() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
   return (
     <section className="py-16 flex items-center justify-center flex-col md:gap-10 max-w-1440 mx-auto">
       {/* Hero section Description */}
@@ -18,13 +29,14 @@ function WelcomeSection() {
           learning opportunities for all career stages.
         </p>
 
-        <Link
-          to="/community"
+        <button
+          type="button"
+          onClick={openModal}
           preventScrollReset
           className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
         >
           Join SpaceYaTech
-        </Link>
+        </button>
       </div>
       <LazyLoadImage
         effect="blur"
@@ -32,6 +44,8 @@ function WelcomeSection() {
         alt="Hero"
         className="w-full h-[500px] object-cover"
       />
+
+      <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
     </section>
   );
 }

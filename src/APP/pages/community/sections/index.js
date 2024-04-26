@@ -1,3 +1,4 @@
+export { default as JoinSYT } from "./JoinSYTModal";
 export { default as WelcomeSection } from "./WelcomeSection";
 export { default as ChaptersSection } from "./chaptersSection/ChaptersSection";
 export { default as ChapterCard } from "./chaptersSection/ChapterCard";
