@@ -12,6 +12,8 @@ import deleteIcon from "./delete-icon.svg";
 import funnel from "./funnel.svg";
 import globe from "./globe.svg";
 import greyLinkedin from "./linkedin-grey.svg";
+import sytLogoGreen from "./logo-green-bg.svg";
+import sytLogoWhite from "./logo-white-bg.svg";
 import menu from "./menu.svg";
 import searchIcon from "./search-icon.svg";
 import search from "./search.svg";
@@ -44,4 +46,6 @@ export {
   globe,
   tag,
   clock,
+  sytLogoWhite,
+  sytLogoGreen,
 };

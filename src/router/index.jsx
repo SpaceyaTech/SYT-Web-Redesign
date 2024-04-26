@@ -13,7 +13,6 @@ import {
   Error403,
   Error404,
   Error500,
-  EventsPage,
   ForgotPassword,
   GalleryPage,
   Homepage,
@@ -25,7 +24,7 @@ import {
   SignUp,
   SingleEvent,
   Blogs,
-  EventsPage2,
+  EventsPage,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -62,18 +61,17 @@ const router = createBrowserRouter([
         element: <Blog2 />,
       },
       {
-        path: "/events",
+        path: "/all-events",
         element: <EventsPage />,
       },
       {
-        path: "/all-events",
-        element: <EventsPage2 />,
+        path: "/events/:id",
+        element: <SingleEvent />,
       },
       {
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
-
       {
         path: "/shop",
         element: <Homepage />,
@@ -89,10 +87,6 @@ const router = createBrowserRouter([
       {
         path: "/shop/checkout",
         element: <Checkout />,
-      },
-      {
-        path: "/events/:id",
-        element: <SingleEvent />,
       },
       {
         path: "/resources",

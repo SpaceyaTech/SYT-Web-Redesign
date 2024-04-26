@@ -109,7 +109,7 @@ function Events({ events }) {
                           className="size-5"
                         />
                         {mode.toLowerCase() === "physical" ? (
-                          location
+                          <p className="line-clamp-1">{location}</p>
                         ) : (
                           <a
                             href={location}

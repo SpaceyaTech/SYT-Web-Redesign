@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { search } from "../../../../assets/images/icons";
 import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
-import { useEventsData } from "../../../../hooks/Queries/eventsSection/useEvents";
+import useEventsData from "../../../../hooks/Queries/eventsSection/useEvents";
 import { Loader } from "../../../components";
 import { EventCard } from "../../community/sections/eventsSection/SingleEvents/sections";
 
