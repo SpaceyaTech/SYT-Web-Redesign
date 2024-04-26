@@ -194,7 +194,7 @@ ${isVirtual ? "text-white" : "text-green-header"}
           </button>
         </div>
 
-        <EventRSVP isOpen={isOpen} closeModal={closeModal} />
+        <EventRSVP isOpen={isOpen} closeModal={closeModal} event={event} />
       </div>
     </div>
   );

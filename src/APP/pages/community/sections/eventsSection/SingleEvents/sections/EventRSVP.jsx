@@ -1,4 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { format, parseISO } from "date-fns";
 import React, { Fragment } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -6,7 +7,13 @@ import { rsvpEvent } from "../../../../../../../assets/images/community";
 import { sytLogoWhite } from "../../../../../../../assets/images/icons";
 import RSVPForm from "./RSVPForm";
 
-function EventRSVP({ isOpen, closeModal }) {
+function EventRSVP({ isOpen, closeModal, event }) {
+  const [hours, minutes] = event?.start_time.split(":");
+
+  const time = new Date();
+  time.setHours(hours);
+  time.setMinutes(minutes);
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -81,7 +88,10 @@ function EventRSVP({ isOpen, closeModal }) {
                             </defs>
                           </svg>
 
-                          <span className="text-base font-light">6th May</span>
+                          <span className="text-base font-light ">
+                            {" "}
+                            {format(parseISO(event?.start_date), "do, MMMM")}
+                          </span>
                         </div>
 
                         <div className="flex items-center gap-2 lg:place-self-end">
@@ -112,7 +122,9 @@ function EventRSVP({ isOpen, closeModal }) {
                             </defs>
                           </svg>
 
-                          <span className="text-base font-light">00800HRS</span>
+                          <span className="text-base font-light">
+                            {format(time, "HHmm") + " HRS"}
+                          </span>
                         </div>
 
                         <div className="flex items-center gap-2">
@@ -156,10 +168,9 @@ function EventRSVP({ isOpen, closeModal }) {
                           </svg>
 
                           <span className="text-base  line-clamp-1 font-light">
-                            {/* {event?.mode === "Physical"
-                            ? event?.location
-                            : event?.mode} */}
-                            Virtual
+                            {event?.mode === "Physical"
+                              ? event?.location
+                              : event?.mode}
                           </span>
                         </div>
 
@@ -192,7 +203,7 @@ function EventRSVP({ isOpen, closeModal }) {
                           </svg>
 
                           <span className="text-base  text-nowrap font-light">
-                            Development
+                            {event?.category.name}
                           </span>
                         </div>
                       </div>
