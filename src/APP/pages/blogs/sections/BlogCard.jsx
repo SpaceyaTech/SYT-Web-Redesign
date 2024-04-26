@@ -9,8 +9,7 @@ import logo from "../../../../assets/images/sytLogo.png";
 import BlogStats from "./BlogStats";
 
 function BlogCard({ blog }) {
-  const timeAgo = blog?.created_at;
-  formatDistanceToNow(new Date(blog?.created_at), {
+  const timeAgo = formatDistanceToNow(new Date(blog?.created_at), {
     addSuffix: true,
   });
 
@@ -22,9 +21,7 @@ function BlogCard({ blog }) {
       <LazyLoadImage
         src={blog.image}
         alt={blog.title}
-
         className="w-full h-60 object-cover rounded-lg asp"
-
       />
 
       <div className="py-[6px] flex flex-col gap-[10px] w-full mt-2">
