@@ -1,5 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
+import PropTypes from "prop-types";
 import React, { Fragment } from "react";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { joinSYT } from "../../../../assets/images/community";
 import { sytLogoWhite } from "../../../../assets/images/icons";
@@ -65,3 +67,8 @@ function JoinSYTModal({ isOpen, closeModal }) {
 }
 
 export default JoinSYTModal;
+
+JoinSYTModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};

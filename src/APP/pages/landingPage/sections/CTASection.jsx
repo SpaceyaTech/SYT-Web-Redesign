@@ -8,9 +8,9 @@ import { bannerImg } from "@/assets/images/hero-section";
 function CTASection() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   function openModal() {
     setIsOpen(true);

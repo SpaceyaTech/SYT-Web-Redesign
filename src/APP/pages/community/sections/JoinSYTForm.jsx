@@ -1,6 +1,8 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { arrowRight, sytLogoGreen } from "../../../../assets/images/icons";
+
+import { sytLogoGreen } from "../../../../assets/images/icons";
 
 function JoinSYTForm({ closeModal }) {
   const handleSubmit = (e) => {
@@ -97,3 +99,7 @@ function JoinSYTForm({ closeModal }) {
 }
 
 export default JoinSYTForm;
+
+JoinSYTForm.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+};
