@@ -3,6 +3,7 @@ import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { sytLogoGreen } from "../../../../assets/images/icons";
+import { fieldsOfInterest } from ".";
 
 function JoinSYTForm({ closeModal }) {
   const handleSubmit = (e) => {
@@ -15,6 +16,8 @@ function JoinSYTForm({ closeModal }) {
 
     closeModal();
   };
+
+  console.log("Data", fieldsOfInterest);
   return (
     <div className="w-full md:w-1/2 flex flex-col items-center  md:justify-start p-5 gap-8 md:p-12">
       <LazyLoadImage
@@ -61,14 +64,30 @@ function JoinSYTForm({ closeModal }) {
             className="text-sm font-medium flex flex-col gap-1.5"
           >
             What would best describe your work?
-            <textarea
+            {/* <textarea
               type="text"
               placeholder="What would best describe your work?"
               id="work"
               name="work"
               required
               className="px-3 py-2.5 outline-none border rounded-md text-sm "
-            />
+            /> */}
+            <select
+              name="work"
+              id="work"
+              required
+              className="px-3 py-2.5 outline-none border rounded-md text-sm"
+            >
+              {fieldsOfInterest.map((interest) => (
+                <option key={interest} value={interest}>
+                  {interest}
+                </option>
+              ))}
+
+              <option value="option">option</option>
+              <option value="option">option</option>
+              <option value="option">option</option>
+            </select>
           </label>
 
           <label
