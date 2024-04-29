@@ -1,28 +1,40 @@
+import axios from "axios";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { sytLogoGreen } from "../../../../assets/images/icons";
-import axios from "axios";
 
 function JoinSYTForm({ closeModal }) {
+  const [loading, setLoading] = useState(false);
+  const [err, setErr] = useState("");
+
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const fullname = formData.get("fullname");
+    const email = formData.get("email");
+    const work = formData.get("work");
+    const fieldOfInterest = formData.get("field_of_interest");
 
     try {
-      const url = `${process.env.REACT_APP_API_BASE_URL}/members`;
+      const url = `${process.env.REACT_APP_API_BASE_URL}/members/`;
 
-      const response = await axios.post(url, data);
-      console.log("Response: ", response);
+      await axios.post(url, {
+        fullname,
+        email,
+        work,
+        field_of_interest: fieldOfInterest,
+      });
+
+      setLoading(false);
+      closeModal();
     } catch (error) {
-      console.log("Error: ", error);
+      setErr(error.response.data.detail);
+      setLoading(true);
     }
-    // console.log(data);
-
-    closeModal();
   };
 
   return (
@@ -178,8 +190,12 @@ function JoinSYTForm({ closeModal }) {
             type="submit"
             className="text-white bg-gradient-to-b to-primary from-green-dark p-2.5 rounded-md md:mt-3"
           >
-            Submit
+            {loading ? "Submitting..." : "Submit"}
           </button>
+
+          {err && (
+            <p className="text-center text-red-500 italic font-normal">{err}</p>
+          )}
         </form>
       </div>
     </div>
