@@ -3,24 +3,24 @@
 /* eslint-disable indent */
 /* eslint-disable linebreak-style */
 import PropTypes from "prop-types";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { Link } from "react-router-dom";
 import {
   EventCard,
   LocationTag,
 } from "../../../community/sections/eventsSection/SingleEvents/sections";
-import {
-  lightEventCard,
-  darkEventCard,
-} from "../../../../../assets/images/community";
-import formatEventDates from "../../../../../utilities/formatEventDate";
-import { format, parseISO } from "date-fns";
-import {
-  clock,
-  tag,
-  calendar,
-  globe,
-} from "../../../../../assets/images/icons";
+// import {
+//   lightEventCard,
+//   darkEventCard,
+// } from "../../../../../assets/images/community";
+// import formatEventDates from "../../../../../utilities/formatEventDate";
+// import { format, parseISO } from "date-fns";
+// import {
+//   clock,
+//   tag,
+//   calendar,
+//   globe,
+// } from "../../../../../assets/images/icons";
 
 function Events({ events }) {
   // const formattedDate = format(parseISO(start_date), "do, MMMM");
