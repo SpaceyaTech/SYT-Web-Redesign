@@ -21,6 +21,7 @@ import google from "./google.png";
 import google2 from "./google2.png";
 import Group from "./Group.png";
 import individualchapter from "./individualchapter.png";
+import joinSYT from "./join-syt-bg.png";
 import lightEventCard from "./lightEventCard.png";
 import MasterBase from "./MasterBase.png";
 import mentorlst from "./mentorlst.png";
@@ -31,6 +32,7 @@ import nairobi1 from "./nairobi1.png";
 import nairobi2 from "./nairobi2.png";
 import NewHero from "./NewHero.png";
 import Pam from "./Pam.png";
+import rsvpEvent from "./rsvp-event-cover.png";
 import singleEvents from "./singleEvents.png";
 import Tanzania from "./Tanzania.png";
 import techrecruiters from "./techrecruiters.png";
@@ -40,6 +42,8 @@ import uxhiringafrica from "./uxhiringafrica.png";
 import vector1 from "./vector1.png";
 
 export {
+  joinSYT,
+  rsvpEvent,
   community,
   MasterBase,
   techrecruiters,

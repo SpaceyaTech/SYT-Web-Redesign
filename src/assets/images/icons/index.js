@@ -9,10 +9,14 @@ import cartIcon from "./cart-icon.svg";
 import clock from "./clock.svg";
 import closeIcon from "./close-icon.svg";
 import deleteIcon from "./delete-icon.svg";
+import funnel from "./funnel.svg";
 import globe from "./globe.svg";
 import greyLinkedin from "./linkedin-grey.svg";
+import sytLogoGreen from "./logo-green-bg.svg";
+import sytLogoWhite from "./logo-white-bg.svg";
 import menu from "./menu.svg";
 import searchIcon from "./search-icon.svg";
+import search from "./search.svg";
 import tag from "./tag.svg";
 import teams from "./teams.svg";
 import greyTwitter from "./twitter-grey.svg";
@@ -27,8 +31,10 @@ export {
   cancel,
   closeIcon,
   deleteIcon,
+  funnel,
   menu,
   searchIcon,
+  search,
   upleft,
   upleftGreen,
   teams,
@@ -40,4 +46,6 @@ export {
   globe,
   tag,
   clock,
+  sytLogoWhite,
+  sytLogoGreen,
 };

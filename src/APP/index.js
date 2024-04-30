@@ -22,7 +22,7 @@ import Error403 from "./pages/errorPages/Error403";
 import Error404 from "./pages/errorPages/Error404";
 import Error500 from "./pages/errorPages/Error500";
 import ErrorBoundary from "./pages/errorPages/ErrorBoundary";
-import EventsPage from "./pages/events/pages/EventsPage";
+import EventsPage from "./pages/events/pages/EventsPage2";
 import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
 import GalleryPage from "./pages/gallery/GalleryPage";
 import LandingPage from "./pages/landingPage/LandingPage";

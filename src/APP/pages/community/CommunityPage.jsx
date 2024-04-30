@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 import EventsSection from "../events/sections/eventsSection/EventsSection";
-import {
-  WelcomeSection,
-  ChaptersSection,
-  PartnerSection,
-  GallerySection,
-} from "./sections";
+import { WelcomeSection, GallerySection } from "./sections";
 
 function CommunityPage() {
   useEffect(() => {
@@ -17,8 +12,6 @@ function CommunityPage() {
       <div className="max-w-[1440px] mx-auto">
         <WelcomeSection />
         <EventsSection showAllEventsLink />
-        {/* <ChaptersSection /> */}
-        {/* <PartnerSection /> */}
         <GallerySection />
       </div>
     </section>

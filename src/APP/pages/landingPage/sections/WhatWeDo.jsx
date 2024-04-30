@@ -3,9 +3,9 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Button } from "../../../components";
 import { whatWeDoData } from "../data";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function WhatWeDo() {
   return (
@@ -54,7 +54,7 @@ function WhatWeDoCard({ card, index }) {
           <Button link={link} title="View More" />
         </div>
 
-        <LazyLoadImage 
+        <LazyLoadImage
           effect="blur"
           src={image}
           alt={title}

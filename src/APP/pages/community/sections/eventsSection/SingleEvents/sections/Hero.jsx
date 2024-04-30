@@ -1,10 +1,21 @@
 /* eslint-disable react/no-unknown-property */
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
+import EventRSVP from "./EventRSVP";
 import { eventsPhysicalBg, eventsVirtualBg } from "@/assets/images/community";
 
 function Hero({ event }) {
   const isVirtual = event?.mode === "Virtual";
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <div className="w-full bg-white p-1.5 md:p-2 border rounded-xl md:rounded-[20px]">
@@ -172,15 +183,18 @@ ${isVirtual ? "text-white" : "text-green-header"}
 
           <button
             type="button"
+            onClick={openModal}
             className={`py-2 px-20 rounded-lg ${
               isVirtual
                 ? "text-green-header bg-white"
-                : "text-white bg-gradient-to-b to-primary from-green-dark "
+                : "text-white bg-gradient-to-b to-primary from-green-dark"
             }`}
           >
             Reserve for Free
           </button>
         </div>
+
+        <EventRSVP isOpen={isOpen} closeModal={closeModal} event={event} />
       </div>
     </div>
   );

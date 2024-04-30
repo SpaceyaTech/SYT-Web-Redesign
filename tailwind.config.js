@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -11,6 +12,8 @@ export default {
       },
       backgroundImage: {
         landingPageBg: "url('/landing-bg.png')",
+        eventRSVPDesktop: "url('/event-RSVP-desktop.png')",
+        eventRSVPMobile: "url('/event-RSVP-mobile.png')",
       },
       colors: {
         primary: "#009975",

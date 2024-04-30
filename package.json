@@ -23,6 +23,7 @@
     "@headlessui/react": "^1.7.15",
     "@hookform/resolvers": "^3.3.2",
     "@hookstate/core": "^4.0.1",
+    "@material-tailwind/react": "^2.1.9",
     "@tanstack/react-query": "^5.22.2",
     "@tanstack/react-query-devtools": "^5.24.0",
     "axios": "^1.6.1",
