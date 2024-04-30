@@ -12,6 +12,8 @@ import {
 import { Loader, Button } from "../../../components";
 import Error500 from "../../errorPages/Error500";
 import useTopEvents from "@/hooks/Queries/eventsSection/useTopEvents";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { error500svg } from "../../../../assets/images/errorPages";
 
 function OurEvents() {
   const {
@@ -49,9 +51,21 @@ function OurEvents() {
           <Button link="/all-events" title="view more" />
         </div>
 
-        {isError && <Error500 />}
+        {isError && (
+          <div className="size-full flex-center flex-col gap-4">
+            <LazyLoadImage
+              src={error500svg}
+              alt="error-500"
+              effect="blur"
+              className="size-full md:size-[600px] object-cover"
+            />
+            <span className="text-red-500 text-base font-semibold">
+              Error fetching Events!
+            </span>
+          </div>
+        )}
         {isPending && (
-          <div className="flex flex-col items-center justify-center gap-4 py-10">
+          <div className="flex flex-col items-center justify-center size-full gap-4 py-10">
             <Loader />
             <p className="text-lg font-medium text-primary">
               Loading events...
