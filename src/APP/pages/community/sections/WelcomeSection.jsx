@@ -7,15 +7,15 @@ import JoinSYTModal from "./JoinSYTModal";
 function WelcomeSection() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-  }
+  };
   return (
-    <section className="py-16 flex items-center justify-center flex-col md:gap-10 max-w-1440 mx-auto">
+    <section className="pt-10 md:py-16 flex items-center justify-center flex-col md:gap-10 max-w-1440 mx-auto">
       {/* Hero section Description */}
       <div className="px-3 md:px-0 max-w-[625px] flex flex-col items-center gap-4">
         <h1 className="md:text-[40px] text-2xl leading-tight  font-medium text-gray-900 text-center">
@@ -42,7 +42,7 @@ function WelcomeSection() {
         effect="blur"
         src={NewHero}
         alt="Hero"
-        className="w-full h-[500px] object-cover"
+        className="w-full h-[500px] object-cover hidden md:flex"
       />
 
       <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
