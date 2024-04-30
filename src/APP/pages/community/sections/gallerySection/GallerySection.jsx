@@ -1,30 +1,8 @@
 /* eslint-disable react/prop-types */
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-// import {
-//   galleryimage1,
-//   galleryimage2,
-//   galleryimage3,
-//   galleryimage4,
-//   galleryimage5,
-//   galleryimage6,
-//   galleryimage7,
-//   galleryimage8,
-//   galleryimage9,
-// } from "../../../../../assets/images/community";
 import { arrowRight } from "../../../../../assets/images/icons";
 import photosData from "../../../gallery/data";
-
-// const photos = [
-//   { image: galleryimage1 },
-//   // { image: galleryimage2 },
-//   // { image: galleryimage3 },
-//   { image: galleryimage4 },
-//   { image: galleryimage5 },
-//   { image: galleryimage6 },
-//   { image: galleryimage7 },
-//   { image: galleryimage8 },
-// ];
 function GallerySection() {
   return (
     <div className="pb-10 sm:pb-24 text-center">

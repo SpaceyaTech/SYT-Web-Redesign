@@ -133,6 +133,7 @@ function HeroSection() {
 
       {/* Image Section */}
       <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
+
     </section>
   );
 }

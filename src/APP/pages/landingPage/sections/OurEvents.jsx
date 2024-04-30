@@ -14,7 +14,6 @@ import Error500 from "../../errorPages/Error500";
 import useTopEvents from "@/hooks/Queries/eventsSection/useTopEvents";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { error500svg } from "../../../../assets/images/errorPages";
-
 function OurEvents() {
   const {
     data: topEvents,

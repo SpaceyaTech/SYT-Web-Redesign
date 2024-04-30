@@ -22,8 +22,12 @@ import {
 //   globe,
 // } from "../../../../../assets/images/icons";
 
+
 function Events({ events }) {
   // const formattedDate = format(parseISO(start_date), "do, MMMM");
+  // import formatEventDates from "../../../../../utilities/formatEventDate";
+  // import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
   return (
     <div
@@ -82,7 +86,6 @@ function Events({ events }) {
             //       </p>
             //     </div>
             //   </div>
-
             //   <div className="p-5 w-full bg-white rounded-b-lg space-y-4">
             //     <div className="flex flex-between">
             //       <div className="space-y-4">
@@ -94,7 +97,6 @@ function Events({ events }) {
             //           />
             //           {format(parseISO(start_date), "do, MMMM")}
             //         </p>
-
             //         <p className="flex gap-2 items-center">
             //           <LazyLoadImage
             //             src={globe}

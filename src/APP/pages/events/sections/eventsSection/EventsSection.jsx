@@ -5,9 +5,6 @@ import useTopEvents from "../../../../../hooks/Queries/eventsSection/useTopEvent
 import { Loader } from "../../../../components";
 import Error500 from "../../../errorPages/Error500";
 import Events from "./Events";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
-import { arrowRight } from "../../../../../assets/images/icons";
 function EventsSection({ showTabs, showAllEventsLink }) {
   const [filters, setFilters] = useState({});
 

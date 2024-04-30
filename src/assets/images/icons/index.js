@@ -22,7 +22,6 @@ import teams from "./teams.svg";
 import greyTwitter from "./twitter-grey.svg";
 import upleft from "./up-left.svg";
 import upleftGreen from "./upleft-green.svg";
-
 export {
   arrowRight,
   bellIcon,
@@ -48,4 +47,5 @@ export {
   clock,
   sytLogoWhite,
   sytLogoGreen,
+
 };

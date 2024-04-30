@@ -11,7 +11,6 @@ function ImageCard({ photo }) {
         className="aspect-video object-cover"
         loading="lazy"
       />
-
       <div className="absolute top-0 right-0 w-full h-full flex opacity-0 transition-all duration-500 ease-linear hover:opacity-100">
         <div className="bg-transparent w-1/2 h-full" />
         <div className="bg-[#00664E] text-white w-1/2 h-full flex items-center justify-center flex-col gap-2">
