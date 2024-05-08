@@ -2,11 +2,9 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/prop-types */
 import React from "react";
-
-import { ViewMoreBtn } from "../../../components";
-import { whatWeDoData } from "../data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
+import { Button } from "../../../components";
+import { whatWeDoData } from "../data";
 function WhatWeDo() {
   return (
     <section className="max-w-1440 w-full mx-auto flex flex-col items-center gap-8 pt-2">
@@ -51,10 +49,11 @@ function WhatWeDoCard({ card, index }) {
             {description}
           </p>
 
-          <ViewMoreBtn link={link} />
+
+          <Button link={link} title="View More" />
         </div>
 
-        <LazyLoadImage 
+        <LazyLoadImage
           effect="blur"
           src={image}
           alt={title}

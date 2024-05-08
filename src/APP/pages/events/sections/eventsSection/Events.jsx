@@ -1,101 +1,155 @@
-import React from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable operator-linebreak */
+/* eslint-disable camelcase */
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 import PropTypes from "prop-types";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { Link } from "react-router-dom";
+import {
+  EventCard,
+  LocationTag,
+} from "../../../community/sections/eventsPreview/SingleEvents/sections";
+// import {
+//   lightEventCard,
+//   darkEventCard,
+// } from "../../../../../assets/images/community";
+// import formatEventDates from "../../../../../utilities/formatEventDate";
+// import { format, parseISO } from "date-fns";
+// import {
+//   clock,
+//   tag,
+//   calendar,
+//   globe,
+// } from "../../../../../assets/images/icons";
 
-import formatEventDates from "../../../../../utilities/formatEventDate";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
-function Events({ events, isVertical }) {
-  const verticalContainer =
-    "my-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8";
-  const horizontalContainer =
-    "flex overflow-x-auto px-0 md:px-4 gap-2 sm:gap-4 w-full";
+function Events({ events }) {
+  // const formattedDate = format(parseISO(start_date), "do, MMMM");
+  // import formatEventDates from "../../../../../utilities/formatEventDate";
+  // import { LazyLoadImage } from "react-lazy-load-image-component";
 
-  // Event Card classes
-  const verticalWrapper =
-    "max-w-sm bg-white border border-gray-200 rounded-lg h-auto";
-  const horizontalWrapper =
-    "m-3 md:m-6 bg-white rounded-lg w-4/5 sm:w-72 flex flex-shrink-0";
 
   return (
-    <div className={isVertical ? verticalContainer : horizontalContainer}>
-      {events && Array.isArray(events)
-        ? events.map(
-            ({
-              id,
-              name,
-              start_date,
-              start_time,
-              end_date,
-              end_time,
-              location,
-              mode,
-              poster,
-              city,
-            }) => {
-              const date = formatEventDates(
-                start_date,
-                start_time,
-                end_date,
-                end_time
-              );
+    <div
+      // className="my-4 md:my-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 max-w-1216 mx-auto md:pb-10"
+      className="mx-auto my-6 max-w-1216 w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8 justify-between px-4 xl:px-0"
+      // style={{
+      //   gridAutoColumns: "max-content",
+      //   gridTemplateRows: "minmax(550px, 400px)",
+      // }}
+    >
+      {events &&
+        Array.isArray(events) &&
+        events.map((event) => {
+          // const date = formatEventDates(
+          //   start_date,
+          //   start_time,
+          //   end_date,
+          //   end_time
+          // );
 
-              const buttonColor =
-                mode === "Virtual"
-                  ? "bg-red-800 hover:bg-red-800"
-                  : "bg-blue-800 hover:bg-blue-800";
-              return (
-                <div
-                  key={id}
-                  className={isVertical ? verticalWrapper : horizontalWrapper}
-                  style={{
-                    boxShadow:
-                      "0px 4px 10px 0px rgba(4, 8, 13, 0.05), 0px 2px 4px 0px rgba(4, 8, 13, 0.25)",
-                  }}
-                >
-                  <Link to={`/events/${id}`} className="cursor-pointer">
-                    <LazyLoadImage 
-                      className="rounded-t-lg w-full h-56 object-contain"
-                      src={poster}
-                      alt={name}
-                    />
+          // const [hours, minutes] = start_time.split(":");
 
-                    <div className="p-5 text-[#323433] w-full">
-                      <h5 className="mb-2 text-sm font-semibold">{name}</h5>
+          // const date = new Date();
+          // date.setHours(hours);
+          // date.setMinutes(minutes);
 
-                      <p className="mb-3 font-medium text-xs whitespace-wrap">
-                        {date} EAT
-                      </p>
-                      <p className="mb-3 font-normal text-xs">
-                        {location}{" "}
-                        {mode.toLowerCase() === "physical" && (
-                          <span> • {city}</span>
-                        )}
-                      </p>
-                      <button
-                        type="button"
-                        className={`text-white ${buttonColor} focus:outline-none focus:ring-4 focus:ring-red-800 font-medium rounded-full text-xs px-3 py-1 text-center mr-2 mb-2`}
-                      >
-                        {mode}
-                      </button>
-                    </div>
-                  </Link>
-                </div>
-              );
-            }
-          )
-        : ""}
+          return (
+            <EventCard key={event.id} event={event} />
+            // <Link
+            //   key={id}
+            //   to={`/events/${id}`}
+            //   className="cursor-pointer w-4/5 sm:w-96 h-full border border-red-500"
+            // >
+            //   <div className="relative">
+            //     <LazyLoadImage
+            //       className=" rounded-t-lg size-full object-cover"
+            //       src={
+            //         mode.toLowerCase() === "physical"
+            //           ? lightEventCard
+            //           : darkEventCard
+            //       }
+            //       alt="Location Icon"
+            //     />
+            //     <div className="absolute bottom-0 p-6 space-y-4">
+            //       <LocationTag
+            //         isVirtual={mode.toLowerCase() !== "physical"}
+            //       />
+            //       <p
+            //         className={`text-2xl font-medium ${
+            //           mode.toLowerCase() === "physical"
+            //             ? "text-green-dark"
+            //             : "text-white"
+            //         }`}
+            //       >
+            //         {name}
+            //       </p>
+            //     </div>
+            //   </div>
+            //   <div className="p-5 w-full bg-white rounded-b-lg space-y-4">
+            //     <div className="flex flex-between">
+            //       <div className="space-y-4">
+            //         <p className="flex gap-2 items-center">
+            //           <LazyLoadImage
+            //             src={calendar}
+            //             alt="calendar icon"
+            //             className="size-5"
+            //           />
+            //           {format(parseISO(start_date), "do, MMMM")}
+            //         </p>
+            //         <p className="flex gap-2 items-center">
+            //           <LazyLoadImage
+            //             src={globe}
+            //             alt="globe icon"
+            //             className="size-5"
+            //           />
+            //           {mode.toLowerCase() === "physical" ? (
+            //             <p className="line-clamp-1">{location}</p>
+            //           ) : (
+            //             <a
+            //               href={location}
+            //               target="_blank"
+            //               rel="noreferrer noopener"
+            //               className="text-primary"
+            //             >
+            //               Online
+            //             </a>
+            //           )}
+            //         </p>
+            //       </div>
+            //       <div className="space-y-4">
+            //         <p className="flex gap-2 items-center justify-end">
+            //           <LazyLoadImage
+            //             src={clock}
+            //             alt="clock icon"
+            //             className="size-5"
+            //           />
+            //           {format(date, "HHmm") + " HRS"}
+            //         </p>
+            //         <p className="flex gap-2 items-center justify-end">
+            //           <LazyLoadImage
+            //             src={tag}
+            //             alt="tag icon"
+            //             className="size-5"
+            //           />
+            //           Development
+            //         </p>
+            //       </div>
+            //     </div>
+
+            //     <button className=" font-semibold text-green-dark hover:text-white bg-transparent border border-green-dark hover:border-none hover:bg-gradient-to-b to-primary from-green-dark py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-full text-center">
+            //       Learn More
+            //     </button>
+            //   </div>
+            // </Link>
+          );
+        })}
     </div>
   );
 }
 
 export default Events;
 
-Events.defaultProps = {
-  isVertical: true,
-};
-
 Events.propTypes = {
   events: PropTypes.array,
-  isVertical: PropTypes.bool.isRequired,
 };

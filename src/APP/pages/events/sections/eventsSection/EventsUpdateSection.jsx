@@ -50,7 +50,7 @@ function EventsUpdateSection({
       </div>
       <div>
         {showAllEventsLink && (
-          <Link to="/all-events">
+          <Link to="/events">
             <div className="flex items-center mr-6">
               <h2 className="text-sm text-primary text-center font-normal mr-2 hover:underline">
                 ALL EVENTS

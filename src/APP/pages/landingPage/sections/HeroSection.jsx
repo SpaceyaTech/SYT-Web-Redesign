@@ -1,7 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import JoinSYTModal from "../../community/sections/JoinSYTModal";
 
 function HeroSection() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
   return (
     <section className="py-16 flex items-center justify-center flex-col md:gap-10 max-w-1440 mx-auto">
       {/* Hero section Description */}
@@ -18,13 +27,13 @@ function HeroSection() {
           looking to change the way young Africans get started in technology.
         </p>
 
-        <Link
-          to="/community"
-          preventScrollReset
+        <button
+          type="button"
+          onClick={openModal}
           className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
         >
           Join SpaceYaTech
-        </Link>
+        </button>
       </div>
 
       <div className="hidden lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6">
@@ -123,6 +132,8 @@ function HeroSection() {
       </div>
 
       {/* Image Section */}
+      <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
+
     </section>
   );
 }

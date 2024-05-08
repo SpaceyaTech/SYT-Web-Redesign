@@ -7,24 +7,24 @@ import {
   Layout,
   Products,
   Blog2,
-  Blogs,
-  EventsPage,
-  IndividualChapter,
-  Homepage,
-  Resources,
-  ProductDisplay,
-  ForgotPassword,
-  LogIn,
-  ResetPassword,
-  SignUp,
   CategoriesProducts,
   Checkout,
-  SingleEvent,
-  Error500,
-  Error404,
   Error400,
   Error403,
+  Error404,
+  Error500,
+  ForgotPassword,
   GalleryPage,
+  Homepage,
+  IndividualChapter,
+  LogIn,
+  ProductDisplay,
+  ResetPassword,
+  Resources,
+  SignUp,
+  SingleEvent,
+  Blogs,
+  EventsPage,
 } from "../APP";
 
 const router = createBrowserRouter([
@@ -61,14 +61,17 @@ const router = createBrowserRouter([
         element: <Blog2 />,
       },
       {
-        path: "/all-events",
+        path: "/events",
         element: <EventsPage />,
+      },
+      {
+        path: "/events/:id",
+        element: <SingleEvent />,
       },
       {
         path: "/chapter/:id",
         element: <IndividualChapter />,
       },
-
       {
         path: "/shop",
         element: <Homepage />,
@@ -84,10 +87,6 @@ const router = createBrowserRouter([
       {
         path: "/shop/checkout",
         element: <Checkout />,
-      },
-      {
-        path: "/events/:id", // New route path
-        element: <SingleEvent />,
       },
       {
         path: "/resources",
