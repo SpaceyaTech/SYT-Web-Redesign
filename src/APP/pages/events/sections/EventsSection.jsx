@@ -4,11 +4,12 @@ import { search } from "../../../../assets/images/icons";
 import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
 import useEventsData from "../../../../hooks/Queries/eventsSection/useEvents";
 import { Loader } from "../../../components";
-import { EventCard } from "../../community/sections/eventsSection/SingleEvents/sections";
+import { EventCard } from "../../community/sections/eventsPreview/SingleEvents/sections";
 
 function EventsSection() {
   const [events, setEvents] = useState([]);
   const [selected, setSelected] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const { data: eventCategories } = useEventsCategories();
 
@@ -43,6 +44,16 @@ function EventsSection() {
     e.preventDefault();
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredEvents = Array.isArray(events)
+    ? events?.filter((event) =>
+        event.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : events;
+
   return (
     <section className="mt-2 py-6 flex flex-col items-center justify-between gap-4">
       {/* search events */}
@@ -55,6 +66,7 @@ function EventsSection() {
           type="text"
           placeholder="Search Event"
           className="md:flex-grow p-3 outline-none text-gray-400"
+          onChange={handleSearch}
         />
         <button
           type="submit"
@@ -96,8 +108,11 @@ function EventsSection() {
           </div>
 
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8">
-            {Array.isArray(events) &&
-              events.map((event) => <EventCard key={event.id} event={event} />)}
+            {/* {Array.isArray(events) &&
+              events.map((event) => <EventCard key={event.id} event={event} />)} */}
+            {filteredEvents?.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
           </div>
         </div>
       )}

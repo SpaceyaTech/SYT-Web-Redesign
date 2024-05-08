@@ -33,7 +33,7 @@ function ImageCard({ photos }) {
             style={wrapperStyle}
             className="bg-white px-2 mx-2 uppercase text-grey-neutral font-medium text-xs"
           >
-            <p className="float-right py-2">22/12/2024</p>
+            <p className="float-right py-2">22/12/2023</p>
             {renderDefaultPhoto({ wrapped: true })}
             <p className="py-2">Collection 2024 | SYT MEETUP</p>
             {/* <div className="absolute top-0 right-0 w-full h-full flex opacity-0 transition-all duration-500 ease-linear hover:opacity-100">

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { Header, Footer2 } from "../components";
+import { Header, Footer } from "../components";
 
 function ScrollToTopOnLinkClick() {
   const { pathname } = useLocation();
@@ -18,7 +18,7 @@ function Layout() {
       <Header />
       <ScrollToTopOnLinkClick />
       <Outlet />
-      <Footer2 />
+      <Footer />
     </div>
   );
 }

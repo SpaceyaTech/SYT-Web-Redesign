@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import JoinSYTModal from "../../community/sections/JoinSYTModal";
 import { bannerImg } from "@/assets/images/hero-section";
-import { bannerImg } from "@/assets/images/hero-section";
+
 function CTASection() {
   const [isOpen, setIsOpen] = useState(false);
 
