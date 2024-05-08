@@ -6,7 +6,7 @@ function PartnerCTA() {
           <h3 className="font-semibold text-md sm:text-xl">Our Reports</h3>
           <p>
             <a
-              href="/src/assets/reports/spaceyatech-internship-program.pdf"
+              href="/src/assets/documentation/spaceyatech-internship-program.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary text-sm sm:text-base"

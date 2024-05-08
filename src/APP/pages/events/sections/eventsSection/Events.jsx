@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import {
   EventCard,
   LocationTag,
-} from "../../../community/sections/eventsSection/SingleEvents/sections";
+} from "../../../community/sections/eventsPreview/SingleEvents/sections";
 // import {
 //   lightEventCard,
 //   darkEventCard,

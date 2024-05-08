@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
+import { arrowRight } from "../../../../../assets/images/icons";
 import { useAllCities } from "../../../../../hooks/Queries/eventsSection/useEventCategories";
 import useTopEvents from "../../../../../hooks/Queries/eventsSection/useTopEvents";
 import { Loader } from "../../../../components";
 import Error500 from "../../../errorPages/Error500";
 import Events from "./Events";
+
 function EventsSection({ showTabs, showAllEventsLink }) {
   const [filters, setFilters] = useState({});
 
@@ -51,7 +55,9 @@ function EventsSection({ showTabs, showAllEventsLink }) {
       </div>
 
       <h4 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
-        Notable events within the <br />
+        Notable events within the 
+{' '}
+<br />
         SpaceYaTech ecosphere
       </h4>
       {isError && <Error500 />}
@@ -63,13 +69,13 @@ function EventsSection({ showTabs, showAllEventsLink }) {
       )}
       {isSuccess &&
         (topEventsData?.count === 0 ? (
-          <p>No events found!</p>
+          <p>Watch out for new events coming soon!</p>
         ) : (
           <Events events={topEventsData?.results} />
         ))}
       <div>
         <Link
-          to="/all-events"
+          to="/events"
           className="flex items-center border rounded-full bg-white p-1 w-fit mx-auto"
         >
           <div className="flex items-center bg-green-light rounded-full px-3 py-1.5 gap-2">

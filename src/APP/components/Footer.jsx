@@ -1,218 +1,266 @@
+import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 import {
-  facebook,
-  instagram,
   linkedin,
   twitter,
+  spotify,
+  youtube,
+  instagram,
+  facebook,
 } from "../../assets/images/socials";
 import logo from "../../assets/images/sytLogo.png";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Footer() {
-  var now = new Date();
-  var year = now.getFullYear();
+  const now = new Date();
+  const year = now.getFullYear();
+
+  const socialLinks = [
+    {
+      href: "https://www.facebook.com/spaceyatech",
+      src: facebook,
+      alt: "facebook",
+    },
+    {
+      href: "https://www.instagram.com/spaceyatech/",
+      src: instagram,
+      alt: "instagram",
+    },
+    { href: "https://x.com/SpaceYaTech", src: twitter, alt: "twitter" },
+    {
+      href: "https://linkedin.com/company/spaceyatech",
+      src: linkedin,
+      alt: "linkedIn",
+    },
+    {
+      href: "https://www.youtube.com/@spaceyatech",
+      src: youtube,
+      alt: "youtube",
+    },
+    {
+      href: "https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n",
+      src: spotify,
+      alt: "spotify",
+    },
+  ];
+
+  const footerLinks = [
+    {
+      title: "Company",
+      links: [
+        { to: "/about-us", name: "About Us" },
+        { to: "/community", name: "Community" },
+        { to: "/products", name: "Products" },
+        { to: "/shop", name: "Shop" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { href: "/events", name: "Events" },
+        { href: "http://mentorlst.com", name: "Mentorship" },
+        { href: "/gallery", name: "Gallery" },
+      ],
+    },
+    {
+      title: "Quick Links",
+      links: [
+        { href: "https://x.com/SpaceYaTech", name: "Contact Us" },
+        {
+          href: "/src/assets/documentation/terms-and-conditions.pdf",
+          name: "Terms and Conditions",
+        },
+      ],
+    },
+  ];
+
   return (
-    <footer>
-      <div className=" bg-secondary mx-auto w-full max-w-screen-2xl p-4 py-6 lg:py-8">
-        <div className="md:flex md:justify-between">
-          {/* logo and socials  */}
-          <div className="mb-8 md:mb-0 mr-6 flex flex-col justify-start items-center md:w-1/4 w-1/2">
+    <footer className="bg-secondary text-white">
+      <div className="md:p-12 py-8 px-4 relative max-w-[1440px] mx-auto">
+        <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
+          <div className="flex-3 flex flex-col items-center">
+            {/* logo */}
             <LazyLoadImage
-              effect="blur"
               src={logo}
-              alt="FlowBite Logo"
-              className="h-24 md:mx-8 mx-0 object-contain"
+              alt="logo"
+              className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
             />
-            {/* social logos  */}
-            <div className="flex flex-row items-center  md:justify-between gap-4 justify-start my-4">
-              <a href="/">
-                <LazyLoadImage
-                  effect="blur"
-                  src={facebook}
-                  alt="facebook"
-                  className="w-7 h-7"
-                />
-              </a>
+            {/* socials */}
 
-              <a href="/">
-                <LazyLoadImage
-                  effect="blur"
-                  src={instagram}
-                  alt="instagram"
-                  className="w-7 h-7"
-                />
-              </a>
-
-              <a href="/">
-                <LazyLoadImage
-                  effect="blur"
-                  src={twitter}
-                  alt="twitter"
-                  className="w-7 h-7"
-                />
-              </a>
-
-              <a href="/">
-                <LazyLoadImage
-                  effect="blur"
-                  src={linkedin}
-                  alt="linkedIn"
-                  className="w-7 h-7"
-                />
-              </a>
+            <div className="flex gap-4 items-center py-4">
+              {socialLinks.slice(0, 4).map((link) => (
+                <a
+                  key={crypto.randomUUID()}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LazyLoadImage
+                    src={link.src}
+                    alt={link.alt}
+                    className="w-7 h-7"
+                  />
+                </a>
+              ))}
+            </div>
+            <div className="flex gap-4 py-4">
+              {socialLinks.slice(4).map((link) => (
+                <a
+                  key={crypto.randomUUID()}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LazyLoadImage
+                    src={link.src}
+                    alt={link.alt}
+                    className="w-7 h-7"
+                  />
+                </a>
+              ))}
             </div>
           </div>
-          {/* quick links  */}
-          <div className="grid grid-cols-3 gap-8 sm:gap-12 sm:grid-cols-4">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
+
+          {/* Footer links */}
+
+          {footerLinks.map((section) => (
+            <div key={crypto.randomUUID()} className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+                {section.title}
+              </h2>
+
+              <ul className="flex flex-col gap-5 list-none text-sm font-light">
+                {section.links.map((link) =>
+                  link.href ? (
+                    <li key={crypto.randomUUID()}>
+                      <a
+                        href={link.href}
+                        className="hover:underline text-white"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={crypto.randomUUID()}>
+                      <Link to={link.to}>{link.name}</Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          ))}
+          {/* <div className="flex-3 flex gap-6 justify-between">
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-base leading-9">
                 Company
               </h2>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    About us
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    FAQs
-                  </a>
+
+              <ul className="flex flex-col gap-5 list-none text-sm font-light">
+                <li>
+                  <Link to="/about-us">About Us</Link>
                 </li>
                 <li>
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Community
-                  </a>
+                  <Link to="/community">Community</Link>
+                </li>
+                <li>
+                  <Link to="/products">Products</Link>
+                </li>
+                <li>
+                  <Link to="/shop">Shop</Link>
                 </li>
               </ul>
             </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
+
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
                 Resources
               </h2>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    Jobs
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Events
-                  </a>
+
+              <ul className="flex flex-col gap-5 list-none text-sm font-light">
+
+                <li>Jobs</li>
+                <li>
+
+                  Events
+
                 </li>
                 <li>
                   <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
+                    href="http://mentorlst.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Mentorship
                   </a>
                 </li>
+
+                <li>
+                  <a href="/gallery" className="hover:underline text-white">
+                    Gallery
+                  </a>
+                </li>
               </ul>
             </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold text-[#00FFC3] ">
+
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
                 Quick Links
               </h2>
-              <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a
-                    href="https://flowbite.com/"
-                    className="hover:underline text-white"
-                  >
-                    Contact us
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Donate
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Privacy policy
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a
-                    href="https://tailwindcss.com/"
-                    className="hover:underline text-white"
-                  >
-                    Terms of use
-                  </a>
-                </li>
+
+              <ul className="flex flex-col gap-5 list-none text-sm font-light">
+                <li>Contact Us</li>
+                <li>Donate</li>
+                <li>Privacy Policy</li>
+                <li>Terms of Use</li>
               </ul>
             </div>
-          </div>
-          {/* form  */}
-          <div className="my-0 md:mb-0 flex flex-col">
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider text-[#00FFC3] ">
-                Subscribe to our newsletter
-              </h3>
-              <p className="mt-4 text-base text-white lg:ml-auto">
-                Subscribe to our newsletter to get your weekly dose of news,
-                updates, tips and even special offers
-              </p>
-            </div>
-            <form
-              className="
-      relative
-      my-4
-      max-w-lg
-      space-y-4
-      sm:flex sm:space-y-0 sm:items-end
-    "
-            >
-              <div className="flex-1 flex items-center">
-                {/* <label htmlFor="email" className="sr-only">
-                  Email address
-                </label> */}
-                {/* <div> */}
-                <input
-                  type="email"
-                  id="email"
-                  autoComplete="off"
-                  className="sm:flex-4 flex-auto block sm:w-2/3 w-full px-4 py-3 h-12 sm:py-3.5 text-base font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg sm:rounded-l-lg rounded-r-none sm:text-sm focus:outline-none focus:ring-1 focus:ring-primary"
-                  placeholder="Enter email address"
-                />
+          </div> */}
 
-                <button
-                  type="submit"
-                  className="sm:flex-1 flex-auto inline-flex items-center justify-center w-1/3 sm:w-auto px-8 py-3 h-12 sm:text-sm text-lg sm:py-3.5 font-semibold text-white transition-all duration-200 bg-primary border border-transparent rounded-lg sm:rounded-r-lg rounded-l-none hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                >
-                  Subscribe
-                </button>
+          {/* Newsletter */}
+          <div className="flex-2">
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
+                Subscribe to our Newsletter
+              </h2>
+
+              <div className="flex flex-col gap-5 text-sm font-light">
+                <p className="text-sm left-6">
+                  Subscribe to our newsletter to get your
+                  <br />
+                  weekly dose of news, updates, tips and even
+                  <br />
+                  special offers
+                </p>
+
+                <form className="flex items-center">
+                  <input
+                    type="email"
+                    placeholder="Enter email address"
+                    className="w-auto px-2 md:px-4 py-3 rounded-lg rounded-r-none flex-3 outline-none text-black font-medium"
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-r-lg px-2 md:px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border border-transparent hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  >
+                    Subscribe
+                  </button>
+                </form>
               </div>
-              {/* </div> */}
-            </form>
+            </div>
           </div>
         </div>
-        {/* signature  */}
-        <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
-          &copy; {year} SpaceYaTech | All Rights Reserved.
-        </h1>
+
+        <div className="sm:mt-14 mt-10">
+          <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
+            &copy; {year} SpaceYaTech | All Rights Reserved
+          </h1>
+        </div>
+        {/* <LazyLoadImage
+          src={backup}
+          alt="backup"
+          className="w-7 h-7"
+
+        /> */}
       </div>
     </footer>
   );
