@@ -1,4 +1,4 @@
-import { hasWindow } from "yet-another-react-lightbox";
+// import { hasWindow } from "yet-another-react-lightbox";
 
 const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 const unsplashLink = (id, width, height) =>
@@ -39,7 +39,7 @@ const photos = [
   {
     id: "ABLVV87POpzD2JQecFa8tI0LOUFNCMWfTXP_QyuF4zVqa24xyv5oLDtBggT_9YgWHjpxI8rHH7_QPmSsJltnm02sYEx7um1kP83CjdBIJQ9UoFDxyO39mRvAuryqhIPp9hgxYWFm4Op4xhFsNGIRquJAcO33",
     alt: "image",
-    width: 1440,
+    width: 1640,
     height: 1220,
     date: "15/04/2023",
     event: "DevOps Nairobi",
@@ -56,7 +56,7 @@ const photos = [
   {
     id: "ABLVV86M02jcJePIcBgC1UE1iuagaYIYK4zJR5fSuY0aW2k40f01iXjT3mT9YkqFje5YO_7dTSNJ3nFJiIU_XQ1GpS4QgR0jX1nlb4rssJSDFTmUpDgj0mEt9CGnok9_U4hR4P2gSzg5E1mo4kRAqxDzi7ac",
     alt: "image",
-    width: 1203,
+    width: 480,
     height: 260,
     date: "15/04/2023",
     event: "DevOps Nairobi",
@@ -104,7 +104,7 @@ const photos = [
   {
     id: "ABLVV86tqYk_1GD2kbTRSKzJuqPCth0Z-DoCp9c-3RurvHq4dKznep4x8IjFWoe_r2S5CALLkeQaQAhs6XtUARQR5Nf9KOz-QIwGBEIR6RD0UhousBvkK8rMnEurn9lEuFtK1zGB_kLDvSGUrX9f23H2sofG",
     alt: "image",
-    width: 1603,
+    width: 1403,
     height: 780,
     date: "15/04/2023",
     event: "DevOps Nairobi",
@@ -128,7 +128,7 @@ const photos = [
   {
     id: "ABLVV86sf8HrLwsLczItEES_GaOtE90RQKLH1HE2LmDW73Z1cfGRU8KITOVR1xfBdLtDc-wFc4C1My5-K_YVX1pXN4txOlPctMF9D3vAkK1MwBNbCdSKdwDvLNNBCDOBeiRvvKCE6-sTWVJyNKuvX3hkyyJs",
     alt: "image",
-    width: 1303,
+    width: 1003,
     height: 652,
     date: "15/04/2023",
     event: "DevOps Nairobi",
@@ -136,16 +136,8 @@ const photos = [
   {
     id: "ABLVV85T37FaDQSvXN_A2bzscnLDsT-TPW3_YfUNOGehQug_0uAOWsBFhSh-WWnAZGRD14dGgMaWYWegNUrDoJTU2c4Qff1H0a5uswRr34OzeadOJXzkhhTouSimkGzZjppa-8MDJiAfJ76XBAOaBi9qp8Dq",
     alt: "image",
-    width: 1303,
+    width: 1003,
     height: 560,
-    date: "15/04/2023",
-    event: "DevOps Nairobi",
-  },
-  {
-    id: "ABLVV84p033km8rrlP5TTcwereWv7q53kbQQU4xUoXSCUHVGl4d_Ha71KkRJ_2vxHfSsSIOevEXnnqEnSZrHdvkV7xfQ7SMJlTJYp-t6r3AT81FUkkqfqJIJun1UKp2f1GXk-_-CyAeg7sUsstc_xYo0KOZE",
-    alt: "image",
-    width: 1303,
-    height: 350,
     date: "15/04/2023",
     event: "DevOps Nairobi",
   },
@@ -157,6 +149,15 @@ const photos = [
     date: "15/04/2023",
     event: "DevOps Nairobi",
   },
+  {
+    id: "ABLVV84p033km8rrlP5TTcwereWv7q53kbQQU4xUoXSCUHVGl4d_Ha71KkRJ_2vxHfSsSIOevEXnnqEnSZrHdvkV7xfQ7SMJlTJYp-t6r3AT81FUkkqfqJIJun1UKp2f1GXk-_-CyAeg7sUsstc_xYo0KOZE",
+    alt: "image",
+    width: 703,
+    height: 350,
+    date: "15/04/2023",
+    event: "DevOps Nairobi",
+  },
+
   {
     id: "ABLVV850WT8FXDmnhCmp6YXWodWld3P5pXh4BaDzMMOfTNH3yKOee7UsIudu71yacBXrmw_uwliPZEh6crNm7LyKdRD3-0ssLrXHSGukUS_igD2i2Ml2fEXHFW1XHiL4cxLm1LLFistqjX41fVQaEAdkFt5F",
     alt: "image",
@@ -208,8 +209,8 @@ const photos = [
   {
     id: "ABLVV84HMZUMWYDFM7Vmuo1FTXv4HoeD6WNxnjHm8LvmvG6w088Nk7aWY6IAttvQivX0aHy5WAP4Ef20e-P4ee_DF5cfVnkSFK5IQosflgtz17ETndmqPepClX3uiMDBrIqSV0r-vVBIcmAfFjtg-y9xgs59",
     alt: "image",
-    width: 1480,
-    height: 869,
+    width: 1003,
+    height: 840,
     date: "15/04/2023",
     event: "DevOps Nairobi",
   },
