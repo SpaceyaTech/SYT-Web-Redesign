@@ -59,7 +59,7 @@ function EventsSection() {
       {/* search events */}
       <form
         onSubmit={handleSubmit}
-        className="flex items-center border w-7/12 mb-3 rounded-xl bg-white overflow-clip"
+        className="flex items-center border sm:w-7/12 mb-3 rounded-xl bg-white overflow-clip"
       >
         <img src={search} alt="search" className="py-3 pl-6" />
         <input
@@ -88,7 +88,7 @@ function EventsSection() {
         <div className="w-full flex items-center flex-col">
           <div className="flex items-center justify-between mb-6 gap-12">
             {isSuccess && (
-              <div className="flex items-center justify-center space-x-4 w-3/4">
+              <div className="flex items-center justify-center space-x-4 w-full sm:w-3/4 mx-auto overflow-auto">
                 {uniqueCategory.map((category) => (
                   <button
                     key={category}

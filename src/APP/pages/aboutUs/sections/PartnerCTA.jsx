@@ -1,3 +1,5 @@
+import Report from "../../../../assets/documentation/spaceyatech-internship-program.pdf";
+
 function PartnerCTA() {
   return (
     <section className="pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
@@ -6,7 +8,7 @@ function PartnerCTA() {
           <h3 className="font-semibold text-md sm:text-xl">Our Reports</h3>
           <p>
             <a
-              href="/src/assets/documentation/spaceyatech-internship-program.pdf"
+              href={Report}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary text-sm sm:text-base"

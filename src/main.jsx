@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import { ErrorBoundary } from "./APP";
@@ -21,6 +22,7 @@ const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ErrorBoundary>
+      <Toaster position="top-right" reverseOrder={false} />
       <AuthContextProvider>
         <QueryClientProvider client={queryClient}>
           <SearchBlogProvider>

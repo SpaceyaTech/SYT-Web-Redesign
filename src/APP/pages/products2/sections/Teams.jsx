@@ -9,7 +9,6 @@ import DeveloperCard from "./DeveloperCard";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -39,7 +38,6 @@ function Teams() {
 
           <LazyLoadImage
             effect="blur"
-
             src={upleftGreen}
             alt="upleft"
             className="h-6 w-6 md:h-10 md:w-10 object-contain"
