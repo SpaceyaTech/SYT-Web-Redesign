@@ -1,10 +1,10 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { sytLogoGreen } from "../../../../assets/images/icons";
-
 function JoinSYTForm({ closeModal }) {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
@@ -30,10 +30,12 @@ function JoinSYTForm({ closeModal }) {
       });
 
       setLoading(false);
+      toast.success("Welcome to SpaceYaTech Community!");
       closeModal();
     } catch (error) {
       setErr(error.response.data.detail);
       setLoading(true);
+      toast.error("Please try again!");
     }
   };
 

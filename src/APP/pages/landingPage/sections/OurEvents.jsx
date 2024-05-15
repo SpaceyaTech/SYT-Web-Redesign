@@ -73,7 +73,8 @@ function OurEvents() {
         )}
 
         {isSuccess && (
-          <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
+          // <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
+          <div className="w-full flex flex-row md:flex-col overflow-x-auto gap-4">
             {topEvents?.count === 0 ? (
               <p className="">No events found!</p>
             ) : (
@@ -98,7 +99,7 @@ function UpcomingEventCard({ event }) {
   return (
     <Link
       to={`/events/${event.id}`}
-      className="bg-white border flex items-center flex-col md:flex-row justify-start w-full rounded-xl p-4 gap-4"
+      className="bg-white border flex items-center flex-col md:flex-row justify-start rounded-xl p-4 gap-4 min-w-[320px] w-full"
     >
       <div className="border bg-white p-1 rounded-lg w-full md:w-fit">
         <div className="flex-center flex-col bg-green-light text-green-dark aspect-video md:size-[120px] rounded-[4px] font-bold">

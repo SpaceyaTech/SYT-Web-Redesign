@@ -1,6 +1,10 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable no-confusing-arrow */
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import Terms from "../../assets/documentation/terms-and-conditions.pdf";
 import {
   linkedin,
   twitter,
@@ -67,7 +71,7 @@ function Footer() {
       links: [
         { href: "https://x.com/SpaceYaTech", name: "Contact Us" },
         {
-          href: "/src/assets/documentation/terms-and-conditions.pdf",
+          href: Terms,
           name: "Terms and Conditions",
         },
       ],
@@ -135,6 +139,8 @@ function Footer() {
                     <li key={crypto.randomUUID()}>
                       <a
                         href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="hover:underline text-white"
                       >
                         {link.name}
@@ -149,72 +155,6 @@ function Footer() {
               </ul>
             </div>
           ))}
-          {/* <div className="flex-3 flex gap-6 justify-between">
-            <div className="flex flex-col gap-8">
-              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-base leading-9">
-                Company
-              </h2>
-
-              <ul className="flex flex-col gap-5 list-none text-sm font-light">
-                <li>
-                  <Link to="/about-us">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/community">Community</Link>
-                </li>
-                <li>
-                  <Link to="/products">Products</Link>
-                </li>
-                <li>
-                  <Link to="/shop">Shop</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="flex flex-col gap-8">
-              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
-                Resources
-              </h2>
-
-              <ul className="flex flex-col gap-5 list-none text-sm font-light">
-
-                <li>Jobs</li>
-                <li>
-
-                  Events
-
-                </li>
-                <li>
-                  <a
-                    href="http://mentorlst.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Mentorship
-                  </a>
-                </li>
-
-                <li>
-                  <a href="/gallery" className="hover:underline text-white">
-                    Gallery
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="flex flex-col gap-8">
-              <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
-                Quick Links
-              </h2>
-
-              <ul className="flex flex-col gap-5 list-none text-sm font-light">
-                <li>Contact Us</li>
-                <li>Donate</li>
-                <li>Privacy Policy</li>
-                <li>Terms of Use</li>
-              </ul>
-            </div>
-          </div> */}
 
           {/* Newsletter */}
           <div className="flex-2">
