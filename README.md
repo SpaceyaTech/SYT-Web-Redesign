@@ -69,7 +69,7 @@ Follow these steps to get the project up and running on your local machine:
     npm run dev
     ```
 
-    The project should now be running at http://localhost:3000 (or another port if 3000 is already in use).
+    The project should now be running at http://localhost:5173 (or another port if 5173 is already in use).
 
 
 ## Project Structure
