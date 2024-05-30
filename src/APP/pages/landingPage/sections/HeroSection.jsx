@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import JoinSYTModal from "../../community/sections/JoinSYTModal";
 
 function HeroSection() {
@@ -11,6 +11,30 @@ function HeroSection() {
   function openModal() {
     setIsOpen(true);
   }
+
+  {/* Hero Image Animation*/}
+
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const ellipses = containerRef.current.querySelectorAll('.ellipse');
+
+    ellipses.forEach((ellipse) => {
+      ellipse.style.transitionDuration = `${Math.random() * 12 + 8}s`;
+
+      const animate = () => {
+        ellipse.style.transform = `translate(${Math.random() * 100 - 50}%, ${
+          Math.random() * 100 - 50
+        }%) rotate(${Math.random() * 0}deg)`;
+        setTimeout(() => {
+          requestAnimationFrame(animate);
+        }, 7000);
+      };
+
+      animate();
+    });
+  }, []);
+
   return (
     <section className="py-16 flex items-center justify-center flex-col md:gap-10 max-w-1440 mx-auto">
       {/* Hero section Description */}
@@ -36,104 +60,103 @@ function HeroSection() {
         </button>
       </div>
 
-      <div className="hidden lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6">
-        <div className="relative creative-shapes my-10">
-          <div className="ellipse115 rounded-full" />
-          <div className="ellipse116 rounded-full" />
-          <div className="ellipse117 rounded-full" />
-          <div className="ellipse118 rounded-full" />
-          <div className="ellipse132 rounded-full" />
-          <div className="ellipse119 rounded-full" />
-          <div className="ellipse133 rounded-full" />
-          <div className="ellipse134 rounded-full" />
-          <div className="ellipse172 rounded-full" />
-          <div className="ellipse173 rounded-full" />
-          <div className="ellipse174 rounded-full" />
-          <div className="ellipse175 rounded-full" />
-          <div className="ellipse176 rounded-full" />
-          <div className="ellipse135 rounded-full" />
-          <div className="ellipse136 rounded-full" />
-          <div className="ellipse120 rounded-full" />
-          <div className="ellipse124 rounded-full" />
-          <div className="ellipse125 rounded-full" />
-          <div className="ellipse126 rounded-full" />
-          <div className="ellipse121 rounded-full" />
-          <div className="ellipse127 rounded-full" />
-          <div className="ellipse128 rounded-full" />
-          <div className="ellipse129 rounded-full" />
-          <div className="ellipse130 rounded-full" />
-          <div className="ellipse1311 rounded-full" />
-          <div className="ellipse122 rounded-full" />
-          <div className="ellipse123 rounded-full" />
-          <div className="ellipse137 rounded-full" />
-          <div className="ellipse138 rounded-full" />
-          <div className="ellipse139 rounded-full" />
-          <div className="ellipse140 rounded-full" />
-          <div className="ellipse141 rounded-full" />
-          <div className="ellipse142 rounded-full" />
-          <div className="ellipse143 rounded-full" />
-          <div className="ellipse144 rounded-full" />
-          <div className="ellipse145 rounded-full" />
-          <div className="ellipse177 rounded-full" />
-          <div className="ellipse178 rounded-full" />
-          <div className="ellipse146 rounded-full" />
-          <div className="ellipse156 rounded-full" />
-          <div className="ellipse157 rounded-full" />
-          <div className="ellipse179 rounded-full" />
-          <div className="ellipse158 rounded-full" />
-          <div className="ellipse164 rounded-full" />
-          <div className="ellipse165 rounded-full" />
-          <div className="ellipse167 rounded-full" />
-          <div className="ellipse168 rounded-full" />
-          <div className="ellipse169 rounded-full" />
-          <div className="ellipse170 rounded-full" />
-          <div className="ellipse171 rounded-full" />
-          <div className="ellipse166 rounded-full" />
-          <div className="ellipse147 rounded-full" />
-          <div className="ellipse148 rounded-full" />
-          <div className="ellipse151 rounded-full" />
-          <div className="ellipse149 rounded-full" />
-          <div className="ellipse152 rounded-full" />
-          <div className="ellipse153 rounded-full" />
-          <div className="ellipse159 rounded-full" />
-          <div className="ellipse160 rounded-full" />
-          <div className="ellipse161 rounded-full" />
-          <div className="ellipse162 rounded-full" />
-          <div className="ellipse163 rounded-full" />
-          <div className="ellipse154 rounded-full" />
-          <div className="ellipse155 rounded-full" />
-          <div className="ellipse150 rounded-full" />
-          <div className="ellipse147 rounded-full" />
-          <div className="ellipse1411 rounded-full" />
-          <div className="ellipse128 rounded-full" />
-          <div className="ellipse142 rounded-full" />
-          <div className="ellipse175 rounded-full" />
-          <div className="ellipse146 rounded-full" />
-          <div className="ellipse159 rounded-full" />
-          <div className="ellipse167 rounded-full" />
-          <div className="ellipse160 rounded-full" />
-          <div className="ellipse118 rounded-full" />
-          <div className="ellipse138 rounded-full" />
-          <div className="ellipse141 rounded-full" />
-          <div className="ellipse157 rounded-full" />
-          <div className="ellipse132 rounded-full" />
-          <div className="ellipse131 rounded-full" />
-          <div className="ellipse136 rounded-full" />
-          <div className="ellipse124 rounded-full" />
-          <div className="ellipse164 rounded-full" />
-          <div className="ellipse165 rounded-full" />
-          <div className="ellipse148 rounded-full" />
-          <div className="ellipse152 rounded-full" />
-          <div className="ellipse153 rounded-full" />
-          <div className="ellipse155 rounded-full" />
-          <div className="ellipse127 rounded-full" />
-          <div className="ellipse117 rounded-full" />
+      <div className="lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6">
+        <div className="relative creative-shapes my-10"  ref={containerRef}>
+          <div className="ellipse ellipse115 rounded-full" />
+          <div className="ellipse ellipse116 rounded-full" />
+          <div className="ellipse ellipse117 rounded-full" />
+          <div className="ellipse ellipse118 rounded-full" />
+          <div className="ellipse ellipse132 rounded-full" />
+          <div className="ellipse ellipse119 rounded-full" />
+          <div className="ellipse ellipse133 rounded-full" />
+          <div className="ellipse ellipse134 rounded-full" />
+          <div className="ellipse ellipse172 rounded-full" />
+          <div className="ellipse ellipse173 rounded-full" />
+          <div className="ellipse ellipse174 rounded-full" />
+          <div className="ellipse ellipse175 rounded-full" />
+          <div className="ellipse ellipse176 rounded-full" />
+          <div className="ellipse ellipse135 rounded-full" />
+          <div className="ellipse ellipse136 rounded-full" />
+          <div className="ellipse ellipse120 rounded-full" />
+          <div className="ellipse ellipse124 rounded-full" />
+          <div className="ellipse ellipse125 rounded-full" />
+          <div className="ellipse ellipse126 rounded-full" />
+          <div className="ellipse ellipse121 rounded-full" />
+          <div className="ellipse ellipse127 rounded-full" />
+          <div className="ellipse ellipse128 rounded-full" />
+          <div className="ellipse ellipse129 rounded-full" />
+          <div className="ellipse ellipse130 rounded-full" />
+          <div className="ellipse ellipse1311 rounded-full" />
+          <div className="ellipse ellipse122 rounded-full" />
+          <div className="ellipse ellipse123 rounded-full" />
+          <div className="ellipse ellipse137 rounded-full" />
+          <div className="ellipse ellipse138 rounded-full" />
+          <div className="ellipse ellipse139 rounded-full" />
+          <div className="ellipse ellipse140 rounded-full" />
+          <div className="ellipse ellipse141 rounded-full" />
+          <div className="ellipse ellipse142 rounded-full" />
+          <div className="ellipse ellipse143 rounded-full" />
+          <div className="ellipse ellipse144 rounded-full" />
+          <div className="ellipse ellipse145 rounded-full" />
+          <div className="ellipse ellipse177 rounded-full" />
+          <div className="ellipse ellipse178 rounded-full" />
+          <div className="ellipse ellipse146 rounded-full" />
+          <div className="ellipse ellipse156 rounded-full" />
+          <div className="ellipse ellipse157 rounded-full" />
+          <div className="ellipse ellipse179 rounded-full" />
+          <div className="ellipse ellipse158 rounded-full" />
+          <div className="ellipse ellipse164 rounded-full" />
+          <div className="ellipse ellipse165 rounded-full" />
+          <div className="ellipse ellipse167 rounded-full" />
+          <div className="ellipse ellipse168 rounded-full" />
+          <div className="ellipse ellipse169 rounded-full" />
+          <div className="ellipse ellipse170 rounded-full" />
+          <div className="ellipse ellipse171 rounded-full" />
+          <div className="ellipse ellipse166 rounded-full" />
+          <div className="ellipse ellipse147 rounded-full" />
+          <div className="ellipse ellipse148 rounded-full" />
+          <div className="ellipse ellipse151 rounded-full" />
+          <div className="ellipse ellipse149 rounded-full" />
+          <div className="ellipse ellipse152 rounded-full" />
+          <div className="ellipse ellipse153 rounded-full" />
+          <div className="ellipse ellipse159 rounded-full" />
+          <div className="ellipse ellipse160 rounded-full" />
+          <div className="ellipse ellipse161 rounded-full" />
+          <div className="ellipse ellipse162 rounded-full" />
+          <div className="ellipse ellipse163 rounded-full" />
+          <div className="ellipse ellipse154 rounded-full" />
+          <div className="ellipse ellipse155 rounded-full" />
+          <div className="ellipse ellipse150 rounded-full" />
+          <div className="ellipse ellipse147 rounded-full" />
+          <div className="ellipse ellipse1411 rounded-full" />
+          <div className="ellipse ellipse128 rounded-full" />
+          <div className="ellipse ellipse142 rounded-full" />
+          <div className="ellipse ellipse175 rounded-full" />
+          <div className="ellipse ellipse146 rounded-full" />
+          <div className="ellipse ellipse159 rounded-full" />
+          <div className="ellipse ellipse167 rounded-full" />
+          <div className="ellipse ellipse160 rounded-full" />
+          <div className="ellipse ellipse118 rounded-full" />
+          <div className="ellipse ellipse138 rounded-full" />
+          <div className="ellipse ellipse141 rounded-full" />
+          <div className="ellipse ellipse157 rounded-full" />
+          <div className="ellipse ellipse132 rounded-full" />
+          <div className="ellipse ellipse131 rounded-full" />
+          <div className="ellipse ellipse136 rounded-full" />
+          <div className="ellipse ellipse124 rounded-full" />
+          <div className="ellipse ellipse164 rounded-full" />
+          <div className="ellipse ellipse165 rounded-full" />
+          <div className="ellipse ellipse148 rounded-full" />
+          <div className="ellipse ellipse152 rounded-full" />
+          <div className="ellipse ellipse153 rounded-full" />
+          <div className="ellipse ellipse155 rounded-full" />
+          <div className="ellipse ellipse127 rounded-full" />
+          <div className="ellipse ellipse117 rounded-full" />
         </div>
       </div>
 
       {/* Image Section */}
       <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
-
     </section>
   );
 }
