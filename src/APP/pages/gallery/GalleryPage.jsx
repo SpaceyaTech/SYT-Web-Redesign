@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { arrowCircleLeft } from "../../../assets/images/icons";
 import processPhotos from "../../../utilities/processPhotos";
+import SeoMetadata from "../../components/SeoMetadata";
 import photosData from "./data";
 import ImageCard from "./sections/ImageCard";
 
@@ -11,33 +12,46 @@ function GalleryPage() {
   const photos = processPhotos(photosData);
 
   return (
-    <main className="bg-[#d9d9d9]/30 font-spaceGrotesk pb-12">
-      <div className="max-w-[1440px] mx-auto flex flex-col gap-8">
-        <div className="flex md:items-center flex-col md:flex-row gap-4 justify-between pt-8 pl-2 md:pl-0">
-          <Link
-            to="/community"
-            className="border rounded-full bg-white p-1 w-fit"
-          >
-            <div className="flex-center bg-green-light rounded-full px-3 py-1.5 gap-2">
-              <img src={arrowCircleLeft} alt="arrow-left" className="size-5" />
-              <span className="capitalize text-green-header text-sm font-semibold">
-                Go Back
-              </span>
-            </div>
-          </Link>
+    <>
+      <SeoMetadata
+        title="Gallery"
+        description="SpaceYaTech gallery collection"
+        type="website"
+        url="https://www.spaceyatech.com/gallery"
+        ogImage="https://apis.spaceyatech.com/media/blog-images/syt.png"
+        ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
+      />
+      <main className="bg-[#d9d9d9]/30 font-spaceGrotesk pb-12">
+        <div className="max-w-[1440px] mx-auto flex flex-col gap-8">
+          <div className="flex md:items-center flex-col md:flex-row gap-4 justify-between pt-8 pl-2 md:pl-0">
+            <Link
+              to="/community"
+              className="border rounded-full bg-white p-1 w-fit"
+            >
+              <div className="flex-center bg-green-light rounded-full px-3 py-1.5 gap-2">
+                <img
+                  src={arrowCircleLeft}
+                  alt="arrow-left"
+                  className="size-5"
+                />
+                <span className="capitalize text-green-header text-sm font-semibold">
+                  Go Back
+                </span>
+              </div>
+            </Link>
 
-          <h1 className="text-base font-medium uppercase text-grey-neutral">
-            SpaceYaTech Gallery | Collection 2024
-          </h1>
-        </div>
+            <h1 className="text-base font-medium uppercase text-grey-neutral">
+              SpaceYaTech Gallery | Collection 2024
+            </h1>
+          </div>
 
-        {/* <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-0 grid-flow-dense">
+          {/* <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-0 grid-flow-dense">
           {photosData.map((photo) => (
             <ImageCard key={photo.id} photo={photo} />
           ))}
         </div> */}
 
-        {/* <div
+          {/* <div
           className="grid grid-cols-4 grid-rows-3 gap-4 grid-flow-dense"
           // style={{ gridAutoRows: "217px" }}
         >
@@ -71,7 +85,7 @@ function GalleryPage() {
           })}
         </div> */}
 
-        {/* <div
+          {/* <div
           className="grid grid-cols-4 grid-rows-3 grid-flow-dense gap-4"
           style={{ gridAutoRows: "108.5px" }}
         >
@@ -98,12 +112,13 @@ function GalleryPage() {
           </div>
         </div> */}
 
-        {/* Gallery library */}
-        <div className="overflow-y-auto h-full">
-          <ImageCard photos={photos} />
+          {/* Gallery library */}
+          <div className="overflow-y-auto h-full">
+            <ImageCard photos={photos} />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 
