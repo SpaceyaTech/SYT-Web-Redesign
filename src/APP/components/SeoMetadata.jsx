@@ -7,6 +7,7 @@ export default function SeoMetadata({
   url,
   ogImage = "https://apis.spaceyatech.com/media/blog-images/syt.png",
   ogImageAlt = "SpaceYaTech logo, social media handles, website URL, email, and more on a muted background.",
+  siteName = "SpaceYaTech",
 }) {
   return (
     <Helmet prioritizeSeoTags>
@@ -27,7 +28,7 @@ export default function SeoMetadata({
       <meta property="og:image:height" content="480" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:description" content={description} />
-      <meta property="og:site_name" content="SpaceYaTech" />
+      <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="en_GB" />
       {/* End Optional OG metadata tags */}
