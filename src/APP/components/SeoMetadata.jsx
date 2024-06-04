@@ -26,7 +26,6 @@ export default function SeoMetadata({
       {/* Optional OG metadata tags */}
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="480" />
-      <meta property="og:image:type" content="image/png" />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
