@@ -1,4 +1,3 @@
-import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
@@ -17,7 +16,6 @@ import {
   EditorProvider,
   Toolbar,
 } from "react-simple-wysiwyg";
-import * as yup from "yup";
 
 import useChaptersData from "../../../../hooks/Queries/community/useChaptersData";
 import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
@@ -51,36 +49,6 @@ function AddEventPage() {
       document.getElementById(id).click();
   };
 
-  const validationSchema = yup.object().shape({
-    name: yup.string().required("Event name is required."),
-    about: yup.string().required("Event about details are reqired."),
-    link: yup
-      .string()
-      .url("Enter a valid url.")
-      .required("Event link is required."),
-    location: yup
-      .string()
-      .required("Event location (Building, region, etc) is required."),
-    mode: yup.string().required("Event mode is required."),
-    city: yup.string().required("Event city is required."),
-    country: yup.string().required("Event country is required."),
-    date: yup.string().required("Event date is required"),
-    start_time: yup.string().required("Event starting time is required."),
-    end_time: yup.string().required("Event ending time is required."),
-    poster: yup.mixed().required("Event poster is required."),
-    category: yup.string().when("$newCategory", {
-      is: false,
-      then: (schema) => schema.required("Event category is required."),
-      otherwise: (schema) => schema,
-    }),
-    category_name: yup.string().when("$newCategory", {
-      is: true,
-      then: (schema) => schema.required("Enter a new category name."),
-      otherwise: (schema) => schema,
-    }),
-    chapter: yup.string().required("Associated chapter is required."),
-  });
-
   const {
     register,
     control,
@@ -97,7 +65,6 @@ function AddEventPage() {
       mode: "Physical",
     },
     mode: "onChange",
-    resolver: yupResolver(validationSchema),
     context: { newCategory },
   });
 
@@ -239,7 +206,9 @@ function AddEventPage() {
                       name="event-name"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="Event Name"
-                      {...register("name")}
+                      {...register("name", {
+                        required: "Event name is required.",
+                      })}
                     />
                     {errors.name && (
                       <span className="text-xs text-red-500">
@@ -247,7 +216,6 @@ function AddEventPage() {
                       </span>
                     )}
                   </div>
-
                   {statusEventsCategories === "error" && (
                     <div
                       className={`w-full mt-4 ${
@@ -258,7 +226,9 @@ function AddEventPage() {
                         type="text"
                         className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                         placeholder="Event Category"
-                        {...register("category-name")}
+                        {...register("category_name", {
+                          required: "Enter a new category name.",
+                        })}
                       />
                       {errors.category_name && (
                         <span className="text-xs text-red-500">
@@ -276,9 +246,11 @@ function AddEventPage() {
                         placeholder="Event Category"
                         className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                         {...register("category", {
-                          onChange: (event) =>
-                            setSelectedEventCategory(event.target.value),
+                          required: "Event category is required.",
                         })}
+                        onChange={(event) =>
+                          setSelectedEventCategory(event.target.value)
+                        }
                       >
                         {eventsCategories.map((eventsCategory) => (
                           <option
@@ -297,20 +269,21 @@ function AddEventPage() {
                       )}
                     </div>
                   )}
-
                   {selectedEventCategory === "" && newCategory && (
                     <input
                       type="text"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="Event Category"
-                      {...register("category_name")}
+                      {...register("category_name", {
+                        required: "Enter a new category name.",
+                      })}
                     />
                   )}
                   {errors.category_name && (
                     <span className="text-xs text-red-500">
                       {errors.category_name.message}
                     </span>
-                  )}
+                  )}{" "}
                   <div className="container w-full mt-4">
                     <EditorProvider>
                       <Controller
@@ -355,7 +328,9 @@ function AddEventPage() {
                       name="chapter"
                       placeholder="SYT Chapter"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
-                      {...register("chapter")}
+                      {...register("chapter", {
+                        required: "Associated chapter is required.",
+                      })}
                     >
                       {chaptersData.map((chapter) => (
                         <option key={chapter.id} value={chapter.id}>
@@ -374,7 +349,9 @@ function AddEventPage() {
                       name="mode"
                       placeholder="Delivery Mode"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
-                      {...register("mode")}
+                      {...register("mode", {
+                        required: "Event mode is required.",
+                      })}
                     >
                       <option value="Physical">Physical</option>
                       <option value="Virtual">Virtual</option>
@@ -392,7 +369,10 @@ function AddEventPage() {
                       type="text"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="Location of the Event"
-                      {...register("location")}
+                      {...register("location", {
+                        required:
+                          "Event location (Building, region, etc) is required.",
+                      })}
                     />
                     {errors.location && (
                       <span className="text-xs text-red-500">
@@ -405,7 +385,9 @@ function AddEventPage() {
                       type="text"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="City"
-                      {...register("city")}
+                      {...register("city", {
+                        required: "Event city is required.",
+                      })}
                     />
                     {errors.city && (
                       <span className="text-xs text-red-500">
@@ -420,7 +402,9 @@ function AddEventPage() {
                       type="text"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="Country"
-                      {...register("country")}
+                      {...register("country", {
+                        required: "Event country is required.",
+                      })}
                     />
                     {errors.country && (
                       <span className="text-xs text-red-500">
@@ -433,7 +417,13 @@ function AddEventPage() {
                       type="text"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="Event Link"
-                      {...register("link")}
+                      {...register("link", {
+                        required: "Event link is required.",
+                        pattern: {
+                          value: /^((ftp|http|https):\/\/)?[^ "]+\.[^ "]+$/i,
+                          message: "Enter a valid url.",
+                        },
+                      })}
                     />
                     {errors.link && (
                       <span className="text-xs text-red-500">
@@ -447,7 +437,9 @@ function AddEventPage() {
                       type="date"
                       className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                       placeholder="Select Date"
-                      {...register("date")}
+                      {...register("date", {
+                        required: "Event date is required.",
+                      })}
                     />
                     {errors.date && (
                       <span className="text-xs text-red-500">
@@ -462,7 +454,9 @@ function AddEventPage() {
                         type="time"
                         className="mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                         placeholder="Start Time"
-                        {...register("start_time")}
+                        {...register("start_time", {
+                          required: "Event starting time is required.",
+                        })}
                       />
                       {errors.start_time && (
                         <span className="text-xs text-red-500 mt-1">
@@ -476,7 +470,9 @@ function AddEventPage() {
                         type="time"
                         className="mt-4 sm:mt-1 px-3 py-3 bg-white border shadow-sm border-[#656767] placeholder-[#7E8180] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded-md sm:text-sm focus:ring-1"
                         placeholder="End Time"
-                        {...register("end_time")}
+                        {...register("end_time", {
+                          required: "Event ending time is required.",
+                        })}
                       />
                       {errors.end_time && (
                         <span className="text-xs text-red-500 mt-1">
