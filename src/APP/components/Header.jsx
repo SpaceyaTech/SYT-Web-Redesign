@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
-import { cancel, menu } from "../../assets/images/icons";
+import { AiOutlineClose } from "react-icons/ai"; 
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+
 import logo from "../../assets/images/sytLogo.png";
 
 const navLinks = [
@@ -67,7 +69,8 @@ function Header() {
             className="md:hidden"
             onClick={() => setShowNavlinks(false)}
           >
-            <LazyLoadImage src={cancel} alt="cancel" />
+            <AiOutlineClose className="h-6 w-6 text-white" aria-hidden="true" />{" "}
+            {/* Close Icon */}
           </button>
         ) : (
           <button
@@ -75,7 +78,8 @@ function Header() {
             className="md:hidden"
             onClick={() => setShowNavlinks(true)}
           >
-            <LazyLoadImage src={menu} alt="menu" />
+            <HiOutlineMenuAlt4 className="h-6 w-6 text-white" aria-hidden="true" />{" "}
+            {/* Menu Icon */}
           </button>
         )}
 

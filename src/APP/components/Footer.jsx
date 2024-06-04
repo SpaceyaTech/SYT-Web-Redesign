@@ -6,13 +6,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import Terms from "../../assets/documentation/terms-and-conditions.pdf";
 import {
-  linkedin,
-  twitter,
-  spotify,
-  youtube,
-  instagram,
-  facebook,
-} from "../../assets/images/socials";
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaSpotify,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import logo from "../../assets/images/sytLogo.png";
 
 function Footer() {
@@ -22,28 +22,32 @@ function Footer() {
   const socialLinks = [
     {
       href: "https://www.facebook.com/spaceyatech",
-      src: facebook,
+      icon: <FaFacebook size="1.8em" />,
       alt: "facebook",
     },
     {
       href: "https://www.instagram.com/spaceyatech/",
-      src: instagram,
+      icon: <FaInstagram size="1.8em" />,
       alt: "instagram",
     },
-    { href: "https://x.com/SpaceYaTech", src: twitter, alt: "twitter" },
+    {
+      href: "https://x.com/SpaceYaTech",
+      icon: <FaXTwitter size="1.8em" />,
+      alt: "twitter",
+    },
     {
       href: "https://linkedin.com/company/spaceyatech",
-      src: linkedin,
+      icon: <FaLinkedin size="1.8em" />,
       alt: "linkedIn",
     },
     {
       href: "https://www.youtube.com/@spaceyatech",
-      src: youtube,
+      icon: <FaYoutube size="1.8em" />,
       alt: "youtube",
     },
     {
       href: "https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n",
-      src: spotify,
+      icon: <FaSpotify size="1.8em" />,
       alt: "spotify",
     },
   ];
@@ -90,7 +94,6 @@ function Footer() {
               className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
             />
             {/* socials */}
-
             <div className="flex gap-4 items-center py-4">
               {socialLinks.slice(0, 4).map((link) => (
                 <a
@@ -98,12 +101,9 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-7 h-7 text-white"
                 >
-                  <LazyLoadImage
-                    src={link.src}
-                    alt={link.alt}
-                    className="w-7 h-7"
-                  />
+                  {link.icon}
                 </a>
               ))}
             </div>
@@ -114,25 +114,20 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-7 h-7 text-white"
                 >
-                  <LazyLoadImage
-                    src={link.src}
-                    alt={link.alt}
-                    className="w-7 h-7"
-                  />
+                  {link.icon}
                 </a>
               ))}
             </div>
           </div>
 
           {/* Footer links */}
-
           {footerLinks.map((section) => (
             <div key={crypto.randomUUID()} className="flex flex-col gap-8">
               <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
                 {section.title}
               </h2>
-
               <ul className="flex flex-col gap-5 list-none text-sm font-light">
                 {section.links.map((link) =>
                   link.href ? (
@@ -162,7 +157,6 @@ function Footer() {
               <h2 className="text-[#00FFC3] font-bold sm:text-xl text-lg leading-9">
                 Subscribe to our Newsletter
               </h2>
-
               <div className="flex flex-col gap-5 text-sm font-light">
                 <p className="text-sm left-6">
                   Subscribe to our newsletter to get your
@@ -171,7 +165,6 @@ function Footer() {
                   <br />
                   special offers
                 </p>
-
                 <form className="flex items-center">
                   <input
                     type="email"
@@ -189,18 +182,11 @@ function Footer() {
             </div>
           </div>
         </div>
-
         <div className="sm:mt-14 mt-10">
           <h1 className="text-center text-[#00FFC3] my-4 md:my-8">
             &copy; {year} SpaceYaTech | All Rights Reserved
           </h1>
         </div>
-        {/* <LazyLoadImage
-          src={backup}
-          alt="backup"
-          className="w-7 h-7"
-
-        /> */}
       </div>
     </footer>
   );

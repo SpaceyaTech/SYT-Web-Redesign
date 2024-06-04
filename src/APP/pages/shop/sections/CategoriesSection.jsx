@@ -1,5 +1,4 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaArrowRight } from 'react-icons/fa';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
@@ -56,10 +55,10 @@ function CategoriesSection() {
                 </p>
                 <Link
                   to={`/shop/category/${category.name}`}
-                  className="text-primary text-xs sm:text-sm"
+                  className="text-primary text-xs sm:text-sm flex items-center"
                 >
                   View More
-                  <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
+                  <FaArrowRight className="pl-2 size-5" />
                 </Link>
               </div>
             </div>

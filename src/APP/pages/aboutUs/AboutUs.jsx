@@ -16,7 +16,7 @@ function AboutUs() {
     <div className="text-[#323433] max-w-[1440px] mx-auto">
       <HeroSection />
       <MissionVisionSection />
-      <LeadershipSection />
+     <LeadershipSection />
       <PartnerCTA />
     </div>
   );

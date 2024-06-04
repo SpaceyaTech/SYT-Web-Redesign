@@ -1,6 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FaCheck } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 function StepIndicator({ steps, currentStep }) {
@@ -31,10 +30,7 @@ function StepIndicator({ steps, currentStep }) {
             >
               <div className="text-emerald-900 text-sm px-2 font-bold leading-none">
                 {step.status === "completed" ? (
-                  <FontAwesomeIcon
-                    icon={faCheck}
-                    style={{ color: "#fafafa" }}
-                  />
+                  <FaCheck className="text-[#fafafa]" />
                 ) : (
                   step.section
                 )}

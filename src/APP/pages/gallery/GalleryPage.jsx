@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { arrowCircleLeft } from "../../../assets/images/icons";
+import { PiArrowCircleLeftLight } from "react-icons/pi";
 import processPhotos from "../../../utilities/processPhotos";
 import photosData from "./data";
 import ImageCard from "./sections/ImageCard";
@@ -19,7 +19,10 @@ function GalleryPage() {
             className="border rounded-full bg-white p-1 w-fit"
           >
             <div className="flex-center bg-green-light rounded-full px-3 py-1.5 gap-2">
-              <img src={arrowCircleLeft} alt="arrow-left" className="size-5" />
+              <PiArrowCircleLeftLight
+                className="text-green-header"
+                size="25px"
+              />
               <span className="capitalize text-green-header text-sm font-semibold">
                 Go Back
               </span>
