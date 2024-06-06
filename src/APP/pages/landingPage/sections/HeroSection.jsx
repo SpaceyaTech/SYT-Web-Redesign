@@ -127,31 +127,7 @@ function HeroSection() {
           <div className="ellipse ellipse154 rounded-full" />
           <div className="ellipse ellipse155 rounded-full" />
           <div className="ellipse ellipse150 rounded-full" />
-          <div className="ellipse ellipse147 rounded-full" />
           <div className="ellipse ellipse1411 rounded-full" />
-          <div className="ellipse ellipse128 rounded-full" />
-          <div className="ellipse ellipse142 rounded-full" />
-          <div className="ellipse ellipse175 rounded-full" />
-          <div className="ellipse ellipse146 rounded-full" />
-          <div className="ellipse ellipse159 rounded-full" />
-          <div className="ellipse ellipse167 rounded-full" />
-          <div className="ellipse ellipse160 rounded-full" />
-          <div className="ellipse ellipse118 rounded-full" />
-          <div className="ellipse ellipse138 rounded-full" />
-          <div className="ellipse ellipse141 rounded-full" />
-          <div className="ellipse ellipse157 rounded-full" />
-          <div className="ellipse ellipse132 rounded-full" />
-          <div className="ellipse ellipse131 rounded-full" />
-          <div className="ellipse ellipse136 rounded-full" />
-          <div className="ellipse ellipse124 rounded-full" />
-          <div className="ellipse ellipse164 rounded-full" />
-          <div className="ellipse ellipse165 rounded-full" />
-          <div className="ellipse ellipse148 rounded-full" />
-          <div className="ellipse ellipse152 rounded-full" />
-          <div className="ellipse ellipse153 rounded-full" />
-          <div className="ellipse ellipse155 rounded-full" />
-          <div className="ellipse ellipse127 rounded-full" />
-          <div className="ellipse ellipse117 rounded-full" />
         </div>
       </div>
 
