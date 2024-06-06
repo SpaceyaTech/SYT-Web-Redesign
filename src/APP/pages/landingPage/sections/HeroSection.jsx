@@ -17,7 +17,7 @@ function HeroSection() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const ellipses = containerRef.current.querySelectorAll('.ellipse');
+    const ellipses = containerRef.current.querySelectorAll(".ellipse");
 
     ellipses.forEach((ellipse) => {
       ellipse.style.transitionDuration = `${Math.random() * 12 + 8}s`;
@@ -60,8 +60,8 @@ function HeroSection() {
         </button>
       </div>
 
-      <div className="lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6">
-        <div className="relative creative-shapes my-10"  ref={containerRef}>
+      <div className="hidden md:block lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6">
+        <div className="relative creative-shapes my-10" ref={containerRef}>
           <div className="ellipse ellipse115 rounded-full" />
           <div className="ellipse ellipse116 rounded-full" />
           <div className="ellipse ellipse117 rounded-full" />
