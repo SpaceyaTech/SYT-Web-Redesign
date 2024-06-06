@@ -1,7 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
+import { createBrowserRouter } from "react-router-dom";
 
-// Lazy loading components
+// Lazy FallbackLoader components
 import {
   AboutUs,
   CommunityPage,
@@ -28,14 +28,13 @@ import {
   Blogs,
   EventsPage,
 } from "../APP";
-
-const Loading = () => <div>Loading...</div>; // Fallback component while loading
+import { FallbackLoader } from "../APP/components";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<FallbackLoader />}>
         <Layout />
       </Suspense>
     ),
@@ -43,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <LandingPage />
           </Suspense>
         ),
@@ -51,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <Products />
           </Suspense>
         ),
@@ -59,7 +58,7 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <AboutUs />
           </Suspense>
         ),
@@ -67,7 +66,7 @@ const router = createBrowserRouter([
       {
         path: "/community",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <CommunityPage />
           </Suspense>
         ),
@@ -75,7 +74,7 @@ const router = createBrowserRouter([
       {
         path: "/Gallery",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <GalleryPage />
           </Suspense>
         ),
@@ -83,7 +82,7 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <Blogs />
           </Suspense>
         ),
@@ -91,7 +90,7 @@ const router = createBrowserRouter([
       {
         path: "/blogs/:titleSlug",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <Blog2 />
           </Suspense>
         ),
@@ -99,7 +98,7 @@ const router = createBrowserRouter([
       {
         path: "/events",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <EventsPage />
           </Suspense>
         ),
@@ -107,7 +106,7 @@ const router = createBrowserRouter([
       // {
       //   path: "/events/:id",
       //   element: (
-      //     <Suspense fallback={<Loading />}>
+      //     <Suspense fallback={<FallbackLoader />}>
       //       <SingleEvent />
       //     </Suspense>
       //   ),
@@ -115,7 +114,7 @@ const router = createBrowserRouter([
       {
         path: "/chapter/:id",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <IndividualChapter />
           </Suspense>
         ),
@@ -123,7 +122,7 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <Homepage />
           </Suspense>
         ),
@@ -131,7 +130,7 @@ const router = createBrowserRouter([
       {
         path: "/shop/category/:category",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <CategoriesProducts />
           </Suspense>
         ),
@@ -139,7 +138,7 @@ const router = createBrowserRouter([
       {
         path: "/shop/item/:id",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <ProductDisplay />
           </Suspense>
         ),
@@ -147,7 +146,7 @@ const router = createBrowserRouter([
       {
         path: "/shop/checkout",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <Checkout />
           </Suspense>
         ),
@@ -155,7 +154,7 @@ const router = createBrowserRouter([
       {
         path: "/resources",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <Resources />
           </Suspense>
         ),
@@ -163,7 +162,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <LogIn />
           </Suspense>
         ),
@@ -171,7 +170,7 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <SignUp />
           </Suspense>
         ),
@@ -179,7 +178,7 @@ const router = createBrowserRouter([
       {
         path: "/forgot-password",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <ForgotPassword />
           </Suspense>
         ),
@@ -187,7 +186,7 @@ const router = createBrowserRouter([
       {
         path: "/reset-password",
         element: (
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<FallbackLoader />}>
             <ResetPassword />
           </Suspense>
         ),
@@ -197,7 +196,7 @@ const router = createBrowserRouter([
   {
     path: "/error-400",
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<FallbackLoader />}>
         <Error400 />
       </Suspense>
     ),
@@ -205,7 +204,7 @@ const router = createBrowserRouter([
   {
     path: "/error-403",
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<FallbackLoader />}>
         <Error403 />
       </Suspense>
     ),
@@ -213,7 +212,7 @@ const router = createBrowserRouter([
   {
     path: "/*",
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<FallbackLoader />}>
         <Error404 />
       </Suspense>
     ),
@@ -221,7 +220,7 @@ const router = createBrowserRouter([
   {
     path: "/error-500",
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<FallbackLoader />}>
         <Error500 />
       </Suspense>
     ),
