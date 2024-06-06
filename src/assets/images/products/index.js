@@ -23,7 +23,7 @@ import jira from "./stacks/jira.png";
 import kubernetes from "./stacks/kubernetes.png";
 
 export {
-  mentorlst,
+ // mentorlst,
   innovation,
   colabs,
   figma,
@@ -38,8 +38,8 @@ export {
   java,
   laravel,
   python,
-  git,
-  docker,
-  jira,
+ // git,
+ // docker,
+ // jira,
   kubernetes,
 };

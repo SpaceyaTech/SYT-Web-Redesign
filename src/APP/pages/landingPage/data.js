@@ -1,19 +1,6 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
-import {
-  ctfroom,
-  DevOps,
-  Propel,
-  moringa,
-  chimoney,
-  Kushite,
-  osca,
-  cytonn,
-  reactke,
-  gdg,
-  spheron,
-  mastercraft,
-} from "@/assets/images/hero-section";
+
 
 import {
   RichardMulandi,

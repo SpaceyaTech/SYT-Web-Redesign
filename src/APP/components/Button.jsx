@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { arrowRight } from "@/assets/images/icons";
 
 function Button({ link, title }) {
   return (

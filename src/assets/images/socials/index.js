@@ -10,10 +10,10 @@ import whatsapp from "./whatsapp.svg";
 export {
   linkedin,
   facebook,
-  twitter,
-  instagram,
-  spotify,
-  discord,
-  youtube,
+ // twitter,
+//  instagram,
+//  spotify,
+//  discord,
+//  youtube,
   whatsapp,
 };

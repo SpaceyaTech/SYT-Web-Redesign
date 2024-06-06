@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import { arrowRight } from "@/assets/images/icons";
 
 function GoBackBtn() {
   return (
