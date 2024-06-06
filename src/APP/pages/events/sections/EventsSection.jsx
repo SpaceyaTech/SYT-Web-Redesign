@@ -88,7 +88,7 @@ function EventsSection() {
         <div className="w-full flex items-center flex-col">
           <div className="flex items-center justify-between mb-6 gap-12">
             {isSuccess && (
-              <div className="flex items-center justify-center space-x-4 w-full md:w-fit mx-auto overflow-auto border border-red-400">
+              <div className="flex items-center justify-center space-x-4 w-full md:w-fit mx-auto overflow-auto">
                 {uniqueCategory.map((category) => (
                   <button
                     key={category}
