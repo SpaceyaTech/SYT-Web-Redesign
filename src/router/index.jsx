@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 
-// Lazy loading components
 import {
   AboutUs,
   CommunityPage,
@@ -29,7 +28,7 @@ import {
   EventsPage,
 } from "../APP";
 
-const Loading = () => <div>Loading...</div>; // Fallback component while loading
+const Loading = () => <div>Loading...</div>; 
 
 const router = createBrowserRouter([
   {
