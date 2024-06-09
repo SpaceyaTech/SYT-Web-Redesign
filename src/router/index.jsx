@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import React, { Suspense } from "react";
 
 // Lazy FallbackLoader components
 import {
