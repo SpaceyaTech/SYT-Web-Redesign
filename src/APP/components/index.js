@@ -6,6 +6,7 @@ export { default as FAQ } from "./FAQ";
 export { default as Footer } from "./Footer";
 export { default as GoBackBtn } from "./GoBackBtn";
 export { default as Header } from "./Header";
+export { default as FallbackLoader } from "./FallbackLoader";
 export { default as Loader } from "./Loader";
 export { default as PodcastCard } from "./PodcastCard";
 export { default as LandingWrapper } from "./LandingWrapper";
