@@ -24,7 +24,7 @@ import {
   ResetPassword,
   Resources,
   SignUp,
-  // SingleEvent,
+  SingleEvent,
   Blogs,
   EventsPage,
 } from "../APP";
@@ -103,14 +103,14 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      // {
-      //   path: "/events/:id",
-      //   element: (
-      //     <Suspense fallback={<FallbackLoader />}>
-      //       <SingleEvent />
-      //     </Suspense>
-      //   ),
-      // },
+      {
+        path: "/events/:id",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <SingleEvent />
+          </Suspense>
+        ),
+      },
       {
         path: "/chapter/:id",
         element: (
@@ -225,6 +225,40 @@ const router = createBrowserRouter([
       </Suspense>
     ),
   },
+  // {
+  //   path: "/admin",
+  //   element: <AdminLayout />,
+  //   children: [
+  //     {
+  //       path: "/admin",
+  //       element: <AllChaptersPage />,
+  //     },
+  //     {
+  //       path: "/admin/all-chapters",
+  //       element: <AllChaptersPage />,
+  //     },
+  //     {
+  //       path: "/admin/events",
+  //       element: <AllEventsPage />,
+  //     },
+  //     {
+  //       path: "/admin/add-chapters",
+  //       element: <AddChapterPage />,
+  //     },
+  //     {
+  //       path: "/admin/events",
+  //       element: <AllEventsPage />,
+  //     },
+  //     {
+  //       path: "/admin/events/add-event",
+  //       element: <AddEventPage />,
+  //     },
+  //     {
+  //       path: "/admin/events/update-event",
+  //       element: <UpdateEventPage />,
+  //     },
+  //   ],
+  // },
 ]);
 
 export default router;
