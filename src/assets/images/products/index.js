@@ -20,11 +20,9 @@ import python from "./stacks/python.png";
 import git from "./stacks/git.png";
 import docker from "./stacks/docker.png";
 import jira from "./stacks/jira.png";
-import kubernetes from "./stacks/kubernetes.png";
 
 export {
   mentorlst,
-  innovation,
   colabs,
   figma,
   notion,
@@ -41,5 +39,4 @@ export {
   git,
   docker,
   jira,
-  kubernetes,
 };

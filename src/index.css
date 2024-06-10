@@ -204,24 +204,20 @@
 
 /* Hero Image */
 
-/* Frame 2085663307 */
-
-.frame {
-  position: absolute;
-  width: 1440px;
-  height: 519px;
-  left: calc(50% - 1440px / 2);
-  top: 466px;
-}
-
 /* Creative Shapes */
 
 .creative-shapes {
-  position: absolute;
+  position: relative;
   width: 1432px;
   height: 519px;
   left: 0px;
   top: 0px;
+}
+
+.ellipse {
+  position: absolute;
+  border-radius: 50%;
+  transition: transform 3s, filter 3s;
 }
 
 /* Ellipse 115 */
