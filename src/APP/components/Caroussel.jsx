@@ -1,14 +1,10 @@
-import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import {
-  arrowCircleLeft,
-  arrowCircleRight,
-  greyLinkedin,
-  greyTwitter,
-} from "../../assets/images/icons";
+import { FaBriefcase } from "react-icons/fa";
+import { PiArrowCircleLeft, PiArrowCircleRight } from "react-icons/pi";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Caroussel({ CarousselData }) {
   const carouselRef = useRef();
@@ -42,16 +38,11 @@ function Caroussel({ CarousselData }) {
             <div className="bg-green-light flex flex-col gap-2 w-full h-2/6 p-3 rounded-b-2xl">
               <p className=" text-2xl font-medium">{name}</p>
               <p className="flex gap-4 items-center text-base font-light text-grey-neutral space-x-4">
-                <FontAwesomeIcon icon={faBriefcase} />
+                <FaBriefcase />
                 {title}
               </p>
               <p className="flex items-center text-base font-light text-grey-neutral space-x-4">
-                <img
-                  src={greyLinkedin}
-                  alt="Linkedin logo"
-                  width="16"
-                  height="16"
-                />
+                <FaLinkedinIn />
 
                 <a
                   href={linkedin.href}
@@ -64,12 +55,7 @@ function Caroussel({ CarousselData }) {
               </p>
               {twitter.username && (
                 <p className="flex items-center text-base font-light text-grey-neutral space-x-4">
-                  <img
-                    src={greyTwitter}
-                    alt="Twitter logo"
-                    width="16"
-                    height="16"
-                  />
+                  <FaXTwitter />
                   <a
                     href={twitter.href}
                     target="_blank"
@@ -86,10 +72,10 @@ function Caroussel({ CarousselData }) {
       </div>
       <div className="flex justify-center gap-4">
         <button type="button" onClick={() => scroll(-400)}>
-          <img src={arrowCircleLeft} alt="left" />
+          <PiArrowCircleLeft className="text-green-header size-16" />
         </button>
         <button type="button" onClick={() => scroll(400)}>
-          <img src={arrowCircleRight} alt="right" />
+          <PiArrowCircleRight className="text-green-header size-16" />
         </button>
       </div>
     </section>

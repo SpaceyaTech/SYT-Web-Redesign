@@ -2,9 +2,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, Link } from "react-router-dom";
+import { AiOutlineClose, AiOutlineDelete } from "react-icons/ai"; // Import react-icons
 
-import CloseIcon from "../../../assets/images/icons/close-icon.svg";
-import DeleteIcon from "../../../assets/images/icons/delete-icon.svg";
 import SampleImg from "../../../assets/images/shop-page/main-sample.png";
 import Sample3 from "../../../assets/images/shop-page/sample3.png";
 import { useDeleteSwag } from "../../../hooks/Mutations/shop/useCartSwagg";
@@ -130,7 +129,11 @@ function CartDrawer({ open, setOpen }) {
                           onClick={() => setOpen(false)}
                         >
                           <span className="sr-only">Close panel</span>
-                          <LazyLoadImage src={CloseIcon} alt="close" />
+                          <AiOutlineClose
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                          />{" "}
+                          {/* Close Icon */}
                         </button>
                       </div>
                     </div>
@@ -145,88 +148,75 @@ function CartDrawer({ open, setOpen }) {
                               (cartProducts?.cart_items
                                 ? cartProducts.cart_items
                                 : cartProducts
-                              )?.map(
-                                // ({
-                                //   id,
-                                //   product: {
-                                //     id: productId,
-                                //     image,
-                                //     name,
-                                //     price,
-                                //     size,
-                                //   },
-                                //   quantity,
-                                // })
-                                (cartProduct) => (
-                                  <li
-                                    // key={cartProduct.id || cartProduct.swagg_id}
-                                    key={crypto.randomUUID()}
-                                    className="flex py-6 space-x-4 sm:space-x-16"
-                                  >
-                                    <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                                      <LazyLoadImage
-                                        src={`https://apis.spaceyatech.com${
-                                          cartProduct.image ||
-                                          cartProduct.product?.image
-                                        }`}
-                                        alt={
-                                          cartProduct.name ||
-                                          cartProduct.product?.name
-                                        }
-                                        className="h-full w-full object-cover object-center"
+                              )?.map((cartProduct) => (
+                                <li
+                                  key={crypto.randomUUID()}
+                                  className="flex py-6 space-x-4 sm:space-x-16"
+                                >
+                                  <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
+                                    <LazyLoadImage
+                                      src={`https://apis.spaceyatech.com${
+                                        cartProduct.image ||
+                                        cartProduct.product?.image
+                                      }`}
+                                      alt={
+                                        cartProduct.name ||
+                                        cartProduct.product?.name
+                                      }
+                                      className="h-full w-full object-cover object-center"
+                                    />
+                                  </div>
+
+                                  <div className="ml-4 flex flex-1 flex-col space-y-14">
+                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                      <h3>
+                                        <p className="text-base md:text-xl">
+                                          {" "}
+                                          <Link
+                                            to={`/shop/item/${
+                                              cartProduct.productId ||
+                                              cartProduct.swagg_id
+                                            }`}
+                                          >
+                                            {cartProduct.name ||
+                                              cartProduct.product?.name}
+                                          </Link>
+                                        </p>
+                                      </h3>
+                                      <button
+                                        type="button"
+                                        className="flex justify-end"
+                                        onClick={() => {
+                                          handleDeleteSwag(
+                                            cartProduct.id ||
+                                              cartProduct.swagg_id
+                                          );
+                                        }}
+                                      >
+                                        <AiOutlineDelete
+                                          className="h-6 w-6"
+                                          aria-hidden="true"
+                                        />{" "}
+                                        {/* Delete Icon */}
+                                      </button>
+                                    </div>
+                                    <div className="flex flex-1 items-end justify-between text-sm">
+                                      <p className="text-xl md:text-2xl font-bold">
+                                        Ksh{" "}
+                                        {cartProduct.price ||
+                                          cartProduct.product?.price}
+                                      </p>
+
+                                      {/* Count thing reason out */}
+                                      <Counter
+                                        className="h-8 sm:h-12 w-24 sm:w-32"
+                                        setCount={setCount}
+                                        count={cartProduct.quantity}
                                       />
                                     </div>
-
-                                    <div className="ml-4 flex flex-1 flex-col space-y-14">
-                                      <div className="flex justify-between text-base font-medium text-gray-900">
-                                        <h3>
-                                          <p className="text-base md:text-xl">
-                                            {" "}
-                                            <Link
-                                              to={`/shop/item/${
-                                                cartProduct.productId ||
-                                                cartProduct.swagg_id
-                                              }`}
-                                            >
-                                              {cartProduct.name ||
-                                                cartProduct.product?.name}
-                                            </Link>
-                                          </p>
-                                        </h3>
-                                        <button
-                                          type="button"
-                                          className="flex justify-end"
-                                          onClick={() => {
-                                            handleDeleteSwag(
-                                              cartProduct.id ||
-                                                cartProduct.swagg_id
-                                            );
-                                          }}
-                                        >
-                                          <LazyLoadImage
-                                            src={DeleteIcon}
-                                            alt="delete button"
-                                          />
-                                        </button>
-                                      </div>
-                                      <div className="flex flex-1 items-end justify-between text-sm">
-                                        <p className="text-xl md:text-2xl font-bold">
-                                          Ksh{" "}
-                                          {cartProduct.price ||
-                                            cartProduct.product?.price}
-                                        </p>
-
-                                        {/* Count thing reason out */}
-                                        <Counter
-                                          className="h-8 sm:h-12 w-24 sm:w-32"
-                                          setCount={setCount}
-                                          count={cartProduct.quantity}
-                                        />
-                                      </div>
-                                    </div>
-                                  </li>
-                                )
-                              )}
+                                  </div>
+                                </li>
+                              ))}
                           </ul>
                         </div>
                       </div>

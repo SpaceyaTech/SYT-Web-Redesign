@@ -3,6 +3,7 @@ import { Tab } from "@headlessui/react";
 import React, { useState } from "react";
 
 import { search } from "../../../../assets/images/resources-page";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { resourcesData } from "./data";
 import ResourceCard from "./ResourceCard";
 
@@ -41,11 +42,9 @@ function ResourcesSection() {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <LazyLoadImage 
-            src={search}
-            alt="search"
-            className="p-2 cursor-pointer"
-          />
+          <span className="p-2">
+            <FaMagnifyingGlass className="cursor-pointer size-5 text-gray-400" />
+          </span>
         </div>
       </div>
 
