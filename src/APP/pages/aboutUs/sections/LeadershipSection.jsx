@@ -46,7 +46,7 @@ function LeadershipSection() {
           from_name: name,
           to_name: "SYT Admin",
           from_email: email,
-          to_email: "partnerships@spaceyatech.com",
+          to_email: "info@spaceyatech.com",
           message,
           phoneNumber,
         },

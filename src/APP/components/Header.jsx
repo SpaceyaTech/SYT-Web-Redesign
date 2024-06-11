@@ -89,7 +89,8 @@ function Header() {
           style={showNavlinks ? { display: "flex" } : { display: "none" }}
         >
           {navLinks.map(({ link, id, route }) => {
-            const isActive = pathname === route;
+            const isActive =
+              pathname === route || pathname.startsWith(`${route}/`);
             return (
               <Link
                 key={id}
@@ -108,7 +109,8 @@ function Header() {
         {/* navlinks */}
         <nav className="md:flex hidden items-center gap-5 text-base">
           {navLinks.map(({ id, link, route }) => {
-            const isActive = pathname === route;
+            const isActive =
+              pathname === route || pathname.startsWith(`${route}/`);
             return (
               <Link
                 key={id}

@@ -4,7 +4,6 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import Terms from "../../assets/documentation/terms-and-conditions.pdf";
 import {
   FaFacebook,
   FaInstagram,
@@ -75,7 +74,7 @@ function Footer() {
       links: [
         { href: "https://x.com/SpaceYaTech", name: "Contact Us" },
         {
-          href: Terms,
+          href: "https://syt-terms.notion.site/SpaceYaTech-Terms-of-Service-7d84de7a4feb41cc9f86143a9cc572e0",
           name: "Terms and Conditions",
         },
       ],

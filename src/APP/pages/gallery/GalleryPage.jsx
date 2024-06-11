@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { PiArrowCircleLeftLight } from "react-icons/pi";
+import { Link } from "react-router-dom";
 import processPhotos from "../../../utilities/processPhotos";
 import photosData from "./data";
 import ImageCard from "./sections/ImageCard";
 
 function GalleryPage() {
-  const [isActive, setIsActive] = useState(false);
-
   const photos = processPhotos(photosData);
 
   return (

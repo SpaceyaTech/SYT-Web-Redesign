@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import SeoMetadata from "../../../../../components/SeoMetadata";
 
 import { GoBackBtn, LandingWrapper, Loader } from "../../../../../components";
 import { EventDescription, Hero, SimilarEvents } from "./sections";
@@ -21,6 +22,13 @@ function SingleEvent() {
 
   return (
     <>
+      <SeoMetadata
+        title={`${oneEvent?.name} Event`}
+        description={oneEvent?.about}
+        type="website"
+        url={`https://spaceyatech.com/events/${oneEvent?.id}`}
+        siteName="SpaceYaTech"
+      />
       {isError && <p>Error fetching event!</p>}
       {isPending && (
         <div className="flex flex-col items-center justify-center gap-4 py-10">
