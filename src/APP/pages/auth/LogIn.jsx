@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
+import { MdLock } from "react-icons/md"; // Example icon from react-icons
 
 import publicAxios from "../../../api/publicAxios";
 import LoginImg from "../../../assets/images/auth/login.svg";
@@ -34,7 +34,6 @@ function LogIn() {
   };
 
   if (auth?.access) {
-    // return <Navigate to="/shop" />;
     navigate(-1);
   }
 
@@ -47,7 +46,7 @@ function LogIn() {
         <h2 className="text-2xl">
           It&apos;s always a pleasure to see you again
         </h2>
-        <LazyLoadImage  src={LoginImg} alt="Log in" className="m-auto" />
+        <MdLock className="text-6xl m-auto" /> {/* Example icon usage */}
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">

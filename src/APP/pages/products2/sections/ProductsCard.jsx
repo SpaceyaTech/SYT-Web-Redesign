@@ -1,5 +1,5 @@
 import React from "react";
-import { upleft } from "../../../../assets/images/icons";
+import { PiArrowLineUpRightBold } from "react-icons/pi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ProductsCard = ({ name, desc, img, link, index }) => {
@@ -26,17 +26,13 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           <span className="text-base font-medium text-white capitalize">
             View product
           </span>
-          <LazyLoadImage 
-            src={upleft}
-            alt="view btn"
-            className="w-6 h-6 object-contain"
-          />
+          <span className="bg-white rounded-full p-1"><PiArrowLineUpRightBold className="w-6 h-6 object-contain text-green-800" /></span>
         </a>
       </div>
 
       {/* pic */}
       <div className="flex-1 min-h-full pb-14">
-        <LazyLoadImage 
+        <LazyLoadImage
           src={img}
           alt={name}
           className="w-full h-full object-cover"
@@ -53,10 +49,9 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
         <span className="text-base font-medium text-white capitalize">
           View product
         </span>
-        <LazyLoadImage 
-          src={upleft}
+        <PiArrowLineUpRightBold
           alt="view btn"
-          className="w-6 h-6 object-contain"
+          className="w-6 h-6 object-contain text-white bg-blue p-1"
         />
       </a>
     </div>

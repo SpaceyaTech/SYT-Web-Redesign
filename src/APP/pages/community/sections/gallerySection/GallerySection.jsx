@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import { arrowRight } from "../../../../../assets/images/icons";
+import { FiArrowRightCircle } from "react-icons/fi";
 import photosData from "../../../gallery/data";
 function GallerySection() {
   return (
@@ -36,10 +36,9 @@ function GallerySection() {
           <span className="capitalize text-green-header text-sm font-semibold">
             View more
           </span>
-          <LazyLoadImage
-            src={arrowRight}
-            alt="arrow right"
-            className="size-5"
+          <FiArrowRightCircle
+            className="text-green-header"
+            style={{ fontSize: "20px" }}
           />
         </div>
       </Link>

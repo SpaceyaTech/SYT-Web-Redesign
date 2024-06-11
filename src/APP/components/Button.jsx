@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import { arrowRight } from "@/assets/images/icons";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 function Button({ link, title }) {
   return (
@@ -10,7 +9,7 @@ function Button({ link, title }) {
         <span className="capitalize text-green-header text-sm font-semibold">
           {title}
         </span>
-        <img src={arrowRight} alt="arrow-right" className="size-5" />
+        <FiArrowRightCircle className="text-green-header size-5" />
       </div>
     </Link>
   );
