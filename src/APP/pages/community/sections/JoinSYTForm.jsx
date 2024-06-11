@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { sytLogoGreen } from "../../../../assets/images/icons";
+import JoinSytSelectFields from "./JoinSYTSelectFields";
 function JoinSYTForm({ closeModal }) {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
@@ -30,8 +31,8 @@ function JoinSYTForm({ closeModal }) {
       });
 
       setLoading(false);
-      toast.success("Welcome to SpaceYaTech Community!");
       closeModal();
+      window.location.href = "https://discord.com/invite/xSH9eAgBJm";
     } catch (error) {
       setErr(error.response.data.detail);
       setLoading(true);
@@ -80,113 +81,7 @@ function JoinSYTForm({ closeModal }) {
             />
           </label>
 
-          <label
-            htmlFor="work"
-            className="text-sm font-medium flex flex-col gap-1.5"
-          >
-            What would best describe your work?
-            <select
-              name="work"
-              id="work"
-              required
-              className="px-3 py-2.5 outline-none border rounded-md text-sm"
-            >
-              <option value="Artificial Intelligence">
-                Artificial Intelligence
-              </option>
-              <option value="Blockchain">Blockchain</option>
-              <option value="Web Development">Web Development</option>
-              <option value="Mobile Development">Mobile Development</option>
-              <option value="Cloud Computing">Cloud Computing</option>
-              <option value="Cyber Security">Cyber Security</option>
-              <option value="Data Analysis">Data Analysis</option>
-              <option value="Database Management">Database Management</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="Natural Language Processing">
-                Natural Language Processing
-              </option>
-              <option value="Neural Networks">Neural Networks</option>
-              <option value="Software Engineering">Software Engineering</option>
-              <option value="System Administration">
-                System Administration
-              </option>
-              <option value="Robotics">Robotics</option>
-              <option value="Augmented Reality">Augmented Reality</option>
-              <option value="Virtual Reality">Virtual Reality</option>
-              <option value="Game Development">Game Development</option>
-              <option value="Internet of Things">
-                Internet of Things(IoT)
-              </option>
-              <option value="Graphic Design">Graphic Design</option>
-
-              <option value="UI/UX Design">UI/UX Design</option>
-              <option value="Networking">Networking</option>
-              <option value="Operating Systems">Operating Systems</option>
-              <option value="Quantum Computing">Quantum Computing</option>
-              <option value="DevOps">DevOps</option>
-              <option value="Frontend Development">Frontend Development</option>
-              <option value="Backend Development">Backend Development</option>
-              <option value="Full Stack Development">
-                Full Stack Development
-              </option>
-              <option value="Embedded Systems">Embedded Systems</option>
-              <option value="Big Data">Big Data</option>
-            </select>
-          </label>
-
-          <label
-            htmlFor="field_of_interest"
-            className="text-sm font-medium flex flex-col gap-1.5"
-          >
-            What would best describe your interest?
-            <select
-              name="field_of_interest"
-              id="field_of_interest"
-              required
-              className="px-3 py-2.5 outline-none border rounded-md text-sm"
-            >
-              <option value="Artificial Intelligence">
-                Artificial Intelligence
-              </option>
-              <option value="Blockchain">Blockchain</option>
-              <option value="Web Development">Web Development</option>
-              <option value="Mobile Development">Mobile Development</option>
-              <option value="Cloud Computing">Cloud Computing</option>
-              <option value="Cyber Security">Cyber Security</option>
-              <option value="Data Analysis">Data Analysis</option>
-              <option value="Database Management">Database Management</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="Natural Language Processing">
-                Natural Language Processing
-              </option>
-              <option value="Neural Networks">Neural Networks</option>
-              <option value="Software Engineering">Software Engineering</option>
-              <option value="System Administration">
-                System Administration
-              </option>
-              <option value="Robotics">Robotics</option>
-              <option value="Augmented Reality">Augmented Reality</option>
-              <option value="Virtual Reality">Virtual Reality</option>
-              <option value="Game Development">Game Development</option>
-              <option value="Internet of Things">
-                Internet of Things(IoT)
-              </option>
-              <option value="Graphic Design">Graphic Design</option>
-
-              <option value="UI/UX Design">UI/UX Design</option>
-              <option value="Networking">Networking</option>
-              <option value="Operating Systems">Operating Systems</option>
-              <option value="Quantum Computing">Quantum Computing</option>
-              <option value="DevOps">DevOps</option>
-              <option value="Frontend Development">Frontend Development</option>
-              <option value="Backend Development">Backend Development</option>
-              <option value="Full Stack Development">
-                Full Stack Development
-              </option>
-              <option value="Embedded Systems">Embedded Systems</option>
-              <option value="Big Data">Big Data</option>
-            </select>
-          </label>
+          <JoinSytSelectFields />
 
           <button
             type="submit"

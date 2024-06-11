@@ -26,7 +26,6 @@ function Footer() {
               className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
             />
             {/* socials */}
-
             <div className="flex gap-4 items-center py-4">
               {socialLinks.slice(0, 4).map((link) => (
                 <a
@@ -34,12 +33,9 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-7 h-7 text-white"
                 >
-                  <LazyLoadImage
-                    src={link.src}
-                    alt={link.alt}
-                    className="w-7 h-7"
-                  />
+                  {link.icon}
                 </a>
               ))}
             </div>
@@ -50,12 +46,9 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="w-7 h-7 text-white"
                 >
-                  <LazyLoadImage
-                    src={link.src}
-                    alt={link.alt}
-                    className="w-7 h-7"
-                  />
+                  {link.icon}
                 </a>
               ))}
             </div>
@@ -102,7 +95,6 @@ function Footer() {
               <h2 className="text-green-footer font-bold sm:text-xl text-lg md:leading-9 mx-auto lg:mx-0 text-center lg:text-left">
                 Subscribe to our Newsletter
               </h2>
-
               <div className="flex flex-col gap-5 text-sm font-light">
                 <p className="text-sm left-6 text-center lg:text-left">
                   Subscribe to our newsletter to get your
@@ -129,7 +121,6 @@ function Footer() {
             </div>
           </div>
         </div>
-
         <div className="sm:mt-14 mt-10">
           <h1 className="text-center text-green-footer my-4 md:my-8">
             &copy; {year} SpaceYaTech | All Rights Reserved
