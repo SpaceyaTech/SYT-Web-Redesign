@@ -1,14 +1,80 @@
-/* eslint-disable function-paren-newline */
-/* eslint-disable import/no-cycle */
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-confusing-arrow */
 import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaYoutube,
+  FaSpotify,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/sytLogo.png";
-import { footerLinks, socialLinks } from ".";
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/spaceyatech",
+    icon: <FaFacebook size="1.6em" />,
+    alt: "facebook",
+  },
+  {
+    href: "https://www.instagram.com/spaceyatech/",
+    icon: <FaInstagram size="1.5em" />,
+    alt: "instagram",
+  },
+  {
+    href: "https://x.com/SpaceYaTech",
+    icon: <FaXTwitter size="1.5em" />,
+    alt: "twitter",
+  },
+  {
+    href: "https://linkedin.com/company/spaceyatech",
+    icon: <FaLinkedin size="1.5em" />,
+    alt: "linkedIn",
+  },
+  {
+    href: "https://www.youtube.com/@spaceyatech",
+    icon: <FaYoutube size="1.5em" />,
+    alt: "youtube",
+  },
+  {
+    href: "https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n",
+    icon: <FaSpotify size="1.5em" />,
+    alt: "spotify",
+  },
+];
+
+const footerLinks = [
+  {
+    title: "Company",
+    links: [
+      { to: "/about-us", name: "About Us" },
+      { to: "/community", name: "Community" },
+      { to: "/products", name: "Products" },
+      { to: "/shop", name: "Shop" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/events", name: "Events" },
+      { href: "http://mentorlst.com", name: "Mentorship" },
+      { href: "/gallery", name: "Gallery" },
+    ],
+  },
+  {
+    title: "Quick Links",
+    links: [
+      { href: "https://x.com/SpaceYaTech", name: "Contact Us" },
+      {
+        href: "https://syt-terms.notion.site/SpaceYaTech-Terms-of-Service-7d84de7a4feb41cc9f86143a9cc572e0",
+        name: "Terms and Conditions",
+      },
+    ],
+  },
+];
 
 function Footer() {
   const now = new Date();
