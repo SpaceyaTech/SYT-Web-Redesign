@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import { arrowRight } from "../../../../../assets/images/icons";
+import { PiArrowCircleLeft, PiArrowCircleRight } from "react-icons/pi";
 import { useAllCities } from "../../../../../hooks/Queries/eventsSection/useEventCategories";
 import useTopEvents from "../../../../../hooks/Queries/eventsSection/useTopEvents";
 import { Loader } from "../../../../components";
@@ -55,9 +55,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
       </div>
 
       <h4 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
-        Notable events within the 
-{' '}
-<br />
+        Notable events within the <br />
         SpaceYaTech ecosphere
       </h4>
       {isError && <Error500 />}
@@ -82,11 +80,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
             <span className="capitalize text-green-header text-sm font-semibold">
               View more
             </span>
-            <LazyLoadImage
-              src={arrowRight}
-              alt="arrow right"
-              className="size-5"
-            />
+            <PiArrowCircleRight className="size-6 text-green-header" />
           </div>
         </Link>
       </div>

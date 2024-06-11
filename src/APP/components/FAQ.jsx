@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useState } from "react";
 
 import { questions } from "../pages/landingPage/data";
@@ -23,7 +22,7 @@ function FAQ() {
         >
           <h2 className="mb-4 font-semibold" id={`flush-heading${index + 1}`}>
             <button
-              className={`group relative flex w-full items-center rounded-none border-0 py-4 px-5  text-left text-base transition ${
+              className={`group relative flex w-full items-center rounded-none border-0 py-4 px-5 text-left text-base transition ${
                 activeQuestion === index
                   ? ""
                   : "overflow-anchor:none hover:z-[2] focus:z-[3]"
@@ -49,9 +48,7 @@ function FAQ() {
                   activeQuestion === index ? "text-primary" : ""
                 }`}
               >
-                <FontAwesomeIcon
-                  icon={activeQuestion === index ? faChevronUp : faChevronDown}
-                />
+                {activeQuestion === index ? <FaChevronUp /> : <FaChevronDown />}
               </span>
             </button>
           </h2>

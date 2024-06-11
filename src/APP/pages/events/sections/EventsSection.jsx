@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineSearch } from "react-icons/ai"; // Import react-icons
 
-import { search } from "../../../../assets/images/icons";
 import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
 import useEventsData from "../../../../hooks/Queries/eventsSection/useEvents";
 import { Loader } from "../../../components";
@@ -61,7 +61,9 @@ function EventsSection() {
         onSubmit={handleSubmit}
         className="flex items-center border sm:w-7/12 mb-3 rounded-xl bg-white overflow-clip"
       >
-        <img src={search} alt="search" className="py-3 pl-6" />
+        <span className="py-3 pl-6">
+          <AiOutlineSearch className="size-5 text-gray-400" />
+        </span>
         <input
           type="text"
           placeholder="Search Event"

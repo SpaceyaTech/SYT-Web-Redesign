@@ -12,11 +12,7 @@ import {
   subDays,
   addDays,
 } from "date-fns";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const meetings = [
   {
@@ -121,11 +117,7 @@ function Calendar() {
           className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">Previous month</span>
-          <FontAwesomeIcon
-            icon={faChevronLeft}
-            className="w-5 h-5"
-            aria-hidden="true"
-          />
+          <FaChevronLeft aria-hidden="true" className="w-5 h-5" />
         </button>
         <button
           onClick={nextWeek}
@@ -133,11 +125,7 @@ function Calendar() {
           className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
         >
           <span className="sr-only">Next month</span>
-          <FontAwesomeIcon
-            icon={faChevronRight}
-            className="w-5 h-5"
-            aria-hidden="true"
-          />
+          <FaChevronRight aria-hidden="true" className="w-5 h-5" />
         </button>
         <button
           type="button"

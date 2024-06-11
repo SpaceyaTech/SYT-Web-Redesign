@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { thumbsUp } from "../../../../assets/images/blogs-page";
+import { PiThumbsUp } from "react-icons/pi";
 import usePostLikeBlog from "../../../../hooks/Queries/blog/usePostLikeBlog";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -42,14 +42,12 @@ const BlogStats = ({ blogId, likes }) => {
       </div> */}
 
       <div className="flex flex-row items-center gap-1">
-        <LazyLoadImage 
-          src={thumbsUp}
-          alt="eye"
-          className="w-5 h-5 object-cover cursor-pointer"
+      <PiThumbsUp
+          className="w-5 h-5 object-cover text-[#00664E] cursor-pointer"
           onClick={() => {
             blogId ? addLikeToBlog(blogId) : "";
           }}
-        />
+        /> 
         <span className="text-base text-[#00664E] leading-5 m-0">
           {updatedLikes}
         </span>

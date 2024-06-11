@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { arrowRight } from "@/assets/images/icons";
+import { FaArrowRight } from "react-icons/fa";
 
 function ViewMoreBtn({ link }) {
   return (
@@ -10,7 +10,10 @@ function ViewMoreBtn({ link }) {
         <span className="capitalize text-green-header text-sm font-semibold">
           Learn more
         </span>
-        <img src={arrowRight} alt="arrow-right" className="size-5" />
+        <FaArrowRight
+          className="text-green-header"
+          style={{ fontSize: "20px" }}
+        />
       </div>
     </Link>
   );
