@@ -16,7 +16,7 @@ export default function FeaturedCarousel() {
   }, [length]);
 
   return (
-    <div className="w-full h-96 md:h-[540px] md:flex overflow-hidden relative">
+    <div className="w-full h-96 md:h-[540px] hidden md:flex overflow-hidden relative">
       <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-black px-3 py-1.5 rounded-full z-10">
         <div className="flex gap-2">
           {Array.from({ length }).map((_, i) => (
