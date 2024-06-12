@@ -2,8 +2,6 @@ import React, { useState, Fragment } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import { useForm } from "react-hook-form";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import usePostJoinChapter from "../../../../hooks/Queries/chapter/usePostJoinChapter";
 
 function WelcomeSection({ chapter }) {
@@ -17,31 +15,20 @@ function WelcomeSection({ chapter }) {
     clearStatus: statusClearJoinChapter,
   } = usePostJoinChapter(chapter.id);
 
-  // content-between md:px-20
   React.useEffect(() => {
     window.scroll(0, 0);
   }, []);
 
-  const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Please enter a valid email address.")
-      .required("Email address is required."),
-  });
-
   const {
     register,
-    control,
-    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm({
     mode: "onChange",
-    resolver: yupResolver(validationSchema),
   });
 
   function closeModal() {
     setEmail("");
-    setValue("email", "");
     clearJoinChapterError();
     statusClearJoinChapter();
     postJoinChapter(null);
@@ -74,7 +61,7 @@ function WelcomeSection({ chapter }) {
 
   return (
     <>
-      <div
+<div
         className="bg-cover bg-no-repeat py-24 text-center"
         style={{ backgroundImage: `url(${chapter.banner}` }}
       >
@@ -370,4 +357,5 @@ function WelcomeSection({ chapter }) {
     </>
   );
 }
+
 export default WelcomeSection;

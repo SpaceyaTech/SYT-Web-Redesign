@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineSearch } from "react-icons/ai"; // Import react-icons
 
-import { search } from "../../../../assets/images/icons";
 import { useEventsCategories } from "../../../../hooks/Queries/eventsSection/useEventCategories";
 import useEventsData from "../../../../hooks/Queries/eventsSection/useEvents";
 import { Loader } from "../../../components";
@@ -55,22 +55,24 @@ function EventsSection() {
     : events;
 
   return (
-    <section className="mt-2 py-6 flex flex-col items-center justify-between gap-4">
+    <section className="mt-2 py-6 flex flex-col items-center justify-between gap-4 w-full">
       {/* search events */}
       <form
         onSubmit={handleSubmit}
-        className="flex items-center border sm:w-7/12 mb-3 rounded-xl bg-white overflow-clip"
+        className="flex items-center border w-full justify-between sm:w-7/12 max-w-md mb-3 rounded-xl bg-white overflow-clip relative"
       >
-        <img src={search} alt="search" className="py-3 pl-6" />
+        <span className="py-3 pl-4 absolute top-0.5 left-0 hidden sm:block">
+          <AiOutlineSearch className="size-5 text-gray-400" />
+        </span>
         <input
           type="text"
           placeholder="Search Event"
-          className="md:flex-grow p-3 outline-none text-gray-400"
+          className="flex-grow p-3 sm:pl-12 outline-none text-gray-400 w-4/5 "
           onChange={handleSearch}
         />
         <button
           type="submit"
-          className="bg-gradient-to-b to-primary from-green-dark px-6 py-3 text-white"
+          className="bg-gradient-to-b to-primary from-green-dark px-1.5 sm:px-6 py-3 text-white"
         >
           Search
         </button>
@@ -88,7 +90,7 @@ function EventsSection() {
         <div className="w-full flex items-center flex-col">
           <div className="flex items-center justify-between mb-6 gap-12">
             {isSuccess && (
-              <div className="flex items-center justify-center space-x-4 w-full sm:w-3/4 mx-auto overflow-auto">
+              <div className="flex items-center justify-center space-x-4 w-full md:w-fit mx-auto overflow-auto">
                 {uniqueCategory.map((category) => (
                   <button
                     key={category}

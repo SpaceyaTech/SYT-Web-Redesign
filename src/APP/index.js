@@ -1,40 +1,59 @@
-import AboutUs from "./pages/aboutUs/AboutUs";
-import AllBlogsPage from "./pages/admin/blogs/AllBlogsPage";
-import AddChapterPage from "./pages/admin/chapters/AddChapterPage";
-import AllChaptersPage from "./pages/admin/chapters/AllChaptersPage";
-import AddEventPage from "./pages/admin/events/AddEventPage";
-import AllEventsPage from "./pages/admin/events/AllEventsPage";
-import UpdateEventPage from "./pages/admin/events/UpdateEventPage";
-import ForgotPassword from "./pages/auth/ForgotPassword";
-import LogIn from "./pages/auth/LogIn";
-import ResetPassword from "./pages/auth/ResetPassword";
-import SignUp from "./pages/auth/SignUp";
-import Blog from "./pages/blog/Blog";
-import Blog2 from "./pages/blog2/Blog2";
-import Blogs from "./pages/blogs/Blogs";
-import IndividualChapter from "./pages/chapter/pages/IndividualChapter";
-import CommunityPage from "./pages/community/CommunityPage";
-// import SingleEvent from "./pages/community/sections/eventsSection/SingleEvents/SingleEvent";
-import { SingleEvent } from "./pages/community/sections";
-import DonatePage from "./pages/donate/DonatePage";
-import SingleProductDonation from "./pages/donate/pages/SingleProductDonatePage";
-import Error400 from "./pages/errorPages/Error400";
-import Error403 from "./pages/errorPages/Error403";
-import Error404 from "./pages/errorPages/Error404";
-import Error500 from "./pages/errorPages/Error500";
-import ErrorBoundary from "./pages/errorPages/ErrorBoundary";
-import EventsPage from "./pages/events/pages/EventsPage";
-import EventsSection from "./pages/events/sections/eventsSection/EventsSection";
-import GalleryPage from "./pages/gallery/GalleryPage";
-import LandingPage from "./pages/landingPage/LandingPage";
-import Layout from "./pages/Layout";
-import Products from "./pages/products2/Products";
-import Resources from "./pages/resources/Resources";
-import Homepage from "./pages/shop/Homepage";
-import Checkout from "./pages/shop/OrderSummaryPage";
-import ProductDisplay from "./pages/shop/ProductDisplayPage";
-import CategoriesProducts from "./pages/shop/sections/CategoriesProducts";
-import SingleItemPage from "./pages/shop/SingleItemPage";
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
+import { lazy } from "react";
+
+const AboutUs = lazy(() => import("./pages/aboutUs/AboutUs"));
+const AllBlogsPage = lazy(() => import("./pages/admin/blogs/AllBlogsPage"));
+const AddChapterPage = lazy(() =>
+  import("./pages/admin/chapters/AddChapterPage")
+);
+const AllChaptersPage = lazy(() =>
+  import("./pages/admin/chapters/AllChaptersPage")
+);
+const AddEventPage = lazy(() => import("./pages/admin/events/AddEventPage"));
+const AllEventsPage = lazy(() => import("./pages/admin/events/AllEventsPage"));
+const UpdateEventPage = lazy(() =>
+  import("./pages/admin/events/UpdateEventPage")
+);
+const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
+const LogIn = lazy(() => import("./pages/auth/LogIn"));
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const SignUp = lazy(() => import("./pages/auth/SignUp"));
+const Blog = lazy(() => import("./pages/blog/Blog"));
+const Blog2 = lazy(() => import("./pages/blog2/Blog2"));
+const Blogs = lazy(() => import("./pages/blogs/Blogs"));
+const IndividualChapter = lazy(() =>
+  import("./pages/chapter/pages/IndividualChapter")
+);
+const CommunityPage = lazy(() => import("./pages/community/CommunityPage"));
+const SingleEvent = lazy(() =>
+  import("./pages/community/sections/eventsPreview/SingleEvents/SingleEvent")
+);
+const DonatePage = lazy(() => import("./pages/donate/DonatePage"));
+const SingleProductDonation = lazy(() =>
+  import("./pages/donate/pages/SingleProductDonatePage")
+);
+const Error400 = lazy(() => import("./pages/errorPages/Error400"));
+const Error403 = lazy(() => import("./pages/errorPages/Error403"));
+const Error404 = lazy(() => import("./pages/errorPages/Error404"));
+const Error500 = lazy(() => import("./pages/errorPages/Error500"));
+const ErrorBoundary = lazy(() => import("./pages/errorPages/ErrorBoundary"));
+const EventsPage = lazy(() => import("./pages/events/pages/EventsPage"));
+const EventsSection = lazy(() =>
+  import("./pages/events/sections/eventsSection/EventsSection")
+);
+const GalleryPage = lazy(() => import("./pages/gallery/GalleryPage"));
+const LandingPage = lazy(() => import("./pages/landingPage/LandingPage"));
+const Layout = lazy(() => import("./pages/Layout"));
+const Products = lazy(() => import("./pages/products2/Products"));
+const Resources = lazy(() => import("./pages/resources/Resources"));
+const Homepage = lazy(() => import("./pages/shop/Homepage"));
+const Checkout = lazy(() => import("./pages/shop/OrderSummaryPage"));
+const ProductDisplay = lazy(() => import("./pages/shop/ProductDisplayPage"));
+const CategoriesProducts = lazy(() =>
+  import("./pages/shop/sections/CategoriesProducts")
+);
+const SingleItemPage = lazy(() => import("./pages/shop/SingleItemPage"));
 
 export {
   AddChapterPage,

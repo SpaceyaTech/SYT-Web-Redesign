@@ -2,9 +2,9 @@ import emailjs from "@emailjs/browser";
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { AiOutlineClose } from "react-icons/ai";  // Import react-icons
 
 import { PartnerWithUs } from "../../../../assets/images/aboutPage";
-import { closeIcon } from "../../../../assets/images/icons";
 import { Caroussel } from "../../../components";
 import { LeadershipData } from "../data";
 
@@ -46,7 +46,7 @@ function LeadershipSection() {
           from_name: name,
           to_name: "SYT Admin",
           from_email: email,
-          to_email: "partnerships@spaceyatech.com",
+          to_email: "info@spaceyatech.com",
           message,
           phoneNumber,
         },
@@ -155,11 +155,7 @@ function LeadershipSection() {
                     >
                       <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-md bg-white p-4 md:p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
                         <button type="button" onClick={closeModal}>
-                          <LazyLoadImage
-                            src={closeIcon}
-                            alt="close"
-                            className="object-contain w-4 h-4"
-                          />
+                          <AiOutlineClose className="w-4 h-4" />
                         </button>
                         <form
                           className="flex flex-col gap-4 md:gap-6 w-full"

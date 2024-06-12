@@ -1,33 +1,23 @@
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 function GeneralInfo({ theNext, setCollectedChapter }) {
-  const [ banner, setBanner ] = useState('');
+  const [banner, setBanner] = useState('');
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     setBanner(file);
   };
 
-  const handleUploadImageClick = (e,id) => {
+  const handleUploadImageClick = (e, id) => {
     document.getElementById(id).click();
   };
 
-  const handleUploadImageKeyDown = (event,id) => {
+  const handleUploadImageKeyDown = (event, id) => {
     if (event.key === "Enter") {
-      handleUploadImageClick(event,id);
+      handleUploadImageClick(event, id);
     }
   };
-
-  const validationSchema = yup.object().shape({
-      country: yup.string().required("Country name is required."),
-      city: yup.string().required("City is required."),
-      name: yup.string().required("Chapter name is required."),
-      about: yup.string().required("About is required."),
-      banner: yup.mixed().required("Banner is required.")
-  });
 
   const { 
     register,
@@ -35,7 +25,6 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
     handleSubmit,
     formState: { errors } } = useForm({
       mode: "onChange",
-      resolver: yupResolver(validationSchema),
     });
 
   const onSubmit = (data) => {
@@ -55,7 +44,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
   
   return (
     <>
-    <div className=" w-3/4 mt-4  items-center">
+    <div className="w-3/4 mt-4 items-center">
       <form id="generalInfoForm" onSubmit={handleSubmit(onSubmit)}>
       <p className="tracking-wider text-lg font-normal text-[#323433]">
         General Info
@@ -63,7 +52,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
         <div className={`w-full mt-4 ${errors.country ? '' : 'h-10'}`}>
           <input
             id="country"
-            {...register("country")}
+            {...register("country", { required: "Country name is required." })}
             className="w-full h-12 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
             type="text"
             placeholder="Country"
@@ -73,7 +62,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
         <div className={`w-full mt-4 ${errors.city ? '' : 'h-10'}`}>
           <input
             id="city"
-            {...register("city")}
+            {...register("city", { required: "City is required." })}
             className="w-full h-12 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
             type="text"
             placeholder="City"
@@ -83,7 +72,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
         <div className={`w-full mt-4 ${errors.name ? '' : 'h-10'}`}>
           <input
             id="name"
-            {...register("name")}
+            {...register("name", { required: "Chapter name is required." })}
             className="w-full h-12 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
             type="text"
             placeholder="Chapter name"
@@ -93,7 +82,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
         <div className="w-full mt-4">
           <input
             id="about"
-            {...register("about")}
+            {...register("about", { required: "About is required." })}
             className="w-full h-20 px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
             type="text"
             placeholder="About Chapter"
@@ -102,8 +91,8 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
         </div>
         <div
               className="w-full pl-4 py-2  mt-4 border-dashed border-2 border-gray-300  rounded-tl rounded-tr justify-start items-center inline-flex"
-              onClick={(e)=>handleUploadImageClick(e,'banner')}
-              onKeyDown={(e)=>handleUploadImageKeyDown((e,'banner'))}
+              onClick={(e) => handleUploadImageClick(e, 'banner')}
+              onKeyDown={(e) => handleUploadImageKeyDown(e, 'banner')}
               tabIndex="0"
               role="button"
             >
@@ -147,7 +136,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
             { errors.banner && <span className="text-xs text-red-500">{errors.banner.message}</span>}
       </form>
     </div>
-    <div className=" w-3/4 mt-4 mb-14 items-center inline-flex justify-end gap-x-4">
+    <div className="w-3/4 mt-4 mb-14 items-center inline-flex justify-end gap-x-4">
     <button
       type="button"
       className="w-52 h-11 px-8 py-3 rounded-lg border border-zinc-500 text-zinc-500 text-[13px] font-medium leading-tight tracking-tight opacity-50 cursor-not-allowed"

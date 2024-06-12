@@ -9,11 +9,68 @@
 Welcome to the SpaceYaTech website redesign project! This Readme provides comprehensive information about the project, including project description, project structure, communication channels, roadmap, license information, acknowledgments, and links to other important files.
 <hr>
 
+## Table of Contents
+
+- [Project Description](#project-description)
+- [Project Set Up](#project-set-up)
+- [Project Structure](#project-structure)
+- [Communication Channels](#communication-channels)
+- [Roadmap](#roadmap)
+- [License Information](#license-information)
+- [Acknowledgments](#acknowledgments)
+- [Links to Other Important Files](#links-to-other-important-files)
+
 ## Project Description
 
-The SpaceYaTech website is being redesigned to enhance its user experience and visual appeal. The new website will be built using React with the Vite library and Tailwind CSS framework. Designers are collaborating through Figma to create the new design, while developers are using GitHub for contribution and monitoring the workflow.
+The SpaceYaTech website is being redesigned to enhance its user experience and visual appeal. 
+
+The new website will be built using the following tech stack:
+
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: build tool that aims to provide a faster and leaner development experience for modern web projects.
+- **Tailwind CSS**: utility-first CSS framework for rapidly building custom user interfaces.
+- **GitHub**: platform for version control and collaboration.
+- **Figma**: web-based vector graphics editor and prototyping tool.
 
 Figma Design Reference: [Figma Design](https://www.figma.com/file/QZwtseXogSFjLNz64uLwjV/SYT-Website-Redesign-Complete?type=design&node-id=1113%3A7655&t=xSmmgQWxa0Z31bfo-1)
+
+## Project Set Up
+Follow these steps to get the project up and running on your local machine:
+
+1. **Clone the repository**
+
+   Open your terminal and run the following command:
+
+   ```bash
+   git clone https://github.com/SpaceyaTech/SYT-Web-Redesign.git
+   ```
+
+2. **Navigate into the directory**
+
+    Change your current directory to the project's directory:
+
+    ```bash
+    cd SYT-Web-Redesign
+    ```
+
+3. **Install the dependencies**
+
+    Run the following command:
+
+    ```bash
+    npm install
+    ```
+
+4. **Start the development server**
+
+    Now you can start the development server and begin developing:
+
+    ```bash
+    npm run dev
+    ```
+
+    The project should now be running at http://localhost:5173 (or another port if 5173 is already in use).
+
 
 ## Project Structure
 
@@ -21,18 +78,28 @@ The project follows a standard directory structure:
 
 ```
 .
-├── public
-├── src
-│   ├── APP
-│   │   ├── components 
-│   ├── assets
-│   │   ├── images
-│   ├── router
-│   └── ...
-├── ...
 ├── docs
 │   ├── CONTRIBUTING.md
 │   ├── CODE_OF_CONDUCT.md
+├── public
+├── src
+│   ├── api
+│   ├── APP
+│   │   ├── components 
+│   │   ├── pages 
+│   │   ├── index.js
+│   ├── assets
+│   │   ├── images
+│   ├── context
+│   ├── hooks
+│   │   ├── Mutations 
+│   │   ├── Queries 
+│   │   ├── useAuth.jsx 
+│   ├── router
+│   ├── utilities
+│   └── ...
+├── main.jsx
+├── index.css
 ├── README.md
 └── ...
 ```
@@ -70,11 +137,11 @@ Please refer to the [Roadmap](https://github.com/SpaceyaTech/SYT-Web-Redesign/wi
 
 The SpaceYaTech website redesign project is licensed under the [Apache License](http://www.apache.org/licenses/). For more details, please refer to the [LICENSE](https://github.com/SpaceyaTech/SYT-Web-Redesign/blob/main/LICENSE) file.
 
-## Acknowledgments
+<!-- ## Acknowledgments
 
 We would like to acknowledge the following individuals and resources for their contributions and support during the development of this project:
 
-- 
+-  -->
 
 ## Contributing
 
@@ -88,9 +155,9 @@ We follow the [![Contributor Covenant](https://img.shields.io/badge/Contributor%
 ## Tech Stacks Used for Development:
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 
 [//]: # (https://github.com/Ileriayo/markdown-badges)

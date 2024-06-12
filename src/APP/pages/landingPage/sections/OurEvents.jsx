@@ -2,18 +2,18 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import React, { useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
+import { error500svg } from "../../../../assets/images/errorPages";
 import {
   calculateDistanceToDate,
   formatEventTime,
   startEventDate,
 } from "../../../../utilities/formatEventDate";
 import { Loader, Button } from "../../../components";
-import Error500 from "../../errorPages/Error500";
 import useTopEvents from "@/hooks/Queries/eventsSection/useTopEvents";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { error500svg } from "../../../../assets/images/errorPages";
+
 function OurEvents() {
   const {
     data: topEvents,
@@ -31,7 +31,7 @@ function OurEvents() {
     <section className="w-full max-w-1440 mx-auto flex-center flex-col gap-8 px-3 pt-2">
       <div className="flex-center gap-4 flex-col w-full max-w-2xl text-center">
         <h3 className="max-w-lg text-green-header text-center font-semibold text-xl md:text-3xl">
-          You can’t spell community without meet-up{" "}
+          You can’t spell community without meet-up
         </h3>
 
         <p className="text-sm md:text-base font-normal">
@@ -73,14 +73,16 @@ function OurEvents() {
         )}
 
         {isSuccess && (
-          // <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
-          <div className="w-full flex flex-row md:flex-col overflow-x-auto gap-4">
+          <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
+            {/* <div className="w-full flex flex-row md:flex-col overflow-x-auto gap-4"> */}
             {topEvents?.count === 0 ? (
               <p className="">No events found!</p>
             ) : (
-              topEvents?.results.map((event) => (
-                <UpcomingEventCard key={event.id} event={event} />
-              ))
+              topEvents?.results
+                .slice(0, 6)
+                .map((event) => (
+                  <UpcomingEventCard key={event.id} event={event} />
+                ))
             )}
           </div>
         )}

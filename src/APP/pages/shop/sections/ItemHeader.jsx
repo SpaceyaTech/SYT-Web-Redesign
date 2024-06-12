@@ -1,11 +1,11 @@
-import { faCheck, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaCheck } from "react-icons/fa";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { PiShoppingCartLight } from "react-icons/pi";
 import { Combobox, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
 import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ItemHeader({ show }) {
   const { pathname } = useLocation();
@@ -77,9 +77,8 @@ function ItemHeader({ show }) {
                     onChange={(event) => setQuery(event.target.value)}
                   />
                   <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      className="h-5 w-5 text-gray-400 pr-2"
+                    <FaMagnifyingGlass
+                      className="h-7 w-7 text-gray-400 pr-2 "
                       aria-hidden="true"
                     />
                   </Combobox.Button>
@@ -116,7 +115,7 @@ function ItemHeader({ show }) {
                                   selected ? "font-medium" : "font-normal"
                                 }`}
                               >
-                                <LazyLoadImage 
+                                <LazyLoadImage
                                   src={item.image}
                                   alt={item.name}
                                   className="h-12 w-12 rounded"
@@ -129,8 +128,7 @@ function ItemHeader({ show }) {
                                     active ? "text-white" : "text-[#009975]"
                                   }`}
                                 >
-                                  <FontAwesomeIcon
-                                    icon={faCheck}
+                                  <FaCheck
                                     className="h-5 w-5"
                                     aria-hidden="true"
                                   />
@@ -148,7 +146,7 @@ function ItemHeader({ show }) {
           </div>
         )}
         <button type="button" className="ml-6 items-end" onClick={show}>
-          <LazyLoadImage  src={CartIcon} alt="cart" />
+          <PiShoppingCartLight className="h-9 w-9" />
         </button>
       </div>
     </div>

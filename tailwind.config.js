@@ -5,7 +5,6 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-
       fontFamily: {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
@@ -23,6 +22,7 @@ export default {
           dark: "#00664E",
           light: "#E5EFEC",
           header: "#1F7964",
+          footer: "#00FFC3",
         },
         grey: {
           neutral: "#656767",

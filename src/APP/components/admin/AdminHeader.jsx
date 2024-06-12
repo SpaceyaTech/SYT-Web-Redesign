@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/sytLogo.png";
-import bell from "../../../assets/images/icons/bell-icon.svg";
+import { CiBellOn } from "react-icons/ci";
 import profile from "../../../assets/images/adminPage/profile-pic.png";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -14,7 +14,7 @@ function AdminHeader() {
           {/* logo */}
 
           <Link to="/">
-            <LazyLoadImage 
+            <LazyLoadImage
               src={logo}
               alt="logo"
               className="md:w-16 w-12 md:hidden"
@@ -26,7 +26,7 @@ function AdminHeader() {
             className="transition-all duration-300 cursor-pointer"
             to="/notification"
           >
-            <LazyLoadImage  src={bell} alt="notification icon" />
+            <CiBellOn />
           </Link>
           <Link
             className="transition-all duration-300 cursor-pointer"
