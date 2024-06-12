@@ -78,9 +78,11 @@ function OurEvents() {
             {topEvents?.count === 0 ? (
               <p className="">No events found!</p>
             ) : (
-              topEvents?.results.map((event) => (
-                <UpcomingEventCard key={event.id} event={event} />
-              ))
+              topEvents?.results
+                .slice(0, 6)
+                .map((event) => (
+                  <UpcomingEventCard key={event.id} event={event} />
+                ))
             )}
           </div>
         )}

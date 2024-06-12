@@ -69,7 +69,7 @@ function EventsSection({ showTabs, showAllEventsLink }) {
         (topEventsData?.count === 0 ? (
           <p>Watch out for new events coming soon!</p>
         ) : (
-          <Events events={topEventsData?.results} />
+          <Events events={topEventsData?.results.slice(0, 6)} />
         ))}
       <div>
         <Link
