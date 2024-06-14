@@ -16,33 +16,39 @@ import logo from "../../assets/images/sytLogo.png";
 const socialLinks = [
   {
     href: "https://www.facebook.com/spaceyatech",
-    icon: <FaFacebook size="1.6em" />,
+    icon: <FaFacebook aria-label="Facebook page link" size="1.6em" />,
     alt: "facebook",
+    label: "Facebook page link",
   },
   {
     href: "https://www.instagram.com/spaceyatech/",
-    icon: <FaInstagram size="1.5em" />,
+    icon: <FaInstagram aria-label="Instagram page link" size="1.5em" />,
     alt: "instagram",
+    label: "Instagram page link",
   },
   {
     href: "https://x.com/SpaceYaTech",
-    icon: <FaXTwitter size="1.5em" />,
+    icon: <FaXTwitter aria-label="Twitter handle" size="1.5em" />,
     alt: "twitter",
+    label: "Twitter handle",
   },
   {
     href: "https://linkedin.com/company/spaceyatech",
-    icon: <FaLinkedin size="1.5em" />,
+    icon: <FaLinkedin aria-label="LinkedIn page link" size="1.5em" />,
     alt: "linkedIn",
+    label: "LinkedIn page link",
   },
   {
     href: "https://www.youtube.com/@spaceyatech",
-    icon: <FaYoutube size="1.5em" />,
+    icon: <FaYoutube aria-label="YouTube channel link" size="1.5em" />,
     alt: "youtube",
+    label: "YouTube channel link",
   },
   {
     href: "https://open.spotify.com/show/4nUYzhacDAw1v9ClqPY89n",
-    icon: <FaSpotify size="1.5em" />,
+    icon: <FaSpotify aria-label="Spotify profile link" size="1.5em" />,
     alt: "spotify",
+    label: "Spotify profile link",
   },
 ];
 
@@ -99,6 +105,7 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.label}
                   className="w-7 h-7 text-white"
                 >
                   {link.icon}
