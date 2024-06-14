@@ -71,10 +71,18 @@ function Caroussel({ CarousselData }) {
         ))}
       </div>
       <div className="flex justify-center gap-4">
-        <button type="button" onClick={() => scroll(-400)}>
+        <button
+          type="button"
+          aria-label="back button"
+          onClick={() => scroll(-400)}
+        >
           <PiArrowCircleLeft className="text-green-header size-16" />
         </button>
-        <button type="button" onClick={() => scroll(400)}>
+        <button
+          type="button"
+          aria-label="forward button"
+          onClick={() => scroll(400)}
+        >
           <PiArrowCircleRight className="text-green-header size-16" />
         </button>
       </div>
