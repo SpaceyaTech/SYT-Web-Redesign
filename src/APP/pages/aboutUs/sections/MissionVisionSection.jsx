@@ -6,9 +6,9 @@ function MissionVisionSection() {
     <div className="max-w-screen-xl mx-auto mt-24 px-4 md:px-0">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
-        <h4 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+        <h2 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
           A bit more about us
-        </h4>
+        </h2>
         <div className="w-full h-0.5 bg-gray-300" />
       </div>
       <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
@@ -44,9 +44,9 @@ function MissionVisionSection() {
         <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
           <div className="bg-green-light rounded-lg md:rounded-xl size-full flex items-center justify-between flex-row p-3 sm:p-6 md:py-20 md:gap-5">
             <div className="flex-center md:flex-start flex-col p-3 sm:p-8 gap-3">
-              <h4 className="text-green-header capitalize text-base md:text-xl font-semibold text-center md:text-start">
+              <h3 className="text-green-header capitalize text-base md:text-xl font-semibold text-center md:text-start">
                 Our Mission
-              </h4>
+              </h3>
 
               <p className="text-sm md:text-base font-normal text-center md:text-start">
                 To help 10,000 young Africans to transition to tech in the next
@@ -59,9 +59,9 @@ function MissionVisionSection() {
         <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2">
           <div className="bg-green-light rounded-lg md:rounded-xl size-full flex items-center justify-between flex-row p-3 sm:p-6 md:py-20 md:gap-5">
             <div className="flex-center md:flex-start flex-col p-3 sm:p-8 gap-3">
-              <h4 className="text-green-header capitalize text-base md:text-xl font-semibold text-center md:text-start">
+              <h3 className="text-green-header capitalize text-base md:text-xl font-semibold text-center md:text-start">
                 Our Vision
-              </h4>
+              </h3>
 
               <p className="text-sm md:text-base font-normal text-center md:text-start">
                 To be the best tech community, focused on innovation and
