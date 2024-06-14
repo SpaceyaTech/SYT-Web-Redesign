@@ -117,6 +117,7 @@ function LeadershipSection() {
 
             <button
               type="button"
+              aria-label="Partner with us"
               onClick={openModal}
               className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
             >
@@ -154,7 +155,11 @@ function LeadershipSection() {
                       leaveTo="opacity-0 scale-95"
                     >
                       <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-md bg-white p-4 md:p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
-                        <button type="button" onClick={closeModal}>
+                        <button
+                          type="button"
+                          aria-label="Close modal"
+                          onClick={closeModal}
+                        >
                           <AiOutlineClose className="w-4 h-4" />
                         </button>
                         <form
@@ -217,6 +222,7 @@ function LeadershipSection() {
 
                           <button
                             type="submit"
+                            aria-label="Submit message"
                             className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-primary px-8 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
                           >
                             {loading ? "Submitting..." : "Submit"}
