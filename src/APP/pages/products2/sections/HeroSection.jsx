@@ -18,6 +18,7 @@ function HeroSection() {
       <div className="w-full md:rounded-2xl overflow-hidden">
         <video
           src={video}
+          aria-label="SpaceYaTech promotion video"
           controls
           className="h-full w-fit aspect-video"
           autoPlay={false}
