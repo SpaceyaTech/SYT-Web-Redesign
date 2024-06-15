@@ -12,7 +12,7 @@ function HeroSection() {
     setIsOpen(true);
   }
 
-  {/* Hero Image Animation*/}
+  // Hero Image Animation
 
   const containerRef = useRef(null);
 
