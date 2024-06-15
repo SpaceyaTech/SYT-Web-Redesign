@@ -18,6 +18,9 @@ export default defineConfig(({ mode }) => {
       ),
     },
     plugins: [million.vite({ auto: true }), react()],
+    test: {
+      includeSource: ['src/**/*.test.js'], 
+    },
     server: {
       watch: {
         usePolling: true,
