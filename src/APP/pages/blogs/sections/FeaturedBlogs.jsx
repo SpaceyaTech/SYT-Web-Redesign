@@ -45,7 +45,7 @@ function FeaturedBlogCard({ blog, currentIndex, handleToggle }) {
         backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url("${blog.image}")`,
       }}
     >
-      <h4 className="text-primary text-base md:text-2xl font-bold">Featured</h4>
+      <h2 className="text-primary text-base md:text-2xl font-bold">Featured</h2>
       <div className="flex space-x-8 text-white w-full flex-row">
         <div className="flex-1 flex flex-col gap-3">
           <Link
