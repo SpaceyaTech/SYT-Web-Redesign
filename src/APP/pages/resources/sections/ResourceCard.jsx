@@ -41,7 +41,7 @@ function ResourceCard({
       >
         {/* img cover */}
         <div className="h-[180px]">
-          <LazyLoadImage 
+          <LazyLoadImage
             src={image}
             alt={title}
             className="object-cover h-full w-full"
