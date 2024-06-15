@@ -26,7 +26,9 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           <span className="text-base font-medium text-white capitalize">
             View product
           </span>
-          <span className="bg-white rounded-full p-1"><PiArrowLineUpRightBold className="w-6 h-6 object-contain text-green-800" /></span>
+          <span className="bg-white rounded-full p-1">
+            <PiArrowLineUpRightBold className="w-6 h-6 object-contain text-green-800" />
+          </span>
         </a>
       </div>
 
