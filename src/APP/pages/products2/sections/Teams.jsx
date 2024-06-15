@@ -22,9 +22,9 @@ function Teams() {
     <section className="p-3 md:p-6 flex flex-col md:flex-row gap-6 md:gap-4 mb-4 md:mb-8">
       {/* Header */}
       <div className="w-full md:w-1/3 gap-3 md:gap-6">
-        <h3 className="text-[25px] font-medium leading-9 md:text-5xl md:leading-normal">
+        <h2 className="text-[25px] font-medium leading-9 md:text-5xl md:leading-normal">
           Backed by a team of Global Talents.
-        </h3>
+        </h2>
 
         <Link
           to="/community"
