@@ -1,3 +1,4 @@
+import videoCaptions from "../../../../assets/images/syt-video-captions_en.vtt";
 import video from "../../../../assets/images/syt.mp4";
 
 function HeroSection() {
@@ -17,14 +18,23 @@ function HeroSection() {
       {/* video section */}
       <div className="w-full md:rounded-2xl overflow-hidden">
         <video
-          src={video}
           aria-label="SpaceYaTech promotion video"
           controls
           className="h-full w-fit aspect-video"
           autoPlay={false}
           controlsList="nodownload"
           muted
-        />
+        >
+          <source src={video} type="video/mp4" />
+          <track
+            kind="captions"
+            src={videoCaptions}
+            srcLang="en"
+            label="English captions"
+            default
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
   );
