@@ -13,7 +13,7 @@ jobs:
       - name: Prepare .env file
         run: |
           rm -f .env && touch .env
-          echo "REACT_APP_API_BASE_URL=fake123" >> .env
+          echo "REACT_APP_API_BASE_URL=https://example.com" >> .env
           echo "VITE_SERVICE_ID=123fAkE" >> .env
           echo "VITE_TEMPLATE_ID=123fAkE" >> .env
           echo "VITE_PUBLIC_ID=123fAkE" >> .env
