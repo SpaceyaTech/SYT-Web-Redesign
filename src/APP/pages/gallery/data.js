@@ -238,6 +238,7 @@ const photosData = photos.map((photo) => ({
   }),
   date: "15/04/2023",
   event: "DevOps Nairobi",
+  alt: photo.alt,
 }));
 
 export default photosData;
