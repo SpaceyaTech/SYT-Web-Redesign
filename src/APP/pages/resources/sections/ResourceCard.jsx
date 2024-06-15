@@ -60,9 +60,9 @@ function ResourceCard({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h4 className="text-base font-bold text-[#323433C9] cursor-pointer">
+            <h3 className="text-base font-bold text-[#323433C9] cursor-pointer">
               {title}
-            </h4>
+            </h3>
 
             {/* Show/Hide div */}
             <div className={`${hovered ? "flex" : "hidden"} flex-col gap-2`}>
