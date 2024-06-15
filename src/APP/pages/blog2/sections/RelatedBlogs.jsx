@@ -33,11 +33,11 @@ function RelatedBlogs({ blogId, categoryId }) {
 
       {isSuccess && filteredRelatedBlogs.length > 0 && (
         <div className="flex flex-col gap-4">
-          <h3 className="text-[#29CC6A] text-lg font-bold leading-normal">
+          <h2 className="text-[#29CC6A] text-lg font-bold leading-normal">
             {filteredRelatedBlogs.length > 1
               ? "Related Articles"
               : "Related Article"}
-          </h3>
+          </h2>
           <div className="flex flex-col gap-4">
             {Array.isArray(filteredRelatedBlogs) &&
             filteredRelatedBlogs.length > 0 ? (
