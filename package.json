@@ -9,7 +9,7 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky install",
-    "test": "vitest run **/*.test.js",
+    "test": "vitest run",
     "test:e2e": "playwright test",
     "prettier:format": "prettier --write --ignore-path .gitignore .",
     "prettier:check": "prettier --check --ignore-path .gitignore .",
