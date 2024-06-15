@@ -51,7 +51,7 @@ function ResourceCard({
         {/* desc */}
         <div className="bg-white p-2 flex flex-col gap-[10px] border shadow-md rounded-b-xl">
           <div className="flex justify-between items-center">
-            <h5 className="text-base font-normal">{type}</h5>
+            <p className="text-base font-normal">{type}</p>
             <FaChevronDown
               className={`w-4 h-4 object-contain transform transition-all ease-in duration-500 cursor-pointer ${
                 hovered && "rotate-180"
