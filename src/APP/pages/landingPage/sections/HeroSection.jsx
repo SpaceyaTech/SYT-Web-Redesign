@@ -53,6 +53,7 @@ function HeroSection() {
 
         <button
           type="button"
+          aria-label="Join"
           onClick={openModal}
           className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
         >
