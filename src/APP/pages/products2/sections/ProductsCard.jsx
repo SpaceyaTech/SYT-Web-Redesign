@@ -11,9 +11,9 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
     >
       {/* desc */}
       <div className="flex-1 flex flex-col gap-1 md:gap-6 max-w-[532px]">
-        <h3 className="text-[25px] md:text-4xl lg:text-5xl xl:text-6xl leading-9 lg:leading-normal xl:leading-relaxed font-medium">
+        <h2 className="text-[25px] md:text-4xl lg:text-5xl xl:text-6xl leading-9 lg:leading-normal xl:leading-relaxed font-medium">
           {name}
-        </h3>
+        </h2>
         <p className="text-base md:text-lg font-normal">{desc}</p>
 
         {/* view btn */}
@@ -26,7 +26,9 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
           <span className="text-base font-medium text-white capitalize">
             View product
           </span>
-          <span className="bg-white rounded-full p-1"><PiArrowLineUpRightBold className="w-6 h-6 object-contain text-green-800" /></span>
+          <span className="bg-white rounded-full p-1">
+            <PiArrowLineUpRightBold className="w-6 h-6 object-contain text-green-800" />
+          </span>
         </a>
       </div>
 

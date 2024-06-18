@@ -2,7 +2,7 @@ import emailjs from "@emailjs/browser";
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { AiOutlineClose } from "react-icons/ai";  // Import react-icons
+import { AiOutlineClose } from "react-icons/ai"; // Import react-icons
 
 import { PartnerWithUs } from "../../../../assets/images/aboutPage";
 import { Caroussel } from "../../../components";
@@ -76,16 +76,16 @@ function LeadershipSection() {
     <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl sm:mt-24 px-4 md:px-0">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-6">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
-        <h4 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+        <h2 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
           Our leadership
-        </h4>
+        </h2>
         <div className="w-full h-0.5 bg-gray-300" />
       </div>
 
-      <h2 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
+      <h3 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
         A community is only as good
         <br /> as the leadership
-      </h2>
+      </h3>
 
       <Caroussel CarousselData={LeadershipData} />
       <div className="border bg-white p-2 w-full rounded-2xl md:rounded-[20px] lg:col-span-2 mt-12">
@@ -99,13 +99,13 @@ function LeadershipSection() {
             />
           </div>
           <div className="space-y-4 md:w-1/2 px-6 flex flex-col justify-center md:my-0 my-6">
-            <h3 className="w-fit text-green-dark text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+            <h2 className="w-fit text-green-dark text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
               Partner with us
-            </h3>
-            <h4 className="md:text-3xl text-2xl font-semibold text-green-dark leading-8 md:leading-10">
+            </h2>
+            <h3 className="md:text-3xl text-2xl font-semibold text-green-dark leading-8 md:leading-10">
               We collaborate with similar organizations to develop Africa’s
               skilled workforce
-            </h4>
+            </h3>
             <p className="leading-6 text-base md:mr-5">
               Our main focus is on building tech capacity. We collaborate with
               individuals, organizations, and public institutions to mentor and
@@ -117,6 +117,7 @@ function LeadershipSection() {
 
             <button
               type="button"
+              aria-label="Partner with us"
               onClick={openModal}
               className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
             >
@@ -154,7 +155,11 @@ function LeadershipSection() {
                       leaveTo="opacity-0 scale-95"
                     >
                       <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-md bg-white p-4 md:p-6 text-left align-middle shadow-xl transition-all flex flex-col items-end gap-4">
-                        <button type="button" onClick={closeModal}>
+                        <button
+                          type="button"
+                          aria-label="Close modal"
+                          onClick={closeModal}
+                        >
                           <AiOutlineClose className="w-4 h-4" />
                         </button>
                         <form
@@ -217,6 +222,7 @@ function LeadershipSection() {
 
                           <button
                             type="submit"
+                            aria-label="Submit message"
                             className="w-fit inline-flex justify-center rounded-lg border border-transparent bg-primary px-8 py-2 text-base font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
                           >
                             {loading ? "Submitting..." : "Submit"}

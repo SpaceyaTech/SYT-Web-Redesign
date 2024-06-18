@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
-import { AiOutlineClose } from "react-icons/ai"; 
+import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
 import logo from "../../assets/images/sytLogo.png";
@@ -66,6 +66,7 @@ function Header() {
         {showNavlinks ? (
           <button
             type="button"
+            aria-label="Close menu"
             className="md:hidden"
             onClick={() => setShowNavlinks(false)}
           >
@@ -75,10 +76,14 @@ function Header() {
         ) : (
           <button
             type="button"
+            aria-label="Open menu"
             className="md:hidden"
             onClick={() => setShowNavlinks(true)}
           >
-            <HiOutlineMenuAlt4 className="h-6 w-6 text-white" aria-hidden="true" />{" "}
+            <HiOutlineMenuAlt4
+              className="h-6 w-6 text-white"
+              aria-hidden="true"
+            />{" "}
             {/* Menu Icon */}
           </button>
         )}

@@ -8,15 +8,15 @@ function GallerySection() {
     <div className="pb-10 sm:pb-24 text-center">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
-        <h3 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+        <h2 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
           Our Gallery
-        </h3>
+        </h2>
         <div className="w-full h-0.5 bg-gray-300" />
       </div>
-      <h2 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
+      <h3 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
         A memory bank of our special
         <br /> moments
-      </h2>
+      </h3>
       <div className="overflow-x-auto flex gap-8 mt-10">
         {photosData.slice(0, 6).map((photo) => (
           <LazyLoadImage

@@ -16,7 +16,7 @@ import {
 function ShareBlog({ url, title }) {
   return (
     <div className="flex flex-row items-center gap-4">
-      <h3 className="text-primary uppercase font-normal">share it</h3>
+      <p className="text-primary uppercase font-normal">share it</p>
 
       <WhatsappShareButton
         url={url}
