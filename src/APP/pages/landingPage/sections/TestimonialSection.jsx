@@ -36,7 +36,7 @@ function TestimonialCard({ img, text, user, vocation }) {
       <p className="text-wrap text-sm font-normal text-left w-full">{text}</p>
       <div className="flex-between flex-row w-full">
         <div className="flex flex-col text-sm gap-1 capitalize">
-          <h6 className="font-light">{user}</h6>
+          <h4 className="font-light">{user}</h4>
           <p className="font-normal">{vocation}</p>
         </div>
 

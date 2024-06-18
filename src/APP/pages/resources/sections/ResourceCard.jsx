@@ -41,7 +41,7 @@ function ResourceCard({
       >
         {/* img cover */}
         <div className="h-[180px]">
-          <LazyLoadImage 
+          <LazyLoadImage
             src={image}
             alt={title}
             className="object-cover h-full w-full"
@@ -51,7 +51,7 @@ function ResourceCard({
         {/* desc */}
         <div className="bg-white p-2 flex flex-col gap-[10px] border shadow-md rounded-b-xl">
           <div className="flex justify-between items-center">
-            <h5 className="text-base font-normal">{type}</h5>
+            <p className="text-base font-normal">{type}</p>
             <FaChevronDown
               className={`w-4 h-4 object-contain transform transition-all ease-in duration-500 cursor-pointer ${
                 hovered && "rotate-180"
@@ -60,9 +60,9 @@ function ResourceCard({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h4 className="text-base font-bold text-[#323433C9] cursor-pointer">
+            <h3 className="text-base font-bold text-[#323433C9] cursor-pointer">
               {title}
-            </h4>
+            </h3>
 
             {/* Show/Hide div */}
             <div className={`${hovered ? "flex" : "hidden"} flex-col gap-2`}>

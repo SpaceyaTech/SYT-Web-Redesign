@@ -33,7 +33,7 @@ function BlogHeader({
         </p>
 
         <div className="flex items-center gap-2 mt-5 md:my-3">
-          <LazyLoadImage 
+          <LazyLoadImage
             src={logo}
             alt={author}
             className="w-10 h-10 object-cover rounded-full flex items-center justify-center"
@@ -48,7 +48,7 @@ function BlogHeader({
       </div>
 
       <div className="flex flex-col gap-4 py-5">
-        <LazyLoadImage 
+        <LazyLoadImage
           src={image}
           alt={title}
           className="object-contain overflow-hidden w-full lg:rounded-xl px-4 md:px-0"

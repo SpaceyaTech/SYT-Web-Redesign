@@ -27,9 +27,9 @@ function NextRead() {
 
   return (
     <div className="mx-auto max-w-[924px] flex flex-col gap-6 items-center px-0 md:px-3 w-full mt-10">
-      <h4 className="text-xl md:text-2xl font-semibold leading-normal">
+      <h2 className="text-xl md:text-2xl font-semibold leading-normal">
         You might like these
-      </h4>
+      </h2>
 
       <div className="flex items-center md:justify-between gap-1 md:gap-5 w-full">
         {/* left */}

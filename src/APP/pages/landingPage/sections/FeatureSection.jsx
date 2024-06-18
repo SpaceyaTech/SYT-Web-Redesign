@@ -4,17 +4,17 @@ function FeatureSection() {
   return (
     <section className="bg-green-light w-full relative py-4">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 absolute -top-6">
-        <h4 className="mx-auto min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+        <h2 className="mx-auto min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
           How we work
-        </h4>
+        </h2>
       </div>
 
       <div className="px-4 py-8 mx-auto max-w-7xl">
         <div className="flex flex-col items-center w-full gap-12">
-          <h1 className="text-xl md:text-3xl leading-loose font-semibold max-w-md md:max-w-2xl border text-center">
+          <h3 className="text-xl md:text-3xl leading-loose font-semibold max-w-md md:max-w-2xl border text-center">
             Fostering the <span className="text-primary">growth</span> of the
             next generation of techies in Africa
-          </h1>
+          </h3>
 
           {/* items  */}
           <div className="flex flex-col items-center md:flex-row gap-4 lg:gap-10 w-full p-4">

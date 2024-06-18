@@ -22,6 +22,7 @@ function FAQ() {
         >
           <h2 className="mb-4 font-semibold" id={`flush-heading${index + 1}`}>
             <button
+              aria-label={question.question}
               className={`group relative flex w-full items-center rounded-none border-0 py-4 px-5 text-left text-base transition ${
                 activeQuestion === index
                   ? ""

@@ -48,16 +48,16 @@ function EventsSection({ showTabs, showAllEventsLink }) {
     <section className="py-2 md:py-6 size-full ">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
-        <h3 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+        <h2 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
           Our Events
-        </h3>
+        </h2>
         <div className="w-full h-0.5 bg-gray-300" />
       </div>
 
-      <h4 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
+      <h3 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
         Notable events within the <br />
         SpaceYaTech ecosphere
-      </h4>
+      </h3>
       {isError && <Error500 />}
       {isPending && (
         <div className="flex flex-col items-center justify-center gap-4 py-10">

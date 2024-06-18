@@ -1,5 +1,3 @@
-// import { hasWindow } from "yet-another-react-lightbox";
-
 const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 const unsplashLink = (id, width, height) =>
   `https://lh3.googleusercontent.com/pw/${id}=w${width}-h${height}-s-no-gm?authuser=0`;
@@ -26,6 +24,7 @@ const photos = [
     date: "15/04/2023",
     event: "DevOps Nairobi",
   },
+
   {
     id: "ABLVV86B1RokBcefoXvm6apr9QgDg3xKY_gAn5VWlXH1cE1mXoguGukO-yz07HNMICP5Jj2uYqcxr2glT12wZQulj7mBfYPirY8HHwBTfG6tUaDNDgehcYPkDXMAK66eufsF3Ov6JTbo_SNGR64BLcVLiHYv",
     alt: "image",
@@ -238,6 +237,7 @@ const photosData = photos.map((photo) => ({
   }),
   date: "15/04/2023",
   event: "DevOps Nairobi",
+  alt: photo.alt,
 }));
 
 export default photosData;

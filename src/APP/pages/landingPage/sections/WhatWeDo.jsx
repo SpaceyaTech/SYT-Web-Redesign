@@ -49,7 +49,6 @@ function WhatWeDoCard({ card, index }) {
             {description}
           </p>
 
-
           <Button link={link} title="View More" />
         </div>
 

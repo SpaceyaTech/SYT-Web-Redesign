@@ -45,7 +45,7 @@ function StatsSection() {
                 {totalMembers}
               </h4>
 
-              <h6 className="text-lg font-semibold">Members</h6>
+              <h5 className="text-lg font-semibold">Members</h5>
 
               <p className="text-base font-normal text-center">
                 Spanning our communities and following
@@ -60,7 +60,7 @@ function StatsSection() {
             <div className="flex-center flex-col gap-2">
               <h4 className="text-green-dark text-3xl font-semibold">23</h4>
 
-              <h6 className="text-lg font-semibold">Students</h6>
+              <h5 className="text-lg font-semibold">Students</h5>
 
               <p className="text-base font-normal text-center">
                 Benefiting from our{" "}
@@ -81,7 +81,7 @@ function StatsSection() {
             <div className="flex-center flex-col gap-2">
               <h4 className="text-green-dark text-3xl font-semibold">43</h4>
 
-              <h6 className="text-lg font-semibold">Team Size</h6>
+              <h5 className="text-lg font-semibold">Team Size</h5>
 
               <p className="text-base font-normal text-center">
                 Of pros making SpaceYaTech tick{" "}
@@ -100,7 +100,7 @@ function StatsSection() {
             <div className="flex-center flex-col gap-2">
               <h4 className="text-green-dark text-3xl font-semibold">5</h4>
 
-              <h6 className="text-lg font-semibold">Projects</h6>
+              <h5 className="text-lg font-semibold">Projects</h5>
 
               <p className="text-base font-normal text-center">
                 Completed over a span of 2 years
