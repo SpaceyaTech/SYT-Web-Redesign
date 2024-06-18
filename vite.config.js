@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from "path";
@@ -18,6 +19,9 @@ export default defineConfig(({ mode }) => {
       ),
     },
     plugins: [million.vite({ auto: true }), react()],
+    test: {
+      include: ['src/**/*.test.js'], 
+    },
     server: {
       watch: {
         usePolling: true,

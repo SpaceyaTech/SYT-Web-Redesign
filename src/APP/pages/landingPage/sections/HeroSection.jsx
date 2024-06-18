@@ -52,6 +52,7 @@ function HeroSection() {
         </p>
 
         <button
+          id="hero-join-button"
           type="button"
           aria-label="Join"
           onClick={openModal}

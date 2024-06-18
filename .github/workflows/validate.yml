@@ -1,0 +1,18 @@
+name: Lint, Format and Build
+on:
+  push:
+    branches: [main, Dev]
+  pull_request:
+    branches: [main, Dev]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+      - name: Install dependencies
+        run: npm install
+      - name: Run code validation (includes linting, prettier and building)
+        run: npm run validate
