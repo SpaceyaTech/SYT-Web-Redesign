@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import { formatDistanceToNow } from "date-fns";
-import React from "react";
-import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 function RelatedBlogCard({ blog }) {
   const timeAgo = formatDistanceToNow(new Date(blog.created_at), {

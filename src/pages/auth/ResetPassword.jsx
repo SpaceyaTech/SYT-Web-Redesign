@@ -1,6 +1,5 @@
-import React from "react";
-import ResetPasswordImg from "../../../assets/images/auth/reset-password.svg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ResetPasswordImg from "../../assets/images/auth/reset-password.svg";
 
 function ResetPassword() {
   return (

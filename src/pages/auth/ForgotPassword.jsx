@@ -1,7 +1,7 @@
 import React from "react";
 import { MdEmail, MdMessage } from "react-icons/md"; // Import react-icons
-import ForgotPasswordImg from "../../../assets/images/auth/forgot-password.svg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ForgotPasswordImg from "../../assets/images/auth/forgot-password.svg";
 
 function ForgotPassword() {
   return (

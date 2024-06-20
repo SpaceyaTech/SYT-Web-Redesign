@@ -2,10 +2,10 @@
 import { formatDistanceToNow } from "date-fns";
 import React from "react";
 
-import logo from "../../../../assets/images/sytLogo.png";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import logo from "../../../assets/images/sytLogo.png";
 import BlogStats from "../../blogs/sections/BlogStats";
 import ShareBlog from "./ShareBlog";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlogHeader({
   id,

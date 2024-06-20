@@ -2,7 +2,7 @@ import { formatDistanceToNow } from "date-fns";
 import { useRef, useEffect } from "react";
 
 // import Comments from "./Comments";
-import logo from "../../../../assets/images/sytLogo.png";
+import logo from "../../../assets/images/sytLogo.png";
 import BlogStats from "../../blogs/sections/BlogStats";
 
 import "./blogWrapper.css";

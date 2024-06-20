@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import useBlogData from "../../hooks/Queries/blog/useBlogData";
 import { Loader } from "../../components";
 import SeoMetadata from "../../components/SeoMetadata";
+import useBlogData from "../../hooks/Queries/blog/useBlogData";
 import { Advert, BlogHeader, BlogBody } from "./sections";
 
 function Blog2() {

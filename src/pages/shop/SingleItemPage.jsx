@@ -2,15 +2,15 @@
 import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, useParams } from "react-router-dom";
-import SmallSample1 from "../../../assets/images/shop-page/small-sample-colored.png";
-import SmallSample2 from "../../../assets/images/shop-page/small-sample-greyscale.png";
+import SmallSample1 from "../../assets/images/shop-page/small-sample-colored.png";
+import SmallSample2 from "../../assets/images/shop-page/small-sample-greyscale.png";
+import NotificationModal from "../../components/auth/NotificationModal";
+import CartDrawer from "../../components/shop/CartDrawer";
+import Counter from "../../components/shop/Counter";
 import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
 import { useSingleOrder } from "../../hooks/Queries/shop/useOrdersList";
 import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
 import useAuth from "../../hooks/useAuth";
-import NotificationModal from "../../components/auth/NotificationModal";
-import CartDrawer from "../../components/shop/CartDrawer";
-import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
@@ -32,7 +32,7 @@ export default function SingleItemPage() {
   const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-  console.log("singleSwag: ", singleSwag);
+
   useEffect(() => {
     localStorage.setItem("swagList", []);
     if (isSuccess) {

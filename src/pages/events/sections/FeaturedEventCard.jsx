@@ -1,6 +1,4 @@
-import React from "react";
-import { featuredEvent } from "../../../assets/images/aboutPage";
-import startinevEvent from "../../../../assets/images/eventsPage/startinev.jpeg"
+import startinevEvent from "../../../assets/images/eventsPage/startinev.jpeg";
 
 function FeaturedEventCard() {
   return (

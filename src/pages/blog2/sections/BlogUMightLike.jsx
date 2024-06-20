@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { formatDistanceToNow } from "date-fns";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
-import logo from "../../../../assets/images/sytLogo.png";
+import logo from "../../../assets/images/sytLogo.png";
 import BlogStats from "../../blogs/sections/BlogStats";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function BlogUMightLike({ blog, block }) {
   const timeAgo = formatDistanceToNow(new Date(blog.created_at), {

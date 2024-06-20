@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { search } from "../../../assets/images/blogs-page";
 import { SearchBlogContext } from "../../../context/searchBlog";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Banner() {
   const { searchText, setSearchText } = useContext(SearchBlogContext);

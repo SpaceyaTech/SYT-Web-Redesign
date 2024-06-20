@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import { formatDistanceToNow } from "date-fns";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, Link } from "react-router-dom";
 
 import { arrowRight } from "../../../assets/images/blogs-page";
-import logo from "../../../../assets/images/sytLogo.png";
+import logo from "../../../assets/images/sytLogo.png";
 import { BlogStats } from "../../blogs/sections";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 function RelatedBlogCard({ blog }) {

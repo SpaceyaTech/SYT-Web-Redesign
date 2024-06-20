@@ -1,5 +1,5 @@
-import videoCaptions from "../../../../assets/images/syt-video-captions_en.vtt";
-import video from "../../../../assets/images/syt.mp4";
+import videoCaptions from "../../../assets/images/syt-video-captions_en.vtt";
+import video from "../../../assets/images/syt.mp4";
 
 function HeroSection() {
   return (

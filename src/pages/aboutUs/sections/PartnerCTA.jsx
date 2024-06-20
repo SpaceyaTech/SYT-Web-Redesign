@@ -1,4 +1,4 @@
-import Report from "../../../../assets/documentation/spaceyatech-internship-program.pdf";
+import Report from "../../../assets/documentation/spaceyatech-internship-program.pdf";
 
 function PartnerCTA() {
   return (

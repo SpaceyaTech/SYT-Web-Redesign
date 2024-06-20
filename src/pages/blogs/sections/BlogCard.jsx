@@ -5,7 +5,7 @@ import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
-import logo from "../../../../assets/images/sytLogo.png";
+import logo from "../../../assets/images/sytLogo.png";
 import BlogStats from "./BlogStats";
 
 function BlogCard({ blog }) {

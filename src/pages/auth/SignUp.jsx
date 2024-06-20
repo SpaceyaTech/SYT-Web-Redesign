@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Navigate } from "react-router-dom";
 import publicAxios from "../../api/publicAxios";
-import SignUpImg from "../../../assets/images/auth/signup.svg";
+import SignUpImg from "../../assets/images/auth/signup.svg";
 import useAuth from "../../hooks/useAuth";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function SignUp() {
   const { auth, setAuth } = useAuth();

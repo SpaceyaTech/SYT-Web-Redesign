@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import { MdLock } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { MdLock } from "react-icons/md"; // Example icon from react-icons
 
 import publicAxios from "../../api/publicAxios";
-import LoginImg from "../../../assets/images/auth/login.svg";
 import useAuth from "../../hooks/useAuth";
 
 function LogIn() {

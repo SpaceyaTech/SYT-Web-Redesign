@@ -1,16 +1,16 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import Sample1 from "../../../assets/images/shop-page/sample1.png";
-import Sample2 from "../../../assets/images/shop-page/sample2.png";
+import Sample1 from "../../assets/images/shop-page/sample1.png";
+import Sample2 from "../../assets/images/shop-page/sample2.png";
+import CartDrawer from "../../components/shop/CartDrawer";
+import Counter from "../../components/shop/Counter";
 import useMakeOrder from "../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
 import { useOrderSummary } from "../../hooks/Queries/shop/useOrdersList";
-import CartDrawer from "../../components/shop/CartDrawer";
-import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const steps = [
   { description: "Provide your MPESA mobile number", key: 1 },
