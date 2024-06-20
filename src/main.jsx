@@ -6,7 +6,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
-import { ErrorBoundary } from "./APP";
+import { ErrorBoundary } from ".";
 import { AuthContextProvider } from "./context/AuthContext";
 import { SearchBlogProvider } from "./context/searchBlog";
 import router from "./router";
