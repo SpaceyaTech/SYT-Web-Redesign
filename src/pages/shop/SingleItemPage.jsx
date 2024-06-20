@@ -61,7 +61,7 @@ export default function SingleItemPage() {
       console.log("singleSwag: ", swagList);
 
       // Also check for matching swagg_id that already exist in local storage
-      if (Payload !== {}) swagList.push(Payload);
+      swagList.push(Payload);
       swagListJSON = JSON.stringify(swagList);
       console.log("swagListJSON: ", swagListJSON);
       localStorage.setItem("swagList", swagListJSON);
