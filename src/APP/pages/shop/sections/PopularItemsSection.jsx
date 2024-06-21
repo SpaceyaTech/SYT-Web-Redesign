@@ -46,7 +46,7 @@ function PopularItemsSection() {
                     <div>
                       {stock ? (
                         <p className="font-medium bg-[#ECFDF3] text-[#027A48] text-sm rounded-full px-2 py-1 max-w-fit">
-                          {stock} items left
+                          {stock} {stock === 1 ? "item" : "items"} left
                         </p>
                       ) : (
                         <p className="font-medium bg-[#FEF3F2] text-[#B42318] text-sm rounded-full px-2 py-1">
