@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-underscore-dangle */
 /// <reference types="vitest" />
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import path from "path";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 import react from "@vitejs/plugin-react";
 import million from "million/compiler";
 import { defineConfig, loadEnv } from "vite";
@@ -20,7 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [million.vite({ auto: true }), react()],
     test: {
-      include: ['src/**/*.test.js'], 
+      include: ["src/**/*.test.js"], 
     },
     server: {
       watch: {

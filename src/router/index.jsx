@@ -27,17 +27,15 @@ import {
   SingleEvent,
   Blogs,
   EventsPage,
-} from "../APP";
-import { FallbackLoader } from "../APP/components";
+  AdminLayout,
+  ShopDashboard,
+} from "..";
+import { FallbackLoader } from "../components";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Suspense fallback={<FallbackLoader />}>
-        <Layout />
-      </Suspense>
-    ),
+    element: <Layout />,
     children: [
       {
         path: "/",
@@ -194,6 +192,48 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "/admin/shop",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <ShopDashboard />
+          </Suspense>
+        ),
+      },
+      // {
+      //   path: "/admin",
+      //   element: <AllChaptersPage />,
+      // },
+      // {
+      //   path: "/admin/all-chapters",
+      //   element: <AllChaptersPage />,
+      // },
+      // {
+      //   path: "/admin/events",
+      //   element: <AllEventsPage />,
+      // },
+      // {
+      //   path: "/admin/add-chapters",
+      //   element: <AddChapterPage />,
+      // },
+      // {
+      //   path: "/admin/events",
+      //   element: <AllEventsPage />,
+      // },
+      // {
+      //   path: "/admin/events/add-event",
+      //   element: <AddEventPage />,
+      // },
+      // {
+      //   path: "/admin/events/update-event",
+      //   element: <UpdateEventPage />,
+      // },
+    ],
+  },
+  {
     path: "/error-400",
     element: (
       <Suspense fallback={<FallbackLoader />}>
@@ -225,40 +265,6 @@ const router = createBrowserRouter([
       </Suspense>
     ),
   },
-  // {
-  //   path: "/admin",
-  //   element: <AdminLayout />,
-  //   children: [
-  //     {
-  //       path: "/admin",
-  //       element: <AllChaptersPage />,
-  //     },
-  //     {
-  //       path: "/admin/all-chapters",
-  //       element: <AllChaptersPage />,
-  //     },
-  //     {
-  //       path: "/admin/events",
-  //       element: <AllEventsPage />,
-  //     },
-  //     {
-  //       path: "/admin/add-chapters",
-  //       element: <AddChapterPage />,
-  //     },
-  //     {
-  //       path: "/admin/events",
-  //       element: <AllEventsPage />,
-  //     },
-  //     {
-  //       path: "/admin/events/add-event",
-  //       element: <AddEventPage />,
-  //     },
-  //     {
-  //       path: "/admin/events/update-event",
-  //       element: <UpdateEventPage />,
-  //     },
-  //   ],
-  // },
 ]);
 
 export default router;
