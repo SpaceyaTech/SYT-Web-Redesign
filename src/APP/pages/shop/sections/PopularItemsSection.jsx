@@ -21,13 +21,13 @@ function PopularItemsSection() {
       <h3 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
         Products similar to the one above
       </h3>
-      <div className="mt-8 py-4 flex flex-row gap-4 overflow-x-scroll h-full w-full scrollbar">
+      <div className="mt-8 py-4 flex flex-row gap-4 sm:gap-10 overflow-x-scroll h-full w-full scrollbar">
         {products
           ?.slice(0, 8)
           .map(({ stock, category, description, id, name, image, price }) => (
             <div
               key={id}
-              className="group relative border border-slate-200 p-2 rounded-md"
+              className="group relative border border-slate-200 p-4 rounded-md min-w-[320px] h-auto md:min-w-[400px]"
               onClick={() => navigate(`/shop/item/${id}`)}
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
