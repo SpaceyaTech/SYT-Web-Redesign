@@ -49,7 +49,7 @@ function PopularItemsSection() {
                     </h4>
                     <div>
                       {stock ? (
-                        <p className="font-medium bg-[#ECFDF3] text-[#027A48] text-sm rounded-full px-2 py-1">
+                        <p className="font-medium bg-[#ECFDF3] text-[#027A48] text-sm rounded-full px-2 py-1 max-w-fit">
                           {stock} items left
                         </p>
                       ) : (
