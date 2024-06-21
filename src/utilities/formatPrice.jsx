@@ -1,8 +1,6 @@
-const formatPrice = (price) => {
-  return new Intl.NumberFormat("en-US", {
+const formatPrice = (price) =>
+  new Intl.NumberFormat("en-US", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(price);
-};
-
 export default formatPrice;
