@@ -21,7 +21,7 @@ function PopularItemsSection() {
       <h3 className="md:text-3xl text-2xl font-semibold title-font text-green-dark text-center">
         Products similar to the one above
       </h3>
-      <div className="mt-8 py-4 flex flex-row gap-4 sm:gap-10 overflow-x-scroll h-full w-full scrollbar">
+      <div className="mt-8 py-4 flex flex-row gap-4 sm:gap-10 overflow-x-scroll h-full w-full hr-scrollbar">
         {products
           ?.slice(0, 8)
           .map(({ stock, category, description, id, name, image, price }) => (
