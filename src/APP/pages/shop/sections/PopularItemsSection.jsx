@@ -30,7 +30,7 @@ function PopularItemsSection() {
               className="group relative border border-slate-200 p-2 rounded-md"
               onClick={() => navigate(`/shop/item/${id}`)}
             >
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <LazyLoadImage
                   src={image}
                   alt={name}
