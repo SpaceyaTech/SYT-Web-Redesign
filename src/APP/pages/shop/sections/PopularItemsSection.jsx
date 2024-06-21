@@ -2,18 +2,12 @@ import { CiShoppingTag } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import formatPrice from "../../../../utilities/formatPrice";
 
 function PopularItemsSection() {
   const navigate = useNavigate();
 
   const { data: products, isPending, isError, isSuccess } = useSwagList();
-
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-US", {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   return (
     <div className="p-10">
