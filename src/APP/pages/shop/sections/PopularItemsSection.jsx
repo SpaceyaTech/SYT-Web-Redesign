@@ -39,7 +39,7 @@ function PopularItemsSection() {
               </div>
               <div className="mt-4">
                 <div className="space-y-2">
-                  <div className="flex justify-between">
+                  <div className="flex flex-col sm:flex-row justify-between">
                     <h4 className="text-base text-gray-700 uppercase">
                       <span
                         aria-hidden="true"
