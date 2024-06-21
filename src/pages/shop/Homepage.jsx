@@ -1,5 +1,5 @@
 import SeoMetadata from "../../components/SeoMetadata";
-import Banner from "./sections/Banner";
+import Banner from "./sections/Banner/index";
 import CategoriesSection from "./sections/CategoriesSection";
 import PopularItemsSection from "./sections/PopularItemsSection";
 // import CategoriesProducts from "./sections/CategoriesProducts";
@@ -16,11 +16,11 @@ function Homepage() {
         ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
         siteName="SpaceYaTech Shop"
       />
-      <div>
+      <div className="w-full px-4 md:px-10 lg:px-20">
         <Banner />
-        <CategoriesSection />
-        {/* <CategoriesProducts/> */}
-        <PopularItemsSection />
+        {/* <CategoriesSection /> */}
+        {/* <CategoriesProducts /> */}
+        {/* <PopularItemsSection /> */}
       </div>
     </>
   );
