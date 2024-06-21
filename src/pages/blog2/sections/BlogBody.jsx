@@ -14,7 +14,7 @@ function BlogBody({ id, categoryId, blogBody }) {
 
   useEffect(() => {
     if (BodyRef.current) {
-      BodyRef.current.innerHTML += blogBody ?? "";
+      BodyRef.current.innerHTML = blogBody ?? "";
     }
   }, [blogBody]);
 
