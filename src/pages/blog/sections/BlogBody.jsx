@@ -7,8 +7,6 @@ import { glovo } from "../../../assets/images/blogs-page";
 import NextRead from "./NextRead";
 import RelatedBlogs from "./RelatedBlogs";
 
-import "./blogBody.css";
-
 function BlogBody({ id, categoryId, blogBody }) {
   const BodyRef = useRef(null);
 
