@@ -3,6 +3,7 @@ import banner from "../../../../assets/images/shop-page/shop-banner.jpg";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import "./banner.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const DotButton = ({ selected, onClick }) => (
   <button
@@ -46,10 +47,10 @@ export default function EmblaCarousel() {
           <div className="embla__container h-full">
             {slides.map((index) => (
               <div className="embla__slide  h-full" key={index}>
-                <img
+                <LazyLoadImage
                   className="w-full h-full rounded-2xl"
                   src={banner}
-                  alt="A cool cat."
+                  alt="banner"
                 />
               </div>
             ))}
