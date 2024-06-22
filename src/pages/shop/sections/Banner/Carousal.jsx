@@ -58,10 +58,10 @@ export default function EmblaCarousel() {
         </div>
       </div>
       <div className="absolute inset-0 flex flex-col gap-4 items-center justify-center">
-        <h2 className="text-white font-bold text-3xl lg:text-5xl">
+        <h2 className="text-white font-bold text-2xl lg:text-5xl">
           SpaceYaTech Hoodies
         </h2>
-        <p className="text-lg text-white my-1">
+        <p className=" text-md md:text-lg text-white my-1">
           Buy out most stylish tech themed items
         </p>
         <p className="font-bold text-lg text-white">From KES 2,600</p>
