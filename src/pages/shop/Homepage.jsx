@@ -1,8 +1,11 @@
+import CartIcon from "@/components/shop/CartIcon";
 import SeoMetadata from "../../components/SeoMetadata";
 import Banner from "./sections/Banner/index";
 import CategoriesSection from "./sections/CategoriesSection";
 import PopularItemsSection from "./sections/PopularItemsSection";
-// import CategoriesProducts from "./sections/CategoriesProducts";
+import FilterSection from "./sections/FilterSection";
+import FaqSection from "./sections/FaqSection";
+import CategoriesProducts from "./sections/CategoriesProducts";
 
 function Homepage() {
   return (
@@ -16,10 +19,13 @@ function Homepage() {
         ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
         siteName="SpaceYaTech Shop"
       />
-      <div className="w-full px-4 md:px-10 lg:px-20">
+      <div className="w-full">
+        <CartIcon />
         <Banner />
+        <FilterSection />
+        <CategoriesProducts />
+        <FaqSection />
         {/* <CategoriesSection /> */}
-        {/* <CategoriesProducts /> */}
         {/* <PopularItemsSection /> */}
       </div>
     </>

@@ -1,18 +1,21 @@
 import SearchInput from "@/components/shop/SearchInput";
+import SectionWrapper from "@/components/shop/SectionWrapper";
 import SortItems from "@/components/shop/SortItems";
 import { Menu } from "@headlessui/react";
 import { IoMenu } from "react-icons/io5";
 
 const FilterSection = () => {
   return (
-    <div className="flex flex-col gap-4 my-4 w-full">
-      <SearchInput />
-      <div className="flex justify-end gap-4 md:justify-between w-full">
-        <MobileCategories />
-        <Categories />
-        <SortItems />
+    <SectionWrapper>
+      <div className="flex flex-col gap-4 w-full">
+        <SearchInput />
+        <div className="flex justify-end gap-4 md:justify-between w-full">
+          <MobileCategories />
+          <Categories />
+          <SortItems />
+        </div>
       </div>
-    </div>
+    </SectionWrapper>
   );
 };
 
