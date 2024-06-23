@@ -18,3 +18,11 @@ export const questions = [
       "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits.",
   },
 ];
+
+export const categories = [
+  "hoodies",
+  "T-shirts",
+  "cups",
+  "bookmarks",
+  "jackets",
+];

@@ -3,6 +3,8 @@ import SectionWrapper from "@/components/shop/SectionWrapper";
 import SortItems from "@/components/shop/SortItems";
 import { Menu } from "@headlessui/react";
 import { IoMenu } from "react-icons/io5";
+import { Link, useParams } from "react-router-dom";
+import { categories } from "../data";
 
 const FilterSection = () => {
   return (
@@ -22,19 +24,28 @@ const FilterSection = () => {
 const Categories = () => {
   return (
     <div className="hidden md:flex gap-4  ">
-      <CategoryItem name="Hoodies" />
-      <CategoryItem name="Hoodies" />
-      <CategoryItem name="Hoodies" />
-      <CategoryItem name="Hoodies" />
+      {categories.map((item, i) => (
+        <CategoryItem key={i} name={item} />
+      ))}
     </div>
   );
 };
 
 const CategoryItem = ({ name }) => {
+  const params = useParams();
+  const category = params.category === name;
+
   return (
-    <button className="rounded-lg md:border md:shadow-sm py-2 px-4 hover:bg-gray-500/20">
-      <p className="text-sm hover:text-green-dark  text-gray-500">{name}</p>
-    </button>
+    <Link
+      to={`/shop/category/${name}`}
+      className={`rounded-lg md:border md:shadow-sm py-2 px-4 ${category ? "bg-green-dark" : " hover:bg-gray-500/20 "}`}
+    >
+      <p
+        className={`text-sm capitalize ${category ? "text-white" : " hover:text-green-dark  text-gray-500"}`}
+      >
+        {name}
+      </p>
+    </Link>
   );
 };
 
@@ -50,15 +61,11 @@ const MobileCategories = () => {
           anchor="bottom"
           className="absolute md:static top-10 z-10 right-0 w-48 py-1 px-2 bg-white rounded-md flex flex-col md:flex-row gap-2 border shadow-sm"
         >
-          <Menu.Item>
-            <CategoryItem name="Hoodies" />
-          </Menu.Item>
-          <Menu.Item>
-            <CategoryItem name="Hoodies" />
-          </Menu.Item>
-          <Menu.Item>
-            <CategoryItem name="Hoodies" />
-          </Menu.Item>
+          {categories.map((item, i) => (
+            <Menu.Item key={i}>
+              <CategoryItem name={item} />
+            </Menu.Item>
+          ))}
         </Menu.Items>
       </Menu>
     </div>
