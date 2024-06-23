@@ -1,10 +1,21 @@
 import { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const SearchInput = () => {
   const [searchText, setSearchText] = useState("");
+  const navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    navigate(`/shop/items?search=${searchText}`);
+  }
+
   return (
-    <form className="flex justify-between w-full relative ">
+    <form
+      onSubmit={handleSubmit}
+      className="flex justify-between w-full relative "
+    >
       <input
         type="text"
         placeholder="Search item"
@@ -16,7 +27,6 @@ const SearchInput = () => {
       <button
         type="submit"
         className="text-white text-sm  bg-gradient-to-b to-primary from-green-dark py-2 px-4 md:px-20 rounded-r-lg"
-        onClick={(e) => e.preventDefault()}
       >
         Search
       </button>
