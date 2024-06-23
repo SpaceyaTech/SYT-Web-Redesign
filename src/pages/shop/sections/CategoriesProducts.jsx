@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useSearchParams } from "react-router-dom";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 import ItemHeader from "./ItemHeader";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import FilterSection from "./FilterSection";
+import SectionWrapper from "@/components/shop/SectionWrapper";
 
 function CategoriesProducts() {
   const params = useParams();
+  const [searchParams] = useSearchParams();
+  const sort = searchParams.get("sort");
+
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -77,22 +82,27 @@ function CategoriesProducts() {
   const { data: swagList, isSuccess } = useSwagList();
 
   useEffect(() => {
-    setProducts(
+    const data =
       swagList?.filter(
         (item) => item.category.toLowerCase() === params?.category.toLowerCase()
-      ) || []
-    );
-  }, [swagList, params]);
+      ) || [];
+    if (sort === "low") {
+      setProducts(data.sort((a, b) => +a.price - +b.price));
+    } else if (sort === "high") {
+      setProducts(data.sort((a, b) => +b.price - +a.price));
+    } else {
+      setProducts(data);
+    }
+  }, [swagList, params, sort]);
 
   return (
     <>
-      <ItemHeader show={() => setOpen((prev) => !prev)} />
+      <div className="flex flex-col gap-2">
+        <ItemHeader show={() => setOpen((prev) => !prev)} />
+        <FilterSection />
+      </div>
       <div>
-        <div className="p-10">
-          <h2 className="text-3xl font-medium tracking-tight text-gray-900 capitalize">
-            {params?.category}
-          </h2>
-
+        <SectionWrapper>
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {isSuccess &&
               products.map((product) => (
@@ -102,7 +112,7 @@ function CategoriesProducts() {
                   to={`/shop/item/${product.id}`}
                 >
                   <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                    <LazyLoadImage 
+                    <LazyLoadImage
                       src={product.image}
                       alt="Front of men&#039;s Basic Tee in black."
                       className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
@@ -121,7 +131,7 @@ function CategoriesProducts() {
                 </Link>
               ))}
           </div>
-        </div>
+        </SectionWrapper>
       </div>
     </>
   );
