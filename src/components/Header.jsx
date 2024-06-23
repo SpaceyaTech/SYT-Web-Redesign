@@ -37,11 +37,11 @@ const navLinks = [
     link: "Resources",
     route: "/resources",
   },
-  // {
-  //   id: 7,
-  //   link: "Shop",
-  //   route: "/shop",
-  // },
+  {
+    id: 7,
+    link: "Shop",
+    route: "/shop",
+  },
   // {
   //   id: 8,
   //   link: "Donate",
