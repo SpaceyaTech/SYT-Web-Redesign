@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import "./banner.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 const DotButton = ({ selected, onClick }) => (
   <button
@@ -65,9 +66,12 @@ export default function EmblaCarousel() {
           Buy out most stylish tech themed items
         </p>
         <p className="font-bold text-lg text-white">From KES 2,600</p>
-        <button className="text-white font-bold bg-gradient-to-b to-primary from-green-dark py-3 px-4 mb-2 rounded-md">
+        <Link
+          to="/shop/items"
+          className="text-white font-bold bg-gradient-to-b to-primary from-green-dark py-3 px-4 mb-2 rounded-md"
+        >
           Shop Now
-        </button>
+        </Link>
         <div className="flex justify-center bg-black/60 rounded-3xl gap-3 px-2 py-1.5">
           {scrollSnaps.map((_, index) => (
             <DotButton
