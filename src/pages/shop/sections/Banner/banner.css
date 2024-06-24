@@ -46,3 +46,18 @@
   border-radius: 2px;
   content: "";
 }
+
+.embla__progress {
+  position: relative;
+  justify-self: flex-end;
+  align-self: center;
+  max-width: 90%;
+  overflow: hidden;
+}
+.embla__progress__bar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+}

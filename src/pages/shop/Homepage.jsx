@@ -6,6 +6,8 @@ import PopularItemsSection from "./sections/PopularItemsSection";
 import FilterSection from "./sections/FilterSection";
 import FaqSection from "./sections/FaqSection";
 import CategoriesProducts from "./sections/CategoriesProducts";
+import AllProducts from "./sections/AllProducts";
+import FeaturedProducts from "./sections/FeaturedProducts";
 
 function Homepage() {
   return (
@@ -23,7 +25,7 @@ function Homepage() {
         <CartIcon />
         <Banner />
         <FilterSection />
-        <CategoriesProducts />
+        <FeaturedProducts />
         <FaqSection />
         {/* <CategoriesSection /> */}
         {/* <PopularItemsSection /> */}
