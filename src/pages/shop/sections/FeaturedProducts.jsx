@@ -3,9 +3,8 @@ import SectionWrapper from "@/components/shop/SectionWrapper";
 import useEmblaCarousel from "embla-carousel-react";
 import "./Banner/banner.css";
 import { useCallback, useEffect, useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSwagList } from "@/hooks/Queries/shop/useSwagList";
-import { Link } from "react-router-dom";
+import ProductCard from "@/components/shop/ProductCard";
 
 const FeaturedProducts = () => {
   const { data: swagList, isSuccess } = useSwagList();
@@ -43,33 +42,13 @@ const FeaturedProducts = () => {
               {isSuccess &&
                 swagList?.map((product) => (
                   <div
-                    className="min-w-[100%] sm:min-w-[50%] md:min-w-[33%] pl-4  h-full"
+                    className="min-w-[100%] sm:min-w-[50%] lg:min-w-[33%] pl-4  h-full"
                     key={product.id}
                   >
-                    <Link
-                      className="group relative"
-                      to={`/shop/item/${product.id}`}
-                    >
-                      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                        <LazyLoadImage
-                          src={product.image}
-                          alt="Front of men&#039;s Basic Tee in black."
-                          className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
-                        />
-                      </div>
-                      <div className="mt-4 flex justify-between">
-                        <div className="space-y-2">
-                          <h3 className="text-xl font-normal text-gray-700">
-                            {product.name}
-                          </h3>
-                          <p className="text-base font-medium text-gray-700">
-                            {product.price}
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
+                    <ProductCard product={product} />
                   </div>
                 ))}
+              flex
             </div>
           </div>
         </div>

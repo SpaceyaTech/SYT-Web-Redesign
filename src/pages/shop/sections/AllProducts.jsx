@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import SectionWrapper from "@/components/shop/SectionWrapper";
 import CartIcon from "@/components/shop/CartIcon";
 import FilterSection from "./FilterSection";
+import ProductCard from "@/components/shop/ProductCard";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -44,32 +44,10 @@ function AllProducts() {
         <FilterSection />
       </div>
       <SectionWrapper>
-        <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mt-6 grid grid-cols-1  gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
           {isSuccess &&
-            products.map((product) => (
-              <Link
-                key={product.id}
-                className="group relative"
-                to={`/shop/item/${product.id}`}
-              >
-                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                  <LazyLoadImage
-                    src={product.image}
-                    alt="Front of men&#039;s Basic Tee in black."
-                    className="w-full h-60 object-cover object-center lg:h-full lg:w-full"
-                  />
-                </div>
-                <div className="mt-4 flex justify-between">
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-normal text-gray-700">
-                      {product.name}
-                    </h3>
-                    <p className="text-base font-medium text-gray-700">
-                      {product.price}
-                    </p>
-                  </div>
-                </div>
-              </Link>
+            products?.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
         </div>
       </SectionWrapper>
