@@ -6,6 +6,7 @@ import { Fragment, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
 import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
+import GoBackBtn from "../../../components/GoBackBtn";
 
 function ItemHeader({ show }) {
   const { pathname } = useLocation();
@@ -37,31 +38,7 @@ function ItemHeader({ show }) {
         aria-label="breadcrumb"
         className="sm:w-1/2 hidden sm:flex items-center"
       >
-        <ol className="flex space-x-2">
-          {pathnames.map((value, index) => {
-            const isLast = index === pathnames.length - 1;
-            const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-
-            return isLast ? (
-              <li
-                className="text-primary capitalize"
-                aria-current="page"
-                key={to}
-              >
-                {value}
-              </li>
-            ) : (
-              <li key={to}>
-                <a
-                  href={to}
-                  className="after:content-['>'] after:ml-2 text-[#656767] hover:text-primary capitalize"
-                >
-                  {value}
-                </a>
-              </li>
-            );
-          })}
-        </ol>
+        <GoBackBtn />
       </nav>
 
       {/* Search box */}
