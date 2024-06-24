@@ -31,7 +31,7 @@ function ItemHeader({ show }) {
         );
 
   return (
-    <div className="px-8 sm:px-0 m-auto max-w-screen-2xl flex justify-between md:space-x-48">
+    <div className="px-8 sm:px-10 m-auto max-w-screen-2xl flex justify-between md:space-x-48">
       {/* Breadcrumb */}
       <nav
         aria-label="breadcrumb"
