@@ -117,7 +117,7 @@ export default function SingleItemPage() {
           </div>
 
           <div className="w-full md:w-1/2 space-y-5 sm:pr-16">
-            <h1 className="text-xl md:text-4xl font-semibold md:font-medium">
+            <h1 className="text-xl md:text-4xl font-medium md:font-semibold">
               {singleSwag.name}
             </h1>
             <h3 className="text-base md:text-xl font-normal md:font-medium">
