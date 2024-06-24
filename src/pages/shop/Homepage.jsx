@@ -1,12 +1,8 @@
 import CartIcon from "@/components/shop/CartIcon";
 import SeoMetadata from "../../components/SeoMetadata";
 import Banner from "./sections/Banner/index";
-import CategoriesSection from "./sections/CategoriesSection";
-import PopularItemsSection from "./sections/PopularItemsSection";
 import FilterSection from "./sections/FilterSection";
 import FaqSection from "./sections/FaqSection";
-import CategoriesProducts from "./sections/CategoriesProducts";
-import AllProducts from "./sections/AllProducts";
 import FeaturedProducts from "./sections/FeaturedProducts";
 import NewProducts from "./sections/NewProducts";
 
@@ -29,8 +25,6 @@ function Homepage() {
         <FeaturedProducts />
         <NewProducts />
         <FaqSection />
-        {/* <CategoriesSection /> */}
-        {/* <PopularItemsSection /> */}
       </div>
     </>
   );
