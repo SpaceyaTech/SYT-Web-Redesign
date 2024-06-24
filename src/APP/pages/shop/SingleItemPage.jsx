@@ -12,6 +12,9 @@ import NotificationModal from "../../components/auth/NotificationModal";
 import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import ItemHeader from "./sections/ItemHeader";
+import { FaRegStar, FaRegCircleDot } from "react-icons/fa6";
+import { FaRegCircle } from "react-icons/fa";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
@@ -120,14 +123,19 @@ export default function SingleItemPage() {
             <h1 className="text-xl md:text-4xl font-medium md:font-semibold">
               {singleSwag.name}
             </h1>
-            <h3 className="text-base md:text-xl font-normal md:font-medium">
-              Product description
-            </h3>
-            <p className="text-sm md:text-base">{singleSwag.description}</p>
-            <p className="text-xl md:text-2xl font-semibold md:font-bold">
+            <p className="text-xl md:text-2xl font-semibold text-[#323433]">
               Ksh {singleSwag.price}
             </p>
-            <h4 className="text-base md:text-xl">Choose color</h4>
+            <p className="flex gap-2 items-center text-lg md:text-xl font-semibold text-[#656767]">
+              <span>4.5</span>
+              <span>
+                <FaRegStar className="h-5 w-5 fill-primary mb-1" />
+              </span>
+            </p>
+            <hr />
+            <h4 className="text-base md:text-xl text-[#656767]">
+              Choose color
+            </h4>
 
             <div className="flex justify-start space-x-6">
               {VariationData.map((pic) => (
@@ -142,41 +150,55 @@ export default function SingleItemPage() {
                 </div>
               ))}
             </div>
-
-            <h4 className="text-base md:text-xl">Choose size</h4>
-            <div className="flex justify-between sm:justify-start sm:space-x-4">
+            <h4 className="text-base md:text-xl text-[#656767]">
+              Choose a size
+            </h4>
+            <div className="flex flex-wrap justify-start sm:justify-start gap-2">
               {sizes.map((size) => (
                 <button
                   key={size}
                   type="button"
-                  className={`w-20 h-12 rounded-full border border-[#323433] text-2xl ${
+                  className={`w-fit min-w-10 px-2 h-8 sm:h-10 rounded-md border border-[#EAECF0] text-lg sm:text-2xl flex justify-center items-center gap-2 ${
                     selectedSize === size
                       ? "bg-[#009975] text-white"
                       : "hover:bg-primary hover:border-[#009975] hover:text-white"
                   }`}
                   onClick={() => setSelectedSize(size)}
                 >
+                  {selectedSize === size ? (
+                    <FaRegCircleDot className="text-sm sm:text-lg" />
+                  ) : (
+                    <FaRegCircle className="text-sm sm:text-lg" />
+                  )}{" "}
                   {size}
                 </button>
               ))}
             </div>
+            <hr />
 
-            <Counter className="h-12 w-32" count={count} setCount={setCount} />
+            <div className="flex justify-start gap-3 ">
+              <Counter
+                className="h-14 w-32"
+                count={count}
+                setCount={setCount}
+              />
 
-            <button
-              type="button"
-              className="w-full h-[62px] bg-primary text-[#F7F7F7] text-sm font-medium rounded-lg"
-              onClick={handleBuyNow}
-            >
-              Buy Now
-            </button>
-            <button
-              type="button"
-              className="w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-[#009975]"
-              onClick={handleAddToCart}
-            >
-              Add to cart
-            </button>
+              <button
+                type="button"
+                className="w-[179px] h-14 flex justify-center items-center px-2 py-4 gap-3 bg-primary text-white sm:font-bold text-base font-medium rounded-lg outline outline-[#009975]"
+                onClick={handleAddToCart}
+              >
+                <MdOutlineAddShoppingCart className="h-8 w-8 text-white" /> Add
+                to cart
+              </button>
+            </div>
+            <hr />
+            <h3 className="text-base md:text-xl text-[#323433] font-normal md:font-medium">
+              Product description
+            </h3>
+            <p className="text-sm md:text-base font-light sm:font-normal text-[#323433]">
+              {singleSwag.description}
+            </p>
           </div>
         </div>
       ) : (
