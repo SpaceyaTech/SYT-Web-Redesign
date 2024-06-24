@@ -100,7 +100,7 @@ export default function SingleItemPage() {
     <>
       <ItemHeader show={() => setOpen((prev) => !prev)} />
       {isSuccess ? (
-        <div className="px-8 sm:px-0 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
+        <div className="px-8 sm:px-10 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
           <div className="md:pb-14 md:w-1/2 space-y-6">
             <LazyLoadImage
               src={singleSwag.image}
