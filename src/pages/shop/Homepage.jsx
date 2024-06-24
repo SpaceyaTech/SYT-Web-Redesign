@@ -8,6 +8,7 @@ import FaqSection from "./sections/FaqSection";
 import CategoriesProducts from "./sections/CategoriesProducts";
 import AllProducts from "./sections/AllProducts";
 import FeaturedProducts from "./sections/FeaturedProducts";
+import NewProducts from "./sections/NewProducts";
 
 function Homepage() {
   return (
@@ -26,6 +27,7 @@ function Homepage() {
         <Banner />
         <FilterSection />
         <FeaturedProducts />
+        <NewProducts />
         <FaqSection />
         {/* <CategoriesSection /> */}
         {/* <PopularItemsSection /> */}
