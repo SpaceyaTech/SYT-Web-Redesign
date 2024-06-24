@@ -25,7 +25,7 @@ const Categories = () => {
   return (
     <div className="hidden md:flex gap-4  ">
       {categories.map((item, i) => (
-        <CategoryItem key={i} name={item} />
+        <CategoryItem key={i} name={item.name} />
       ))}
     </div>
   );
@@ -63,7 +63,7 @@ const MobileCategories = () => {
         >
           {categories.map((item, i) => (
             <Menu.Item key={i}>
-              <CategoryItem name={item} />
+              <CategoryItem name={item.name} />
             </Menu.Item>
           ))}
         </Menu.Items>

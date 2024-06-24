@@ -20,9 +20,29 @@ export const questions = [
 ];
 
 export const categories = [
-  "hoodies",
-  "T-shirts",
-  "cups",
-  "bookmarks",
-  "jackets",
+  {
+    name: "hoodies",
+    textColor: "rgb(255, 0, 102)",
+    bgColor: "rgb(255, 0, 102, 0.1)",
+  },
+  {
+    name: "T-shirts",
+    textColor: "rgb(0, 102, 255)",
+    bgColor: "rgb(0, 102, 255, 0.1)",
+  },
+  {
+    name: "cups",
+    textColor: "rgb(153, 0, 255)",
+    bgColor: "rgb(153, 0, 255, 0.1)",
+  },
+  {
+    name: "bookmarks",
+    textColor: "rgb(51, 51, 0)",
+    bgColor: "rgb(51, 51, 0, 0.1)",
+  },
+  {
+    name: "jackets",
+    textColor: "rgb(0, 0, 153)",
+    bgColor: "rgb(0, 0, 153, 0.1)",
+  },
 ];
