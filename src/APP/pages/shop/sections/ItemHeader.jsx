@@ -2,6 +2,7 @@ import { FaCheck } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { Combobox, Transition } from "@headlessui/react";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Fragment, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
 import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
@@ -123,7 +124,7 @@ function ItemHeader({ show }) {
           </div>
         )}
         <button type="button" className="ml-6 items-end" onClick={show}>
-          <PiShoppingCartLight className="h-9 w-9" />
+          <MdOutlineAddShoppingCart className="h-10 w-10 p-2 bg-green-header text-white border rounded-full" />
         </button>
       </div>
     </div>
