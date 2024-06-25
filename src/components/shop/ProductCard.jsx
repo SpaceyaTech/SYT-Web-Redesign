@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
         <h3 className="text-lg font-bold text-gray-700">
           KES {addCommaSeparator(Number(product.price))}
         </h3>
-        <div className="flex text-green-dark gap-2 items-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+        <div className="flex text-green-dark gap-2 items-center md:opacity-0 md:group-hover:opacity-100 transition-opacity cursor-pointer">
           <MdAddShoppingCart size={20} />
           <p className="font-bold text-base">Add to cart</p>
         </div>
