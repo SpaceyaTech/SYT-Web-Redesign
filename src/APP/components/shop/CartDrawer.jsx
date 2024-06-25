@@ -155,7 +155,7 @@ function CartDrawer({ open, setOpen }) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl py-6 sm:py-12 px-2 sm:px-10">
                     <div className="flex items-start justify-between">
-                      <Dialog.Title className="text-lg sm:text-[28px] font-semibold">
+                      <Dialog.Title className="text-[#333333] text-lg sm:text-[28px] font-semibold">
                         Your cart
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
