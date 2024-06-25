@@ -312,15 +312,6 @@ function CartDrawer({ open, setOpen }) {
                           Continue Shopping
                         </button>
                       </div>
-                      {/* <p className="text-center">
-                        By selecting ‘Check Out’ you are agreeing to our{" "}
-                        <a
-                          href="#!"
-                          className="font-medium underline cursor-pointer text-primary hover:text-[#00664E]"
-                        >
-                          Terms & Conditions
-                        </a>
-                      </p> */}
                     </div>
                   </div>
                 </Dialog.Panel>
