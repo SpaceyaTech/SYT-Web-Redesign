@@ -3,6 +3,10 @@ import { Fragment, useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineDelete } from "react-icons/ai"; // Import react-icons
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { CiShoppingTag } from "react-icons/ci";
+import formatPrice from "../../../utilities/formatPrice";
 
 import SampleImg from "../../../assets/images/shop-page/main-sample.png";
 import Sample3 from "../../../assets/images/shop-page/sample3.png";
@@ -18,6 +22,45 @@ function CartDrawer({ open, setOpen }) {
 
   // Get the JSON string from localStorage
   const [cartProducts, setCartProducts] = useState([]);
+
+  const dummyCartData = [
+    {
+      id: "271fcc1c-0337-44f4-9449-2bc35b6ffd01",
+      name: "Cityscape Jacket",
+      description:
+        "Introducing our Cityscape Jacket: a blend of urban flair and unbeatable comfort. Crafted with premium materials, it offers sleek design and weather resistance for city adventures. Stay stylish and protected with adjustable features and convenient pockets. Upgrade your urban wardrobe today!",
+      category: "Jackets",
+      image:
+        "https://apis.spaceyatech.com/media/product_images/main-sample_copy_Fud5OzF.png",
+      price: "3000.00",
+      stock: 10,
+      color: "brown",
+    },
+    {
+      id: "232437b9-3e64-4cad-a6c3-08158e118207",
+      name: "Cityscape Jacket - Mid",
+      description:
+        "Introducing our Cityscape Jacket: a blend of urban flair and unbeatable comfort. Crafted with premium materials, it offers sleek design and weather resistance for city adventures. Stay stylish and protected with adjustable features and convenient pockets. Upgrade your urban wardrobe today!",
+      category: "Jackets",
+      image:
+        "https://apis.spaceyatech.com/media/product_images/main-sample_copy_BRv17MK.png",
+      price: "1800.00",
+      stock: 11,
+      color: "brown",
+    },
+    {
+      id: "9cd9a601-0ed9-4685-8633-4b04e0811fc7",
+      name: "SYT Hoodie",
+      description:
+        "Unleash your tech-savvy style with our Tech-Fit Hoodie. Designed for the modern individual, it seamlessly integrates functionality and fashion. Crafted with cutting-edge materials, it offers unrivaled comfort and durability. Elevate your wardrobe with this essential piece that effortlessly combines innovation and style.",
+      category: "Hoodies",
+      image:
+        "https://apis.spaceyatech.com/media/product_images/sample1_copy_PXgn3MX.png",
+      price: "2000.00",
+      stock: 10,
+      color: "white",
+    },
+  ];
 
   useEffect(() => {
     const storage = localStorage.getItem("swagList")
@@ -112,15 +155,8 @@ function CartDrawer({ open, setOpen }) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl py-6 sm:py-12 px-2 sm:px-10">
                     <div className="flex items-start justify-between">
-                      <Dialog.Title className="text-3xl font-semibold">
-                        Your cart{" "}
-                        <span className="text-primary">
-                          {/* ({isSuccess  */}(
-                          {(cartProducts?.cart_items
-                            ? cartProducts.cart_items?.length
-                            : cartProducts?.length) || 0}
-                          )
-                        </span>
+                      <Dialog.Title className="text-lg sm:text-[28px] font-semibold">
+                        Your cart
                       </Dialog.Title>
                       <div className="ml-3 flex h-7 items-center">
                         <button
@@ -129,25 +165,22 @@ function CartDrawer({ open, setOpen }) {
                           onClick={() => setOpen(false)}
                         >
                           <span className="sr-only">Close panel</span>
-                          <AiOutlineClose
-                            className="h-6 w-6"
-                            aria-hidden="true"
-                          />{" "}
+                          <IoIosCloseCircleOutline className=" w-8 h-8 sm:w-10 sm:h-10" />
                           {/* Close Icon */}
                         </button>
                       </div>
                     </div>
 
-                    <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                    <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-0">
                       {/* Items in Cart */}
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul className="-my-6 divide-y divide-gray-200 border-b">
                             {/* {isSuccess && */}
-                            {cartProducts?.length > 0 &&
-                              (cartProducts?.cart_items
-                                ? cartProducts.cart_items
-                                : cartProducts
+                            {dummyCartData?.length > 0 &&
+                              (dummyCartData?.cart_items
+                                ? dummyCartData.cart_items
+                                : dummyCartData
                               )?.map((cartProduct) => (
                                 <li
                                   key={crypto.randomUUID()}
@@ -155,7 +188,7 @@ function CartDrawer({ open, setOpen }) {
                                 >
                                   <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
                                     <LazyLoadImage
-                                      src={`https://apis.spaceyatech.com${
+                                      src={`${
                                         cartProduct.image ||
                                         cartProduct.product?.image
                                       }`}
@@ -168,51 +201,50 @@ function CartDrawer({ open, setOpen }) {
                                   </div>
 
                                   <div className="ml-4 flex flex-1 flex-col space-y-14">
-                                    <div className="flex justify-between text-base font-medium text-gray-900">
-                                      <h3>
-                                        <p className="text-base md:text-xl">
-                                          {" "}
-                                          <Link
-                                            to={`/shop/item/${
-                                              cartProduct.productId ||
-                                              cartProduct.swagg_id
-                                            }`}
-                                          >
-                                            {cartProduct.name ||
-                                              cartProduct.product?.name}
-                                          </Link>
+                                    <div className="flex flex-col justify-between text-base font-medium text-gray-900">
+                                      <div className="flex flex-row justify-between items-center mb-4">
+                                        <div className="flex flex-col space-y-2 justify-start">
+                                          <div className="flex justify-between">
+                                            <p className="flex justify-between items-center gap-1 font-medium bg-[#FEF3F2] text-[#B42318] text-sm rounded-full px-2 py-1">
+                                              <CiShoppingTag />
+                                              Hoodies
+                                            </p>
+                                          </div>
+                                          <h3>
+                                            <p className="text-base md:text-xl text-[#656767]">
+                                              {" "}
+                                              <Link
+                                                to={`/shop/item/${
+                                                  cartProduct.productId ||
+                                                  cartProduct.swagg_id
+                                                }`}
+                                              >
+                                                {cartProduct.name ||
+                                                  cartProduct.product?.name}
+                                              </Link>
+                                            </p>
+                                          </h3>
+                                        </div>
+                                        <button
+                                          type="button"
+                                          className="flex justify-end"
+                                          onClick={() => {
+                                            handleDeleteSwag(
+                                              cartProduct.id ||
+                                                cartProduct.swagg_id
+                                            );
+                                          }}
+                                        >
+                                          {/* Delete icon */}
+                                          <RiDeleteBin6Line className="h-6 w-6 text-[#FC5555]" />
+                                        </button>
+                                      </div>
+                                      <div className="flex flex-row justify-between text-[#656767] text-sm sm:text-base font-medium">
+                                        <p>Qty: 1</p>
+                                        <p>
+                                          KES {formatPrice(cartProduct.price)}
                                         </p>
-                                      </h3>
-                                      <button
-                                        type="button"
-                                        className="flex justify-end"
-                                        onClick={() => {
-                                          handleDeleteSwag(
-                                            cartProduct.id ||
-                                              cartProduct.swagg_id
-                                          );
-                                        }}
-                                      >
-                                        <AiOutlineDelete
-                                          className="h-6 w-6"
-                                          aria-hidden="true"
-                                        />{" "}
-                                        {/* Delete Icon */}
-                                      </button>
-                                    </div>
-                                    <div className="flex flex-1 items-end justify-between text-sm">
-                                      <p className="text-xl md:text-2xl font-bold">
-                                        Ksh{" "}
-                                        {cartProduct.price ||
-                                          cartProduct.product?.price}
-                                      </p>
-
-                                      {/* Count thing reason out */}
-                                      <Counter
-                                        className="h-8 sm:h-12 w-24 sm:w-32"
-                                        setCount={setCount}
-                                        count={cartProduct.quantity}
-                                      />
+                                      </div>
                                     </div>
                                   </div>
                                 </li>
@@ -222,7 +254,7 @@ function CartDrawer({ open, setOpen }) {
                       </div>
 
                       {/* Recommendation items */}
-                      <div className="pb-8 pt-10 border-b">
+                      {/* <div className="pb-8 pt-10 border-b">
                         <p className="pt-6 text-base md:text-xl text-center font-bold">
                           {" <  "}
                           You might love {"  > "}
@@ -252,35 +284,35 @@ function CartDrawer({ open, setOpen }) {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Sub Total */}
-                    <div className="bg-[#F5FFFD] space-y-4 mx-4 p-8 rounded-lg ">
+                    <div className="space-y-4 mx-0 p-0 rounded-lg ">
                       <div className="text-xl md:text-2xl font-bold flex justify-between">
-                        <h2>Sub Total</h2>
+                        {/* <h2>Sub Total</h2>
                         <h2>
-                          Ksh {/* {isSuccess  */}
+                          Ksh
                           {cartProducts?.total_price || "00"}
-                        </h2>
+                        </h2> */}
                       </div>
-                      <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10">
+                      <div className="flex justify-start flex-col gap-3">
                         <button
                           type="button"
-                          className="md:w-1/2 w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-2 outline-[#009975]"
-                          onClick={() => setOpen(false)}
-                        >
-                          Continue shopping
-                        </button>
-                        <button
-                          type="button"
-                          className="md:w-1/2 w-full h-[62px] bg-primary hover:bg-[#00664E] text-[#F7F7F7] text-sm font-medium rounded-lg"
+                          className="w-full h-[62px] bg-gradient-to-b from-[#00664E] from-180% to-[#009975] to-90% text-[#F7F7F7] text-sm font-medium rounded-lg"
                           onClick={handleCheckout}
                         >
-                          Checkout
+                          Proceed to Checkout
+                        </button>
+                        <button
+                          type="button"
+                          className="w-full h-[62px] text-primary text-base font-medium"
+                          onClick={() => setOpen(false)}
+                        >
+                          Continue Shopping
                         </button>
                       </div>
-                      <p className="text-center">
+                      {/* <p className="text-center">
                         By selecting ‘Check Out’ you are agreeing to our{" "}
                         <a
                           href="#!"
@@ -288,7 +320,7 @@ function CartDrawer({ open, setOpen }) {
                         >
                           Terms & Conditions
                         </a>
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </Dialog.Panel>
