@@ -128,7 +128,7 @@ export default function SingleItemPage() {
               {singleSwag.name}
             </h1>
             <p className="text-xl md:text-2xl font-semibold text-[#323433]">
-              Ksh {singleSwag.price}
+              KES {singleSwag.price}
             </p>
             <p className="flex gap-2 items-center text-lg md:text-xl font-semibold text-[#656767]">
               <span>4.5</span>
