@@ -15,6 +15,7 @@ import ItemHeader from "./sections/ItemHeader";
 import { FaRegStar, FaRegCircleDot } from "react-icons/fa6";
 import { FaRegCircle } from "react-icons/fa";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { IoMdCheckmark } from "react-icons/io";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
@@ -28,6 +29,7 @@ export default function SingleItemPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
   const [Payload, setPayload] = useState({});
 
   // const { data: singleOrder } = useSingleOrder(params.id);
@@ -35,6 +37,8 @@ export default function SingleItemPage() {
   const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const colors = ["BBD278", "BBC1F8", "FFD3F8", "AF674F"];
+
   console.log("singleSwag: ", singleSwag);
   useEffect(() => {
     localStorage.setItem("swagList", []);
@@ -138,16 +142,22 @@ export default function SingleItemPage() {
             </h4>
 
             <div className="flex justify-start space-x-6">
-              {VariationData.map((pic) => (
-                <div key={crypto.randomUUID()}>
-                  <LazyLoadImage
-                    src={pic}
-                    alt=""
-                    height="96px"
-                    width="96px"
-                    className="rounded-full"
-                  />
-                </div>
+              {colors.map((color) => (
+                <button
+                  type="button"
+                  key={crypto.randomUUID()}
+                  onClick={() => setSelectedColor(color)}
+                >
+                  {selectedColor === color ? (
+                    <div className="w-12 h-12 border bg-white border-primary rounded-full flex items-center justify-center">
+                      <div className="w-9 h-9 bg-[#AF674F] rounded-full flex justify-center items-center">
+                        <IoMdCheckmark className="text-white text-3xl font-bold" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 bg-[#BBC1F8] rounded-full" />
+                  )}
+                </button>
               ))}
             </div>
             <h4 className="text-base md:text-xl text-[#656767]">
