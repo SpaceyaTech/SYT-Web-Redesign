@@ -112,7 +112,7 @@ export default function SingleItemPage() {
             <LazyLoadImage
               src={singleSwag.image}
               alt={singleSwag.name}
-              className="m-auto md:min-w-full "
+              className="m-auto min-w-full"
             />
             <div className="flex justify-between">
               {VariationData.map((pic) => (
