@@ -203,10 +203,10 @@ export default function SingleItemPage() {
               </button>
             </div>
             <hr />
-            <h3 className="text-base md:text-xl text-[#323433] font-normal md:font-medium">
+            <h3 className="text-base md:text-xl text-[#323433] font-medium">
               Product description
             </h3>
-            <p className="text-sm md:text-base font-light sm:font-normal text-[#323433]">
+            <p className="text-sm md:text-base text-[#323433] font-light">
               {singleSwag.description}
             </p>
           </div>
