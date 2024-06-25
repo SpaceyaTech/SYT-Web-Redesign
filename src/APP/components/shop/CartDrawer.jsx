@@ -252,39 +252,6 @@ function CartDrawer({ open, setOpen }) {
                           </ul>
                         </div>
                       </div>
-
-                      {/* Recommendation items */}
-                      {/* <div className="pb-8 pt-10 border-b">
-                        <p className="pt-6 text-base md:text-xl text-center font-bold">
-                          {" <  "}
-                          You might love {"  > "}
-                        </p>
-                        <div className="flex pb-8 pt-10 space-x-4 sm:space-x-16 sm:px-8">
-                          <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
-                            <LazyLoadImage
-                              src={Sample3}
-                              alt="Mentorlst Hoodie"
-                              className="h-full w-full"
-                            />
-                          </div>
-                          <div className="flex flex-col flex-1 ">
-                            <p className="text-base md:text-xl">
-                              Mentorlst Hoodie
-                            </p>
-                            <div className="flex flex-1 flex-col sm:flex-row justify-between items-start sm:items-center">
-                              <p className="text-xl md:text-2xl font-bold text-center">
-                                Ksh 1500
-                              </p>
-                              <button
-                                type="button"
-                                className="w-36 sm:w-40 h-12 sm:h-16 py-2 px-8 bg-primary text-[#F7F7F7] text-sm font-medium rounded-lg"
-                              >
-                                Buy Now
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div> */}
                     </div>
 
                     {/* Sub Total */}
