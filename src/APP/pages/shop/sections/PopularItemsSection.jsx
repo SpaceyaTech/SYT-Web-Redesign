@@ -10,7 +10,7 @@ function PopularItemsSection() {
   const { data: products, isPending, isError, isSuccess } = useSwagList();
 
   return (
-    <div className="p-5 md:p-10">
+    <div className="p-5 md:p-10 max-w-[1440px] mx-auto">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-8">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
         <h2 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
