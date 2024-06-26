@@ -12,7 +12,9 @@ function HeroSection() {
     setIsOpen(true);
   }
 
-  {/* Hero Image Animation*/}
+  {
+    /* Hero Image Animation*/
+  }
 
   const containerRef = useRef(null);
 
@@ -60,7 +62,7 @@ function HeroSection() {
         </button>
       </div>
 
-      <div className="hidden md:block lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6">
+      <div className="hidden md:block lg:flex flex-col items-center min-w-[1440px] min-h-[600px] rounded-[70%] relative my-6 container">
         <div className="relative creative-shapes my-10" ref={containerRef}>
           <div className="ellipse ellipse115 rounded-full" />
           <div className="ellipse ellipse116 rounded-full" />
