@@ -168,7 +168,7 @@ export default function SingleItemPage() {
                 <button
                   key={size}
                   type="button"
-                  className={`w-fit min-w-10 px-2 h-8 sm:h-10 rounded-md border border-[#EAECF0] text-lg sm:text-2xl flex justify-center items-center gap-2 ${
+                  className={`w-fit min-w-12 px-2 sm:px-3 h-8 sm:h-10 rounded-md border border-[#EAECF0] text-lg sm:text-xl font-light flex justify-between items-center gap-1 sm:gap-3 ${
                     selectedSize === size
                       ? "bg-[#009975] text-white"
                       : "hover:bg-primary hover:border-[#009975] hover:text-white"
