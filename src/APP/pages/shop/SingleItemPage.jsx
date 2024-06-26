@@ -149,7 +149,11 @@ export default function SingleItemPage() {
                   onClick={() => setSelectedColor(color)}
                 >
                   {selectedColor === color ? (
-                    <div className="w-12 h-12 border bg-white border-primary rounded-full flex items-center justify-center">
+                    <div
+                      role="button"
+                      aria-label="Color selection button"
+                      className="w-12 h-12 border bg-white border-primary rounded-full flex items-center justify-center"
+                    >
                       <div
                         className="w-9 h-9 rounded-full flex justify-center items-center"
                         style={{ backgroundColor: `#${color}` }}
@@ -159,6 +163,8 @@ export default function SingleItemPage() {
                     </div>
                   ) : (
                     <div
+                      aria-label="Color selection button"
+                      role="button"
                       className="w-12 h-12 rounded-full"
                       style={{ backgroundColor: `#${color}` }}
                     />
