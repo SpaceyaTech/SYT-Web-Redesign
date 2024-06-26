@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [million.vite({ auto: true }), react()],
     test: {
-      include: ["src/**/*.test.js"], 
+      include: ["src/**/*.test.js"],
     },
     server: {
       watch: {
