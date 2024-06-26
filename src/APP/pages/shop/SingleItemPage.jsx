@@ -194,18 +194,18 @@ export default function SingleItemPage() {
 
             <div className="flex justify-start gap-3 ">
               <Counter
-                className="h-14 w-32"
+                className="h-12 sm:h-14 w-32"
                 count={count}
                 setCount={setCount}
               />
 
               <button
                 type="button"
-                className="w-[179px] h-14 flex justify-center items-center px-2 py-4 gap-3 bg-primary text-white sm:font-bold text-base font-medium rounded-lg outline outline-[#009975]"
+                className="w-32 h-12 sm:w-[179px] sm:h-14 flex justify-center items-center px-1 sm:px-2 py-4 gap-1 sm:gap-3 bg-primary text-white sm:font-bold text-sm sm:text-base font-medium rounded-lg outline outline-[#009975]"
                 onClick={handleAddToCart}
               >
-                <MdOutlineAddShoppingCart className="h-8 w-8 text-white" /> Add
-                to cart
+                <MdOutlineAddShoppingCart className=" sm:h-8 sm:w-8 text-white" />{" "}
+                Add to cart
               </button>
             </div>
             <hr />
