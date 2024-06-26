@@ -16,6 +16,7 @@ import { FaRegStar, FaRegCircleDot } from "react-icons/fa6";
 import { FaRegCircle } from "react-icons/fa";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { IoMdCheckmark } from "react-icons/io";
+import SeoMetadata from "../../components/SeoMetadata";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
@@ -105,6 +106,15 @@ export default function SingleItemPage() {
 
   return (
     <>
+      <SeoMetadata
+        title={`${singleSwag?.name}`}
+        description="Elevate your style with SpaceYaTech's exclusive collection of merchandise."
+        type="website"
+        url="https://www.spaceyatech.com/shop"
+        ogImage="https://apis.spaceyatech.com/media/blog-images/syt.png"
+        ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
+        siteName="SpaceYaTech Shop"
+      />
       <ItemHeader show={() => setOpen((prev) => !prev)} />
       {isSuccess ? (
         <div className="px-8 sm:px-10 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
