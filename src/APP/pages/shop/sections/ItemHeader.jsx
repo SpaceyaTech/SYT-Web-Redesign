@@ -5,7 +5,6 @@ import { Combobox, Transition } from "@headlessui/react";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Fragment, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
-import CartIcon from "../../../../assets/images/icons/cart-icon.svg";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 import GoBackBtn from "../../../components/GoBackBtn";
 
