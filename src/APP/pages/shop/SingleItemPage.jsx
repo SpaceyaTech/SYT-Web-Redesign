@@ -150,12 +150,18 @@ export default function SingleItemPage() {
                 >
                   {selectedColor === color ? (
                     <div className="w-12 h-12 border bg-white border-primary rounded-full flex items-center justify-center">
-                      <div className="w-9 h-9 bg-[#AF674F] rounded-full flex justify-center items-center">
+                      <div
+                        className="w-9 h-9 rounded-full flex justify-center items-center"
+                        style={{ backgroundColor: `#${color}` }}
+                      >
                         <IoMdCheckmark className="text-white text-3xl font-bold" />
                       </div>
                     </div>
                   ) : (
-                    <div className="w-12 h-12 bg-[#BBC1F8] rounded-full" />
+                    <div
+                      className="w-12 h-12 rounded-full"
+                      style={{ backgroundColor: `#${color}` }}
+                    />
                   )}
                 </button>
               ))}
