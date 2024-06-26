@@ -1,0 +1,316 @@
+import {
+  course1,
+  course2,
+  course3,
+  course4,
+} from "../../../assets/images/resources-page";
+
+// eslint-disable-next-line import/prefer-default-export
+export const resourcesData = [
+  {
+    id: 1,
+    topic: "Frontend Development",
+    resources: [
+      {
+        id: 1,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course3,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Frontend Development",
+        link: "/resources",
+      },
+      {
+        id: 2,
+        type: "Article",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course4,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Frontend Development",
+        link: "/resources",
+      },
+      {
+        id: 3,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Frontend Development",
+        link: "/resources",
+      },
+    ],
+  },
+  {
+    id: 2,
+    topic: "Backend Development",
+    resources: [
+      {
+        id: 4,
+        type: "Article",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course3,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+      {
+        id: 5,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course3,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+      {
+        id: 6,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+      {
+        id: 7,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+      {
+        id: 8,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+      {
+        id: 9,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+      {
+        id: 10,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Backend Development",
+        link: "/resources",
+      },
+    ],
+  },
+  {
+    id: 3,
+    topic: "UI/UX Design",
+    resources: [
+      {
+        id: 11,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course3,
+        origin: "Coursera",
+        level: "expert",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 12,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "expert",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 13,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "expert",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 14,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 15,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "expert",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 16,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "expert",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 17,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+      {
+        id: 18,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course1,
+        origin: "Coursera",
+        level: "expert",
+        topic: "UI/UX Design",
+        link: "/resources",
+      },
+    ],
+  },
+  {
+    id: 4,
+    topic: "Product Management",
+    resources: [
+      {
+        id: 19,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Product Management",
+        link: "/resources",
+      },
+      {
+        id: 20,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Product Management",
+        link: "/resources",
+      },
+      {
+        id: 21,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Product Management",
+        link: "/resources",
+      },
+    ],
+  },
+  {
+    id: 5,
+    topic: "Android Development",
+    resources: [
+      {
+        id: 22,
+        type: "Video",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "beginner",
+        topic: "Android Management",
+        link: "/resources",
+      },
+      {
+        id: 23,
+        type: "Course",
+        title: "React: Creating and Hosting a Full-stack Site",
+        description:
+          "This course covers the basics of React, from beginner to advanced and is very appropriate for those people who have just finished learning JavaScript and feel ready to start learning React. The course is self-paced, lasting for 6 months or earlier and is taught by instructors for Google. Would highly recommend this course.",
+        image: course2,
+        origin: "Coursera",
+        level: "intermediate",
+        topic: "Android Management",
+        link: "/resources",
+      },
+    ],
+  },
+];

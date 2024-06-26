@@ -1,0 +1,20 @@
+[Have you read the contributing guidelines ?](https://github.com/SpaceyaTech/SYT-Web-Redesign/blob/Dev/docs/CONTRIBUTING.md)
+
+# What is the purpose of your *pull request*?
+
+ - [ ] Bug fix
+ - [ ] New feature
+
+# Proposed changes
+
+
+# Warning
+
+Please read these points carefully and answer honestly with an `X`
+into all the boxes. Example : [X] 
+
+Before submitting a *pull request* make sure you have:
+
+ - [ ] Read the guidelines for contributing.
+ - [ ] Wrote some tests.
+ - [ ] Respected the linting guidelines.

@@ -35,3 +35,7 @@ coverage
 # Ignore all HTML files:
 *.html
 .env
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
