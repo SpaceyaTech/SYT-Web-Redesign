@@ -201,7 +201,7 @@ export default function SingleItemPage() {
 
               <button
                 type="button"
-                className="w-32 h-12 sm:w-[179px] sm:h-14 flex justify-center items-center px-1 sm:px-2 py-4 gap-1 sm:gap-3 bg-primary text-white sm:font-bold text-sm sm:text-base font-medium rounded-lg outline outline-[#009975]"
+                className="w-32 h-12 sm:w-[179px] sm:h-14 flex justify-center items-center px-1 sm:px-2 py-4 gap-1 sm:gap-3 bg-gradient-to-b from-[#00664E] from-180% to-[#009975] to-90% text-white sm:font-bold text-sm sm:text-base font-medium rounded-lg"
                 onClick={handleAddToCart}
               >
                 <MdOutlineAddShoppingCart className=" sm:h-8 sm:w-8 text-white" />{" "}
