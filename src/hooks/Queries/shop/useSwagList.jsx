@@ -38,20 +38,4 @@ const useSingleSwag = (id) =>
     refetchOnWindowFocus: false,
   });
 
-const fetchCategorySwags = async (name) => {
-  try {
-    const response = await publicAxios.get(`/swaggs/?category=${name}`);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching category list: ", error);
-    throw error;
-  }
-};
-const useCategorySwag = (name) =>
-  useQuery({
-    queryKey: ["category swag"],
-    queryFn: () => fetchCategorySwags(name),
-    refetchOnWindowFocus: false,
-  });
-
-export { useSwagList, useSingleSwag, useCategorySwag };
+export { useSwagList, useSingleSwag };
