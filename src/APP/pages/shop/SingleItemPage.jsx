@@ -17,6 +17,7 @@ import { FaRegCircle } from "react-icons/fa";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { IoMdCheckmark } from "react-icons/io";
 import SeoMetadata from "../../components/SeoMetadata";
+import formatPrice from "../../../utilities/formatPrice";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
@@ -138,7 +139,7 @@ export default function SingleItemPage() {
               {singleSwag.name}
             </h1>
             <p className="text-xl md:text-2xl font-semibold text-[#323433]">
-              KES {singleSwag.price}
+              KES {formatPrice(singleSwag.price)}
             </p>
             <p className="flex gap-2 items-center text-lg md:text-xl font-semibold text-[#656767]">
               <span>4.5</span>
