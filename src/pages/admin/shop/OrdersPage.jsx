@@ -3,6 +3,8 @@ import React from "react";
 import { IoFilter } from "react-icons/io5";
 import columns from "../../../components/admin/shop/orders/Columns";
 import Orders from "../../../components/admin/shop/orders/Orders";
+import OrdersChart from "../../../components/admin/shop/orders/OrdersChart";
+import OrdersTrends from "../../../components/admin/shop/orders/OrdersTrends";
 
 function OrdersPage() {
   const data = [
@@ -91,6 +93,11 @@ function OrdersPage() {
   return (
     <section className="container my-10">
       <h1 className="text-2xl my-10">Orders Report</h1>
+      <div className="border rounded-xl my-10">
+        <h3 className="text-xl font-bold m-4">Trends in Orders</h3>
+        <OrdersTrends />
+        <OrdersChart />
+      </div>
       <div className="border rounded-xl">
         <div className="flex justify-between items-center w-full py-4 px-3 border-b">
           <h3 className="text-xl font-semibold -mr-2">Orders</h3>
@@ -106,10 +113,16 @@ function OrdersPage() {
         <div className="flex justify-between items-center w-full py-4 px-3 border-b">
           <h3>Showing 1 to 10 of 20 results</h3>
           <div className="flex flex-row gap-4">
-            <button type="button" className="text-sm font-semibold py-2 px-4 w-fit border rounded-lg">
+            <button
+              type="button"
+              className="text-sm font-semibold py-2 px-4 w-fit border rounded-lg"
+            >
               Previous
             </button>
-            <button type="button" className="text-sm font-semibold py-2 px-4 w-fit border rounded-lg">
+            <button
+              type="button"
+              className="text-sm font-semibold py-2 px-4 w-fit border rounded-lg"
+            >
               Next
             </button>
           </div>
