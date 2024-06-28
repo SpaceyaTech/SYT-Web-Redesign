@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -29,6 +30,7 @@ import {
   EventsPage,
   AdminLayout,
   ShopDashboard,
+  OrdersPage,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -200,6 +202,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <ShopDashboard />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/admin/shop/orders",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <OrdersPage />
           </Suspense>
         ),
       },

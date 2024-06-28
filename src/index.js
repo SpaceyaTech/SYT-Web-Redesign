@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable function-paren-newline */
 /* eslint-disable implicit-arrow-linebreak */
 import { lazy } from "react";
@@ -58,6 +59,8 @@ const SingleItemPage = lazy(() => import("./pages/shop/SingleItemPage"));
 
 const ShopDashboard = lazy(() => import("./pages/admin/shop/ShopDashboard"));
 
+const OrdersPage = lazy(() => import("./pages/admin/shop/OrdersPage"));
+
 export {
   AboutUs, AddChapterPage,
   AddEventPage,
@@ -71,7 +74,7 @@ export {
   Error404,
   Error500,
   ErrorBoundary, EventsPage,
-  EventsSection, ForgotPassword, GalleryPage, Homepage, IndividualChapter, LandingPage, Layout, LogIn, ProductDisplay, Products, ResetPassword, Resources, ShopDashboard,
+  EventsSection, ForgotPassword, GalleryPage, Homepage, IndividualChapter, LandingPage, Layout, LogIn, OrdersPage, ProductDisplay, Products, ResetPassword, Resources, ShopDashboard,
   SignUp, SingleEvent, SingleItemPage, SingleProductDonation, UpdateEventPage
 };
 
