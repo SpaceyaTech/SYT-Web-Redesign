@@ -10,7 +10,7 @@ function RelatedBlogCard({ blog }) {
   return (
     <Link
       className="flex flex-row items-center gap-2 w-64"
-      to={`/blogs2/${blog.title_slug}`}
+      to={`/blogs/${blog.title_slug}`}
     >
       <LazyLoadImage
         src={`https://apis.spaceyatech.com${blog.image}`}
