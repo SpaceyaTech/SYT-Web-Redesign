@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FAQ } from "../../../components";
+import { questions } from "../data";
 
 function FaqSection() {
   return (
@@ -17,7 +18,7 @@ function FaqSection() {
         </p>
       </div>
 
-      <FAQ />
+      <FAQ questions={questions} />
     </section>
   );
 }
