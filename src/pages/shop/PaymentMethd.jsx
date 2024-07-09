@@ -158,6 +158,7 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
               placeholder="Select Country"
               value={country}
               required
+              aria-label="selection"
             />
           </div>
           <div className="flex-1">

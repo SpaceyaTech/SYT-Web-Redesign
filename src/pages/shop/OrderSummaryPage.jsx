@@ -1,8 +1,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
-import {  FaTrash } from "react-icons/fa";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { CiShoppingTag } from "react-icons/ci";
+import { FaTrash } from "react-icons/fa";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Link } from "react-router-dom";
@@ -26,7 +27,7 @@ function Checkout() {
   } = useMakeOrder();
 
   const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(1);
+
   const [formData, setFormData] = useState(null);
   const [address, setAddress] = useState("");
 
@@ -50,10 +51,17 @@ function Checkout() {
     console.log(data);
   };
 
+  const handleDeleteItem = (productId) => {
+    
+    products.cart_items?.filter((item) => item.product.id !== productId);
+
+   
+  };
+
   return (
     <>
       <ItemHeader show={() => setOpen((prev) => !prev)} />
-      <div className="px-8 m-auto mb-10 max-w-screen-2xl justify-between w-full space-y-10 md:space-y-10 text-[#323433]">
+      <div className="px-8 sm:px-10 m-auto mb-10 max-w-screen-2xl justify-between w-full space-y-10 md:space-y-10 text-[#323433]">
         <div className="flex flex-col md:flex-row justify-between space-y-8 sm:space-y-0">
           <PaymentMethd isPending={isPending} handleSubmit={handleFormData} />
 
@@ -81,7 +89,7 @@ function Checkout() {
 
                           <div className="text-base space-y-2 w-full">
                             <span className="border bg-pink-200 flex p-1 px-2 rounded-full items-center gap-2 text-sm text-pink-700 w-max">
-                              <MdOutlineAddShoppingCart />
+                              <CiShoppingTag />
                               {id}
                             </span>
                             <p className="">
@@ -100,6 +108,7 @@ function Checkout() {
                           <button
                             className="text-red-600 mb-5 text-lg"
                             type="button"
+                            onClick={()=>handleDeleteItem(productId)}
                           >
                             <FaTrash />
                           </button>
