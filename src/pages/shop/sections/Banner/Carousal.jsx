@@ -1,60 +1,61 @@
-import { useState, useCallback, useEffect } from "react";
-import banner from "../../../../assets/images/shop-page/shop-banner.jpg";
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import "./banner.css";
+import { useSwagList } from "@/hooks/Queries/shop/useSwagList";
+import { useEffect, useRef, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
-const DotButton = ({ selected, onClick }) => (
-  <button
-    className={`embla__dot rounded-full h-[9px] w-[9px] ${selected ? " bg-green-dark" : "bg-white"}`}
-    type="button"
-    onClick={onClick}
-  />
-);
-
-export default function EmblaCarousel() {
-  const [viewportRef, embla] = useEmblaCarousel({ loop: true }, [Autoplay()]);
-
+function Carousel() {
+  const [width, setWidth] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
 
-  const scrollTo = useCallback(
-    (index) => embla && embla.scrollTo(index),
-    [embla]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!embla) return;
-    setSelectedIndex(embla.selectedScrollSnap());
-  }, [embla, setSelectedIndex]);
+  const { data: swagList, isSuccess } = useSwagList();
+  const carouselRef = useRef(null);
 
   useEffect(() => {
-    if (!embla) return;
-    onSelect();
-    setScrollSnaps(embla.scrollSnapList());
-    embla.on("select", onSelect);
-  }, [embla, setScrollSnaps, onSelect]);
+    if (carouselRef.current) {
+      setWidth(carouselRef.current.offsetWidth + 10);
+    }
+  }, [carouselRef.current]);
 
-  const slides = Array.from(Array(5).keys());
+  const scrollToIndex = (index) => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({
+        left: index * width,
+        behavior: "smooth",
+      });
+      setSelectedIndex(index);
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSelectedIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % swagList.length;
+        scrollToIndex(newIndex);
+        return newIndex;
+      });
+    }, 1000000); // Autoplay every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [width, swagList]);
+
   return (
     <>
-      <div className="embla h-full">
+      <div className="relative h-full">
         <div
-          className="embla__viewport rounded-2xl overflow-hidden h-full"
-          ref={viewportRef}
+          ref={carouselRef}
+          className="overflow-hidden w-full md:rounded-2xl h-full scrollbar-hide cursor-grab "
         >
-          <div className="embla__container h-full">
-            {slides.map((index) => (
-              <div className="embla__slide  h-full" key={index}>
-                <LazyLoadImage
-                  className="w-full h-full rounded-2xl"
-                  src={banner}
-                  alt="banner"
-                />
-              </div>
-            ))}
+          <div className="flex -ml-2.5 h-full">
+            {isSuccess &&
+              swagList?.map(({ image, name, id }) => (
+                <div key={id} className="relative min-w-full pl-2.5 h-full">
+                  <LazyLoadImage
+                    className="w-full h-full md:rounded-2xl"
+                    src={image}
+                    alt={name}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -67,17 +68,18 @@ export default function EmblaCarousel() {
         </p>
         <p className="font-bold text-lg text-white">From KES 2,600</p>
         <Link
-          to="/shop/items"
+          to={`/shop/${selectedIndex}`}
           className="text-white font-bold bg-gradient-to-b to-primary from-green-dark py-3 px-4 mb-2 rounded-md"
         >
           Shop Now
         </Link>
         <div className="flex justify-center bg-black/60 rounded-3xl gap-3 px-2 py-1.5">
-          {scrollSnaps.map((_, index) => (
-            <DotButton
+          {swagList?.map((_, index) => (
+            <button
               key={index}
-              selected={index === selectedIndex}
-              onClick={() => scrollTo(index)}
+              className={`cursor-pointer relative p-0 outline-none border-0 rounded-full h-[9px] w-[9px] ${index === selectedIndex ? " bg-green-dark" : "bg-white"}`}
+              type="button"
+              onClick={() => scrollToIndex(index)}
             />
           ))}
         </div>
@@ -85,3 +87,5 @@ export default function EmblaCarousel() {
     </>
   );
 }
+
+export default Carousel;
