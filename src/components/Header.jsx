@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/images/sytLogo.png";
+import CartIcon from "./shop/CartIcon";
 
 const navLinks = [
   {
@@ -63,30 +64,38 @@ function Header() {
         </Link>
 
         {/* mobile menu */}
-        {showNavlinks ? (
-          <button
-            type="button"
-            aria-label="Close menu"
-            className="md:hidden"
-            onClick={() => setShowNavlinks(false)}
-          >
-            <AiOutlineClose className="h-6 w-6 text-white" aria-hidden="true" />{" "}
-            {/* Close Icon */}
-          </button>
-        ) : (
-          <button
-            type="button"
-            aria-label="Open menu"
-            className="md:hidden"
-            onClick={() => setShowNavlinks(true)}
-          >
-            <HiOutlineMenuAlt4
-              className="h-6 w-6 text-white"
-              aria-hidden="true"
-            />{" "}
-            {/* Menu Icon */}
-          </button>
-        )}
+        <div className="flex gap-4 items-center">
+          <div className="flex md:hidden">
+            <CartIcon />
+          </div>
+          {showNavlinks ? (
+            <button
+              type="button"
+              aria-label="Close menu"
+              className="md:hidden"
+              onClick={() => setShowNavlinks(false)}
+            >
+              <AiOutlineClose
+                className="h-6 w-6 text-white"
+                aria-hidden="true"
+              />{" "}
+              {/* Close Icon */}
+            </button>
+          ) : (
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="md:hidden"
+              onClick={() => setShowNavlinks(true)}
+            >
+              <HiOutlineMenuAlt4
+                className="h-6 w-6 text-white"
+                aria-hidden="true"
+              />{" "}
+              {/* Menu Icon */}
+            </button>
+          )}
+        </div>
 
         {/* mobile navlinks */}
         <nav
