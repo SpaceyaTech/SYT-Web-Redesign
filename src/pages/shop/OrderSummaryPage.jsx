@@ -1,7 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
-import { FaTag, FaTrash } from "react-icons/fa";
+import {  FaTrash } from "react-icons/fa";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Link } from "react-router-dom";
@@ -80,7 +81,7 @@ function Checkout() {
 
                           <div className="text-base space-y-2 w-full">
                             <span className="border bg-pink-200 flex p-1 px-2 rounded-full items-center gap-2 text-sm text-pink-700 w-max">
-                              <FaTag />
+                              <MdOutlineAddShoppingCart />
                               {id}
                             </span>
                             <p className="">
