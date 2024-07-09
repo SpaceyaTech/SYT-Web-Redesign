@@ -19,7 +19,9 @@ function Homepage() {
         siteName="SpaceYaTech Shop"
       />
       <div className="w-full">
-        <CartIcon />
+        <div className="hidden md:flex justify-end">
+          <CartIcon />
+        </div>
         <Banner />
         <FilterSection />
         <FeaturedProducts />

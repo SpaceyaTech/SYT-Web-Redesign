@@ -1,15 +1,14 @@
-import SectionWrapper from "@/components/shop/SectionWrapper";
-import EmblaCarousel from "./Carousal";
+import Caroussel from "./Caroussel";
 
 function Banner() {
   return (
-    <SectionWrapper>
-      <section className="mb-8 p-2 rounded-3xl shadow-lg h-[60vh] lg:h-[80vh] w-full">
-        <div className="rounded-2xl w-full h-full relative">
-          <EmblaCarousel />
+    <section className="md:px-10 lg:px-20">
+      <div className="mb-8 md:p-2 md:rounded-3xl md:shadow-lg h-[60vh] lg:h-[80vh] w-full">
+        <div className="md:rounded-2xl w-full h-full relative">
+          <Caroussel />
         </div>
-      </section>
-    </SectionWrapper>
+      </div>
+    </section>
   );
 }
 
