@@ -33,7 +33,7 @@ const fetchSingleSwag = async (id) => {
 
 const useSingleSwag = (id) =>
   useQuery({
-    queryKey: ["single swag"],
+    queryKey: ["singleSwag", id],
     queryFn: () => fetchSingleSwag(id),
     refetchOnWindowFocus: false,
   });

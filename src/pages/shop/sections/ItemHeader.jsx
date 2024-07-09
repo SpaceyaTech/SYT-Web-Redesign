@@ -147,8 +147,13 @@ function ItemHeader({ show }) {
             </Combobox>
           </div>
         )}
-        <button type="button" className="ml-6 items-end" onClick={show}>
-          <PiShoppingCartLight className="h-9 w-9" />
+        <button
+          type="button"
+          aria-label="Shopping cart"
+          className="ml-6 items-end"
+          onClick={show}
+        >
+          <MdOutlineAddShoppingCart className="h-10 w-10 p-2 bg-green-header text-white border rounded-full" />
         </button>
       </div> */}
     </div>

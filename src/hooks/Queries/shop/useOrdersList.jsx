@@ -44,7 +44,7 @@ const fetchSingleOrder = async (id) => {
 
 const useSingleOrder = (id) =>
   useQuery({
-    queryKey: ["singleOrder"],
+    queryKey: ["singleOrder", id],
     queryFn: () => fetchSingleOrder(id),
     refetchOnWindowFocus: true,
     staleTime: 5 * 60 * 60,
