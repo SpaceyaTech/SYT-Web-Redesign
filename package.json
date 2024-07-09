@@ -44,6 +44,7 @@
     "react-router-dom": "^6.11.2",
     "react-share": "^5.1.0",
     "react-simple-wysiwyg": "^2.2.5",
+    "recharts": "^2.12.7",
     "tailwind-merge": "^2.3.0",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animate": "^1.0.7",

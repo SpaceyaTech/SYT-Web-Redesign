@@ -1,16 +1,20 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { FaRegCircle } from "react-icons/fa";
+import { FaRegCircleDot, FaRegStar } from "react-icons/fa6";
+import { IoMdCheckmark } from "react-icons/io";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate, useParams } from "react-router-dom";
 import SmallSample1 from "../../assets/images/shop-page/small-sample-colored.png";
 import SmallSample2 from "../../assets/images/shop-page/small-sample-greyscale.png";
-import NotificationModal from "../../components/auth/NotificationModal";
+import SeoMetadata from "../../components/SeoMetadata";
 import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
-import { useSingleOrder } from "../../hooks/Queries/shop/useOrdersList";
 import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
 import useAuth from "../../hooks/useAuth";
+import formatPrice from "../../utilities/formatPrice";
 import ItemHeader from "./sections/ItemHeader";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
@@ -25,6 +29,7 @@ export default function SingleItemPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
   const [Payload, setPayload] = useState({});
 
   // const { data: singleOrder } = useSingleOrder(params.id);
@@ -32,7 +37,9 @@ export default function SingleItemPage() {
   const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
+  const colors = ["BBD278", "BBC1F8", "FFD3F8", "AF674F"];
 
+  console.log("singleSwag: ", singleSwag);
   useEffect(() => {
     localStorage.setItem("swagList", []);
     if (isSuccess) {
@@ -98,85 +105,131 @@ export default function SingleItemPage() {
 
   return (
     <>
+      <SeoMetadata
+        title={`${singleSwag?.name}`}
+        description="Elevate your style with SpaceYaTech's exclusive collection of merchandise."
+        type="website"
+        url="https://www.spaceyatech.com/shop"
+        ogImage="https://apis.spaceyatech.com/media/blog-images/syt.png"
+        ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
+        siteName="SpaceYaTech Shop"
+      />
       <ItemHeader show={() => setOpen((prev) => !prev)} />
       {isSuccess ? (
-        <div className="px-8 sm:px-0 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
+        <div className="px-8 sm:px-10 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
           <div className="md:pb-14 md:w-1/2 space-y-6">
-            <LazyLoadImage 
+            <LazyLoadImage
               src={singleSwag.image}
               alt={singleSwag.name}
-              className="m-auto md:min-w-full "
+              className="m-auto min-w-full"
             />
             <div className="flex justify-between">
               {VariationData.map((pic) => (
                 <div key={crypto.randomUUID()} className="w-[70px] sm:w-auto">
-                  <LazyLoadImage  src={pic} alt="recommendation" />
+                  <LazyLoadImage src={pic} alt="recommendation" />
                 </div>
               ))}
             </div>
           </div>
 
           <div className="w-full md:w-1/2 space-y-5 sm:pr-16">
-            <h1 className="text-xl md:text-4xl font-semibold md:font-medium">
+            <h1 className="text-xl md:text-4xl font-medium md:font-semibold">
               {singleSwag.name}
             </h1>
-            <h3 className="text-base md:text-xl font-normal md:font-medium">
-              Product description
-            </h3>
-            <p className="text-sm md:text-base">{singleSwag.description}</p>
-            <p className="text-xl md:text-2xl font-semibold md:font-bold">
-              Ksh {singleSwag.price}
+            <p className="text-xl md:text-2xl font-semibold text-[#323433]">
+              KES {formatPrice(singleSwag.price)}
             </p>
-            <h4 className="text-base md:text-xl">Choose color</h4>
+            <p className="flex gap-2 items-center text-lg md:text-xl font-semibold text-[#656767]">
+              <span>4.5</span>
+              <span>
+                <FaRegStar className="h-5 w-5 fill-primary mb-1" />
+              </span>
+            </p>
+            <hr />
+            <h4 className="text-base md:text-xl text-[#656767]">
+              Choose color
+            </h4>
 
             <div className="flex justify-start space-x-6">
-              {VariationData.map((pic) => (
-                <div key={crypto.randomUUID()}>
-                  <LazyLoadImage 
-                    src={pic}
-                    alt=""
-                    height="96px"
-                    width="96px"
-                    className="rounded-full"
-                  />
-                </div>
+              {colors.map((color) => (
+                <button
+                  type="button"
+                  key={crypto.randomUUID()}
+                  onClick={() => setSelectedColor(color)}
+                >
+                  {selectedColor === color ? (
+                    <div
+                      role="button"
+                      aria-label="Color selection button"
+                      className="w-12 h-12 border bg-white border-primary rounded-full flex items-center justify-center"
+                    >
+                      <div
+                        className="w-9 h-9 rounded-full flex justify-center items-center"
+                        style={{ backgroundColor: `#${color}` }}
+                      >
+                        <IoMdCheckmark className="text-white text-3xl font-bold" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      aria-label="Color selection button"
+                      role="button"
+                      className="w-12 h-12 rounded-full"
+                      style={{ backgroundColor: `#${color}` }}
+                    />
+                  )}
+                </button>
               ))}
             </div>
-
-            <h4 className="text-base md:text-xl">Choose size</h4>
-            <div className="flex justify-between sm:justify-start sm:space-x-4">
+            <h4 className="text-base md:text-xl text-[#656767]">
+              Choose a size
+            </h4>
+            <div className="flex flex-wrap justify-start sm:justify-start gap-2">
               {sizes.map((size) => (
                 <button
                   key={size}
                   type="button"
-                  className={`w-20 h-12 rounded-full border border-[#323433] text-2xl ${
+                  className={`w-fit min-w-12 px-2 sm:px-3 h-8 sm:h-10 rounded-md border border-[#EAECF0] text-lg sm:text-xl font-light flex justify-between items-center gap-1 sm:gap-3 ${
                     selectedSize === size
                       ? "bg-[#009975] text-white"
                       : "hover:bg-primary hover:border-[#009975] hover:text-white"
                   }`}
                   onClick={() => setSelectedSize(size)}
                 >
+                  {selectedSize === size ? (
+                    <FaRegCircleDot className="text-sm sm:text-lg" />
+                  ) : (
+                    <FaRegCircle className="text-sm sm:text-lg" />
+                  )}{" "}
                   {size}
                 </button>
               ))}
             </div>
+            <hr />
 
-            <Counter className="h-12 w-32" count={count} setCount={setCount} />
+            <div className="flex justify-start gap-3 ">
+              <Counter
+                className="h-12 sm:h-14 w-32"
+                count={count}
+                setCount={setCount}
+              />
 
-            <button
-              type="button"
-              className="w-full h-[62px] bg-primary text-[#F7F7F7] text-sm font-medium rounded-lg"
-              onClick={handleBuyNow}
-            >
-              Buy Now
-            </button>
-            <button
-              type="button"
-              className="w-full h-[62px] bg-[#F5FFFD] text-primary text-sm font-medium rounded-lg outline outline-[#009975]"
-              onClick={handleAddToCart}
-            >
-              Add to cart
-            </button>
+              <button
+                type="button"
+                className="w-32 h-12 sm:w-[179px] sm:h-14 flex justify-center items-center px-1 sm:px-2 py-4 gap-1 sm:gap-3 bg-gradient-to-b from-[#00664E] from-180% to-[#009975] to-90% text-white sm:font-bold text-sm sm:text-base font-medium rounded-lg"
+                onClick={handleAddToCart}
+              >
+                <MdOutlineAddShoppingCart className=" sm:h-8 sm:w-8 text-white" />{" "}
+                Add to cart
+              </button>
+            </div>
+            <hr />
+            <h3 className="text-base md:text-xl text-[#323433] font-medium">
+              Product description
+            </h3>
+            <p className="text-sm md:text-base text-[#323433] font-light">
+              {singleSwag.description}
+            </p>
           </div>
         </div>
       ) : (

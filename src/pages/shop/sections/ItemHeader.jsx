@@ -1,9 +1,11 @@
-import { FaCheck } from "react-icons/fa";
-import { FaMagnifyingGlass } from "react-icons/fa6";
 import { Combobox, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { useLocation, useParams, Link } from "react-router-dom";
+import { FaCheck } from "react-icons/fa";
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
+import GoBackBtn from "../../../components/GoBackBtn";
 
 function ItemHeader({ show }) {
   const { pathname } = useLocation();
@@ -29,37 +31,13 @@ function ItemHeader({ show }) {
         );
 
   return (
-    <div className="px-8 sm:px-0 m-auto max-w-screen-2xl flex justify-between md:space-x-48">
+    <div className="px-8 sm:px-10 m-auto max-w-screen-2xl flex justify-between md:space-x-48">
       {/* Breadcrumb */}
       <nav
         aria-label="breadcrumb"
         className="sm:w-1/2 hidden sm:flex items-center"
       >
-        <ol className="flex space-x-2">
-          {pathnames.map((value, index) => {
-            const isLast = index === pathnames.length - 1;
-            const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-
-            return isLast ? (
-              <li
-                className="text-primary capitalize"
-                aria-current="page"
-                key={to}
-              >
-                {value}
-              </li>
-            ) : (
-              <li key={to}>
-                <a
-                  href={to}
-                  className="after:content-['>'] after:ml-2 text-[#656767] hover:text-primary capitalize"
-                >
-                  {value}
-                </a>
-              </li>
-            );
-          })}
-        </ol>
+        <GoBackBtn />
       </nav>
 
       {/* Search box */}
@@ -143,7 +121,14 @@ function ItemHeader({ show }) {
             </Combobox>
           </div>
         )}
-        
+        <button
+          type="button"
+          aria-label="Shopping cart"
+          className="ml-6 items-end"
+          onClick={show}
+        >
+          <MdOutlineAddShoppingCart className="h-10 w-10 p-2 bg-green-header text-white border rounded-full" />
+        </button>
       </div>
     </div>
   );
