@@ -14,7 +14,7 @@ import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
 import { useOrderSummary } from "../../hooks/Queries/shop/useOrdersList";
 import ItemHeader from "./sections/ItemHeader";
 import { GoBackBtn } from "@/components"; // Import the component
-import PaymentMethod from "./PaymentMethd";
+import PaymentMethd from "./PaymentMethd";
 
 function Checkout() {
   const { data: products, isSuccess } = useProductsInCart();
@@ -54,7 +54,7 @@ function Checkout() {
       <ItemHeader show={() => setOpen((prev) => !prev)} />
       <div className="px-8 m-auto mb-10 max-w-screen-2xl justify-between w-full space-y-10 md:space-y-10 text-[#323433]">
         <div className="flex flex-col md:flex-row justify-between space-y-8 sm:space-y-0">
-          <PaymentMethod isPending={isPending} handleSubmit={handleFormData} />
+          <PaymentMethd isPending={isPending} handleSubmit={handleFormData} />
 
           {/* order summary */}
           <div className="bg-white min-w-40 md:w-3/5 w-full p-4 md:p-5 border rounded-md md:mx-6 my-2 md:my-0 h-full">
