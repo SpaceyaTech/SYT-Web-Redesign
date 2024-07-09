@@ -33,7 +33,7 @@ function Carousel() {
         scrollToIndex(newIndex);
         return newIndex;
       });
-    }, 1000000); // Autoplay every 10 seconds
+    }, 10000); // Autoplay every 10 seconds
 
     return () => clearInterval(interval);
   }, [width, swagList]);

@@ -1,4 +1,4 @@
-import Caroussel from "./Caroussel";
+import Caroussel from "./Carousal";
 
 function Banner() {
   return (

@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
             Our most popular products
           </h3>
         </section>
-        <div className="mt-8 py-4 flex gap-4 sm:gap-8 overflow-x-scroll h-full w-full hr-scrollbar">
+        <div className="mt-8 py-4 flex gap-4 overflow-x-scroll h-full w-full hr-scrollbar">
           {isSuccess &&
             swagList?.map((product) => (
               <div
