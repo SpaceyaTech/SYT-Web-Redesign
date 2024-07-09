@@ -26,7 +26,7 @@ const SearchInput = () => {
       <IoMdSearch className="absolute top-3 left-8 text-gray-400 " size={24} />
       <button
         type="submit"
-        className="text-white text-sm  bg-gradient-to-b to-primary from-green-dark py-2 px-4 md:px-20 rounded-r-lg"
+        className="text-white hidden md:block text-sm  bg-gradient-to-b to-primary from-green-dark py-2 px-4 md:px-20 rounded-r-lg"
       >
         Search
       </button>

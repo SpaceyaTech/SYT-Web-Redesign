@@ -7,11 +7,11 @@ const SortItems = () => {
   const path = pathname.includes("category") ? pathname : "/shop/items";
 
   return (
-    <div className="flex flex-col gap-4 relative">
+    <div className="flex flex-col gap-4 relative h-full">
       <Menu>
-        <Menu.Button className="rounded-lg border shadow-sm py-2 px-4 flex gap-2">
-          <IoFilter size={20} className="text-gray-400" />
-          <p className="text-sm text-gray-500"> Sort</p>
+        <Menu.Button className="rounded-lg border shadow-sm py-2 px-4 flex items-center gap-2">
+          <IoFilter size={30} className="text-gray-400" />
+          <p className="text-sm hidden md:block text-gray-500"> Sort</p>
         </Menu.Button>
         <Menu.Items
           anchor="bottom"
