@@ -80,7 +80,9 @@ function CartDrawer({ open, setOpen }) {
     navigate("/shop/checkout");
     // }
   };
-  console.log("cartProducts: ", cartProducts);
+
+  // query cart products
+  // console.log("cartProducts: ", cartProducts);
 
   return (
     <Transition.Root show={open} as={Fragment}>

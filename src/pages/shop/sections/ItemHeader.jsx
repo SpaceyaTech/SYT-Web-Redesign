@@ -1,6 +1,5 @@
 import { FaCheck } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import { PiShoppingCartLight } from "react-icons/pi";
 import { Combobox, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
@@ -144,9 +143,7 @@ function ItemHeader({ show }) {
             </Combobox>
           </div>
         )}
-        <button type="button" className="ml-6 items-end" onClick={show}>
-          <PiShoppingCartLight className="h-9 w-9" />
-        </button>
+        
       </div>
     </div>
   );
