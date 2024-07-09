@@ -68,7 +68,7 @@ function Carousel() {
         </p>
         <p className="font-bold text-lg text-white">From KES 2,600</p>
         <Link
-          to={`/shop/${swagList[selectedIndex]?.id}`}
+          to={`/shop/${isSuccess ? swagList[selectedIndex]?.id : ""} `}
           className="text-white font-bold bg-gradient-to-b to-primary from-green-dark py-3 px-4 mb-2 rounded-md"
         >
           Shop Now

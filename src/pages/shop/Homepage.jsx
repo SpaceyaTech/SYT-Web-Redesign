@@ -18,7 +18,7 @@ function Homepage() {
         ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
         siteName="SpaceYaTech Shop"
       />
-      <div className="w-full">
+      <div className="w-full bg-[#f3f4f5]">
         <div className="hidden md:flex justify-end">
           <CartIcon />
         </div>

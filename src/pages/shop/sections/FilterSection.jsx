@@ -1,8 +1,6 @@
 import SearchInput from "@/components/shop/SearchInput";
 import SectionWrapper from "@/components/shop/SectionWrapper";
 import SortItems from "@/components/shop/SortItems";
-import { Menu } from "@headlessui/react";
-import { IoMenu } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import { categories } from "../data";
 
@@ -33,8 +31,6 @@ const Categories = () => {
       {categories.map((item, i) => (
         <CategoryItem key={i} name={item.name} />
       ))}
-      <CategoryItem name="name" /> <CategoryItem name="name" />{" "}
-      <CategoryItem name="name" />
     </div>
   );
 };
