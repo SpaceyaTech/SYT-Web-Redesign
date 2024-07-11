@@ -6,13 +6,13 @@ function Counter({ className, setCount, count }) {
       <button
         type="button"
         data-action="decrement"
-        className="cursor-pointer outline-none w-20 border-y border-l border-l-[#323433] border-y-[#323433] rounded-l-full "
+        className="cursor-pointer outline-none w-20 border-y border-l border-l-[#EAECF0] border-y-[#EAECF0] rounded-l-md border-r"
         onClick={() => setCount(count > 1 ? count - 1 : 1)}
       >
         <span className=" text-base">−</span>
       </button>
       <p
-        className="outline-none focus:outline-none font-medium  md:text-basecursor-default flex items-center justify-center border-y border-y-[#323433]"
+        className="outline-none focus:outline-none font-medium  md:text-base cursor-default flex items-center justify-center border-y px-5 border-y-[#EAECF0]"
         name="custom-input-number"
       >
         {count}
@@ -20,7 +20,7 @@ function Counter({ className, setCount, count }) {
       <button
         type="button"
         data-action="increment"
-        className="cursor-pointer outline-none w-20 border-y border-r border-r-[#323433] border-y-[#323433] rounded-r-full"
+        className="cursor-pointer outline-none w-20 border-y border-r border-r-[#EAECF0] border-y-[#EAECF0] rounded-r-md border-l"
         onClick={() => setCount(count + 1)}
       >
         <span className="text-base">+</span>
