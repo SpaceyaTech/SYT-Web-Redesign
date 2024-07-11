@@ -16,4 +16,4 @@ Before submitting a _pull request_ make sure you have:
 
 - [ ] Read the guidelines for contributing.
 - [ ] Wrote some tests.
-- [ ] Respected the linting guidelines.
+- [ ] Respected the linting guidelines. (Please run `npm run validate` to ascertain your PR respects linting and formatting guidelines and successfully builds)
