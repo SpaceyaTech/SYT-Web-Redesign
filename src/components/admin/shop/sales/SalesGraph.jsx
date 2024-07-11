@@ -6,6 +6,7 @@ import data from './data';
 export const SalesGraph = () => {
   return (
     <ResponsiveContainer width="100%" height={300}>
+      {/* <XAxis dataKey={"name"} className='mt-4' /> */}
       <AreaChart
         data={data}
         margin={{
@@ -21,11 +22,18 @@ export const SalesGraph = () => {
             <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
           </linearGradient>
         </defs>
-        <XAxis dataKey="name" stroke="white" />
+        <XAxis dataKey={"name"} />
         <YAxis stroke="white" />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
-            <Area type="monotone" dataKey="pv" stroke="#28B463 " fillOpacity={1} fill="url(#colorPv)" />
+            <Area 
+              type="monotone" 
+              dataKey="uv" 
+              fillOpacity={1} 
+              fill="url(#colorPv)" 
+              strokeWidth={2}
+              stroke="#00664E" 
+            />
       </AreaChart>
     </ResponsiveContainer>
   );

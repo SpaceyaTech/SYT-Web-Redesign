@@ -165,7 +165,7 @@ const ChartComponent = ({ title = "All Orders", number = 500, persontage = "10%"
                   <span className='text-[#027A48]'><ArrowUp /></span>
                   <span className='text-[#027A48] text-[14px] font-[500]'>{persontage}</span>
                 </div>
-                <span className=' text-[#4C4D4D] text-center w-auto text-[14px] font-[500]'>Vs last quater</span>
+                <span className=' text-[#4C4D4D] text-center w-auto text-[14px] font-[500]'>vs last quater</span>
               </div>
             </div>
             <div className='grid  items-end'>

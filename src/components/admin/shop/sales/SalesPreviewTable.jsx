@@ -22,7 +22,7 @@ import {
     });
   
     return (
-      <Table>
+      <Table className='text-gray-500'>
         <TableHeader className="bg-grey-light uppercase">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id}>
