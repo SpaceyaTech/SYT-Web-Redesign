@@ -1,0 +1,83 @@
+const data = [
+    {
+      id: "itm-101",
+      name: "SYT Beanie",
+      totalItems: 400,
+      sold: 350,
+    //   unitCost: 350,
+      remaining: "50",
+    },
+    {
+      id: "itm-102",
+      name: "SYT Hoodie",
+      totalItems: 100,
+      sold: 5,
+    //   unitCost: 1000,
+      remaining: "45",
+    },
+    {
+      id: "itm-103",
+      name: "SYT Mug",
+      totalItems: 20,
+      sold: 100,
+    //   unitCost: 100,
+      remaining: "100",
+    },
+    {
+        id: "itm-104",
+        name: "SYT Tee",
+        ltems: 50,
+        // itemSold: 350,
+        remaining: "50",
+    },
+    {
+        id: "itm-105",
+        name: "SYT Beanie",
+        totalItems: 400,
+        sold: 350,
+        // unitCost: 350,
+        remaining: "50",
+    },
+    {
+        id: "itm-106",
+        name: "SYT Hoodie",
+        totalItems: 100,
+        sold: 5,
+        // unitCost: 1000,
+        remaining: "45",
+    },
+    {
+        id: "itm-107",
+        name: "SYT Mug",
+        totalItems: 20,
+        sold: 100,
+        // unitCost: 100,
+        remaining: "100",
+    },
+    {
+        id: "itm-108",
+        name: "SYT Tee",
+        ltems: 50,
+        // itemSold: 350,
+        remaining: "50",
+    },
+    {
+        id: "itm-101",
+        name: "SYT Beanie",
+        totalItems: 400,
+        sold: 350,
+        // unitCost: 350,
+        remaining: "50",
+    },
+        {
+        id: "itm-102",
+        name: "SYT Hoodie",
+        totalItems: 100,
+        sold: 5,
+        // unitCost: 1000,
+        remaining: "45",
+    },
+  ];
+
+
+export default data;
