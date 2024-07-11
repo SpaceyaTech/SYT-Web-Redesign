@@ -6,7 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 function ChapterCard({ id, country, city, name, members, banner }) {
   return (
     <div className="relative h-80 border-2 rounded-lg border-white overflow-hidden">
-      <LazyLoadImage 
+      <LazyLoadImage
         src={banner}
         alt={name}
         className="w-full h-full object-cover"

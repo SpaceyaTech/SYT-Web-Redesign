@@ -22,12 +22,10 @@ import {
 //   globe,
 // } from "../../../../../assets/images/icons";
 
-
 function Events({ events }) {
   // const formattedDate = format(parseISO(start_date), "do, MMMM");
   // import formatEventDates from "../../../../../utilities/formatEventDate";
   // import { LazyLoadImage } from "react-lazy-load-image-component";
-
 
   return (
     <div

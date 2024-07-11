@@ -7,7 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 function Error403() {
   return (
     <section className="max-w-[1440px] mx-auto flex flex-col items-center gap-6 md:gap-0 pb-10 md:pb-8">
-      <LazyLoadImage 
+      <LazyLoadImage
         src={error403}
         alt="Error403"
         className="px-4 mt-5 md:my-10 sm:px-12 sm:my-0 h-[400px] md:h-[540px] w-full sm:w-fit"

@@ -72,7 +72,7 @@ function SignUp() {
           Shop!
         </h1>
         <h2 className="text-2xl">Let&apos;s get you started</h2>
-        <LazyLoadImage  src={SignUpImg} alt="Sign Up Page" className="m-auto" />
+        <LazyLoadImage src={SignUpImg} alt="Sign Up Page" className="m-auto" />
       </div>
 
       <div className="text-center px-6 py-3 sm:py-12 my-10 max-w-screen-md xl:w-1/3 lg:w-2/3 w-full text-[#080808]">

@@ -80,7 +80,7 @@ function DonatePage() {
         {projects?.map((project) => (
           <div key={project.id} className="shadow-lg rounded-md text-sm">
             <div className="h-[12rem]">
-              <LazyLoadImage 
+              <LazyLoadImage
                 src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                 alt="unsplash-img"
                 className="object-cover w-full h-full rounded-t-md"
@@ -99,7 +99,7 @@ function DonatePage() {
               </p>
               <RangeInput />
               <div className="flex items-center justify-between my-2">
-                <LazyLoadImage  src="/donate.png" alt="donate-img" />
+                <LazyLoadImage src="/donate.png" alt="donate-img" />
                 <Link
                   to={`/donate/${project?.id}`}
                   className="flex items-center gap-2"

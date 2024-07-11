@@ -42,12 +42,12 @@ const BlogStats = ({ blogId, likes }) => {
       </div> */}
 
       <div className="flex flex-row items-center gap-1">
-      <PiThumbsUp
+        <PiThumbsUp
           className="w-5 h-5 object-cover text-[#00664E] cursor-pointer"
           onClick={() => {
             blogId ? addLikeToBlog(blogId) : "";
           }}
-        /> 
+        />
         <span className="text-base text-[#00664E] leading-5 m-0">
           {updatedLikes}
         </span>

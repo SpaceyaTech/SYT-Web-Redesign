@@ -18,7 +18,9 @@ function BottomNavBar() {
     { to: "/admin/shop/inventory", label: "Inventory" },
   ];
 
-  const navLinks = location.pathname.startsWith("/shop") ? shopNavLinks : adminNavLinks;
+  const navLinks = location.pathname.startsWith("/shop")
+    ? shopNavLinks
+    : adminNavLinks;
 
   return (
     <nav className="flex flex-row items-center justify-between font-medium text-sm fixed overflow-hidden bottom-0 left-0 bg-white w-full px-3 py-5 shadow-2xl border-y border-[#E7E0EC] md:hidden">

@@ -61,7 +61,7 @@ function WelcomeSection({ chapter }) {
 
   return (
     <>
-<div
+      <div
         className="bg-cover bg-no-repeat py-24 text-center"
         style={{ backgroundImage: `url(${chapter.banner}` }}
       >

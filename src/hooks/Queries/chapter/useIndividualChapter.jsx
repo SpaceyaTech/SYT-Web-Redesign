@@ -56,22 +56,24 @@ import { useQuery } from "@tanstack/react-query";
 // }
 
 const fetchChapterData = async (id) => {
-    try {
-        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/chapter/${id}/`);
-        return response.data;
-    } catch (error) {
-        console.error('Error fetching chapter data:', error);
-        throw error;
-    }
-}
+  try {
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_BASE_URL}/chapter/${id}/`
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching chapter data:", error);
+    throw error;
+  }
+};
 
 const useIndividualChapterData = (id) => {
-    return useQuery({
-      queryKey: ["oneChapter"],
-      queryFn: () => fetchChapterData(id),
-      refetchOnWindowFocus: false,
-      staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
-    });
-  };
+  return useQuery({
+    queryKey: ["oneChapter"],
+    queryFn: () => fetchChapterData(id),
+    refetchOnWindowFocus: false,
+    staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
+  });
+};
 
 export default useIndividualChapterData;
