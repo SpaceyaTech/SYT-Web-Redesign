@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 import SectionWrapper from "@/components/shop/SectionWrapper";
-import CartIcon from "@/components/shop/CartIcon";
 import FilterSection from "./FilterSection";
 import ProductCard from "@/components/shop/ProductCard";
+import ItemHeader from "./ItemHeader";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
@@ -40,7 +40,8 @@ function AllProducts() {
   return (
     <>
       <div className="flex flex-col gap-1">
-        <CartIcon />
+        <ItemHeader show={() => setOpen((prev) => !prev)} />
+
         <FilterSection />
       </div>
       <SectionWrapper>
