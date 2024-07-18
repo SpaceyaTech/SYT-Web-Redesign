@@ -1,6 +1,6 @@
-import React from "react";
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 import { sytLogoGreen } from "../../../../../../assets/images/icons";
 
 function RSVPForm({ closeModal }) {
@@ -8,13 +8,14 @@ function RSVPForm({ closeModal }) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
+    // eslint-disable-next-line no-unused-vars
     const name = formData.get("name");
+    // eslint-disable-next-line no-unused-vars
     const email = formData.get("email");
-
-    console.log("Name: ", name, "Email: ", email);
 
     closeModal();
   };
+
   return (
     <div className="w-full md:w-1/2 flex flex-col items-center  md:justify-start p-5 gap-8 md:p-12">
       <LazyLoadImage
@@ -69,3 +70,7 @@ function RSVPForm({ closeModal }) {
 }
 
 export default RSVPForm;
+
+RSVPForm.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+};

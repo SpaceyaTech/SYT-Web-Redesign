@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useMemo, useState } from "react";
+import PropTypes from "prop-types";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { useSearchBlog } from "../hooks/Queries/blogs/useAllBlogsData";
 
 export const SearchBlogContext = createContext();
@@ -15,6 +16,7 @@ export function SearchBlogProvider({ children }) {
     }, 500);
 
     return () => clearTimeout(dalayDebounceFn);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   const value = useMemo(
@@ -28,3 +30,7 @@ export function SearchBlogProvider({ children }) {
     </SearchBlogContext.Provider>
   );
 }
+
+SearchBlogProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

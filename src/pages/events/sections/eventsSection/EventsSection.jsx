@@ -1,48 +1,20 @@
-import React, { useEffect, useState } from "react";
-
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useState } from "react";
+import { PiArrowCircleRight } from "react-icons/pi";
 import { Link } from "react-router-dom";
-import { PiArrowCircleLeft, PiArrowCircleRight } from "react-icons/pi";
-import { useAllCities } from "../../../../hooks/Queries/eventsSection/useEventCategories";
-import useTopEvents from "../../../../hooks/Queries/eventsSection/useTopEvents";
 import { Loader } from "../../../../components";
+import useTopEvents from "../../../../hooks/Queries/eventsSection/useTopEvents";
 import Error500 from "../../../errorPages/Error500";
 import Events from "./Events";
 
-function EventsSection({ showTabs, showAllEventsLink }) {
-  const [filters, setFilters] = useState({});
+function EventsSection() {
+  const [filters] = useState({});
 
   const {
     data: topEventsData,
-    isPending: isLoadingTopEvents,
-    isError: isErrorTopEvents,
-    isSuccess: isSuccessTopEvents,
-    refetch: refetchTopEvents,
-  } = useTopEvents(filters);
-
-  const {
-    data: topEventsCities,
     isPending,
     isError,
     isSuccess,
-  } = useAllCities();
-
-  // To update the filters from the EventsUpdateSection sub-component
-  const updateCityFilter = (city) => {
-    setFilters((prevState) => ({ ...prevState, city }));
-  };
-
-  // To update the recent filters from the EventsTab sub-component
-  const updateRecentFilter = (dateFilterString) => {
-    setFilters((prevState) => ({
-      ...prevState,
-      start_date: dateFilterString,
-    }));
-  };
-
-  useEffect(() => {
-    refetchTopEvents();
-  }, [filters]);
+  } = useTopEvents(filters);
 
   return (
     <section className="py-2 md:py-6 size-full ">
@@ -87,10 +59,5 @@ function EventsSection({ showTabs, showAllEventsLink }) {
     </section>
   );
 }
-
-EventsSection.defaultProps = {
-  showTabs: false,
-  showAllEventsLink: false,
-};
 
 export default EventsSection;

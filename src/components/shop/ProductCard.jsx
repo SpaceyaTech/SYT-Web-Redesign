@@ -1,10 +1,11 @@
-import { addCommaSeparator, categoryColors, cn } from "@/utilities/utils";
+import PropTypes from "prop-types";
 import { CiShoppingTag } from "react-icons/ci";
 import { MdAddShoppingCart } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import { addCommaSeparator, categoryColors } from "../../utilities/utils";
 
-const ProductCard = ({ product }) => {
+function ProductCard({ product }) {
   const { backgroundColor, color } = categoryColors(product.category);
 
   return (
@@ -59,5 +60,17 @@ const ProductCard = ({ product }) => {
       </div>
     </div>
   );
-};
+}
 export default ProductCard;
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string,
+    stock: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+};

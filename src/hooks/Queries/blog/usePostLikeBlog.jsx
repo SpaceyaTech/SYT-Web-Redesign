@@ -1,17 +1,18 @@
+/* eslint-disable no-unused-expressions */
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const usePostLikeBlog = () => {
   const [blogIDLikes, setBlogIDLikes] = useState(null);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState(null);
 
-  const clearError = (error = "all") => {
-    error === "all" && setError(null);
+  const clearError = (errorArg = "all") => {
+    errorArg === "all" && setError(null);
   };
 
-  const clearStatus = (status = "all") => {
-    status === "all" && setStatus(null);
+  const clearStatus = (statusArg = "all") => {
+    statusArg === "all" && setStatus(null);
   };
 
   useEffect(() => {
@@ -30,16 +31,16 @@ const usePostLikeBlog = () => {
             setError(response.data);
           }
         })
-        .catch((error) => {
-          switch (error.code) {
+        .catch((err) => {
+          switch (err.code) {
             case "ERR_NETWORK":
-              setError({ axios: error.message });
+              setError({ axios: err.message });
               setStatus("error");
               break;
             case "ERR_BAD_REQUEST":
-              error.response
+              err.response
                 ? setError({
-                    blog: error.response.data,
+                    blog: err.response.data,
                   })
                 : setError({ server: "Problem contacting the server!" });
               setStatus("error");

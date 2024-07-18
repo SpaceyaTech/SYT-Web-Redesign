@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import React from "react";
-import { Link } from "react-router-dom";
 import { FiArrowRightCircle } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 function Button({ link, title }) {
   return (
@@ -19,5 +20,10 @@ function Button({ link, title }) {
     </Link>
   );
 }
+
+Button.propTypes = {
+  link: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default Button;

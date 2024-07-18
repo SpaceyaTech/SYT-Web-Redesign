@@ -21,11 +21,7 @@ const LogIn = lazy(() => import("./pages/auth/LogIn"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const SignUp = lazy(() => import("./pages/auth/SignUp"));
 const Blog = lazy(() => import("./pages/blog/Blog"));
-const Blog2 = lazy(() => import("./pages/blog2/Blog2"));
 const Blogs = lazy(() => import("./pages/blogs/Blogs"));
-const IndividualChapter = lazy(
-  () => import("./pages/chapter/pages/IndividualChapter")
-);
 const CommunityPage = lazy(() => import("./pages/community/CommunityPage"));
 const SingleEvent = lazy(
   () =>
@@ -47,7 +43,7 @@ const EventsSection = lazy(
 const GalleryPage = lazy(() => import("./pages/gallery/GalleryPage"));
 const LandingPage = lazy(() => import("./pages/landingPage/LandingPage"));
 const Layout = lazy(() => import("./pages/Layout"));
-const Products = lazy(() => import("./pages/products2/Products"));
+const Products = lazy(() => import("./pages/products/Products"));
 const Resources = lazy(() => import("./pages/resources/Resources"));
 const Homepage = lazy(() => import("./pages/shop/Homepage"));
 const Checkout = lazy(() => import("./pages/shop/OrderSummaryPage"));
@@ -73,7 +69,6 @@ export {
   AllChaptersPage,
   AllEventsPage,
   Blog,
-  Blog2,
   Blogs,
   CategoriesProducts,
   Checkout,
@@ -89,7 +84,6 @@ export {
   ForgotPassword,
   GalleryPage,
   Homepage,
-  IndividualChapter,
   LandingPage,
   Layout,
   LogIn,

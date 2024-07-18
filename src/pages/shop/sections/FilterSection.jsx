@@ -1,10 +1,11 @@
-import SearchInput from "@/components/shop/SearchInput";
-import SectionWrapper from "@/components/shop/SectionWrapper";
-import SortItems from "@/components/shop/SortItems";
+import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
+import SearchInput from "../../../components/shop/SearchInput";
+import SectionWrapper from "../../../components/shop/SectionWrapper";
+import SortItems from "../../../components/shop/SortItems";
 import { categories } from "../data";
 
-const FilterSection = () => {
+function FilterSection() {
   return (
     <SectionWrapper>
       <div className="flex flex-col gap-4 w-full">
@@ -23,19 +24,19 @@ const FilterSection = () => {
       </div>
     </SectionWrapper>
   );
-};
+}
 
-const Categories = () => {
+function Categories() {
   return (
     <div className="flex  gap-4 flex-wrap ">
-      {categories.map((item, i) => (
-        <CategoryItem key={i} name={item.name} />
+      {categories.map((item) => (
+        <CategoryItem key={crypto.randomUUID()} name={item.name} />
       ))}
     </div>
   );
-};
+}
 
-const CategoryItem = ({ name }) => {
+function CategoryItem({ name }) {
   const params = useParams();
   const category = params.category === name;
 
@@ -51,6 +52,10 @@ const CategoryItem = ({ name }) => {
       </p>
     </Link>
   );
-};
+}
 
 export default FilterSection;
+
+CategoryItem.propTypes = {
+  name: PropTypes.string.isRequired,
+};

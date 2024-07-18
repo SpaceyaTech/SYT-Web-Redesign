@@ -1,9 +1,9 @@
 import React from "react";
 
-import ProductsCard from "./ProductsCard";
 import { products } from "../data";
+import ProductsCard from "./ProductsCard";
 
-const ProductsSection = () => {
+function ProductsSection() {
   return (
     <section className="py-2 px-4 md:px-8 md:py-4 flex flex-col gap-6 md:gap-10">
       {products.map(({ name, desc, img, link }, i) => (
@@ -18,6 +18,6 @@ const ProductsSection = () => {
       ))}
     </section>
   );
-};
+}
 
 export default ProductsSection;

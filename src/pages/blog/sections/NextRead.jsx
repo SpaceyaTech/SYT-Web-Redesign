@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useBlogsData } from "../../../hooks/Queries/blogs/useAllBlogsData";
@@ -37,6 +37,7 @@ function NextRead() {
           className="w-6 md:w-10 h-6 md:h-10"
           type="button"
           onClick={handlePrev}
+          aria-label="Previous"
         >
           <svg
             width="43"
@@ -69,6 +70,7 @@ function NextRead() {
           className="w-6 md:w-10 h-6 md:h-10"
           type="button"
           onClick={handleNext}
+          aria-label="Next"
         >
           <svg
             width="43"

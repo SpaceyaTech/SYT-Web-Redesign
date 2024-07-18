@@ -1,6 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Loader = () => {
+function Loader() {
   return (
     <div className="w-full flex items-center justify-center">
       <LazyLoadImage
@@ -12,6 +12,6 @@ const Loader = () => {
       />
     </div>
   );
-};
+}
 
 export default Loader;

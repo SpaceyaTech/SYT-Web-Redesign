@@ -1,6 +1,6 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { FaCheck } from "react-icons/fa";
-import PropTypes from "prop-types";
 
 function StepIndicator({ steps, currentStep }) {
   const noBorderRight = "border-r-0";

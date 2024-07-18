@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-import-module-exports
 import { defineConfig, devices } from "@playwright/test";
 
 /**

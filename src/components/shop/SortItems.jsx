@@ -1,8 +1,8 @@
-import { IoFilter } from "react-icons/io5";
 import { Menu } from "@headlessui/react";
+import { IoFilter } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 
-const SortItems = () => {
+function SortItems() {
   const { pathname } = useLocation();
   const path = pathname.includes("category") ? pathname : "/shop/items";
 
@@ -37,5 +37,5 @@ const SortItems = () => {
       </Menu>
     </div>
   );
-};
+}
 export default SortItems;
