@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import columns from "@/components/admin/shop/dashboard/OrderPreviewColumns";
 import OrdersPreviewTable from "@/components/admin/shop/dashboard/OrdersPreviewTable";
-import { Link } from "react-router-dom";
+import AdminMain from "./AdminMain";
 
 function ShopDashboard() {
   const data = [
@@ -42,6 +43,7 @@ function ShopDashboard() {
 
         <OrdersPreviewTable columns={columns} data={data} />
       </div>
+      <AdminMain />
     </section>
   );
 }
