@@ -19,7 +19,7 @@
 .scrollbar::-webkit-scrollbar {
   width: 0;
   height: 6px;
-  background: #009975;
+  background: rgb(0 102 78 / 0.1);
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
@@ -29,36 +29,35 @@
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: #009975;
-  -webkit-box-shadow: inset 0 0 6px #009975;
-  border-top: 2px solid #e5efec;
-  border-bottom: 2px solid #e5efec;
+  background: rgb(0 102 78 / 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+  border-top: 2px solid #f3f4f5;
+  border-bottom: 2px solid #f3f4f5;
 }
 
 .hr-scrollbar::-webkit-scrollbar {
   width: 0;
   height: 6px;
-  background: #009975;
+  background: rgb(0 102 78 / 0.1);
 }
 
 .hr-scrollbar::-webkit-scrollbar-thumb {
   background: #00664e;
-
   border-radius: 12px;
 }
 
 .hr-scrollbar::-webkit-scrollbar-track {
-  background: #009975;
-  -webkit-box-shadow: inset 0 0 6px #009975;
-  border-top: 2px solid #e5efec;
-  border-bottom: 2px solid #e5efec;
+  background: rgb(0 102 78 / 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+  border-top: 2px solid #f3f4f5;
+  border-bottom: 2px solid #f3f4f5;
 }
 
 @media (min-width: 768px) {
   .scrollbar::-webkit-scrollbar {
     width: 6px;
     height: 0;
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
@@ -68,15 +67,15 @@
   }
 
   .scrollbar::-webkit-scrollbar-track {
-    background: #009975;
-    -webkit-box-shadow: inset 0 0 6px #009975;
-    border-left: 2px solid #e5efec;
-    border-right: 2px solid #e5efec;
+    background: rgb(0 102 78 / 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+    border-left: 2px solid #f3f4f5;
+    border-right: 2px solid #f3f4f5;
   }
 
   .hr-scrollbar::-webkit-scrollbar {
     width: 6px;
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
   }
 
   .hr-scrollbar::-webkit-scrollbar-thumb {
@@ -86,10 +85,10 @@
   }
 
   .hr-scrollbar::-webkit-scrollbar-track {
-    background: #009975;
-    -webkit-box-shadow: inset 0 0 6px #009975;
-    border-left: 2px solid #e5efec;
-    border-right: 2px solid #e5efec;
+    background: rgb(0 102 78 / 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+    border-left: 2px solid #f3f4f5;
+    border-right: 2px solid #f3f4f5;
   }
 }
 @layer utilities {
@@ -102,7 +101,7 @@
     left: 500.9px;
     top: 66.87px;
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
@@ -118,7 +117,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
@@ -135,7 +134,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: matrix(1, -0.03, -0.03, -1, 0, 0);
@@ -150,7 +149,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: matrix(1, -0.03, -0.03, -1, 0, 0);
@@ -167,7 +166,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
@@ -183,14 +182,14 @@
     top: 60.25px;
 
     /* Primary/Green/800 */
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
   }
 
   .bg-primary {
-    background-color: #009975;
+    background-color: rgb(0 102 78 / 0.1);
   }
 
   /* Footer */

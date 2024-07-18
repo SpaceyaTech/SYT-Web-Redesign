@@ -29,7 +29,8 @@ import {
   EventsPage,
   AdminLayout,
   ShopDashboard,
-  ShopSales
+  ShopSales,
+  AllProducts,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -123,6 +124,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Homepage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/shop/items",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <AllProducts />
           </Suspense>
         ),
       },
