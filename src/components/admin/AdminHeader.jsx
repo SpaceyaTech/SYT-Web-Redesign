@@ -23,7 +23,9 @@ function AdminHeader() {
     { to: "/admin/shop/inventory", label: "Inventory" },
   ];
 
-  const navLinks = location.pathname.startsWith("/admin/shop") ? shopNavLinks : adminNavLinks;
+  const navLinks = location.pathname.startsWith("/admin/shop")
+    ? shopNavLinks
+    : adminNavLinks;
 
   return (
     <header className="py-5 md:px-10 px-5 relative shadow-md">
@@ -44,13 +46,13 @@ function AdminHeader() {
             className="transition-all duration-300 cursor-pointer"
             to="/notification"
           >
-            <CiBellOn  className="size-8"/>
+            <CiBellOn className="size-8" />
           </Link>
           <Link
             className="transition-all duration-300 cursor-pointer"
             to="/profile"
           >
-            <LazyLoadImage 
+            <LazyLoadImage
               src={profile}
               alt="profile pic"
               className="rounded-full"
@@ -83,14 +85,13 @@ function AdminHeader() {
             className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/"
           >
-            <CiBellOn  className="size-8"/>
-
+            <CiBellOn className="size-8" />
           </Link>
           <Link
             className="text-[#7E8180] hover:text-primary transition-all duration-300 cursor-pointer"
             to="/about-us"
           >
-            <LazyLoadImage 
+            <LazyLoadImage
               src={profile}
               alt="profile pic"
               className="rounded-full"

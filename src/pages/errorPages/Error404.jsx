@@ -9,7 +9,7 @@ function Error404() {
 
   return (
     <section className="max-w-[1440px] mx-auto flex flex-col items-center gap-0 pb-10 md:pb-8">
-      <LazyLoadImage 
+      <LazyLoadImage
         src={error404}
         alt="Error404"
         className="p-4 mt-5 md:my-10 sm:px-12 sm:my-0 h-[400px] md:h-[540px] object-contain w-full sm:w-fit"

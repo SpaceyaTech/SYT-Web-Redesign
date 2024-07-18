@@ -6,22 +6,23 @@ import ShopSalesTrends from "./ShopSalesTrends";
 import { ChartComponent } from "@/components/admin/AdminReportCard";
 
 function ShopSales() {
-
   return (
     <>
       <div className="container my-10">
         <section>
           <h1 className="text-2xl font-light mb-8">Sales Report</h1>
           <div className="border rounded-xl p-4">
-            <p className="md:text-xl text-sm font-semibold mb-4">Trends In Sales</p>
+            <p className="md:text-xl text-sm font-semibold mb-4">
+              Trends In Sales
+            </p>
             <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 space-x-6">
-            <ChartComponent title = "All Sales" number={4000} />
-            <ChartComponent title = "Sales This Week" number={500} />
-            <ChartComponent title = "Sales This Month" number={750} />
-            <ChartComponent title = "Sales This Year" number={1000} />
-          </div>
+              <ChartComponent title="All Sales" number={4000} />
+              <ChartComponent title="Sales This Week" number={500} />
+              <ChartComponent title="Sales This Month" number={750} />
+              <ChartComponent title="Sales This Year" number={1000} />
+            </div>
 
-          <ShopSalesTrends className='mt-16' />
+            <ShopSalesTrends className="mt-16" />
           </div>
         </section>
 
@@ -37,10 +38,13 @@ function ShopSales() {
               </Link>
             </div>
 
-            <SalesPreviewTable columns={columns} data={data} className='text-gray-500'/>
+            <SalesPreviewTable
+              columns={columns}
+              data={data}
+              className="text-gray-500"
+            />
           </div>
         </section>
-
       </div>
     </>
   );

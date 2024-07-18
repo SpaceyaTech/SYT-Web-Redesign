@@ -9,7 +9,7 @@ const StackCategory = ({ category, stack }) => {
       </h3>
       <div className="flex flex-row items-center gap-6 md:gap-4 px-3 flex-wrap justify-center">
         {stack.map(({ url, alt }) => (
-          <LazyLoadImage 
+          <LazyLoadImage
             key={alt}
             src={url}
             alt={alt}
