@@ -39,4 +39,3 @@ const useSingleSwag = (id) =>
   });
 
 export { useSingleSwag, useSwagList };
-

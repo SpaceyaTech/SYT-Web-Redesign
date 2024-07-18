@@ -1,7 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { error403 } from "../../assets/images/errorPages";
 
-
 function Error403() {
   return (
     <section className="max-w-[1440px] mx-auto flex flex-col items-center gap-6 md:gap-0 pb-10 md:pb-8">

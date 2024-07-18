@@ -7,7 +7,6 @@ import { rsvpEvent } from "../../../../../../assets/images/community";
 import { sytLogoWhite } from "../../../../../../assets/images/icons";
 import RSVPForm from "./RSVPForm";
 
-
 function EventRSVP({ isOpen, closeModal, event }) {
   const [hours, minutes] = (event?.start_time ?? "").split(":");
 
