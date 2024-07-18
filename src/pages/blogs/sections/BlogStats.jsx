@@ -1,9 +1,9 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { PiThumbsUp } from "react-icons/pi";
 import usePostLikeBlog from "../../../hooks/Queries/blog/usePostLikeBlog";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const BlogStats = ({ blogId, likes }) => {
+function BlogStats({ blogId, likes }) {
   const [updatedLikes, setUpdatedLikes] = useState(likes);
 
   const {
@@ -14,12 +14,14 @@ const BlogStats = ({ blogId, likes }) => {
     clearStatus: clearStatusLikeBlog,
   } = usePostLikeBlog();
 
-  const addLikeToBlog = (blogId) => {
+  const addLikeToBlog = (blogID) => {
+    // eslint-disable-next-line no-unused-expressions
     statusLikeBlog === "error" && clearErrorLikeBlog();
+    // eslint-disable-next-line no-unused-expressions
     errorLikeBlog && clearErrorLikeBlog();
 
     const blogDetails = {
-      id: blogId,
+      id: blogID,
     };
 
     likeBlog({ ...blogDetails });
@@ -32,6 +34,7 @@ const BlogStats = ({ blogId, likes }) => {
     }
     clearStatusLikeBlog();
     clearErrorLikeBlog();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [likes, statusLikeBlog]);
 
   return (
@@ -45,6 +48,7 @@ const BlogStats = ({ blogId, likes }) => {
         <PiThumbsUp
           className="w-5 h-5 object-cover text-[#00664E] cursor-pointer"
           onClick={() => {
+            // eslint-disable-next-line no-unused-expressions
             blogId ? addLikeToBlog(blogId) : "";
           }}
         />
@@ -59,6 +63,11 @@ const BlogStats = ({ blogId, likes }) => {
       </div> */}
     </div>
   );
-};
+}
 
 export default BlogStats;
+
+BlogStats.propTypes = {
+  blogId: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
+};

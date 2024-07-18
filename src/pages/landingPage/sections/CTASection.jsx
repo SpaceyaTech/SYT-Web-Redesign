@@ -1,5 +1,5 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
+ 
+ 
 import React, { useState } from "react";
 import { bannerImg } from "../../../assets/images/hero-section";
 import JoinSYTModal from "../../community/sections/JoinSYTModal";

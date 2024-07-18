@@ -1,8 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import PropTypes from "prop-types";
 import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-function FAQ({ questions }) {
+function FAQ({ questions = [] }) {
   const [activeQuestion, setActiveQuestion] = useState(null);
 
   const toggleQuestion = (index) => {
@@ -14,7 +14,7 @@ function FAQ({ questions }) {
       {questions.map((question, index) => (
         <div
           key={question.id}
-          className={`rounded-xl bg-white border shadow-sm mb-4 p-4 `}
+          className="rounded-xl bg-white border shadow-sm mb-4 p-4"
         >
           <h2 className="mb-4 font-semibold" id={`flush-heading${index + 1}`}>
             <button
@@ -68,3 +68,16 @@ function FAQ({ questions }) {
 }
 
 export default FAQ;
+FAQ.propTypes = {
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      question: PropTypes.string,
+      answer: PropTypes.string,
+    })
+  ),
+};
+
+FAQ.defaultProps = {
+  questions: [],
+};

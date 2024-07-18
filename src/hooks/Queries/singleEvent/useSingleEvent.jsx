@@ -1,5 +1,6 @@
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const fetchOneEvent = async (id) => {
   try {
@@ -8,18 +9,17 @@ const fetchOneEvent = async (id) => {
     );
     return results.data;
   } catch (error) {
-    console.error("Error fetching event: ", error);
+    toast.error("Error fetching event");
     throw error;
   }
 };
 
-const useOneEvent = (id) => {
-  return useQuery({
+const useOneEvent = (id) =>
+  useQuery({
     queryKey: ["oneEvent"],
     queryFn: () => fetchOneEvent(id),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
-};
 
-export { useOneEvent };
+export default useOneEvent ;

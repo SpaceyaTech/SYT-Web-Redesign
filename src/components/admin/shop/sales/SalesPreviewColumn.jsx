@@ -19,17 +19,13 @@ const columns = [
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }) => {
-      const orderInfo = row.original;
-
-      return (
-        <div>
-          <button type="button" className="text-primary text-sm font-semibold">
-            View
-          </button>
-        </div>
-      );
-    },
+    cell: () => (
+      <div>
+        <button type="button" className="text-primary text-sm font-semibold">
+          View
+        </button>
+      </div>
+    ),
   },
 ];
 

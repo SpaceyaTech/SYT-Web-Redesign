@@ -1,6 +1,6 @@
 import React from "react";
-import { bgError500, error500svg } from "../../assets/images/errorPages";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { bgError500, error500svg } from "../../assets/images/errorPages";
 
 function Error500() {
   return (

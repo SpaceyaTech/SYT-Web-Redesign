@@ -1,10 +1,6 @@
-import { SalesGraph } from "@/components/admin/shop/sales/SalesGraph";
+import SalesGraph from "../../../../components/admin/shop/sales/SalesGraph";
 
-const ShopSalesTrends = () => {
-  return (
-    <>
-      <SalesGraph />
-    </>
-  );
-};
+function ShopSalesTrends() {
+  return <SalesGraph />;
+}
 export default ShopSalesTrends;

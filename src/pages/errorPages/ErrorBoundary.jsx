@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 
 import Error500 from "./Error500";
 
@@ -7,6 +8,7 @@ function ErrorBoundary({ children }) {
 
   useEffect(() => {
     const errorHandler = (error) => {
+      // eslint-disable-next-line no-console
       console.error(
         "Error: ",
         error.message,
@@ -27,7 +29,11 @@ function ErrorBoundary({ children }) {
     return <Error500 />;
   }
 
-  return <>{children}</>;
+  return children;
 }
 
 export default ErrorBoundary;
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired,
+};

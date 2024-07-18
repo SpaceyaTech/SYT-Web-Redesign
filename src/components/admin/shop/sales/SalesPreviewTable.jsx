@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "../../../ui/table";
 
 function SalesPreviewTable({ columns, data }) {
   const table = useReactTable({

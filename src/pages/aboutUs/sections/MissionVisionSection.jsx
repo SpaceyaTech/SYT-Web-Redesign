@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+ 
 import { LittleMore } from "../../../assets/images/aboutPage";
 
 function MissionVisionSection() {

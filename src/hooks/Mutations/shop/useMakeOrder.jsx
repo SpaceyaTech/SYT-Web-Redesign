@@ -18,8 +18,7 @@ const useMakeOrder = () => {
       return response.data;
     },
 
-    onSuccess: (data) => {
-      console.log("Added to cart: ", data);
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["productsInCart"] });
     },
     onError: (error) => {

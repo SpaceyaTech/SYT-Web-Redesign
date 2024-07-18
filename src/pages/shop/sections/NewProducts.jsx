@@ -1,9 +1,9 @@
-import { LandingWrapper } from "@/components";
-import SectionWrapper from "@/components/shop/SectionWrapper";
-import { useSwagList } from "@/hooks/Queries/shop/useSwagList";
-import ProductCard from "@/components/shop/ProductCard";
+import { LandingWrapper } from "../../../components";
+import ProductCard from "../../../components/shop/ProductCard";
+import SectionWrapper from "../../../components/shop/SectionWrapper";
+import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 
-const NewProducts = () => {
+function NewProducts() {
   const { data: swagList, isSuccess } = useSwagList();
 
   return (
@@ -23,6 +23,6 @@ const NewProducts = () => {
       </SectionWrapper>
     </LandingWrapper>
   );
-};
+}
 
 export default NewProducts;

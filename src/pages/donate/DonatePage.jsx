@@ -1,7 +1,7 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import RangeInput from "./RangeInput";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // this is the donate page with products and donation progress bar
 function DonatePage() {

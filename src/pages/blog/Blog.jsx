@@ -1,56 +1,71 @@
-import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import useBlogData from "../../hooks/Queries/blog/useBlogData";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
 import { Loader } from "../../components";
-import BlogWrapper from "./sections/BlogWrapper";
-import RelatedBlogs from "./sections/RelatedBlogs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import SeoMetadata from "../../components/SeoMetadata";
+import useBlogData from "../../hooks/Queries/blog/useBlogData";
+import { Advert, BlogHeader, BlogBody } from "./sections";
 
 function Blog() {
   const { titleSlug } = useParams();
-
   const navigate = useNavigate();
+
   const {
     data: blogData,
     refetch: refetchBlogData,
-    isPending,
+    isLoading,
     isError,
     isSuccess,
   } = useBlogData(titleSlug);
 
   useEffect(() => {
     refetchBlogData();
-  }, [titleSlug]);
+  }, [refetchBlogData, titleSlug]);
 
   return (
-    <div className="w-screen max-w-[1440px] mx-auto">
-      {isError && navigate("/error-500")}
+    <>
+      <SeoMetadata
+        title={blogData?.title}
+        description={blogData?.description}
+        type="article"
+        url={blogData?.title_slug}
+        ogImage={blogData?.image}
+        ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
+        siteName="SpaceYaTech Blog"
+      />
+      <div className="max-w-[1024px] mx-auto">
+        {isError && navigate("/error-500")}
 
-      {isPending && (
-        <div className="flex flex-col items-center justify-center gap-4 py-10">
-          <Loader />
-          <p className="text-lg font-medium text-primary">
-            Loading blog details...
-          </p>
-        </div>
-      )}
-      {isSuccess && (
-        <section className="flex flex-col p-4 md:p-8 lg:p-10">
-          <LazyLoadImage
-            src={blogData.image}
-            alt={blogData.title}
-            className="w-full h-60 md:h-72 object-cover rounded-lg mb-4 md:mb-8"
-          />
-
-          <BlogWrapper blog={blogData} />
-
-          <RelatedBlogs
-            blogId={blogData?.id}
-            categoryId={blogData?.category?.id}
-          />
-        </section>
-      )}
-    </div>
+        {isLoading && (
+          <div className="flex flex-col items-center justify-center gap-4 py-10">
+            <Loader />
+            <p className="text-lg font-medium text-primary">
+              Loading blog details...
+            </p>
+          </div>
+        )}
+        {isSuccess && (
+          <>
+            <Advert />
+            <BlogHeader
+              title={blogData?.title}
+              description={blogData?.description}
+              image={blogData?.image}
+              author={blogData?.author}
+              createdAt={blogData?.created_at}
+              id={blogData?.id}
+              likes={blogData?.likes}
+              titleSlug={blogData?.title_slug}
+            />
+            <BlogBody
+              id={blogData?.id}
+              categoryId={blogData?.category.id}
+              blogBody={blogData?.body}
+            />
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

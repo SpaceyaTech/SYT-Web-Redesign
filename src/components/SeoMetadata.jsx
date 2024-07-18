@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
 
 export default function SeoMetadata({
@@ -40,3 +41,21 @@ export default function SeoMetadata({
     </Helmet>
   );
 }
+
+SeoMetadata.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  url: PropTypes.string.isRequired,
+  ogImage: PropTypes.string,
+  ogImageAlt: PropTypes.string,
+  siteName: PropTypes.string,
+};
+
+SeoMetadata.defaultProps = {
+  type: "website",
+  ogImage: "https://apis.spaceyatech.com/media/blog-images/syt.png",
+  ogImageAlt:
+    "SpaceYaTech logo, social media handles, website URL, email, and more on a muted background.",
+  siteName: "SpaceYaTech",
+};

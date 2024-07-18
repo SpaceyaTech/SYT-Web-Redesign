@@ -13,7 +13,7 @@ import AdminReportCard, {
   totalVisitInnerCardDataTwo,
 } from "../../../../components/admin/AdminReportCard";
 
-const AdminMain = () => {
+function AdminMain() {
   return (
     <div className=" container-xl mx-auto grid px-[20px] sm:px-[40px] pt-[20px] gap-[24px] mb-20">
       <div className="grid  w-full sm:grid-cols-2 md:grid-cols-3 gap-[24px] items-center ">
@@ -51,7 +51,7 @@ const AdminMain = () => {
 
       <div className="grid sm:grid-cols-2  gap-[24px]">
         <HighDemandCard name="Top 5 Fastest Selling Items" />
-        <HighDemandCard bigCard={true} name="Top 5 Best Grossing Items" />
+        <HighDemandCard bigCard name="Top 5 Best Grossing Items" />
       </div>
 
       <div className="flex overflow-x-auto">
@@ -63,6 +63,6 @@ const AdminMain = () => {
       </div>
     </div>
   );
-};
+}
 
 export default AdminMain;

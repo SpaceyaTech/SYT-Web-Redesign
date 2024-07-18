@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const usePostJoinChapter = (chapterId) => {
   const [postEmail, setPostEmail] = useState(null);
@@ -31,13 +31,13 @@ const usePostJoinChapter = (chapterId) => {
             setError(response.data);
           }
         })
-        .catch((error) => {
-          if (error.response && error.response.status === 400) {
-            setError(error.response.data);
+        .catch((err) => {
+          if (err.response && err.response.status === 400) {
+            setError(err.response.data);
           }
           setStatus("error");
           // console.error("Error adding chapter: ", error);
-          // throw error;
+          throw err;
         });
     }
   }, [postEmail, chapterId]);

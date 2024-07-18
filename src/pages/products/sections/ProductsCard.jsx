@@ -1,8 +1,8 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { PiArrowLineUpRightBold } from "react-icons/pi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const ProductsCard = ({ name, desc, img, link, index }) => {
+function ProductsCard({ name, desc, img, link, index }) {
   return (
     <div
       className={`flex flex-col ${
@@ -58,6 +58,14 @@ const ProductsCard = ({ name, desc, img, link, index }) => {
       </a>
     </div>
   );
-};
+}
 
 export default ProductsCard;
+
+ProductsCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+};

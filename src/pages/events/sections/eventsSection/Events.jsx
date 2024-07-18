@@ -1,13 +1,12 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable camelcase */
-/* eslint-disable indent */
-/* eslint-disable linebreak-style */
+ 
+ 
+ 
+ 
 import PropTypes from "prop-types";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import { Link } from "react-router-dom";
 import {
-  EventCard,
-  LocationTag,
+  EventCard
 } from "../../../community/sections/eventsPreview/SingleEvents/sections";
 // import {
 //   lightEventCard,
@@ -38,7 +37,7 @@ function Events({ events }) {
     >
       {events &&
         Array.isArray(events) &&
-        events.map((event) => {
+        events.map((event) => 
           // const date = formatEventDates(
           //   start_date,
           //   start_time,
@@ -52,7 +51,7 @@ function Events({ events }) {
           // date.setHours(hours);
           // date.setMinutes(minutes);
 
-          return (
+           (
             <EventCard key={event.id} event={event} />
             // <Link
             //   key={id}
@@ -140,8 +139,8 @@ function Events({ events }) {
             //     </button>
             //   </div>
             // </Link>
-          );
-        })}
+          )
+        )}
     </div>
   );
 }
@@ -149,5 +148,5 @@ function Events({ events }) {
 export default Events;
 
 Events.propTypes = {
-  events: PropTypes.array,
+  events: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };

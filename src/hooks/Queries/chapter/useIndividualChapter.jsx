@@ -1,5 +1,6 @@
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 // interface Organizer {
 //     id: number;
@@ -62,18 +63,16 @@ const fetchChapterData = async (id) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Error fetching chapter data:", error);
+    toast.error("Error fetching chapter data:", error);
     throw error;
   }
 };
 
-const useIndividualChapterData = (id) => {
-  return useQuery({
+const useIndividualChapterData = (id) => useQuery({
     queryKey: ["oneChapter"],
     queryFn: () => fetchChapterData(id),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
-};
 
 export default useIndividualChapterData;

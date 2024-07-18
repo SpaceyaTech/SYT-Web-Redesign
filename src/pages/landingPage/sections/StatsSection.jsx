@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { briefcase, teams } from "../../../assets/images/icons";
 import formatNumber from "../../../utilities/formatNumber";
-
-import { briefcase, teams } from "@/assets/images/icons";
 
 function StatsSection() {
   const [totalMembers, setTotalMembers] = useState(0);

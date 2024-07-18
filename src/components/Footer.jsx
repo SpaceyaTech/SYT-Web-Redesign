@@ -1,6 +1,4 @@
-/* eslint-disable no-confusing-arrow */
-import React from "react";
-import {
+ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,

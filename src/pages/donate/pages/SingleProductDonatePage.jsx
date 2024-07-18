@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-//this page will redirect from the donate page on click of a single project
+// this page will redirect from the donate page on click of a single project
 function SingleProductDonatePage() {
   const [value, setValue] = useState(50);
 
@@ -25,7 +25,7 @@ function SingleProductDonatePage() {
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center gap-2">
-              <div class="flex -space-x-4">
+              <div className="flex -space-x-4">
                 <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
@@ -109,10 +109,16 @@ function SingleProductDonatePage() {
               Or Make a difference with a dollar
             </p>
             <div className="flex flex-col md:flex-row items-center gap-3 text-sm">
-              <button className="block bg-primary text-white text-sm font-semibold py-4 w-full rounded-md">
+              <button
+                type="button"
+                className="block bg-primary text-white text-sm font-semibold py-4 w-full rounded-md"
+              >
                 Donate Token $1{" "}
               </button>
-              <button className="block border border-[#009975] text-primary text-sm font-semibold py-4 w-full rounded-md">
+              <button
+                type="button"
+                className="block border border-[#009975] text-primary text-sm font-semibold py-4 w-full rounded-md"
+              >
                 Share Link
               </button>
             </div>
