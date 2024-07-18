@@ -22,4 +22,4 @@ const useOneEvent = (id) =>
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
 
-export default useOneEvent;
+export default useOneEvent ;

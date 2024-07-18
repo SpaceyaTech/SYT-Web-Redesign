@@ -23,12 +23,10 @@ function StackCategory({ category, stack }) {
 
 StackCategory.propTypes = {
   category: PropTypes.string.isRequired,
-  stack: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  stack: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default StackCategory;

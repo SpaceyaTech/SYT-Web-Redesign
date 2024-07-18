@@ -12,7 +12,7 @@ function AllProducts() {
   const [searchParams] = useSearchParams();
   const sort = searchParams.get("sort");
   const searchText = searchParams.get("search");
-  const [, setOpen] = useState(false);
+  const [, setOpen] = useState(false)
 
   const sortedSwag =
     sort === "low"
@@ -36,7 +36,7 @@ function AllProducts() {
     } else {
       setProducts(swagList);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [swagList, searchText, sort]);
 
   return (

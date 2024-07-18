@@ -17,7 +17,7 @@ const fetchProductsInCart = async () => {
 
     return response.data;
   } catch (error) {
-    toast.error("Error fetching products in cart");
+    toast.error("Error fetching products in cart")
 
     // if (error.response.status === 401) {
     //   localStorage.removeItem("auth");
@@ -27,6 +27,7 @@ const fetchProductsInCart = async () => {
 };
 
 const useProductsInCart = () =>
+   
   useQuery({
     queryKey: ["productsInCart"],
     queryFn: () => fetchProductsInCart(),

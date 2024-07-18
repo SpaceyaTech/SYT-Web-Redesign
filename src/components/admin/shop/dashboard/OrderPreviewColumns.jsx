@@ -51,12 +51,12 @@ const columns = [
     id: "actions",
     enableHiding: false,
     cell: () => (
-      <div>
-        <button type="button" className="text-primary text-sm font-semibold">
-          View
-        </button>
-      </div>
-    ),
+        <div>
+          <button type="button" className="text-primary text-sm font-semibold">
+            View
+          </button>
+        </div>
+      ),
   },
 ];
 

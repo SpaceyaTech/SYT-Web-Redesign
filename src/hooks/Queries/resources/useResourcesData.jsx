@@ -20,8 +20,7 @@ const fetchResourcesData = async () => {
   }
 };
 
-const useResourcesData = () =>
-  useQuery({
+const useResourcesData = () => useQuery({
     queryKey: ["resourcetypes"],
     queryFn: () => fetchResourcesData(),
     refetchOnWindowFocus: false,

@@ -1,11 +1,5 @@
 import PropTypes from "prop-types";
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 
 export const AuthContext = createContext({
   auth: {

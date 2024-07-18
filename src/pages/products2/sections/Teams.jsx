@@ -6,6 +6,7 @@ import { Loader } from "../../../components";
 import useStackData from "../../../hooks/Queries/stack/useStackData";
 import DeveloperCard from "./DeveloperCard";
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -61,6 +62,7 @@ function Teams() {
                 <Tab
                   key={id}
                   className={({ selected }) =>
+                     
                     classNames(
                       "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                       "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",

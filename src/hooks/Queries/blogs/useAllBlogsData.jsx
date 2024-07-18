@@ -14,8 +14,7 @@ const fetchBlogCategories = async () => {
   }
 };
 
-const useBlogCategories = () =>
-  useQuery({
+const useBlogCategories = () => useQuery({
     queryKey: ["blogcategories"],
     queryFn: () => fetchBlogCategories(),
     refetchOnWindowFocus: false,
@@ -38,8 +37,7 @@ const fetchBlogsData = async (page) => {
   }
 };
 
-const useBlogsData = (page) =>
-  useQuery({
+const useBlogsData = (page) => useQuery({
     queryKey: ["blogsdata"],
     queryFn: () => fetchBlogsData(page),
     refetchOnWindowFocus: false,
@@ -60,8 +58,7 @@ const fetchSearchBlog = async (keyword) => {
   }
 };
 
-const useSearchBlog = (keyword) =>
-  useQuery({
+const useSearchBlog = (keyword) => useQuery({
     queryKey: ["searchBlog"],
     queryFn: () => fetchSearchBlog(keyword),
     refetchOnWindowFocus: false,

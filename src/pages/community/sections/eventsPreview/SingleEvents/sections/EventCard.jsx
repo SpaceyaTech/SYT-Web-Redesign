@@ -11,7 +11,7 @@ import LocationTag from "./LocationTag";
 
 function EventCard({ event }) {
   const isVirtual = event?.mode === "Virtual";
-
+  
   return (
     <div
       className="w-full h-[530px] flex flex-col rounded-xl bg-cover bg-no-repeat overflow-hidden"
