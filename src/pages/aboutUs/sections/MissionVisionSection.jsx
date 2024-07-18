@@ -1,4 +1,3 @@
- 
 import { LittleMore } from "../../../assets/images/aboutPage";
 
 function MissionVisionSection() {

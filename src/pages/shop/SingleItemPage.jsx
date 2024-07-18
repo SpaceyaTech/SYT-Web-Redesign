@@ -1,4 +1,3 @@
- 
 import { useEffect, useState } from "react";
 import { FaRegCircle } from "react-icons/fa";
 import { FaRegCircleDot, FaRegStar } from "react-icons/fa6";
@@ -50,7 +49,7 @@ export default function SingleItemPage() {
       });
     }
     refetch();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
   const addToLocalStorage = () => {
@@ -73,7 +72,6 @@ export default function SingleItemPage() {
   };
 
   const handleAddToCart = () => {
-
     // Send to backend not giving a usable response
     addItemsToCart(Payload);
 
