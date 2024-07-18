@@ -1,6 +1,19 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
-
+import {
+  ctfroom,
+  DevOps,
+  Propel,
+  moringa,
+  chimoney,
+  Kushite,
+  osca,
+  cytonn,
+  reactke,
+  gdg,
+  spheron,
+  mastercraft,
+} from "../../assets/images/hero-section";
 
 import {
   RichardMulandi,
@@ -10,13 +23,7 @@ import {
   Jean,
   Melody,
   Kristin,
-} from "@/assets/images/podcast";
-
-import {
-  mentorship,
-  openSource,
-  twitter,
-} from "@/assets/images/services-section";
+} from "../../assets/images/podcast";
 
 import {
   aibunny,
@@ -26,7 +33,7 @@ import {
   tony,
   wakio,
   wayne,
-} from "@/assets/testimonialSection";
+} from "../../assets/images/testimonialSection";
 
 export const podcasts = [
   {
@@ -228,33 +235,6 @@ export const testimonialData = [
     img: singh,
     link: "https://twitter.com/MyAspirants/status/1715059439625986302",
     company: "JPMorgan Chase & Co",
-  },
-];
-
-export const services = [
-  {
-    id: 1,
-    img: twitter,
-    title: "Weekly Twitter Spaces",
-    description:
-      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
-    link: "https://x.com/SpaceYaTech",
-  },
-  {
-    id: 2,
-    img: openSource,
-    title: "Open-Source Projects",
-    description:
-      "We run full-stack, open-source projects, where UI/UX designers, developers and dev-ops engineers work together.",
-    link: "https://spaceyatech.github.io/CoLabs/",
-  },
-  {
-    id: 3,
-    img: mentorship,
-    title: "Mentorship Programs",
-    description:
-      "We host community-led mentorship programs where beginners are mentored by experienced professionals and given guidance on getting started in tech.",
-    link: "https://x.com/SpaceYaTech",
   },
 ];
 
