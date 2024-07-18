@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-one-expression-per-line */
+ 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { SYTHero } from "../../../assets/images/aboutPage";
 

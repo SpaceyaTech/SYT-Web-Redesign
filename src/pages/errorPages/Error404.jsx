@@ -1,8 +1,8 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useNavigate } from "react-router-dom";
 
 import { error404 } from "../../assets/images/errorPages";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Error404() {
   const navigate = useNavigate();

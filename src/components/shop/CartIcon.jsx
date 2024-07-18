@@ -1,7 +1,7 @@
 import { MdAddShoppingCart } from "react-icons/md";
 import SectionWrapper from "./SectionWrapper";
 
-const CartIcon = () => {
+function CartIcon() {
   return (
     <SectionWrapper>
       <div className="flex justify-end   ">
@@ -13,5 +13,5 @@ const CartIcon = () => {
       </div>
     </SectionWrapper>
   );
-};
+}
 export default CartIcon;

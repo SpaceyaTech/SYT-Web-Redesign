@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoMdSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-const SearchInput = () => {
+function SearchInput() {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
 
@@ -32,5 +32,5 @@ const SearchInput = () => {
       </button>
     </form>
   );
-};
+}
 export default SearchInput;

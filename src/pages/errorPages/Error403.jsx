@@ -1,8 +1,8 @@
 import React from "react";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { error403 } from "../../assets/images/errorPages";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Error403() {
   return (

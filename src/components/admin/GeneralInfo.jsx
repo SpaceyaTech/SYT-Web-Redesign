@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/* eslint-disable react/jsx-props-no-spreading */
+import PropTypes from "prop-types";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 function GeneralInfo({ theNext, setCollectedChapter }) {
@@ -29,6 +31,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
   });
 
   const onSubmit = (data) => {
+    // eslint-disable-next-line no-param-reassign
     data.banner = banner;
 
     setCollectedChapter((prevState) => ({
@@ -108,6 +111,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
               </span>
             )}
           </div>
+          {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
           <div
             className="w-full pl-4 py-2  mt-4 border-dashed border-2 border-gray-300  rounded-tl rounded-tr justify-start items-center inline-flex"
             onClick={(e) => handleUploadImageClick(e, "banner")}
@@ -134,7 +138,7 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
                   <div className="grow shrink basis-0 h-[87px] flex-col justify-center items-center gap-2 inline-flex">
                     <div className="justify-start items-center inline-flex">
                       <div className="text-zinc-700 text-base font-normal">
-                        Upload Chapter's Banner
+                        Upload Chapter&apos;s Banner
                       </div>
                     </div>
                     {banner ? (
@@ -181,3 +185,8 @@ function GeneralInfo({ theNext, setCollectedChapter }) {
 }
 
 export default GeneralInfo;
+
+GeneralInfo.propTypes = {
+  theNext: PropTypes.func.isRequired,
+  setCollectedChapter: PropTypes.func.isRequired,
+};

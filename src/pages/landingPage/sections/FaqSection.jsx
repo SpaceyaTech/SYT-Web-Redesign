@@ -1,5 +1,3 @@
-import React from "react";
-
 import { FAQ } from "../../../components";
 import { questions } from "../data";
 

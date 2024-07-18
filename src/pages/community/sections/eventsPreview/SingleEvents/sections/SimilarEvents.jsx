@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import useEventsData from "../../../../../../hooks/Queries/eventsSection/useEvents";
 import { Loader } from "../../../../../../components";
+import useEventsData from "../../../../../../hooks/Queries/eventsSection/useEvents";
 import EventCard from "./EventCard";
 
 function SimilarEvents({ eventCategory }) {

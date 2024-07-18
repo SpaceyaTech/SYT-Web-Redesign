@@ -1,22 +1,15 @@
-/* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
-import { useState, Fragment } from "react";
+import { Fragment, useState } from "react";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaTrash } from "react-icons/fa";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Link } from "react-router-dom";
-import Sample1 from "../../assets/images/shop-page/sample1.png";
-import Sample2 from "../../assets/images/shop-page/sample2.png";
-import CartDrawer from "../../components/shop/CartDrawer";
-import Counter from "../../components/shop/Counter";
 import useMakeOrder from "../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
-import { useOrderSummary } from "../../hooks/Queries/shop/useOrdersList";
-import ItemHeader from "./sections/ItemHeader";
-import { GoBackBtn } from "@/components"; // Import the component
 import PaymentMethd from "./PaymentMethd";
+import ItemHeader from "./sections/ItemHeader";
 
 function Checkout() {
   const { data: products, isSuccess } = useProductsInCart();
@@ -26,17 +19,19 @@ function Checkout() {
     isSuccess: successfulOrder,
   } = useMakeOrder();
 
-  const [open, setOpen] = useState(false);
+  const [, setOpen] = useState(false);
 
-  const [formData, setFormData] = useState(null);
-  const [address, setAddress] = useState("");
+  const [, setFormData] = useState(null);
+  const [address] = useState("");
 
   const [isOpen, setIsOpen] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
       address,
+      // eslint-disable-next-line no-undef
       phonenumber: phoneNumber,
     };
     makeOrder(payload);
@@ -48,7 +43,6 @@ function Checkout() {
 
   const handleFormData = (data) => {
     setFormData(data);
-    console.log(data);
   };
 
   const handleDeleteItem = (productId) => {
@@ -106,6 +100,7 @@ function Checkout() {
                             className="text-red-600 mb-5 text-lg"
                             type="button"
                             onClick={() => handleDeleteItem(productId)}
+                            aria-label="Delete"
                           >
                             <FaTrash />
                           </button>
@@ -126,12 +121,15 @@ function Checkout() {
                 </div>
               </div>
               <div className="my-2 space-y-4 text-md">
-                <p>Discount Code</p>
-                <input
-                  placeholder="Enter Discount Code"
-                  type="text"
-                  className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
-                />
+                <label htmlFor="discountCode">
+                  Discount Code
+                  <input
+                    id="discountCode"
+                    placeholder="Enter Discount Code"
+                    type="text"
+                    className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
+                  />
+                </label>
                 <button
                   type="submit"
                   className="bg-primary/15 p-2 px-4 my-3 rounded-lg text-md"

@@ -7,7 +7,7 @@ import formatPrice from "../../../utilities/formatPrice";
 function PopularItemsSection() {
   const navigate = useNavigate();
 
-  const { data: products, isPending, isError, isSuccess } = useSwagList();
+  const { data: products } = useSwagList();
 
   return (
     <div className="p-5 md:p-10 max-w-[1440px] mx-auto">
@@ -24,11 +24,18 @@ function PopularItemsSection() {
       <div className="mt-8 py-4 flex flex-row gap-4 sm:gap-10 overflow-x-scroll h-full w-full hr-scrollbar">
         {products
           ?.slice(0, 8)
-          .map(({ stock, category, description, id, name, image, price }) => (
+          .map(({ stock, category, id, name, image, price }) => (
             <div
               key={id}
               className="group relative border border-slate-200 p-4 rounded-md min-w-[320px] h-auto md:min-w-[400px]"
               onClick={() => navigate(`/shop/item/${id}`)}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  navigate(`/shop/item/${id}`);
+                }
+              }}
             >
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <LazyLoadImage

@@ -1,11 +1,11 @@
-/* eslint-disable react/react-in-jsx-scope */
+ 
 import { useEffect, useState } from "react";
 import { FaRegCircle } from "react-icons/fa";
 import { FaRegCircleDot, FaRegStar } from "react-icons/fa6";
 import { IoMdCheckmark } from "react-icons/io";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import SmallSample1 from "../../assets/images/shop-page/small-sample-colored.png";
 import SmallSample2 from "../../assets/images/shop-page/small-sample-greyscale.png";
 import SeoMetadata from "../../components/SeoMetadata";
@@ -13,21 +13,16 @@ import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
 import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
 import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
-import useAuth from "../../hooks/useAuth";
 import formatPrice from "../../utilities/formatPrice";
 import ItemHeader from "./sections/ItemHeader";
 
 const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
 
 export default function SingleItemPage() {
-  const { auth } = useAuth();
   const params = useParams();
-  const navigate = useNavigate();
 
   const [count, setCount] = useState(1);
   const [open, setOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [message, setMessage] = useState("");
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [Payload, setPayload] = useState({});
@@ -39,7 +34,6 @@ export default function SingleItemPage() {
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const colors = ["BBD278", "BBC1F8", "FFD3F8", "AF674F"];
 
-  console.log("singleSwag: ", singleSwag);
   useEffect(() => {
     localStorage.setItem("swagList", []);
     if (isSuccess) {
@@ -54,9 +48,9 @@ export default function SingleItemPage() {
         },
         quantity: count,
       });
-      console.log("touched stffff", Payload);
     }
     refetch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id]);
 
   const addToLocalStorage = () => {
@@ -65,24 +59,20 @@ export default function SingleItemPage() {
     if (localStorage.getItem("swagList")) {
       // Get the existing list from localStorage
       swagList = JSON.parse(localStorage.getItem("swagList"));
-      console.log("singleSwag: ", swagList);
 
       // Also check for matching swagg_id that already exist in local storage
       swagList.push(Payload);
       swagListJSON = JSON.stringify(swagList);
-      console.log("swagListJSON: ", swagListJSON);
       localStorage.setItem("swagList", swagListJSON);
     } else {
       swagList.push(Payload);
       swagListJSON = JSON.stringify(swagList);
-      console.log("swagListJSON: ", swagListJSON);
 
       localStorage.setItem("swagList", swagListJSON);
     }
   };
 
   const handleAddToCart = () => {
-    console.log("Payload: ", Payload);
 
     // Send to backend not giving a usable response
     addItemsToCart(Payload);
@@ -93,15 +83,15 @@ export default function SingleItemPage() {
     setOpen(true);
   };
 
-  const handleBuyNow = () => {
-    // Send to backend not giving a usable response
-    addItemsToCart(Payload);
+  // const handleBuyNow = () => {
+  //   // Send to backend not giving a usable response
+  //   addItemsToCart(Payload);
 
-    // Add to local storage
-    addToLocalStorage();
+  //   // Add to local storage
+  //   addToLocalStorage();
 
-    navigate("/shop/checkout");
-  };
+  //   navigate("/shop/checkout");
+  // };
 
   return (
     <>

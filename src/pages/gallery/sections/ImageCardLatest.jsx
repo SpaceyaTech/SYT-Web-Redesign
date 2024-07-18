@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ImageCard({ photo, style }) {
@@ -28,3 +28,15 @@ function ImageCard({ photo, style }) {
 }
 
 export default ImageCard;
+ImageCard.propTypes = {
+  photo: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    event: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+  }).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.objectOf(PropTypes.any).isRequired,
+};
