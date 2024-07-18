@@ -6,6 +6,6 @@ import twitter from "./twitter.svg";
 import youtube from "./youtube.svg";
 
 export {
- linkedin, facebook, twitter, instagram, spotify, youtube 
+ linkedin, facebook, twitter, instagram, spotify, youtube
 };
 
