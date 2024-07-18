@@ -1,14 +1,14 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { format, parseISO } from "date-fns";
-import PropTypes from "prop-types";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { rsvpEvent } from "../../../../../../assets/images/community";
 import { sytLogoWhite } from "../../../../../../assets/images/icons";
 import RSVPForm from "./RSVPForm";
 
 function EventRSVP({ isOpen, closeModal, event }) {
-  const [hours, minutes] = (event?.start_time ?? "").split(":");
+  const [hours, minutes] = event?.start_time.split(":");
 
   const time = new Date();
   time.setHours(hours);
@@ -70,7 +70,7 @@ function EventRSVP({ isOpen, closeModal, event }) {
                           >
                             <g clipPath="url(#clip0_7643_20644)">
                               <path
-                                fillRule="evenodd"
+                                fill-rule="evenodd"
                                 clipRule="evenodd"
                                 d="M6.92102 0.740234C6.10916 0.740234 5.45102 1.39838 5.45102 2.21023V3.68023H3.98102C2.3573 3.68023 1.04102 4.99652 1.04102 6.62023V21.3202C1.04102 22.944 2.3573 24.2602 3.98102 24.2602H21.621C23.2447 24.2602 24.561 22.944 24.561 21.3202V6.62023C24.561 4.99652 23.2447 3.68023 21.621 3.68023H20.151V2.21023C20.151 1.39838 19.4929 0.740234 18.681 0.740234C17.8692 0.740234 17.211 1.39838 17.211 2.21023V3.68023H8.39102V2.21023C8.39102 1.39838 7.73287 0.740234 6.92102 0.740234ZM6.92102 8.09023C6.10916 8.09023 5.45102 8.74837 5.45102 9.56023C5.45102 10.3721 6.10916 11.0302 6.92102 11.0302H18.681C19.4929 11.0302 20.151 10.3721 20.151 9.56023C20.151 8.74837 19.4929 8.09023 18.681 8.09023H6.92102Z"
                                 fill="white"
@@ -104,7 +104,7 @@ function EventRSVP({ isOpen, closeModal, event }) {
                           >
                             <g clipPath="url(#clip0_7645_21542)">
                               <path
-                                fillRule="evenodd"
+                                fill-rule="evenodd"
                                 clipRule="evenodd"
                                 d="M12.8016 23.7008C18.9872 23.7008 24.0016 18.6864 24.0016 12.5008C24.0016 6.31519 18.9872 1.30078 12.8016 1.30078C6.61597 1.30078 1.60156 6.31519 1.60156 12.5008C1.60156 18.6864 6.61597 23.7008 12.8016 23.7008ZM13.8018 6.90039C13.8018 6.34811 13.354 5.90039 12.8018 5.90039C12.2495 5.90039 11.8018 6.34811 11.8018 6.90039V12.5004C11.8018 12.7656 11.9071 13.02 12.0947 13.2075L16.0545 17.1673C16.445 17.5578 17.0781 17.5578 17.4687 17.1673C17.8592 16.7768 17.8592 16.1436 17.4687 15.7531L13.8018 12.0862V6.90039Z"
                                 fill="white"
@@ -123,7 +123,7 @@ function EventRSVP({ isOpen, closeModal, event }) {
                           </svg>
 
                           <span className="text-base font-light">
-                            {`${format(time, "HHmm")} HRS`}
+                            {format(time, "HHmm") + " HRS"}
                           </span>
                         </div>
 
@@ -222,17 +222,3 @@ function EventRSVP({ isOpen, closeModal, event }) {
 }
 
 export default EventRSVP;
-
-EventRSVP.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  closeModal: PropTypes.func.isRequired,
-  event: PropTypes.shape({
-    start_time: PropTypes.string.isRequired,
-    start_date: PropTypes.string.isRequired,
-    mode: PropTypes.string.isRequired,
-    location: PropTypes.string,
-    category: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};

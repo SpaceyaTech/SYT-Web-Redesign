@@ -1,17 +1,5 @@
-import DeveloperCard from "./DeveloperCard";
-import HeroSection from "./HeroSection";
-import ProductsCard from "./ProductsCard";
-import ProductsSection from "./ProductsSection";
-import StackCategory from "./StackCategory";
-import Teams from "./Teams";
-import TechStack from "./TechStack";
+import { default as HeroSection } from "./HeroSection";
+import { default as ProductsSections } from "./ProductsSections";
+import { default as ProductCard } from "./ProductCard";
 
-export {
-  HeroSection,
-  ProductsSection,
-  ProductsCard,
-  TechStack,
-  StackCategory,
-  Teams,
-  DeveloperCard,
-};
+export { HeroSection, ProductsSections, ProductCard };

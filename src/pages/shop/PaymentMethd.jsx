@@ -1,7 +1,5 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useState } from "react";
 import { Disclosure, RadioGroup } from "@headlessui/react";
-import PropTypes from "prop-types";
-import { useState } from "react";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 
 function PaymentMethod({ handleSubmit, isPending, setForm }) {
@@ -60,14 +58,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                     <Disclosure.Panel className="pt-4 pb-2 text-md text-gray-500">
                       <div className="space-y-4">
                         <div>
-                          <label
-                            htmlFor="cardholder-name"
-                            className="block text-gray-700"
-                          >
+                          <label className="block text-gray-700">
                             Cardholder name
                           </label>
                           <input
-                            id="cardholder-name"
                             onChange={(e) => setName(e.target.value)}
                             type="text"
                             className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -77,14 +71,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                           />
                         </div>
                         <div>
-                          <label
-                            htmlFor="card-number"
-                            className="block text-gray-700"
-                          >
+                          <label className="block text-gray-700">
                             Card number
                           </label>
                           <input
-                            id="card-number"
                             onChange={(e) => setCardNumber(e.target.value)}
                             type="text"
                             className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -95,14 +85,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                         </div>
                         <div className="flex space-x-4">
                           <div className="flex-1">
-                            <label
-                              htmlFor="expiry-date"
-                              className="block text-gray-700"
-                            >
+                            <label className="block text-gray-700">
                               Expiry date
                             </label>
                             <input
-                              id="expiry-date"
                               onChange={(e) => setExpiryDate(e.target.value)}
                               type="text"
                               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -112,14 +98,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                             />
                           </div>
                           <div className="flex-1">
-                            <label
-                              htmlFor="cardholder-cvc"
-                              className="block text-gray-700"
-                            >
+                            <label className="block text-gray-700">
                               CVC/CVV
                             </label>
                             <input
-                              id="cardholder-cvc"
                               onChange={(e) => setCvc(e.target.value)}
                               type="text"
                               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -151,14 +133,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                     </Disclosure.Button>
                     <Disclosure.Panel className="pt-4 pb-2 text-md text-gray-500">
                       <div>
-                        <label
-                          htmlFor="cardholder-number"
-                          className="block text-gray-700"
-                        >
+                        <label className="block text-gray-700">
                           Phone number
                         </label>
                         <input
-                          id="cardholder-number"
                           onChange={(e) => setPhoneNumber(e.target.value)}
                           type="tel"
                           className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -188,14 +166,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
         <hr />
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-4">
           <div className="flex-1">
-            <label
-              htmlFor="cardholder-name"
-              className="block text-gray-700 text-md"
-            >
+            <label className="block text-gray-700 text-md">
               Country or region
             </label>
             <input
-              id="cardholder-name"
               onChange={(e) => setCountry(e.target.value)}
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -206,12 +180,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="cardholder-number" className="block text-gray-700 ">
-              Phone number
-            </label>
+            <label className="block text-gray-700 ">Phone number</label>
             <input
-              id="cardholder-number"
               onChange={(e) => setPhoneNumber(e.target.value)}
+              id="phone-number"
               type="tel"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
               placeholder="Enter Phone number"
@@ -222,14 +194,10 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
         </div>
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-3">
           <div className="flex-1">
-            <label
-              htmlFor="cardholder-postal"
-              className="block text-gray-700 text-md"
-            >
+            <label className="block text-gray-700 text-md">
               Postal Address
             </label>
             <input
-              id="cardholder-postal"
               onChange={(e) => setPostalAddress(e.target.value)}
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -239,11 +207,8 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="postal-code" className="block text-gray-700 ">
-              Postal code
-            </label>
+            <label className="block text-gray-700 ">Postal code</label>
             <input
-              id="postal-code"
               onChange={(e) => setPostalCode(e.target.value)}
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -254,11 +219,8 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
           </div>
         </div>
         <div className="flex-1 text-md">
-          <label htmlFor="city" className="block text-gray-700 ">
-            City
-          </label>
+          <label className="block text-gray-700 ">City</label>
           <input
-            id="city"
             onChange={(e) => setCity(e.target.value)}
             type="text"
             className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -273,9 +235,3 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
 }
 
 export default PaymentMethod;
-
-PaymentMethod.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  isPending: PropTypes.bool.isRequired,
-  setForm: PropTypes.func.isRequired,
-};

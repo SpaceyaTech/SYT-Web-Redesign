@@ -1,15 +1,19 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable prettier/prettier */
+/* eslint-disable linebreak-style */
 /* eslint-disable import/no-unresolved */
-import PropTypes from "prop-types"; // Import PropTypes
 import { useState } from "react";
+
 import PhotoAlbum from "react-photo-album";
+
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 // import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 // import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 function ImageCard({ photos }) {
   const [index, setIndex] = useState(-1);
@@ -20,7 +24,7 @@ function ImageCard({ photos }) {
         photos={photos}
         layout="rows"
         // spacing={8}
-        onClick={({ idx }) => setIndex(idx)}
+        onClick={({ index }) => setIndex(index)}
         // columns={3}
         // padding={8}
         // targetRowHeight={450}
@@ -57,10 +61,5 @@ function ImageCard({ photos }) {
     </div>
   );
 }
-
-ImageCard.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  photos: PropTypes.arrayOf(PropTypes.any).isRequired,
-};
 
 export default ImageCard;

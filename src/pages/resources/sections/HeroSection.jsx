@@ -1,7 +1,7 @@
 import React from "react";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { earthMoon } from "../../../assets/images/resources-page";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function HeroSection() {
   return (

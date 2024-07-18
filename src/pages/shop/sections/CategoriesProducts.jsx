@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import ProductCard from "../../../components/shop/ProductCard";
-import SectionWrapper from "../../../components/shop/SectionWrapper";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
-import FilterSection from "./FilterSection";
 import ItemHeader from "./ItemHeader";
+import FilterSection from "./FilterSection";
+import SectionWrapper from "@/components/shop/SectionWrapper";
+import ProductCard from "@/components/shop/ProductCard";
 
 function CategoriesProducts() {
   const params = useParams();
@@ -12,7 +12,7 @@ function CategoriesProducts() {
   const sort = searchParams.get("sort");
 
   const [products, setProducts] = useState([]);
-  const [, setOpen] = useState(true);
+  const [open, setOpen] = useState(true);
 
   const { data: swagList, isSuccess } = useSwagList();
 

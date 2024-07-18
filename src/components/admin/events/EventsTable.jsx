@@ -1,5 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const initialData = [
   {
@@ -90,7 +91,7 @@ function EventsTable() {
   const [selectedRows, setSelectedRows] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelectRow = (event, id) => {
@@ -153,13 +154,12 @@ function EventsTable() {
       <div className="flex justify-between items-center py-10">
         <h2 className="text-2xl">SYT events</h2>
         <div>
-          <label className="relative block w-full" htmlFor="search">
+          <label className="relative block w-full">
             <input
               className="placeholder:text-base placeholder:text-[#49454F] block w-52 border border-[#49454F] rounded py-2 pl-4 pr-3 focus:outline-none focus:border-[#009975] focus:ring-[#009975] focus:ring-1 sm:text-sm"
               placeholder="Search"
               type="text"
               name="search"
-              id="search"
               onChange={handleSearch}
             />
             <span className="sr-only">Search</span>
@@ -224,7 +224,6 @@ function EventsTable() {
                       : "hover:bg-[#F7F7F7] text-[#656767] text-sm"
                   }
                 >
-                  {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
                   <td className="hidden sm:table-cell py-4">
                     <input
                       type="checkbox"

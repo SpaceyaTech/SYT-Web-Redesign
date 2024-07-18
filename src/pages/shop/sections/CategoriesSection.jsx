@@ -1,20 +1,19 @@
-import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import CartDrawer from "../../../components/shop/CartDrawer";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
+import CartDrawer from "../../../components/shop/CartDrawer";
 import ItemHeader from "./ItemHeader";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CategoriesSection() {
   const [open, setOpen] = useState(false);
 
-  const { data, isSuccess } = useSwagList();
+  const { data, isPending, isError, isSuccess } = useSwagList();
 
   // setCategories(data.results.map((item) => item.category));
   // eslint-disable-next-line prefer-const
   let categoriesHash = {};
-  // eslint-disable-next-line no-unused-expressions
   isSuccess &&
     data.forEach((item) => {
       if (!categoriesHash[item.category]) {

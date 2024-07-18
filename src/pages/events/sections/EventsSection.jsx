@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai"; // Import react-icons
 
-import { Loader } from "../../../components";
 import { useEventsCategories } from "../../../hooks/Queries/eventsSection/useEventCategories";
 import useEventsData from "../../../hooks/Queries/eventsSection/useEvents";
+import { Loader } from "../../../components";
 import { EventCard } from "../../community/sections/eventsPreview/SingleEvents/sections";
 
 function EventsSection() {
@@ -35,7 +35,6 @@ function EventsSection() {
 
   const filterEvents = (cat) => {
     setSelected(cat);
-    // eslint-disable-next-line no-unused-expressions
     cat === ""
       ? setEvents(eventsData?.results)
       : setEvents(eventsData?.results.filter((ev) => cat === ev.category.name));

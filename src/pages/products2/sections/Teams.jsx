@@ -1,8 +1,6 @@
 import { Tab } from "@headlessui/react";
-import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
-
 import { upleftGreen } from "../../../assets/images/icons";
 import { Loader } from "../../../components";
 import useStackData from "../../../hooks/Queries/stack/useStackData";

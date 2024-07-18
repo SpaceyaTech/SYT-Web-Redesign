@@ -1,6 +1,7 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import LandingWrapper from "../../components/LandingWrapper";
 import SeoMetadata from "../../components/SeoMetadata";
-import ScrollToTop from "../../utilities/ScrollToTop";
 import {
   CTASection,
   FaqSection,
@@ -12,6 +13,7 @@ import {
   TestimonialSection,
   WhatWeDo,
 } from "./sections";
+import ScrollToTop from "@/utilities/ScrollToTop";
 
 const components = [
   {

@@ -1,9 +1,9 @@
+import CartIcon from "@/components/shop/CartIcon";
 import SeoMetadata from "../../components/SeoMetadata";
-import CartIcon from "../../components/shop/CartIcon";
 import Banner from "./sections/Banner/index";
+import FilterSection from "./sections/FilterSection";
 import FaqSection from "./sections/FaqSection";
 import FeaturedProducts from "./sections/FeaturedProducts";
-import FilterSection from "./sections/FilterSection";
 import NewProducts from "./sections/NewProducts";
 
 function Homepage() {

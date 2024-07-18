@@ -1,16 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 import PropTypes from "prop-types";
-import { useState } from "react";
-import {
-  eventsPhysicalBg,
-  eventsVirtualBg,
-} from "../../../../../../assets/images/community";
+import React, { useState } from "react";
 import EventRSVP from "./EventRSVP";
+import { eventsPhysicalBg, eventsVirtualBg } from "@/assets/images/community";
 
 function Hero({ event }) {
   const isVirtual = event?.mode === "Virtual";
 
   const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   function openModal() {
     setIsOpen(true);
@@ -193,11 +194,7 @@ ${isVirtual ? "text-white" : "text-green-header"}
           </button>
         </div>
 
-        <EventRSVP
-          isOpen={isOpen}
-          closeModal={() => setIsOpen(false)}
-          event={event}
-        />
+        <EventRSVP isOpen={isOpen} closeModal={closeModal} event={event} />
       </div>
     </div>
   );

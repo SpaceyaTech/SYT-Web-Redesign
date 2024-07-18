@@ -1,8 +1,8 @@
 import React from "react";
 import { PiArrowCircleLeftLight } from "react-icons/pi";
 import { Link } from "react-router-dom";
-import SeoMetadata from "../../components/SeoMetadata";
 import processPhotos from "../../utilities/processPhotos";
+import SeoMetadata from "../../components/SeoMetadata";
 import photosData from "./data";
 import ImageCard from "./sections/ImageCard";
 

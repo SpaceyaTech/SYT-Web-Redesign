@@ -11,7 +11,6 @@ import {
   waithaka,
 } from "../../assets/images/aboutPage";
 
-// eslint-disable-next-line import/prefer-default-export
 export const LeadershipData = [
   {
     name: "Fred Ouko",

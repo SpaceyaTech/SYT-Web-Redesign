@@ -1,29 +1,12 @@
-import { useEffect } from "react";
-import SeoMetadata from "../../components/SeoMetadata";
-import { HeroSection, ProductsSection, Teams, TechStack } from "./sections";
+import { HeroSection, ProductsSections } from "./sections";
 
-function Products() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const Products = () => {
   return (
-    <>
-      <SeoMetadata
-        title="Products"
-        description="A collection of products build by SpaceYaTech. We build products that work and look good."
-        type="website"
-        url="https://www.spaceyatech.com/products"
-        ogImage="https://apis.spaceyatech.com/media/blog-images/syt.png"
-        ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
-      />
-      <section className="md:px-10 xl:max-w-[1440px] mx-auto">
-        <HeroSection />
-        <ProductsSection />
-        <TechStack />
-        <Teams />
-      </section>
-    </>
+    <div className="p-10 flex flex-col gap-8">
+      <HeroSection />
+      <ProductsSections />
+    </div>
   );
-}
+};
 
 export default Products;

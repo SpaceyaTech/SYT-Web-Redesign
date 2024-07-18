@@ -45,7 +45,7 @@ const selectFields = [
   },
 ];
 
-function JoinSytSelectFields() {
+const JoinSytSelectFields = () => {
   return (
     <>
       {selectFields.map((field) => (
@@ -71,6 +71,6 @@ function JoinSytSelectFields() {
       ))}
     </>
   );
-}
+};
 
 export default JoinSytSelectFields;

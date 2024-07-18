@@ -1,43 +1,45 @@
-import videoCaptions from "../../../assets/images/syt-video-captions_en.vtt";
-import video from "../../../assets/images/syt.mp4";
+import video from "../../../../assets/products.mp4";
 
-function HeroSection() {
+const HeroSection = () => {
   return (
-    <section className="py-4 md:py-12 flex flex-col gap-6 md:gap-8 items-center justify-center md:max-w-4xl mx-auto">
-      {/* text section */}
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="text-primary text-base md:text-2xl font-normal text-center capitalize">
-          Our products
-        </h1>
-        <p className="text-center text-[25px] leading-9 md:text-[33px] font-medium md:font-semibold md:leading-normal px-4">
-          We don’t just talk about code. We build products that work and look
-          good.
-        </p>
+    <div className="relative flex lg:flex-row flex-col justify-end items-center">
+      <div className="border border-gray-300 border-solid rounded-lg lg:w-2/3 lg:h-72 p-6 flex bg-[#E5EFEC] lg:absolute left-0 top-32">
+        <div className="flex-1 flex flex-col gap-4 ml-6">
+          <h4 className="text-primary font-light lg:text-xl text-sm">
+            Our Products
+          </h4>
+
+          <h2 className="lg:text-3xl text-base lg:font-normal font-semibold">
+            Let us help you find talent &{" "}
+            <br className="lg:inline-flex hidden" /> build your MVP
+          </h2>
+
+          <p className="text-sm font-extralight">
+            Building better products, designing memorable{" "}
+            <br className="lg:inline-flex hidden" />
+            experiences, and creating meaningful{" "}
+            <br className="lg:inline-flex hidden" />
+            customer connections for global brands and
+            <br className="lg:inline-flex hidden" />
+            organizations acrpss Africa.
+          </p>
+        </div>
+
+        <div className="flex-1 lg:inline-flex hidden" />
       </div>
 
-      {/* video section */}
-      <div className="w-full md:rounded-2xl overflow-hidden">
+      <div className="lg:h-[480px] lg:w-[59%] mt-12 rounded-lg lg:z-10 overflow-hidden">
         <video
-          aria-label="SpaceYaTech promotion video"
+          src={video}
           controls
-          className="h-full w-fit aspect-video"
+          className="h-full w-fit"
           autoPlay={false}
           controlsList="nodownload"
-          muted
-        >
-          <source src={video} type="video/mp4" />
-          <track
-            kind="captions"
-            src={videoCaptions}
-            srcLang="en"
-            label="English captions"
-            default
-          />
-          Your browser does not support the video tag.
-        </video>
+          muted={true}
+        />
       </div>
-    </section>
+    </div>
   );
-}
+};
 
 export default HeroSection;

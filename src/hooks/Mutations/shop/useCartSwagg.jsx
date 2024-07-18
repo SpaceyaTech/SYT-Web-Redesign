@@ -4,7 +4,7 @@ import useAuth from "../../useAuth";
 
 // !!! choose colorSwagg
 const useAddSwagToCart = () => {
-  const { logout } = useAuth();
+  const { auth, logout } = useAuth();
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -17,7 +17,8 @@ const useAddSwagToCart = () => {
       });
       return response.data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      console.log("Added to cart: ", data);
       queryClient.invalidateQueries({ queryKey: ["productsInCart"] });
     },
     onError: (error) => {
@@ -31,7 +32,7 @@ const useAddSwagToCart = () => {
 };
 
 const useDeleteSwag = () => {
-  const { logout } = useAuth();
+  const { auth, logout } = useAuth();
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -42,10 +43,11 @@ const useDeleteSwag = () => {
           // Authorization: `Bearer ${auth?.access}`,
         },
       });
-
+      console.log("response ", response.data);
       return response.data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      console.log("Successfully deleted ", data);
       queryClient.invalidateQueries({ queryKey: ["productsInCart"] });
     },
     onError: (error) => {

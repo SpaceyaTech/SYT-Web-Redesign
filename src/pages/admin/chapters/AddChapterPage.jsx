@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AddChapterForm from "../../../components/admin/AddChapterForm";
 import StepIndicator from "../../../components/admin/StepIndicator";
+import AddChapterForm from "../../../components/admin/AddChapterForm";
 import usePostAddChapter from "../../../hooks/Queries/chapter/usePostAddChapter";
 
 function AddChapterPage() {
@@ -47,9 +47,7 @@ function AddChapterPage() {
   };
 
   const formComplete = (completeChapterData) => {
-    // eslint-disable-next-line no-unused-expressions
     statusPostChapter === "error" && clearStatusPostChapter();
-    // eslint-disable-next-line no-unused-expressions
     errorPostChapter && clearErrorPostChapter();
     postChapter({ ...completeChapterData });
   };
@@ -60,8 +58,9 @@ function AddChapterPage() {
       setCurrentStep(0);
       setCollectedChapter(null);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [statusPostChapter]);
+
+  console.log(statusPostChapter);
 
   return (
     <div className="mx-auto flex px-11 flex-col">
@@ -109,14 +108,6 @@ function AddChapterPage() {
                 clearStatusPostChapter();
                 postChapter(null);
               }}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  clearStatusPostChapter();
-                  postChapter(null);
-                }
-              }}
             >
               <svg
                 className="fill-current h-6 w-6 text-green-500"
@@ -143,14 +134,6 @@ function AddChapterPage() {
               onClick={() => {
                 clearErrorPostChapter();
                 clearStatusPostChapter();
-              }}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  clearErrorPostChapter();
-                  clearStatusPostChapter();
-                }
               }}
             >
               <svg
@@ -184,14 +167,6 @@ function AddChapterPage() {
               onClick={() => {
                 clearErrorPostChapter();
                 clearStatusPostChapter();
-              }}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  clearErrorPostChapter();
-                  clearStatusPostChapter();
-                }
               }}
             >
               <svg

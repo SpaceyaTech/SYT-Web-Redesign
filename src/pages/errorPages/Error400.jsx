@@ -1,7 +1,7 @@
 import React from "react";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { error400 } from "../../assets/images/errorPages";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Error400() {
   return (

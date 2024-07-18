@@ -1,8 +1,8 @@
-import { FAQ, LandingWrapper } from "../../../components";
-import SectionWrapper from "../../../components/shop/SectionWrapper";
+import { FAQ, LandingWrapper } from "@/components";
 import { questions } from "../data";
+import SectionWrapper from "@/components/shop/SectionWrapper";
 
-function FaqSection() {
+const FaqSection = () => {
   return (
     <LandingWrapper title="Faq">
       <SectionWrapper>
@@ -15,6 +15,6 @@ function FaqSection() {
       </SectionWrapper>
     </LandingWrapper>
   );
-}
+};
 
 export default FaqSection;
