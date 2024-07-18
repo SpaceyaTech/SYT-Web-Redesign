@@ -52,10 +52,7 @@ function Checkout() {
   };
 
   const handleDeleteItem = (productId) => {
-    
     products.cart_items?.filter((item) => item.product.id !== productId);
-
-   
   };
 
   return (
@@ -108,7 +105,7 @@ function Checkout() {
                           <button
                             className="text-red-600 mb-5 text-lg"
                             type="button"
-                            onClick={()=>handleDeleteItem(productId)}
+                            onClick={() => handleDeleteItem(productId)}
                           >
                             <FaTrash />
                           </button>

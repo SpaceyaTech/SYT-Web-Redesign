@@ -19,13 +19,11 @@ function RelatedBlogs({ blogId, categoryId }) {
 
   useEffect(() => {
     refetchRelatedBlogsData();
-
   }, [refetchRelatedBlogsData, title_slug]);
 
   const filteredRelatedBlogs = filterRelatedBlogs(
     relatedBlogsData?.blogs,
     title_slug
-
   );
 
   return (
@@ -37,7 +35,6 @@ function RelatedBlogs({ blogId, categoryId }) {
       {isSuccess && filteredRelatedBlogs.length > 0 && (
         <>
           <h2 className="text-2xl text-gray-500 font-semibold underline decoration-green-600 underline-offset-2">
-
             {filteredRelatedBlogs.length > 1
               ? "Related Articles"
               : "Related Article"}

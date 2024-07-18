@@ -10,7 +10,7 @@ function FAQ({ questions }) {
   };
 
   return (
-    <div className="flex-col justify-center items-center gap-4 w-full max-w-6xl">
+    <div className="flex-col justify-center items-center gap-4 w-full max-w-6xl mx-auto">
       {questions.map((question, index) => (
         <div
           key={question.id}

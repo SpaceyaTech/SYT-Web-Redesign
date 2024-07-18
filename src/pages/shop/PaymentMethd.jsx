@@ -33,10 +33,16 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
   };
 
   return (
-    <form className="flex flex-col w-full min-w-40 h-max" onSubmit={handleFormSubmit}>
+    <form
+      className="flex flex-col w-full min-w-40 h-max"
+      onSubmit={handleFormSubmit}
+    >
       <div className="bg-white p-5 w-full border rounded-md">
         <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
-        <RadioGroup value={selectedPaymentMethod} onChange={setSelectedPaymentMethod}>
+        <RadioGroup
+          value={selectedPaymentMethod}
+          onChange={setSelectedPaymentMethod}
+        >
           <RadioGroup.Option value="card">
             {({ checked }) => (
               <Disclosure defaultOpen={checked}>
@@ -52,7 +58,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                     <Disclosure.Panel className="pt-4 pb-2 text-md text-gray-500">
                       <div className="space-y-4">
                         <div>
-                          <label className="block text-gray-700">Cardholder name</label>
+                          <label className="block text-gray-700">
+                            Cardholder name
+                          </label>
                           <input
                             onChange={(e) => setName(e.target.value)}
                             type="text"
@@ -63,7 +71,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700">Card number</label>
+                          <label className="block text-gray-700">
+                            Card number
+                          </label>
                           <input
                             onChange={(e) => setCardNumber(e.target.value)}
                             type="text"
@@ -75,7 +85,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                         </div>
                         <div className="flex space-x-4">
                           <div className="flex-1">
-                            <label className="block text-gray-700">Expiry date</label>
+                            <label className="block text-gray-700">
+                              Expiry date
+                            </label>
                             <input
                               onChange={(e) => setExpiryDate(e.target.value)}
                               type="text"
@@ -86,7 +98,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                             />
                           </div>
                           <div className="flex-1">
-                            <label className="block text-gray-700">CVC/CVV</label>
+                            <label className="block text-gray-700">
+                              CVC/CVV
+                            </label>
                             <input
                               onChange={(e) => setCvc(e.target.value)}
                               type="text"
@@ -119,7 +133,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                     </Disclosure.Button>
                     <Disclosure.Panel className="pt-4 pb-2 text-md text-gray-500">
                       <div>
-                        <label className="block text-gray-700">Phone number</label>
+                        <label className="block text-gray-700">
+                          Phone number
+                        </label>
                         <input
                           onChange={(e) => setPhoneNumber(e.target.value)}
                           type="tel"
@@ -150,7 +166,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
         <hr />
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-4">
           <div className="flex-1">
-            <label className="block text-gray-700 text-md">Country or region</label>
+            <label className="block text-gray-700 text-md">
+              Country or region
+            </label>
             <input
               onChange={(e) => setCountry(e.target.value)}
               type="text"
@@ -176,7 +194,9 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
         </div>
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-3">
           <div className="flex-1">
-            <label className="block text-gray-700 text-md">Postal Address</label>
+            <label className="block text-gray-700 text-md">
+              Postal Address
+            </label>
             <input
               onChange={(e) => setPostalAddress(e.target.value)}
               type="text"

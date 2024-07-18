@@ -5,7 +5,4 @@ import spotify from "./spotify.png";
 import twitter from "./twitter.svg";
 import youtube from "./youtube.svg";
 
-export {
- linkedin, facebook, twitter, instagram, spotify, youtube
-};
-
+export { linkedin, facebook, twitter, instagram, spotify, youtube };

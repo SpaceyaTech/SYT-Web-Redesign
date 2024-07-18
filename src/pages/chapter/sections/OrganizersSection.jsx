@@ -30,7 +30,7 @@ function ImpactSection({ organizers, city, country }) {
                 className="relative w-full h-72 rounded-lg overflow-auto mr-6 md:mr-0"
                 key={id}
               >
-                <LazyLoadImage 
+                <LazyLoadImage
                   className="absolute inset-0 w-full h-full object-cover"
                   src={image}
                   alt="Image"

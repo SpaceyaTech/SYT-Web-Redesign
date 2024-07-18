@@ -1,7 +1,6 @@
 import React from "react";
 import DetailsContainer from "./DetailsContainer";
 
-
 function AboutChapterSection({ chapter }) {
   return (
     <>

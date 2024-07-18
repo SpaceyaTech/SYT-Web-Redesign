@@ -58,7 +58,10 @@ const CategoriesProducts = lazy(
 const AllProducts = lazy(() => import("./pages/shop/sections/AllProducts"));
 const SingleItemPage = lazy(() => import("./pages/shop/SingleItemPage"));
 
-const ShopDashboard = lazy(() => import("./pages/admin/shop/ShopDashboard"));
+const ShopDashboard = lazy(
+  () => import("./pages/admin/shop/dashboard/ShopDashboard")
+);
+const ShopSales = lazy(() => import("./pages/admin/shop/sales/ShopSales"));
 
 export {
   AllProducts,
@@ -99,5 +102,6 @@ export {
   SingleEvent,
   SingleItemPage,
   SingleProductDonation,
+  ShopSales,
   UpdateEventPage,
 };
