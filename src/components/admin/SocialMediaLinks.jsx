@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import PropTypes from "prop-types";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 function SocialMediaLinks({ thePrevious, theNext, setCollectedChapter }) {
@@ -149,9 +148,3 @@ function SocialMediaLinks({ thePrevious, theNext, setCollectedChapter }) {
 }
 
 export default SocialMediaLinks;
-
-SocialMediaLinks.propTypes = {
-  thePrevious: PropTypes.func.isRequired,
-  theNext: PropTypes.func.isRequired,
-  setCollectedChapter: PropTypes.func.isRequired,
-};

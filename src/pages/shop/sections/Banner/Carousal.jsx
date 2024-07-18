@@ -1,7 +1,7 @@
+import { useSwagList } from "@/hooks/Queries/shop/useSwagList";
 import { useEffect, useRef, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
 
 function Carousel() {
   const [width, setWidth] = useState(0);
@@ -14,7 +14,6 @@ function Carousel() {
     if (carouselRef.current) {
       setWidth(carouselRef.current.offsetWidth + 10);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [carouselRef.current]);
 
   const scrollToIndex = (index) => {
@@ -37,7 +36,6 @@ function Carousel() {
     }, 10000); // Autoplay every 10 seconds
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, swagList]);
 
   return (
@@ -78,10 +76,9 @@ function Carousel() {
         <div className="flex justify-center bg-black/60 rounded-3xl gap-3 px-2 py-1.5">
           {swagList?.map((_, index) => (
             <button
-              key={crypto.randomUUID()}
-              type="button"
-              aria-label={`Slide ${index + 1}`}
+              key={index}
               className={`cursor-pointer relative p-0 outline-none border-0 rounded-full h-[9px] w-[9px] ${index === selectedIndex ? " bg-green-dark" : "bg-white"}`}
+              type="button"
               onClick={() => scrollToIndex(index)}
             />
           ))}

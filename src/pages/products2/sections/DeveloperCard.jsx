@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-function DeveloperCard({ name, title, headshot, portfolio }) {
+const DeveloperCard = ({ name, title, headshot, portfolio }) => {
   return (
     <div className="relative h-[216px]">
       {/* headshot */}
@@ -30,13 +30,6 @@ function DeveloperCard({ name, title, headshot, portfolio }) {
       </div>
     </div>
   );
-}
+};
 
 export default DeveloperCard;
-
-DeveloperCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  headshot: PropTypes.string.isRequired,
-  portfolio: PropTypes.string.isRequired,
-};

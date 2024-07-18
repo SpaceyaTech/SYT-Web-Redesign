@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 export default function formatEventDates(
   start_date,
@@ -92,9 +91,7 @@ export function calculateDistanceToDate(targetDate) {
     case diffDays < 30:
       return `${Math.floor(diffDays / 7)} weeks away`;
     default:
-      // eslint-disable-next-line no-case-declarations
       const diffMonths = target.getMonth() - today.getMonth();
-      // eslint-disable-next-line no-unused-expressions
       12 * (target.getFullYear() - today.getFullYear());
       if (diffMonths === 1) {
         return "1 month away";

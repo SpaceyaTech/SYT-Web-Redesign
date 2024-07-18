@@ -4,13 +4,10 @@
 // import { Combobox, Transition } from "@headlessui/react";
 // import { Fragment, useState } from "react";
 // import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
-import PropTypes from "prop-types";
-import { useLocation, useParams } from "react-router-dom";
-import CartIcon from "../../../components/shop/CartIcon";
-import SectionWrapper from "../../../components/shop/SectionWrapper";
+import { useLocation, useParams, Link } from "react-router-dom";
+import CartIcon from "@/components/shop/CartIcon";
+import SectionWrapper from "@/components/shop/SectionWrapper";
 
-
-// eslint-disable-next-line no-unused-vars
 function ItemHeader({ show }) {
   const { pathname } = useLocation();
   const { id } = useParams();
@@ -164,10 +161,3 @@ function ItemHeader({ show }) {
 }
 
 export default ItemHeader;
-ItemHeader.propTypes = {
-  show: PropTypes.func,
-};
-
-ItemHeader.defaultProps = {
-  show: () => {},
-};

@@ -1,13 +1,14 @@
+import SalesPreviewTable from "@/components/admin/shop/sales/SalesPreviewTable";
+import columns from "@/components/admin/shop/sales/SalesPreviewColumn";
 import { Link } from "react-router-dom";
-import { ChartComponent } from "../../../../components/admin/AdminReportCard";
-import columns from "../../../../components/admin/shop/sales/SalesPreviewColumn";
-import SalesPreviewTable from "../../../../components/admin/shop/sales/SalesPreviewTable";
 import data from "./data";
 import ShopSalesTrends from "./ShopSalesTrends";
+import { ChartComponent } from "@/components/admin/AdminReportCard";
 
 function ShopSales() {
   return (
-    <div className="container my-10">
+    <>
+      <div className="container my-10">
         <section>
           <h1 className="text-2xl font-light mb-8">Sales Report</h1>
           <div className="border rounded-xl p-4">
@@ -45,6 +46,7 @@ function ShopSales() {
           </div>
         </section>
       </div>
+    </>
   );
 }
 

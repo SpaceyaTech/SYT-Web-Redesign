@@ -6,7 +6,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { sytLogoGreen } from "../../../assets/images/icons";
 import JoinSytSelectFields from "./JoinSYTSelectFields";
-
 function JoinSYTForm({ closeModal }) {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");

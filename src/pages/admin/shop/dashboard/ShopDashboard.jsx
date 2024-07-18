@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import columns from "../../../../components/admin/shop/dashboard/OrderPreviewColumns";
-import OrdersPreviewTable from "../../../../components/admin/shop/dashboard/OrdersPreviewTable";
+import columns from "@/components/admin/shop/dashboard/OrderPreviewColumns";
+import OrdersPreviewTable from "@/components/admin/shop/dashboard/OrdersPreviewTable";
 import AdminMain from "./AdminMain";
 
 function ShopDashboard() {

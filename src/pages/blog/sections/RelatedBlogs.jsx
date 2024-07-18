@@ -1,48 +1,49 @@
-import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import { useRelatedBlogsData } from "../../../hooks/Queries/blog/useBlogData";
 import { filterRelatedBlogs } from "../../../utilities/FilterBlogs";
 import RelatedBlogCard from "./RelatedBlogCard";
 
 function RelatedBlogs({ blogId, categoryId }) {
-  const { titleSlug } = useParams();
+  const { title_slug } = useParams();
 
   const {
     data: relatedBlogsData,
     refetch: refetchRelatedBlogsData,
-    isLoading,
+
+    isPending,
     isError,
     isSuccess,
   } = useRelatedBlogsData(categoryId);
 
   useEffect(() => {
     refetchRelatedBlogsData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [titleSlug]);
+  }, [refetchRelatedBlogsData, title_slug]);
 
   const filteredRelatedBlogs = filterRelatedBlogs(
     relatedBlogsData?.blogs,
-    titleSlug
+    title_slug
   );
 
   return (
     <>
       {isError && <p>Error loading blogs!</p>}
-      {isLoading && <p>Loading blogs...</p>}
+
+      {isPending && <p>Loading blogs...</p>}
 
       {isSuccess && filteredRelatedBlogs.length > 0 && (
-        <div className="flex flex-col gap-4">
-          <h2 className="text-[#29CC6A] text-lg font-bold leading-normal">
+        <>
+          <h2 className="text-2xl text-gray-500 font-semibold underline decoration-green-600 underline-offset-2">
             {filteredRelatedBlogs.length > 1
               ? "Related Articles"
               : "Related Article"}
           </h2>
-          <div className="flex flex-col gap-4">
+          <div className="grid sm:grid-cols-2 gap-16 grid-cols-1 py-16">
             {Array.isArray(filteredRelatedBlogs) &&
             filteredRelatedBlogs.length > 0 ? (
               filteredRelatedBlogs
-                .filter((blog) => {
+                .filter(function (blog) {
                   if (blog.id === blogId) {
                     return false;
                   }
@@ -53,15 +54,10 @@ function RelatedBlogs({ blogId, categoryId }) {
               <p className="text-lg italic">No related blogs found!</p>
             )}
           </div>
-        </div>
+        </>
       )}
     </>
   );
 }
 
 export default RelatedBlogs;
-
-RelatedBlogs.propTypes = {
-  blogId: PropTypes.number.isRequired,
-  categoryId: PropTypes.number.isRequired,
-};

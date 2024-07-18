@@ -1,35 +1,36 @@
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 // Lazy FallbackLoader components
 import {
   AboutUs,
-  AdminLayout,
-  AllProducts,
-  Blog,
-  Blogs,
+  CommunityPage,
+  LandingPage,
+  Layout,
+  Products,
+  Blog2,
   CategoriesProducts,
   Checkout,
-  CommunityPage,
   Error400,
   Error403,
   Error404,
   Error500,
-  EventsPage,
   ForgotPassword,
   GalleryPage,
   Homepage,
-  LandingPage,
-  Layout,
+  IndividualChapter,
   LogIn,
   ProductDisplay,
-  Products,
   ResetPassword,
   Resources,
-  ShopDashboard,
-  ShopSales,
   SignUp,
   SingleEvent,
+  Blogs,
+  EventsPage,
+  AdminLayout,
+  ShopDashboard,
+  ShopSales,
+  AllProducts,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -90,7 +91,7 @@ const router = createBrowserRouter([
         path: "/blogs/:titleSlug",
         element: (
           <Suspense fallback={<FallbackLoader />}>
-            <Blog />
+            <Blog2 />
           </Suspense>
         ),
       },
@@ -107,6 +108,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <SingleEvent />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/chapter/:id",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <IndividualChapter />
           </Suspense>
         ),
       },

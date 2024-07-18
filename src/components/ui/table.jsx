@@ -1,8 +1,6 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/prop-types */
 import * as React from "react";
 
-import { cn } from "../../utilities/utils";
+import { cn } from "@/utilities/utils";
 
 const Table = React.forwardRef(({ className, ...props }, ref) => (
   <div className="relative w-full overflow-auto">
@@ -84,7 +82,12 @@ const TableCaption = React.forwardRef(({ className, ...props }, ref) => (
 TableCaption.displayName = "TableCaption";
 
 export {
-  Table, TableBody, TableCaption, TableCell, TableFooter,
-  TableHead, TableHeader, TableRow
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
 };
-

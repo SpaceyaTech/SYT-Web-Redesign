@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import ProductCard from "../../../components/shop/ProductCard";
-import SectionWrapper from "../../../components/shop/SectionWrapper";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
+import SectionWrapper from "@/components/shop/SectionWrapper";
 import FilterSection from "./FilterSection";
+import ProductCard from "@/components/shop/ProductCard";
 import ItemHeader from "./ItemHeader";
 
 function AllProducts() {
@@ -12,7 +12,6 @@ function AllProducts() {
   const [searchParams] = useSearchParams();
   const sort = searchParams.get("sort");
   const searchText = searchParams.get("search");
-  const [, setOpen] = useState(false)
 
   const sortedSwag =
     sort === "low"
@@ -36,7 +35,6 @@ function AllProducts() {
     } else {
       setProducts(swagList);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [swagList, searchText, sort]);
 
   return (

@@ -1,19 +1,18 @@
-/* eslint-disable no-unused-expressions */
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
 const usePostEvents = () => {
   const [eventData, setEventData] = useState(null);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState(null);
 
-  const clearError = (err = "all") => {
-    err === "all" && setError(null);
+  const clearError = (error = "all") => {
+    error === "all" && setError(null);
     // Clear one items error?
   };
 
-  const clearStatus = (statusArg = "all") => {
-    statusArg === "all" && setStatus(null);
+  const clearStatus = (status = "all") => {
+    status === "all" && setStatus(null);
     // Clear one item's status
   };
 
@@ -25,7 +24,7 @@ const usePostEvents = () => {
         },
       })
       .then((response) => {
-        if (response.status === 200 || response.status === 201) {
+        if (response.status == 200 || response.status == 201) {
           setStatus("success");
           setEventData(null);
           setError(null);
@@ -34,18 +33,19 @@ const usePostEvents = () => {
           setError(response.data);
         }
       })
-      .catch((Error) => {
-        switch (Error.code) {
+      .catch((error) => {
+        console.log("The error", error);
+        switch (error.code) {
           case "ERR_NETWORK":
-            setError({ axios: Error.message });
+            setError({ axios: error.message });
             setStatus("error");
             break;
           case "ERR_BAD_REQUEST":
-            if (Error.response) {
-              if (Error.response.status === 404) {
+            if (error.response) {
+              if (error.response.status === 404) {
                 setError({ axios: "Cannot post the event to the server." });
               } else {
-                setError({ event: Error.response.data });
+                setError({ event: error.response.data });
               }
             } else {
               setError({ axios: "Problem contacting the server!" });
@@ -89,12 +89,12 @@ const usePostEvents = () => {
             }
           )
           .then((response) => {
-            if (response.status === 200 || response.status === 201) {
+            if (response.status == 200 || response.status == 201) {
               formData.append("category_id", response.data.id);
               postFunction(formData);
             }
           })
-          .catch(() => {
+          .catch((error) => {
             setError({ server: "Problem creating the new event category!" });
             setStatus("error");
           });

@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function ImageCard({ photo }) {
-  const { width, src, alt, date, event } = photo;
+  const { width, src, alt, date, event, height } = photo;
   return (
     <div className={`relative border w-[${width}px]`}>
       <LazyLoadImage
@@ -26,14 +26,3 @@ function ImageCard({ photo }) {
 }
 
 export default ImageCard;
-
-ImageCard.propTypes = {
-  photo: PropTypes.shape({
-    width: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    event: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-  }).isRequired,
-};

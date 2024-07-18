@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import PropTypes from "prop-types";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { joinSYT } from "../../../assets/images/community";

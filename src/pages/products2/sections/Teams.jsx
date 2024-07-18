@@ -1,13 +1,13 @@
 import { Tab } from "@headlessui/react";
 import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 
 import { upleftGreen } from "../../../assets/images/icons";
-import { Loader } from "../../../components";
 import useStackData from "../../../hooks/Queries/stack/useStackData";
+import { Loader } from "../../../components";
 import DeveloperCard from "./DeveloperCard";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -64,7 +64,7 @@ function Teams() {
                 <Tab
                   key={id}
                   className={({ selected }) =>
-                     
+                    // eslint-disable-next-line implicit-arrow-linebreak
                     classNames(
                       "min-w-fit w-fit rounded-[40px] py-2 px-4 text-base font-light leading-5",
                       "ring-white/60 ring-offset-2 ring-offset-gray-600 focus:outline-none",
@@ -86,9 +86,9 @@ function Teams() {
                     "bg-white grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-7 lg:gap-12 w-full"
                   )}
                 >
-                  {developers.map(({ name, title, portfolio, image }) => (
+                  {developers.map(({ id, name, title, portfolio, image }) => (
                     <DeveloperCard
-                      key={crypto.randomUUID()}
+                      key={id}
                       name={name}
                       title={title}
                       headshot={image}

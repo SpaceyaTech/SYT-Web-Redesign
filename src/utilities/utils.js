@@ -1,14 +1,12 @@
-/* eslint-disable no-plusplus */
+import { categories } from "@/pages/shop/data";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { categories } from "../pages/shop/data";
 
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
 export function addCommaSeparator(number) {
-  // eslint-disable-next-line no-restricted-globals
   if (isNaN(number) || number < 1000) {
     return number.toFixed(0);
   }
@@ -18,7 +16,7 @@ export function addCommaSeparator(number) {
 
   for (let i = numberString.length - 1, count = 0; i >= 0; i--, count++) {
     if (count === 3) {
-      result = `,${  result}`;
+      result = "," + result;
       count = 0;
     }
     result = numberString[i] + result;

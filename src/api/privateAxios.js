@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import axios from "axios";
 import publicAxios from "./publicAxios";
 
@@ -9,7 +8,6 @@ const privateAxios = axios.create({
 });
 
 let isRefreshing = false;
-// eslint-disable-next-line no-unused-vars
 let refreshPromise = null;
 
 let failedQueue = [];

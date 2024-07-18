@@ -1,6 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import toast from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
 
 // interface Resource {
 //   id: number;
@@ -15,16 +14,18 @@ const fetchResourcesData = async () => {
     );
     return response.data;
   } catch (error) {
-    toast.error("Error fetching resources");
+    console.error("Error fetching resources:", error);
     throw error;
   }
 };
 
-const useResourcesData = () => useQuery({
+const useResourcesData = (id) => {
+  return useQuery({
     queryKey: ["resourcetypes"],
     queryFn: () => fetchResourcesData(),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
+};
 
 export default useResourcesData;

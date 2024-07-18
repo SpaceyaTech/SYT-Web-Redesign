@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import toast from "react-hot-toast";
 
 const fetchEvents = async (catName = "") => {
   try {
@@ -9,7 +8,7 @@ const fetchEvents = async (catName = "") => {
 
     return response.data;
   } catch (error) {
-    toast.error("Error fetching similar Events");
+    console.error("Error fetching similar Events: ", error);
     throw new Error(error);
   }
 };

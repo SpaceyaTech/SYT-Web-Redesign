@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { GoBackBtn, LandingWrapper, Loader } from "../../../../../components";
 import SeoMetadata from "../../../../../components/SeoMetadata";
-import useOneEvent from "../../../../../hooks/Queries/singleEvent/useSingleEvent";
+
+import { GoBackBtn, LandingWrapper, Loader } from "../../../../../components";
 import { EventDescription, Hero, SimilarEvents } from "./sections";
+import { useOneEvent } from "@/hooks/Queries/singleEvent/useSingleEvent";
 
 function SingleEvent() {
   const { id } = useParams();

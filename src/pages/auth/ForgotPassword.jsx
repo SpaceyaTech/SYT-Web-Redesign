@@ -1,3 +1,4 @@
+import React from "react";
 import { MdEmail, MdMessage } from "react-icons/md"; // Import react-icons
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ForgotPasswordImg from "../../assets/images/auth/forgot-password.svg";
@@ -27,15 +28,11 @@ function ForgotPassword() {
         <form className="space-y-6">
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
             <MdEmail className="text-xl" />
-            <label
-              htmlFor="email"
-              className="text-left space-y-2 flex flex-col justify-center"
-            >
+            <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via Email</span>
               <input
                 type="password"
                 name="password"
-                id="email"
                 className="bg-white border-none border-[#79747E] placeholder-[#49454F] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded sm:text-sm focus:ring-1"
                 placeholder="Enter New Password"
               />
@@ -43,13 +40,9 @@ function ForgotPassword() {
           </div>
           <div className="flex space-x-8 border rounded-xl border-[#79747E] py-2 px-4">
             <MdMessage className="text-xl" />
-            <label
-              htmlFor="password"
-              className="text-left space-y-2 flex flex-col justify-center"
-            >
+            <label className="text-left space-y-2 flex flex-col justify-center">
               <span className="text-[#79747E]">Via SMS</span>
               <input
-                id="password"
                 type="password"
                 name="password"
                 className="bg-white border-none border-[#79747E] placeholder-[#49454F] focus:outline-none focus:border-[#CCFFF3] focus:ring-[#009975] block w-full rounded sm:text-sm focus:ring-1"

@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
-import { FaBriefcase , FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { PiArrowCircleLeft, PiArrowCircleRight } from "react-icons/pi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { FaBriefcase } from "react-icons/fa";
+import { PiArrowCircleLeft, PiArrowCircleRight } from "react-icons/pi";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Caroussel({ CarousselData }) {
   const carouselRef = useRef();

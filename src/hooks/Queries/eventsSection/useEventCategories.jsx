@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import toast from "react-hot-toast";
 
 // interface EventCategory {
 //     id: number;
@@ -14,17 +13,19 @@ const fetchEventsCategories = async () => {
     );
     return response.data;
   } catch (error) {
-    toast.error("Error fetching events categories: ", error);
+    console.error("Error fetching events categories: ", error);
     throw error;
   }
 };
 
-const useEventsCategories = () => useQuery({
+const useEventsCategories = () => {
+  return useQuery({
     queryKey: ["eventsCategories"],
     queryFn: () => fetchEventsCategories(),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
+};
 // interface Event {
 //     id: number;
 //     name: string;
@@ -71,7 +72,7 @@ const fetchEvents = async (filterArray) => {
   if (filterArray !== null) {
     filterString += "?";
     Object.keys(filterArray).forEach((key) => {
-      filterString += `${key  }=${  filterArray[key]  }&`;
+      filterString += key + "=" + filterArray[key] + "&";
     });
 
     url += filterString;
@@ -81,17 +82,19 @@ const fetchEvents = async (filterArray) => {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    toast.error("Error fetching events: ", error);
+    console.error("Error fetching events: ", error);
     throw error;
   }
 };
 
-const useAllEvents = (filters) => useQuery({
+const useAllEvents = (filters) => {
+  return useQuery({
     queryKey: ["allEvents"],
     queryFn: () => fetchEvents(filters),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
+};
 
 const fetchCities = async () => {
   try {
@@ -100,16 +103,18 @@ const fetchCities = async () => {
     );
     return response.data;
   } catch (error) {
-    toast.error("Error fetching cities: ", error);
+    console.error("Error fetching cities: ", error);
     throw error;
   }
 };
 
-const useAllCities = () => useQuery({
+const useAllCities = () => {
+  return useQuery({
     queryKey: ["topCities"],
     queryFn: () => fetchCities(),
     refetchOnWindowFocus: false,
     staleTime: 5 * 60 * 60, // A recall will be made after 30 seconds
   });
+};
 
 export { useAllCities, useEventsCategories, useAllEvents, fetchEvents };

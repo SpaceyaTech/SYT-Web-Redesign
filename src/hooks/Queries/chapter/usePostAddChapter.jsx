@@ -1,19 +1,18 @@
-/* eslint-disable no-unused-expressions */
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const usePostAddChapter = () => {
   const [chapterData, setChapterData] = useState(null);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState(null);
 
-  const clearError = (errorArg = "all") => {
-    errorArg === "all" && setError(null);
+  const clearError = (error = "all") => {
+    error === "all" && setError(null);
     // Clear one item's error?
   };
 
-  const clearStatus = (statusArg = "all") => {
-    statusArg === "all" && setStatus(null);
+  const clearStatus = (status = "all") => {
+    status === "all" && setStatus(null);
     // Clear one item's status?
   };
 
@@ -32,7 +31,7 @@ const usePostAddChapter = () => {
         const newOrganizer = { ...organizer };
         formData.append(`organizer.${index}.image`, organizer.image);
         delete newOrganizer.image;
-        formData.append("organizers", JSON.stringify(newOrganizer));
+        formData.append(`organizers`, JSON.stringify(newOrganizer));
       });
 
       axios
@@ -51,16 +50,16 @@ const usePostAddChapter = () => {
             setError(response.data);
           }
         })
-        .catch((err) => {
-          switch (err.code) {
+        .catch((error) => {
+          switch (error.code) {
             case "ERR_NETWORK":
-              setError({ axios: err.message });
+              setError({ axios: error.message });
               setStatus("error");
               break;
             case "ERR_BAD_REQUEST":
-              err.response
+              error.response
                 ? setError({
-                    chapter: err.response.data,
+                    chapter: error.response.data,
                   })
                 : setError({ server: "Problem contacting the server!" });
               setStatus("error");

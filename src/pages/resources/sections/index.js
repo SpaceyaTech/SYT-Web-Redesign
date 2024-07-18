@@ -1,5 +1,5 @@
-import HeroSection from "./HeroSection";
-import ResourceCard from "./ResourceCard";
-import ResourcesSection from "./ResourcesSection";
+import { default as HeroSection } from "./HeroSection";
+import { default as ResourcesSection } from "./ResourcesSection";
+import { default as ResourceCard } from "./ResourceCard";
 
 export { HeroSection, ResourceCard, ResourcesSection };

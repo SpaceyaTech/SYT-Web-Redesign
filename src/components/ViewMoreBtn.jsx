@@ -1,6 +1,7 @@
-import PropTypes from "prop-types";
-import { FaArrowRight } from "react-icons/fa";
+import React from "react";
 import { Link } from "react-router-dom";
+
+import { FaArrowRight } from "react-icons/fa";
 
 function ViewMoreBtn({ link }) {
   return (
@@ -19,7 +20,3 @@ function ViewMoreBtn({ link }) {
 }
 
 export default ViewMoreBtn;
-
-ViewMoreBtn.propTypes = {
-  link: PropTypes.string.isRequired,
-};

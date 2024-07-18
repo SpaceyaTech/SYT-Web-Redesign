@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import data from "./data";
 
-export default function SalesGraph() {
+export const SalesGraph = () => {
   return (
     <ResponsiveContainer width="100%" height={300}>
       {/* <XAxis dataKey={"name"} className='mt-4' /> */}
@@ -29,7 +29,7 @@ export default function SalesGraph() {
             <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
           </linearGradient>
         </defs>
-        <XAxis dataKey="name" />
+        <XAxis dataKey={"name"} />
         <YAxis stroke="white" />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
@@ -44,4 +44,4 @@ export default function SalesGraph() {
       </AreaChart>
     </ResponsiveContainer>
   );
-}
+};

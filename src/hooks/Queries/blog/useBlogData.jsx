@@ -1,7 +1,5 @@
-/* eslint-disable camelcase */
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import toast from "react-hot-toast";
 
 const fetchBlogData = async (title_slug) => {
   try {
@@ -10,7 +8,7 @@ const fetchBlogData = async (title_slug) => {
     );
     return response.data;
   } catch (error) {
-    toast.error("Error fetching blog:", error);
+    console.error("Error fetching blog:", error);
     throw error;
   }
 };

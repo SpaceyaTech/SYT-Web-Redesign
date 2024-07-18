@@ -1,9 +1,8 @@
- 
-import { FiArrowRightCircle } from "react-icons/fi";
+/* eslint-disable react/prop-types */
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import { FiArrowRightCircle } from "react-icons/fi";
 import photosData from "../../../gallery/data";
-
 function GallerySection() {
   return (
     <div className="pb-10 sm:pb-24 text-center">
