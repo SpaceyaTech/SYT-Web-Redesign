@@ -224,7 +224,7 @@ function EventsTable() {
                       : "hover:bg-[#F7F7F7] text-[#656767] text-sm"
                   }
                 >
-                  {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+                  {/* eslint-disable-next-line */}
                   <td className="hidden sm:table-cell py-4">
                     <input
                       type="checkbox"
