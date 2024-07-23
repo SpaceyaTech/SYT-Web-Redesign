@@ -31,6 +31,7 @@ import {
   ShopDashboard,
 } from "..";
 import { FallbackLoader } from "../components";
+import EditForm from "@/pages/admin/shop/EditForm";
 
 const router = createBrowserRouter([
   {
@@ -232,6 +233,14 @@ const router = createBrowserRouter([
       //   element: <UpdateEventPage />,
       // },
     ],
+  },
+  {
+    path: "/admin/shop/edit",
+    element: (
+      <Suspense fallback={<FallbackLoader />}>
+        <EditForm />
+      </Suspense>
+    ),
   },
   {
     path: "/error-400",
