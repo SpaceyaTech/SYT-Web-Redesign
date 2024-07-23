@@ -31,6 +31,7 @@ module.exports = {
     "comma-dangle": 0,
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     quotes: ["error", "double"],
+    "linebreak-style": ["error", "windows"],
     "linebreak-style": ["error", "unix"],
     "no-console": "error",
     "react/react-in-jsx-scope": 0,
