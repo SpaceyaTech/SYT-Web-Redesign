@@ -68,7 +68,8 @@ const fetchChapterData = async (id) => {
   }
 };
 
-const useIndividualChapterData = (id) => useQuery({
+const useIndividualChapterData = (id) =>
+  useQuery({
     queryKey: ["oneChapter"],
     queryFn: () => fetchChapterData(id),
     refetchOnWindowFocus: false,

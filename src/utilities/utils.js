@@ -18,7 +18,7 @@ export function addCommaSeparator(number) {
 
   for (let i = numberString.length - 1, count = 0; i >= 0; i--, count++) {
     if (count === 3) {
-      result = `,${  result}`;
+      result = `,${result}`;
       count = 0;
     }
     result = numberString[i] + result;

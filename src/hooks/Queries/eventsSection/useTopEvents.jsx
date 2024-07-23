@@ -14,8 +14,7 @@ const fetchEventData = async (filterArray) => {
     if (filterArray) {
       Object.keys(filterArray).forEach((key) => {
         // eslint-disable-next-line no-unused-expressions
-        filterArray[key] !== null &&
-          (url += `&${  key  }=${  filterArray[key]}`);
+        filterArray[key] !== null && (url += `&${key}=${filterArray[key]}`);
       });
     }
     const response = await axios.get(url);
@@ -26,7 +25,8 @@ const fetchEventData = async (filterArray) => {
   }
 };
 
-const useTopEvents = (filters) => useQuery({
+const useTopEvents = (filters) =>
+  useQuery({
     queryKey: ["topEvents"],
     queryFn: () => fetchEventData(filters),
     refetchOnWindowFocus: true,

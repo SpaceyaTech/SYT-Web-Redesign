@@ -1,4 +1,8 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { yupResolver } from "@hookform/resolvers/yup";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { IoMdClose } from "react-icons/io";
 import * as yup from "yup";
@@ -34,8 +38,10 @@ const schema = yup.object().shape({
     .test("is-valid-type", "Not a valid image type", (value) =>
       isValidFileType(value && value[0]?.name, "image")
     )
-    .test("is-valid-size", "Max allowed size is 10MB", (value) =>
-      value && value[0]?.size <= MAX_FILE_SIZE
+    .test(
+      "is-valid-size",
+      "Max allowed size is 10MB",
+      (value) => value && value[0]?.size <= MAX_FILE_SIZE
     ),
 });
 
@@ -47,7 +53,9 @@ export default function Modal({ showModal, onClose }) {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = () => {
+    // console.log(data);
+  };
 
   const allowedExts = getAllowedExt("image");
 
@@ -78,10 +86,14 @@ export default function Modal({ showModal, onClose }) {
                     <div className="relative p-6 flex-auto">
                       <div className="min-w-sm mx-auto my-4 leading-relaxed">
                         <div className="mb-5">
-                          <label className="block mb-2 text-sm font-medium text-gray-900">
+                          <label
+                            htmlFor="price"
+                            className="block mb-2 text-sm font-medium text-gray-900"
+                          >
                             Price
                           </label>
                           <input
+                            id="price"
                             {...register("price")}
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="KES 0.00"
@@ -92,12 +104,13 @@ export default function Modal({ showModal, onClose }) {
                         </div>
                         <div className="mb-5 max-w-sm mx-auto">
                           <label
-                            htmlFor="text"
+                            htmlFor="size"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                           >
                             Size
                           </label>
                           <select
+                            id="size"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             {...register("size")}
                           >
@@ -110,14 +123,20 @@ export default function Modal({ showModal, onClose }) {
                             <option value="ExtraLarge">ExtraLarge</option>
                           </select>
                           {errors.size && (
-                            <p className="text-red-500">{errors.size.message}</p>
+                            <p className="text-red-500">
+                              {errors.size.message}
+                            </p>
                           )}
                         </div>
                         <div className="mb-5 max-w-sm mx-auto">
-                          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                          <label
+                            htmlFor="category"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
                             Category
                           </label>
                           <select
+                            id="category"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             {...register("category")}
                           >
@@ -128,7 +147,9 @@ export default function Modal({ showModal, onClose }) {
                             <option value="Hoodies">Hoodies</option>
                           </select>
                           {errors.category && (
-                            <p className="text-red-500">{errors.category.message}</p>
+                            <p className="text-red-500">
+                              {errors.category.message}
+                            </p>
                           )}
                         </div>
                         <div className="mb-5 max-w-sm mx-auto">
@@ -146,7 +167,9 @@ export default function Modal({ showModal, onClose }) {
                             <option value="Grey">Grey</option>
                           </select>
                           {errors.color && (
-                            <p className="text-red-500">{errors.color.message}</p>
+                            <p className="text-red-500">
+                              {errors.color.message}
+                            </p>
                           )}
                         </div>
                         <div className="mb-5">
@@ -247,3 +270,8 @@ export default function Modal({ showModal, onClose }) {
     </>
   );
 }
+
+Modal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

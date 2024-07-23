@@ -1,5 +1,3 @@
- 
- 
 import { lazy } from "react";
 
 const AboutUs = lazy(() => import("./pages/aboutUs/AboutUs"));
@@ -58,7 +56,9 @@ const ShopDashboard = lazy(
   () => import("./pages/admin/shop/dashboard/ShopDashboard")
 );
 const ShopSales = lazy(() => import("./pages/admin/shop/sales/ShopSales"));
-const InventoryReport = lazy(() => import("./pages/admin/shop/inventory/InventoryReport"));
+const InventoryReport = lazy(
+  () => import("./pages/admin/shop/inventory/InventoryReport")
+);
 
 export {
   AllProducts,
