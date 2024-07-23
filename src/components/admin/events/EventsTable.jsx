@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
