@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -224,7 +225,6 @@ function EventsTable() {
                       : "hover:bg-[#F7F7F7] text-[#656767] text-sm"
                   }
                 >
-                  {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
                   <td className="hidden sm:table-cell py-4">
                     <input
                       type="checkbox"

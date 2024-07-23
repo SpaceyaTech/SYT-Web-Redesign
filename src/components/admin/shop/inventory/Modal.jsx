@@ -95,7 +95,7 @@ export default function Modal({ showModal, onClose }) {
                           <input
                             id="price"
                             {...register("price")}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#009975] focus:border-[#009975] block w-full p-2.5 focus:outline-none focus:ring focus:ring-opacity-40"
                             placeholder="KES 0.00"
                           />
                           {errors.price && (
@@ -111,7 +111,7 @@ export default function Modal({ showModal, onClose }) {
                           </label>
                           <select
                             id="size"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#009975] focus:border-[#009975] focus:outline-none focus:ring focus:ring-opacity-40 block w-full p-2.5"
                             {...register("size")}
                           >
                             <option value="" selected>
@@ -137,7 +137,7 @@ export default function Modal({ showModal, onClose }) {
                           </label>
                           <select
                             id="category"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#009975] focus:border-[#009975] focus:outline-none focus:ring focus:ring-opacity-40 block w-full p-2.5"
                             {...register("category")}
                           >
                             <option value="" selected>
@@ -157,7 +157,7 @@ export default function Modal({ showModal, onClose }) {
                             Color
                           </label>
                           <select
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#009975] focus:border-[#009975] focus:outline-none focus:ring focus:ring-opacity-40 block w-full p-2.5"
                             {...register("color")}
                           >
                             <option value="" selected>
@@ -179,7 +179,7 @@ export default function Modal({ showModal, onClose }) {
                           <textarea
                             {...register("description")}
                             rows="4"
-                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-[#009975] focus:border-[#009975] focus:outline-none focus:ring focus:ring-opacity-40"
                           />
                           {errors.description && (
                             <p className="text-red-500">
