@@ -224,7 +224,7 @@ function EventsTable() {
                       : "hover:bg-[#F7F7F7] text-[#656767] text-sm"
                   }
                 >
-                  <td className="hidden sm:table-cell py-4">
+                  <td aria-label="events" className="hidden sm:table-cell py-4 ">
                     <input
                       type="checkbox"
                       className="cursor-pointer"
