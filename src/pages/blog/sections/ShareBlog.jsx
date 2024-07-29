@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import React from "react";
-
+import PropTypes from "prop-types";
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -56,3 +56,8 @@ function ShareBlog({ url, title }) {
 }
 
 export default ShareBlog;
+
+ShareBlog.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};

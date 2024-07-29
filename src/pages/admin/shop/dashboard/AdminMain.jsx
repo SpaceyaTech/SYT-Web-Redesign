@@ -1,16 +1,15 @@
-import React from "react";
 import AdminReportCard, {
-  HighDemandCard,
-  TotalVisitsCustomCard,
-  ChartComponent,
   BigChartComponent,
+  ChartComponent,
+  HighDemandCard,
   InvenOrderCard,
   InvenOrderCardTwo,
-  totalSalesData,
   totalOrdersData,
-  totalVisitsData,
+  totalSalesData,
   totalVisitInnerCardData,
   totalVisitInnerCardDataTwo,
+  TotalVisitsCustomCard,
+  totalVisitsData,
 } from "../../../../components/admin/AdminReportCard";
 
 function AdminMain() {
