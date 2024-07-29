@@ -191,3 +191,4 @@ const innerData = [
     { id: "ITM-107", color: "bg-[#A45A41]", size: "L", totalItems: 5, unitCost: 1500, itemsSold: 1, itemsRemaining: 6 },
     { id: "ITM-108", color: "bg-[#7B7B7B]", size: "XL", totalItems: 5, unitCost: 1500, itemsSold: 0, itemsRemaining: 7 },
 ];
+// done
