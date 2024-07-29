@@ -32,6 +32,7 @@ import {
 } from "..";
 import { FallbackLoader } from "../components";
 import EditForm from "@/pages/admin/shop/EditForm";
+import SinglePageView from "@/pages/admin/shop/SinglePageView";
 
 const router = createBrowserRouter([
   {
@@ -239,6 +240,14 @@ const router = createBrowserRouter([
     element: (
       <Suspense fallback={<FallbackLoader />}>
         <EditForm />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/admin/shop/singleitem",
+    element: (
+      <Suspense fallback={<FallbackLoader />}>
+        <SinglePageView />
       </Suspense>
     ),
   },
