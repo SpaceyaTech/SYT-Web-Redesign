@@ -18,7 +18,7 @@ function RelatedBlogs({ blogId, categoryId }) {
 
   useEffect(() => {
     refetchRelatedBlogsData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [titleSlug]);
 
   const filteredRelatedBlogs = filterRelatedBlogs(

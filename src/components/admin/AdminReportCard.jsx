@@ -524,7 +524,7 @@ export {
   totalVisitInnerCardData,
   totalVisitInnerCardDataTwo,
   TotalVisitsCustomCard,
-  totalVisitsData
+  totalVisitsData,
 };
 export default AdminReportCard;
 

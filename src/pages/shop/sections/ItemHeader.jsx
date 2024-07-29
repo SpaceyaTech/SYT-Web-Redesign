@@ -9,7 +9,6 @@ import { useLocation, useParams } from "react-router-dom";
 import CartIcon from "../../../components/shop/CartIcon";
 import SectionWrapper from "../../../components/shop/SectionWrapper";
 
-
 // eslint-disable-next-line no-unused-vars
 function ItemHeader({ show }) {
   const { pathname } = useLocation();

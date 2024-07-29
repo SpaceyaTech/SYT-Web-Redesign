@@ -1,4 +1,4 @@
- import {
+import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,

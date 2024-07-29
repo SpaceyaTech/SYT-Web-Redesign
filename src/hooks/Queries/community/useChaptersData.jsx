@@ -23,7 +23,8 @@ const fetchChaptersData = async () => {
   }
 };
 
-const useChaptersData = () => useQuery({
+const useChaptersData = () =>
+  useQuery({
     queryKey: ["allChapters"],
     queryFn: () => fetchChaptersData(),
     refetchOnWindowFocus: false,

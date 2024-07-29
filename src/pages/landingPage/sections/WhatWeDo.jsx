@@ -1,7 +1,4 @@
- 
- 
 /* eslint-disable react/prop-types */
-import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Button } from "../../../components";
 import { whatWeDoData } from "../data";

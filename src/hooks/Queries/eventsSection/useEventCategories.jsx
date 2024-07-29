@@ -19,7 +19,8 @@ const fetchEventsCategories = async () => {
   }
 };
 
-const useEventsCategories = () => useQuery({
+const useEventsCategories = () =>
+  useQuery({
     queryKey: ["eventsCategories"],
     queryFn: () => fetchEventsCategories(),
     refetchOnWindowFocus: false,
@@ -71,7 +72,7 @@ const fetchEvents = async (filterArray) => {
   if (filterArray !== null) {
     filterString += "?";
     Object.keys(filterArray).forEach((key) => {
-      filterString += `${key  }=${  filterArray[key]  }&`;
+      filterString += `${key}=${filterArray[key]}&`;
     });
 
     url += filterString;
@@ -86,7 +87,8 @@ const fetchEvents = async (filterArray) => {
   }
 };
 
-const useAllEvents = (filters) => useQuery({
+const useAllEvents = (filters) =>
+  useQuery({
     queryKey: ["allEvents"],
     queryFn: () => fetchEvents(filters),
     refetchOnWindowFocus: false,
@@ -105,7 +107,8 @@ const fetchCities = async () => {
   }
 };
 
-const useAllCities = () => useQuery({
+const useAllCities = () =>
+  useQuery({
     queryKey: ["topCities"],
     queryFn: () => fetchCities(),
     refetchOnWindowFocus: false,
