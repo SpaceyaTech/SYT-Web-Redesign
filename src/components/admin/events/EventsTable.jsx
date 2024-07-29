@@ -227,11 +227,8 @@ function EventsTable() {
                   <td
                     aria-label="events"
                     className="hidden sm:table-cell py-4 "
-                    className="hidden sm:table-cell py-4"
-                    id={`checkbox-${row.id}`}
                   >
                     <input
-                      aria-labelledby={`checkbox-${row.id}`}
                       type="checkbox"
                       className="cursor-pointer"
                       onChange={(event) => handleSelectRow(event, row.id)}
@@ -240,7 +237,7 @@ function EventsTable() {
                   </td>
                   <td className="whitespace-wrap px-2 py-4">{row.eventName}</td>
                   <td>{row.city}</td>
-                  <td className="hidden sm:table-cell">{row.date}</td>∏
+                  <td className="hidden sm:table-cell">{row.date}</td>
                   <td className="hidden sm:table-cell">{row.from}</td>
                   <td className="hidden sm:table-cell">{row.to}</td>
                   <td className="hidden sm:table-cell">{row.chapter}</td>
