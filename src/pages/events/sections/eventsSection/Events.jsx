@@ -14,11 +14,21 @@ import { EventCard } from "../../../community/sections/eventsPreview/SingleEvent
 //   calendar,
 //   globe,
 // } from "../../../../../assets/images/icons";
-import { EventCard } from "../../../community/sections/eventsPreview/SingleEvents/sections";
 
 function Events({ events }) {
+  // const formattedDate = format(parseISO(start_date), "do, MMMM");
+  // import formatEventDates from "../../../../../utilities/formatEventDate";
+  // import { LazyLoadImage } from "react-lazy-load-image-component";
+
   return (
-    <div className="mx-auto my-6 max-w-1216 w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8 justify-between px-4 xl:px-0">
+    <div
+      // className="my-4 md:my-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 max-w-1216 mx-auto md:pb-10"
+      className="mx-auto my-6 max-w-1216 w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8 justify-between px-4 xl:px-0"
+      // style={{
+      //   gridAutoColumns: "max-content",
+      //   gridTemplateRows: "minmax(550px, 400px)",
+      // }}
+    >
       {events &&
         Array.isArray(events) &&
         events.map((event) => (
@@ -123,7 +133,6 @@ function Events({ events }) {
           //   </div>
           // </Link>
         ))}
-        events.map((event) => <EventCard key={event.id} event={event} />)}
     </div>
   );
 }
