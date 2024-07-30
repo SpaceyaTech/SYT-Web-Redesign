@@ -42,18 +42,15 @@ const OrdersTrends = () => {
   ];
 
   return (
-    <div className="mt-10 mb-20 ml-10">
-      <div className="flex flex-row items-center gap-2 p-4">
+    <div className="sm:mt-10 sm:mb-20 sm:ml-10">
+      <div className="flex flex-col sm:flex-row items-center gap-2 p-4">
         {trends.map((trend, index) => (
           <div
             className={`flex flex-row items-center gap-2 ${
-              index !== trends.length - 1 && "border-r"
-            } px-5`}
+              index !== trends.length - 1 && "border-b sm:border-r"
+            } py-10 sm:px-5`}
           >
-            <div
-              key={index}
-              className="flex flex-col justify-center my-4 px-2"
-            >
+            <div key={index} className="flex flex-col justify-center my-4 px-2">
               <p className="text-base font-medium">{trend.metric}</p>
               <p className="text-4xl font-bold">{trend.value}</p>
               <div className="flex flex-row items-center gap-1 mt-6 -mb-4 text-sm">

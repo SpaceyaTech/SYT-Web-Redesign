@@ -15,7 +15,7 @@ import {
   TableRow,
 } from "../../../ui/table";
 import OrdersInvoiceModal from "./OrdersInvoiceModal";
-import Columns from "./Columns"; // Import the getColumns function
+import Columns from "./Columns";
 
 function Orders({ data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,8 +31,7 @@ function Orders({ data }) {
     setSelectedOrderId(null);
   };
 
-  const columns = Columns(handleViewClick); // Get the columns with handleViewClick
-
+  const columns = Columns(handleViewClick);
   const table = useReactTable({
     data,
     columns,

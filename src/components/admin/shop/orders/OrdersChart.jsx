@@ -68,27 +68,29 @@ const data = [
 
 export default function OrdersChart() {
   return (
-    <AreaChart
-      width={1250}
-      height={200}
-      data={data}
-      style={{ margin: "20px auto", maxWidth: "100%" }}
-    >
-      <XAxis dataKey="name" tickLine={false} axisLine={false} />
-      <Tooltip />
-      <Area
-        type="monotone"
-        dataKey="orders"
-        stroke="#00664E"
-        fill="url(#colorUv)"
-      />
-      <defs>
-        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="5%" stopColor="#009975" stopOpacity={0.5} />
-          <stop offset="100%" stopColor="#009975" stopOpacity={0} />
-        </linearGradient>
-      </defs>
-      <CartesianGrid vertical={false} strokeDasharray={[0.2, 2]} />
-    </AreaChart>
+    <div className="sm:block hidden">
+      <AreaChart
+        width={1250}
+        height={200}
+        data={data}
+        style={{ margin: "20px auto", maxWidth: "100%" }}
+      >
+        <XAxis dataKey="name" tickLine={false} axisLine={false} />
+        <Tooltip />
+        <Area
+          type="monotone"
+          dataKey="orders"
+          stroke="#00664E"
+          fill="url(#colorUv)"
+        />
+        <defs>
+          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#009975" stopOpacity={0.5} />
+            <stop offset="100%" stopColor="#009975" stopOpacity={0} />
+          </linearGradient>
+        </defs>
+        <CartesianGrid vertical={false} strokeDasharray={[0.2, 2]} />
+      </AreaChart>
+    </div>
   );
 }

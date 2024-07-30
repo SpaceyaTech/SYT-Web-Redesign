@@ -105,12 +105,14 @@ export default function OrdersInvoiceModal({ orderId, onClose }) {
           <p>Phone: {orderDetails.user.phone}</p>
           <p>Payment Mode: {orderDetails.user.payment_mode}</p>
           <p>Order Date: {new Date(orderDetails.created_at).toLocaleDateString()}</p> */}
-        <button
-          // onClick={downloadInvoice}
-          className="mt-6 ml-52 border-2 border-primary text-primary text-xs font-semibold rounded-lg px-8 py-3"
-        >
-          DOWNLOAD INVOICE
-        </button>
+        <div className=" bottom-0 right-0 flex flex-col justify-end items-end py-6">
+          <button
+            // onClick={downloadInvoice}
+            className="w-fit border-2 border-primary text-primary text-xs font-semibold rounded-lg px-8 py-3"
+          >
+            DOWNLOAD INVOICE
+          </button>
+        </div>
       </div>
     </div>
   );
