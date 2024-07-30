@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-nested-ternary */
-const columns = [
+const Columns = (handleViewClick) => [
   {
     accessorKey: "id",
     header: "Order ID",
@@ -47,16 +47,18 @@ const columns = [
   {
     id: "actions",
     enableHiding: false,
-    cell: () => {
-      return (
-        <div>
-          <button type="button" className="text-primary text-sm font-semibold">
-            View
-          </button>
-        </div>
-      );
-    },
+    cell: ({ row }) => (
+      <div>
+        <button
+          type="button"
+          className="text-primary text-sm font-semibold"
+          onClick={() => handleViewClick(row.original.id)}
+        >
+          View
+        </button>
+      </div>
+    ),
   },
 ];
 
-export default columns;
+export default Columns;
