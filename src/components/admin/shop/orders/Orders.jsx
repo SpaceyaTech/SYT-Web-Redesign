@@ -1,28 +1,46 @@
 /* eslint-disable linebreak-style */
+import React, { useState } from "react";
 import {
-    flexRender,
-    getCoreRowModel,
-    useReactTable,
-  } from "@tanstack/react-table";
-  
-  import PropTypes from "prop-types";
-  import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
-  } from "../../../ui/table";
-  
-  function Orders({ columns, data }) {
-    const table = useReactTable({
-      data,
-      columns,
-      getCoreRowModel: getCoreRowModel(),
-    });
-  
-    return (
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import PropTypes from "prop-types";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../../ui/table";
+import OrdersInvoiceModal from "./OrdersInvoiceModal";
+import Columns from "./Columns"; // Import the getColumns function
+
+function Orders({ data }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
+
+  const handleViewClick = (orderId) => {
+    setSelectedOrderId(orderId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedOrderId(null);
+  };
+
+  const columns = Columns(handleViewClick); // Get the columns with handleViewClick
+
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+  });
+
+  return (
+    <div>
       <Table>
         <TableHeader className="bg-grey-light uppercase">
           {table.getHeaderGroups().map((headerGroup) => (
@@ -63,11 +81,19 @@ import {
           )}
         </TableBody>
       </Table>
-    );
-  }
-  
+
+      {isModalOpen && (
+        <OrdersInvoiceModal
+          orderId={selectedOrderId}
+          onClose={handleCloseModal}
+        />
+      )}
+    </div>
+  );
+}
+
   export default Orders;
-  
+
   Orders.propTypes = {
     columns: PropTypes.arrayOf(
       PropTypes.shape({
@@ -78,6 +104,5 @@ import {
       })
     ).isRequired,
     // eslint-disable-next-line react/forbid-prop-types
-    data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  };
-  
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
