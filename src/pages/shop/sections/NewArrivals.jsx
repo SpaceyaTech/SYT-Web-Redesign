@@ -16,7 +16,7 @@ function NewProducts() {
         </section>
         <div className="mt-8 py-4 flex gap-4 overflow-x-scroll h-full w-full hr-scrollbar">
           {isSuccess &&
-            swagList?.map((product) => (
+            swagList?.slice(0, 10).map((product) => (
               <div
                 className="min-w-[100%] sm:min-w-[50%] lg:min-w-[33%]  h-full"
                 key={product.id}

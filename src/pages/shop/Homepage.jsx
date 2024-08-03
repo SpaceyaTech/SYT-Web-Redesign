@@ -2,9 +2,9 @@ import SeoMetadata from "../../components/SeoMetadata";
 import CartIcon from "../../components/shop/CartIcon";
 import Banner from "./sections/Banner/index";
 import FaqSection from "./sections/FaqSection";
-import FeaturedProducts from "./sections/FeaturedProducts";
 import FilterSection from "./sections/FilterSection";
-import NewProducts from "./sections/NewProducts";
+import BrowseProducts from "./sections/BrowseProducts";
+import NewProducts from "./sections/NewArrivals";
 
 function Homepage() {
   return (
@@ -24,8 +24,8 @@ function Homepage() {
         </div>
         <Banner />
         <FilterSection />
-        <FeaturedProducts />
         <NewProducts />
+        <BrowseProducts />
         <FaqSection />
       </div>
     </>
