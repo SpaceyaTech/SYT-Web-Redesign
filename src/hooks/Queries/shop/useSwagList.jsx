@@ -1,14 +1,13 @@
-// https://apis.spaceyatech.com/api/swaggs/
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import publicAxios from "../../../api/publicAxios";
 
 const fetchSwag = async () => {
   try {
-    const response = await publicAxios.get("/swaggs/");
-
+    const response = await publicAxios.get("/swaggsnew");
     return response.data;
   } catch (error) {
+    console.log(error);
     toast.error("Error fetching swag list");
     throw error;
   }
