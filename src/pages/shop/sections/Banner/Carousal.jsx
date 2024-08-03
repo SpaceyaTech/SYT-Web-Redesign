@@ -52,7 +52,7 @@ function Carousel() {
               swagList?.map(({ image, name, id }) => (
                 <div key={id} className="relative min-w-full pl-2.5 h-full">
                   <LazyLoadImage
-                    className="w-full h-full md:rounded-2xl"
+                    className="w-full h-full md:rounded-2xl object-cover"
                     src={image}
                     alt={name}
                   />
