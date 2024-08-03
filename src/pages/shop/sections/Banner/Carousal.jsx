@@ -7,7 +7,11 @@ function Carousel() {
   const [width, setWidth] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const { data: swagList, isSuccess } = useSwagList();
+  const { data, isSuccess } = useSwagList();
+  const swagList = isSuccess
+    ? data.filter((item) => item.is_featured === true)
+    : [];
+
   const carouselRef = useRef(null);
 
   useEffect(() => {
@@ -49,15 +53,23 @@ function Carousel() {
         >
           <div className="flex -ml-2.5 h-full">
             {isSuccess &&
-              swagList?.map(({ image, name, id }) => (
-                <div key={id} className="relative min-w-full pl-2.5 h-full">
-                  <LazyLoadImage
-                    className="w-full h-full md:rounded-2xl object-cover"
-                    src={image}
-                    alt={name}
-                  />
-                </div>
-              ))}
+              swagList?.map(({ attributes, name, id }, i) => {
+                const attributeWithImages = attributes.find(
+                  (attribute) => attribute.images.length > 0
+                );
+                const image = attributeWithImages
+                  ? attributeWithImages.images.map((img) => img.image)[0]
+                  : "";
+                return (
+                  <div key={id} className="relative min-w-full pl-2.5 h-full">
+                    <LazyLoadImage
+                      className="w-full h-full md:rounded-2xl object-cover"
+                      src={image}
+                      alt={name}
+                    />
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
