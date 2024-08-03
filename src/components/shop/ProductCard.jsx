@@ -34,7 +34,7 @@ function ProductCard({ product }) {
         to={`/shop/item/${product.id}`}
         className="flex justify-between pr-1"
       >
-        <h3 className="text-md uppercase font-bold text-gray-600">
+        <h3 className="text-md uppercase font-medium text-gray-600">
           {product.name}
         </h3>
         <div className="p-1 rounded-xl bg-green-dark/10">
@@ -44,7 +44,7 @@ function ProductCard({ product }) {
               <span className="ml-2">items left</span>
             </p>
           ) : (
-            <div className=" text-red-800 p-1 rounded-lg bg-red-800/20 font-bold text-base">
+            <div className=" text-red-800 p-1 rounded-lg bg-red-800/20 font-bold text-sm">
               <p>Out of stock</p>
             </div>
           )}
