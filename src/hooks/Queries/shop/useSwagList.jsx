@@ -37,4 +37,22 @@ const useSingleSwag = (id) =>
     refetchOnWindowFocus: false,
   });
 
-export { useSingleSwag, useSwagList };
+const fetchSwagCategories = async () => {
+  try {
+    const response = await publicAxios.get("/product-categories");
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    toast.error("Error fetching swag list");
+    throw error;
+  }
+};
+
+const useSwagCategory = () =>
+  useQuery({
+    queryKey: ["swagCategory"],
+    queryFn: () => fetchSwagCategories(),
+    refetchOnWindowFocus: false,
+  });
+
+export { useSingleSwag, useSwagList, useSwagCategory };

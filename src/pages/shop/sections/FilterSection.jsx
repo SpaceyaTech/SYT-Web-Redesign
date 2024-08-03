@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import SearchInput from "../../../components/shop/SearchInput";
 import SectionWrapper from "../../../components/shop/SectionWrapper";
 import SortItems from "../../../components/shop/SortItems";
-import { categories } from "../data";
+import { useSwagCategory } from "@/hooks/Queries/shop/useSwagList";
 
 function FilterSection() {
   return (
@@ -27,22 +27,28 @@ function FilterSection() {
 }
 
 function Categories() {
+  const { data, isSuccess } = useSwagCategory();
   return (
     <div className="flex  gap-4 flex-wrap ">
-      {categories.map((item) => (
-        <CategoryItem key={crypto.randomUUID()} name={item.name} />
-      ))}
+      {isSuccess &&
+        data?.map((item) => (
+          <CategoryItem
+            key={crypto.randomUUID()}
+            name={item.name}
+            slug={item.slug}
+          />
+        ))}
     </div>
   );
 }
 
-function CategoryItem({ name }) {
+function CategoryItem({ name, slug }) {
   const params = useParams();
-  const category = params.category === name;
+  const category = params.category === slug;
 
   return (
     <Link
-      to={`/shop/category/${name}`}
+      to={`/shop/category/${slug}`}
       className={`rounded-3xl flex items-center border shadow-sm py-2 px-4 ${category ? "bg-green-dark" : " hover:bg-gray-500/20 "}`}
     >
       <p
