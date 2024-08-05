@@ -1,22 +1,15 @@
-/* eslint-disable react/react-in-jsx-scope */
+
 import { Dialog, Transition } from "@headlessui/react";
-import { useState, Fragment } from "react";
+import { Fragment, useState } from "react";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaTrash } from "react-icons/fa";
-
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 import { Link } from "react-router-dom";
-import Sample1 from "../../assets/images/shop-page/sample1.png";
-import Sample2 from "../../assets/images/shop-page/sample2.png";
-import CartDrawer from "../../components/shop/CartDrawer";
-import Counter from "../../components/shop/Counter";
 import useMakeOrder from "../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
-import { useOrderSummary } from "../../hooks/Queries/shop/useOrdersList";
-import ItemHeader from "./sections/ItemHeader";
-import { GoBackBtn } from "@/components"; // Import the component
 import PaymentMethd from "./PaymentMethd";
+import ItemHeader from "./sections/ItemHeader";
+import { useDeleteSwag } from "@/hooks/Mutations/shop/useCartSwagg";
 
 function Checkout() {
   const { data: products, isSuccess } = useProductsInCart();
@@ -25,19 +18,18 @@ function Checkout() {
     isPending,
     isSuccess: successfulOrder,
   } = useMakeOrder();
-
-  const [open, setOpen] = useState(false);
-
-  const [formData, setFormData] = useState(null);
-  const [address, setAddress] = useState("");
+  const {
+    mutate: deleteSwag,
+    isLoading: isDeleting,
+  } = useDeleteSwag(); // Use deleteSwag
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (data) => {
     const payload = {
-      address,
-      phonenumber: phoneNumber,
+      country: data.address.country,
+      phone: data.phoneNumber,
+      address: `${data.address.postalAddress}, ${data.address.city}`,
     };
     makeOrder(payload);
   };
@@ -46,31 +38,23 @@ function Checkout() {
     setIsOpen(false);
   };
 
-  const handleFormData = (data) => {
-    setFormData(data);
-    console.log(data);
-  };
-
   const handleDeleteItem = (productId) => {
-    
-    products.cart_items?.filter((item) => item.product.id !== productId);
-
-   
+    deleteSwag(productId);
   };
 
   return (
     <>
-      <ItemHeader show={() => setOpen((prev) => !prev)} />
+      <ItemHeader show={() => setIsOpen(true)} />
       <div className="px-8 sm:px-10 m-auto mb-10 max-w-screen-2xl justify-between w-full space-y-10 md:space-y-10 text-[#323433]">
-        <div className="flex flex-col md:flex-row justify-between space-y-8 sm:space-y-0">
-          <PaymentMethd isPending={isPending} handleSubmit={handleFormData} />
+        <div className="flex flex-col-reverse md:flex-row justify-between space-y-8 sm:space-y-0 gap-4 md:gap-0">
+          <PaymentMethd isPending={isPending} handleSubmit={handleSubmit} />
 
           {/* order summary */}
           <div className="bg-white min-w-40 md:w-3/5 w-full p-4 md:p-5 border rounded-md md:mx-6 my-2 md:my-0 h-full">
             <h2 className="text-xl font-medium sm:font-semibold">Your Cart</h2>
             <div className="mt-8 w-full">
-              <div className="flow-root ">
-                <ul className="-my-6 divide-y divide-gray-200  w-full">
+              <div className="flow-root">
+                <ul className="-my-6 divide-y divide-gray-200 w-full">
                   {isSuccess &&
                     products.cart_items?.map(
                       ({
@@ -78,7 +62,7 @@ function Checkout() {
                         product: { id: productId, image, name, price },
                         quantity,
                       }) => (
-                        <li key={id} className=" flex py-6 space-x-4">
+                        <li key={id} className="flex py-6 space-x-4">
                           <div className="h-32 w-32 flex-shrink-0 overflow-hidden rounded-lg">
                             <LazyLoadImage
                               src={`https://apis.spaceyatech.com${image}`}
@@ -93,22 +77,21 @@ function Checkout() {
                               {id}
                             </span>
                             <p className="">
-                              {" "}
                               <Link to={`/shop/item/${productId}`}>{name}</Link>
                             </p>
 
                             <div className="flex justify-between w-full mt-4">
                               <p>Qty: {quantity}</p>
                               <p className="">
-                                Ksh
-                                {price}
+                                Ksh {price}
                               </p>
                             </div>
                           </div>
                           <button
                             className="text-red-600 mb-5 text-lg"
                             type="button"
-                            onClick={()=>handleDeleteItem(productId)}
+                            onClick={() => handleDeleteItem(productId)}
+                            aria-label="Delete"
                           >
                             <FaTrash />
                           </button>
@@ -118,25 +101,27 @@ function Checkout() {
                 </ul>
               </div>
               <div className="flex space-x-4 justify-between mt-10 pb-6 font-semibold sm:font-medium text-base">
-                <div className=" space-y-4 text-xl ">
+                <div className="space-y-4 text-xl">
                   <p>Cart Subtotal</p>
                 </div>
                 <div className="space-y-4 font-bold text-xl">
                   <p>
-                    Ksh
-                    {isSuccess && products.total_price}
+                    Ksh {isSuccess && products.total_price}
                   </p>
                 </div>
               </div>
               <div className="my-2 space-y-4 text-md">
-                <p>Discount Code</p>
-                <input
-                  placeholder="Enter Discount Code"
-                  type="text"
-                  className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
-                />
+                <label htmlFor="discountCode">
+                  Discount Code
+                  <input
+                    id="discountCode"
+                    placeholder="Enter Discount Code"
+                    type="text"
+                    className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
+                  />
+                </label>
                 <button
-                  type="submit"
+                  type="button"
                   className="bg-primary/15 p-2 px-4 my-3 rounded-lg text-md"
                 >
                   Apply code
@@ -150,7 +135,7 @@ function Checkout() {
                   className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border text-md"
                 />
                 <button
-                  type="submit"
+                  type="button"
                   className="bg-primary/15 p-2 px-4 my-3 rounded-lg"
                 >
                   Apply code
@@ -165,9 +150,7 @@ function Checkout() {
               <div className="flex space-x-24 py-5 sm:text-xl justify-between bg-primary/15 px-4 rounded-lg">
                 <h3 className="w-32 text-xl font-bold">Total</h3>
                 <h3 className="font-bold sm:font-semibold">
-                  Ksh{" "}
-                  {isSuccess &&
-                    products.total_price * 0.16 + products.total_price}
+                  Ksh {isSuccess && products.total_price * 0.16 + products.total_price}
                 </h3>
               </div>
             </div>
@@ -219,7 +202,7 @@ function Checkout() {
                     <div className="mt-4">
                       <button
                         type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-500 px-4 py-2 text-base font-medium text-white shadow-sm ring-offset-2 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm"
                         onClick={closeModal}
                       >
                         Close
@@ -237,3 +220,4 @@ function Checkout() {
 }
 
 export default Checkout;
+
