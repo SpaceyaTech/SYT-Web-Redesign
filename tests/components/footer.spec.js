@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto("http://localhost:5173");
 });
 
-test("has valid links", async ({ page }) => {
+test("all links in the Footer component should be valid", async ({ page }) => {
   await page.goto("http://localhost:5173");
 
   const component = await page.locator("data-testid=footer-section");
