@@ -86,7 +86,7 @@ function Footer() {
 
   return (
     <footer className="bg-secondary text-white">
-      <div className="md:px-12 py-8 px-4 relative max-w-[1440px] mx-auto">
+      <div className="md:px-12 md:pt-8 md:pb-[2px] py-8 px-4 max-w-[1440px] mx-auto">
         <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
           <div className="flex-3 flex flex-col items-center">
             {/* logo */}
@@ -192,7 +192,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="sm:mt-14 mt-10">
+        <div className="sm:-mt-4 mt-10">
           <h1 className="text-center text-green-footer my-4 md:my-8">
             &copy; {year} SpaceYaTech | All Rights Reserved
           </h1>
