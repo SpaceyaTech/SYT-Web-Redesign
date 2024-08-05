@@ -85,7 +85,7 @@ function Footer() {
   const year = now.getFullYear();
 
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-secondary text-white" data-testid="footer-section">
       <div className="md:px-12 md:pt-8 md:pb-[2px] py-8 px-4 max-w-[1440px] mx-auto">
         <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
           <div className="flex-3 flex flex-col items-center">
