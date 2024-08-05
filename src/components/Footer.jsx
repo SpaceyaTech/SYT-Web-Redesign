@@ -93,7 +93,7 @@ function Footer() {
             <LazyLoadImage
               src={logo}
               alt="logo"
-              className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
+              className="h-20 md:ml-0 ml-4 object-contain"
             />
             {/* socials */}
             <div className="flex gap-4 items-center py-4">
@@ -104,7 +104,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="w-7 h-7 text-white"
+                  className="w-5 h-5 text-white"
                 >
                   {link.icon}
                 </a>
@@ -117,7 +117,7 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 text-white"
+                  className="w-5 h-5 text-white"
                 >
                   {link.icon}
                 </a>
