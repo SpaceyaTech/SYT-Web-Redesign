@@ -192,8 +192,8 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="sm:-mt-4 mt-10">
-          <h1 className="text-center text-green-footer my-4 md:my-8">
+        <div>
+          <h1 className="text-center text-green-footer my-4 md:my-4">
             &copy; {year} SpaceYaTech | All Rights Reserved
           </h1>
         </div>
