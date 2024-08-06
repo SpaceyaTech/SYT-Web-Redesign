@@ -1,4 +1,4 @@
-
+/* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { CiShoppingTag } from "react-icons/ci";
