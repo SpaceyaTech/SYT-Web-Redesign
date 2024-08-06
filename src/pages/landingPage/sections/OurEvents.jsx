@@ -1,18 +1,15 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-
 import { error500svg } from "../../../assets/images/errorPages";
+import { Button, Loader } from "../../../components";
+import useTopEvents from "../../../hooks/Queries/eventsSection/useTopEvents";
 import {
   calculateDistanceToDate,
   formatEventTime,
   startEventDate,
 } from "../../../utilities/formatEventDate";
-import { Loader, Button } from "../../../components";
-import useTopEvents from "@/hooks/Queries/eventsSection/useTopEvents";
 
 function OurEvents() {
   const {
@@ -170,3 +167,13 @@ function UpcomingEventCard({ event }) {
     </Link>
   );
 }
+
+UpcomingEventCard.propTypes = {
+  event: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    start_date: PropTypes.string.isRequired,
+    start_time: PropTypes.string.isRequired,
+  }).isRequired,
+};

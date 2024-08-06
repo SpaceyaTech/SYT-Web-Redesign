@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-// million-ignore
+// million-ignore11
 function ResourceCard({
   type,
   title,
@@ -102,3 +103,18 @@ function ResourceCard({
 }
 
 export default ResourceCard;
+
+ResourceCard.propTypes = {
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  origin: PropTypes.string,
+  level: PropTypes.string,
+  link: PropTypes.string.isRequired,
+};
+
+ResourceCard.defaultProps = {
+  origin: "",
+  level: "",
+};

@@ -1,11 +1,10 @@
-/* eslint-disable linebreak-style */
-import React, { useState } from "react";
 import {
   flexRender,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import PropTypes from "prop-types";
+import { useState } from "react";
 import {
   Table,
   TableBody,
@@ -14,8 +13,8 @@ import {
   TableHeader,
   TableRow,
 } from "../../../ui/table";
-import OrdersInvoiceModal from "./OrdersInvoiceModal";
 import Columns from "./Columns";
+import OrdersInvoiceModal from "./OrdersInvoiceModal";
 
 function Orders({ data }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -91,17 +90,17 @@ function Orders({ data }) {
   );
 }
 
-  export default Orders;
+export default Orders;
 
-  Orders.propTypes = {
-    columns: PropTypes.arrayOf(
-      PropTypes.shape({
-        accessorKey: PropTypes.string,
-        cell: PropTypes.func,
-        header: PropTypes.func,
-        id: PropTypes.string,
-      })
-    ).isRequired,
-    // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+Orders.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+      cost: PropTypes.number.isRequired,
+      status: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

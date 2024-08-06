@@ -4,7 +4,7 @@ import BottomNavBar from "./BottomNavBar";
 
 function AdminLayout() {
   return (
-    <div className="w-screen overflow-hidden">
+    <div className="w-full overflow-hidden">
       <AdminHeader />
       <Outlet />
       <BottomNavBar />

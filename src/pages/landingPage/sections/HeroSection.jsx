@@ -4,10 +4,6 @@ import JoinSYTModal from "../../community/sections/JoinSYTModal";
 function HeroSection() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   function openModal() {
     setIsOpen(true);
   }
@@ -20,10 +16,11 @@ function HeroSection() {
     const ellipses = containerRef.current.querySelectorAll(".ellipse");
 
     ellipses.forEach((ellipse) => {
-      ellipse.style.transitionDuration = `${Math.random() * 12 + 8}s`;
+      const currentEllipse = ellipse;
+      currentEllipse.style.transitionDuration = `${Math.random() * 12 + 8}s`;
 
       const animate = () => {
-        ellipse.style.transform = `translate(${Math.random() * 100 - 50}%, ${
+        currentEllipse.style.transform = `translate(${Math.random() * 100 - 50}%, ${
           Math.random() * 100 - 50
         }%) rotate(${Math.random() * 0}deg)`;
         setTimeout(() => {
@@ -134,7 +131,7 @@ function HeroSection() {
       </div>
 
       {/* Image Section */}
-      <JoinSYTModal isOpen={isOpen} closeModal={closeModal} />
+      <JoinSYTModal isOpen={isOpen} closeModal={() => setIsOpen(false)} />
     </section>
   );
 }

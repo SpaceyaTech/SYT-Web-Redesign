@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const initialData = [
   {
@@ -91,7 +90,7 @@ function EventsTable() {
   const [selectedRows, setSelectedRows] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage] = useState(5);
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelectRow = (event, id) => {
@@ -154,12 +153,13 @@ function EventsTable() {
       <div className="flex justify-between items-center py-10">
         <h2 className="text-2xl">SYT events</h2>
         <div>
-          <label className="relative block w-full">
+          <label className="relative block w-full" htmlFor="search">
             <input
               className="placeholder:text-base placeholder:text-[#49454F] block w-52 border border-[#49454F] rounded py-2 pl-4 pr-3 focus:outline-none focus:border-[#009975] focus:ring-[#009975] focus:ring-1 sm:text-sm"
               placeholder="Search"
               type="text"
               name="search"
+              id="search"
               onChange={handleSearch}
             />
             <span className="sr-only">Search</span>
@@ -224,8 +224,12 @@ function EventsTable() {
                       : "hover:bg-[#F7F7F7] text-[#656767] text-sm"
                   }
                 >
-                  <td className="hidden sm:table-cell py-4">
+                  <td
+                    className="hidden sm:table-cell py-4"
+                    id={`checkbox-${row.id}`}
+                  >
                     <input
+                      aria-labelledby={`checkbox-${row.id}`}
                       type="checkbox"
                       className="cursor-pointer"
                       onChange={(event) => handleSelectRow(event, row.id)}
@@ -234,7 +238,7 @@ function EventsTable() {
                   </td>
                   <td className="whitespace-wrap px-2 py-4">{row.eventName}</td>
                   <td>{row.city}</td>
-                  <td className="hidden sm:table-cell">{row.date}</td>
+                  <td className="hidden sm:table-cell">{row.date}</td>∏
                   <td className="hidden sm:table-cell">{row.from}</td>
                   <td className="hidden sm:table-cell">{row.to}</td>
                   <td className="hidden sm:table-cell">{row.chapter}</td>

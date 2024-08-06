@@ -2,7 +2,7 @@ import SeoMetadata from "../../components/SeoMetadata";
 import { HeroSection, ResourcesSection } from "./sections";
 
 // million-ignore
-const Resources = () => {
+function Resources() {
   return (
     <>
       <SeoMetadata
@@ -19,6 +19,6 @@ const Resources = () => {
       </div>
     </>
   );
-};
+}
 
 export default Resources;

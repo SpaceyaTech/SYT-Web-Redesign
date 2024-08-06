@@ -1,4 +1,3 @@
-
 <h1 style="margin-top: 1em; text-align: center; margin-bottom: 3em;">
   <p><a href="https://spaceyatech.com/"><img src="./src/assets/images/sytLogo.png" alt="SpaceYaTech" width="195"></a></p>
   <p> <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" alt="Waving Hand" width="25px" height="25px"> Welcome to SpaceYaTech Website Redesign!</p>
@@ -7,6 +6,7 @@
 <hr>
 
 Welcome to the SpaceYaTech website redesign project! This Readme provides comprehensive information about the project, including project description, project structure, communication channels, roadmap, license information, acknowledgments, and links to other important files.
+
 <hr>
 
 ## Table of Contents
@@ -22,7 +22,7 @@ Welcome to the SpaceYaTech website redesign project! This Readme provides compre
 
 ## Project Description
 
-The SpaceYaTech website is being redesigned to enhance its user experience and visual appeal. 
+The SpaceYaTech website is being redesigned to enhance its user experience and visual appeal.
 
 The new website will be built using the following tech stack:
 
@@ -35,6 +35,7 @@ The new website will be built using the following tech stack:
 Figma Design Reference: [Figma Design](https://www.figma.com/file/QZwtseXogSFjLNz64uLwjV/SYT-Website-Redesign-Complete?type=design&node-id=1113%3A7655&t=xSmmgQWxa0Z31bfo-1)
 
 ## Project Set Up
+
 Follow these steps to get the project up and running on your local machine:
 
 1. **Clone the repository**
@@ -47,30 +48,29 @@ Follow these steps to get the project up and running on your local machine:
 
 2. **Navigate into the directory**
 
-    Change your current directory to the project's directory:
+   Change your current directory to the project's directory:
 
-    ```bash
-    cd SYT-Web-Redesign
-    ```
+   ```bash
+   cd SYT-Web-Redesign
+   ```
 
 3. **Install the dependencies**
 
-    Run the following command:
+   Run the following command:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 4. **Start the development server**
 
-    Now you can start the development server and begin developing:
+   Now you can start the development server and begin developing:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
-    The project should now be running at http://localhost:5173 (or another port if 5173 is already in use).
-
+   The project should now be running at http://localhost:5173 (or another port if 5173 is already in use).
 
 ## Project Structure
 
@@ -85,16 +85,16 @@ The project follows a standard directory structure:
 ├── src
 │   ├── api
 │   ├── APP
-│   │   ├── components 
-│   │   ├── pages 
+│   │   ├── components
+│   │   ├── pages
 │   │   ├── index.js
 │   ├── assets
 │   │   ├── images
 │   ├── context
 │   ├── hooks
-│   │   ├── Mutations 
-│   │   ├── Queries 
-│   │   ├── useAuth.jsx 
+│   │   ├── Mutations
+│   │   ├── Queries
+│   │   ├── useAuth.jsx
 │   ├── router
 │   ├── utilities
 │   └── ...
@@ -111,9 +111,9 @@ The project follows a standard directory structure:
 
 For effective collaboration and communication, we recommend the following channels:
 
-- **[Discord Sever](https://discord.gg/pnDtnJScPu)**: Join the SpaceYaTech community on Discord. 
+- **[Discord Sever](https://discord.gg/pnDtnJScPu)**: Join the SpaceYaTech community on Discord.
 
-- **[Rocket.Chat](https://www.rocket.chat/install#Apps)**: Join the SpaceYaTech on Rocket.Chat platform. Share your Rocket.Chat username with the project maintainers to get an invitation. 
+- **[Rocket.Chat](https://www.rocket.chat/install#Apps)**: Join the SpaceYaTech on Rocket.Chat platform. Share your Rocket.Chat username with the project maintainers to get an invitation.
 
 - **[GitHub Discussions](https://github.com/SpaceyaTech/SYT-Web-Redesign/discussions)**: Use GitHub Discussions for general discussions, feature requests, and questions related to the project.
 
@@ -149,7 +149,6 @@ Please see our [Contributing Guidelines](docs/CONTRIBUTING.md) for detailed info
 
 ## Code of Conduct
 
-
 We follow the [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](docs/CODE_OF_CONDUCT.md). Please review it to understand our community standards and expected behavior.
 
 ## Tech Stacks Used for Development:
@@ -159,10 +158,10 @@ We follow the [![Contributor Covenant](https://img.shields.io/badge/Contributor%
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-
-[//]: # (https://github.com/Ileriayo/markdown-badges)
+[//]: # "https://github.com/Ileriayo/markdown-badges"
 
 <strong>Thank you</strong> for your interest and contributions to the SpaceYaTech website redesign project. Together, we can create an outstanding website experience!
 
-# Contributors 
+# Contributors
+
 [![Contributors](https://contrib.rocks/image?repo=SpaceyaTech/SYT-Web-Redesign)](https://github.com/SpaceyaTech/SYT-Web-Redesign/graphs/contributors)

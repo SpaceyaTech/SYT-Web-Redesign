@@ -1,8 +1,6 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
-import React, { useState } from "react";
+import { useState } from "react";
+import { bannerImg } from "../../../assets/images/hero-section";
 import JoinSYTModal from "../../community/sections/JoinSYTModal";
-import { bannerImg } from "@/assets/images/hero-section";
 
 function CTASection() {
   const [isOpen, setIsOpen] = useState(false);

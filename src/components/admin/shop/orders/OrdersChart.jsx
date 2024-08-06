@@ -1,11 +1,4 @@
-import React from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  CartesianGrid,
-  Tooltip,
-} from "recharts";
+import { Area, AreaChart, CartesianGrid, Tooltip, XAxis } from "recharts";
 
 const data = [
   {

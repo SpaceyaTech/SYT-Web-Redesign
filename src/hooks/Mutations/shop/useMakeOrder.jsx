@@ -7,8 +7,8 @@ const useMakeOrder = () => {
   const { auth, logout } = useAuth();
   const queryClient = useQueryClient();
 
-  return useMutation(
-    async (customerInfo) => {
+  return useMutation({
+    mutationFn: async (customerInfo) => {
       const response = await privateAxios.post("/orders/", customerInfo, {
         headers: {
           "Content-Type": "application/json",
@@ -17,20 +17,18 @@ const useMakeOrder = () => {
       });
       return response.data;
     },
-    {
-      onSuccess: (data) => {
-        console.log("Added to cart: ", data);
-        queryClient.invalidateQueries(["productsInCart"]);
-      },
-      onError: (error) => {
-        // eslint-disable-next-line no-console
-        console.error("Unable to add availability");
-        if (error.response.status === 401) {
-          logout();
-        }
-      },
-    }
-  );
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["productsInCart"] });
+    },
+    onError: (error) => {
+      // eslint-disable-next-line no-console
+      console.error("Unable to add availability");
+      if (error.response.status === 401) {
+        logout();
+      }
+    },
+  });
 };
 
 export default useMakeOrder;
