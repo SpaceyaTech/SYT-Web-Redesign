@@ -7,7 +7,6 @@ const fetchSwag = async () => {
     const response = await publicAxios.get("/swaggsnew");
     return response.data;
   } catch (error) {
-    console.log(error);
     toast.error("Error fetching swag list");
     throw error;
   }
@@ -42,7 +41,6 @@ const fetchSwagCategories = async () => {
     const response = await publicAxios.get("/product-categories");
     return response.data;
   } catch (error) {
-    console.log(error);
     toast.error("Error fetching swag list");
     throw error;
   }

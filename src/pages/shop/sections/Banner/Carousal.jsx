@@ -53,7 +53,7 @@ function Carousel() {
         >
           <div className="flex -ml-2.5 h-full">
             {isSuccess &&
-              swagList?.map(({ attributes, name, id }, i) => {
+              swagList?.map(({ attributes, name, id }) => {
                 const attributeWithImages = attributes.find(
                   (attribute) => attribute.images.length > 0
                 );

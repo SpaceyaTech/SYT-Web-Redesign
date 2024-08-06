@@ -64,4 +64,5 @@ export default FilterSection;
 
 CategoryItem.propTypes = {
   name: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
