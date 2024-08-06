@@ -6,10 +6,10 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
-import { ErrorBoundary } from ".";
 import { AuthContextProvider } from "./context/AuthContext";
 import { SearchBlogProvider } from "./context/searchBlog";
 import router from "./router";
+import { ErrorBoundary } from ".";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const queryClient = new QueryClient({

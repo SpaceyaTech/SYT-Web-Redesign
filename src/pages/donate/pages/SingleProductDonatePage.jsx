@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-//this page will redirect from the donate page on click of a single project
+// this page will redirect from the donate page on click of a single project
 function SingleProductDonatePage() {
   const [value, setValue] = useState(50);
 
@@ -17,7 +17,7 @@ function SingleProductDonatePage() {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
         <div className="md:col-span-3 space-y-4">
           <div className="h-[20rem]">
-            <LazyLoadImage 
+            <LazyLoadImage
               src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
               alt="img"
               className="object-cover w-full h-full rounded-2xl"
@@ -25,23 +25,23 @@ function SingleProductDonatePage() {
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center gap-2">
-              <div class="flex -space-x-4">
-                <LazyLoadImage 
+              <div className="flex -space-x-4">
+                <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                   alt="img-1"
                 />
-                <LazyLoadImage 
+                <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                   alt="img-2"
                 />
-                <LazyLoadImage 
+                <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
                   alt="img-3"
                 />
-                <LazyLoadImage 
+                <LazyLoadImage
                   class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
                   alt="img-4"
@@ -52,12 +52,12 @@ function SingleProductDonatePage() {
             <div className="flex items-center justify-center gap-2">
               <p className="hidden md:inline-block text-xs">Organizers</p>
               <div className="flex items-center justify-center">
-                <LazyLoadImage 
+                <LazyLoadImage
                   src="/src/assets/images/sytLogo.png"
                   alt="syt logo"
                   className="w-auto h-6"
                 />
-                <LazyLoadImage 
+                <LazyLoadImage
                   src="/src/assets/images/kamilimu.png"
                   alt="kamilimu logo"
                   className="w-auto h-6"
@@ -109,10 +109,16 @@ function SingleProductDonatePage() {
               Or Make a difference with a dollar
             </p>
             <div className="flex flex-col md:flex-row items-center gap-3 text-sm">
-              <button className="block bg-primary text-white text-sm font-semibold py-4 w-full rounded-md">
+              <button
+                type="button"
+                className="block bg-primary text-white text-sm font-semibold py-4 w-full rounded-md"
+              >
                 Donate Token $1{" "}
               </button>
-              <button className="block border border-[#009975] text-primary text-sm font-semibold py-4 w-full rounded-md">
+              <button
+                type="button"
+                className="block border border-[#009975] text-primary text-sm font-semibold py-4 w-full rounded-md"
+              >
                 Share Link
               </button>
             </div>

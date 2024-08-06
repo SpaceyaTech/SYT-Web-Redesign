@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
+import { useContext, useEffect, useState } from "react";
 
+import { Loader } from "../../../components";
 import { SearchBlogContext } from "../../../context/searchBlog";
 import {
-  useBlogsData,
   useBlogCategories,
+  useBlogsData,
 } from "../../../hooks/Queries/blogs/useAllBlogsData";
 
 import { filterBlogsByCat } from "../../../utilities/FilterBlogs";
-import { Loader } from "../../../components";
 
 import Error500 from "../../errorPages/Error500";
 import BlogCard from "./BlogCard";
@@ -18,7 +19,7 @@ function SearchResults({ searchText }) {
   return (
     <h3 className="text-black text-xl md:text-3xl font-semibold leading-8 md:leading-loose text-center">
       Showing results for
-      <span className="text-primary"> "{searchText}"</span>
+      <span className="text-primary"> &quot;{searchText}&quot;</span>
     </h3>
   );
 }
@@ -41,9 +42,11 @@ function BlogsWrapper() {
 
   useEffect(() => {
     refetchBlogsData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const handlePageChange = ({ index }) => {
+    // eslint-disable-next-line no-unused-vars, no-param-reassign, no-return-assign
     setPage((prevState) => (prevState = index));
   };
 
@@ -140,3 +143,11 @@ function BlogsWrapper() {
 }
 
 export default BlogsWrapper;
+
+SearchResults.propTypes = {
+  searchText: PropTypes.string,
+};
+
+SearchResults.defaultProps = {
+  searchText: "",
+};

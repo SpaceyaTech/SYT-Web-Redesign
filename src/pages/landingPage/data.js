@@ -1,35 +1,17 @@
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 import {
-  ctfroom,
-  DevOps,
-  Propel,
-  moringa,
   chimoney,
-  Kushite,
-  osca,
+  ctfroom,
   cytonn,
-  reactke,
+  DevOps,
   gdg,
-  spheron,
+  Kushite,
   mastercraft,
-} from "@/assets/images/hero-section";
-
-import {
-  RichardMulandi,
-  Balogun,
-  Saruni,
-  Vivian,
-  Jean,
-  Melody,
-  Kristin,
-} from "@/assets/images/podcast";
-
-import {
-  mentorship,
-  openSource,
-  twitter,
-} from "@/assets/images/services-section";
+  moringa,
+  osca,
+  Propel,
+  reactke,
+  spheron,
+} from "../../assets/images/hero-section";
 
 import {
   aibunny,
@@ -39,75 +21,7 @@ import {
   tony,
   wakio,
   wayne,
-} from "@/assets/testimonialSection";
-
-export const podcasts = [
-  {
-    id: 1,
-    img: RichardMulandi,
-    category: "Podcast",
-    link: "https://open.spotify.com/episode/7hUJsdPdB0drnyNNTiYim2?si=idIGiZQBQdau9lEdh4Y8Rg",
-    title: "Product life-cycle with Product Head at SafeBoda",
-    description:
-      "The conversation wades into product-management-specific topics that you'd be interested in.",
-  },
-  {
-    id: 2,
-    img: Balogun,
-    category: "Podcast",
-    link: "https://open.spotify.com/episode/4iHhYqBHMWjPTpOdm6F14z?si=JTp43JZoSgesogJi90X-xQ",
-    title: "Tech Makers & Movers with PocketFood",
-    description:
-      "The story behind the branding, the success, and the challenges PocketFood has faced in delivering innovative food-tech solutions in Africa.",
-  },
-  {
-    id: 3,
-    img: Melody,
-    category: "Podcast",
-    link: "https://open.spotify.com/episode/7u24ofrYpk3umcCss9kgnw?si=0be796e136304358",
-    title: "Smart Cities and Sustainable Urban Developement in Africa",
-    description:
-      "Do you know the checklist for a smart city? Find out in this fun converasation with Fred, Marlyn and Melody.",
-  },
-  {
-    id: 4,
-    category: "Podcast",
-    img: Jean,
-    link: "https://open.spotify.com/episode/1F6ecP7YS8S1mhWdnuQ0DU?si=2a94751b4c034a02",
-    title: "Building a more inclusive Tech Industry in Africa",
-    description:
-      "Learn how to build and lead technical teams, applying development methodologies to design and ship software.",
-  },
-  {
-    id: 5,
-    category: "Podcast",
-    img: Saruni,
-    link: "https://open.spotify.com/episode/6GAhWxeZNuDtfQj76o7EhV?si=PFb994_WQzKw2qfXCtsrbQ",
-    title: "The Future of Fintech X Saruni Maina",
-    description:
-      "Join host Marlyn Mayienga in a captivating conversation with Saruni Maina as they dive into the future of Fintech in Africa.",
-  },
-
-  {
-    id: 6,
-    img: Vivian,
-    category: "Podcast",
-    link: "https://open.spotify.com/episode/0KBLGLilCC5X0SnM4eg9Ko?si=6c129ddf60914838",
-    title: "Digging into Website Hosting Sector",
-    description:
-      "Learn how the web development and hosting landscape in Kenya has changed over the past decade and how cloud hosting could disrupt it.",
-  },
-  {
-    id: 7,
-    img: Kristin,
-    category: "Podcast",
-    link: "https://open.spotify.com/episode/1XblqFJZJUf9l1uWmkAcvD?si=9bf748e882b848ed",
-    title:
-      "Sustainable Entrepreneurship and the Goal to Impact 1 billion Entrepreneurs in Africa",
-    description:
-      "Listen to how Kristin is helping SMEs across Africa to get off the ground in a sustainable way.",
-  },
-];
+} from "../../assets/images/testimonialSection";
 
 export const partners = [
   {
@@ -241,33 +155,6 @@ export const testimonialData = [
     img: singh,
     link: "https://twitter.com/MyAspirants/status/1715059439625986302",
     company: "JPMorgan Chase & Co",
-  },
-];
-
-export const services = [
-  {
-    id: 1,
-    img: twitter,
-    title: "Weekly Twitter Spaces",
-    description:
-      "We host weekly Twitter Spaces every Thursday between 8 p.m and 10 p.m EAT, where industry experts talk about various topics and upcoming tech events",
-    link: "https://x.com/SpaceYaTech",
-  },
-  {
-    id: 2,
-    img: openSource,
-    title: "Open-Source Projects",
-    description:
-      "We run full-stack, open-source projects, where UI/UX designers, developers and dev-ops engineers work together.",
-    link: "https://spaceyatech.github.io/CoLabs/",
-  },
-  {
-    id: 3,
-    img: mentorship,
-    title: "Mentorship Programs",
-    description:
-      "We host community-led mentorship programs where beginners are mentored by experienced professionals and given guidance on getting started in tech.",
-    link: "https://x.com/SpaceYaTech",
   },
 ];
 

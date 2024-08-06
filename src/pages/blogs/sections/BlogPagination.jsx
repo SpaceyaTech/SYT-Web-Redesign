@@ -1,17 +1,21 @@
-const BlogPagination = ({
+/* eslint-disable camelcase */
+import PropTypes from "prop-types";
+
+function BlogPagination({
   count,
   next,
   previous,
   current,
   blogs_per_page,
   onPageChange,
-}) => {
+}) {
   let button_count = 0;
   // Determine total pages
   if (next === null) {
     if (previous === null) {
       // Do not show nav
     } else {
+      // eslint-disable-next-line radix
       const previous_page_count = parseInt(previous.split("=")[1]);
       button_count = previous_page_count + 1;
     }
@@ -24,10 +28,12 @@ const BlogPagination = ({
 
   const buttons = [];
 
+  // eslint-disable-next-line no-plusplus
   for (let index = 1; index <= button_count; index++) {
     buttons.push(
       <li key={index}>
         <button
+          type="button"
           onClick={() => onPageChange({ index })}
           className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
         >
@@ -42,6 +48,7 @@ const BlogPagination = ({
       <ul className="flex items-center -space-x-px h-10 text-base">
         <li key="0">
           <button
+            type="button"
             onClick={() => onPageChange({ index: prevP })}
             className="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
@@ -66,6 +73,7 @@ const BlogPagination = ({
         {buttons}
         <li key={button_count + 1}>
           <button
+            type="button"
             onClick={() => onPageChange({ index: nextP })}
             className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
@@ -90,6 +98,20 @@ const BlogPagination = ({
       </ul>
     </nav>
   );
-};
+}
 
 export default BlogPagination;
+
+BlogPagination.propTypes = {
+  count: PropTypes.number.isRequired,
+  next: PropTypes.string,
+  previous: PropTypes.string,
+  current: PropTypes.number.isRequired,
+  blogs_per_page: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+};
+
+BlogPagination.defaultProps = {
+  previous: null,
+  next: null,
+};

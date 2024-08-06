@@ -1,7 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-
 import { PiArrowCircleLeft } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 
 function GoBackBtn() {
   return (
