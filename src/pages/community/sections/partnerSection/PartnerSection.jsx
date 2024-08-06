@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  google2,
-  nairobi2,
-  uiux2,
-} from "../../../../assets/images/community";
+import { google2, nairobi2, uiux2 } from "../../../../assets/images/community";
 import PartnerCard from "./PartnerCard";
 
 const chapters = [

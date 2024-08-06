@@ -23,5 +23,5 @@ export {
   NewHero,
   eventCardPhysical,
   eventsPhysicalBg,
-  eventsVirtualBg
+  eventsVirtualBg,
 };

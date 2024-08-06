@@ -1,9 +1,10 @@
+/* eslint-disable no-underscore-dangle */
 import emailjs from "@emailjs/browser";
 import { Dialog, Transition } from "@headlessui/react";
-import React, { Fragment, useState, useRef } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Fragment, useRef, useState } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineClose } from "react-icons/ai"; // Import react-icons
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { PartnerWithUs } from "../../../assets/images/aboutPage";
 import { Caroussel } from "../../../components";
 import { LeadershipData } from "../data";
@@ -53,9 +54,8 @@ function LeadershipSection() {
         `${PUBLIC_ID}`
       )
       .then(
-        (result) => {
-          alert("Thank you. We will get back to you as soon possible.");
-
+        () => {
+          toast.success("Thank you. We will get back to you as soon possible.");
           setLoading(false);
           setName("");
           setEmail("");
@@ -63,11 +63,10 @@ function LeadershipSection() {
           setPhoneNumber("");
           closeModal();
         },
-        (error) => {
+        () => {
           setLoading(false);
-          console.log(error.text);
           closeModal();
-          alert("Sorry, something went wrong! 💀");
+          toast.error("Sorry, something went wrong!");
         }
       );
   };
