@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-nested-ternary */
 const Columns = (handleViewClick) => [
   {

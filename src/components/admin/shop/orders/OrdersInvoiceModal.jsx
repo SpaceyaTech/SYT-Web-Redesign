@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 // import html2canvas from "html2canvas";
 // import jsPDF from "jspdf";
@@ -14,6 +15,7 @@ export default function OrdersInvoiceModal({ orderId, onClose }) {
         setOrderDetails(response.data);
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error("Error fetching order details", error);
       });
   }, [orderId]);
@@ -39,7 +41,12 @@ export default function OrdersInvoiceModal({ orderId, onClose }) {
         <div id="invoice">
           <div className="mt-6 flex justify-between">
             <p>{orderDetails.status}</p>
-            <button onClick={onClose} className="text-5xl">
+            <button
+              type="button"
+              onClick={onClose}
+              className="text-5xl"
+              aria-label="Close"
+            >
               <IoCloseOutline />
             </button>
           </div>
@@ -107,6 +114,7 @@ export default function OrdersInvoiceModal({ orderId, onClose }) {
           <p>Order Date: {new Date(orderDetails.created_at).toLocaleDateString()}</p> */}
         <div className=" bottom-0 right-0 flex flex-col justify-end items-end py-6">
           <button
+            type="button"
             // onClick={downloadInvoice}
             className="w-fit border-2 border-primary text-primary text-xs font-semibold rounded-lg px-8 py-3"
           >
@@ -117,3 +125,8 @@ export default function OrdersInvoiceModal({ orderId, onClose }) {
     </div>
   );
 }
+
+OrdersInvoiceModal.propTypes = {
+  orderId: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

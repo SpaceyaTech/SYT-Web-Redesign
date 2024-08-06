@@ -1,8 +1,7 @@
-import React from "react";
-import { AreaChart, Area, CartesianGrid, Tooltip } from "recharts";
 import { FaArrowUp } from "react-icons/fa";
+import { Area, AreaChart, CartesianGrid, Tooltip } from "recharts";
 
-const OrdersTrends = () => {
+function OrdersTrends() {
   const trends = [
     {
       metric: "All Orders",
@@ -46,11 +45,12 @@ const OrdersTrends = () => {
       <div className="flex flex-col sm:flex-row items-center gap-2 p-4">
         {trends.map((trend, index) => (
           <div
+            key={crypto.randomUUID()}
             className={`flex flex-row items-center gap-2 ${
               index !== trends.length - 1 && "border-b sm:border-r"
             } py-10 sm:px-5`}
           >
-            <div key={index} className="flex flex-col justify-center my-4 px-2">
+            <div className="flex flex-col justify-center my-4 px-2">
               <p className="text-base font-medium">{trend.metric}</p>
               <p className="text-4xl font-bold">{trend.value}</p>
               <div className="flex flex-row items-center gap-1 mt-6 -mb-4 text-sm">
@@ -77,6 +77,6 @@ const OrdersTrends = () => {
       </div>
     </div>
   );
-};
+}
 
 export default OrdersTrends;

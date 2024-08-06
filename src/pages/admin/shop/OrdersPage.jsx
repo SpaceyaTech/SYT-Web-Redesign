@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-import React from "react";
 import { IoFilter } from "react-icons/io5";
 import columns from "../../../components/admin/shop/orders/Columns";
 import Orders from "../../../components/admin/shop/orders/Orders";
