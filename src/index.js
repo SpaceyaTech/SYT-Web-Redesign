@@ -56,6 +56,9 @@ const ShopDashboard = lazy(
   () => import("./pages/admin/shop/dashboard/ShopDashboard")
 );
 const ShopSales = lazy(() => import("./pages/admin/shop/sales/ShopSales"));
+const InventoryReport = lazy(
+  () => import("./pages/admin/shop/inventory/InventoryReport")
+);
 
 export {
   AllProducts,
@@ -95,5 +98,6 @@ export {
   SingleItemPage,
   SingleProductDonation,
   ShopSales,
+  InventoryReport,
   UpdateEventPage,
 };

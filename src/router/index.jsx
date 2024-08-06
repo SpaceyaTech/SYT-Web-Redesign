@@ -30,6 +30,7 @@ import {
   ShopSales,
   SignUp,
   SingleEvent,
+  InventoryReport,
 } from "..";
 import { FallbackLoader } from "../components";
 import EditForm from "@/pages/admin/shop/EditForm";
@@ -211,6 +212,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <ShopSales />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/admin/shop/inventory",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <InventoryReport />
           </Suspense>
         ),
       },
