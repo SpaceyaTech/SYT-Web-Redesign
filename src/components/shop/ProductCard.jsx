@@ -72,5 +72,6 @@ ProductCard.propTypes = {
     image: PropTypes.string,
     stock: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
   }).isRequired,
 };
