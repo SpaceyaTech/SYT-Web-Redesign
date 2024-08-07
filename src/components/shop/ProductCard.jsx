@@ -11,7 +11,7 @@ function ProductCard({ product }) {
   return (
     <div className="border rounded-lg p-2.5 pr-1.5 shadow-sm group hover:bg-green-dark/10 bg-white flex flex-col gap-4 ">
       <Link
-        to={`/shop/item/${product.id}`}
+        to={`/shop/item/${product.slug}`}
         className="aspect-h-1 aspect-w-1 w-full bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96"
       >
         <LazyLoadImage
