@@ -24,16 +24,16 @@ function PopularItemsSection() {
       <div className="mt-8 py-4 flex flex-row gap-4 sm:gap-10 overflow-x-scroll h-full w-full hr-scrollbar">
         {products
           ?.slice(0, 8)
-          .map(({ stock, category, id, name, image, price }) => (
+          .map(({ stock, category, id, name, image, price, slug }) => (
             <div
               key={id}
               className="group relative border border-slate-200 p-4 rounded-md min-w-[320px] h-auto md:min-w-[400px]"
-              onClick={() => navigate(`/shop/item/${id}`)}
+              onClick={() => navigate(`/shop/item/${slug}`)}
               role="button"
               tabIndex={0}
               onKeyPress={(event) => {
                 if (event.key === "Enter" || event.key === " ") {
-                  navigate(`/shop/item/${id}`);
+                  navigate(`/shop/item/${slug}`);
                 }
               }}
             >
