@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import SearchInput from "../../../components/shop/SearchInput";
 import SectionWrapper from "../../../components/shop/SectionWrapper";
 import SortItems from "../../../components/shop/SortItems";
-import { useSwagCategory } from "@/hooks/Queries/shop/useSwagList";
+import { useSwagCategory } from "../../../hooks/Queries/shop/useSwagList";
 
 function FilterSection() {
   return (
