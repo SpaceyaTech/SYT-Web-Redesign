@@ -1,5 +1,3 @@
-/* eslint-disable no-confusing-arrow */
-import React from "react";
 import {
   FaFacebook,
   FaInstagram,
@@ -87,15 +85,15 @@ function Footer() {
   const year = now.getFullYear();
 
   return (
-    <footer className="bg-secondary text-white">
-      <div className="md:p-12 py-8 px-4 relative max-w-[1440px] mx-auto">
+    <footer className="bg-secondary text-white" data-testid="footer-section">
+      <div className="md:px-12 md:pt-8 md:pb-[2px] py-8 px-4 max-w-[1440px] mx-auto">
         <div className="flex lg:flex-row flex-col md:gap-16 gap-8">
           <div className="flex-3 flex flex-col items-center">
             {/* logo */}
             <LazyLoadImage
               src={logo}
               alt="logo"
-              className="w-[124px] h-32 md:ml-0 ml-4 object-contain"
+              className="h-20 md:ml-0 ml-4 object-contain"
             />
             {/* socials */}
             <div className="flex gap-4 items-center py-4">
@@ -106,7 +104,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="w-7 h-7 text-white"
+                  className="w-5 h-5 text-white"
                 >
                   {link.icon}
                 </a>
@@ -119,7 +117,7 @@ function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 text-white"
+                  className="w-5 h-5 text-white"
                 >
                   {link.icon}
                 </a>
@@ -128,17 +126,17 @@ function Footer() {
           </div>
 
           {/* Footer links */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:gap-12 gap-8">
             {footerLinks.map((section) => (
               <div
                 key={crypto.randomUUID()}
-                className="flex flex-col gap-8 text-center lg:text-left"
+                className="flex flex-col gap-2 md:gap-4 text-center lg:text-left"
               >
-                <h2 className="text-green-footer font-bold sm:text-xl text-lg leading-9">
+                <h2 className="text-green-footer font-bold sm:text-xl text-lg md:leading-9">
                   {section.title}
                 </h2>
 
-                <ul className="flex flex-col gap-5 list-none text-sm font-light">
+                <ul className="flex flex-col gap-3 md:gap-5 list-none text-sm font-light">
                   {section.links.map((link) =>
                     link.href ? (
                       <li key={crypto.randomUUID()}>
@@ -164,7 +162,7 @@ function Footer() {
 
           {/* Newsletter */}
           <div className="flex-2">
-            <div className="flex flex-col md:gap-8">
+            <div className="flex flex-col gap-2 md:gap-4">
               <h2 className="text-green-footer font-bold sm:text-xl text-lg md:leading-9 mx-auto lg:mx-0 text-center lg:text-left">
                 Subscribe to our Newsletter
               </h2>
@@ -194,8 +192,8 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="sm:mt-14 mt-10">
-          <h1 className="text-center text-green-footer my-4 md:my-8">
+        <div>
+          <h1 className="text-center text-green-footer my-4 ">
             &copy; {year} SpaceYaTech | All Rights Reserved
           </h1>
         </div>

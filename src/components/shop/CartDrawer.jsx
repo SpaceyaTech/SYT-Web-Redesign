@@ -1,4 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
+import PropTypes from "prop-types";
 import { Fragment, useEffect, useState } from "react";
 import { CiShoppingTag } from "react-icons/ci";
 import { IoIosCloseCircleOutline } from "react-icons/io";
@@ -7,12 +8,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 import formatPrice from "../../utilities/formatPrice";
 
-import useAuth from "../../hooks/useAuth";
-
 function CartDrawer({ open, setOpen }) {
-  const { auth } = useAuth();
   const navigate = useNavigate();
-  const [count, setCount] = useState(1);
 
   // Get the JSON string from localStorage
   const [cartProducts, setCartProducts] = useState([]);
@@ -69,7 +66,6 @@ function CartDrawer({ open, setOpen }) {
     const handleStorageChange = (e) => {
       if (e.key === "swagList") {
         setCartProducts(JSON.parse(e.newValue));
-        console.log(JSON.parse(e.newValue));
       }
     };
 
@@ -102,8 +98,6 @@ function CartDrawer({ open, setOpen }) {
 
       // Store the updated list back to localStorage
       localStorage.setItem("swagList", cartProducts);
-    } else {
-      console.log("Swag not found in swagList");
     }
   };
 
@@ -288,3 +282,8 @@ function CartDrawer({ open, setOpen }) {
 }
 
 export default CartDrawer;
+
+CartDrawer.propTypes = {
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
+};

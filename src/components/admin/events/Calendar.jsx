@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import {
+  addDays,
   eachDayOfInterval,
   format,
   isEqual,
@@ -10,8 +10,9 @@ import {
   parseISO,
   startOfToday,
   subDays,
-  addDays,
 } from "date-fns";
+import PropTypes from "prop-types";
+import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const meetings = [
@@ -89,7 +90,7 @@ function EventCard({ event }) {
 function Calendar() {
   const today = startOfToday();
   const [selectedDay, setSelectedDay] = useState(today);
-  const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
+  const [currentMonth] = useState(format(today, "MMM-yyyy"));
   const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
   const [startDate, setStartDate] = useState(subDays(new Date(), 4));
   const endDate = addDays(startDate, 10);
@@ -146,7 +147,7 @@ function Calendar() {
       </div>
       <div className="col-span-3 border-b px-10 pt-2 h-24">
         <div className="grid grid-cols-11 gap-20 sm:gap-0 mt-2 text-sm overflow-scroll">
-          {days.map((day, dayIdx) => (
+          {days.map((day) => (
             <div key={day.toString()}>
               <button
                 type="button"
@@ -217,3 +218,14 @@ function Calendar() {
 }
 
 export default Calendar;
+
+EventCard.propTypes = {
+  event: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    startDatetime: PropTypes.string.isRequired,
+    endDatetime: PropTypes.string.isRequired,
+  }).isRequired,
+};

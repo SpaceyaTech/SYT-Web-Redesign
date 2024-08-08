@@ -1,15 +1,15 @@
-/* eslint-disable react/react-in-jsx-scope */
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaTrash } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { Link } from "react-router-dom";
+import { useDeleteSwag } from "../../hooks/Mutations/shop/useCartSwagg";
 import useMakeOrder from "../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
 import PaymentMethd from "./PaymentMethd";
 import ItemHeader from "./sections/ItemHeader";
-import { useDeleteSwag } from "@/hooks/Mutations/shop/useCartSwagg";
 
 function Checkout() {
   const { data: products, isSuccess } = useProductsInCart();
@@ -18,10 +18,7 @@ function Checkout() {
     isPending,
     isSuccess: successfulOrder,
   } = useMakeOrder();
-  const {
-    mutate: deleteSwag,
-    isLoading: isDeleting,
-  } = useDeleteSwag(); // Use deleteSwag
+  const { mutate: deleteSwag } = useDeleteSwag(); // Use deleteSwag
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -82,9 +79,7 @@ function Checkout() {
 
                             <div className="flex justify-between w-full mt-4">
                               <p>Qty: {quantity}</p>
-                              <p className="">
-                                Ksh {price}
-                              </p>
+                              <p className="">Ksh {price}</p>
                             </div>
                           </div>
                           <button
@@ -105,9 +100,7 @@ function Checkout() {
                   <p>Cart Subtotal</p>
                 </div>
                 <div className="space-y-4 font-bold text-xl">
-                  <p>
-                    Ksh {isSuccess && products.total_price}
-                  </p>
+                  <p>Ksh {isSuccess && products.total_price}</p>
                 </div>
               </div>
               <div className="my-2 space-y-4 text-md">
@@ -150,7 +143,9 @@ function Checkout() {
               <div className="flex space-x-24 py-5 sm:text-xl justify-between bg-primary/15 px-4 rounded-lg">
                 <h3 className="w-32 text-xl font-bold">Total</h3>
                 <h3 className="font-bold sm:font-semibold">
-                  Ksh {isSuccess && products.total_price * 0.16 + products.total_price}
+                  Ksh{" "}
+                  {isSuccess &&
+                    products.total_price * 0.16 + products.total_price}
                 </h3>
               </div>
             </div>
@@ -220,4 +215,3 @@ function Checkout() {
 }
 
 export default Checkout;
-

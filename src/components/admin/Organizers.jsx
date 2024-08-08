@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { FaPlus } from "react-icons/fa";
@@ -50,7 +52,8 @@ function Organizers({ thePrevious, collectedChapter, formComplete }) {
   };
 
   const onSubmit = (data) => {
-    collectedChapter["organizers"] = data.organizers;
+    // eslint-disable-next-line no-param-reassign
+    collectedChapter.organizers = data.organizers;
     formComplete(collectedChapter);
   };
 
@@ -66,6 +69,7 @@ function Organizers({ thePrevious, collectedChapter, formComplete }) {
               <p className="tracking-wider text-sm font-normal text-[#323433]">
                 {`Organizer ${index + 1}`}
                 <button
+                  type="button"
                   className="px-3 py-2 text-xs text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 float-right"
                   onClick={() => removeOrganizer(index)}
                 >
@@ -114,6 +118,7 @@ function Organizers({ thePrevious, collectedChapter, formComplete }) {
                   </span>
                 )}
               </div>
+              {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/click-events-have-key-events */}
               <div
                 className="w-full pl-4 py-2 mt-4 border-dashed border-2 border-gray-300 rounded-tl rounded-tr justify-start items-center inline-flex"
                 tabIndex="0"
@@ -200,3 +205,11 @@ function Organizers({ thePrevious, collectedChapter, formComplete }) {
 }
 
 export default Organizers;
+
+Organizers.propTypes = {
+  thePrevious: PropTypes.func.isRequired,
+  collectedChapter: PropTypes.shape({
+    organizers: PropTypes.arrayOf(PropTypes.shape({})),
+  }).isRequired,
+  formComplete: PropTypes.func.isRequired,
+};

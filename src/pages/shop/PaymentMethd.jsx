@@ -1,12 +1,9 @@
-
-
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { Disclosure, RadioGroup } from "@headlessui/react";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { toast } from "react-hot-toast"
+import { toast } from "react-hot-toast";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
-
 
 function PaymentMethod({ handleSubmit, isPending }) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("card");
@@ -30,8 +27,8 @@ function PaymentMethod({ handleSubmit, isPending }) {
       country,
       postalAddress,
       postalCode,
-      city
-    }
+      city,
+    },
   };
 
   const handleFormSubmit = (e) => {
@@ -190,7 +187,6 @@ function PaymentMethod({ handleSubmit, isPending }) {
             )}
           </RadioGroup.Option>
         </RadioGroup>
-
       </div>
 
       {/* Shipping Information */}
@@ -199,10 +195,7 @@ function PaymentMethod({ handleSubmit, isPending }) {
         <hr />
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-4">
           <div className="flex-1">
-            <label
-              htmlFor="country"
-              className="block text-gray-700 text-md"
-            >
+            <label htmlFor="country" className="block text-gray-700 text-md">
               Country or region
             </label>
             <input
@@ -216,7 +209,10 @@ function PaymentMethod({ handleSubmit, isPending }) {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="shipping-phone-number" className="block text-gray-700 ">
+            <label
+              htmlFor="shipping-phone-number"
+              className="block text-gray-700 "
+            >
               Phone number
             </label>
             <input
@@ -293,6 +289,4 @@ export default PaymentMethod;
 PaymentMethod.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   isPending: PropTypes.bool.isRequired,
-  setForm: PropTypes.func.isRequired,
 };
-

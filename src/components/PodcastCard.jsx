@@ -1,12 +1,12 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function PodcastCard({ img, category = "Podcast", title, description, link }) {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer" className="h-fit">
       <div className="w-[85vw] md:w-[350px] h-[380px] mx-4 rounded-md overflow-hidden relative">
-        <LazyLoadImage 
+        <LazyLoadImage
           src={img}
           alt={title}
           className="w-full h-full object-cover"
