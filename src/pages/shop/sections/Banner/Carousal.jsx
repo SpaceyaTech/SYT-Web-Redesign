@@ -7,7 +7,11 @@ function Carousel() {
   const [width, setWidth] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const { data: swagList, isSuccess } = useSwagList();
+  const { data, isSuccess } = useSwagList();
+  const swagList = Array.isArray(data)
+    ? data.filter((item) => item.is_featured === true)
+    : [];
+
   const carouselRef = useRef(null);
 
   useEffect(() => {
@@ -48,16 +52,24 @@ function Carousel() {
           className="overflow-hidden w-full md:rounded-2xl h-full scrollbar-hide cursor-grab "
         >
           <div className="flex -ml-2.5 h-full">
-            {isSuccess &&
-              swagList?.map(({ image, name, id }) => (
-                <div key={id} className="relative min-w-full pl-2.5 h-full">
-                  <LazyLoadImage
-                    className="w-full h-full md:rounded-2xl"
-                    src={image}
-                    alt={name}
-                  />
-                </div>
-              ))}
+            {Array.isArray(swagList) &&
+              swagList.map(({ attributes, name, id }) => {
+                const attributeWithImages = attributes.find(
+                  (attribute) => attribute.images.length > 0
+                );
+                const image = attributeWithImages
+                  ? attributeWithImages.images.map((img) => img.image)[0]
+                  : "";
+                return (
+                  <div key={id} className="relative min-w-full pl-2.5 h-full">
+                    <LazyLoadImage
+                      className="w-full h-full md:rounded-2xl object-cover"
+                      src={image}
+                      alt={name}
+                    />
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>
@@ -76,15 +88,16 @@ function Carousel() {
           Shop Now
         </Link>
         <div className="flex justify-center bg-black/60 rounded-3xl gap-3 px-2 py-1.5">
-          {swagList?.map((_, index) => (
-            <button
-              key={crypto.randomUUID()}
-              type="button"
-              aria-label={`Slide ${index + 1}`}
-              className={`cursor-pointer relative p-0 outline-none border-0 rounded-full h-[9px] w-[9px] ${index === selectedIndex ? " bg-green-dark" : "bg-white"}`}
-              onClick={() => scrollToIndex(index)}
-            />
-          ))}
+          {Array.isArray(swagList) &&
+            swagList.map((_, index) => (
+              <button
+                key={crypto.randomUUID()}
+                type="button"
+                aria-label={`Slide ${index + 1}`}
+                className={`cursor-pointer relative p-0 outline-none border-0 rounded-full h-[9px] w-[9px] ${index === selectedIndex ? " bg-green-dark" : "bg-white"}`}
+                onClick={() => scrollToIndex(index)}
+              />
+            ))}
         </div>
       </div>
     </>

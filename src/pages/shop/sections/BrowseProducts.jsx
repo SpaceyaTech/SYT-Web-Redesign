@@ -3,8 +3,8 @@ import ProductCard from "../../../components/shop/ProductCard";
 import SectionWrapper from "../../../components/shop/SectionWrapper";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 
-function NewProducts() {
-  const { data: swagList, isSuccess } = useSwagList();
+function BrowseProducts() {
+  const { data: swagList } = useSwagList();
 
   return (
     <LandingWrapper title="Browse">
@@ -15,8 +15,8 @@ function NewProducts() {
           </h3>
         </section>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {isSuccess &&
-            swagList?.map((product) => (
+          {Array.isArray(swagList) &&
+            swagList.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
         </div>
@@ -25,4 +25,4 @@ function NewProducts() {
   );
 }
 
-export default NewProducts;
+export default BrowseProducts;

@@ -3,8 +3,8 @@ import ProductCard from "../../../components/shop/ProductCard";
 import SectionWrapper from "../../../components/shop/SectionWrapper";
 import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 
-function FeaturedProducts() {
-  const { data: swagList, isSuccess } = useSwagList();
+function NewProducts() {
+  const { data: swagList } = useSwagList();
 
   return (
     <LandingWrapper title="New Arrivals">
@@ -15,8 +15,8 @@ function FeaturedProducts() {
           </h3>
         </section>
         <div className="mt-8 py-4 flex gap-4 overflow-x-scroll h-full w-full hr-scrollbar">
-          {isSuccess &&
-            swagList?.map((product) => (
+          {Array.isArray(swagList) &&
+            swagList.slice(0, 10).map((product) => (
               <div
                 className="min-w-[100%] sm:min-w-[50%] lg:min-w-[33%]  h-full"
                 key={product.id}
@@ -30,4 +30,4 @@ function FeaturedProducts() {
   );
 }
 
-export default FeaturedProducts;
+export default NewProducts;
