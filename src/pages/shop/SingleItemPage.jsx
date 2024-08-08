@@ -69,7 +69,7 @@ export default function SingleItemPage() {
       category: singleSwag.category,
       size: selectedSize.name,
       color: selectedColor,
-      price: singleSwag.price,
+      price: singleSwag.price * count,
       orderUnits: count,
       slug: singleSwag.slug,
       image: selectedVariant.images[0].image,
