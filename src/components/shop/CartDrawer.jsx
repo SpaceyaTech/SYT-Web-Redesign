@@ -14,45 +14,6 @@ function CartDrawer({ open, setOpen }) {
   // Get the JSON string from localStorage
   const [cartProducts, setCartProducts] = useState([]);
 
-  const dummyCartData = [
-    {
-      id: "271fcc1c-0337-44f4-9449-2bc35b6ffd01",
-      name: "Cityscape Jacket",
-      description:
-        "Introducing our Cityscape Jacket: a blend of urban flair and unbeatable comfort. Crafted with premium materials, it offers sleek design and weather resistance for city adventures. Stay stylish and protected with adjustable features and convenient pockets. Upgrade your urban wardrobe today!",
-      category: "Jackets",
-      image:
-        "https://apis.spaceyatech.com/media/product_images/main-sample_copy_Fud5OzF.png",
-      price: "3000.00",
-      stock: 10,
-      color: "brown",
-    },
-    {
-      id: "232437b9-3e64-4cad-a6c3-08158e118207",
-      name: "Cityscape Jacket - Mid",
-      description:
-        "Introducing our Cityscape Jacket: a blend of urban flair and unbeatable comfort. Crafted with premium materials, it offers sleek design and weather resistance for city adventures. Stay stylish and protected with adjustable features and convenient pockets. Upgrade your urban wardrobe today!",
-      category: "Jackets",
-      image:
-        "https://apis.spaceyatech.com/media/product_images/main-sample_copy_BRv17MK.png",
-      price: "1800.00",
-      stock: 11,
-      color: "brown",
-    },
-    {
-      id: "9cd9a601-0ed9-4685-8633-4b04e0811fc7",
-      name: "SYT Hoodie",
-      description:
-        "Unleash your tech-savvy style with our Tech-Fit Hoodie. Designed for the modern individual, it seamlessly integrates functionality and fashion. Crafted with cutting-edge materials, it offers unrivaled comfort and durability. Elevate your wardrobe with this essential piece that effortlessly combines innovation and style.",
-      category: "Hoodies",
-      image:
-        "https://apis.spaceyatech.com/media/product_images/sample1_copy_PXgn3MX.png",
-      price: "2000.00",
-      stock: 10,
-      color: "white",
-    },
-  ];
-
   useEffect(() => {
     const storage = localStorage.getItem("swagList")
       ? JSON.parse(localStorage.getItem("swagList"))
