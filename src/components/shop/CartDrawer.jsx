@@ -45,9 +45,7 @@ function CartDrawer({ open, setOpen }) {
     // Parse it back to an array of objects
     const swagList = cartProducts;
 
-    const idxToDelete = swagList.findIndex(
-      (swag) => swag.swagg_id === cartItemId
-    );
+    const idxToDelete = swagList.findIndex((swag) => swag.id === cartItemId);
 
     // Check if the object was found
     if (idxToDelete !== -1) {
@@ -55,10 +53,11 @@ function CartDrawer({ open, setOpen }) {
       swagList.splice(idxToDelete, 1);
 
       // Convert the updated list to a JSON string
-      setCartProducts(JSON.stringify(swagList));
+      const swagListJSON = JSON.stringify(swagList);
+      setCartProducts(swagList);
 
       // Store the updated list back to localStorage
-      localStorage.setItem("swagList", cartProducts);
+      localStorage.setItem("swagList", swagListJSON);
     }
   };
 
