@@ -19,6 +19,7 @@ import {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
@@ -218,6 +219,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <OrdersPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/admin/shop/inventory",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <InventoryReport />
           </Suspense>
         ),
       },
