@@ -4,7 +4,7 @@ function Counter({ className, setCount, count }) {
   const increment = () => setCount((prevCount) => prevCount + 1);
   const decrement = () =>
     setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : prevCount));
-  console.log(count)
+  // console.log(count)
   return (
     <div className={`flex rounded-lg ${className}`}>
       <button

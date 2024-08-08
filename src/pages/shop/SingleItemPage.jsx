@@ -10,7 +10,7 @@ import SmallSample2 from "../../assets/images/shop-page/small-sample-greyscale.p
 import SeoMetadata from "../../components/SeoMetadata";
 import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
-import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
+// import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
 import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
 import formatPrice from "../../utilities/formatPrice";
 import ItemHeader from "./sections/ItemHeader";
@@ -39,7 +39,7 @@ export default function SingleItemPage() {
 
   // const { data: singleOrder } = useSingleOrder(params.id);
   const { data: singleSwag, isSuccess, refetch } = useSingleSwag(params.id);
-  const { mutate: addItemsToCart } = useAddSwagToCart();
+  // const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = {
     XS: "Extra Small",
@@ -139,6 +139,7 @@ export default function SingleItemPage() {
             <div className="flex overflow-x-auto">
               {VariationData.map((image, index) => (
                 <LazyLoadImage
+                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   src={image}
                   alt={singleSwag.name}
@@ -150,6 +151,7 @@ export default function SingleItemPage() {
               {VariationData.map((pic, index) => (
                 <button
                   type="button"
+                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   onClick={() => setSelectedImage(index + 1)}
                   className={`w-[70px] sm:w-auto cursor-pointer rounded-lg border-2 hover:border-[#2a7762] ${selectedImage === index + 1 ? "border-[#2a7762]" : "border-white"}`}
@@ -184,7 +186,7 @@ export default function SingleItemPage() {
 
             <div className="flex justify-start space-x-6">
               {singleSwag &&
-                singleSwag?.attributes.map((color, index) => (
+                singleSwag?.attributes.map((color) => (
                   <button
                     type="button"
                     key={crypto.randomUUID()}
