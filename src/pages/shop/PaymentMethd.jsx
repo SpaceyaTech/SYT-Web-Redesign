@@ -2,9 +2,10 @@
 import { Disclosure, RadioGroup } from "@headlessui/react";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 import { IoChevronDownOutline, IoChevronUpOutline } from "react-icons/io5";
 
-function PaymentMethod({ handleSubmit, isPending, setForm }) {
+function PaymentMethod({ handleSubmit, isPending }) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("card");
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -22,16 +23,28 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
     expiryDate,
     cvc,
     phoneNumber,
-    country,
-    postalAddress,
-    postalCode,
-    city,
+    address: {
+      country,
+      postalAddress,
+      postalCode,
+      city,
+    },
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setForm(formObject);
-    handleSubmit();
+    if (selectedPaymentMethod === "card") {
+      if (!name || !cardNumber || !expiryDate || !cvc || !phoneNumber) {
+        toast.error("please fill all required fields");
+        return;
+      }
+    } else if (selectedPaymentMethod === "mpesa") {
+      if (!phoneNumber) {
+        toast.error("please fill all required fields");
+        return;
+      }
+    }
+    handleSubmit(formObject);
   };
 
   return (
@@ -73,7 +86,7 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                             className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
                             placeholder="Enter cardholder name"
                             value={name}
-                            required
+                            required={selectedPaymentMethod === "card"}
                           />
                         </div>
                         <div>
@@ -90,7 +103,7 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                             className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
                             placeholder="Enter card number"
                             value={cardNumber}
-                            required
+                            required={selectedPaymentMethod === "card"}
                           />
                         </div>
                         <div className="flex space-x-4">
@@ -108,7 +121,7 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
                               placeholder="MM/YY"
                               value={expiryDate}
-                              required
+                              required={selectedPaymentMethod === "card"}
                             />
                           </div>
                           <div className="flex-1">
@@ -125,7 +138,7 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
                               placeholder="..."
                               value={cvc}
-                              required
+                              required={selectedPaymentMethod === "card"}
                             />
                           </div>
                         </div>
@@ -152,19 +165,19 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
                     <Disclosure.Panel className="pt-4 pb-2 text-md text-gray-500">
                       <div>
                         <label
-                          htmlFor="cardholder-number"
+                          htmlFor="mpesa-phone-number"
                           className="block text-gray-700"
                         >
                           Phone number
                         </label>
                         <input
-                          id="cardholder-number"
+                          id="mpesa-phone-number"
                           onChange={(e) => setPhoneNumber(e.target.value)}
                           type="tel"
                           className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
                           placeholder="Enter phone number"
                           value={phoneNumber}
-                          required
+                          required={selectedPaymentMethod === "mpesa"}
                         />
                       </div>
                     </Disclosure.Panel>
@@ -174,12 +187,6 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
             )}
           </RadioGroup.Option>
         </RadioGroup>
-        <button
-          className="from-teal-700 to-primary bg-gradient-to-b w-full mt-5 py-3 rounded-md text-white font-bold hover:to-primary/90 hover:from-teal-700/90"
-          type="submit"
-        >
-          {isPending ? "Loading..." : "Pay and place order"}
-        </button>
       </div>
 
       {/* Shipping Information */}
@@ -188,29 +195,28 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
         <hr />
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-4">
           <div className="flex-1">
-            <label
-              htmlFor="cardholder-name"
-              className="block text-gray-700 text-md"
-            >
+            <label htmlFor="country" className="block text-gray-700 text-md">
               Country or region
             </label>
             <input
-              id="cardholder-name"
+              id="country"
               onChange={(e) => setCountry(e.target.value)}
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
               placeholder="Select Country"
               value={country}
               required
-              aria-label="selection"
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="cardholder-number" className="block text-gray-700 ">
+            <label
+              htmlFor="shipping-phone-number"
+              className="block text-gray-700 "
+            >
               Phone number
             </label>
             <input
-              id="cardholder-number"
+              id="shipping-phone-number"
               onChange={(e) => setPhoneNumber(e.target.value)}
               type="tel"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -223,13 +229,13 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
         <div className="flex gap-5 text-md items-center flex-wrap w-full my-3">
           <div className="flex-1">
             <label
-              htmlFor="cardholder-postal"
+              htmlFor="postal-address"
               className="block text-gray-700 text-md"
             >
               Postal Address
             </label>
             <input
-              id="cardholder-postal"
+              id="postal-address"
               onChange={(e) => setPostalAddress(e.target.value)}
               type="text"
               className="mt-1 block w-full rounded-md border-gray-300 py-2 px-3 border"
@@ -267,6 +273,12 @@ function PaymentMethod({ handleSubmit, isPending, setForm }) {
             required
           />
         </div>
+        <button
+          className="from-teal-700 to-primary bg-gradient-to-b w-full mt-5 py-3 rounded-md text-white font-bold hover:to-primary/90 hover:from-teal-700/90"
+          type="submit"
+        >
+          {isPending ? "Loading..." : "Pay and place order"}
+        </button>
       </div>
     </form>
   );
@@ -277,5 +289,4 @@ export default PaymentMethod;
 PaymentMethod.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   isPending: PropTypes.bool.isRequired,
-  setForm: PropTypes.func.isRequired,
 };
