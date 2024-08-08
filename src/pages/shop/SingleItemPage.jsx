@@ -64,12 +64,17 @@ export default function SingleItemPage() {
 
   const addToLocalStorage = () => {
     const newData = {
+      id: singleSwag.id,
       name: singleSwag.name,
+      category: singleSwag.category,
       size: selectedSize.name,
       color: selectedColor,
       price: singleSwag.price,
       orderUnits: count,
+      slug: singleSwag.slug,
+      image: selectedVariant.images[0].image,
     };
+
     let swagList = [];
     let swagListJSON;
     if (localStorage.getItem("swagList")) {
