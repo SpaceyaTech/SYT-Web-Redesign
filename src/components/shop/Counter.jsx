@@ -1,13 +1,17 @@
 import PropTypes from "prop-types";
 
 function Counter({ className, setCount, count }) {
+  const increment = () => setCount((prevCount) => prevCount + 1);
+  const decrement = () =>
+    setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : prevCount));
+  console.log(count)
   return (
     <div className={`flex rounded-lg ${className}`}>
       <button
         type="button"
         data-action="decrement"
         className="cursor-pointer outline-none w-20 border-y border-l border-l-[#EAECF0] border-y-[#EAECF0] rounded-l-md border-r"
-        onClick={() => setCount(count > 1 ? count - 1 : 1)}
+        onClick={decrement}
       >
         <span className=" text-base">−</span>
       </button>
@@ -21,7 +25,7 @@ function Counter({ className, setCount, count }) {
         type="button"
         data-action="increment"
         className="cursor-pointer outline-none w-20 border-y border-r border-r-[#EAECF0] border-y-[#EAECF0] rounded-r-md border-l"
-        onClick={() => setCount(count + 1)}
+        onClick={increment}
       >
         <span className="text-base">+</span>
       </button>
