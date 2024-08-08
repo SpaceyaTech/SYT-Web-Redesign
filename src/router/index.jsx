@@ -11,6 +11,7 @@ import {
   CategoriesProducts,
   Checkout,
   CommunityPage,
+  EditForm,
   Error400,
   Error403,
   Error404,
@@ -19,6 +20,7 @@ import {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
@@ -30,11 +32,9 @@ import {
   ShopSales,
   SignUp,
   SingleEvent,
-  InventoryReport,
+  SinglePageView,
 } from "..";
 import { FallbackLoader } from "../components";
-import EditForm from "@/pages/admin/shop/EditForm";
-import SinglePageView from "@/pages/admin/shop/SinglePageView";
 
 const router = createBrowserRouter([
   {

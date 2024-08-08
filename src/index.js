@@ -59,9 +59,10 @@ const ShopSales = lazy(() => import("./pages/admin/shop/sales/ShopSales"));
 const InventoryReport = lazy(
   () => import("./pages/admin/shop/inventory/InventoryReport")
 );
+const EditForm = lazy(() => import("./pages/admin/shop/EditForm"));
+const SinglePageView = lazy(() => import("./pages/admin/shop/SinglePageView"));
 
 export {
-  AllProducts,
   AboutUs,
   AddChapterPage,
   AddEventPage,
@@ -69,12 +70,14 @@ export {
   AllBlogsPage,
   AllChaptersPage,
   AllEventsPage,
+  AllProducts,
   Blog,
   Blogs,
   CategoriesProducts,
   Checkout,
   CommunityPage,
   DonatePage,
+  EditForm,
   Error400,
   Error403,
   Error404,
@@ -85,6 +88,7 @@ export {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
@@ -93,11 +97,11 @@ export {
   ResetPassword,
   Resources,
   ShopDashboard,
+  ShopSales,
   SignUp,
   SingleEvent,
   SingleItemPage,
+  SinglePageView,
   SingleProductDonation,
-  ShopSales,
-  InventoryReport,
   UpdateEventPage,
 };
