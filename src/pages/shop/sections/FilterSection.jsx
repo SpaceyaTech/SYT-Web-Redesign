@@ -27,11 +27,11 @@ function FilterSection() {
 }
 
 function Categories() {
-  const { data, isSuccess } = useSwagCategory();
+  const { data } = useSwagCategory();
   return (
     <div className="flex  gap-4 flex-wrap ">
-      {isSuccess &&
-        data?.map((item) => (
+      {Array.isArray(data) &&
+        data.map((item) => (
           <CategoryItem
             key={crypto.randomUUID()}
             name={item.name}
