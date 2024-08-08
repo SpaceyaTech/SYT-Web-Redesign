@@ -15,7 +15,15 @@ import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
 import formatPrice from "../../utilities/formatPrice";
 import ItemHeader from "./sections/ItemHeader";
 
-const VariationData = [SmallSample1, SmallSample2, SmallSample1, SmallSample2];
+const VariationData = [
+  SmallSample1,
+  SmallSample2,
+  SmallSample1,
+  SmallSample2,
+  SmallSample2,
+  SmallSample1,
+  SmallSample2,
+];
 
 export default function SingleItemPage() {
   const params = useParams();
