@@ -24,7 +24,6 @@ export default function SingleItemPage() {
   const [open, setOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedColor, setSelectedColor] = useState("");
-  const [payload, setPayload] = useState({});
 
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [variants, setVariants] = useState(null);
@@ -64,6 +63,13 @@ export default function SingleItemPage() {
   }, [selectedColor, variants]);
 
   const addToLocalStorage = () => {
+    const newData = {
+      name: singleSwag.name,
+      size: selectedSize.name,
+      color: selectedColor,
+      price: singleSwag.price,
+      orderUnits: count,
+    };
     let swagList = [];
     let swagListJSON;
     if (localStorage.getItem("swagList")) {
@@ -71,11 +77,11 @@ export default function SingleItemPage() {
       swagList = JSON.parse(localStorage.getItem("swagList"));
 
       // Also check for matching swagg_id that already exist in local storage
-      swagList.push(payload);
+      swagList.push(newData);
       swagListJSON = JSON.stringify(swagList);
       localStorage.setItem("swagList", swagListJSON);
     } else {
-      swagList.push(payload);
+      swagList.push(newData);
       swagListJSON = JSON.stringify(swagList);
 
       localStorage.setItem("swagList", swagListJSON);
@@ -83,9 +89,6 @@ export default function SingleItemPage() {
   };
 
   const handleAddToCart = () => {
-    // Send to backend not giving a usable response
-    addItemsToCart(payload);
-
     // Add to local storage
     addToLocalStorage();
 
