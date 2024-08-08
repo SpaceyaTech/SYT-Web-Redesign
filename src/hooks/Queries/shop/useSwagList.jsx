@@ -1,12 +1,10 @@
-// https://apis.spaceyatech.com/api/swaggs/
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import publicAxios from "../../../api/publicAxios";
 
 const fetchSwag = async () => {
   try {
-    const response = await publicAxios.get("/swaggsnew/");
-
+    const response = await publicAxios.get("/swaggsnew");
     return response.data;
   } catch (error) {
     toast.error("Error fetching swag list");
@@ -38,4 +36,21 @@ const useSingleSwag = (id) =>
     refetchOnWindowFocus: false,
   });
 
-export { useSingleSwag, useSwagList };
+const fetchSwagCategories = async () => {
+  try {
+    const response = await publicAxios.get("/product-categories");
+    return response.data;
+  } catch (error) {
+    toast.error("Error fetching swag list");
+    throw error;
+  }
+};
+
+const useSwagCategory = () =>
+  useQuery({
+    queryKey: ["swagCategory"],
+    queryFn: () => fetchSwagCategories(),
+    refetchOnWindowFocus: false,
+  });
+
+export { useSingleSwag, useSwagList, useSwagCategory };
