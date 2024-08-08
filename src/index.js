@@ -87,6 +87,7 @@ export {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
@@ -101,6 +102,5 @@ export {
   SingleEvent,
   SingleItemPage,
   SingleProductDonation,
-  InventoryReport,
   UpdateEventPage,
 };
