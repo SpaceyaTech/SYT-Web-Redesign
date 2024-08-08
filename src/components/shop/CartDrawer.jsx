@@ -167,11 +167,8 @@ function CartDrawer({ open, setOpen }) {
                         <div className="flow-root">
                           <ul className="-my-6 divide-y divide-gray-200 border-b">
                             {/* {isSuccess && */}
-                            {dummyCartData?.length > 0 &&
-                              (dummyCartData?.cart_items
-                                ? dummyCartData.cart_items
-                                : dummyCartData
-                              )?.map((cartProduct) => (
+                            {cartProducts?.length > 0 &&
+                              cartProducts?.map((cartProduct) => (
                                 <li
                                   key={crypto.randomUUID()}
                                   className="flex py-6 space-x-4 sm:space-x-16"
@@ -179,13 +176,9 @@ function CartDrawer({ open, setOpen }) {
                                   <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
                                     <LazyLoadImage
                                       src={`${
-                                        cartProduct.image ||
-                                        cartProduct.product?.image
+                                        cartProduct.image || cartProduct?.image
                                       }`}
-                                      alt={
-                                        cartProduct.name ||
-                                        cartProduct.product?.name
-                                      }
+                                      alt={cartProduct.name}
                                       className="h-full w-full object-cover object-center"
                                     />
                                   </div>
@@ -197,7 +190,7 @@ function CartDrawer({ open, setOpen }) {
                                           <div className="flex justify-between">
                                             <p className="flex justify-between items-center gap-1 font-medium bg-[#FEF3F2] text-[#B42318] text-sm rounded-full px-2 py-1">
                                               <CiShoppingTag />
-                                              Hoodies
+                                              {cartProduct.category}
                                             </p>
                                           </div>
                                           <h3>
@@ -205,12 +198,10 @@ function CartDrawer({ open, setOpen }) {
                                               {" "}
                                               <Link
                                                 to={`/shop/item/${
-                                                  cartProduct.productId ||
-                                                  cartProduct.swagg_id
+                                                  cartProduct.slug
                                                 }`}
                                               >
-                                                {cartProduct.name ||
-                                                  cartProduct.product?.name}
+                                                {cartProduct.name}
                                               </Link>
                                             </p>
                                           </h3>
@@ -219,10 +210,7 @@ function CartDrawer({ open, setOpen }) {
                                           type="button"
                                           className="flex justify-end"
                                           onClick={() => {
-                                            handleDeleteSwag(
-                                              cartProduct.id ||
-                                                cartProduct.swagg_id
-                                            );
+                                            handleDeleteSwag(cartProduct.id);
                                           }}
                                         >
                                           {/* Delete icon */}
@@ -230,7 +218,7 @@ function CartDrawer({ open, setOpen }) {
                                         </button>
                                       </div>
                                       <div className="flex flex-row justify-between text-[#656767] text-sm sm:text-base font-medium">
-                                        <p>Qty: 1</p>
+                                        <p>Qty: {cartProduct.orderUnits}</p>
                                         <p>
                                           KES {formatPrice(cartProduct.price)}
                                         </p>
