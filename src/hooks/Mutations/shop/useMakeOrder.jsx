@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import privateAxios from "../../../api/privateAxios";
-import useAuth from "../../useAuth";
+// import useAuth from "../../useAuth";
 
 // POST: https://apis.spaceyatech.com/api/checkout/
 const useMakeOrder = () => {
-  const { auth, logout } = useAuth();
+  // const { auth, logout } = useAuth();
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -25,7 +25,7 @@ const useMakeOrder = () => {
       // eslint-disable-next-line no-console
       console.error("Unable to add availability");
       if (error.response.status === 401) {
-        logout();
+        // logout();
       }
     },
   });
