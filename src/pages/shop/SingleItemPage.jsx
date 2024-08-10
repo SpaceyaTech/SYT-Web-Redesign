@@ -10,7 +10,7 @@ import SmallSample2 from "../../assets/images/shop-page/small-sample-greyscale.p
 import SeoMetadata from "../../components/SeoMetadata";
 import CartDrawer from "../../components/shop/CartDrawer";
 import Counter from "../../components/shop/Counter";
-// import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
+import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
 import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
 import formatPrice from "../../utilities/formatPrice";
 import ItemHeader from "./sections/ItemHeader";
@@ -46,7 +46,8 @@ export default function SingleItemPage() {
     isError,
     refetch,
   } = useSingleSwag(params.id);
-  // const { mutate: addItemsToCart } = useAddSwagToCart();
+
+  const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = {
     XS: "Extra Small",
@@ -120,6 +121,11 @@ export default function SingleItemPage() {
     if (!selectedSize) {
       setError("Please select a size");
     } else {
+      // Add a new item to the cart in the backend
+      addItemsToCart({
+        product_attribute: selectedVariant.id,
+        quantity: count,
+      });
       // Add to local storage
       addToLocalStorage();
 
