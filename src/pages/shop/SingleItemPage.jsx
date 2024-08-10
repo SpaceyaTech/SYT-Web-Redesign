@@ -36,6 +36,7 @@ export default function SingleItemPage() {
   const [selectedVariant, setSelectedVariant] = useState(null);
   const [variants, setVariants] = useState(null);
   const [selectedImage, setSelectedImage] = useState(1);
+  const [error, setError] = useState("");
 
   // const { data: singleOrder } = useSingleOrder(params.id);
   const {
@@ -108,10 +109,15 @@ export default function SingleItemPage() {
   };
 
   const handleAddToCart = () => {
-    // Add to local storage
-    addToLocalStorage();
+    if (!selectedSize) {
+      setError("Please select a size");
+    } else {
+      // Add to local storage
+      addToLocalStorage();
 
-    setOpen(true);
+      // open cart
+      setOpen(true);
+    }
   };
 
   // const handleBuyNow = () => {
@@ -251,6 +257,9 @@ export default function SingleItemPage() {
             </div>
             <hr />
 
+            {error && (
+              <p className="font-normal text-red-400 text-center">{error}</p>
+            )}
             <div className="flex justify-start gap-3 ">
               <Counter
                 className="h-12 sm:h-14 w-32"
