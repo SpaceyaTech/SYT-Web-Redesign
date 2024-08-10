@@ -12,14 +12,20 @@ function CartDrawer({ open, setOpen }) {
   const navigate = useNavigate();
 
   // Get the JSON string from localStorage
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(() => {
+    // Initialize state with the value from localStorage if it exists
+    const storedProducts = localStorage.getItem("swagList");
+    return storedProducts ? JSON.parse(storedProducts) : [];
+  });
 
   useEffect(() => {
-    const storage = localStorage.getItem("swagList")
-      ? JSON.parse(localStorage.getItem("swagList"))
-      : null;
-    setCartProducts(storage);
-  }, [cartProducts]);
+    if (open) {
+      const storedProducts = localStorage.getItem("swagList");
+      if (storedProducts) {
+        setCartProducts(JSON.parse(storedProducts));
+      }
+    }
+  }, [open]);
 
   // const { data: cartProducts, isSuccess } = useProductsInCart();
   useEffect(() => {
@@ -42,23 +48,16 @@ function CartDrawer({ open, setOpen }) {
   // const { mutate: deleteSwag } = useDeleteSwag();
 
   const deleteFromLocalStorage = (cartItemId) => {
-    // Parse it back to an array of objects
-    const swagList = cartProducts;
+    // Create a new array by filtering out the item to delete
+    const updatedSwagList = cartProducts.filter(
+      (swag) => swag.id !== cartItemId
+    );
 
-    const idxToDelete = swagList.findIndex((swag) => swag.id === cartItemId);
+    // Update the state with the new array
+    setCartProducts(updatedSwagList);
 
-    // Check if the object was found
-    if (idxToDelete !== -1) {
-      // Remove the object from the swagList
-      swagList.splice(idxToDelete, 1);
-
-      // Convert the updated list to a JSON string
-      const swagListJSON = JSON.stringify(swagList);
-      setCartProducts(swagList);
-
-      // Store the updated list back to localStorage
-      localStorage.setItem("swagList", swagListJSON);
-    }
+    // Convert the updated list to a JSON string and store it in localStorage
+    localStorage.setItem("swagList", JSON.stringify(updatedSwagList));
   };
 
   const handleDeleteSwag = (cartItemId) => {
