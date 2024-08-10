@@ -36,8 +36,10 @@ function Checkout() {
     };
     makeOrder(payload);
 
-    // clear session cart
-    clearCart();
+    if (successfulOrder) {
+      // clear session cart
+      clearCart();
+    }
   };
 
   const closeModal = () => {
