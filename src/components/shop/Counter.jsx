@@ -44,4 +44,5 @@ Counter.propTypes = {
   className: PropTypes.string,
   setCount: PropTypes.func.isRequired,
   count: PropTypes.number.isRequired,
+  maxStock: PropTypes.number.isRequired,
 };

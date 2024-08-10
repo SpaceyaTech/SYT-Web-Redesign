@@ -6,8 +6,8 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
+import { useDeleteSwag } from "../../hooks/Mutations/shop/useCartSwagg";
 import formatPrice from "../../utilities/formatPrice";
-import { useDeleteSwag } from "@/hooks/Mutations/shop/useCartSwagg";
 
 function CartDrawer({ open, setOpen }) {
   const navigate = useNavigate();
