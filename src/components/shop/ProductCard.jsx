@@ -31,7 +31,7 @@ function ProductCard({ product }) {
         />
       </Link>
       <Link
-        to={`/shop/item/${product.id}`}
+        to={`/shop/item/${product.slug}`}
         className="flex justify-between pr-1"
       >
         <h3 className="text-md uppercase font-medium text-gray-600">
