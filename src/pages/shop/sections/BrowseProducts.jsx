@@ -16,11 +16,18 @@ function BrowseProducts() {
         </section>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {isSuccess &&
-            Array.isArray(swagList) &&
+            swagList?.length > 0 &&
             swagList.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
         </div>
+        {isSuccess && swagList?.length === 0 && (
+          <div className="flex justify-center items-center my-8">
+            <div className="text-base font-normal leading-5 tracking-[0.25px]">
+              <p className="font-bold text-red-400">No products available</p>
+            </div>
+          </div>
+        )}
         {isPending && (
           <div className="flex justify-center items-center my-8">
             <div className="text-base font-normal leading-5 tracking-[0.25px]">
