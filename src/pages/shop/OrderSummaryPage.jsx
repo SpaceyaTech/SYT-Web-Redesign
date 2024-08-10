@@ -5,7 +5,10 @@ import { FaTrash } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Link } from "react-router-dom";
-import { useDeleteSwag } from "../../hooks/Mutations/shop/useCartSwagg";
+import {
+  useDeleteSwag,
+  useDeleteAllSwag,
+} from "../../hooks/Mutations/shop/useCartSwagg";
 import useMakeOrder from "../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
 import PaymentMethd from "./PaymentMethd";
@@ -20,6 +23,8 @@ function Checkout() {
   } = useMakeOrder();
   const { mutate: deleteSwag } = useDeleteSwag(); // Use deleteSwag
 
+  const { mutate: clearCart } = useDeleteAllSwag();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSubmit = (data) => {
@@ -30,6 +35,9 @@ function Checkout() {
       postal_code: data.address.postalCode,
     };
     makeOrder(payload);
+
+    // clear session cart
+    clearCart();
   };
 
   const closeModal = () => {
