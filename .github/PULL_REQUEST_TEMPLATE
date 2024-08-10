@@ -16,7 +16,7 @@ Before submitting a _pull request_ make sure you have:
 
 - [ ] Read the guidelines for contributing.
 - [ ] Wrote some tests.
-- [ ] Respected the linting guidelines.
+- [ ] Respected the linting guidelines (read the guide below for help).
 
 ## How to Check and Fix Linting Issues
 
