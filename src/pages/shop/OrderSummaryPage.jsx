@@ -24,9 +24,10 @@ function Checkout() {
 
   const handleSubmit = (data) => {
     const payload = {
-      country: data.address.country,
+      city: `${data.address.city}, ${data.address.country}`,
       phone: data.phoneNumber,
-      address: `${data.address.postalAddress}, ${data.address.city}`,
+      address: data.address.postalAddress,
+      postal_code: data.address.postalCode,
     };
     makeOrder(payload);
   };
