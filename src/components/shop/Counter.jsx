@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Counter({ className, setCount, count }) {
+function Counter({ className, setCount, count, maxStock }) {
   const increment = () => setCount((prevCount) => prevCount + 1);
   const decrement = () =>
     setCount((prevCount) => (prevCount > 1 ? prevCount - 1 : prevCount));
@@ -22,6 +22,7 @@ function Counter({ className, setCount, count }) {
         {count}
       </p>
       <button
+        disabled={maxStock === count || count > maxStock}
         type="button"
         data-action="increment"
         className="cursor-pointer outline-none w-20 border-y border-r border-r-[#EAECF0] border-y-[#EAECF0] rounded-r-md border-l"

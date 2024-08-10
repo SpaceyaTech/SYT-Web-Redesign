@@ -273,6 +273,7 @@ export default function SingleItemPage() {
                 className="h-12 sm:h-14 w-32"
                 count={count}
                 setCount={setCount}
+                maxStock={selectedVariant?.stock}
               />
 
               <button
