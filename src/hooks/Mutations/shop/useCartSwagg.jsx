@@ -9,7 +9,7 @@ const useAddSwagToCart = () => {
 
   return useMutation({
     mutationFn: async (cartItems) => {
-      const response = await publicAxios.post("/cart/swaggs/", cartItems, {
+      const response = await publicAxios.post("/cart-items/", cartItems, {
         headers: {
           "Content-Type": "application/json",
           // Authorization: `Bearer ${auth?.access}`,
