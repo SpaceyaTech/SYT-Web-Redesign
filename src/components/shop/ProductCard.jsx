@@ -41,7 +41,9 @@ function ProductCard({ product }) {
           {totalStock > 0 ? (
             <p className="text-green-dark font-medium text-sm px-1">
               <span> {totalStock}</span>
-              <span className="ml-2">items left</span>
+              <span className="ml-2">
+                {totalStock === 1 ? "item" : "items"} left
+              </span>
             </p>
           ) : (
             <div className=" text-red-800 p-1 rounded-lg bg-red-800/20 font-bold text-sm">
