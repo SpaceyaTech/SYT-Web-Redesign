@@ -78,6 +78,11 @@ export default function SingleItemPage() {
   }, [selectedColor, variants]);
 
   const addToLocalStorage = () => {
+    // find an attribute with an image URL
+    const attributeWithImages = singleSwag.attributes.find(
+      (attribute) => attribute.images.length > 0
+    );
+
     const newData = {
       id: singleSwag.id,
       name: singleSwag.name,
@@ -87,7 +92,10 @@ export default function SingleItemPage() {
       price: singleSwag.price * count,
       orderUnits: count,
       slug: singleSwag.slug,
-      image: selectedVariant.images[0].image,
+      image:
+        selectedVariant.images.length > 0
+          ? selectedVariant.images[0].image
+          : attributeWithImages.images.map((img) => img.image)[0],
     };
 
     let swagList = [];
