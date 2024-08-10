@@ -1,5 +1,5 @@
-import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 import ProductCard from "../../../components/shop/ProductCard";
+import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 
 function PopularItemsSection() {
   const { data: products, isSuccess, isError, isPending } = useSwagList();
