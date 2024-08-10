@@ -38,7 +38,13 @@ export default function SingleItemPage() {
   const [selectedImage, setSelectedImage] = useState(1);
 
   // const { data: singleOrder } = useSingleOrder(params.id);
-  const { data: singleSwag, isSuccess, refetch } = useSingleSwag(params.id);
+  const {
+    data: singleSwag,
+    isSuccess,
+    isPending,
+    isError,
+    refetch,
+  } = useSingleSwag(params.id);
   // const { mutate: addItemsToCart } = useAddSwagToCart();
 
   const sizes = {
@@ -133,7 +139,7 @@ export default function SingleItemPage() {
         siteName="SpaceYaTech Shop"
       />
       <ItemHeader show={() => setOpen((prev) => !prev)} />
-      {isSuccess ? (
+      {isSuccess && (
         <div className="px-8 sm:px-10 m-auto mb-10 max-w-screen-2xl flex flex-col md:flex-row justify-between w-full space-y-4 md:space-x-28 text-[#323433]">
           <div className="md:pb-14 md:w-1/2 space-y-6">
             <div className="flex overflow-x-auto">
@@ -270,8 +276,28 @@ export default function SingleItemPage() {
             </p>
           </div>
         </div>
-      ) : (
-        <p>Error Fetching Item</p>
+      )}
+      {isPending && (
+        <div className="flex justify-center items-center my-8">
+          <div className="text-base font-normal leading-5 tracking-[0.25px]">
+            <p className="font-bold text-gray-900">Loading product... </p>
+            <div className="mt-6 text-center">
+              <div
+                className="text-surface ms-auto inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-[#d7f4eb] border-e-[#009370] align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                role="status"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      {isError && (
+        <div className="flex justify-center items-center my-8">
+          <div className="text-base font-normal leading-5 tracking-[0.25px]">
+            <p className="font-bold text-red-400">
+              Error fetching product. Try again later
+            </p>
+          </div>
+        </div>
       )}
 
       {/* Cart Drawer */}
