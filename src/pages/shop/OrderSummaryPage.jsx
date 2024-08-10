@@ -27,6 +27,10 @@ function Checkout() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const clearLocalStorageCart = () => {
+    localStorage.setItem("swagList", []);
+  };
+
   const handleSubmit = (data) => {
     const payload = {
       city: `${data.address.city}, ${data.address.country}`,
@@ -39,6 +43,9 @@ function Checkout() {
     if (successfulOrder) {
       // clear session cart
       clearCart();
+
+      // delete local storage cart
+      clearLocalStorageCart();
     }
   };
 
