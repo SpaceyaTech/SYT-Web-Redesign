@@ -36,7 +36,7 @@ const useDeleteSwag = () => {
 
   return useMutation({
     mutationFn: async (id) => {
-      const response = await publicAxios.delete(`/cart/swaggs/${id}/`, {
+      const response = await publicAxios.delete(`/cart-items/${id}/`, {
         headers: {
           "Content-Type": "application/json",
           // Authorization: `Bearer ${auth?.access}`,
