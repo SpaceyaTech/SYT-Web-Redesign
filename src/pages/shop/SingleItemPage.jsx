@@ -84,7 +84,7 @@ export default function SingleItemPage() {
     );
 
     const newData = {
-      id: singleSwag.id,
+      id: crypto.randomUUID(),
       name: singleSwag.name,
       category: singleSwag.category,
       size: selectedSize.name,
