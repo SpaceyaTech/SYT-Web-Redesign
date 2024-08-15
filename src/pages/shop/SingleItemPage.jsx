@@ -9,7 +9,7 @@ import SmallSample1 from "../../assets/images/shop-page/small-sample-colored.png
 import SmallSample2 from "../../assets/images/shop-page/small-sample-greyscale.png";
 import SeoMetadata from "../../components/SeoMetadata";
 import CartDrawer from "../../components/shop/CartDrawer";
-import Counter from "../../components/shop/Counter";
+// import Counter from "../../components/shop/Counter";
 import { useAddSwagToCart } from "../../hooks/Mutations/shop/useCartSwagg";
 import { useSingleSwag } from "../../hooks/Queries/shop/useSwagList";
 import formatPrice from "../../utilities/formatPrice";
