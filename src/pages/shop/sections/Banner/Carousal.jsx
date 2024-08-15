@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
-import formatPrice from "@/utilities/formatPrice";
+import formatPrice from "../../../../utilities/formatPrice";
 
 function Carousel() {
   const [width, setWidth] = useState(0);
