@@ -22,7 +22,7 @@ function BlogBody({ id, categoryId, blogBody }) {
         <div className="container text-[13px] md:text-base font-normal text-[#323433]">
           <div
             ref={BodyRef}
-            className="prose-lg prose prose-a:no-underline  prose-li:marker:text-[#333] prose-li:marker:text-sm prose-a:text-[#009975]"
+            className="prose-lg prose prose-a:no-underline prose-li:marker:text-[#333] prose-li:marker:text-sm prose-a:text-[#009975] first-letter:font-bold first-letter:text-5xl first-letter:uppercase"
           />
           {/* <Advert /> */}
         </div>
