@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [million.vite({ auto: true }), react()],
     test: {
+      environment: "jsdom",
       include: ["**/*.test.js"],
       exclude: [
         "**/node_modules/**",
