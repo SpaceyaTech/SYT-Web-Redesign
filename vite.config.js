@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
     plugins: [million.vite({ auto: true }), react()],
     test: {
       environment: "jsdom",
-      include: ["**/*.test.js", "**/*.test.jsx"],
+      include: ["**/*.test.[jt]s?(x)"],
       exclude: [
         "**/node_modules/**",
         "**/dist/**",
