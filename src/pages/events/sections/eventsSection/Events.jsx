@@ -1,14 +1,7 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable camelcase */
-/* eslint-disable indent */
-/* eslint-disable linebreak-style */
 import PropTypes from "prop-types";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import { Link } from "react-router-dom";
-import {
-  EventCard,
-  LocationTag,
-} from "../../../community/sections/eventsPreview/SingleEvents/sections";
+import { EventCard } from "../../../community/sections/eventsPreview/SingleEvents/sections";
 // import {
 //   lightEventCard,
 //   darkEventCard,
@@ -22,12 +15,10 @@ import {
 //   globe,
 // } from "../../../../../assets/images/icons";
 
-
 function Events({ events }) {
   // const formattedDate = format(parseISO(start_date), "do, MMMM");
   // import formatEventDates from "../../../../../utilities/formatEventDate";
   // import { LazyLoadImage } from "react-lazy-load-image-component";
-
 
   return (
     <div
@@ -40,7 +31,7 @@ function Events({ events }) {
     >
       {events &&
         Array.isArray(events) &&
-        events.map((event) => {
+        events.map((event) => (
           // const date = formatEventDates(
           //   start_date,
           //   start_time,
@@ -54,96 +45,94 @@ function Events({ events }) {
           // date.setHours(hours);
           // date.setMinutes(minutes);
 
-          return (
-            <EventCard key={event.id} event={event} />
-            // <Link
-            //   key={id}
-            //   to={`/events/${id}`}
-            //   className="cursor-pointer w-4/5 sm:w-96 h-full border border-red-500"
-            // >
-            //   <div className="relative">
-            //     <LazyLoadImage
-            //       className=" rounded-t-lg size-full object-cover"
-            //       src={
-            //         mode.toLowerCase() === "physical"
-            //           ? lightEventCard
-            //           : darkEventCard
-            //       }
-            //       alt="Location Icon"
-            //     />
-            //     <div className="absolute bottom-0 p-6 space-y-4">
-            //       <LocationTag
-            //         isVirtual={mode.toLowerCase() !== "physical"}
-            //       />
-            //       <p
-            //         className={`text-2xl font-medium ${
-            //           mode.toLowerCase() === "physical"
-            //             ? "text-green-dark"
-            //             : "text-white"
-            //         }`}
-            //       >
-            //         {name}
-            //       </p>
-            //     </div>
-            //   </div>
-            //   <div className="p-5 w-full bg-white rounded-b-lg space-y-4">
-            //     <div className="flex flex-between">
-            //       <div className="space-y-4">
-            //         <p className="flex gap-2 items-center">
-            //           <LazyLoadImage
-            //             src={calendar}
-            //             alt="calendar icon"
-            //             className="size-5"
-            //           />
-            //           {format(parseISO(start_date), "do, MMMM")}
-            //         </p>
-            //         <p className="flex gap-2 items-center">
-            //           <LazyLoadImage
-            //             src={globe}
-            //             alt="globe icon"
-            //             className="size-5"
-            //           />
-            //           {mode.toLowerCase() === "physical" ? (
-            //             <p className="line-clamp-1">{location}</p>
-            //           ) : (
-            //             <a
-            //               href={location}
-            //               target="_blank"
-            //               rel="noreferrer noopener"
-            //               className="text-primary"
-            //             >
-            //               Online
-            //             </a>
-            //           )}
-            //         </p>
-            //       </div>
-            //       <div className="space-y-4">
-            //         <p className="flex gap-2 items-center justify-end">
-            //           <LazyLoadImage
-            //             src={clock}
-            //             alt="clock icon"
-            //             className="size-5"
-            //           />
-            //           {format(date, "HHmm") + " HRS"}
-            //         </p>
-            //         <p className="flex gap-2 items-center justify-end">
-            //           <LazyLoadImage
-            //             src={tag}
-            //             alt="tag icon"
-            //             className="size-5"
-            //           />
-            //           Development
-            //         </p>
-            //       </div>
-            //     </div>
+          <EventCard key={event.id} event={event} />
+          // <Link
+          //   key={id}
+          //   to={`/events/${id}`}
+          //   className="cursor-pointer w-4/5 sm:w-96 h-full border border-red-500"
+          // >
+          //   <div className="relative">
+          //     <LazyLoadImage
+          //       className=" rounded-t-lg size-full object-cover"
+          //       src={
+          //         mode.toLowerCase() === "physical"
+          //           ? lightEventCard
+          //           : darkEventCard
+          //       }
+          //       alt="Location Icon"
+          //     />
+          //     <div className="absolute bottom-0 p-6 space-y-4">
+          //       <LocationTag
+          //         isVirtual={mode.toLowerCase() !== "physical"}
+          //       />
+          //       <p
+          //         className={`text-2xl font-medium ${
+          //           mode.toLowerCase() === "physical"
+          //             ? "text-green-dark"
+          //             : "text-white"
+          //         }`}
+          //       >
+          //         {name}
+          //       </p>
+          //     </div>
+          //   </div>
+          //   <div className="p-5 w-full bg-white rounded-b-lg space-y-4">
+          //     <div className="flex flex-between">
+          //       <div className="space-y-4">
+          //         <p className="flex gap-2 items-center">
+          //           <LazyLoadImage
+          //             src={calendar}
+          //             alt="calendar icon"
+          //             className="size-5"
+          //           />
+          //           {format(parseISO(start_date), "do, MMMM")}
+          //         </p>
+          //         <p className="flex gap-2 items-center">
+          //           <LazyLoadImage
+          //             src={globe}
+          //             alt="globe icon"
+          //             className="size-5"
+          //           />
+          //           {mode.toLowerCase() === "physical" ? (
+          //             <p className="line-clamp-1">{location}</p>
+          //           ) : (
+          //             <a
+          //               href={location}
+          //               target="_blank"
+          //               rel="noreferrer noopener"
+          //               className="text-primary"
+          //             >
+          //               Online
+          //             </a>
+          //           )}
+          //         </p>
+          //       </div>
+          //       <div className="space-y-4">
+          //         <p className="flex gap-2 items-center justify-end">
+          //           <LazyLoadImage
+          //             src={clock}
+          //             alt="clock icon"
+          //             className="size-5"
+          //           />
+          //           {format(date, "HHmm") + " HRS"}
+          //         </p>
+          //         <p className="flex gap-2 items-center justify-end">
+          //           <LazyLoadImage
+          //             src={tag}
+          //             alt="tag icon"
+          //             className="size-5"
+          //           />
+          //           Development
+          //         </p>
+          //       </div>
+          //     </div>
 
-            //     <button className=" font-semibold text-green-dark hover:text-white bg-transparent border border-green-dark hover:border-none hover:bg-gradient-to-b to-primary from-green-dark py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-full text-center">
-            //       Learn More
-            //     </button>
-            //   </div>
-            // </Link>
-          );
-        })}
+          //     <button className=" font-semibold text-green-dark hover:text-white bg-transparent border border-green-dark hover:border-none hover:bg-gradient-to-b to-primary from-green-dark py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-full text-center">
+          //       Learn More
+          //     </button>
+          //   </div>
+          // </Link>
+        ))}
     </div>
   );
 }
@@ -151,5 +140,5 @@ function Events({ events }) {
 export default Events;
 
 Events.propTypes = {
-  events: PropTypes.array,
+  events: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };

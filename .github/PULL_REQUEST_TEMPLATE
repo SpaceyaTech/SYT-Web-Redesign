@@ -1,20 +1,28 @@
 [Have you read the contributing guidelines ?](https://github.com/SpaceyaTech/SYT-Web-Redesign/blob/Dev/docs/CONTRIBUTING.md)
 
-# What is the purpose of your *pull request*?
+# What is the purpose of your _pull request_?
 
- - [ ] Bug fix
- - [ ] New feature
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Documentation
 
 # Proposed changes
-
 
 # Warning
 
 Please read these points carefully and answer honestly with an `X`
-into all the boxes. Example : [X] 
+into all the boxes. Example : [X]
 
-Before submitting a *pull request* make sure you have:
+Before submitting a _pull request_ make sure you have:
 
- - [ ] Read the guidelines for contributing.
- - [ ] Wrote some tests.
- - [ ] Respected the linting guidelines.
+- [ ] Read the guidelines for contributing.
+- [ ] Wrote some tests.
+- [ ] Respected the linting guidelines (read the guide below for help).
+
+## How to Check and Fix Linting Issues
+
+Run `npm run validate`. This command will run prettier and eslint checks to ensure linting guidelines are respected.
+
+- If the command exits with code 0 (build is successful), there are no linting issues.
+
+- If the command exits with a code other than 0, scroll up the command output and look for identified linting issues. Fix them and revalidate to check if the issues have been resolved by re-running the command.

@@ -1,10 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import PropTypes from "prop-types";
 import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-import { questions } from "../pages/landingPage/data";
-
-function FAQ() {
+function FAQ({ questions = [] }) {
   const [activeQuestion, setActiveQuestion] = useState(null);
 
   const toggleQuestion = (index) => {
@@ -12,18 +10,16 @@ function FAQ() {
   };
 
   return (
-    <div className="flex-col justify-center items-center gap-4 w-full max-w-6xl">
+    <div className="flex-col justify-center items-center gap-4 w-full max-w-6xl mx-auto">
       {questions.map((question, index) => (
         <div
           key={question.id}
-          className={`rounded-xl bg-white ${
-            activeQuestion === index && "mb-4"
-          }`}
+          className="rounded-xl bg-white border shadow-sm mb-4 p-4"
         >
           <h2 className="mb-4 font-semibold" id={`flush-heading${index + 1}`}>
             <button
               aria-label={question.question}
-              className={`group relative flex w-full items-center rounded-none border-0 py-4 px-5 text-left text-base transition ${
+              className={`group relative flex w-full items-center rounded-none border-0   text-left text-base transition ${
                 activeQuestion === index
                   ? ""
                   : "overflow-anchor:none hover:z-[2] focus:z-[3]"
@@ -63,7 +59,7 @@ function FAQ() {
             aria-labelledby={`flush-heading${index + 1}`}
             data-te-parent="#accordionFlushExample"
           >
-            <div className="py-4 px-5">{question.answer}</div>
+            <div className=" ">{question.answer}</div>
           </div>
         </div>
       ))}
@@ -72,3 +68,16 @@ function FAQ() {
 }
 
 export default FAQ;
+FAQ.propTypes = {
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      question: PropTypes.string,
+      answer: PropTypes.string,
+    })
+  ),
+};
+
+FAQ.defaultProps = {
+  questions: [],
+};

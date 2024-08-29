@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/jsx-no-useless-fragment */
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
   BtnBold,
@@ -38,12 +40,6 @@ function AddEventPage() {
     clearStatus: clearStatusPostEvent,
   } = usePostEvents();
 
-  const handleEventAboutChange = (e) => {
-    setEditorState(e.target.value);
-    setValue("about", e.target.value);
-    clearErrors("about");
-  };
-
   const handleUploadImageClick = (e, id) => {
     if ((e.type === "keydown" && e.key === "Enter") || e.type === "click")
       document.getElementById(id).click();
@@ -68,14 +64,21 @@ function AddEventPage() {
     context: { newCategory },
   });
 
+  const handleEventAboutChange = (e) => {
+    setEditorState(e.target.value);
+    setValue("about", e.target.value);
+    clearErrors("about");
+  };
+
   const onSubmit = (data) => {
+    // eslint-disable-next-line no-param-reassign
     data.poster = poster;
 
     postEvent({ ...data });
   };
 
   useEffect(() => {
-    selectedEventCategory === "" ? setNewCategory(true) : setNewCategory(false);
+    setNewCategory(selectedEventCategory === "");
   }, [selectedEventCategory]);
 
   useEffect(() => {
@@ -89,6 +92,7 @@ function AddEventPage() {
       setEditorState("");
       setPoster("");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [statusPostEvent]);
 
   return (
@@ -111,6 +115,12 @@ function AddEventPage() {
               clearStatusPostEvent();
               postEvent(null);
             }}
+            onKeyDown={() => {
+              clearStatusPostEvent();
+              postEvent(null);
+            }}
+            role="button"
+            tabIndex="0"
           >
             <svg
               className="fill-current h-6 w-6 text-green-500"
@@ -138,6 +148,14 @@ function AddEventPage() {
               clearErrorPostEvent();
               clearStatusPostEvent();
             }}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                clearErrorPostEvent();
+                clearStatusPostEvent();
+              }
+            }}
+            role="button"
+            tabIndex="0"
           >
             <svg
               className="fill-current h-6 w-6 text-red-500"
@@ -171,6 +189,14 @@ function AddEventPage() {
               clearErrorPostEvent();
               clearStatusPostEvent();
             }}
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                clearErrorPostEvent();
+                clearStatusPostEvent();
+              }
+            }}
+            role="button"
+            tabIndex="0"
           >
             <svg
               className="fill-current h-6 w-6 text-red-500"
@@ -481,6 +507,7 @@ function AddEventPage() {
                       )}
                     </div>
                   </div>
+                  {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
                   <div
                     className="w-full pl-4 py-2  mt-4 border-dashed border-2 border-gray-300  rounded-tl rounded-tr justify-start items-center inline-flex"
                     onClick={(e) => handleUploadImageClick(e, "poster")}

@@ -1,5 +1,6 @@
 // https://apis.spaceyatech.com/api/orders//
 import { useQuery } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 import publicAxios from "../../../api/publicAxios";
 
 const fetchOrders = async () => {
@@ -7,7 +8,7 @@ const fetchOrders = async () => {
     const response = await publicAxios.get("/orders/");
     return response.data;
   } catch (error) {
-    console.error("Error fetching order summary: ", error);
+    toast.error("Error fetching order summary");
     throw error;
   }
 };
@@ -34,7 +35,7 @@ const fetchSingleOrder = async (id) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error fetching order item: ", error);
+    toast.error("Error fetching order item");
     if (error.response.status === 401) {
       localStorage.removeItem("auth");
     }

@@ -1,35 +1,36 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 // Lazy FallbackLoader components
 import {
   AboutUs,
-  CommunityPage,
-  LandingPage,
-  Layout,
-  Products,
-  Blog2,
+  AdminLayout,
+  AllProducts,
+  Blog,
+  Blogs,
   CategoriesProducts,
   Checkout,
+  CommunityPage,
   Error400,
   Error403,
   Error404,
   Error500,
+  EventsPage,
   ForgotPassword,
   GalleryPage,
   Homepage,
-  IndividualChapter,
+  LandingPage,
+  Layout,
   LogIn,
   ProductDisplay,
+  Products,
   ResetPassword,
   Resources,
+  ShopDashboard,
+  ShopSales,
   SignUp,
   SingleEvent,
-  Blogs,
-  EventsPage,
-  AdminLayout,
-  ShopDashboard,
-  ShopSales
+  InventoryReport,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -90,7 +91,7 @@ const router = createBrowserRouter([
         path: "/blogs/:titleSlug",
         element: (
           <Suspense fallback={<FallbackLoader />}>
-            <Blog2 />
+            <Blog />
           </Suspense>
         ),
       },
@@ -111,18 +112,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/chapter/:id",
-        element: (
-          <Suspense fallback={<FallbackLoader />}>
-            <IndividualChapter />
-          </Suspense>
-        ),
-      },
-      {
         path: "/shop",
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Homepage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/shop/items",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <AllProducts />
           </Suspense>
         ),
       },
@@ -209,6 +210,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <ShopSales />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/admin/shop/inventory",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <InventoryReport />
           </Suspense>
         ),
       },
