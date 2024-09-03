@@ -202,21 +202,6 @@ function ChartComponent({
     { name: "Page b", uv: 39, amt: 40 },
   ];
   return (
-<<<<<<< HEAD
-    <>
-      <div className='flex  mt-5 '>
-        <div className='flex w-full  p-[12px] '>
-          <div className='flex w-full border-r-[1px] border-[#CBCDCC] pr-[12px]'>
-            <div className='grid w-full justify-start font-[600]'>
-              <span className=' text-[16px]'>{title}</span>
-              <span className='text-[36px] -mt-1'>{number}</span>
-              <div className='grid w-full  items-center pt-[10px]'>
-                <div className='flex items-center'>
-                  <span className='text-[#027A48]'><ArrowUp /></span>
-                  <span className='text-[#027A48] text-[14px] font-[500]'>{persontage}</span>
-                </div>
-                <span className=' text-[#4C4D4D] text-center w-auto text-[14px] font-[500]'>vs last quater</span>
-=======
     <div className="flex  mt-5 ">
       <div className="flex w-full  p-[12px] ">
         <div className="flex w-full border-r-[1px] border-[#CBCDCC] pr-[12px]">
@@ -231,7 +216,6 @@ function ChartComponent({
                 <span className="text-[#027A48] text-[14px] font-[500]">
                   {persontage}
                 </span>
->>>>>>> 2b09e140e1794032363f4b50c66a3b56fbf78506
               </div>
               <span className=" text-[#4C4D4D] text-center w-auto text-[14px] font-[500]">
                 vs last quater
