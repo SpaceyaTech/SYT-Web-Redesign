@@ -21,7 +21,7 @@ function ProductCard({ product }) {
   return (
     <div className="border rounded-lg p-2.5 pr-1.5 shadow-sm group hover:bg-green-dark/10 bg-white flex flex-col gap-4 ">
       <Link
-        to={`/shop/item/${product.id}`}
+        to={`/shop/item/${product.slug}`}
         className="aspect-h-1 aspect-w-1 w-full bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-96"
       >
         <LazyLoadImage
@@ -31,7 +31,7 @@ function ProductCard({ product }) {
         />
       </Link>
       <Link
-        to={`/shop/item/${product.id}`}
+        to={`/shop/item/${product.slug}`}
         className="flex justify-between pr-1"
       >
         <h3 className="text-md uppercase font-medium text-gray-600">
@@ -41,7 +41,9 @@ function ProductCard({ product }) {
           {totalStock > 0 ? (
             <p className="text-green-dark font-medium text-sm px-1">
               <span> {totalStock}</span>
-              <span className="ml-2">items left</span>
+              <span className="ml-2">
+                {totalStock === 1 ? "item" : "items"} left
+              </span>
             </p>
           ) : (
             <div className=" text-red-800 p-1 rounded-lg bg-red-800/20 font-bold text-sm">

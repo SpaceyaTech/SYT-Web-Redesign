@@ -5,7 +5,9 @@
 // import { Fragment, useState } from "react";
 // import { useSwagList } from "../../../hooks/Queries/shop/useSwagList";
 import PropTypes from "prop-types";
+import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import CartDrawer from "../../../components/shop/CartDrawer";
 import CartIcon from "../../../components/shop/CartIcon";
 import SectionWrapper from "../../../components/shop/SectionWrapper";
 
@@ -13,6 +15,7 @@ import SectionWrapper from "../../../components/shop/SectionWrapper";
 function ItemHeader({ show }) {
   const { pathname } = useLocation();
   const { id } = useParams();
+  const [open, setOpen] = useState(false);
 
   const pathnames = pathname
     .split("/")
@@ -66,7 +69,14 @@ function ItemHeader({ show }) {
         </nav>
       </SectionWrapper>
 
-      <CartIcon />
+      <button
+        type="button"
+        aria-label="open cart"
+        onClick={() => setOpen(true)}
+      >
+        <CartIcon />
+      </button>
+      <CartDrawer open={open} setOpen={setOpen} />
 
       {/* Search box */}
       {/* <div className="py-10 flex space-x-4 justify-end w-full sm:w-1/2">

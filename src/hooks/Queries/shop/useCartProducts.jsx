@@ -8,7 +8,7 @@ const fetchProductsInCart = async () => {
   // const { access } = authObject;
 
   try {
-    const response = await publicAxios.get("/cart/swaggs/", {
+    const response = await publicAxios.get("/cart-items/", {
       headers: {
         "Content-Type": "application/json",
         // Authorization: `Bearer ${access}`,

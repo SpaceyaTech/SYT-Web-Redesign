@@ -1,4 +1,6 @@
+import { useState } from "react";
 import SeoMetadata from "../../components/SeoMetadata";
+import CartDrawer from "../../components/shop/CartDrawer";
 import CartIcon from "../../components/shop/CartIcon";
 import Banner from "./sections/Banner/index";
 import BrowseProducts from "./sections/BrowseProducts";
@@ -7,6 +9,8 @@ import FilterSection from "./sections/FilterSection";
 import NewProducts from "./sections/NewArrivals";
 
 function Homepage() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <SeoMetadata
@@ -20,7 +24,13 @@ function Homepage() {
       />
       <div className="w-full bg-[#f3f4f5]">
         <div className="hidden md:flex justify-end">
-          <CartIcon />
+          <button
+            type="button"
+            aria-label="open cart"
+            onClick={() => setOpen(true)}
+          >
+            <CartIcon />
+          </button>
         </div>
         <Banner />
         <FilterSection />
@@ -28,6 +38,7 @@ function Homepage() {
         <BrowseProducts />
         <FaqSection />
       </div>
+      <CartDrawer open={open} setOpen={setOpen} />
     </>
   );
 }

@@ -5,7 +5,10 @@ import { FaTrash } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Link } from "react-router-dom";
-import { useDeleteSwag } from "../../hooks/Mutations/shop/useCartSwagg";
+import {
+  useDeleteSwag,
+  useDeleteAllSwag,
+} from "../../hooks/Mutations/shop/useCartSwagg";
 import useMakeOrder from "../../hooks/Mutations/shop/useMakeOrder";
 import useProductsInCart from "../../hooks/Queries/shop/useCartProducts";
 import PaymentMethd from "./PaymentMethd";
@@ -20,15 +23,30 @@ function Checkout() {
   } = useMakeOrder();
   const { mutate: deleteSwag } = useDeleteSwag(); // Use deleteSwag
 
+  const { mutate: clearCart } = useDeleteAllSwag();
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const clearLocalStorageCart = () => {
+    localStorage.setItem("swagList", []);
+  };
 
   const handleSubmit = (data) => {
     const payload = {
-      country: data.address.country,
+      city: `${data.address.city}, ${data.address.country}`,
       phone: data.phoneNumber,
-      address: `${data.address.postalAddress}, ${data.address.city}`,
+      address: data.address.postalAddress,
+      postal_code: data.address.postalCode,
     };
     makeOrder(payload);
+
+    if (successfulOrder) {
+      // clear session cart
+      clearCart();
+
+      // delete local storage cart
+      clearLocalStorageCart();
+    }
   };
 
   const closeModal = () => {

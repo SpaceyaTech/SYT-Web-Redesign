@@ -9,7 +9,7 @@ const useAddSwagToCart = () => {
 
   return useMutation({
     mutationFn: async (cartItems) => {
-      const response = await publicAxios.post("/cart/swaggs/", cartItems, {
+      const response = await publicAxios.post("/cart-items/", cartItems, {
         headers: {
           "Content-Type": "application/json",
           // Authorization: `Bearer ${auth?.access}`,
@@ -36,7 +36,7 @@ const useDeleteSwag = () => {
 
   return useMutation({
     mutationFn: async (id) => {
-      const response = await publicAxios.delete(`/cart/swaggs/${id}/`, {
+      const response = await publicAxios.delete(`/cart-items/${id}/`, {
         headers: {
           "Content-Type": "application/json",
           // Authorization: `Bearer ${auth?.access}`,
@@ -58,4 +58,32 @@ const useDeleteSwag = () => {
   });
 };
 
-export { useAddSwagToCart, useDeleteSwag };
+const useDeleteAllSwag = () => {
+  const { logout } = useAuth();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async () => {
+      const response = await publicAxios.delete("/cart-items/clear_cart/", {
+        headers: {
+          "Content-Type": "application/json",
+          // Authorization: `Bearer ${auth?.access}`,
+        },
+      });
+
+      return response.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["productsInCart"] });
+    },
+    onError: (error) => {
+      // eslint-disable-next-line no-console
+      console.error("Unable to delete all cart items");
+      if (error.response.status === 401) {
+        logout();
+      }
+    },
+  });
+};
+
+export { useAddSwagToCart, useDeleteSwag, useDeleteAllSwag };
