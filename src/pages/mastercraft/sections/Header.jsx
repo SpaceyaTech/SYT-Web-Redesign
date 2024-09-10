@@ -53,7 +53,7 @@ function Header() {
             />
           </div>
 
-          <div className="flex items-center flex-col md:flex-row gap-2 md:gap-6">
+          <div className="flex md:items-center flex-col md:flex-row gap-2 md:gap-6 py-6 md:py-0">
             <button
               type="button"
               className="text-white bg-green-dark rounded px-6 py-2 text-sm font-semibold transition-all border border-green-dark ease-in duration-500 hover:bg-transparent hover:text-green-dark"
