@@ -35,6 +35,7 @@ module.exports = {
         spaceGrotesk: ["Space Grotesk", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         sora: ["Sora", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
       },
       backgroundImage: {
         landingPageBg: "url('/landing-bg.png')",
@@ -53,6 +54,7 @@ module.exports = {
         grey: {
           neutral: "#656767",
           light: "#F9FAFB",
+          dark: "#263238",
         },
         error: {
           bg: "#FEF3F2",
@@ -62,6 +64,9 @@ module.exports = {
       maxWidth: {
         1440: "1440px",
         1216: "1216px",
+      },
+      listStyleImage: {
+        checkmark: "url('/check.svg')",
       },
     },
   },

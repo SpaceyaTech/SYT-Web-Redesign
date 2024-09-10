@@ -7,6 +7,7 @@ import briefcase from "./briefcase.svg";
 // import closeIcon from "./close-icon.svg";
 // import greyLinkedin from "./linkedin-grey.svg";
 import calendar from "./calendar.svg";
+import check from "./check.svg";
 import dotpoints from "./dotpoints.svg";
 import folder from "./folder.svg";
 import sytLogoGreen from "./logo-green-bg.svg";
@@ -22,6 +23,7 @@ export {
   award,
   briefcase,
   calendar,
+  check,
   dotpoints,
   folder,
   sytLogoGreen,
