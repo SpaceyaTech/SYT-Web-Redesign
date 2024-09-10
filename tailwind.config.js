@@ -54,6 +54,10 @@ module.exports = {
           neutral: "#656767",
           light: "#F9FAFB",
         },
+        error: {
+          bg: "#FEF3F2",
+          text: "#B42318",
+        },
       },
       maxWidth: {
         1440: "1440px",

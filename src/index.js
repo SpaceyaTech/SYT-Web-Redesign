@@ -60,6 +60,8 @@ const InventoryReport = lazy(
   () => import("./pages/admin/shop/inventory/InventoryReport")
 );
 
+const Mastercraft = lazy(() => import("./pages/mastercraft/Mastercraft"));
+
 export {
   AllProducts,
   AboutUs,
@@ -100,4 +102,5 @@ export {
   ShopSales,
   InventoryReport,
   UpdateEventPage,
+  Mastercraft,
 };

@@ -31,6 +31,7 @@ import {
   SignUp,
   SingleEvent,
   InventoryReport,
+  Mastercraft,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -156,6 +157,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Resources />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/resources/:id",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Mastercraft />
           </Suspense>
         ),
       },
