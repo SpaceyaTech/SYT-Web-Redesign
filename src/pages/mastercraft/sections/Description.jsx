@@ -1,5 +1,8 @@
 import React from "react";
+
+import InstructorsComponent from "./InstructorsComponent";
 import { CurriculumAccordion } from "@/components";
+import { LeadershipData } from "@/pages/aboutUs/data";
 
 function Description() {
   const defaultFocusedLinkRef = React.useRef(null);
@@ -181,6 +184,7 @@ function Description() {
           <h3 className="text-green-header text-xl font-semibold">
             Course Outcome
           </h3>
+
           <ul className="list-image-checkmark list-inside space-y-2">
             <li className="text-grey-dark text-base leading-loose">
               Lorem ipsum dolor sit amet
@@ -195,6 +199,97 @@ function Description() {
               Lorem ipsum dolor sit amet
             </li>
           </ul>
+        </div>
+
+        <hr />
+
+        {/* Instructors */}
+        <div className="space-y-2" id="Instructors">
+          <h3 className="text-green-header text-xl font-semibold">
+            Instructors
+          </h3>
+
+          <p className="text-base text-grey-dark leading-8">
+            Each cohort is taught by a team of UI/UX professionals who are
+            thriving in the industry as professional product designers. The
+            teachers will be supported by mentors who are equally professionals
+            in product design.
+          </p>
+
+          <div className="flex items-center gap-2 md:gap-4 overflow-x-scroll scrollbar-2 w-full md:w-auto pb-6">
+            {LeadershipData.map(({ name, title, image, linkedin, twitter }) => (
+              <InstructorsComponent
+                key={name}
+                name={name}
+                title={title}
+                image={image}
+                linkedin={linkedin}
+                twitter={twitter}
+              />
+            ))}
+          </div>
+        </div>
+
+        <hr />
+
+        {/* Pricing */}
+        <div className="space-y-2" id="Pricing">
+          <h3 className="text-green-header text-xl font-semibold">Pricing</h3>
+
+          <p className="text-base text-grey-dark leading-8">
+            You can’t put a price on a skill that will multiply your
+            productivity 5X. We charge a motivational fee for our instructors
+            and mentors to keep showing up besides passion.
+          </p>
+
+          <div className="bg-white rounded-lg md:rounded-2xl p-4 md:p-6 border space-y-5 w-full md:w-96">
+            <div className="flex items-center border-[0.5px] border-green-header max-w-fit rounded-lg overflow-hidden text-xs leading-8">
+              <div className="px-3.5 py-1 bg-grey-mild flex items-center gap-2">
+                <p className="">Pay today</p>
+
+                <span className="bg-[#D7E9E4] px-2 rounded text-green-800">
+                  Save
+                </span>
+              </div>
+              <div className="border-l border-l-green-header px-3.5 py-1">
+                Pay monthly
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-sm">Pay at once. Save Ksh 2000</p>
+
+              <h5 className="flex items-center gap-4 text-green-dark text-lg">
+                <span className="line-through ">KSH 8000</span>
+                <b className="font-semibold">KSH 6000</b>
+              </h5>
+            </div>
+
+            <button
+              type="button"
+              className="w-full text-white bg-green-dark rounded px-6 py-2 text-sm font-semibold transition-all border border-green-dark ease-in duration-500 hover:bg-transparent hover:text-green-dark"
+            >
+              Enroll
+            </button>
+
+            <ul className="list-image-checkmark list-inside space-y-2 text-sm">
+              <li className="text-grey-dark leading-loose">
+                2 weekly live classes
+              </li>
+              <li className="text-grey-dark leading-loose">
+                Learn industry tools
+              </li>
+              <li className="text-grey-dark leading-loose">
+                Graduate with 2 projects
+              </li>
+              <li className="text-grey-dark leading-loose">
+                1:1 support from mentors
+              </li>
+              <li className="text-grey-dark leading-loose">
+                Job-ready portfolio
+              </li>
+            </ul>
+          </div>
         </div>
 
         <hr />

@@ -54,6 +54,7 @@ module.exports = {
         grey: {
           neutral: "#656767",
           light: "#F9FAFB",
+          mild: "#DEDADA",
           dark: "#263238",
         },
         error: {
