@@ -56,6 +56,7 @@ module.exports = {
           light: "#F9FAFB",
           mild: "#DEDADA",
           dark: "#263238",
+          darker: "#828282",
         },
         error: {
           bg: "#FEF3F2",

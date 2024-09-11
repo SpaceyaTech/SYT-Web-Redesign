@@ -12,7 +12,7 @@ function InstructorsComponent({ name, title, image, linkedin, twitter }) {
     >
       <div className="rounded-xl bg-green-light flex flex-col overflow-hidden size-full">
         <LazyLoadImage
-          className="h-3/5 w-80 object-cover"
+          className="h-3/5 w-full object-cover"
           src={image}
           alt={name}
         />

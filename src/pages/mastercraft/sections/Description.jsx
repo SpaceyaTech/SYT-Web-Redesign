@@ -1,11 +1,13 @@
 import React from "react";
 
 import InstructorsComponent from "./InstructorsComponent";
+import NextCohortSlot from "./NextCohortSlot";
 import { CurriculumAccordion } from "@/components";
 import { LeadershipData } from "@/pages/aboutUs/data";
 
 function Description() {
   const defaultFocusedLinkRef = React.useRef(null);
+  const [subscription, setSubscription] = React.useState("now");
 
   React.useEffect(() => {
     if (defaultFocusedLinkRef.current) {
@@ -20,7 +22,7 @@ function Description() {
     }
   };
   return (
-    <div className="border border-red-500 w-full flex gap-6 md:gap-12">
+    <div className="w-full flex gap-6 md:gap-12">
       <div className="w-1/5 hidden md:block border rounded-xl bg-white p-4 space-y-4 text-base h-fit pb-6">
         <h4 className="uppercase font-semibold">Product Design</h4>
 
@@ -244,16 +246,33 @@ function Description() {
 
           <div className="bg-white rounded-lg md:rounded-2xl p-4 md:p-6 border space-y-5 w-full md:w-96">
             <div className="flex items-center border-[0.5px] border-green-header max-w-fit rounded-lg overflow-hidden text-xs leading-8">
-              <div className="px-3.5 py-1 bg-grey-mild flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setSubscription("now")}
+                className={`px-3.5 py-1 ${subscription === "now" ? "bg-grey-mild" : "bg-transparent"} flex items-center gap-2`}
+              >
                 <p className="">Pay today</p>
 
-                <span className="bg-[#D7E9E4] px-2 rounded text-green-800">
-                  Save
-                </span>
-              </div>
-              <div className="border-l border-l-green-header px-3.5 py-1">
-                Pay monthly
-              </div>
+                {subscription === "now" && (
+                  <span className="bg-[#D7E9E4] px-2 rounded text-green-800">
+                    Save
+                  </span>
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setSubscription("monthly")}
+                className={`border-l border-l-green-header px-3.5 py-1 ${subscription === "monthly" ? "bg-grey-mild" : "bg-transparent"} flex items-center gap-2`}
+              >
+                <p>Pay monthly</p>
+
+                {/* {subscription === "monthly" && (
+                  <span className="bg-[#D7E9E4] px-2 rounded text-green-800">
+                    Save
+                  </span>
+                )} */}
+              </button>
             </div>
 
             <div className="space-y-2">
@@ -289,6 +308,26 @@ function Description() {
                 Job-ready portfolio
               </li>
             </ul>
+          </div>
+        </div>
+
+        <hr />
+
+        {/* Next Cohort */}
+        <div className="space-y-2" id="NextCohort">
+          <h3 className="text-green-header text-xl font-semibold">
+            Next Cohort
+          </h3>
+
+          <p className="text-base text-grey-dark leading-8">
+            Our Product Design Masterclasses tend to fill up pretty quickly
+            which is why we open them months in advance. Live Classes are 90
+            minutes on Thursday and Saturday from 9:00 pm - 10:00pm.
+          </p>
+
+          <div className="flex flex-col gap-2">
+            <NextCohortSlot slots={16} />
+            <NextCohortSlot slots={5} />
           </div>
         </div>
 
