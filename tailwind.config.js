@@ -66,6 +66,7 @@ module.exports = {
       maxWidth: {
         1440: "1440px",
         1216: "1216px",
+        768: "768px",
       },
       listStyleImage: {
         checkmark: "url('/check.svg')",

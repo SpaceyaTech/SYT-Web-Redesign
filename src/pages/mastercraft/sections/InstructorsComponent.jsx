@@ -8,7 +8,7 @@ function InstructorsComponent({ name, title, image, linkedin, twitter }) {
   return (
     <div
       key={crypto.randomUUID()}
-      className="border bg-white p-2 rounded-2xl h-[420px] md:h-[530px] min-w-[calc(100vw-40px)] sm:min-w-80 sm:w-80"
+      className="border bg-white p-2 rounded-2xl h-[420px] md:h-[530px] min-w-[calc(100vw-56px)] sm:min-w-80 sm:w-80"
     >
       <div className="rounded-xl bg-green-light flex flex-col overflow-hidden size-full">
         <LazyLoadImage

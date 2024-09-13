@@ -10,4 +10,5 @@ export { default as Header } from "./Header";
 export { default as FallbackLoader } from "./FallbackLoader";
 export { default as Loader } from "./Loader";
 export { default as PodcastCard } from "./PodcastCard";
+export { default as ResourcesFooter } from "./ResourcesFooter";
 export { default as LandingWrapper } from "./LandingWrapper";

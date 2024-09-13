@@ -56,7 +56,7 @@ function CurriculumAccordion() {
           <h2 id={`flush-heading${index + 1}`}>
             <button
               aria-label={question.title}
-              className={`group relative flex w-full items-center rounded-none text-left text-lg transition ${
+              className={`group relative flex w-full md:items-center rounded-none text-left text-base md:text-lg transition ${
                 activeQuestion === index
                   ? ""
                   : "overflow-anchor:none hover:z-[2] focus:z-[3]"
@@ -80,7 +80,7 @@ function CurriculumAccordion() {
                 Week {question.id}:{" "}
                 <span className="font-semibold">{question.title}</span>
               </h4>
-              <span className="ml-auto h-10 w-10 shrink-0 text-black rounded-md flex items-center justify-center overflow-hidden">
+              <span className="ml-auto h-10 w-10 shrink-0 text-black rounded-md flex md:items-center justify-center overflow-hidden">
                 {activeQuestion === index ? (
                   <FiMinusCircle />
                 ) : (
