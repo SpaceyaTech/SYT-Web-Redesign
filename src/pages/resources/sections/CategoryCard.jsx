@@ -35,7 +35,7 @@ function CategoryCard({ categoryData }) {
         <div className="flex flex-col gap-2">
           <h6 className="text-xs text-gray-500">Hosted by</h6>
 
-          <ul className="list-none space-y-4">
+          <ul className="list-none flex flex-col gap-2">
             {hosts.map(({ id, headshot, name, role }) => (
               <li key={id} className="flex items-center gap-1.5">
                 <LazyLoadImage
