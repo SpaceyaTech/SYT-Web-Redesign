@@ -10,7 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
-import mastercraft from "../assets/images/mastercraft-hero-footer.png";
+import mastercraft from "../assets/images/mastercraft/mastercraft-hero-footer.png";
 import logo from "../assets/images/sytLogo.png";
 
 const socialLinks = [
