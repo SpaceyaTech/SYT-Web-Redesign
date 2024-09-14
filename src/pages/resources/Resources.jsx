@@ -1,5 +1,5 @@
 import SeoMetadata from "../../components/SeoMetadata";
-import { Features, HeroSection } from "./sections";
+import { Features, HeroSection, WhatWeOffer } from "./sections";
 
 function Resources() {
   return (
@@ -15,6 +15,7 @@ function Resources() {
       <main className="bg-[#F5F5F5]">
         <HeroSection />
         <Features />
+        <WhatWeOffer />
       </main>
     </>
   );

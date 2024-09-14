@@ -1,6 +1,3 @@
-import Features from "./Features";
-import HeroSection from "./HeroSection";
-import ResourceCard from "./ResourceCard";
-import ResourcesSection from "./ResourcesSection";
-
-export { HeroSection, Features, ResourceCard, ResourcesSection };
+export { default as Features } from "./Features";
+export { default as HeroSection } from "./HeroSection";
+export { default as WhatWeOffer } from "./WhatWeOffer";

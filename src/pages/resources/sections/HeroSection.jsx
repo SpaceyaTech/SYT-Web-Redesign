@@ -53,8 +53,9 @@ function HeroSection() {
         </div>
 
         <LazyLoadImage
-          className="w-full md:w-1/2 object-contain"
+          className="w-full object-contain"
           src={heroImg}
+          effect="blur"
           alt="hero-image"
         />
       </div>

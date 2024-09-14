@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { award, calendar, dotpoints, folder } from "@/assets/images/icons";
-import workers from "@/assets/images/mastercraft/workers.png";
+import {
+  award,
+  calendar,
+  dotpoints,
+  folder,
+} from "../../../assets/images/icons";
+import workers from "../../../assets/images/mastercraft/workers.png";
 
 function Header() {
   return (
