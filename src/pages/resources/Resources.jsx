@@ -1,7 +1,8 @@
 import { LandingWrapper } from "../../components";
 import SeoMetadata from "../../components/SeoMetadata";
-import { FaqSection, TestimonialSection } from "../landingPage/sections";
+import { TestimonialSection } from "../landingPage/sections";
 import {
+  FAQSection,
   Features,
   HeroSection,
   Stats,
@@ -19,12 +20,12 @@ const components = [
     component: <StudentShowcase />,
   },
   {
-    title: "testimonials",
-    component: <TestimonialSection />,
+    title: "faq",
+    component: <FAQSection />,
   },
   {
-    title: "faq",
-    component: <FaqSection />,
+    title: "testimonials",
+    component: <TestimonialSection />,
   },
 ];
 
