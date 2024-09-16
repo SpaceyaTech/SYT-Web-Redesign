@@ -89,7 +89,10 @@ function EventsSection() {
 
       {isSuccess && (
         <div className="w-full flex items-center flex-col">
-          <div className="flex items-center justify-between mb-6 gap-12">
+          <div
+            data-testId="categories-list"
+            className="flex items-center justify-between mb-6 gap-12"
+          >
             {isSuccess && (
               <div className="flex items-center justify-center space-x-4 w-full md:w-fit mx-auto overflow-auto">
                 {uniqueCategory.map((category) => (
@@ -110,7 +113,10 @@ function EventsSection() {
             )}
           </div>
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8">
+          <div
+            data-testId="events-list"
+            className="w-full grid grid-cols-1 sm:grid-cols-2 place-content-center lg:grid-cols-3 gap-8"
+          >
             {/* {Array.isArray(events) &&
               events.map((event) => <EventCard key={event.id} event={event} />)} */}
             {filteredEvents?.map((event) => (
