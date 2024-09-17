@@ -65,6 +65,8 @@ test.describe("Landing page tests", () => {
     const viewMoreEventsButton = page.locator("data-testid=events-view-more");
     await expect(viewMoreEventsButton).toBeVisible();
     await expect(viewMoreEventsButton).toBeEnabled();
+    await viewMoreEventsButton.click();
+    expect(page.url()).toBe("http://localhost:5173/events");
   });
 
   test("Check 'OUR IMPACT' section title and stats card", async ({ page }) => {
