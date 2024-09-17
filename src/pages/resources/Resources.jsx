@@ -1,55 +1,22 @@
-import { LandingWrapper } from "../../components";
 import SeoMetadata from "../../components/SeoMetadata";
-import { TestimonialSection } from "../landingPage/sections";
-import {
-  FAQSection,
-  Features,
-  HeroSection,
-  Stats,
-  StudentShowcase,
-  WhatWeOffer,
-} from "./sections";
+import { HeroSection, ResourcesSection } from "./sections";
 
-const components = [
-  {
-    title: "our impact",
-    component: <Stats />,
-  },
-  {
-    title: "student showcase",
-    component: <StudentShowcase />,
-  },
-  {
-    title: "faq",
-    component: <FAQSection />,
-  },
-  {
-    title: "testimonials",
-    component: <TestimonialSection />,
-  },
-];
-
+// million-ignore
 function Resources() {
   return (
     <>
       <SeoMetadata
-        title="Mastercraft"
+        title="Resources"
         description="Discover tech tools and resources to boost your productivity."
         type="article"
         url="https://www.spaceyatech.com/resources"
         ogImage="https://apis.spaceyatech.com/media/blog-images/syt.png"
         ogImageAlt="SpaceYaTech logo, social media handles, website URL, email, and more on a muted background."
       />
-      <main className="bg-[#F5F5F5]">
+      <div className="px-4 md:px-10 md:pt-40 md:pb-8 pt-20 pb-6 flex flex-col gap-8 max-w-[1440px] mx-auto">
         <HeroSection />
-        <Features />
-        <WhatWeOffer />
-        {components.map(({ component, title }) => (
-          <LandingWrapper key={title} title={title}>
-            {component}
-          </LandingWrapper>
-        ))}
-      </main>
+        <ResourcesSection />
+      </div>
     </>
   );
 }
