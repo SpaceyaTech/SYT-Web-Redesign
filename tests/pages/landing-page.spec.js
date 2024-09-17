@@ -43,7 +43,7 @@ test.describe("Landing page tests", () => {
 
   test("Check 'WHAT WE DO' section title and content", async ({ page }) => {
     // eslint-disable-next-line quotes
-    const whatWeDoSection = page.locator('text="WHAT WE DO"');
+    const whatWeDoSection = page.locator('text="what we do"');
     await expect(whatWeDoSection).toBeVisible();
 
     const whatWeDoContent = page.locator(".what-we-do-content");
