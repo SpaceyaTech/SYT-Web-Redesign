@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
 
@@ -50,12 +51,4 @@ SeoMetadata.propTypes = {
   ogImage: PropTypes.string,
   ogImageAlt: PropTypes.string,
   siteName: PropTypes.string,
-};
-
-SeoMetadata.defaultProps = {
-  type: "website",
-  ogImage: "https://apis.spaceyatech.com/media/blog-images/syt.png",
-  ogImageAlt:
-    "SpaceYaTech logo, social media handles, website URL, email, and more on a muted background.",
-  siteName: "SpaceYaTech",
 };
