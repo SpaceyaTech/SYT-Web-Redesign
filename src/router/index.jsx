@@ -19,18 +19,21 @@ import {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
+  Mastercraft,
+  OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
   Resources,
+  ResourcesLayout,
   ShopDashboard,
   ShopSales,
   SignUp,
   SingleEvent,
-  InventoryReport,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -151,14 +154,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "/resources",
-        element: (
-          <Suspense fallback={<FallbackLoader />}>
-            <Resources />
-          </Suspense>
-        ),
-      },
+
       {
         path: "/login",
         element: (
@@ -214,6 +210,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/admin/shop/orders",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <OrdersPage />
+          </Suspense>
+        ),
+      },
+      {
         path: "/admin/shop/inventory",
         element: (
           <Suspense fallback={<FallbackLoader />}>
@@ -249,6 +253,28 @@ const router = createBrowserRouter([
       //   path: "/admin/events/update-event",
       //   element: <UpdateEventPage />,
       // },
+    ],
+  },
+  {
+    path: "/resources",
+    element: <ResourcesLayout />,
+    children: [
+      {
+        path: "/resources",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Resources />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/resources/:id",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Mastercraft />
+          </Suspense>
+        ),
+      },
     ],
   },
   {

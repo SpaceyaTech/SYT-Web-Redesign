@@ -118,52 +118,57 @@ function Organizers({ thePrevious, collectedChapter, formComplete }) {
                   </span>
                 )}
               </div>
-              {/* eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/click-events-have-key-events */}
-              <div
-                className="w-full pl-4 py-2 mt-4 border-dashed border-2 border-gray-300 rounded-tl rounded-tr justify-start items-center inline-flex"
-                tabIndex="0"
-                role="button"
-                onClick={() =>
-                  document.getElementById(`organizers.${index}.image`).click()
-                }
-              >
-                <Controller
-                  name={`organizers.${index}.image`}
-                  control={control}
-                  render={({ field }) => (
-                    <>
-                      <input
-                        type="file"
-                        id={`organizers.${index}.image`}
-                        accept=".png,.jpg,.jpeg,.jfif"
-                        style={{ display: "none" }}
-                        onChange={(e) => {
-                          field.onChange(e);
-                          handleImageChange(e, index);
-                        }}
-                      />
-                      <div className="grow shrink basis-0 h-[87px] flex-col justify-center items-center gap-2 inline-flex">
+
+              <Controller
+                name={`organizers.${index}.image`}
+                control={control}
+                render={({ field }) => (
+                  <div
+                    className="w-full pl-4 py-2 mt-4 border-dashed border-2 border-gray-300 rounded-tl rounded-tr justify-start items-center inline-flex"
+                    tabIndex="0"
+                    role="button"
+                    onClick={() =>
+                      document
+                        .getElementById(`organizers.${index}.image`)
+                        .click()
+                    }
+                    onKeyDown={() =>
+                      document
+                        .getElementById(`organizers.${index}.image`)
+                        .click()
+                    }
+                  >
+                    <input
+                      type="file"
+                      id={`organizers.${index}.image`}
+                      accept=".png,.jpg,.jpeg,.jfif"
+                      style={{ display: "none" }}
+                      onChange={(e) => {
+                        field.onChange(e);
+                        handleImageChange(e, index);
+                      }}
+                    />
+                    <div className="grow shrink basis-0 h-[87px] flex-col justify-center items-center gap-2 inline-flex">
+                      <div className="justify-start items-center inline-flex">
+                        <div className="text-zinc-700 text-base font-normal">
+                          Upload Organizer’s Image
+                        </div>
+                      </div>
+                      {fileNames && fileNames[`organizer${index}`] ? (
+                        <div className="mt-4 rounded">
+                          <p>{fileNames[`organizer${index}`]}</p>
+                        </div>
+                      ) : (
                         <div className="justify-start items-center inline-flex">
-                          <div className="text-zinc-700 text-base font-normal">
-                            Upload Organizer’s Image
+                          <div className="text-zinc-700 text-xs font-normal leading-[18px] tracking-tight">
+                            PNG, JPG, JFIF
                           </div>
                         </div>
-                        {fileNames && fileNames[`organizer${index}`] ? (
-                          <div className="mt-4 rounded">
-                            <p>{fileNames[`organizer${index}`]}</p>
-                          </div>
-                        ) : (
-                          <div className="justify-start items-center inline-flex">
-                            <div className="text-zinc-700 text-xs font-normal leading-[18px] tracking-tight">
-                              PNG, JPG, JFIF
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </>
-                  )}
-                />
-              </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              />
               {errors.organizers && (
                 <span className="text-xs text-red-500">
                   {errors.organizers[index]?.image?.message || ""}
