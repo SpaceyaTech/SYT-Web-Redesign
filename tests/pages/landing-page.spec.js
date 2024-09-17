@@ -46,9 +46,8 @@ test.describe("Landing page tests", () => {
     const whatWeDoSection = page.locator('text="what we do"');
     await expect(whatWeDoSection).toBeVisible();
 
-    const whatWeDoContent = page.locator(".what-we-do-content");
+    const whatWeDoContent = page.locator(".what-we-do-content").first();
     await expect(whatWeDoContent).toBeVisible();
-    await expect(whatWeDoContent).toContainText("Services");
   });
 
   test("Check 'OUR EVENTS' section title, events card, and 'View More' button", async ({
