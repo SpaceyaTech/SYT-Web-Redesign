@@ -55,7 +55,7 @@ test.describe("Landing page tests", () => {
     page,
   }) => {
     // eslint-disable-next-line quotes
-    const ourEventsSection = page.locator('text="OUR EVENTS"');
+    const ourEventsSection = page.locator('text="our events"').first();
     await expect(ourEventsSection).toBeVisible();
 
     const eventCards = page.locator(".event-card");
