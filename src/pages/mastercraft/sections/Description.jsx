@@ -2,7 +2,9 @@ import React from "react";
 
 import InstructorsComponent from "./InstructorsComponent";
 import NextCohortSlot from "./NextCohortSlot";
+// eslint-disable-next-line import/extensions, import/no-unresolved
 import { CurriculumAccordion } from "@/components";
+// eslint-disable-next-line import/extensions, import/no-unresolved
 import { LeadershipData } from "@/pages/aboutUs/data";
 
 function Description() {

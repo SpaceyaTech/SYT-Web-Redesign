@@ -19,9 +19,12 @@ import {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
+  Mastercraft,
+  OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
@@ -31,8 +34,6 @@ import {
   ShopSales,
   SignUp,
   SingleEvent,
-  InventoryReport,
-  Mastercraft,
 } from "..";
 import { FallbackLoader } from "../components";
 
@@ -205,6 +206,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <ShopSales />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/admin/shop/orders",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <OrdersPage />
           </Suspense>
         ),
       },

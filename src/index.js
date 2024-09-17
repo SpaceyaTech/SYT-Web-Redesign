@@ -61,10 +61,10 @@ const InventoryReport = lazy(
   () => import("./pages/admin/shop/inventory/InventoryReport")
 );
 
+const OrdersPage = lazy(() => import("./pages/admin/shop/OrdersPage"));
 const Mastercraft = lazy(() => import("./pages/mastercraft/Mastercraft"));
 
 export {
-  AllProducts,
   AboutUs,
   AddChapterPage,
   AddEventPage,
@@ -72,6 +72,7 @@ export {
   AllBlogsPage,
   AllChaptersPage,
   AllEventsPage,
+  AllProducts,
   Blog,
   Blogs,
   CategoriesProducts,
@@ -88,21 +89,22 @@ export {
   ForgotPassword,
   GalleryPage,
   Homepage,
+  InventoryReport,
   LandingPage,
   Layout,
   LogIn,
+  Mastercraft,
+  OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
   Resources,
   ResourcesLayout,
   ShopDashboard,
+  ShopSales,
   SignUp,
   SingleEvent,
   SingleItemPage,
   SingleProductDonation,
-  ShopSales,
-  InventoryReport,
   UpdateEventPage,
-  Mastercraft,
 };
