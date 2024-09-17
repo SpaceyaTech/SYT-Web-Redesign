@@ -62,7 +62,7 @@ test.describe("Landing page tests", () => {
     const eventCards = page.locator("data-testid=event-cards").first();
     await expect(eventCards).toBeVisible();
 
-    const viewMoreEventsButton = page.locator(".events-view-more");
+    const viewMoreEventsButton = page.locator("data-testid=events-view-more");
     await expect(viewMoreEventsButton).toBeVisible();
     await expect(viewMoreEventsButton).toBeEnabled();
   });
