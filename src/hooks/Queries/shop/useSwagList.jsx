@@ -21,7 +21,7 @@ const useSwagList = () =>
 
 const fetchSingleSwag = async (id) => {
   try {
-    const response = await publicAxios.get(`/swaggs/${id}`);
+    const response = await publicAxios.get(`/swaggsnew/${id}`);
     return response.data;
   } catch (error) {
     toast.error("Error fetching swag list");
