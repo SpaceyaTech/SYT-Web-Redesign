@@ -58,8 +58,9 @@ test.describe("Landing page tests", () => {
     const ourEventsSection = page.locator('text="our events"').first();
     await expect(ourEventsSection).toBeVisible();
 
-    const eventCards = page.locator(".event-card");
-    await expect(eventCards).toHaveCountGreaterThan(0);
+    // checks if at least one event card is displayed
+    const eventCards = page.locator("data-testid=event-cards").first();
+    await expect(eventCards).toBeVisible();
 
     const viewMoreEventsButton = page.locator(".events-view-more");
     await expect(viewMoreEventsButton).toBeVisible();
