@@ -99,6 +99,7 @@ function UpcomingEventCard({ event }) {
     <Link
       to={`/events/${event.id}`}
       className="bg-white border flex items-center flex-col md:flex-row justify-start rounded-xl p-4 gap-4 min-w-[320px] w-full"
+      data-testid="event-cards"
     >
       <div className="border bg-white p-1 rounded-lg w-full md:w-fit">
         <div className="flex-center flex-col bg-green-light text-green-dark aspect-video md:size-[120px] rounded-[4px] font-bold">
