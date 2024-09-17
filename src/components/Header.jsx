@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "../assets/images/sytLogo.png";
+import CartDrawer from "./shop/CartDrawer";
 import CartIcon from "./shop/CartIcon";
 
 const navLinks = [
@@ -52,6 +53,7 @@ const navLinks = [
 
 function Header() {
   const [showNavlinks, setShowNavlinks] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const { pathname } = useLocation();
 
@@ -66,7 +68,13 @@ function Header() {
         {/* mobile menu */}
         <div className="flex gap-4 items-center">
           <div className="flex md:hidden">
-            <CartIcon />
+            <button
+              type="button"
+              aria-label="open cart"
+              onClick={() => setOpen(true)}
+            >
+              <CartIcon />
+            </button>
           </div>
           {showNavlinks ? (
             <button
@@ -139,6 +147,7 @@ function Header() {
           })}
         </nav>
       </header>
+      <CartDrawer open={open} setOpen={setOpen} />
     </div>
   );
 }

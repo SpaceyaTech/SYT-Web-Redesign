@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { useSwagList } from "../../../../hooks/Queries/shop/useSwagList";
+import formatPrice from "../../../../utilities/formatPrice";
 
 function Carousel() {
   const [width, setWidth] = useState(0);
@@ -80,9 +81,11 @@ function Carousel() {
         <p className=" text-md md:text-lg text-white my-1">
           Buy out most stylish tech themed items
         </p>
-        <p className="font-bold text-lg text-white">From KES 2,600</p>
+        <p className="font-bold text-lg text-white">
+          From KES {formatPrice(swagList[selectedIndex]?.price)}
+        </p>
         <Link
-          to={`/shop/item/${isSuccess ? swagList[selectedIndex]?.id : ""} `}
+          to={`/shop/item/${isSuccess ? swagList[selectedIndex]?.slug : ""} `}
           className="text-white font-bold bg-gradient-to-b to-primary from-green-dark py-3 px-4 mb-2 rounded-md"
         >
           Shop Now

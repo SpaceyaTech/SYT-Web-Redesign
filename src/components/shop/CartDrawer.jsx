@@ -6,59 +6,27 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
+import { useDeleteSwag } from "../../hooks/Mutations/shop/useCartSwagg";
 import formatPrice from "../../utilities/formatPrice";
 
 function CartDrawer({ open, setOpen }) {
   const navigate = useNavigate();
 
   // Get the JSON string from localStorage
-  const [cartProducts, setCartProducts] = useState([]);
-
-  const dummyCartData = [
-    {
-      id: "271fcc1c-0337-44f4-9449-2bc35b6ffd01",
-      name: "Cityscape Jacket",
-      description:
-        "Introducing our Cityscape Jacket: a blend of urban flair and unbeatable comfort. Crafted with premium materials, it offers sleek design and weather resistance for city adventures. Stay stylish and protected with adjustable features and convenient pockets. Upgrade your urban wardrobe today!",
-      category: "Jackets",
-      image:
-        "https://apis.spaceyatech.com/media/product_images/main-sample_copy_Fud5OzF.png",
-      price: "3000.00",
-      stock: 10,
-      color: "brown",
-    },
-    {
-      id: "232437b9-3e64-4cad-a6c3-08158e118207",
-      name: "Cityscape Jacket - Mid",
-      description:
-        "Introducing our Cityscape Jacket: a blend of urban flair and unbeatable comfort. Crafted with premium materials, it offers sleek design and weather resistance for city adventures. Stay stylish and protected with adjustable features and convenient pockets. Upgrade your urban wardrobe today!",
-      category: "Jackets",
-      image:
-        "https://apis.spaceyatech.com/media/product_images/main-sample_copy_BRv17MK.png",
-      price: "1800.00",
-      stock: 11,
-      color: "brown",
-    },
-    {
-      id: "9cd9a601-0ed9-4685-8633-4b04e0811fc7",
-      name: "SYT Hoodie",
-      description:
-        "Unleash your tech-savvy style with our Tech-Fit Hoodie. Designed for the modern individual, it seamlessly integrates functionality and fashion. Crafted with cutting-edge materials, it offers unrivaled comfort and durability. Elevate your wardrobe with this essential piece that effortlessly combines innovation and style.",
-      category: "Hoodies",
-      image:
-        "https://apis.spaceyatech.com/media/product_images/sample1_copy_PXgn3MX.png",
-      price: "2000.00",
-      stock: 10,
-      color: "white",
-    },
-  ];
+  const [cartProducts, setCartProducts] = useState(() => {
+    // Initialize state with the value from localStorage if it exists
+    const storedProducts = localStorage.getItem("swagList");
+    return storedProducts ? JSON.parse(storedProducts) : [];
+  });
 
   useEffect(() => {
-    const storage = localStorage.getItem("swagList")
-      ? JSON.parse(localStorage.getItem("swagList"))
-      : null;
-    setCartProducts(storage);
-  }, [cartProducts]);
+    if (open) {
+      const storedProducts = localStorage.getItem("swagList");
+      if (storedProducts) {
+        setCartProducts(JSON.parse(storedProducts));
+      }
+    }
+  }, [open]);
 
   // const { data: cartProducts, isSuccess } = useProductsInCart();
   useEffect(() => {
@@ -78,31 +46,23 @@ function CartDrawer({ open, setOpen }) {
     };
   }, []);
 
-  // const { mutate: deleteSwag } = useDeleteSwag();
+  const { mutate: removeSwagFromCart } = useDeleteSwag();
 
   const deleteFromLocalStorage = (cartItemId) => {
-    // Parse it back to an array of objects
-    const swagList = cartProducts;
-
-    const idxToDelete = swagList.findIndex(
-      (swag) => swag.swagg_id === cartItemId
+    // Create a new array by filtering out the item to delete
+    const updatedSwagList = cartProducts.filter(
+      (swag) => swag.id !== cartItemId
     );
 
-    // Check if the object was found
-    if (idxToDelete !== -1) {
-      // Remove the object from the swagList
-      swagList.splice(idxToDelete, 1);
+    // Update the state with the new array
+    setCartProducts(updatedSwagList);
 
-      // Convert the updated list to a JSON string
-      setCartProducts(JSON.stringify(swagList));
-
-      // Store the updated list back to localStorage
-      localStorage.setItem("swagList", cartProducts);
-    }
+    // Convert the updated list to a JSON string and store it in localStorage
+    localStorage.setItem("swagList", JSON.stringify(updatedSwagList));
   };
 
   const handleDeleteSwag = (cartItemId) => {
-    // deleteSwag(cartItemId);
+    removeSwagFromCart(cartItemId);
     deleteFromLocalStorage(cartItemId);
   };
 
@@ -167,11 +127,8 @@ function CartDrawer({ open, setOpen }) {
                         <div className="flow-root">
                           <ul className="-my-6 divide-y divide-gray-200 border-b">
                             {/* {isSuccess && */}
-                            {dummyCartData?.length > 0 &&
-                              (dummyCartData?.cart_items
-                                ? dummyCartData.cart_items
-                                : dummyCartData
-                              )?.map((cartProduct) => (
+                            {cartProducts?.length > 0 &&
+                              cartProducts?.map((cartProduct) => (
                                 <li
                                   key={crypto.randomUUID()}
                                   className="flex py-6 space-x-4 sm:space-x-16"
@@ -179,13 +136,9 @@ function CartDrawer({ open, setOpen }) {
                                   <div className="h-32 w-28 flex-shrink-0 overflow-hidden rounded-2xl">
                                     <LazyLoadImage
                                       src={`${
-                                        cartProduct.image ||
-                                        cartProduct.product?.image
+                                        cartProduct.image || cartProduct?.image
                                       }`}
-                                      alt={
-                                        cartProduct.name ||
-                                        cartProduct.product?.name
-                                      }
+                                      alt={cartProduct.name}
                                       className="h-full w-full object-cover object-center"
                                     />
                                   </div>
@@ -197,7 +150,7 @@ function CartDrawer({ open, setOpen }) {
                                           <div className="flex justify-between">
                                             <p className="flex justify-between items-center gap-1 font-medium bg-[#FEF3F2] text-[#B42318] text-sm rounded-full px-2 py-1">
                                               <CiShoppingTag />
-                                              Hoodies
+                                              {cartProduct.category}
                                             </p>
                                           </div>
                                           <h3>
@@ -205,12 +158,10 @@ function CartDrawer({ open, setOpen }) {
                                               {" "}
                                               <Link
                                                 to={`/shop/item/${
-                                                  cartProduct.productId ||
-                                                  cartProduct.swagg_id
+                                                  cartProduct.slug
                                                 }`}
                                               >
-                                                {cartProduct.name ||
-                                                  cartProduct.product?.name}
+                                                {cartProduct.name}
                                               </Link>
                                             </p>
                                           </h3>
@@ -219,10 +170,7 @@ function CartDrawer({ open, setOpen }) {
                                           type="button"
                                           className="flex justify-end"
                                           onClick={() => {
-                                            handleDeleteSwag(
-                                              cartProduct.id ||
-                                                cartProduct.swagg_id
-                                            );
+                                            handleDeleteSwag(cartProduct.id);
                                           }}
                                         >
                                           {/* Delete icon */}
@@ -230,7 +178,7 @@ function CartDrawer({ open, setOpen }) {
                                         </button>
                                       </div>
                                       <div className="flex flex-row justify-between text-[#656767] text-sm sm:text-base font-medium">
-                                        <p>Qty: 1</p>
+                                        <p>Qty: {cartProduct.orderUnits}</p>
                                         <p>
                                           KES {formatPrice(cartProduct.price)}
                                         </p>
