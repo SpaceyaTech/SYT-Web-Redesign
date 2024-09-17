@@ -106,6 +106,5 @@ export {
   SingleEvent,
   SingleItemPage,
   SingleProductDonation,
-  UpdateEventPage
+  UpdateEventPage,
 };
-
