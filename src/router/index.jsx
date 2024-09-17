@@ -23,11 +23,13 @@ import {
   LandingPage,
   Layout,
   LogIn,
+  Mastercraft,
   OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
   Resources,
+  ResourcesLayout,
   ShopDashboard,
   ShopSales,
   SignUp,
@@ -152,14 +154,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "/resources",
-        element: (
-          <Suspense fallback={<FallbackLoader />}>
-            <Resources />
-          </Suspense>
-        ),
-      },
+
       {
         path: "/login",
         element: (
@@ -258,6 +253,28 @@ const router = createBrowserRouter([
       //   path: "/admin/events/update-event",
       //   element: <UpdateEventPage />,
       // },
+    ],
+  },
+  {
+    path: "/resources",
+    element: <ResourcesLayout />,
+    children: [
+      {
+        path: "/resources",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Resources />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/resources/:id",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Mastercraft />
+          </Suspense>
+        ),
+      },
     ],
   },
   {

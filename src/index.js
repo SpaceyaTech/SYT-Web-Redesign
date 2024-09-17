@@ -43,6 +43,7 @@ const LandingPage = lazy(() => import("./pages/landingPage/LandingPage"));
 const Layout = lazy(() => import("./pages/Layout"));
 const Products = lazy(() => import("./pages/products/Products"));
 const Resources = lazy(() => import("./pages/resources/Resources"));
+const ResourcesLayout = lazy(() => import("./pages/ResourcesLayout"));
 const Homepage = lazy(() => import("./pages/shop/Homepage"));
 const Checkout = lazy(() => import("./pages/shop/OrderSummaryPage"));
 const ProductDisplay = lazy(() => import("./pages/shop/ProductDisplayPage"));
@@ -61,6 +62,7 @@ const InventoryReport = lazy(
 );
 
 const OrdersPage = lazy(() => import("./pages/admin/shop/OrdersPage"));
+const Mastercraft = lazy(() => import("./pages/mastercraft/Mastercraft"));
 
 export {
   AboutUs,
@@ -91,16 +93,19 @@ export {
   LandingPage,
   Layout,
   LogIn,
+  Mastercraft,
   OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
   Resources,
+  ResourcesLayout,
   ShopDashboard,
   ShopSales,
   SignUp,
   SingleEvent,
   SingleItemPage,
   SingleProductDonation,
-  UpdateEventPage,
+  UpdateEventPage
 };
+
