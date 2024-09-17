@@ -44,7 +44,12 @@ function OurEvents() {
           <h4 className="text-green-dark text-[32px] leading-normal font-semibold">
             Upcoming Events
           </h4>
-          <Button link="/events" title="view more" />
+
+          <Button
+            link="/events"
+            title="view more"
+            data-testid="events-view-more"
+          />
         </div>
 
         {isError && (
