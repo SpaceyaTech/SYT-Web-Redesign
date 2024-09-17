@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
@@ -31,13 +32,13 @@ test.describe("Events page tests", () => {
     await expect(page.getByRole("button", { name: "Search" })).toBeVisible();
   });
   test("should have event list on start", async ({ page }) => {
-    await page.waitForSelector("[data-testId=\"events-list\"]");
+    await page.waitForSelector('[data-testId="events-list"]');
     const eventsList = page.getByTestId("events-list");
     await expect(eventsList).toBeVisible();
   });
 
   test("should have categories list on start", async ({ page }) => {
-    await page.waitForSelector("[data-testId=\"categories-list\"]");
+    await page.waitForSelector('[data-testId="categories-list"]');
     const categoriesList = page.getByTestId("categories-list");
     await expect(categoriesList).toBeVisible();
   });
