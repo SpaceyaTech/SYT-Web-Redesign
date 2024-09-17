@@ -22,8 +22,10 @@ test.describe("Landing page tests", () => {
     ).toBeVisible();
   });
 
+  // eslint-disable-next-line quotes
   test('Check "View More" button functionality', async ({ page }) => {
     // Verify that the "View More" button is present and clickable
+    // eslint-disable-next-line quotes
     const viewMoreButton = page.locator('text="View More"');
     await expect(viewMoreButton).toBeVisible();
     await expect(viewMoreButton[0]).toBeEnabled();
@@ -37,6 +39,7 @@ test.describe("Landing page tests", () => {
 
   // Test "HOW WE WORK" section
   test("Check 'HOW WE WORK' section title and content", async ({ page }) => {
+    // eslint-disable-next-line quotes
     const howWeWorkSection = page.locator('text="HOW WE WORK"');
     await expect(howWeWorkSection).toBeVisible();
 
@@ -57,6 +60,7 @@ test.describe("Landing page tests", () => {
   test("Check 'OUR EVENTS' section title, events card, and 'View More' button", async ({
     page,
   }) => {
+    // eslint-disable-next-line quotes
     const ourEventsSection = page.locator('text="OUR EVENTS"');
     await expect(ourEventsSection).toBeVisible();
 
@@ -69,6 +73,7 @@ test.describe("Landing page tests", () => {
   });
 
   test("Check 'OUR IMPACT' section title and stats card", async ({ page }) => {
+    // eslint-disable-next-line quotes
     const ourImpactSection = page.locator('text="OUR IMPACT"');
     await expect(ourImpactSection).toBeVisible();
 
@@ -79,6 +84,7 @@ test.describe("Landing page tests", () => {
   test("Check 'TESTIMONIALS' section title and testimonial card in marquee", async ({
     page,
   }) => {
+    // eslint-disable-next-line quotes
     const testimonialsSection = page.locator('text="TESTIMONIALS"');
     await expect(testimonialsSection).toBeVisible();
 
@@ -90,6 +96,7 @@ test.describe("Landing page tests", () => {
   });
 
   test("Check 'FAQ' section title and FAQ accordion", async ({ page }) => {
+    // eslint-disable-next-line quotes
     const faqSection = page.locator('text="FAQ"');
     await expect(faqSection).toBeVisible();
 
