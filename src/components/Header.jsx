@@ -58,8 +58,8 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <div className="bg-secondary">
-      <header className="py-2.5 md:px-10 px-5 flex items-center justify-between md:shadow-none shadow-md relative max-w-[1440px] md:mx-auto">
+    <div className="bg-secondary relative z-30 w-full">
+      <header className="bg-secondary py-4 md:px-10 px-6 flex items-center justify-between w-full md:shadow-none shadow-md fixed  md:mx-auto">
         {/* logo */}
         <Link to="/" className="md:w-[60px] w-12">
           <LazyLoadImage src={logo} alt="logo" className="w-full" />
