@@ -70,11 +70,12 @@ test.describe("Landing page tests", () => {
 
   test("Check 'OUR IMPACT' section title and stats card", async ({ page }) => {
     // eslint-disable-next-line quotes
-    const ourImpactSection = page.locator('text="OUR IMPACT"');
+    const ourImpactSection = page.getByText("our impact");
+    await ourImpactSection.scrollIntoViewIfNeeded();
     await expect(ourImpactSection).toBeVisible();
 
     const statsCards = page.locator(".stats-card");
-    await expect(statsCards).toHaveCountGreaterThan(0);
+    await expect(statsCards).toBeVisible();
   });
 
   test("Check 'TESTIMONIALS' section title and testimonial card in marquee", async ({
