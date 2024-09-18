@@ -98,15 +98,18 @@ test.describe("Landing page tests", () => {
 
   test("Check 'FAQ' section title and FAQ accordion", async ({ page }) => {
     // eslint-disable-next-line quotes
-    const faqSection = page.locator('text="FAQ"');
+    // check if faq section is visible
+    const faqSection = page.getByRole("heading", { name: "faq" });
     await expect(faqSection).toBeVisible();
 
-    const faqAccordions = page.locator(".faq-accordion"); // Adjust selector as needed
-    await expect(faqAccordions).toHaveCountGreaterThan(0);
+    // check if at least one FAQ accordion is visible
+    const faqAccordions = page.getByTestId("faq-accordion").first();
+    await expect(faqAccordions).toBeVisible();
 
-    await faqAccordions.first().click();
-    await expect(
-      faqAccordions.first().locator(".accordion-content")
-    ).toBeVisible();
+    // check if clicking accordion, displays answer
+    await faqAccordions.click();
+
+    const accordionContent = page.getByTestId("accordion-answer").first();
+    await expect(accordionContent).toBeVisible();
   });
 });
