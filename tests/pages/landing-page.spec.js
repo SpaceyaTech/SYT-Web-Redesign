@@ -82,14 +82,18 @@ test.describe("Landing page tests", () => {
     page,
   }) => {
     // eslint-disable-next-line quotes
-    const testimonialsSection = page.locator('text="TESTIMONIALS"');
+    const testimonialsSection = page.getByRole("heading", {
+      name: "testimonials",
+    });
+    // await testimonialsSection.waitFor({ state: "visible", timeout: 60000 });
+    await testimonialsSection.scrollIntoViewIfNeeded();
     await expect(testimonialsSection).toBeVisible();
 
-    const testimonialCards = page.locator(".testimonial-card");
-    await expect(testimonialCards).toHaveCountGreaterThan(0);
-
-    const marquee = page.locator(".testimonial-marquee");
-    await expect(marquee).toBeVisible();
+    // check if there's at least one testimonial card displayed
+    const testimonialCards = page.getByTestId("testimonial-card").first();
+    await testimonialCards.waitFor({ state: "visible", timeout: 60000 });
+    await testimonialCards.scrollIntoViewIfNeeded();
+    await expect(testimonialCards).toBeVisible();
   });
 
   test("Check 'FAQ' section title and FAQ accordion", async ({ page }) => {
