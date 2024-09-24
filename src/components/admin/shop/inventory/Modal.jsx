@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -78,7 +77,11 @@ export default function Modal({ showModal, onClose }) {
                       <h3 className="text-xl font-poppins font-medium text-[#353535]">
                         Add Item
                       </h3>
-                      <button type="button" onClick={onClose}>
+                      <button
+                        type="button"
+                        onClick={onClose}
+                        aria-label="Close"
+                      >
                         <IoMdClose className="size-10 text-[#353535]" />
                       </button>
                     </div>
