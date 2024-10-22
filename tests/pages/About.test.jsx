@@ -13,7 +13,7 @@ describe("About us page unit tests", () => {
       </HelmetProvider>
     );
 
-  it("should render About Us page successfully", () => {
+  it("should render Hero Section successfully", () => {
     renderWithRouter(<AboutUs />);
     const titleElement = screen.getByTestId("title");
     expect(titleElement).toBeTruthy();
