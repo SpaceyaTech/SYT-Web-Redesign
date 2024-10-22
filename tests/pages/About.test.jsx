@@ -18,4 +18,10 @@ describe("About us page unit tests", () => {
     const titleElement = screen.getByTestId("title");
     expect(titleElement).toBeTruthy();
   });
+
+  it("should render Mission/Vision Section successfully", () => {
+    renderWithRouter(<AboutUs />);
+    const titleElement = screen.getByTestId("mission");
+    expect(titleElement).toBeTruthy();
+  });
 });
