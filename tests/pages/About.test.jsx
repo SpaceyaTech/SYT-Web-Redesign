@@ -21,19 +21,19 @@ describe("About us page unit tests", () => {
 
   it("should render Mission/Vision Section successfully", () => {
     renderWithRouter(<AboutUs />);
-    const titleElement = screen.getByTestId("mission");
-    expect(titleElement).toBeTruthy();
+    const testElement = screen.getByTestId("mission");
+    expect(testElement).toBeTruthy();
   });
 
   it("should render Leadership Section successfully", () => {
     renderWithRouter(<AboutUs />);
-    const titleElement = screen.getByTestId("leadership");
-    expect(titleElement).toBeTruthy();
+    const testElement = screen.getByTestId("leadership");
+    expect(testElement).toBeTruthy();
   });
 
   it("should render Reports Section successfully", () => {
     renderWithRouter(<AboutUs />);
-    const titleElement = screen.getByTestId("reports");
-    expect(titleElement).toBeTruthy();
+    const testElement = screen.getByTestId("reports");
+    expect(testElement).toBeTruthy();
   });
 });
