@@ -3,7 +3,51 @@ import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 
+import placeholder from "../../src/assets/images/sytLogo.png";
+import Caroussel from "../../src/components/Caroussel";
 import AboutUs from "../../src/pages/aboutUs/AboutUs";
+
+const LeadershipData = [
+  {
+    name: "First User",
+    title: "Founder",
+    image: placeholder,
+    linkedin: {
+      href: "https://www.linkedin.com/",
+      username: "First User",
+    },
+    twitter: {
+      href: "https://twitter.com/x",
+      username: "First User",
+    },
+  },
+  {
+    name: "Second User",
+    title: "Dev Relations & Opensource Programs",
+    image: placeholder,
+    linkedin: {
+      href: "https://www.linkedin.com",
+      username: "Second User",
+    },
+    twitter: {
+      href: "",
+      username: "",
+    },
+  },
+  {
+    name: "Third User",
+    title: "Community Manager",
+    image: placeholder,
+    linkedin: {
+      href: "https://www.linkedin.com",
+      username: "Third User",
+    },
+    twitter: {
+      href: "",
+      username: "",
+    },
+  },
+];
 
 describe("About us page unit tests", () => {
   const renderWithRouter = (ui) =>
@@ -35,5 +79,11 @@ describe("About us page unit tests", () => {
     renderWithRouter(<AboutUs />);
     const testElement = screen.getByTestId("reports");
     expect(testElement).toBeTruthy();
+  });
+
+  it("should render leadership carousel successfully", () => {
+    renderWithRouter(<Caroussel CarousselData={LeadershipData} />);
+    const carouselElement = screen.getByTestId("carousel");
+    expect(carouselElement).toBeTruthy();
   });
 });
