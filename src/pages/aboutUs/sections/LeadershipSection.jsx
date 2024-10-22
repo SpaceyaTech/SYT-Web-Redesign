@@ -75,7 +75,10 @@ function LeadershipSection() {
     <section className="pt-16 sm:pt-0 pb-10 mx-auto w-full max-w-screen-2xl sm:mt-24 px-4 md:px-0">
       <div className="mx-auto w-full flex flex-row items-center gap-2 md:gap-4 my-6">
         <div className="w-full h-0.5 rounded-sm bg-gray-300" />
-        <h2 className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase">
+        <h2
+          className="min-w-fit text-primary text-sm leading-loose px-4 bg-gradient-to-r from-[#D7F4EB] to-white py-2 rounded-full font-semibold border-2 border-gray-300 uppercase"
+          data-testid="leadership"
+        >
           Our leadership
         </h2>
         <div className="w-full h-0.5 bg-gray-300" />
@@ -119,6 +122,7 @@ function LeadershipSection() {
               aria-label="Partner with us"
               onClick={openModal}
               className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
+              data-testid="partner-with-us"
             >
               Partner with us
             </button>
@@ -139,7 +143,10 @@ function LeadershipSection() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <div className="fixed inset-0 bg-black/25" />
+                  <div
+                    className="fixed inset-0 bg-black/25"
+                    data-testid="partner-popup"
+                  />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
