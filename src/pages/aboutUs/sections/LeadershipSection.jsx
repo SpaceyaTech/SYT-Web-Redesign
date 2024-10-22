@@ -122,6 +122,7 @@ function LeadershipSection() {
               aria-label="Partner with us"
               onClick={openModal}
               className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
+              data-testid="partner-with-us"
             >
               Partner with us
             </button>
@@ -142,7 +143,10 @@ function LeadershipSection() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <div className="fixed inset-0 bg-black/25" />
+                  <div
+                    className="fixed inset-0 bg-black/25"
+                    data-testid="partner-popup"
+                  />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
