@@ -11,7 +11,7 @@ function CartIcon() {
 
   useEffect(() => {
     // Event listener for storage changes in other tabs/windows
-    const handleStorageChange = (e) => {
+    const handleStorageChange = () => {
       const storedProducts = localStorage.getItem("swagList");
       setCartProducts(storedProducts ? JSON.parse(storedProducts) : []);
     };
