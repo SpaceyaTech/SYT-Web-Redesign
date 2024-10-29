@@ -35,7 +35,9 @@ function ProductCard({ product }) {
         className="flex justify-between pr-1"
       >
         <h3 className="text-md uppercase font-medium text-gray-600">
-          {product.name}
+          {product.name.length > 15
+            ? `${product.name.slice(0, 18)}...`
+            : product.name}
         </h3>
         <div className="p-1 rounded-xl bg-green-dark/10">
           {totalStock > 0 ? (
