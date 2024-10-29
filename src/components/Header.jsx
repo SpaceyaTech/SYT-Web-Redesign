@@ -68,13 +68,15 @@ function Header() {
         {/* mobile menu */}
         <div className="flex gap-4 items-center">
           <div className="flex md:hidden">
-            <button
-              type="button"
-              aria-label="open cart"
-              onClick={() => setOpen(true)}
-            >
-              <CartIcon />
-            </button>
+            {pathname === "/shop" && (
+              <button
+                type="button"
+                aria-label="open cart"
+                onClick={() => setOpen(true)}
+              >
+                <CartIcon />
+              </button>
+            )}
           </div>
           {showNavlinks ? (
             <button
