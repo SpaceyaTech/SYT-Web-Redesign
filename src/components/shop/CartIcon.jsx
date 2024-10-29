@@ -9,8 +9,8 @@ function CartIcon() {
           <div className="flex w-full h-full p-1.5 md:p-2 rounded-full justify-center items-center bg-green-dark">
             <MdAddShoppingCart color="white" className="h-full w-full" />
           </div>
-          <div className="absolute bottom-0 right-0 bg-[#B3261E] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-            <p className="text-white font-medium">1</p>
+          <div className="absolute bottom-0 right-0 bg-[#B3261E] text-white text-xs font-medium rounded-full w-5 h-5 flex items-center justify-center">
+            <p>1</p>
           </div>
         </div>
       </div>
