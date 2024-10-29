@@ -177,7 +177,7 @@ export default function SingleItemPage() {
                   key={index}
                   src={image}
                   alt={singleSwag.name}
-                  className={`m-auto min-w-full ${selectedImage === index + 1 ? "block" : "hidden"}`}
+                  className={`m-auto rounded-lg min-w-full ${selectedImage === index + 1 ? "block" : "hidden"}`}
                 />
               ))}
             </div>
