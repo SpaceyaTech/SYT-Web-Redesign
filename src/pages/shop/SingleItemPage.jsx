@@ -128,6 +128,8 @@ export default function SingleItemPage() {
       });
       // Add to local storage
       addToLocalStorage();
+      // dispatch custom event to notify cart change
+      window.dispatchEvent(new Event("swagListUpdated"));
 
       // open cart
       setOpen(true);

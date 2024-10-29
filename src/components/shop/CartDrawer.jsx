@@ -65,6 +65,8 @@ function CartDrawer({ open, setOpen }) {
   const handleDeleteSwag = (cartItemId) => {
     removeSwagFromCart(cartItemId);
     deleteFromLocalStorage(cartItemId);
+    // dispatch custom event to notify cart change
+    window.dispatchEvent(new Event("swagListUpdated"));
   };
 
   const handleCheckout = () => {
