@@ -12,6 +12,7 @@ function Hero({ event }) {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   function openModal() {
     setIsOpen(true);
   }
