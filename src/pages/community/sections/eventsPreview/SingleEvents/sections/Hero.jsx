@@ -12,6 +12,7 @@ function Hero({ event }) {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   function openModal() {
     setIsOpen(true);
   }
@@ -180,17 +181,19 @@ ${isVirtual ? "text-white" : "text-green-header"}
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={openModal}
+          <a
+            href={event?.link}
+            target="_blank"
+            rel="noreferrer"
+            // onClick={openModal}
             className={`py-2 px-20 rounded-lg ${
               isVirtual
                 ? "text-green-header bg-white"
                 : "text-white bg-gradient-to-b to-primary from-green-dark"
             }`}
           >
-            Reserve for Free
-          </button>
+            Reserve Tickets
+          </a>
         </div>
 
         <EventRSVP

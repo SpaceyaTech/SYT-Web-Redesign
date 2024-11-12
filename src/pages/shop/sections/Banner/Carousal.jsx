@@ -85,7 +85,7 @@ function Carousel() {
           From KES {formatPrice(swagList[selectedIndex]?.price)}
         </p>
         <Link
-          to={`/shop/item/${isSuccess ? swagList[selectedIndex]?.slug : ""} `}
+          to={`/shop/item/${isSuccess ? swagList[selectedIndex]?.slug : ""}`}
           className="text-white font-bold bg-gradient-to-b to-primary from-green-dark py-3 px-4 mb-2 rounded-md"
         >
           Shop Now

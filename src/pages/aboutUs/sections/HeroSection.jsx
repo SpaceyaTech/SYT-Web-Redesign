@@ -6,7 +6,10 @@ function HeroSection() {
     <div className="px-4 sm:px-14 xl:px-28 sm:m-auto max-w-screen-2xl">
       <div className="flex flex-col md:flex-row items-center pt-10 gap-4">
         <div className="md:w-1/2">
-          <h1 className="mb-2 md:text-[40px] leading-tight text-2xl font-medium text-gray-900">
+          <h1
+            className="mb-2 md:text-[40px] leading-tight text-2xl font-medium text-gray-900"
+            data-testid="title"
+          >
             Empowering <span className="text-primary">innovation</span> in the{" "}
             <span className="text-primary">African tech space</span>
           </h1>

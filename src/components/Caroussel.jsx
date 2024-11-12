@@ -13,7 +13,10 @@ function Caroussel({ CarousselData }) {
   };
 
   return (
-    <section className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl">
+    <section
+      className="pt-4 sm:pt-16 pb-10 mx-auto w-full max-w-screen-2xl"
+      data-testid="carousel"
+    >
       <div
         ref={carouselRef}
         className="py-6 grid grid-cols-1 md:grid-cols-2 gap-8 overflow-x-auto scrollbar-hide"
@@ -74,6 +77,7 @@ function Caroussel({ CarousselData }) {
           type="button"
           aria-label="back button"
           onClick={() => scroll(-400)}
+          data-testid="previous"
         >
           <PiArrowCircleLeft className="text-green-header size-16" />
         </button>
@@ -81,6 +85,7 @@ function Caroussel({ CarousselData }) {
           type="button"
           aria-label="forward button"
           onClick={() => scroll(400)}
+          data-testid="next"
         >
           <PiArrowCircleRight className="text-green-header size-16" />
         </button>

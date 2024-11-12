@@ -128,6 +128,8 @@ export default function SingleItemPage() {
       });
       // Add to local storage
       addToLocalStorage();
+      // dispatch custom event to notify cart change
+      window.dispatchEvent(new Event("swagListUpdated"));
 
       // open cart
       setOpen(true);
@@ -177,7 +179,7 @@ export default function SingleItemPage() {
                   key={index}
                   src={image}
                   alt={singleSwag.name}
-                  className={`m-auto min-w-full ${selectedImage === index + 1 ? "block" : "hidden"}`}
+                  className={`m-auto rounded-lg min-w-full ${selectedImage === index + 1 ? "block" : "hidden"}`}
                 />
               ))}
             </div>

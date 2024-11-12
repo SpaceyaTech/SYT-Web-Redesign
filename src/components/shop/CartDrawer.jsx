@@ -8,6 +8,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 import { useDeleteSwag } from "../../hooks/Mutations/shop/useCartSwagg";
 import formatPrice from "../../utilities/formatPrice";
+import { categoryColors } from "../../utilities/utils";
 
 function CartDrawer({ open, setOpen }) {
   const navigate = useNavigate();
@@ -64,6 +65,8 @@ function CartDrawer({ open, setOpen }) {
   const handleDeleteSwag = (cartItemId) => {
     removeSwagFromCart(cartItemId);
     deleteFromLocalStorage(cartItemId);
+    // dispatch custom event to notify cart change
+    window.dispatchEvent(new Event("swagListUpdated"));
   };
 
   const handleCheckout = () => {
@@ -148,7 +151,12 @@ function CartDrawer({ open, setOpen }) {
                                       <div className="flex flex-row justify-between items-center mb-4">
                                         <div className="flex flex-col space-y-2 justify-start">
                                           <div className="flex justify-between">
-                                            <p className="flex justify-between items-center gap-1 font-medium bg-[#FEF3F2] text-[#B42318] text-sm rounded-full px-2 py-1">
+                                            <p
+                                              style={categoryColors(
+                                                cartProduct.category
+                                              )}
+                                              className="flex justify-between items-center gap-1 font-medium bg-[#FEF3F2] text-[#B42318] text-sm rounded-full px-2 py-1"
+                                            >
                                               <CiShoppingTag />
                                               {cartProduct.category}
                                             </p>
