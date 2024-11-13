@@ -29,11 +29,11 @@ const components = [
   },
 ];
 
-function MastercraftHome() {
+function Resources() {
   return (
     <>
       <SeoMetadata
-        title="Mastercraft"
+        title="Resources"
         description="Discover tech tools and resources to boost your productivity."
         type="article"
         url="https://www.spaceyatech.com/resources"
@@ -54,4 +54,4 @@ function MastercraftHome() {
   );
 }
 
-export default MastercraftHome;
+export default Resources;

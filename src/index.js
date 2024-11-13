@@ -42,8 +42,11 @@ const GalleryPage = lazy(() => import("./pages/gallery/GalleryPage"));
 const LandingPage = lazy(() => import("./pages/landingPage/LandingPage"));
 const Layout = lazy(() => import("./pages/Layout"));
 const Products = lazy(() => import("./pages/products/Products"));
-const Resources = lazy(
+const MastercraftHome = lazy(
   () => import("./pages/mastercraft-home/MastercraftHome")
+);
+const ResourcesHome = lazy(
+  () => import("./pages/resources-home/ResourcesHome")
 );
 const MastercraftLayout = lazy(() => import("./pages/MastercraftLayout"));
 const Homepage = lazy(() => import("./pages/shop/Homepage"));
@@ -100,7 +103,8 @@ export {
   ProductDisplay,
   Products,
   ResetPassword,
-  Resources,
+  ResourcesHome,
+  MastercraftHome,
   MastercraftLayout,
   ShopDashboard,
   ShopSales,

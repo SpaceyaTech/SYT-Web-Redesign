@@ -24,12 +24,13 @@ import {
   Layout,
   LogIn,
   Mastercraft,
+  MastercraftHome,
   MastercraftLayout,
   OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
-  Resources,
+  ResourcesHome,
   ShopDashboard,
   ShopSales,
   SignUp,
@@ -263,12 +264,34 @@ const router = createBrowserRouter([
         path: "/mastercraft",
         element: (
           <Suspense fallback={<FallbackLoader />}>
-            <Resources />
+            <MastercraftHome />
           </Suspense>
         ),
       },
       {
         path: "/mastercraft/:id",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <Mastercraft />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/resources",
+    element: <MastercraftLayout />,
+    children: [
+      {
+        path: "/resources",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <ResourcesHome />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/resources/:id",
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Mastercraft />
