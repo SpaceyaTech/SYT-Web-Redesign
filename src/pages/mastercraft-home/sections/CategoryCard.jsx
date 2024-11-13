@@ -56,7 +56,7 @@ function CategoryCard({ categoryData }) {
       </div>
 
       <Link
-        to={`/resources/${slug}`}
+        to={`/mastercraft/${slug}`}
         className="border border-green-header px-3 py-2 rounded-lg mt-10 flex-center transition-colors ease-in duration-500 text-primary text-base font-semibold hover:text-white hover:bg-green-header"
       >
         Learn More

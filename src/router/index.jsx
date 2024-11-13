@@ -24,12 +24,12 @@ import {
   Layout,
   LogIn,
   Mastercraft,
+  MastercraftLayout,
   OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
   Resources,
-  ResourcesLayout,
   ShopDashboard,
   ShopSales,
   SignUp,
@@ -256,11 +256,11 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/resources",
-    element: <ResourcesLayout />,
+    path: "/mastercraft",
+    element: <MastercraftLayout />,
     children: [
       {
-        path: "/resources",
+        path: "/mastercraft",
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Resources />
@@ -268,7 +268,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/resources/:id",
+        path: "/mastercraft/:id",
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Mastercraft />

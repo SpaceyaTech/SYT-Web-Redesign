@@ -214,7 +214,7 @@ function FooterTop() {
 
   return (
     <div className="hidden md:block bg-[#F5F5F5]">
-      <div className="relative mx-auto max-w-1440 pt-60">
+      <div className="relative mx-auto pt-60">
         <div className="w-full xl:w-fit max-w-768 xl:max-w-1216 mx-auto absolute top-12 left-1/2 -translate-x-1/2 z-10">
           <LazyLoadImage
             src={mastercraft}
@@ -224,7 +224,7 @@ function FooterTop() {
           />
         </div>
         {/* Bottom */}
-        <div className="bg-secondary relative rounded-t-2xl pt-60 pb-12 mx-auto max-w-1440 flex-center overflow-clip">
+        <div className="bg-secondary relative rounded-t-xl 2xl:rounded-t-2xl pt-60 2xl:pt-80 pb-12 mx-auto flex-center overflow-clip">
           <div className="max-w-xl flex flex-col gap-3 text-white">
             <h4 className="text-center text-3xl px-4">
               Bet on yourself. It’s completely
