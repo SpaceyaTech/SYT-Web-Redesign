@@ -7,11 +7,11 @@ function YoutubeCard({ channel, length, thumbnail, title, uploaded }) {
   return (
     <div className="flex flex-col">
       {/* ThumbNail */}
-      <div className="h-2/3 w-full aspect-video bg-red-300 rounded-md xl:rounded-lg overflow-clip relative cursor-pointer">
+      <div className="max-h-56 size-full overflow-hidden rounded-md xl:rounded-lg relative cursor-pointer flex flex-col">
         <LazyLoadImage
           src={thumbnail}
           alt={title}
-          className="object-cover size-full"
+          className="object-cover size-full min-h-full aspect-video"
           effect="blur"
         />
 
@@ -23,7 +23,7 @@ function YoutubeCard({ channel, length, thumbnail, title, uploaded }) {
       </div>
 
       {/* Description */}
-      <div className="h-1/3 w-full p-2 lg:p-4 flex flex-col justify-between">
+      <div className="w-full p-2 lg:p-4 flex flex-col justify-between gap-3">
         <h5 className="uppercase line-clamp-1 text-lg font-semibold">
           {title}
         </h5>

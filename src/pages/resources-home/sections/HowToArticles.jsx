@@ -9,7 +9,7 @@ function HowToArticles() {
       <div className="flex items-center w-full flex-col gap-8 md:gap-12 lg:gap-16">
         {/* How-to-articles: Expanding your understanding */}
         <div className="md:self-start flex flex-col gap-8 md:gap-10 w-full">
-          <div className="flex items-center justify-between text-center md:text-left">
+          <div className="flex items-center justify-between text-center md:text-left flex-col md:flex-row gap-3">
             <h3 className="text-2xl md:text-3xl text-green-dark font-semibold">
               How-to-articles: Expanding your understanding
             </h3>
@@ -30,7 +30,7 @@ function HowToArticles() {
 
         {/* Recommended tutorials for beginners  */}
         <div className="md:self-start flex flex-col gap-8 md:gap-10 w-full">
-          <div className="flex items-center justify-between text-center md:text-left">
+          <div className="flex items-center justify-between text-center md:text-left flex-col md:flex-row gap-3">
             <h3 className="text-2xl md:text-3xl text-green-dark font-semibold">
               Recommended tutorials for beginners
             </h3>

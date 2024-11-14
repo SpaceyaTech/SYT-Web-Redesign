@@ -48,8 +48,17 @@ function Features() {
             {/* Tabs */}
             <div className="w-full overflow-x-scroll flex items-center">
               <div className="flex gap-3 sm:gap-4 mx-auto">
+                <button
+                  onClick={() => setActiveTab("All")}
+                  type="button"
+                  className={cn(
+                    "capitalize rounded border border-green-dark text-gray-500 text-xs text-nowrap py-2 px-3 transition-colors duration-300 ease-in hover:bg-green-dark hover:text-white",
+                    activeTab === "All" && "bg-green-dark text-white"
+                  )}
+                >
+                  All
+                </button>
                 {[
-                  "All",
                   "Documentation",
                   "Tutorials",
                   "Videos",
@@ -96,7 +105,7 @@ function Features() {
 
           {/* Newly uploaded resources */}
           <div className="md:self-start flex flex-col gap-8 md:gap-10 w-full">
-            <div className="flex items-center justify-between text-center md:text-left">
+            <div className="flex items-center justify-between text-center md:text-left flex-col md:flex-row gap-3">
               <h3 className="text-2xl md:text-3xl text-green-dark font-semibold">
                 Newly uploaded resources
               </h3>

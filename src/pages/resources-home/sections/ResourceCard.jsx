@@ -1,11 +1,15 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 import cardImg from "../../../assets/images/resources-page/card.jpeg";
 import logo from "../../../assets/images/sytLogo.png";
 
 function ResourceCard() {
   return (
-    <div className="rounded-xl flex flex-col overflow-clip hover:shadow-xl transition-shadow duration-300 ease-in-out">
+    <Link
+      to="/resources"
+      className="rounded-xl flex flex-col overflow-clip hover:shadow-xl transition-shadow duration-300 ease-in-out"
+    >
       {/* Image */}
       <div className="h-1/2 w-full overflow-hidden">
         <LazyLoadImage
@@ -41,7 +45,7 @@ function ResourceCard() {
         </p>
 
         {/* Tags */}
-        <ul className="flex items-center gap-2 xl:gap-4 text-gray-400 text-xs font-medium">
+        <ul className="flex items-center gap-1 sm:gap-2 xl:gap-4 text-gray-400 text-xs font-medium">
           <li className="text-nowrap">Course</li>
           <li>●</li>
           <li className="text-nowrap">Product Design</li>
@@ -49,7 +53,7 @@ function ResourceCard() {
           <li className="text-nowrap">Beginner</li>
         </ul>
       </div>
-    </div>
+    </Link>
   );
 }
 

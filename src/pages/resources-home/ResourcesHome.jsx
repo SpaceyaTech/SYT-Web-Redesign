@@ -5,27 +5,9 @@ import {
   Features,
   HeroSection,
   Archives,
-  StudentShowcase,
+  Documentation,
   HowToArticles,
 } from "./sections";
-
-const components = [
-  {
-    title: "spaceyatech archives",
-    component: <Archives />,
-    bgColored: true,
-  },
-  {
-    title: "student showcase",
-    component: <StudentShowcase />,
-    bgColored: false,
-  },
-  {
-    title: "faq",
-    component: <FAQSection />,
-    bgColored: false,
-  },
-];
 
 function Resources() {
   return (
@@ -42,11 +24,14 @@ function Resources() {
         <HeroSection />
         <Features />
         <HowToArticles />
-        {components.map(({ bgColored, component, title }) => (
-          <LandingWrapper key={title} title={title} bgColored={bgColored}>
-            {component}
-          </LandingWrapper>
-        ))}
+
+        <LandingWrapper title="spaceyatech archives" bgColored>
+          <Archives />
+        </LandingWrapper>
+        <Documentation />
+        <LandingWrapper title="faq">
+          <FAQSection />
+        </LandingWrapper>
       </main>
     </>
   );

@@ -12,14 +12,16 @@ function PodcastCard() {
         effect="opacity"
       />
 
-      <div className="space-y-2">
-        <h5 className="">Ep25: WOMEN TECH SERIES: Role of Mentorship...</h5>
-        <p className="">
+      <div className="space-y-2 text-white">
+        <h5 className="text-base leading-tight font-bold line-clamp-1">
+          Ep25: WOMEN TECH SERIES: Role of Mentorship...
+        </h5>
+        <p className="line-clamp-2 text-sm font-normal">
           In this episode, Merlyin Mayienga hosts the incredible Kipkurui talks
           about product management ...
         </p>
 
-        <ul className="flex items-center gap-2 text-gray-400 text-xs font-medium">
+        <ul className="flex items-center gap-2 text-gray-200 text-xs font-medium">
           <li className="text-nowrap">Apr 30</li>
           <li>●</li>
           <li className="text-nowrap">1hr 19min</li>

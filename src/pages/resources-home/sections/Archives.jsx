@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { space, spotify, youtube } from "../../../assets/images/resources-page";
 import { youtubeData } from "./data";
 import PodcastCard from "./PodcastCard";
+import ResourceCard from "./ResourceCard";
 import YoutubeCard from "./YoutubeCard";
 
 function Archives() {
@@ -13,7 +14,7 @@ function Archives() {
         Go back in time and access our videos, spaces and podcasts
       </h3>
 
-      <div className="space-y-8 md:space-y-12 xl:space-y-20 border border-red-500 w-full">
+      <div className="space-y-8 md:space-y-12 xl:space-y-20 w-full">
         {/* Youtube */}
         <div className="space-y-5">
           <div className="flex items-center justify-between">
@@ -99,6 +100,12 @@ function Archives() {
             >
               See all spaces
             </Link>
+          </div>
+
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-5">
+            <ResourceCard />
+            <ResourceCard />
+            <ResourceCard />
           </div>
         </div>
       </div>

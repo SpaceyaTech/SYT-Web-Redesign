@@ -4,6 +4,8 @@ import {
   backend,
   dataScience,
 } from "../../../assets/images/resources-page";
+import cardImg from "../../../assets/images/resources-page/card.jpeg";
+import thumb11 from "../../../assets/images/resources-page/thumb1.png";
 import thumb1 from "../../../assets/images/resources-page/thumb1.webp";
 import thumb2 from "../../../assets/images/resources-page/thumb2.jpeg";
 import logo from "../../../assets/images/sytLogo.png";
@@ -159,5 +161,74 @@ export const youtubeData = [
     },
     uploaded: "2 Days ago",
     length: "36min",
+  },
+];
+
+export const fieldData = [
+  {
+    id: 1,
+    img: cardImg,
+    title: "Product Design",
+    numberOfResources: 47,
+  },
+  {
+    id: 2,
+    img: frontend,
+    title: "Frontend Engineering",
+    numberOfResources: 12,
+  },
+  {
+    id: 3,
+    img: backend,
+    title: "Backend Engineering",
+    numberOfResources: 4,
+  },
+  {
+    id: 4,
+    img: thumb1,
+    title: "Android Development",
+    numberOfResources: 6,
+  },
+  {
+    id: 5,
+    img: thumb2,
+    title: "Cybersecurity",
+    numberOfResources: 9,
+  },
+  {
+    id: 6,
+    img: cardImg,
+    title: "AI & ML",
+    numberOfResources: 15,
+  },
+  {
+    id: 7,
+    img: dataScience,
+    title: "Data Science",
+    numberOfResources: 4,
+  },
+  {
+    id: 8,
+    img: cardImg,
+    title: "APIs",
+    numberOfResources: 9,
+  },
+  {
+    id: 9,
+    img: thumb11,
+    title: "Product Management",
+    numberOfResources: 7,
+  },
+  {
+    id: 10,
+    img: cardImg,
+    title: "Web3 & Blockchain",
+    numberOfResources: 3,
+  },
+  {
+    id: 11,
+    img: cardImg,
+    title: "Data Analysis and Engineering",
+    numberOfResources: 5,
   },
 ];
