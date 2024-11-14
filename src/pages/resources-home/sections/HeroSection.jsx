@@ -47,6 +47,13 @@ function HeroSection() {
               100+ contributors
             </p>
           </div>
+
+          <button
+            type="button"
+            className="bg-green-dark rounded text-white py-3 px-8 text-sm font-bold border border-green-dark hover:bg-transparent hover:text-green-dark transition-colors duration-300 ease-in"
+          >
+            Add a resource
+          </button>
         </div>
 
         <LazyLoadImage

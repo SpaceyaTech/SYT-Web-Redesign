@@ -8,9 +8,10 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import mastercraft from "../assets/images/mastercraft/mastercraft-hero-footer.png";
+import { heroFooter } from "../assets/images/resources-page";
 import logo from "../assets/images/sytLogo.png";
 
 const socialLinks = [
@@ -211,13 +212,14 @@ export default ResourcesFooter;
 
 function FooterTop() {
   const [cohortEmail, setCohortEmail] = useState("");
+  const { pathname } = useLocation();
 
   return (
     <div className="hidden md:block bg-[#F5F5F5]">
       <div className="relative mx-auto pt-60">
         <div className="w-full xl:w-fit max-w-768 xl:max-w-1216 mx-auto absolute top-12 left-1/2 -translate-x-1/2 z-10">
           <LazyLoadImage
-            src={mastercraft}
+            src={pathname === "/mastercraft" ? mastercraft : heroFooter}
             alt="mastercraft"
             className="w-full object-contain"
             effect="blur"

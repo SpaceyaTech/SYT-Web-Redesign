@@ -103,7 +103,7 @@ function Features() {
               </div>
 
               <h4 className="text-center md:text-lg text-base">
-                Biuld on Foundations
+                Build on Foundations
               </h4>
 
               <p className="text-center text-sm font-normal">
