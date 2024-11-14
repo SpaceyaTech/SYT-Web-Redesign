@@ -278,14 +278,14 @@ function FooterTop() {
               <div className="flex items-center mx-auto mt-4 gap-5">
                 <button
                   type="button"
-                  className="bg-green-dark text-white rounded border border-green-dark px-3 py-2 transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-green-dark"
+                  className="bg-green-dark text-white text-sm font-light rounded border border-green-dark px-3 py-2 transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-green-dark"
                 >
                   Explore Resources
                 </button>
 
                 <button
                   type="button"
-                  className="bg-transparent text-white rounded border px-3 py-2 transition-colors duration-300 ease-in-out hover:bg-green-dark hover:text-white"
+                  className="bg-transparent text-white text-sm font-light rounded border px-3 py-2 transition-colors duration-300 ease-in-out hover:bg-green-dark hover:text-white"
                 >
                   Become a contributor
                 </button>
