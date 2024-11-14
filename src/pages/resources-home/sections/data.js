@@ -4,6 +4,9 @@ import {
   backend,
   dataScience,
 } from "../../../assets/images/resources-page";
+import thumb1 from "../../../assets/images/resources-page/thumb1.webp";
+import thumb2 from "../../../assets/images/resources-page/thumb2.jpeg";
+import logo from "../../../assets/images/sytLogo.png";
 import img2 from "../../../assets/Landing Page Images/Ellipse 127.png";
 import img3 from "../../../assets/Landing Page Images/Ellipse 128.png";
 import img5 from "../../../assets/Landing Page Images/Ellipse 138.png";
@@ -120,5 +123,41 @@ export const questions = [
     question: "Can I join the mentorship sessions at any time?",
     answer:
       "No, you cannot join the mentorship sessions at any time. SpaceYaTech's mentorship sessions are offered on a rolling basis, and there are limited spots available. To be considered for a mentorship session, you must submit an application and be selected by SpaceYaTech.",
+  },
+];
+
+export const youtubeData = [
+  {
+    id: 1,
+    thumbnail: thumb1,
+    title: "UNPACKING DARAJA 2.0 FOR NEXT.JS",
+    channel: {
+      icon: logo,
+      name: "SpaceYaTech",
+    },
+    uploaded: "2 Weeks ago",
+    length: "1hr 19min",
+  },
+  {
+    id: 2,
+    thumbnail: thumb2,
+    title: "UNPACKING DARAJA 2.0 FOR NEXT.JS",
+    channel: {
+      icon: logo,
+      name: "SpaceYaTech",
+    },
+    uploaded: "1 Month ago",
+    length: "2hr 42min",
+  },
+  {
+    id: 3,
+    thumbnail: thumb1,
+    title: "UNPACKING DARAJA 2.0 FOR NEXT.JS",
+    channel: {
+      icon: logo,
+      name: "SpaceYaTech",
+    },
+    uploaded: "2 Days ago",
+    length: "36min",
   },
 ];

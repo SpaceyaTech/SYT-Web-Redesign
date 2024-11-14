@@ -7,7 +7,7 @@ function ResourceCard() {
   return (
     <div className="rounded-xl flex flex-col overflow-clip hover:shadow-xl transition-shadow duration-300 ease-in-out">
       {/* Image */}
-      <div className="h-1/2 w-full bg-blue-300 overflow-hidden">
+      <div className="h-1/2 w-full overflow-hidden">
         <LazyLoadImage
           alt="img"
           src={cardImg}
