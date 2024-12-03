@@ -1,4 +1,3 @@
- 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { space, spotify, youtube } from "../../../assets/images/resources-page";
