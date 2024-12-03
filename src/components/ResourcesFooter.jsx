@@ -8,9 +8,10 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import mastercraft from "../assets/images/mastercraft/mastercraft-hero-footer.png";
+import { heroFooter } from "../assets/images/resources-page";
 import logo from "../assets/images/sytLogo.png";
 
 const socialLinks = [
@@ -211,55 +212,86 @@ export default ResourcesFooter;
 
 function FooterTop() {
   const [cohortEmail, setCohortEmail] = useState("");
+  const { pathname } = useLocation();
 
   return (
     <div className="hidden md:block bg-[#F5F5F5]">
-      <div className="relative mx-auto max-w-1440 pt-60">
+      <div className="relative mx-auto pt-60">
         <div className="w-full xl:w-fit max-w-768 xl:max-w-1216 mx-auto absolute top-12 left-1/2 -translate-x-1/2 z-10">
           <LazyLoadImage
-            src={mastercraft}
+            src={pathname === "/mastercraft" ? mastercraft : heroFooter}
             alt="mastercraft"
             className="w-full object-contain"
             effect="blur"
           />
         </div>
         {/* Bottom */}
-        <div className="bg-secondary relative rounded-t-2xl pt-60 pb-12 mx-auto max-w-1440 flex-center overflow-clip">
-          <div className="max-w-xl flex flex-col gap-3 text-white">
-            <h4 className="text-center text-3xl px-4">
-              Bet on yourself. It’s completely
-              <br /> free
-            </h4>
+        <div className="bg-secondary relative rounded-t-xl 2xl:rounded-t-2xl pt-60 2xl:pt-80 pb-12 mx-auto flex-center overflow-clip">
+          {pathname === "/mastercraft" ? (
+            <div className="max-w-xl flex flex-col gap-3 text-white">
+              <h4 className="text-center text-3xl px-4">
+                Bet on yourself. It’s completely
+                <br /> free
+              </h4>
 
-            <p className="text-center text-base px-16 font-normal">
-              We believe education should be nurtured and made as accessible as
-              possible.
-            </p>
+              <p className="text-center text-base px-16 font-normal">
+                We believe education should be nurtured and made as accessible
+                as possible.
+              </p>
 
-            <div className="w-full">
-              <small className="text-xs">Get future cohort dates</small>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                }}
-                className="bg-white p-[1px] border rounded-md w-full flex items-center text-grey-dark"
-              >
-                <input
-                  type="email"
-                  className="flex-grow outline-none px-2 text-sm"
-                  placeholder="Enter email"
-                  value={cohortEmail}
-                  onChange={(e) => setCohortEmail(e.target.value)}
-                />
-                <button
-                  type="submit"
-                  className="rounded-r px-6 py-1.5 font-semibold text-white border-none bg-gradient-to-b to-primary from-green-dark"
+              <div className="w-full">
+                <small className="text-xs">Get future cohort dates</small>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                  }}
+                  className="bg-white p-[1px] border rounded-md w-full flex items-center text-grey-dark"
                 >
-                  Submit
-                </button>
-              </form>
+                  <input
+                    type="email"
+                    className="flex-grow outline-none px-2 text-sm"
+                    placeholder="Enter email"
+                    value={cohortEmail}
+                    onChange={(e) => setCohortEmail(e.target.value)}
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-r px-6 py-1.5 font-semibold text-white border-none bg-gradient-to-b to-primary from-green-dark"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="max-w-xl flex flex-col gap-3 text-white">
+              <h4 className="text-center text-3xl leading-normal font-semibold px-4">
+                Accelerate your journey to <br />
+                your first role
+              </h4>
+
+              <p className="text-center text-base px-16 font-light">
+                The community has come together to ensure you finish the race.
+                One you get there, pay it forward.
+              </p>
+
+              <div className="flex items-center mx-auto mt-4 gap-5">
+                <button
+                  type="button"
+                  className="bg-green-dark text-white text-sm font-light rounded border border-green-dark px-3 py-2 transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-green-dark"
+                >
+                  Explore Resources
+                </button>
+
+                <button
+                  type="button"
+                  className="bg-transparent text-white text-sm font-light rounded border px-3 py-2 transition-colors duration-300 ease-in-out hover:bg-green-dark hover:text-white"
+                >
+                  Become a contributor
+                </button>
+              </div>
+            </div>
+          )}
 
           <LazyLoadImage
             src="/syt.png"

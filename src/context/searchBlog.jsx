@@ -1,5 +1,11 @@
 import PropTypes from "prop-types";
-import { createContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useEffect,
+  useMemo,
+  useState,
+  startTransition,
+} from "react";
 import { useSearchBlog } from "../hooks/Queries/blogs/useAllBlogsData";
 
 export const SearchBlogContext = createContext();
@@ -12,7 +18,9 @@ export function SearchBlogProvider({ children }) {
 
   useEffect(() => {
     const dalayDebounceFn = setTimeout(() => {
-      refetchSearchBlog();
+      startTransition(() => {
+        refetchSearchBlog();
+      });
     }, 500);
 
     return () => clearTimeout(dalayDebounceFn);

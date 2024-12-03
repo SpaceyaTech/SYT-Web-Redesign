@@ -13,9 +13,10 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1440px",
       },
     },
+
     extend: {
       keyframes: {
         "accordion-down": {
@@ -49,6 +50,7 @@ module.exports = {
           dark: "#00664E",
           light: "#E5EFEC",
           header: "#1F7964",
+          hero: "#116937",
           footer: "#00FFC3",
         },
         grey: {
@@ -61,6 +63,9 @@ module.exports = {
         error: {
           bg: "#FEF3F2",
           text: "#B42318",
+        },
+        orange: {
+          hero: "#FF9500",
         },
       },
       maxWidth: {

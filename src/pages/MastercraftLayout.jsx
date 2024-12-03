@@ -12,9 +12,9 @@ function ScrollToTopOnLinkClick() {
   return null;
 }
 
-function ResourcesLayout() {
+function MastercraftLayout() {
   return (
-    <div className="w-screen overflow-hidden">
+    <div className="w-screen overflow-hidden bg-[#F5F5F5]">
       <Header />
       <ScrollToTopOnLinkClick />
       <Outlet />
@@ -23,4 +23,4 @@ function ResourcesLayout() {
   );
 }
 
-export default ResourcesLayout;
+export default MastercraftLayout;

@@ -10,8 +10,8 @@ function StudentShowcase() {
       </h3>
 
       <div className="flex items-center gap-2 md:gap-4 overflow-x-scroll scrollbar-2 w-full pb-6">
-        {Array.from({ length: 10 }).map((item) => (
-          <ProjectCard key={item} />
+        {Array.from({ length: 10 }).map((i) => (
+          <ProjectCard key={`${crypto.randomUUID()}-${i}`} />
         ))}
       </div>
     </section>

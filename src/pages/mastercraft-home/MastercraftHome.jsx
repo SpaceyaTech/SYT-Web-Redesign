@@ -29,7 +29,7 @@ const components = [
   },
 ];
 
-function Resources() {
+function MastercraftHome() {
   return (
     <>
       <SeoMetadata
@@ -54,4 +54,4 @@ function Resources() {
   );
 }
 
-export default Resources;
+export default MastercraftHome;
