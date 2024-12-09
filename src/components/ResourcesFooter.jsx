@@ -88,7 +88,7 @@ function ResourcesFooter() {
   const year = now.getFullYear();
 
   return (
-    <div className="">
+    <div className="xl:pt-64">
       <FooterTop />
       <footer className="bg-secondary text-white" data-testid="footer-section">
         <div className="md:px-12 md:pt-8 md:pb-[2px] py-8 px-4 max-w-[1440px] mx-auto">
@@ -217,7 +217,7 @@ function FooterTop() {
   return (
     <div className="hidden md:block bg-[#F5F5F5]">
       <div className="relative mx-auto pt-60">
-        <div className="w-full xl:w-fit max-w-768 xl:max-w-1216 mx-auto absolute top-12 left-1/2 -translate-x-1/2 z-10">
+        <div className="w-full xl:w-full max-w-768 xl:max-w-1216 mx-auto absolute top-12 xl:-top-48 left-1/2 -translate-x-1/2 z-10">
           <LazyLoadImage
             src={pathname === "/mastercraft" ? mastercraft : heroFooter}
             alt="mastercraft"
