@@ -30,6 +30,7 @@ import {
   ProductDisplay,
   Products,
   ResetPassword,
+  Resource,
   ResourcesHome,
   ShopDashboard,
   ShopSales,
@@ -294,7 +295,7 @@ const router = createBrowserRouter([
         path: "/resources/:id",
         element: (
           <Suspense fallback={<FallbackLoader />}>
-            <Mastercraft />
+            <Resource />
           </Suspense>
         ),
       },

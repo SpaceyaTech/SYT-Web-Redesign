@@ -25,15 +25,15 @@ function Description() {
   };
   return (
     <div className="w-full flex gap-6 md:gap-12">
-      <div className="bg-white p-1 rounded-xl w-1/5 h-fit">
-        <div className="w-full hidden md:block border rounded-lg bg-green-light p-4 space-y-4 text-base pb-6">
+      <div className="bg-white p-1 rounded-xl w-1/5 h-fit hidden lg:block">
+        <div className="w-full border rounded-lg bg-green-light p-4 space-y-4 text-base pb-6">
           <h4 className="uppercase font-semibold">Product Design</h4>
 
           <div className="flex flex-col gap-3 text-[#767975] font-normal items-start">
             <button
               type="button"
               onClick={() => handleScrollToSection("CourseDescription")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
               ref={defaultFocusedLinkRef}
             >
               Course Description
@@ -42,7 +42,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("WhoCanApply")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               Who can apply
             </button>
@@ -50,7 +50,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("WhatYouWillLearn")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               What you will learn
             </button>
@@ -58,7 +58,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("Curriculum")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               Curriculum
             </button>
@@ -66,7 +66,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("CourseOutcome")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               Course Outcome
             </button>
@@ -74,7 +74,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("Instructors")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               Instructors
             </button>
@@ -82,7 +82,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("Pricing")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               Pricing
             </button>
@@ -90,7 +90,7 @@ function Description() {
             <button
               type="button"
               onClick={() => handleScrollToSection("NextCohort")}
-              className="focus:text-green-dark focus:font-medium outline-none"
+              className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
               Next Cohort
             </button>
