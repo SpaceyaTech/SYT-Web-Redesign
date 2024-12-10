@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
+import { cn } from "../../../utilities/utils";
 import ResourceCard from "../sections/ResourceCard";
-import { cn } from "@/utilities/utils";
 
 function MastercraftSearch() {
   const [activeTab, setActiveTab] = useState("All");
