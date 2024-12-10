@@ -7,7 +7,7 @@ import logo from "../../../assets/images/sytLogo.png";
 function ResourceCard() {
   return (
     <Link
-      to="/resources/tutorial"
+      to="/resources/search/1"
       className="rounded-xl flex flex-col overflow-clip hover:shadow-xl transition-shadow duration-300 ease-in-out"
     >
       {/* Image */}
