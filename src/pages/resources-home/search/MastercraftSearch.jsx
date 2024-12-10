@@ -20,9 +20,9 @@ function MastercraftSearch() {
       <div className="px-4 py-8 mx-auto max-w-1440">
         <div className="flex flex-col items-center w-full gap-8 md:gap-12">
           <div className="w-full flex items-center flex-col gap-4 md:gap-8">
-            <div className="w-full flex items-center gap-10">
+            <div className="w-full flex flex-col md:flex-row  items-center gap-10">
               {/* First bar */}
-              <div className="flex gap-10">
+              <div className="flex gap-10 overflow-x-scroll w-full">
                 {[
                   "Documentation",
                   "Tutorials",
@@ -44,7 +44,7 @@ function MastercraftSearch() {
                   </button>
                 ))}
               </div>
-              <div className="relative flex items-center flex-grow pl-4 sm:px-6 py-2 sm:py-3 bg-white text-grey-dark rounded-xl md:rounded-2xl border border-[#EAECF0]">
+              <div className="w-full sm:w-auto relative flex items-center flex-grow pl-4 sm:px-6 py-2 sm:py-3 bg-white text-grey-dark rounded-xl md:rounded-2xl border border-[#EAECF0]">
                 <input
                   type="text"
                   name="resource"

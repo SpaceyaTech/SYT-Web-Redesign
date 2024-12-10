@@ -46,7 +46,7 @@ function Features() {
             </form>
 
             {/* Tabs */}
-            <div className="w-full overflow-x-scroll flex items-center">
+            <div className="w-full overflow-x-auto flex items-center">
               <div className="flex gap-3 sm:gap-4 mx-auto">
                 <button
                   onClick={() => setActiveTab("All")}
@@ -84,7 +84,6 @@ function Features() {
             </div>
           </div>
 
-          {/* Day-Zero Software developers */}
           <div className="md:self-start flex flex-col gap-8 md:gap-10 w-full">
             <div className="max-w-xl space-y-2 text-center md:text-left">
               <h3 className="text-2xl md:text-3xl text-green-dark font-semibold">
@@ -110,7 +109,7 @@ function Features() {
                 Newly uploaded resources
               </h3>
               <Link
-                to="/resources/search?q=frontend"
+                to="/resources"
                 className="text-sm xl:text-base leading-tight font-normal text-primary underline"
               >
                 Explore all frontend resources
