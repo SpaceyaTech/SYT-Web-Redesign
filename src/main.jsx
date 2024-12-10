@@ -28,7 +28,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <AuthContextProvider>
           <QueryClientProvider client={queryClient}>
             <SearchBlogProvider>
-              <RouterProvider router={router} />
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
               <ReactQueryDevtools position="bottom-right" />
             </SearchBlogProvider>
           </QueryClientProvider>

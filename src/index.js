@@ -48,6 +48,7 @@ const MastercraftHome = lazy(
 const ResourcesHome = lazy(
   () => import("./pages/resources-home/ResourcesHome")
 );
+const Resource = lazy(() => import("./pages/resource/Resource"));
 const MastercraftLayout = lazy(() => import("./pages/MastercraftLayout"));
 const MastercraftSearch = lazy(
   () => import("./pages/resources-home/search/MastercraftSearch")
@@ -106,6 +107,7 @@ export {
   ProductDisplay,
   Products,
   ResetPassword,
+  Resource,
   ResourcesHome,
   MastercraftHome,
   MastercraftLayout,

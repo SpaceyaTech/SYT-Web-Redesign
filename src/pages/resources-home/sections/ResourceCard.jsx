@@ -7,11 +7,11 @@ import logo from "../../../assets/images/sytLogo.png";
 function ResourceCard() {
   return (
     <Link
-      to="/resources"
+      to="/resources/search/1"
       className="rounded-xl flex flex-col overflow-clip hover:shadow-xl transition-shadow duration-300 ease-in-out"
     >
       {/* Image */}
-      <div className="h-1/2 w-full overflow-hidden">
+      <div className="h-1/2 w-full overflow-hidden bg-white">
         <LazyLoadImage
           alt="img"
           src={cardImg}
