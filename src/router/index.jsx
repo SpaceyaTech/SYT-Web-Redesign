@@ -26,6 +26,7 @@ import {
   Mastercraft,
   MastercraftHome,
   MastercraftLayout,
+  MastercraftSearch,
   OrdersPage,
   ProductDisplay,
   Products,
@@ -291,7 +292,15 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/resources/:id",
+        path: "/resources/search",
+        element: (
+          <Suspense fallback={<FallbackLoader />}>
+            <MastercraftSearch />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/resources/search/:id",
         element: (
           <Suspense fallback={<FallbackLoader />}>
             <Mastercraft />

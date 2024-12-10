@@ -110,7 +110,7 @@ function Features() {
                 Newly uploaded resources
               </h3>
               <Link
-                to="/resources"
+                to="/resources/search?q=frontend"
                 className="text-sm xl:text-base leading-tight font-normal text-primary underline"
               >
                 Explore all frontend resources

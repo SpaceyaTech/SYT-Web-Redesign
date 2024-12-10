@@ -14,7 +14,7 @@ function HowToArticles() {
               How-to-articles: Expanding your understanding
             </h3>
             <Link
-              to="/resources"
+              to="/resources/search"
               className="text-sm xl:text-base leading-tight font-normal text-primary underline"
             >
               Explore all tutorials
@@ -35,7 +35,7 @@ function HowToArticles() {
               Recommended tutorials for beginners
             </h3>
             <Link
-              to="/resources"
+              to="/resources/search"
               className="text-sm xl:text-base leading-tight font-normal text-primary underline"
             >
               Explore all tutorials
