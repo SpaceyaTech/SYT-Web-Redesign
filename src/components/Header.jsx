@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { BiChevronDown } from "react-icons/bi";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation } from "react-router-dom";
-
 import logo from "../assets/images/sytLogo.png";
 import CartDrawer from "./shop/CartDrawer";
 import CartIcon from "./shop/CartIcon";
@@ -29,11 +29,11 @@ const navLinks = [
     link: "Products",
     route: "/products",
   },
-  {
-    id: 5,
-    link: "Blogs",
-    route: "/blogs",
-  },
+  // {
+  //   id: 5,
+  //   link: "Blogs",
+  //   route: "/blogs",
+  // },
   {
     id: 6,
     link: "Resources",
@@ -54,6 +54,7 @@ const navLinks = [
 function Header() {
   const [showNavlinks, setShowNavlinks] = useState(false);
   const [open, setOpen] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const { pathname } = useLocation();
 
@@ -64,7 +65,6 @@ function Header() {
         <Link to="/" className="md:w-[60px] w-12">
           <LazyLoadImage src={logo} alt="logo" className="w-full" />
         </Link>
-
         {/* mobile menu */}
         <div className="flex gap-4 items-center">
           <div className="flex md:hidden">
@@ -106,7 +106,6 @@ function Header() {
             </button>
           )}
         </div>
-
         {/* mobile navlinks */}
         <nav
           className="flex flex-col items-start justify-start gap-6 text-base absolute top-[65px] left-0 bg-secondary rounded-b-lg border-t w-full h-fit z-[1] p-5"
@@ -116,35 +115,115 @@ function Header() {
             const isActive =
               pathname === route || pathname.startsWith(`${route}/`);
             return (
-              <Link
-                key={id}
-                className={`${
-                  isActive ? "text-primary" : "text-white"
-                } hover:text-primary transition-all font-normal duration-300 cursor-pointer`}
-                to={`${route}`}
-                onClick={() => setShowNavlinks(false)}
-              >
-                {link}
-              </Link>
+              <React.Fragment key={id}>
+                {id === 4 ? (
+                  <p className="text-white">Under construct</p>
+                ) : (
+                  <Link
+                    className={`${
+                      isActive ? "text-primary" : "text-white"
+                    } hover:text-primary transition-all font-normal duration-300 cursor-pointer`}
+                    to={`${route}`}
+                    onClick={() => setShowNavlinks(false)}
+                  >
+                    {link}
+                  </Link>
+                )}
+              </React.Fragment>
             );
           })}
         </nav>
-
         {/* navlinks */}
         <nav className="md:flex hidden items-center gap-5 text-base">
           {navLinks.map(({ id, link, route }) => {
             const isActive =
               pathname === route || pathname.startsWith(`${route}/`);
             return (
-              <Link
-                key={id}
-                className={`${
-                  isActive ? "text-primary" : "text-white"
-                } hover:text-primary transition-all font-normal duration-300 cursor-pointer`}
-                to={`${route}`}
-              >
-                {link}
-              </Link>
+              <React.Fragment key={id}>
+                {id === 4 ? (
+                  <div className="relative inline-block text-left">
+                    <div>
+                      <button
+                        type="button"
+                        className={`${
+                          isActive ? "text-primary" : "text-white"
+                        } hover:text-primary transition-all font-normal duration-300 cursor-pointer flex`}
+                        id="menu-button"
+                        aria-expanded="true"
+                        aria-haspopup="true"
+                        onClick={() => setShowDropdown(!showDropdown)}
+                      >
+                        Products
+                        <BiChevronDown className=" size-6 text-gray-400 ml-1" />
+                      </button>
+                    </div>
+
+                    {showDropdown && (
+                      <div
+                        className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="menu-button"
+                      >
+                        <div className="py-1" role="none">
+                          <Link
+                            className={`${
+                              isActive ? "text-primary" : "text-gray-700"
+                            } hover:text-primary transition-all font-normal duration-300 cursor-pointer block px-4 py-2 text-sm border-b border-gray-100`}
+                            to="/products"
+                            onClick={() => setShowDropdown(false)}
+                          >
+                            View All Products
+                          </Link>{" "}
+                          <a
+                            href="https://mentorlst.com/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            className="block px-4 py-2 text-sm text-gray-700"
+                            role="menuitem"
+                            tabIndex="-1"
+                            id="menu-item-0"
+                          >
+                            Mentorlst
+                          </a>
+                          <a
+                            href="https://spaceyatech.github.io/CoLabs/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            className="block px-4 py-2 text-sm text-gray-700"
+                            role="menuitem"
+                            tabIndex="-1"
+                            id="menu-item-1"
+                          >
+                            Colabs
+                          </a>
+                          <a
+                            href="https://www.in4lytics.com/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            className="block px-4 py-2 text-sm text-gray-700"
+                            role="menuitem"
+                            tabIndex="-1"
+                            id="menu-item-2"
+                          >
+                            In4lytics
+                          </a>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={id}
+                    className={`${
+                      isActive ? "text-primary" : "text-white"
+                    } hover:text-primary transition-all font-normal duration-300 cursor-pointer`}
+                    to={`${route}`}
+                  >
+                    {link}
+                  </Link>
+                )}
+              </React.Fragment>
             );
           })}
         </nav>

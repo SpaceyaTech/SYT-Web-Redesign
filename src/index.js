@@ -18,8 +18,8 @@ const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
 const LogIn = lazy(() => import("./pages/auth/LogIn"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const SignUp = lazy(() => import("./pages/auth/SignUp"));
-const Blog = lazy(() => import("./pages/blog/Blog"));
-const Blogs = lazy(() => import("./pages/blogs/Blogs"));
+// const Blog = lazy(() => import("./pages/blog/Blog"));
+// const Blogs = lazy(() => import("./pages/blogs/Blogs"));
 const CommunityPage = lazy(() => import("./pages/community/CommunityPage"));
 const SingleEvent = lazy(
   () =>
@@ -82,8 +82,6 @@ export {
   AllChaptersPage,
   AllEventsPage,
   AllProducts,
-  Blog,
-  Blogs,
   CategoriesProducts,
   Checkout,
   CommunityPage,
