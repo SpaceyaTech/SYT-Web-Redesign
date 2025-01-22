@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import {
   FaFacebook,
   FaInstagram,
@@ -13,6 +14,7 @@ import { Link, useLocation } from "react-router-dom";
 import mastercraft from "../assets/images/mastercraft/mastercraft-hero-footer.png";
 import { heroFooter } from "../assets/images/resources-page";
 import logo from "../assets/images/sytLogo.png";
+import useSubscribeNewsletter from "../hooks/Mutations/newsletter/useSubscribeNewsletter";
 
 const socialLinks = [
   {
@@ -86,6 +88,17 @@ const footerLinks = [
 function ResourcesFooter() {
   const now = new Date();
   const year = now.getFullYear();
+  const { mutate, isPending, isSuccess } = useSubscribeNewsletter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target[0].value;
+    mutate({ email });
+
+    if (isSuccess) {
+      toast.success("You have successfully subscribed to our newsletter");
+    }
+  };
 
   return (
     <div className="xl:pt-64">
@@ -180,7 +193,10 @@ function ResourcesFooter() {
                     special offers
                   </p>
 
-                  <form className="flex items-center max-w-md w-full mx-auto">
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex items-center max-w-md w-full mx-auto"
+                  >
                     <input
                       type="email"
                       placeholder="Enter email address"
@@ -188,7 +204,8 @@ function ResourcesFooter() {
                     />
                     <button
                       type="submit"
-                      className="rounded-r-lg px-2 md:px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border-none hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                      className="rounded-r-lg px-2 md:px-4 py-3 flex-auto font-semibold text-white transition-all duration-200 bg-primary border-none hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-grey-neutral"
+                      disabled={isPending}
                     >
                       Subscribe
                     </button>

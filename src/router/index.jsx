@@ -6,8 +6,6 @@ import {
   AboutUs,
   AdminLayout,
   AllProducts,
-  Blog,
-  Blogs,
   CategoriesProducts,
   Checkout,
   CommunityPage,
@@ -86,22 +84,22 @@ const router = createBrowserRouter(
             </Suspense>
           ),
         },
-        {
-          path: "/blogs",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Blogs />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/blogs/:titleSlug",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Blog />
-            </Suspense>
-          ),
-        },
+        // {
+        //   path: "/blogs",
+        //   element: (
+        //     <Suspense fallback={<FallbackLoader />}>
+        //       <Blogs />
+        //     </Suspense>
+        //   ),
+        // },
+        // {
+        //   path: "/blogs/:titleSlug",
+        //   element: (
+        //     <Suspense fallback={<FallbackLoader />}>
+        //       <Blog />
+        //     </Suspense>
+        //   ),
+        // },
         {
           path: "/events",
           element: (
