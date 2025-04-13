@@ -73,6 +73,11 @@
   border-bottom: 2px solid #f3f4f5;
 }
 
+.PhoneInputInput {
+  background-color: transparent;
+  outline: none;
+}
+
 @media (min-width: 768px) {
   .scrollbar::-webkit-scrollbar {
     width: 6px;

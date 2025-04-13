@@ -1,5 +1,6 @@
 import React from "react";
 
+import { useLocation, useNavigate } from "react-router-dom";
 import InstructorsComponent from "./InstructorsComponent";
 import NextCohortSlot from "./NextCohortSlot";
 // eslint-disable-next-line import/extensions, import/no-unresolved
@@ -10,6 +11,11 @@ import { LeadershipData } from "@/pages/aboutUs/data";
 function Description() {
   const defaultFocusedLinkRef = React.useRef(null);
   const [subscription, setSubscription] = React.useState("now");
+
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const words = pathname.split("/");
+  const topic = words[words.length - 1];
 
   React.useEffect(() => {
     if (defaultFocusedLinkRef.current) {
@@ -98,6 +104,7 @@ function Description() {
 
           <button
             type="button"
+            onClick={() => navigate(`/mastercraft/${topic}/enroll`)}
             className="w-full text-white bg-green-dark rounded px-6 py-2 text-sm font-semibold transition-all border border-green-dark ease-in duration-500 hover:bg-transparent hover:text-green-dark"
           >
             Enroll

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link, useLocation } from "react-router-dom";
 import {
   award,
   calendar,
@@ -10,6 +11,11 @@ import {
 import workers from "../../../assets/images/mastercraft/workers.png";
 
 function Header() {
+  const { pathname } = useLocation();
+  const isEnroll = pathname.endsWith("enroll");
+  const words = pathname.split("/");
+  const topic = words[words.length - 1];
+
   return (
     <section className="w-full flex items-center flex-col md:flex-row gap-6 md:gap-12 lg:gap-16 md:justify-between">
       {/* Left */}
@@ -59,12 +65,13 @@ function Header() {
           </div>
 
           <div className="flex md:items-center flex-col md:flex-row gap-2 md:gap-6 py-6 md:py-0">
-            <button
-              type="button"
-              className="text-white bg-green-dark rounded px-6 py-2 text-sm font-semibold transition-all border border-green-dark ease-in duration-500 hover:bg-transparent hover:text-green-dark"
+            <Link
+              to={`/mastercraft/${topic}/enroll`}
+              aria-disabled={isEnroll}
+              className={`text-white bg-green-dark rounded px-6 py-2 text-sm font-semibold transition-all border border-green-dark ease-in duration-500 hover:bg-transparent hover:text-green-dark w-fit ${isEnroll ? "opacity-50 cursor-not-allowed" : ""}`}
             >
               Enroll
-            </button>
+            </Link>
 
             <p className="underline text-green-dark text-sm leading-4">
               Next cohort opens on 15th September

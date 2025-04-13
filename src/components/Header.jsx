@@ -41,11 +41,16 @@ const navLinks = [
   },
   {
     id: 7,
+    link: "Mastercraft",
+    route: "/mastercraft",
+  },
+  {
+    id: 8,
     link: "Shop",
     route: "/shop",
   },
   // {
-  //   id: 8,
+  //   id: 9,
   //   link: "Donate",
   //   route: "/donate",
   // },

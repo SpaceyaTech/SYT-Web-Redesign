@@ -24,6 +24,7 @@ import {
   Layout,
   LogIn,
   Mastercraft,
+  MastercraftEnroll,
   MastercraftHome,
   MastercraftLayout,
   MastercraftSearch,
@@ -276,6 +277,14 @@ const router = createBrowserRouter(
           element: (
             <Suspense fallback={<FallbackLoader />}>
               <Mastercraft />
+            </Suspense>
+          ),
+        },
+        {
+          path: "/mastercraft/:id/enroll",
+          element: (
+            <Suspense fallback={<FallbackLoader />}>
+              <MastercraftEnroll />
             </Suspense>
           ),
         },
