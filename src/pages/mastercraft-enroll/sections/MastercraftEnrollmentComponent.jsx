@@ -23,6 +23,7 @@ function MastercraftEnrollmentComponent() {
     availableDay: "",
     paymentPhoneNumber: "",
     promoCode: "",
+    termsOfUse: false,
   });
 
   const handleInputChange = (name, value) => {
@@ -30,36 +31,23 @@ function MastercraftEnrollmentComponent() {
   };
 
   const handleContinue = () => {
-    console.log("Continue clicked", index);
-    if (isProcessing) return; // prevent double click
+    if (isProcessing) return;
     setIsProcessing(true);
 
     if (index < 3) {
       setIndex((prev) => prev + 1);
-    } else {
-      console.log("Form submitted with data:", formData);
     }
 
-    setTimeout(() => setIsProcessing(false), 300); // re-enable after short delay
+    setTimeout(() => setIsProcessing(false), 300);
   };
 
-  // const handleContinue = () => {
-  //   console.log("Continue clicked", index);
-  //   if (index < 3) {
-  //     setIndex((prev) => prev + 1);
-  //   } else {
-  //     console.log("Form submitted with data:", formData);
-  //   }
-  // };
-
   const handleBack = () => {
-    console.log("Back clicked", index);
-    if (isProcessing) return; // prevent double click
+    if (isProcessing) return;
     setIsProcessing(true);
     if (index > 1) {
       setIndex((prev) => prev - 1);
     }
-    setTimeout(() => setIsProcessing(false), 300); // re-enable after short delay
+    setTimeout(() => setIsProcessing(false), 300);
   };
 
   return (
@@ -104,6 +92,49 @@ function MastercraftEnrollmentComponent() {
           <Payment formData={formData} handleInputChange={handleInputChange} />
         )}
 
+        {index === 3 && (
+          <div className="flex md:items-center gap-2">
+            <div className="relative flex items-center justify-center w-5 h-5 rounded-sm">
+              <input
+                type="checkbox"
+                name="termsOfUse"
+                id="termsOfUse"
+                className="size-5 peer shrink-0 appearance-none border-2 border-primary rounded-sm bg-white checked:border-primary"
+                value={formData.termsOfUse}
+                checked={formData.termsOfUse}
+                required
+                onChange={(e) => {
+                  handleInputChange("termsOfUse", e.target.checked);
+                }}
+              />
+              <svg
+                className="absolute top-0 left-0 size-5 hidden peer-checked:block pointer-events-none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#009975"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <label
+              htmlFor="termsOfUse"
+              className="text-sm text-[#2E2E2E] font-normal"
+            >
+              I agree to the{" "}
+              <span className="text-primary font-semibold">Terms of Use</span>{" "}
+              <span className="text-primary font-semibold">
+                , Refund Policy
+              </span>{" "}
+              and{" "}
+              <span className="text-primary font-semibold">Privacy Policy</span>
+            </label>
+          </div>
+        )}
+
         <div className="flex items-center justify-between w-full gap-5 mt-5">
           <button
             type="button"
@@ -118,7 +149,7 @@ function MastercraftEnrollmentComponent() {
             onClick={handleContinue}
             className="text-white bg-gradient-to-b to-primary from-green-dark border-0 py-3 px-4 md:px-8 focus:outline-none rounded-lg text-sm md:text-base w-fit text-center"
           >
-            {index === 3 ? "Submit" : "Continue"}
+            {index === 3 ? "Pay" : "Continue"}
           </button>
         </div>
       </section>

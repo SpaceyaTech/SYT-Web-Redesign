@@ -15,7 +15,7 @@ function Payment({ formData, handleInputChange }) {
 
       <h5 className="text-lg font-semibold">Pay to MPESA</h5>
 
-      <form className="bg-[#FBFCFE] rounded-3xl p-3 md:px-4 md:py-8 flex flex-col justify-between gap-4 md:gap-8 xl:gap-16 md:flex-row w-full">
+      <form className="bg-[#FBFCFE] rounded-3xl p-4 md:px-4 md:py-8 flex flex-col justify-between gap-4 md:gap-8 xl:gap-16 md:flex-row w-full">
         <div className="w-full md:w-3/5 flex flex-col gap-6 md:gap-12">
           <ul className="md:max-w-[66%] flex flex-col gap-2">
             <li className="flex items-center justify-between">

@@ -8,7 +8,7 @@ function PersonalInformation({ formData, handleInputChange }) {
     <div className="flex flex-col gap-6 xl:gap-6">
       <h5 className="text-lg font-medium">Personal Information</h5>
 
-      <form className="bg-[#FBFCFE] rounded-3xl p-3 md:p-4 flex flex-col gap-10">
+      <form className="bg-[#FBFCFE] rounded-3xl p-4 flex flex-col gap-10">
         <div className="flex flex-col gap-3">
           <label htmlFor="fullName" className="text-sm">
             Full name
