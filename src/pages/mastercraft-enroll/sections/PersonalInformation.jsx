@@ -67,7 +67,7 @@ function PersonalInformation({ formData, handleInputChange }) {
             id="github"
             onChange={(e) => handleInputChange("github", e.target.value)}
             value={formData.github}
-            placeholder="ex: github.com/johndoe"
+            placeholder="ex: https://github.com/johndoe"
             className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
           />
         </div>
@@ -97,7 +97,7 @@ function PersonalInformation({ formData, handleInputChange }) {
             id="linkedIn"
             onChange={(e) => handleInputChange("linkedIn", e.target.value)}
             value={formData.linkedIn}
-            placeholder="ex: linkedin.com/johndoe"
+            placeholder="ex: https://linkedin.com/johndoe"
             className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
           />
         </div>
