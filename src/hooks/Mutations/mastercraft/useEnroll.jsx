@@ -15,11 +15,14 @@ const useEnroll = () => {
           },
         }
       );
+      console.log("first response", response);
       return response.data;
     },
-
-    onSuccess: () => {
+    mutationKey: ["enrollment"],
+    onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ["enrollment"] });
+
+      return data;
     },
     onError: (error) => {
       const profileErrors = error?.response?.data?.profile;
