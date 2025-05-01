@@ -67,8 +67,8 @@ function MastercraftEnrollmentComponent() {
 
   const closeModal = () => {
     setIsOpen(false);
-    // setEnrollmentId(null);
-    // setPaymentInitiated(false);
+    setEnrollmentId(null);
+    setPaymentInitiated(false);
   };
 
   const openModal = () => {
@@ -109,6 +109,16 @@ function MastercraftEnrollmentComponent() {
   const handleContinue = async () => {
     if (isProcessing) return;
     setIsProcessing(true);
+
+    const hasInputData = Object.values(formData).some(
+      (value) => value !== "" || typeof value === "boolean"
+    );
+
+    if (!hasInputData) {
+      alert("Please fill all required fields");
+      setIsProcessing(false);
+      return;
+    }
 
     let isValid = false;
     if (index === 1) {
