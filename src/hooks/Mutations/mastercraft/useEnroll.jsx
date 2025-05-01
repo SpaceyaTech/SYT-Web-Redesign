@@ -15,7 +15,6 @@ const useEnroll = () => {
           },
         }
       );
-      console.log("first response", response);
       return response.data;
     },
     mutationKey: ["enrollment"],

@@ -39,17 +39,6 @@ function PaymentStatusModal({
     isOpen,
   });
 
-  console.log(
-    "Payment data:",
-    paymentData,
-    "attemptsCount:",
-    attemptsCount,
-    "errorCode:",
-    errorCode,
-    "paymentMessage:",
-    paymentMessage
-  );
-
   const handleCheckPayment = () => {
     if (enrollmentId) {
       checkStatus();
@@ -70,8 +59,6 @@ function PaymentStatusModal({
       "There was an issue processing your payment. Please try again or contact support."
     );
   };
-
-  console.log("Payment message:", paymentMessage);
 
   useEffect(() => {
     if (paymentSuccess || paymentData?.message === "Payment successful") {
@@ -114,14 +101,6 @@ function PaymentStatusModal({
     setEnrollmentId(null);
     setPaymentInitiated(false);
     closeModal();
-    console.log(
-      "Close modal",
-      "setIsOpen",
-      isOpen,
-      "enrollmentId",
-      enrollmentId,
-      paymentInitiated
-    );
   };
 
   useEffect(() => {

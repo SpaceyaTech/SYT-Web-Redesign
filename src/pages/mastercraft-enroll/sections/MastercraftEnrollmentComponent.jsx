@@ -65,25 +65,20 @@ function MastercraftEnrollmentComponent() {
     [formData]
   );
 
-  // Modal control functions
   const closeModal = () => {
     setIsOpen(false);
-    // if (!paymentSuccess) {
-    setEnrollmentId(null);
-    setPaymentInitiated(false);
-    // }
+    // setEnrollmentId(null);
+    // setPaymentInitiated(false);
   };
 
   const openModal = () => {
     setIsOpen(true);
   };
 
-  // Form input change handler
   const handleInputChange = (name, value) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Step validation functions
   const validatePersonalInfo = () => {
     const { fullName, email, phoneNumber } = formData;
     return fullName && email && phoneNumber;
@@ -111,12 +106,10 @@ function MastercraftEnrollmentComponent() {
     return termsOfUse && paymentPhoneNumber;
   };
 
-  // Navigation handlers
   const handleContinue = async () => {
     if (isProcessing) return;
     setIsProcessing(true);
 
-    // Validate based on current step
     let isValid = false;
     if (index === 1) {
       isValid = validatePersonalInfo();
@@ -156,17 +149,9 @@ function MastercraftEnrollmentComponent() {
               alert("Enrollment successful but couldn't track payment status");
               return;
             }
-            const intervalId = setInterval(() => {
-              if (data && data.enrollment_id) {
-                setEnrollmentId(data.enrollment_id);
-                setPaymentInitiated(true);
-                openModal();
-              }
-            }, 5000);
-
-            return () => {
-              clearInterval(intervalId);
-            };
+            setEnrollmentId(data.enrollment_id);
+            setPaymentInitiated(true);
+            openModal();
           },
           onError: (error) => {
             console.error("Enrollment error:", error);
@@ -175,18 +160,14 @@ function MastercraftEnrollmentComponent() {
             );
           },
         });
-
-        console.log("Enrollment Data:", enrollmentData);
       } catch (error) {
         console.error("Error during enrollment process:", error);
-        alert("An unexpected error occurred");
+        // alert("An unexpected error occurred");
       }
     }
 
     setTimeout(() => setIsProcessing(false), 300);
   };
-
-  console.log("EnrollmentId:", enrollmentId);
 
   const handleBack = () => {
     if (isProcessing) return;
@@ -198,7 +179,6 @@ function MastercraftEnrollmentComponent() {
   };
 
   const handleRetryPayment = () => {
-    // Close the modal and retry the payment process
     closeModal();
   };
 
