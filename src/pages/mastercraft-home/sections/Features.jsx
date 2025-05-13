@@ -13,7 +13,7 @@ function Features() {
             <p className="text-sm md:text-base">
               Quickly grasp the essentials and get your feet wet with our
               introductory course and jump straight into real world projects to
-              enable you to understand the basics alongside their implmentation
+              enable you to understand the basics alongside their implmentation{" "}
             </p>
           </div>
 
@@ -56,7 +56,9 @@ function Features() {
                 </svg>
               </div>
 
-              <h4 className="text-center md:text-lg text-base">Foundations</h4>
+              <h4 className="text-center md:text-lg text-base">
+                Project-based
+              </h4>
 
               <p className="text-center text-sm font-normal">
                 Lay the groundwork for the coming weeks with weekly learning
@@ -103,7 +105,7 @@ function Features() {
               </div>
 
               <h4 className="text-center md:text-lg text-base">
-                Build on Foundations
+                Flexible and remote
               </h4>
 
               <p className="text-center text-sm font-normal">
@@ -145,7 +147,9 @@ function Features() {
                 </svg>
               </div>
 
-              <h4 className="text-center md:text-lg text-base">Internship</h4>
+              <h4 className="text-center md:text-lg text-base">
+                Mentorship by Industry Experts
+              </h4>
 
               <p className="text-center text-sm font-normal">
                 Nurture your skills with first-hand experience, working

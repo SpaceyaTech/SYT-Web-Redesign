@@ -94,31 +94,50 @@ export const categoriesData = [
 export const questions = [
   {
     id: 1,
-    question: "Is SpaceYaTech free?",
+    question: "What is Mastercraft?",
     answer:
-      "Yes, SpaceYaTech is totally free for anyone who wishes to learn technology and contribute to Open Source",
+      "Mastercraft is an 8-week immersive training program that helps aspiring software engineers and product designers become job-ready through real-world, team-based project experience. You’ll work alongside peers and mentors in a simulated tech team—just like in the industry.",
   },
   {
     id: 2,
-    question: "Does SpaceYaTech only mentor developers?",
+    question: "Who is this program for?",
     answer:
-      "No, SpaceYaTech mentors anyone who is involved in modern technology. This includes developers, designers, product managers, and more. SpaceYaTech believes that everyone has the potential to learn and grow in the tech industry, and they are committed to providing mentorship to anyone who wants it.",
+      "Mastercraft is ideal for junior or self-taught developers/designers looking to sharpen their skills, build real experience, and grow confident in a team. If you know the basics and want to level up for jobs or internships—this is for you.",
   },
   {
     id: 3,
-    question: "Does SpaceYaTech pay mentors?",
+    question: "What tracks are available??",
     answer:
-      "No, SpaceYaTech does not pay mentors. However, mentors do receive a number of benefits.",
+      "We offer 5 focused tracks: UI/UX Design, Frontend Engineering (React), Backend Engineering (Python Django), Android Development (Kotlin), Data science and analytics, Each track works as part of a cross-functional team on the same product",
   },
   {
     id: 4,
-    question: "Can I collaborate with SpaceYaTech?",
-    answer: "Yes, you can collaborate with SpaceYaTech in a number of ways.",
+    question: "Is Mastercraft remote or on-site?",
+    answer:
+      "This program is completely remote, with a possibility of physical meets should the organizers feel it is necessary. The program takes 8-weeks, which are packed with tasks assigned by a PM and key deliverables. Team collaboration sessions. Weekly mentorship check-ins. Practical tasks based on your track. Design and development milestones.End-of-program demo and mock interviews",
   },
   {
     id: 5,
-    question: "Can I join the mentorship sessions at any time?",
+    question: "Will I get a certificate?",
     answer:
-      "No, you cannot join the mentorship sessions at any time. SpaceYaTech's mentorship sessions are offered on a rolling basis, and there are limited spots available. To be considered for a mentorship session, you must submit an application and be selected by SpaceYaTech.",
+      "Yes! Trainees who successfully complete the program and present their final project receive a certificate of completion and a portfolio-ready case study/project link to showcase to employers.",
+  },
+  {
+    id: 6,
+    question: "Is this a job placement program?",
+    answer:
+      "Mastercraft is not a direct job placement program, but it equips you with the experience, confidence, and portfolio projects that make you far more competitive for internships, freelance, and entry-level tech roles.",
+  },
+  {
+    id: 7,
+    question: "Is the program free?",
+    answer:
+      "No, the Mastercraft program is not free. It costs KES 3500 for residents ans citizens of Kenya and $30 for international students. The KES 3,500 covers the entire 8-week program, including live mentorship, training resources, career guidance, team project work, and access to a collaborative Slack community. There are no additional or hidden costs.",
+  },
+  {
+    id: 8,
+    question: "How do I get started?",
+    answer:
+      "Once you pay and sign up, you’ll receive a welcome email with your track details and next steps—including joining our Slack channel, where you'll meet your mentor and team members.",
   },
 ];
