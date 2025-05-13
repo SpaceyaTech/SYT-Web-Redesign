@@ -1,8 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { FiPlusCircle, FiMinusCircle } from "react-icons/fi";
-import { questions } from ".";
 
-function MastercraftFAQAccordion() {
+function MastercraftFAQAccordion({ questions = [] }) {
   const [activeQuestion, setActiveQuestion] = useState(null);
 
   const toggleQuestion = (index) => {

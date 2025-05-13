@@ -45,6 +45,7 @@ function WhatWeOffer() {
           {selected === 2 && <CategoryCard categoryData={categoriesData[1]} />}
           {selected === 3 && <CategoryCard categoryData={categoriesData[2]} />}
           {selected === 4 && <CategoryCard categoryData={categoriesData[3]} />}
+          {selected === 5 && <CategoryCard categoryData={categoriesData[4]} />}
         </div>
       </div>
     </div>

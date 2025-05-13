@@ -1,4 +1,5 @@
 import { MastercraftFAQAccordion } from "../../../components";
+import { questions } from "./data";
 
 function FAQSection() {
   return (
@@ -9,7 +10,7 @@ function FAQSection() {
         </h3>
       </div>
 
-      <MastercraftFAQAccordion />
+      <MastercraftFAQAccordion questions={questions} />
     </section>
   );
 }

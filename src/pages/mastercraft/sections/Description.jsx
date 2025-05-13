@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
@@ -8,7 +9,13 @@ import { CurriculumAccordion } from "@/components";
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import { LeadershipData } from "@/pages/aboutUs/data";
 
-function Description() {
+function Description({
+  category,
+  programDescription,
+  programOutcomes,
+  whatYouWillLearn,
+  whoCanApply,
+}) {
   const defaultFocusedLinkRef = React.useRef(null);
   const [subscription, setSubscription] = React.useState("now");
 
@@ -31,18 +38,19 @@ function Description() {
   };
   return (
     <div className="w-full flex gap-6 md:gap-12">
-      <div className="bg-white p-1 rounded-xl w-1/5 h-fit hidden lg:block">
+      <aside className="bg-white p-1 rounded-xl w-1/5 h-fit hidden lg:block">
         <div className="w-full border rounded-lg bg-green-light p-4 space-y-4 text-base pb-6">
-          <h4 className="uppercase font-semibold">Product Design</h4>
+          <h4 className="uppercase font-semibold text-nowrap">{category}</h4>
 
-          <div className="flex flex-col gap-3 text-[#767975] font-normal items-start">
+          {/* sections */}
+          <section className="flex flex-col gap-3 text-[#767975] font-normal items-start">
             <button
               type="button"
-              onClick={() => handleScrollToSection("CourseDescription")}
+              onClick={() => handleScrollToSection("ProgramDescription")}
               className="focus:text-green-dark focus:font-medium outline-none text-left"
               ref={defaultFocusedLinkRef}
             >
-              Course Description
+              Program Description
             </button>
 
             <button
@@ -63,26 +71,26 @@ function Description() {
 
             <button
               type="button"
-              onClick={() => handleScrollToSection("Curriculum")}
+              onClick={() => handleScrollToSection("Milestones")}
               className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
-              Curriculum
+              Milestones
             </button>
 
             <button
               type="button"
-              onClick={() => handleScrollToSection("CourseOutcome")}
+              onClick={() => handleScrollToSection("ProgramOutcome")}
               className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
-              Course Outcome
+              Program Outcome
             </button>
 
             <button
               type="button"
-              onClick={() => handleScrollToSection("Instructors")}
+              onClick={() => handleScrollToSection("Mentors")}
               className="focus:text-green-dark focus:font-medium outline-none text-left"
             >
-              Instructors
+              Mentors
             </button>
 
             <button
@@ -100,7 +108,7 @@ function Description() {
             >
               Next Cohort
             </button>
-          </div>
+          </section>
 
           <button
             type="button"
@@ -110,19 +118,16 @@ function Description() {
             Enroll
           </button>
         </div>
-      </div>
+      </aside>
 
-      <div className="w-full md:w-4/5 space-y-4 md:space-y-8">
-        {/* Course Description */}
-        <div className="space-y-2" id="CourseDescription">
+      <aside className="w-full md:w-4/5 space-y-4 md:space-y-8">
+        {/* Program Description */}
+        <div className="space-y-2" id="ProgramDescription">
           <h3 className="text-green-header text-xl font-semibold">
-            Course Description
+            Program Description
           </h3>
-          <p className="text-grey-dark text-sm md:text-base leading-loose">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores ex
-            id, sunt iste commodi voluptate incidunt veniam quod dignissimos
-            labore, quibusdam voluptates, fugit dolorum nemo vel dolorem tenetur
-            repudiandae omnis?
+          <p className="text-grey-dark text-sm md:text-base leading-loose md:leading-8">
+            {programDescription}
           </p>
         </div>
 
@@ -133,11 +138,12 @@ function Description() {
           <h3 className="text-green-header text-xl font-semibold">
             Who can apply
           </h3>
-          <ul className="list-image-checkmark list-inside space-y-2 text-sm md:text-base leading-loose">
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
+          <ul className="list-image-checkmark list-inside space-y-2 text-sm md:text-base leading-loose md:leading-8">
+            {whoCanApply.map((item) => (
+              <li key={item} className="text-grey-dark">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -148,35 +154,25 @@ function Description() {
           <h3 className="text-green-header text-xl font-semibold">
             What you will learn
           </h3>
-          <ul className="list-image-checkmark space-y-2 text-sm md:text-base leading-loose">
-            <li className="text-grey-dark ml-6">
-              Understand the basics of UX research, like planning research
-              studies, conducting interviews and usability studies, and
-              synthesizing research results
-            </li>
-            <li className="text-grey-dark ml-6">
-              Apply foundational UX concepts, like user-centered design,
-              accessibility, and equity-focused design
-            </li>
-            <li className="text-grey-dark ml-6">
-              Follow the design process: empathize with users, define pain
-              points, ideate solutions, create wireframes and prototypes, test
-              and iterate on designs
-            </li>
-            <li className="text-grey-dark ml-6">
-              Create a professional UX portfolio that includes 3 end-to-end
-              projects: a mobile app, a responsive website, and a cross-platform
-              experience
-            </li>
+          <ul className="list-image-checkmark space-y-2 text-sm md:text-base leading-loose md:leading-8">
+            {whatYouWillLearn.map(({ content, subTitle }) => (
+              <li key={subTitle} className="text-grey-dark ml-6">
+                <p>
+                  {subTitle && <b>{subTitle} </b>}
+
+                  {content}
+                </p>
+              </li>
+            ))}
           </ul>
         </div>
 
         <hr />
 
-        {/* Curriculum */}
-        <div className="flex flex-col gap-3" id="Curriculum">
+        {/* Milestones */}
+        <div className="flex flex-col gap-3" id="Milestones">
           <h3 className="text-green-header text-xl font-semibold">
-            Curriculum
+            Program milestones
           </h3>
 
           <CurriculumAccordion />
@@ -184,46 +180,50 @@ function Description() {
 
         <hr />
 
-        {/* Course Outcome */}
-        <div className="space-y-2" id="WhoCanApply">
+        {/* Program Outcome */}
+        <div className="space-y-2" id="ProgramOutcome">
           <h3 className="text-green-header text-xl font-semibold">
-            Course Outcome
+            Program Outcomes
           </h3>
 
-          <ul className="list-image-checkmark list-inside space-y-2 text-sm md:text-base md:leading-loose">
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
-            <li className="text-grey-dark">Lorem ipsum dolor sit amet</li>
+          <ul className="list-image-checkmark space-y-2 text-sm md:text-base leading-loose md:leading-8">
+            {programOutcomes.map(({ content, subTitle }) => (
+              <li className="text-grey-dark ml-6" key={subTitle}>
+                <p>
+                  {subTitle && <b>{subTitle} </b>}
+
+                  {content}
+                </p>
+              </li>
+            ))}
           </ul>
         </div>
 
         <hr />
 
-        {/* Instructors */}
-        <div className="space-y-2" id="Instructors">
-          <h3 className="text-green-header text-xl font-semibold">
-            Instructors
-          </h3>
+        {/* Mentors */}
+        <div className="space-y-2" id="Mentors">
+          <h3 className="text-green-header text-xl font-semibold">Mentors</h3>
 
           <p className="text-sm md:text-base text-grey-dark md:leading-8">
-            Each cohort is taught by a team of UI/UX professionals who are
-            thriving in the industry as professional product designers. The
-            teachers will be supported by mentors who are equally professionals
-            in product design.
+            We have carefully selected mentors, with whom you will meet for 1:1
+            sessions and group sessions, to unblock you and guide you on best
+            practices.
           </p>
 
           <div className="flex items-center gap-2 md:gap-4 overflow-x-scroll scrollbar-2 w-full md:w-auto py-6">
-            {LeadershipData.map(({ name, title, image, linkedin, twitter }) => (
-              <InstructorsComponent
-                key={name}
-                name={name}
-                title={title}
-                image={image}
-                linkedin={linkedin}
-                twitter={twitter}
-              />
-            ))}
+            {LeadershipData.slice(0, 2).map(
+              ({ name, title: ti, image, linkedin, twitter }) => (
+                <InstructorsComponent
+                  key={name}
+                  name={name}
+                  title={ti}
+                  image={image}
+                  linkedin={linkedin}
+                  twitter={twitter}
+                />
+              )
+            )}
           </div>
         </div>
 
@@ -327,7 +327,7 @@ function Description() {
         </div>
 
         <hr />
-      </div>
+      </aside>
     </div>
   );
 }
