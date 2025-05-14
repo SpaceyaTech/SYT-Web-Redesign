@@ -10,7 +10,7 @@ function Mastercraft() {
 
   const programRender = programs.find(({ slug }) => slug === program);
 
-  console.log("Pathname:", programRender);
+  console.log("Program:", programRender);
   return (
     <>
       <SeoMetadata
@@ -41,6 +41,7 @@ function Mastercraft() {
             programOutcomes={programRender.programOutcomes}
             mentors={programRender.mentors}
             pricing={programRender.pricing}
+            milestones={programRender.milestones}
           />
           <Portfolio />
         </main>

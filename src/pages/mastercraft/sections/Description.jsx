@@ -2,14 +2,14 @@
 import React from "react";
 
 import { useLocation, useNavigate } from "react-router-dom";
+import CurriculumAccordion from "./CurriculumAccordion";
 import InstructorsComponent from "./InstructorsComponent";
 import NextCohortSlot from "./NextCohortSlot";
-// eslint-disable-next-line import/extensions, import/no-unresolved
-import { CurriculumAccordion } from "@/components";
 
 function Description({
   category,
   mentors,
+  milestones,
   pricing,
   programDescription,
   programOutcomes,
@@ -185,7 +185,7 @@ function Description({
             Program milestones
           </h3>
 
-          <CurriculumAccordion />
+          <CurriculumAccordion milestones={milestones} />
         </div>
 
         <hr />

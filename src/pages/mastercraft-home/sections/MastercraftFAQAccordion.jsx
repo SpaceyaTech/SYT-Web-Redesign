@@ -17,7 +17,7 @@ function MastercraftFAQAccordion({ questions = [] }) {
             key={id}
             className="bg-white rounded-lg md:rounded-xl border px-4 py-3 md:p-6 border-[#33333326]"
           >
-            <h2 id={`flush-heading${index + 1}`}>
+            <section id={`flush-heading${index + 1}`}>
               <button
                 aria-label={title}
                 className={`group relative flex w-full md:items-center rounded-none text-left text-base md:text-lg transition ${
@@ -51,7 +51,7 @@ function MastercraftFAQAccordion({ questions = [] }) {
                   )}
                 </span>
               </button>
-            </h2>
+            </section>
             <div
               id={`flush-collapse${index + 1}`}
               className={`${
@@ -63,7 +63,7 @@ function MastercraftFAQAccordion({ questions = [] }) {
               data-te-parent="#accordionFlushExample"
             >
               {!list ? (
-                <p className="font-poppins  text-sm md:text-base text-gray-600 font-normal">
+                <p className="font-poppins text-sm md:text-base text-gray-600 font-normal">
                   {description}
                 </p>
               ) : (

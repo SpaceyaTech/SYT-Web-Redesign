@@ -1,5 +1,5 @@
-import { MastercraftFAQAccordion } from "../../../components";
 import { questions } from "./data";
+import MastercraftFAQAccordion from "./MastercraftFAQAccordion";
 
 function FAQSection() {
   return (
