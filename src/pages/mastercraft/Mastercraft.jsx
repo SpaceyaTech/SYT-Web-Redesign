@@ -39,6 +39,8 @@ function Mastercraft() {
             whoCanApply={programRender.whoCanApply}
             whatYouWillLearn={programRender.whatYouWillLearn}
             programOutcomes={programRender.programOutcomes}
+            mentors={programRender.mentors}
+            pricing={programRender.pricing}
           />
           <Portfolio />
         </main>

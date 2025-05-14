@@ -6,11 +6,11 @@ import InstructorsComponent from "./InstructorsComponent";
 import NextCohortSlot from "./NextCohortSlot";
 // eslint-disable-next-line import/extensions, import/no-unresolved
 import { CurriculumAccordion } from "@/components";
-// eslint-disable-next-line import/extensions, import/no-unresolved
-import { LeadershipData } from "@/pages/aboutUs/data";
 
 function Description({
   category,
+  mentors,
+  pricing,
   programDescription,
   programOutcomes,
   whatYouWillLearn,
@@ -36,6 +36,16 @@ function Description({
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const programPrice = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: pricing.currency,
+  }).format(pricing.fullAmount);
+  const discountedPrice = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: pricing.currency,
+  }).format(Number(pricing.fullAmount - pricing.discountedAmount));
+
   return (
     <div className="w-full flex gap-6 md:gap-12">
       <aside className="bg-white p-1 rounded-xl w-1/5 h-fit hidden lg:block">
@@ -212,15 +222,26 @@ function Description({
           </p>
 
           <div className="flex items-center gap-2 md:gap-4 overflow-x-scroll scrollbar-2 w-full md:w-auto py-6">
-            {LeadershipData.slice(0, 2).map(
-              ({ name, title: ti, image, linkedin, twitter }) => (
+            {mentors.map(
+              ({
+                id,
+                name,
+                role,
+                organisation,
+                img,
+                experience,
+                linkedin,
+                twitter,
+              }) => (
                 <InstructorsComponent
-                  key={name}
+                  key={id}
                   name={name}
-                  title={ti}
-                  image={image}
+                  title={role}
+                  image={img}
                   linkedin={linkedin}
                   twitter={twitter}
+                  organisation={organisation}
+                  experience={experience}
                 />
               )
             )}
@@ -239,17 +260,17 @@ function Description({
             and mentors to keep showing up besides passion.
           </p>
 
-          <div className="bg-white rounded-lg md:rounded-2xl p-4 md:p-6 border space-y-5 w-full md:w-96">
-            <div className="flex items-center border-[0.5px] border-green-header max-w-fit rounded-lg overflow-hidden text-xs md:leading-8 text-nowrap">
+          <div className="rounded-lg md:rounded-2xl p-4 md:p-6 border-2 border-white bg-green-light space-y-5 w-full md:w-96">
+            <div className="flex items-center border-[0.5px] border-[#92CABD] max-w-fit rounded-lg overflow-hidden text-xs md:leading-8 text-nowrap">
               <button
                 type="button"
                 onClick={() => setSubscription("now")}
-                className={`px-3.5 py-1 ${subscription === "now" ? "bg-grey-mild" : "bg-transparent"} flex items-center gap-2`}
+                className={`px-3.5 py-1 ${subscription === "now" ? "bg-[#D8F3E4]" : "bg-white"} flex items-center gap-2`}
               >
-                <p className="">Pay today</p>
+                <p className="">Pay whole</p>
 
                 {subscription === "now" && (
-                  <span className="bg-[#D7E9E4] px-2 rounded text-green-800">
+                  <span className="bg-[#BF8301] p-1.5 rounded-full text-white text-xs">
                     Save
                   </span>
                 )}
@@ -257,10 +278,11 @@ function Description({
 
               <button
                 type="button"
+                disabled
                 onClick={() => setSubscription("monthly")}
-                className={`border-l border-l-green-header px-3.5 py-1 ${subscription === "monthly" ? "bg-grey-mild" : "bg-transparent"} flex items-center gap-2`}
+                className={`border-l border-l-[#92CABD] px-3.5 py-1 ${subscription === "monthly" ? "bg-grey-mild" : "bg-white"} flex disabled:cursor-not-allowed items-center gap-2`}
               >
-                <p>Pay monthly</p>
+                <p>Pay in installments</p>
 
                 {/* {subscription === "monthly" && (
                   <span className="bg-[#D7E9E4] px-2 rounded text-green-800">
@@ -271,11 +293,13 @@ function Description({
             </div>
 
             <div className="space-y-2">
-              <p className="text-sm">Pay at once. Save Ksh 2000</p>
+              <p className="text-sm">Pay before {pricing.offerDeadline}</p>
 
               <h5 className="flex items-center gap-4 text-green-dark text-lg">
-                <span className="line-through ">KSH 8000</span>
-                <b className="font-semibold">KSH 6000</b>
+                <span className="line-through text-red-500">
+                  {programPrice}
+                </span>
+                <b className="font-semibold">{discountedPrice}</b>
               </h5>
             </div>
 
@@ -288,13 +312,13 @@ function Description({
 
             <ul className="list-image-checkmark list-inside space-y-2 text-sm">
               <li className="text-grey-dark leading-loose">
-                2 weekly live classes
+                Team-based collaboration
               </li>
               <li className="text-grey-dark leading-loose">
                 Learn industry tools
               </li>
               <li className="text-grey-dark leading-loose">
-                Graduate with 2 projects
+                Graduate with 2 real world project
               </li>
               <li className="text-grey-dark leading-loose">
                 1:1 support from mentors
@@ -315,7 +339,7 @@ function Description({
           </h3>
 
           <p className="text-sm md:text-base text-grey-dark md:leading-8">
-            Our Product Design Masterclasses tend to fill up pretty quickly
+            Our Mastercraft program openings tend to fill up pretty quickly
             which is why we open them months in advance. Live Classes are 90
             minutes on Thursday and Saturday from 9:00 pm - 10:00pm.
           </p>

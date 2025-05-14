@@ -7,6 +7,7 @@ import {
   duration,
   folder,
 } from "../../../assets/images/icons";
+import { catherine, murabula } from "@/assets/images/aboutPage";
 import { productDesign } from "@/assets/images/resources-page";
 
 export const programs = [
@@ -108,5 +109,46 @@ export const programs = [
           "Career Momentum: You won't leave with just skills; you'll leave with a personal growth plan, a portfolio app, mentorship feedback, and next steps toward landing your first Android developer role.",
       },
     ],
+    mentors: [
+      {
+        id: 1,
+        name: "Rachel Murabula",
+        role: "Android Engineer",
+        organisation: "SpaceYaTech",
+        img: murabula,
+        experience: 4,
+        linkedin: {
+          href: "https://www.linkedin.com/in/rachel-murabula/",
+          username: "Rachel Murabula",
+        },
+        twitter: {
+          href: "",
+          username: "",
+        },
+      },
+      {
+        id: 2,
+        name: "Catherine Kiiru",
+        role: "Dev Relations & Opensource Programs",
+        organisation: "Mastercraft",
+        img: catherine,
+        experience: 3,
+        linkedin: {
+          href: "https://www.linkedin.com/in/catherine-kiiru-47b2688b/",
+          username: "Catherine Kiiru",
+        },
+        twitter: {
+          href: "https://x.com/catetherinekiiru",
+          username: "catetherinekiiru",
+        },
+      },
+    ],
+    pricing: {
+      fullAmount: 3500,
+      discountPercentage: 20,
+      discountedAmount: 700,
+      currency: "KES",
+      offerDeadline: "27th April",
+    },
   },
 ];
