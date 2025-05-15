@@ -51,7 +51,7 @@ function OurEvents() {
           <button
             type="button"
             aria-label="view more events"
-            className={`border-4 rounded-full border-white px-3 py-1.5 gap-2 w-fit flex-center bg-green-light disabled:cursor-not-allowed`}
+            className="border-4 rounded-full border-white px-3 py-1.5 gap-2 w-fit flex-center bg-green-light disabled:cursor-not-allowed"
             onClick={() => navigate("/events")}
             disabled={isSuccess && topEvents?.count === 0}
           >
