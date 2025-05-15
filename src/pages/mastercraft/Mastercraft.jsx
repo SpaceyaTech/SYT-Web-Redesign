@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import SeoMetadata from "../../components/SeoMetadata";
-import { Description, Header, Portfolio } from "./sections";
+import { Description, Header } from "./sections";
 import { programs } from "./sections/data";
 
 function Mastercraft() {
@@ -10,7 +10,6 @@ function Mastercraft() {
 
   const programRender = programs.find(({ slug }) => slug === program);
 
-  console.log("Program:", programRender);
   return (
     <>
       <SeoMetadata
@@ -43,7 +42,7 @@ function Mastercraft() {
             pricing={programRender.pricing}
             milestones={programRender.milestones}
           />
-          <Portfolio />
+          {/* <Portfolio /> */}
         </main>
       </div>
     </>

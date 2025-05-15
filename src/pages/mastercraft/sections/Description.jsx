@@ -4,7 +4,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CurriculumAccordion from "./CurriculumAccordion";
 import InstructorsComponent from "./InstructorsComponent";
-import NextCohortSlot from "./NextCohortSlot";
+// import NextCohortSlot from "./NextCohortSlot";
 
 function Description({
   category,
@@ -166,7 +166,7 @@ function Description({
           </h3>
           <ul className="list-image-checkmark space-y-2 text-sm md:text-base leading-loose md:leading-8">
             {whatYouWillLearn.map(({ content, subTitle }) => (
-              <li key={subTitle} className="text-grey-dark ml-6">
+              <li key={content} className="text-grey-dark ml-6">
                 <p>
                   {subTitle && <b>{subTitle} </b>}
 
@@ -198,7 +198,7 @@ function Description({
 
           <ul className="list-image-checkmark space-y-2 text-sm md:text-base leading-loose md:leading-8">
             {programOutcomes.map(({ content, subTitle }) => (
-              <li className="text-grey-dark ml-6" key={subTitle}>
+              <li className="text-grey-dark ml-6" key={content}>
                 <p>
                   {subTitle && <b>{subTitle} </b>}
 
@@ -330,10 +330,11 @@ function Description({
           </div>
         </div>
 
-        <hr />
+        {/* <hr /> */}
 
+        {/* To be returned after the first cohort is complete */}
         {/* Next Cohort */}
-        <div className="space-y-2" id="NextCohort">
+        {/* <div className="space-y-2" id="NextCohort">
           <h3 className="text-green-header text-xl font-semibold">
             Next Cohort
           </h3>
@@ -348,9 +349,9 @@ function Description({
             <NextCohortSlot slots={16} />
             <NextCohortSlot slots={5} />
           </div>
-        </div>
+        </div> */}
 
-        <hr />
+        {/* <hr /> */}
       </aside>
     </div>
   );

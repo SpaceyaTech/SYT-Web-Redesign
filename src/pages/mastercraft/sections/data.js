@@ -35,7 +35,7 @@ export const programs = [
       },
       {
         icon: award,
-        title: "Beginner-Junior level",
+        title: "Beginner-Intermediate level",
         description: "Recommended experience level.",
       },
       {
@@ -53,26 +53,26 @@ export const programs = [
     programDescription:
       "Step into the world of Android development with our immersive 8-week program. Join a real full-stack tech team where you’ll work shoulder-to-shoulder with UI/UX designers, backend engineers, PMs, QAs, and fellow Android trainees. Together, you’ll build real-world mobile apps that powers your portfolio and proves your technical skills. Along the way, sharpen your resume, prep for interviews, and grow your professional toolkit. By the end, you’ll be ready to launch your career as a confident, job-ready Android developer.",
     whoCanApply: [
-      "Students or recent graduates interested in Android mobile development.",
-      "Self-taught junior and beginner developers looking for real-world, team-based experience.",
-      "Intermediate android developers aiming to strengthen their Android portfolios.",
-      "Developers in other stacks looking to expand their skillsets to include Android development",
+      "Students or recent graduates interested in full-stack web development.",
+      "Self-taught junior or beginner developers seeking real-world experience working in teams.",
+      "Intermediate developers aiming to enhance their portfolio with deployed full-stack projects.",
+      "Developers from other domains looking to transition into web development.",
     ],
     whatYouWillLearn: [
       {
-        subTitle: "Collaborative Development: ",
+        subTitle: "Team-Based Web Development:",
         content:
-          "Work inside a real full-stack team and understand how Android developers collaborate with designers, backend engineers, PMs, and QAs",
+          "Collaborate in a real product team alongside designers, frontend/backend developers, PMs, and QAs to build a real-world web app.",
       },
       {
-        subTitle: "Hands-on Android Skills: ",
+        subTitle: "Practical Web Development Skills:",
         content:
-          "Build, test, and launch a real-world Android app using industry-standard tools, frameworks, and practices.",
+          "Gain hands-on experience with modern web technologies like React, Node.js, REST APIs, and cloud deployment.",
       },
       {
-        subTitle: "Career Development: ",
+        subTitle: "Career & Interview Readiness:",
         content:
-          "Learn how to craft a winning resume, prepare for interviews, and position yourself for success in the Android job market.",
+          "Refine your resume, practice mock interviews, and build confidence presenting your project to future employers.",
       },
     ],
     milestones: [
@@ -655,6 +655,227 @@ export const programs = [
       {
         content:
           "Receive mentorship on building a strong design portfolio, personal branding, and preparing for design job interviews.",
+      },
+    ],
+    mentors: [
+      {
+        id: 1,
+        name: "Rachel Murabula",
+        role: "Android Engineer",
+        organisation: "SpaceYaTech",
+        img: murabula,
+        experience: 4,
+        linkedin: {
+          href: "https://www.linkedin.com/in/rachel-murabula/",
+          username: "Rachel Murabula",
+        },
+        twitter: {
+          href: "",
+          username: "",
+        },
+      },
+      {
+        id: 2,
+        name: "Catherine Kiiru",
+        role: "Dev Relations & Opensource Programs",
+        organisation: "Mastercraft",
+        img: catherine,
+        experience: 3,
+        linkedin: {
+          href: "https://www.linkedin.com/in/catherine-kiiru-47b2688b/",
+          username: "Catherine Kiiru",
+        },
+        twitter: {
+          href: "https://x.com/catetherinekiiru",
+          username: "catetherinekiiru",
+        },
+      },
+    ],
+    pricing: {
+      fullAmount: 3500,
+      discountPercentage: 20,
+      discountedAmount: 700,
+      currency: "KES",
+      offerDeadline: "27th April",
+    },
+  },
+  {
+    id: 4,
+    slug: "frontend-development",
+    category: "Frontend Development",
+    isRegOpen: false,
+    nextCohortDate: "30th May",
+    cover: frontend,
+    tags: ["React Components", "Redux", "Tailwind CSS", "Hooks"],
+    title: "Frontend Development - React",
+    description:
+      "Jumpstart your UI/UX design career with out comprehensive 2-month boot camp on user experience and visual design.",
+    productInfo: [
+      {
+        icon: duration,
+        title: "8 weeks",
+        description: "8 weeks of collaborative building in a full-stack team.",
+      },
+      {
+        icon: award,
+        title: "Junior-Mid level",
+        description: "Recommended experience level.",
+      },
+      {
+        icon: folder,
+        title: "1 Projects",
+        description: "Collaborate on a portfolio project.",
+      },
+      {
+        icon: calendar,
+        title: "Flexible schedules",
+        description: "Remote, work from home.",
+      },
+    ],
+    // description
+    programDescription:
+      "Step into the world of Android development with our immersive 8-week program. Join a real full-stack tech team where you’ll work shoulder-to-shoulder with UI/UX designers, backend engineers, PMs, QAs, and fellow Android trainees. Together, you’ll build real-world mobile apps that powers your portfolio and proves your technical skills. Along the way, sharpen your resume, prep for interviews, and grow your professional toolkit. By the end, you’ll be ready to launch your career as a confident, job-ready Android developer.",
+    whoCanApply: [
+      "Students or recent graduates interested in Android mobile development.",
+      "Self-taught junior and beginner developers looking for real-world, team-based experience.",
+      "Intermediate android developers aiming to strengthen their Android portfolios.",
+      "Developers in other stacks looking to expand their skillsets to include Android development",
+    ],
+    whatYouWillLearn: [
+      {
+        subTitle: "Collaborative Development: ",
+        content:
+          "Work inside a real full-stack team and understand how Android developers collaborate with designers, backend engineers, PMs, and QAs",
+      },
+      {
+        subTitle: "Hands-on Android Skills: ",
+        content:
+          "Build, test, and launch a real-world Android app using industry-standard tools, frameworks, and practices.",
+      },
+      {
+        subTitle: "Career Development: ",
+        content:
+          "Learn how to craft a winning resume, prepare for interviews, and position yourself for success in the Android job market.",
+      },
+    ],
+    milestones: [
+      {
+        week: 1,
+        header: "Kickoff & Setup",
+        desc: "Project created and deployed (e.g., Vercel staging app). Routing system and base pages in place (e.g., /login, /signup, /dashboard with placeholder screens).",
+        deliverables: [
+          "Understand the product requirements: walkthrough by PM and UX team.",
+          "Study user flows and wireframes: Understand every screen and interaction.",
+          "Set up project: Create React App or Vite setup, Install essential libraries (e.g., React Router, Axios, TailwindCSS/MUI)",
+          "Set up folder structure (pages, components, services, utils)",
+          "Set up GitHub repository and workflows (branching strategy, PR rules).",
+        ],
+      },
+      {
+        week: 2,
+        header: "Ideation, Research & Planning",
+        desc: "Functional Login/Signup forms, Authentication context fully set up. Protected routing working.",
+        deliverables: [
+          "Build real authentication pages: Sign Up, Login, Forgot Password",
+          "Client-side form validation (e.g., Formik + Yup or React Hook Form).",
+          "Use mock data first (simulate login success).",
+          "Create Auth Context/State Management (e.g., Context API, Redux Toolkit, Zustand).",
+          "Protect private routes: Only logged-in users can access Dashboard, Profile, etc.",
+          "Style the forms using design system from UI/UX.",
+        ],
+      },
+      {
+        week: 3,
+        header: "Authentication and Core Infrastructure",
+        desc: "Login & authenticated user session saved. User sees personalized dashboard after login.",
+        deliverables: [
+          "Integrate with real backend API (once available): Axios setup with interceptors (attach auth tokens).",
+          "Fetch user profile upon login.",
+          "Build main navigation: Sidebar/Menu bar (responsive), Top bar (notifications, profile dropdown).",
+          "Start building core screens: Dashboard/Home Feed (empty state designs included)",
+        ],
+      },
+      {
+        week: 4,
+        header: "Core Features Sprint",
+        desc: "Users can create, view, edit, delete core resources (e.g., posts, resources).",
+        deliverables: [
+          "Implement major user-facing features: Create/Edit Posts (forms, file uploads if needed).",
+          "View list of Posts (Home feed or Group feed).",
+          "Search and Filter functionality.",
+          "CRUD operations: Create, Read, Update, Delete posts or entries from API.",
+          "Responsive design tuning (desktop, tablet, mobile).",
+        ],
+      },
+      {
+        week: 5,
+        header: "Profile Management",
+        desc: "Profile screen functional. Users can update their account info.",
+        deliverables: [
+          "Build user profile screen: View and Edit profile info (name, bio, profile picture).",
+          "Upload profile picture to server (handle file uploads).",
+          "Display user’s contributions (e.g., list of posts/comments/bookmarks).",
+          "Link profile data across the app (e.g., click username → view profile).",
+        ],
+      },
+      {
+        week: 6,
+        header: "Testing, Polish & Refinement",
+        desc: "In-app notifications working. App feels smooth and responsive.",
+        deliverables: [
+          "Fetch and display notifications (e.g., new messages, comments).",
+          'Add Toast notifications for success/fail events (e.g., "Post created", "Login failed").',
+          "Improve UI transitions and loading states (spinners, skeleton loaders).",
+          "Micro-interactions (button feedback, subtle animations).",
+        ],
+      },
+      {
+        week: 7,
+        header: "Final Integrations + Deployment Prep",
+        desc: "Feature complete, bug-free candidate for release.",
+        deliverables: [
+          "Full walkthrough of app flows: Create, Edit, Delete actions.",
+          "Error handling: 404 pages, empty states, network errors.",
+          "Polish: Animation polishing, Cross-browser compatibility, Mobile responsiveness (final tweaks).",
+          "Optimize performance: Lazy loading routes and components, Code splitting.",
+        ],
+      },
+      {
+        week: 8,
+        header: "Soft Launch + Internal Demos",
+        desc: "Finished app ready to be shown on Demo Day.",
+        deliverables: [
+          "Dry run of presentations.",
+          "Final fixes.",
+          "PM + UI/UX + Android + Backend: Team does internal presentations to leadership/mentors.",
+          "Mock 'real-world' scenarios: bug report drills, unexpected feedback sessions.",
+        ],
+      },
+      {
+        week: 9,
+        header: "Demo Day & Mock Interviews",
+        desc: "Finished app ready to be shown on Demo Day.",
+        deliverables: [
+          "Morning: Team app presentations to mentors/guests.",
+          "Afternoon: Individual mock interviews (tech questions, behavioral questions, demoing your project).",
+        ],
+      },
+    ],
+    programOutcomes: [
+      {
+        content:
+          "Build and deploy a real-world full-stack project for your portfolio.",
+      },
+      {
+        content: "Develop strong technical and team collaboration skills.",
+      },
+      {
+        content:
+          "Receive mentorship in resume writing and technical interviews.",
+      },
+      {
+        content:
+          "Gain confidence in working with designers, PMs, QAs, and frontend devs.",
       },
     ],
     mentors: [

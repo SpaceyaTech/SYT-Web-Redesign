@@ -73,24 +73,6 @@ export const categoriesData = [
   },
   {
     id: 4,
-    slug: "data-science-and-analytics",
-    category: "Data Science and Analytics",
-    cover: dataScience,
-    tags: ["Python", "R", "Machine Learning", "Data Analysis"],
-    title: "Data Science and Analytics",
-    period: "6 months",
-    courseType: "Cohort-based course",
-    hosts: [
-      {
-        id: 1,
-        headshot: img4,
-        name: "Juma Lawrence",
-        role: "Senior Data Scientist at SpaceYaTech",
-      },
-    ],
-  },
-  {
-    id: 5,
     slug: "product-design",
     category: "Product Design",
     cover: productDesign,
@@ -113,6 +95,24 @@ export const categoriesData = [
       },
     ],
   },
+  // {
+  //   id: 5,
+  //   slug: "data-science-and-analytics",
+  //   category: "Data Science and Analytics",
+  //   cover: dataScience,
+  //   tags: ["Python", "R", "Machine Learning", "Data Analysis"],
+  //   title: "Data Science and Analytics",
+  //   period: "6 months",
+  //   courseType: "Cohort-based course",
+  //   hosts: [
+  //     {
+  //       id: 1,
+  //       headshot: img4,
+  //       name: "Juma Lawrence",
+  //       role: "Senior Data Scientist at SpaceYaTech",
+  //     },
+  //   ],
+  // },
 ];
 
 export const questions = [
