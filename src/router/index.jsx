@@ -87,22 +87,22 @@ const router = createBrowserRouter(
             </Suspense>
           ),
         },
-        {
-          path: "/blogs",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Blogs />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/blogs/:titleSlug",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Blog />
-            </Suspense>
-          ),
-        },
+        // {
+        //   path: "/blogs",
+        //   element: (
+        //     <Suspense fallback={<FallbackLoader />}>
+        //       <Blogs />
+        //     </Suspense>
+        //   ),
+        // },
+        // {
+        //   path: "/blogs/:titleSlug",
+        //   element: (
+        //     <Suspense fallback={<FallbackLoader />}>
+        //       <Blog />
+        //     </Suspense>
+        //   ),
+        // },
         {
           path: "/events",
           element: (
@@ -290,36 +290,36 @@ const router = createBrowserRouter(
         },
       ],
     },
-    {
-      path: "/resources",
-      element: <MastercraftLayout />,
-      children: [
-        {
-          path: "/resources",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <ResourcesHome />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/resources/search",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <MastercraftSearch />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/resources/search/:id",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Resource />
-            </Suspense>
-          ),
-        },
-      ],
-    },
+    // {
+    //   path: "/resources",
+    //   element: <MastercraftLayout />,
+    //   children: [
+    //     {
+    //       path: "/resources",
+    //       element: (
+    //         <Suspense fallback={<FallbackLoader />}>
+    //           <ResourcesHome />
+    //         </Suspense>
+    //       ),
+    //     },
+    //     {
+    //       path: "/resources/search",
+    //       element: (
+    //         <Suspense fallback={<FallbackLoader />}>
+    //           <MastercraftSearch />
+    //         </Suspense>
+    //       ),
+    //     },
+    //     {
+    //       path: "/resources/search/:id",
+    //       element: (
+    //         <Suspense fallback={<FallbackLoader />}>
+    //           <Resource />
+    //         </Suspense>
+    //       ),
+    //     },
+    //   ],
+    // },
     {
       path: "/error-400",
       element: (
