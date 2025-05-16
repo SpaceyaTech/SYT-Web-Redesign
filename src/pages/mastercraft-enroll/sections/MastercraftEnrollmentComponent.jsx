@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 import { useState, useMemo } from "react";
@@ -11,7 +12,7 @@ import PersonalInformation from "./PersonalInformation";
 import Qualifications from "./Qualifications";
 import TermsOfUseCheckbox from "./TermsOfUseCheckbox";
 
-function MastercraftEnrollmentComponent() {
+function MastercraftEnrollmentComponent({ program }) {
   const [index, setIndex] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -212,7 +213,12 @@ function MastercraftEnrollmentComponent() {
         );
       case 3:
         return (
-          <Payment formData={formData} handleInputChange={handleInputChange} />
+          <Payment
+            formData={formData}
+            handleInputChange={handleInputChange}
+            programTitle={program.title}
+            pricing={program.pricing}
+          />
         );
       default:
         return null;
@@ -222,7 +228,7 @@ function MastercraftEnrollmentComponent() {
   return (
     <div className="border-t pt-4 w-full">
       <section className="border-2 border-white w-full bg-[#E8F4F1] p-8 rounded-2xl flex flex-col gap-6">
-        <EnrollmentHeader />
+        <EnrollmentHeader title={program.title} />
         <EnrollmentProgressBar currentStep={index} />
 
         {renderFormStep()}

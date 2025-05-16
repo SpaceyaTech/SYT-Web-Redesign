@@ -3,7 +3,7 @@
 import { Palette } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 
-function Payment({ formData, handleInputChange }) {
+function Payment({ formData, handleInputChange, programTitle, pricing }) {
   return (
     <div className="flex flex-col gap-6">
       <h3 className="text-lg font-semibold text-[#2E2E2E]">
@@ -18,20 +18,20 @@ function Payment({ formData, handleInputChange }) {
             </div>
 
             <div className="flex flex-col gap-2 items-start font-inter">
-              <h5 className="text-sm text-black font-medium">UI/UX Designer</h5>
+              <h5 className="text-sm text-black font-medium">{programTitle}</h5>
               <p className="text-xs text-[#686868] font-normal">
-                Mastercraft Internship ● 8 weeks
+                Mastercraft Program ● 8 weeks
               </p>
             </div>
           </div>
 
           <div className="md:py-5 md:px-8">
             <h4 className="text-green-dark font-semibold text-base font-inter">
-              <span className="text-xs">KES</span>{" "}
+              <small className="text-xs">KES</small>{" "}
               {new Intl.NumberFormat("en-US", {
                 maximumFractionDigits: 2,
                 minimumFractionDigits: 2,
-              }).format(2800)}
+              }).format(Number(pricing.fullAmount - pricing.discountedAmount))}
             </h4>
           </div>
         </div>

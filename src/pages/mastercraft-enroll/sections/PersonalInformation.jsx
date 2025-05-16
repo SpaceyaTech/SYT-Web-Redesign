@@ -24,7 +24,7 @@ function PersonalInformation({ formData, handleInputChange }) {
           value={formData.fullName}
           onChange={(e) => handleInputChange("fullName", e.target.value)}
           className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
-          placeholder="Enter your full name"
+          placeholder="John Doe"
           required
         />
       </div>
@@ -40,7 +40,7 @@ function PersonalInformation({ formData, handleInputChange }) {
           value={formData.email}
           onChange={(e) => handleInputChange("email", e.target.value)}
           className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
-          placeholder="Enter your email address"
+          placeholder="johndoe@gmail.com"
           required
         />
       </div>
@@ -77,7 +77,7 @@ function PersonalInformation({ formData, handleInputChange }) {
           value={formData.github}
           onChange={(e) => handleInputChange("github", e.target.value)}
           className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
-          placeholder="Enter your GitHub profile URL"
+          placeholder="https://github.com/johndoe"
         />
       </div>
 
@@ -92,7 +92,7 @@ function PersonalInformation({ formData, handleInputChange }) {
           value={formData.project}
           onChange={(e) => handleInputChange("project", e.target.value)}
           className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
-          placeholder="Enter project link"
+          placeholder="https://johndoe.github.io/my-project"
         />
       </div>
 
@@ -110,7 +110,7 @@ function PersonalInformation({ formData, handleInputChange }) {
           value={formData.linkedIn}
           onChange={(e) => handleInputChange("linkedIn", e.target.value)}
           className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
-          placeholder="Enter your LinkedIn profile URL"
+          placeholder="https://www.linkedin.com/in/johndoe"
         />
       </div>
     </div>
