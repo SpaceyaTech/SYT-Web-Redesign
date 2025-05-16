@@ -30,7 +30,7 @@ function PaymentStatusModal({
     message: paymentMessage,
     errorCode,
     checkStatus,
-    attemptsCount,
+    // attemptsCount,
     data: paymentData,
   } = useCheckPaymentStatus(enrollmentId, {
     enabled: paymentInitiated && enrollmentId !== null,

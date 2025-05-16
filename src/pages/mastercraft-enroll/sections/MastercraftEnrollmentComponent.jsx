@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
 import { useState, useMemo } from "react";
 import useEnroll from "../../../hooks/Mutations/mastercraft/useEnroll";
 import EnrollmentHeader from "./EnrollmentHeader";
@@ -37,10 +39,10 @@ function MastercraftEnrollmentComponent() {
   const {
     mutate: enrollMastercraft,
     isPending: isEnrollmentPending,
-    isSuccess: enrollmentSuccess,
-    isError: enrollmentError,
-    error: enrollmentErrorMessage,
-    data: enrollmentData,
+    // isSuccess: enrollmentSuccess,
+    // isError: enrollmentError,
+    // error: enrollmentErrorMessage,
+    // data: enrollmentData,
   } = useEnroll();
 
   const reformattedFormData = useMemo(

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Payment from "./Payment";
 import PersonalInformation from "./PersonalInformation";
 import Qualifications from "./Qualifications";

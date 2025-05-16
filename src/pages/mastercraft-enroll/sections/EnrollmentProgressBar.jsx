@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function EnrollmentProgressBar({ currentStep }) {
   return (
     <div className="flex items-center justify-between w-full gap-5 mt-5">

@@ -82,7 +82,6 @@ const useCheckPaymentStatus = (enrollmentId, options = {}) => {
 
     if (isSuccess && data) {
       if (data.error) {
-        console.log("IsSuccess & Data", data);
         setStatus({
           isSuccess: false,
           isError: true,

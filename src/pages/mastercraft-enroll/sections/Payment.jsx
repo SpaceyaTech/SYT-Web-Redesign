@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
 import { Palette } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 

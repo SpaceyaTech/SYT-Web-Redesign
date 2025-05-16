@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import privateAxios from "../../../api/privateAxios";
 
