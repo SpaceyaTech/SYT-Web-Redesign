@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare .env file
         run: |
           rm -f .env && touch .env
@@ -17,7 +17,7 @@ jobs:
           echo "VITE_SERVICE_ID=123fAkE" >> .env
           echo "VITE_TEMPLATE_ID=123fAkE" >> .env
           echo "VITE_PUBLIC_ID=123fAkE" >> .env
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: "20.x"
       - name: Install dependencies
@@ -30,7 +30,7 @@ jobs:
         run: npm run test
       - name: Run Playwright tests
         run: npm run test:e2e
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
