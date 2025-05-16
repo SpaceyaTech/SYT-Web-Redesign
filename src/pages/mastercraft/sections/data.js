@@ -10,9 +10,10 @@ import {
 } from "../../../assets/images/icons";
 import { catherine, murabula } from "@/assets/images/aboutPage";
 import {
-  productDesign,
+  android,
   backend,
   frontend,
+  productDesign,
 } from "@/assets/images/resources-page";
 
 export const programs = [
@@ -22,7 +23,7 @@ export const programs = [
     category: "Android Development",
     isRegOpen: true,
     nextCohortDate: "30th May",
-    cover: productDesign,
+    cover: android,
     tags: ["Kotlin", "Flutter", "React Native", "Swift UI"],
     title: "Android Development - Kotlin",
     description:

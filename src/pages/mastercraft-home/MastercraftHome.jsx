@@ -5,20 +5,26 @@ import {
   FAQSection,
   Features,
   HeroSection,
+  Mentors,
   Stats,
-  StudentShowcase,
+  // StudentShowcase,
   WhatWeOffer,
+  XFeedback,
 } from "./sections";
 
 const components = [
   {
+    title: "our mentors",
+    component: <Mentors />,
+  },
+  {
     title: "our impact",
     component: <Stats />,
   },
-  {
-    title: "student showcase",
-    component: <StudentShowcase />,
-  },
+  // {
+  //   title: "student showcase",
+  //   component: <StudentShowcase />,
+  // },
   {
     title: "faq",
     component: <FAQSection />,
@@ -44,6 +50,7 @@ function MastercraftHome() {
         <HeroSection />
         <Features />
         <WhatWeOffer />
+        <XFeedback />
         {components.map(({ component, title }) => (
           <LandingWrapper key={title} title={title}>
             {component}

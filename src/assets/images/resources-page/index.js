@@ -1,3 +1,4 @@
+export { default as android } from "./android.png";
 export { default as backend } from "./backend.png";
 export { default as UI } from "./bad-good-UI.png";
 export { default as UIDesignEra } from "./UIDesignEra.png";
@@ -6,7 +7,7 @@ export { default as frontend } from "./frontend.png";
 export { default as hero } from "./hero.png";
 export { default as resourceHero } from "./resource-hero.png";
 export { default as heroFooter } from "./hero-footer.png";
-export { default as productDesign } from "./product-design.png";
+export { default as productDesign } from "./productDesign.png";
 export { default as podPoster } from "./podcast-poster.png";
 
 export { default as youtube } from "./icons/youtube.svg";

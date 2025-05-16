@@ -1,13 +1,12 @@
 import {
+  android,
   productDesign,
   frontend,
   backend,
-  dataScience,
 } from "../../../assets/images/resources-page";
 import img2 from "../../../assets/Landing Page Images/Ellipse 127.png";
 import img3 from "../../../assets/Landing Page Images/Ellipse 128.png";
 import img5 from "../../../assets/Landing Page Images/Ellipse 138.png";
-import img4 from "../../../assets/Landing Page Images/Ellipse 148.png";
 import img from "../../../assets/Landing Page Images/Ellipse 159.png";
 
 export const categoriesData = [
@@ -15,11 +14,11 @@ export const categoriesData = [
     id: 1,
     slug: "android-development",
     category: "Android Development",
-    cover: productDesign,
+    cover: android,
     tags: ["Kotlin", "Flutter", "React Native", "Swift UI"],
     title: "Android Development (Kotlin)",
     period: "2 months",
-    courseType: "Cohort-based course",
+    courseType: "Cohort-based program",
     hosts: [
       {
         id: 1,
@@ -42,8 +41,8 @@ export const categoriesData = [
     cover: frontend,
     tags: ["HTML", "CSS", "JS", "React", "NextJS"],
     title: "Frontend Development (React)",
-    period: "3 months",
-    courseType: "Cohort-based course",
+    period: "2 months",
+    courseType: "Cohort-based program",
     hosts: [
       {
         id: 1,
@@ -60,8 +59,8 @@ export const categoriesData = [
     cover: backend,
     tags: ["APIs", "Databases", "SQL", "JWT and Backend Safety"],
     title: "Backend Development (Django)",
-    period: "5 months",
-    courseType: "Cohort-based course",
+    period: "2 months",
+    courseType: "Cohort-based program",
     hosts: [
       {
         id: 1,
@@ -79,7 +78,7 @@ export const categoriesData = [
     tags: ["UI Design", "UX Design", "Prototyping", "Product Design"],
     title: "Product Design",
     period: "2 months",
-    courseType: "Cohort-based course",
+    courseType: "Cohort-based program",
     hosts: [
       {
         id: 1,
