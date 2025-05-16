@@ -710,7 +710,7 @@ export const programs = [
     tags: ["React Components", "Redux", "Tailwind CSS", "Hooks"],
     title: "Frontend Development - React",
     description:
-      "Jumpstart your UI/UX design career with out comprehensive 2-month boot camp on user experience and visual design.",
+      "Jumpstart your frontend development carier with out comprehensive 2-month boot camp on React, Redux, Tailwind CSS, and Hooks.",
     productInfo: [
       {
         icon: duration,
@@ -735,28 +735,35 @@ export const programs = [
     ],
     // description
     programDescription:
-      "Step into the world of Android development with our immersive 8-week program. Join a real full-stack tech team where you’ll work shoulder-to-shoulder with UI/UX designers, backend engineers, PMs, QAs, and fellow Android trainees. Together, you’ll build real-world mobile apps that powers your portfolio and proves your technical skills. Along the way, sharpen your resume, prep for interviews, and grow your professional toolkit. By the end, you’ll be ready to launch your career as a confident, job-ready Android developer.",
+      "This 8-week Frontend Engineering program with React is designed to immerse you in the fast-paced world of modern web development. You'll be part of a real, cross-functional tech team alongside backend engineers, designers, PMs, QAs, and other frontend developers, building an actual product from scratch. Expect to go beyond just writing code — you’ll collaborate, build, break, fix, test, and learn. From mastering components, hooks, and responsive layouts to integrating APIs and managing state, this program turns your basic knowledge into production-ready skills. We’ll also guide you on career prep with sessions on portfolio building, resume design, and mock interviews to help you become job-ready.",
     whoCanApply: [
-      "Students or recent graduates interested in Android mobile development.",
-      "Self-taught junior and beginner developers looking for real-world, team-based experience.",
-      "Intermediate android developers aiming to strengthen their Android portfolios.",
-      "Developers in other stacks looking to expand their skillsets to include Android development",
+      "Aspiring frontend developers looking to break into tech with a solid foundation in modern web development.",
+      "Recent graduates or self-taught learners looking for real-world experience",
+      "Individuals eager to learn and work collaboratively in cross-functional teams",
+      "People with a growth mindset and commitment to completing an intensive 8-week program",
     ],
     whatYouWillLearn: [
       {
-        subTitle: "Collaborative Development: ",
-        content:
-          "Work inside a real full-stack team and understand how Android developers collaborate with designers, backend engineers, PMs, and QAs",
+        subTitle: "Advanced React — ",
+        content: "Components, JSX, hooks, state management, and routing.",
       },
       {
-        subTitle: "Hands-on Android Skills: ",
         content:
-          "Build, test, and launch a real-world Android app using industry-standard tools, frameworks, and practices.",
+          "Gain hands-on experience working in a real agile team with designers, frontend engineers, QAs, and PMs.",
       },
       {
-        subTitle: "Career Development: ",
+        subTitle: "Working with APIs — ",
         content:
-          "Learn how to craft a winning resume, prepare for interviews, and position yourself for success in the Android job market.",
+          "Consume REST APIs and work alongside backend teams in a real product setup",
+      },
+      {
+        content:
+          "Learn version control (Git), code reviews, debugging, and writing clean, scalable code in production-like environments.",
+      },
+      {
+        subTitle: "Deployment & Optimization — ",
+        content:
+          "Learn how to deploy React apps, handle environment variables, and optimize performance for production.",
       },
     ],
     milestones: [

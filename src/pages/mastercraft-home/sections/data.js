@@ -39,7 +39,7 @@ export const categoriesData = [
     slug: "frontend-development",
     category: "Frontend Development",
     cover: frontend,
-    tags: ["HTML", "CSS", "JS", "React", "NextJS"],
+    tags: ["React Components", "Redux", "Tailwind CSS", "Hooks"],
     title: "Frontend Development (React)",
     period: "2 months",
     courseType: "Cohort-based program",
