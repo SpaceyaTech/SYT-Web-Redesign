@@ -15,6 +15,7 @@ function FAQ({ questions = [] }) {
         <div
           key={question.id}
           className="rounded-xl bg-white border shadow-sm mb-4 p-4"
+          data-testid="faq-accordion"
         >
           <h2 className="mb-4 font-semibold" id={`flush-heading${index + 1}`}>
             <button
@@ -58,6 +59,7 @@ function FAQ({ questions = [] }) {
             data-te-collapse-show
             aria-labelledby={`flush-heading${index + 1}`}
             data-te-parent="#accordionFlushExample"
+            data-testid="accordion-answer"
           >
             <div className=" ">{question.answer}</div>
           </div>

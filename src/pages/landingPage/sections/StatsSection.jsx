@@ -35,7 +35,7 @@ function StatsSection() {
         A community geared towards holistic results{" "}
       </h3>
 
-      <div className="w-full flex flex-col gap-6 p-2">
+      <div className="w-full flex flex-col gap-6 p-2 stats-card">
         <div className="flex items-center flex-wrap md:flex-nowrap gap-4">
           <div className="w-full flex-center flex-col gap-5">
             <img src={teams} alt="teams" className="size-10 object-contain" />

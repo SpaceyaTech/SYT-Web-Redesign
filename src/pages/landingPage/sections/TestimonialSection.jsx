@@ -6,7 +6,10 @@ import { testimonialData } from "../data";
 
 function TestimonialSection() {
   return (
-    <section className="max-w-1440 w-full mx-auto flex flex-col items-center gap-8 pt-2">
+    <section
+      className="max-w-1440 w-full mx-auto flex flex-col items-center gap-8 pt-2"
+      data-testid="testimonial-card"
+    >
       <h3 className="w-full max-w-md text-green-header text-center font-semibold text-xl md:text-3xl">
         What people are saying about us{" "}
       </h3>

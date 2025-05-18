@@ -25,7 +25,7 @@ function WhatWeDoCard({ card, index }) {
   const { title, description, image, link } = card;
   return (
     <div
-      className={`border bg-white p-2 w-full rounded-2xl md:rounded-[20px] ${
+      className={`border bg-white p-2 w-full rounded-2xl md:rounded-[20px] what-we-do-content ${
         index === 0 && "lg:col-span-2"
       }`}
     >

@@ -3,13 +3,15 @@ import React from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-function Button({ link, title }) {
+function Button({ link, title, ...props }) {
   return (
     <Link
       to={link}
       role="button"
       aria-label={title}
       className="border rounded-full bg-white p-1 w-fit"
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
     >
       <div className="flex-center bg-green-light rounded-full px-3 py-1.5 gap-2">
         <span className="capitalize text-green-header text-sm font-semibold">
