@@ -30,7 +30,7 @@ jobs:
         run: npm run test
       - name: Run Playwright tests
         run: npm run test:e2e
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.1.0  # Updated version
         if: always()
         with:
           name: playwright-report
