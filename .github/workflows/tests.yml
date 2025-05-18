@@ -30,7 +30,15 @@ jobs:
         run: npm run test
       - name: Run Playwright tests
         run: npm run test:e2e
-      - uses: actions/upload-artifact@v3.1.0  # Updated version
+      - name: Check Playwright report directory
+        run: |
+          if [ ! -d "playwright-report" ]; then
+            echo "Directory playwright-report does not exist."
+            exit 1
+          fi
+      - name: Debugging Step
+        run: ls -la playwright-report/
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
