@@ -13,7 +13,8 @@ function Features() {
             <p className="text-sm md:text-base">
               Quickly grasp the essentials and get your feet wet with our
               introductory course and jump straight into real world projects to
-              enable you to understand the basics alongside their implmentation{" "}
+              enable you to understand the basics alongside their
+              implmentation{" "}
             </p>
           </div>
 
