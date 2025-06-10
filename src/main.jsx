@@ -11,6 +11,7 @@ import { SearchBlogProvider } from "./context/searchBlog";
 import router from "./router";
 import { ErrorBoundary } from ".";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import "react-phone-number-input/style.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -4,6 +4,7 @@ import briefcase from "./briefcase.svg";
 import calendar from "./calendar.svg";
 import check from "./check.svg";
 import dotpoints from "./dotpoints.svg";
+import duration from "./duration.svg";
 import folder from "./folder.svg";
 import sytLogoGreen from "./logo-green-bg.svg";
 import sytLogoWhite from "./logo-white-bg.svg";
@@ -18,6 +19,7 @@ export {
   calendar,
   check,
   dotpoints,
+  duration,
   folder,
   sytLogoGreen,
   sytLogoWhite,

@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
+import { FiArrowRightCircle } from "react-icons/fi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { error500svg } from "../../../assets/images/errorPages";
-import { Button, Loader } from "../../../components";
+import { Loader } from "../../../components";
 import useTopEvents from "../../../hooks/Queries/eventsSection/useTopEvents";
 import {
   calculateDistanceToDate,
@@ -19,6 +20,8 @@ function OurEvents() {
     isSuccess,
     refetch: refetchTopEvents,
   } = useTopEvents("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     refetchTopEvents();
@@ -44,9 +47,20 @@ function OurEvents() {
           <h4 className="text-green-dark text-[32px] leading-normal font-semibold">
             Upcoming Events
           </h4>
-          <Button link="/events" title="view more" />
-        </div>
 
+          <button
+            type="button"
+            aria-label="view more events"
+            className="border-4 rounded-full border-white px-3 py-1.5 gap-2 w-fit flex-center bg-green-light disabled:cursor-not-allowed"
+            onClick={() => navigate("/events")}
+            disabled={isSuccess && topEvents?.count === 0}
+          >
+            <span className="capitalize text-green-header text-sm font-semibold">
+              view more
+            </span>
+            <FiArrowRightCircle className="text-green-header size-5" />
+          </button>
+        </div>
         {isError && (
           <div className="size-full flex-center flex-col gap-4">
             <LazyLoadImage
@@ -73,7 +87,11 @@ function OurEvents() {
           <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
             {/* <div className="w-full flex flex-row md:flex-col overflow-x-auto gap-4"> */}
             {topEvents?.count === 0 ? (
-              <p className="">No events found!</p>
+              <div className="size-full flex-center">
+                <p className="italic text-base md:text-lg font-semibold">
+                  No events found!
+                </p>
+              </div>
             ) : (
               topEvents?.results
                 .slice(0, 6)

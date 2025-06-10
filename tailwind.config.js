@@ -37,6 +37,7 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         sora: ["Sora", "sans-serif"],
         openSans: ["Open Sans", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       backgroundImage: {
         landingPageBg: "url('/landing-bg.png')",

@@ -12,9 +12,10 @@ function Portfolio() {
       </p>
 
       <div className="flex items-center gap-2 md:gap-4 overflow-x-scroll scrollbar-2 w-full md:w-auto pb-6">
-        {Array.from({ length: 10 }).map((item) => (
-          <ProjectCard key={item} />
-        ))}
+        {Array.from({ length: 10 }).map((item, i) => {
+          const key = `${item}-${i}`;
+          return <ProjectCard key={key} />;
+        })}
       </div>
     </div>
   );

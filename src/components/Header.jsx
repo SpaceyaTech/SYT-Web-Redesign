@@ -29,23 +29,28 @@ const navLinks = [
     link: "Products",
     route: "/products",
   },
-  {
-    id: 5,
-    link: "Blogs",
-    route: "/blogs",
-  },
-  {
-    id: 6,
-    link: "Resources",
-    route: "/resources",
-  },
+  // {
+  //   id: 5,
+  //   link: "Blogs",
+  //   route: "/blogs",
+  // },
+  // {
+  //   id: 6,
+  //   link: "Resources",
+  //   route: "/resources",
+  // },
   {
     id: 7,
-    link: "Shop",
-    route: "/shop",
+    link: "Mastercraft",
+    route: "/mastercraft",
   },
   // {
   //   id: 8,
+  //   link: "Shop",
+  //   route: "/shop",
+  // },
+  // {
+  //   id: 9,
   //   link: "Donate",
   //   route: "/donate",
   // },

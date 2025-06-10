@@ -72,6 +72,9 @@ const InventoryReport = lazy(
 
 const OrdersPage = lazy(() => import("./pages/admin/shop/OrdersPage"));
 const Mastercraft = lazy(() => import("./pages/mastercraft/Mastercraft"));
+const MastercraftEnroll = lazy(
+  () => import("./pages/mastercraft-enroll/MastercraftEnroll")
+);
 
 export {
   AboutUs,
@@ -103,6 +106,7 @@ export {
   Layout,
   LogIn,
   Mastercraft,
+  MastercraftEnroll,
   OrdersPage,
   ProductDisplay,
   Products,

@@ -6,8 +6,8 @@ import {
   AboutUs,
   AdminLayout,
   AllProducts,
-  Blog,
-  Blogs,
+  // Blog,
+  // Blogs,
   CategoriesProducts,
   Checkout,
   CommunityPage,
@@ -24,15 +24,16 @@ import {
   Layout,
   LogIn,
   Mastercraft,
+  MastercraftEnroll,
   MastercraftHome,
   MastercraftLayout,
-  MastercraftSearch,
+  // MastercraftSearch,
   OrdersPage,
   ProductDisplay,
   Products,
   ResetPassword,
-  Resource,
-  ResourcesHome,
+  // Resource,
+  // ResourcesHome,
   ShopDashboard,
   ShopSales,
   SignUp,
@@ -86,22 +87,22 @@ const router = createBrowserRouter(
             </Suspense>
           ),
         },
-        {
-          path: "/blogs",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Blogs />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/blogs/:titleSlug",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Blog />
-            </Suspense>
-          ),
-        },
+        // {
+        //   path: "/blogs",
+        //   element: (
+        //     <Suspense fallback={<FallbackLoader />}>
+        //       <Blogs />
+        //     </Suspense>
+        //   ),
+        // },
+        // {
+        //   path: "/blogs/:titleSlug",
+        //   element: (
+        //     <Suspense fallback={<FallbackLoader />}>
+        //       <Blog />
+        //     </Suspense>
+        //   ),
+        // },
         {
           path: "/events",
           element: (
@@ -279,38 +280,46 @@ const router = createBrowserRouter(
             </Suspense>
           ),
         },
-      ],
-    },
-    {
-      path: "/resources",
-      element: <MastercraftLayout />,
-      children: [
         {
-          path: "/resources",
+          path: "/mastercraft/:id/enroll",
           element: (
             <Suspense fallback={<FallbackLoader />}>
-              <ResourcesHome />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/resources/search",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <MastercraftSearch />
-            </Suspense>
-          ),
-        },
-        {
-          path: "/resources/search/:id",
-          element: (
-            <Suspense fallback={<FallbackLoader />}>
-              <Resource />
+              <MastercraftEnroll />
             </Suspense>
           ),
         },
       ],
     },
+    // {
+    //   path: "/resources",
+    //   element: <MastercraftLayout />,
+    //   children: [
+    //     {
+    //       path: "/resources",
+    //       element: (
+    //         <Suspense fallback={<FallbackLoader />}>
+    //           <ResourcesHome />
+    //         </Suspense>
+    //       ),
+    //     },
+    //     {
+    //       path: "/resources/search",
+    //       element: (
+    //         <Suspense fallback={<FallbackLoader />}>
+    //           <MastercraftSearch />
+    //         </Suspense>
+    //       ),
+    //     },
+    //     {
+    //       path: "/resources/search/:id",
+    //       element: (
+    //         <Suspense fallback={<FallbackLoader />}>
+    //           <Resource />
+    //         </Suspense>
+    //       ),
+    //     },
+    //   ],
+    // },
     {
       path: "/error-400",
       element: (

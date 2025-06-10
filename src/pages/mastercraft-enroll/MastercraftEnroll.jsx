@@ -1,12 +1,12 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import SeoMetadata from "../../components/SeoMetadata";
-import { Description, Header } from "./sections";
-import { programs } from "./sections/data";
+import { Header as MastercraftHeader } from "../mastercraft/sections";
+import { programs } from "../mastercraft/sections/data";
+import MastercraftEnrollmentComponent from "./sections/MastercraftEnrollmentComponent";
 
-function Mastercraft() {
+function MastercraftEnroll() {
   const { pathname } = useLocation();
-  const program = pathname.split("/").pop();
+  const program = pathname.split("/")[2];
 
   const programRender = programs.find(({ slug }) => slug === program);
 
@@ -22,7 +22,7 @@ function Mastercraft() {
       />
       <div className="bg-[#F5F5F5]">
         <main className="py-16 flex items-center flex-col gap-10 lg:gap-20 max-w-1440 mx-auto md:px-8 px-5">
-          <Header
+          <MastercraftHeader
             isRegOpen={programRender.isRegOpen}
             category={programRender.category}
             cover={programRender.cover}
@@ -32,21 +32,12 @@ function Mastercraft() {
             tags={programRender.tags}
             title={programRender.title}
           />
-          <Description
-            category={programRender.category}
-            programDescription={programRender.programDescription}
-            whoCanApply={programRender.whoCanApply}
-            whatYouWillLearn={programRender.whatYouWillLearn}
-            programOutcomes={programRender.programOutcomes}
-            mentors={programRender.mentors}
-            pricing={programRender.pricing}
-            milestones={programRender.milestones}
-          />
-          {/* <Portfolio /> */}
+
+          <MastercraftEnrollmentComponent program={programRender} />
         </main>
       </div>
     </>
   );
 }
 
-export default Mastercraft;
+export default MastercraftEnroll;
