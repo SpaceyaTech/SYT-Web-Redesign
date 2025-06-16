@@ -8,10 +8,9 @@ module.exports = {
     "airbnb",
     "airbnb/hooks",
     "eslint:recommended",
-    // "plugin:prettier/recommended",
+    "prettier",
     "plugin:react/recommended",
   ],
-  plugins: ["react", "prettier"],
   overrides: [
     {
       env: {
@@ -47,12 +46,6 @@ module.exports = {
           "index",
         ],
         alphabetize: { order: "asc", caseInsensitive: true },
-      },
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        endOfLine: "auto",
       },
     ],
   },

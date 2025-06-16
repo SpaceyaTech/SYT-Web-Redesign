@@ -17,13 +17,13 @@ const processPhotos = (photoArr) =>
       date,
       event,
       srcSet: breakpoints.map((breakpoint) => {
-        const height = Math.round((photo.height / photo.width) * breakpoint);
+        const srcHeight = Math.round((photo.height / photo.width) * breakpoint);
         return {
           id: photo.id,
           src: photo.src,
           alt,
           width: breakpoint,
-          height,
+          height: srcHeight,
         };
       }),
     };

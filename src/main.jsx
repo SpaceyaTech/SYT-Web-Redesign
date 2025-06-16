@@ -6,11 +6,12 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import "./index.css";
-import { ErrorBoundary } from "./APP";
 import { AuthContextProvider } from "./context/AuthContext";
 import { SearchBlogProvider } from "./context/searchBlog";
 import router from "./router";
+import { ErrorBoundary } from ".";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import "react-phone-number-input/style.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +29,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <AuthContextProvider>
           <QueryClientProvider client={queryClient}>
             <SearchBlogProvider>
-              <RouterProvider router={router} />
+              <RouterProvider
+                router={router}
+                future={{
+                  v7_startTransition: true,
+                }}
+              />
               <ReactQueryDevtools position="bottom-right" />
             </SearchBlogProvider>
           </QueryClientProvider>

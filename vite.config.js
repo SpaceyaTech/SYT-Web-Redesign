@@ -1,6 +1,8 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import path from "path";
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-underscore-dangle */
+/// <reference types="vitest" />
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 import react from "@vitejs/plugin-react";
 import million from "million/compiler";
 import { defineConfig, loadEnv } from "vite";
@@ -18,6 +20,17 @@ export default defineConfig(({ mode }) => {
       ),
     },
     plugins: [million.vite({ auto: true }), react()],
+    test: {
+      environment: "jsdom",
+      include: ["**/*.test.[jt]s?(x)"],
+      exclude: [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/.{idea,git,cache,output,temp}/**",
+        "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*",
+      ],
+      globals: true,
+    },
     server: {
       watch: {
         usePolling: true,

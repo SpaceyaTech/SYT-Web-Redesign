@@ -1,4 +1,11 @@
-import { useState, useEffect, createContext } from "react";
+import PropTypes from "prop-types";
+import {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 export const AuthContext = createContext({
   auth: {
@@ -22,14 +29,19 @@ export function AuthContextProvider({ children }) {
     localStorage.setItem("auth", JSON.stringify(auth));
   }, [auth]);
 
-  const logout = () => {
+  const logout = useCallback(() => {
     localStorage.removeItem("auth");
     setAuth(null);
-  };
+  }, [setAuth]);
 
-  return (
-    <AuthContext.Provider value={{ auth, setAuth, logout }}>
-      {children}
-    </AuthContext.Provider>
+  const value = useMemo(
+    () => ({ auth, setAuth, logout }),
+    [auth, setAuth, logout]
   );
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
+
+AuthContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

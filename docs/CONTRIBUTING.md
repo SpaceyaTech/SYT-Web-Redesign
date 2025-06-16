@@ -1,4 +1,5 @@
 # Contributing to the SpaceYaTech Website Redesign Project
+
 <hr>
 
 Please note that we do have [code of conduct](CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
@@ -19,25 +20,31 @@ We appreciate your interest in contributing to the SpaceYaTech website redesign 
 To set up your local development environment, follow these steps:
 
 1. Clone the project repository to your local machine:
-   ``` ssh
+
+   ```ssh
    git clone git@github.com:SpaceyaTech/SYT-Web-Redesign.git
    ```
-   or 
-    ``` HTTP
+
+   or
+
+   ```HTTP
    git clone https://github.com/SpaceyaTech/SYT-Web-Redesign.git
    ```
 
 2. Navigate to the project directory:
+
    ```
    cd SYT-Web-Redesign.
    ```
 
 3. Install project dependencies:
+
    ```
    npm install
    ```
 
 4. Start the development server:
+
    ```
    npm run dev
    ```
@@ -49,6 +56,7 @@ To set up your local development environment, follow these steps:
 To work on a new feature or bug fix, follow these steps to create and switch to a new branch:
 
 1. Create a new branch based on the `main` branch:
+
    ```
    git checkout -b feature/your-feature-name
    ```
@@ -67,6 +75,7 @@ To work on a new feature or bug fix, follow these steps to create and switch to 
 To push your changes to the upstream repository and make them available for review, follow these steps:
 
 1. Push your changes to your forked repository:
+
    ```
    git push origin feature/your-feature-name
    ```

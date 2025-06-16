@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -16,10 +18,29 @@
   background: transparent;
 }
 
+.scrollbar-2::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: rgb(0 102 78 / 0.1);
+}
+
+.scrollbar-2::-webkit-scrollbar-thumb {
+  background: #00664e;
+
+  border-radius: 12px;
+}
+
+.scrollbar-2::-webkit-scrollbar-track {
+  background: rgb(0 102 78 / 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+  border-top: 2px solid #f3f4f5;
+  border-bottom: 2px solid #f3f4f5;
+}
+
 .scrollbar::-webkit-scrollbar {
   width: 0;
   height: 6px;
-  background: #009975;
+  background: rgb(0 102 78 / 0.1);
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
@@ -29,17 +50,40 @@
 }
 
 .scrollbar::-webkit-scrollbar-track {
-  background: #009975;
-  -webkit-box-shadow: inset 0 0 6px #009975;
-  border-top: 2px solid #e5efec;
-  border-bottom: 2px solid #e5efec;
+  background: rgb(0 102 78 / 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+  border-top: 2px solid #f3f4f5;
+  border-bottom: 2px solid #f3f4f5;
+}
+
+.hr-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 6px;
+  background: rgb(0 102 78 / 0.1);
+}
+
+.hr-scrollbar::-webkit-scrollbar-thumb {
+  background: #00664e;
+  border-radius: 12px;
+}
+
+.hr-scrollbar::-webkit-scrollbar-track {
+  background: rgb(0 102 78 / 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+  border-top: 2px solid #f3f4f5;
+  border-bottom: 2px solid #f3f4f5;
+}
+
+.PhoneInputInput {
+  background-color: transparent;
+  outline: none;
 }
 
 @media (min-width: 768px) {
   .scrollbar::-webkit-scrollbar {
     width: 6px;
     height: 0;
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
@@ -49,12 +93,31 @@
   }
 
   .scrollbar::-webkit-scrollbar-track {
-    background: #009975;
-    -webkit-box-shadow: inset 0 0 6px #009975;
-    border-left: 2px solid #e5efec;
-    border-right: 2px solid #e5efec;
+    background: rgb(0 102 78 / 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+    border-left: 2px solid #f3f4f5;
+    border-right: 2px solid #f3f4f5;
+  }
+
+  .hr-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    background: rgb(0 102 78 / 0.1);
+  }
+
+  .hr-scrollbar::-webkit-scrollbar-thumb {
+    background: #00664e;
+
+    border-radius: 12px;
+  }
+
+  .hr-scrollbar::-webkit-scrollbar-track {
+    background: rgb(0 102 78 / 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgb(0 102 78 / 0.1);
+    border-left: 2px solid #f3f4f5;
+    border-right: 2px solid #f3f4f5;
   }
 }
+
 @layer utilities {
   .blur-1 {
     /* Vector */
@@ -65,7 +128,7 @@
     left: 500.9px;
     top: 66.87px;
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
@@ -81,7 +144,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
@@ -98,7 +161,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: matrix(1, -0.03, -0.03, -1, 0, 0);
@@ -113,7 +176,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: matrix(1, -0.03, -0.03, -1, 0, 0);
@@ -130,7 +193,7 @@
 
     /* Primary/Green/800 */
 
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
@@ -146,15 +209,14 @@
     top: 60.25px;
 
     /* Primary/Green/800 */
-
-    background: #009975;
+    background: rgb(0 102 78 / 0.1);
     opacity: 0.3;
     filter: blur(15px);
     transform: rotate(-75deg);
   }
 
-  .bg-primary {
-    background-color: #009975;
+  .bg-primary-blue {
+    background-color: rgb(0 102 78 / 0.1);
   }
 
   /* Footer */
@@ -217,7 +279,9 @@
 .ellipse {
   position: absolute;
   border-radius: 50%;
-  transition: transform 3s, filter 3s;
+  transition:
+    transform 3s,
+    filter 3s;
 }
 
 /* Ellipse 115 */
@@ -1033,12 +1097,12 @@
 
 .ellipse147 {
   position: absolute;
-width: 150px;
-height: 150px;
-left: 817px;
-top: 213px;
+  width: 150px;
+  height: 150px;
+  left: 817px;
+  top: 213px;
 
-background: url('./assets/Landing Page Images/Ellipse 147.png');
+  background: url("./assets/Landing Page Images/Ellipse 147.png");
 }
 
 /* Ellipse 1411 */
@@ -1050,7 +1114,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 602px;
   top: 184px;
 
-  background: url('./assets/Landing Page Images/Ellipse 1411.png');
+  background: url("./assets/Landing Page Images/Ellipse 1411.png");
 }
 
 /* Ellipse 128 */
@@ -1062,7 +1126,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 389px;
   top: 30px;
 
-  background: url('./assets/Landing Page Images/Ellipse 128.png');
+  background: url("./assets/Landing Page Images/Ellipse 128.png");
 }
 
 /* Ellipse 142 */
@@ -1074,7 +1138,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 50px;
   top: 246px;
 
-  background: url('./assets/Landing Page Images/Ellipse 142.png'), #d9d9d9;
+  background: url("./assets/Landing Page Images/Ellipse 142.png"), #d9d9d9;
 }
 
 /* Ellipse 175 */
@@ -1086,7 +1150,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 451px;
   top: 313px;
 
-  background: url('./assets/Landing Page Images/Ellipse 175.png');
+  background: url("./assets/Landing Page Images/Ellipse 175.png");
 }
 
 /* Ellipse 146 */
@@ -1098,7 +1162,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 792px;
   top: 360px;
 
-  background: url('./assets/Landing Page Images/Ellipse 146.png');
+  background: url("./assets/Landing Page Images/Ellipse 146.png");
 }
 
 /* Ellipse 159 */
@@ -1110,7 +1174,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 1055px;
   top: 86px;
 
-  background: url('./assets/Landing Page Images/Ellipse 159.png');
+  background: url("./assets/Landing Page Images/Ellipse 159.png");
 }
 
 /* Ellipse 167 */
@@ -1122,7 +1186,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 1337px;
   top: 227px;
 
-  background: url('./assets/Landing Page Images/Ellipse 167.png');
+  background: url("./assets/Landing Page Images/Ellipse 167.png");
 }
 
 /* Ellipse 160 */
@@ -1134,7 +1198,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 1198px;
   top: 90px;
 
-  background: url('./assets/Landing Page Images/Ellipse 160.png'), #d9d9d9;
+  background: url("./assets/Landing Page Images/Ellipse 160.png"), #d9d9d9;
 }
 
 /* Ellipse 118 */
@@ -1146,7 +1210,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 151px;
   top: 221px;
 
-  background: url('./assets/Landing Page Images/Ellipse 118.png');
+  background: url("./assets/Landing Page Images/Ellipse 118.png");
 }
 
 /* Ellipse 138 */
@@ -1158,7 +1222,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 603px;
   top: 0px;
 
-  background: url('./assets/Landing Page Images/Ellipse 138.png');
+  background: url("./assets/Landing Page Images/Ellipse 138.png");
 }
 
 /* Ellipse 141 */
@@ -1170,7 +1234,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 580px;
   top: 136px;
 
-  background: url('./assets/Landing Page Images/Ellipse 141.png');
+  background: url("./assets/Landing Page Images/Ellipse 141.png");
 }
 
 /* Ellipse 157 */
@@ -1182,7 +1246,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 1002px;
   top: 404px;
 
-  background: url('./assets/Landing Page Images/Ellipse 157.png');
+  background: url("./assets/Landing Page Images/Ellipse 157.png");
 }
 
 /* Ellipse 132 */
@@ -1194,7 +1258,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 184px;
   top: 331px;
 
-  background: url('./assets/Landing Page Images/Ellipse 132.png'), #d9d9d9;
+  background: url("./assets/Landing Page Images/Ellipse 132.png"), #d9d9d9;
 }
 
 /* Ellipse 131 */
@@ -1206,7 +1270,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 289px;
   top: 199px;
 
-  background: url('./assets/Landing Page Images/Ellipse 131.png');
+  background: url("./assets/Landing Page Images/Ellipse 131.png");
 }
 
 /* Ellipse 136 */
@@ -1218,7 +1282,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 333px;
   top: 331px;
 
-  background: url('./assets/Landing Page Images/Ellipse 136.png');
+  background: url("./assets/Landing Page Images/Ellipse 136.png");
 }
 
 /* Ellipse 124 */
@@ -1230,7 +1294,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 200px;
   top: 138px;
 
-  background: url('./assets/Landing Page Images/Ellipse 124.png'), #d9d9d9;
+  background: url("./assets/Landing Page Images/Ellipse 124.png"), #d9d9d9;
 }
 
 /* Ellipse 164 */
@@ -1242,7 +1306,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 1105px;
   top: 223px;
 
-  background: url('./assets/Landing Page Images/Ellipse 164.png'), #d9d9d9;
+  background: url("./assets/Landing Page Images/Ellipse 164.png"), #d9d9d9;
 }
 
 /* Ellipse 165 */
@@ -1254,7 +1318,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 1232px;
   top: 212px;
 
-  background: url('./assets/Landing Page Images/Ellipse 165.png');
+  background: url("./assets/Landing Page Images/Ellipse 165.png");
 }
 
 /* Ellipse 148 */
@@ -1266,7 +1330,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 766px;
   top: 119px;
 
-  background: url('./assets/Landing Page Images/Ellipse 148.png');
+  background: url("./assets/Landing Page Images/Ellipse 148.png");
 }
 
 /* Ellipse 152 */
@@ -1278,7 +1342,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 870px;
   top: 57px;
 
-  background: url('./assets/Landing Page Images/Ellipse 152.png');
+  background: url("./assets/Landing Page Images/Ellipse 152.png");
 }
 
 /* Ellipse 153 */
@@ -1290,7 +1354,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 956px;
   top: 69px;
 
-  background: url('./assets/Landing Page Images/Ellipse 153.png');
+  background: url("./assets/Landing Page Images/Ellipse 153.png");
 }
 
 /* Ellipse 155 */
@@ -1302,7 +1366,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 966px;
   top: 210px;
 
-  background: url('./assets/Landing Page Images/Ellipse 155.png');
+  background: url("./assets/Landing Page Images/Ellipse 155.png");
 }
 
 /* Ellipse 127 */
@@ -1314,7 +1378,7 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 591px;
   top: 382px;
 
-  background: url('./assets/Landing Page Images/Ellipse 127.png');
+  background: url("./assets/Landing Page Images/Ellipse 127.png");
 }
 
 /* Ellipse 117 */
@@ -1326,5 +1390,5 @@ background: url('./assets/Landing Page Images/Ellipse 147.png');
   left: 650px;
   top: 70px;
 
-  background: url('./assets/Landing Page Images/Ellipse 117.png');
+  background: url("./assets/Landing Page Images/Ellipse 117.png");
 }
