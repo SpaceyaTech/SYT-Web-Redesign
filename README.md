@@ -162,7 +162,7 @@ We follow the [![Contributor Covenant](https://img.shields.io/badge/Contributor%
 
 [//]: # (https://github.com/Ileriayo/markdown-badges)
 
-<strong>Thank you</strong> for your interest and contributions to the SpaceYaTech website redesign project. Together, we can create an outstanding website experience!
+<strong>Thank you</strong> for your interest and contributions to the SpaceYaTech website redesign project. Together, we create an outstanding website experience!
 
 # Contributors 
 [![Contributors](https://contrib.rocks/image?repo=SpaceyaTech/SYT-Web-Redesign)](https://github.com/SpaceyaTech/SYT-Web-Redesign/graphs/contributors)
