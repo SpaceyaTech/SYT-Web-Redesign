@@ -93,7 +93,7 @@ function OurEvents() {
                 </p>
               </div>
             ) : (
-              topEvents?.results
+              (topEvents?.results ?? [])
                 .slice(0, 6)
                 .map((event) => (
                   <UpcomingEventCard key={event.id} event={event} />
