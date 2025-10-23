@@ -1,3 +1,4 @@
+import { Calendar } from "lucide-react";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
@@ -11,6 +12,39 @@ import {
   formatEventTime,
   startEventDate,
 } from "../../../utilities/formatEventDate";
+
+function EmptyEventsState() {
+  return (
+    <div className="w-full h-full flex items-center justify-center py-20 px-6">
+      <div className="max-w-sm w-full text-center">
+        <div className="mb-8 flex justify-center">
+          <div className="w-24 h-24 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl flex items-center justify-center border border-gray-200 shadow-sm">
+            <Calendar 
+              className="w-12 h-12 text-gray-400" 
+              strokeWidth={1.2}
+            />
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-2xl font-semibold text-gray-800">
+            No events scheduled yet
+          </h3>
+          <p className="text-gray-600 text-base leading-relaxed max-w-xs mx-auto">
+            We&apos;re busy planning amazing events for our community. 
+            Stay tuned for upcoming announcements!
+          </p>
+        </div>
+
+        <div className="mt-8">
+          <div className="inline-flex items-center text-sm text-gray-500 bg-gray-50 px-4 py-2 rounded-full border">
+            <span>Check back soon for updates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function OurEvents() {
   const {
@@ -85,19 +119,15 @@ function OurEvents() {
 
         {isSuccess && (
           <div className="py-4 flex flex-row md:flex-col gap-4 md:pr-8 overflow-x-scroll md:overflow-y-scroll h-full md:py-2 w-full md:w-1/2 scrollbar">
-            {/* <div className="w-full flex flex-row md:flex-col overflow-x-auto gap-4"> */}
-            {topEvents?.count === 0 ? (
-              <div className="size-full flex-center">
-                <p className="italic text-base md:text-lg font-semibold">
-                  No events found!
-                </p>
-              </div>
-            ) : (
-              topEvents?.results
+            {Array.isArray(topEvents?.results) &&
+            topEvents.results.length > 0 ? (
+              topEvents.results
                 .slice(0, 6)
                 .map((event) => (
                   <UpcomingEventCard key={event.id} event={event} />
                 ))
+            ) : (
+              <EmptyEventsState />
             )}
           </div>
         )}
