@@ -227,7 +227,7 @@ function MastercraftEnrollmentComponent({ program }) {
 
   return (
     <div className="border-t pt-4 w-full">
-      <section className="border-2 border-white w-full bg-[#E8F4F1] p-8 rounded-2xl flex flex-col gap-6">
+      <section className="border-2 border-white w-full bg-[#E8F4F1] p-8 rounded-2xl flex flex-col gap-6 lg:px-36 lg:py-12">
         <EnrollmentHeader title={program.title} />
         <EnrollmentProgressBar currentStep={index} />
 

@@ -1,3 +1,11 @@
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../../../components/ui/select";
+
 /* eslint-disable react/prop-types */
 const qualificationsForm = [
   {
@@ -120,26 +128,47 @@ function Qualifications({ formData, handleInputChange }) {
     <div className="flex flex-col gap-6">
       <h3 className="text-lg font-semibold text-[#2E2E2E]">Qualifications</h3>
 
-      {qualificationsForm.map(({ id, question, options }) => (
-        <div className="flex flex-col gap-3" key={id}>
-          <label htmlFor="fullName" className="text-sm">
-            {question}{" "}
-          </label>
-          <select
-            id={id}
-            name={id}
-            value={formData[id] || ""}
-            onChange={(e) => handleInputChange(id, e.target.value)}
-            className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none text-[#A3A3A3]"
-          >
-            {options.map(({ value, label }) => (
-              <option key={value} value={label}>
-                {label}
-              </option>
-            ))}
-          </select>
-        </div>
-      ))}
+      <div className="bg-white p-4 rounded-3xl space-y-6">
+        {qualificationsForm.map(({ id, question, options }) => (
+          <div className="flex flex-col gap-3" key={id}>
+            <label htmlFor="fullName" className="text-sm">
+              {question}{" "}
+            </label>
+            {/* <select
+              id={id}
+              name={id}
+              value={formData[id] || ""}
+              onChange={(e) => handleInputChange(id, e.target.value)}
+              className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none placeholder:text-[#A3A3A3] accent-black"
+            >
+              {options.map(({ value, label }) => (
+                <option key={value} value={label}>
+                  {label}
+                </option>
+              ))}
+            </select> */}
+            <Select
+              value={formData[id] || ""}
+              onValueChange={(value) => handleInputChange(id, value)}
+            >
+              <SelectTrigger className="w-full border border-[#E5E5E5] bg-[#F4F4F5] text-sm rounded-md focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                <SelectValue placeholder="Select an option" />
+              </SelectTrigger>
+              <SelectContent>
+                {options.map(({ value, label }) => (
+                  <SelectItem
+                    key={value}
+                    value={label}
+                    className="text-gray-800 data-[highlighted]:bg-primary data-[highlighted]:text-white"
+                  >
+                    {label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
