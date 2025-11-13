@@ -13,7 +13,7 @@ import Qualifications from "./Qualifications";
 import TermsOfUseCheckbox from "./TermsOfUseCheckbox";
 
 function MastercraftEnrollmentComponent({ program }) {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(3);
   const [isOpen, setIsOpen] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [enrollmentId, setEnrollmentId] = useState(null);
