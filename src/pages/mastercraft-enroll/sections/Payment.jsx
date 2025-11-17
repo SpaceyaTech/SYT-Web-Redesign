@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -57,15 +58,15 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
   };
 
   return (
-    <div className="flex flex-col gap-6 border border-red-600">
+    <div className="flex flex-col gap-6">
       <div className="space-y-3">
         <h3 className="text-md font-semibold text-[#2E2E2E]">
           Select how you want to pay
         </h3>
-        <div className="bg-[#F8F8F8] rounded-lg w-full flex flex-col md:flex-row gap-3 items-center justify-between py-2 px-4 md:py-6 ring-4 ring-[#F9F8FA99]">
+        <div className="bg-[#F8F8F8] rounded-lg w-full flex flex-col md:flex-row gap-3 md:items-center justify-between py-2 px-4 md:py-6 ring-4 ring-[#F9F8FA99]">
           <RadioGroup
             defaultValue="2800"
-            className="flex flex-col md:flex-row items-center gap-4 md:gap-12"
+            className="flex flex-col md:flex-row md:items-center gap-2 md:gap-12"
           >
             <div className="flex items-center gap-3">
               <RadioGroupItem
@@ -101,35 +102,25 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
 
       <div className="w-full">
         <Tabs defaultValue="account" className="space-y-5">
-          <TabsList className="w-full border-[0.5px] border-[#92CABD] rounded-lg p-0  overflow-clip">
+          <TabsList className="w-full border-[0.5px] border-[#92CABD] rounded-lg p-0 overflow-clip">
             <TabsTrigger
               value="mpesa"
               className="w-1/2 h-full flex items-center justify-center gap-2"
             >
-              <p>Pay with M-PESA</p>
+              <p className="text-xs md:text-sm">Pay with M-PESA</p>
               <span className="bg-[#BF8301] rounded-full text-white px-2 py-1 text-xs leading-5 hidden md:block">
                 Save
               </span>
             </TabsTrigger>
             <TabsTrigger
               value="card"
-              className="w-1/2 h-full text-sm font-medium"
+              className="w-1/2 h-full text-xs md:text-sm font-medium"
             >
-              Pay with credit or debit card
+              <p className="hidden md:block">Pay with credit or debit card</p>
+              <p className="block md:hidden">Pay with card</p>
             </TabsTrigger>
           </TabsList>
 
-          {/* <TabsContent
-            value="account"
-            className="ring-4 ring-[#F9F8FA99] rounded-3xl"
-          >
-            <div className="bg-white rounded-3xl border-0">
-              <div className=" border border-red-500  px-4 py-3 md:px-12 md:py-6 flex flex-col md:flex-row w-full divide-x divide-red-500 gap-5">
-                <div className="w-3/5">Left</div>
-                <div className="w-2/5">right</div>
-              </div>
-            </div>
-          </TabsContent> */}
           <TabsContent
             value="mpesa"
             className="ring-4 ring-[#F9F8FA99] rounded-3xl"
@@ -139,17 +130,23 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                 {/* Left side - Phone number input */}
                 <div className="w-full md:w-3/5 md:pr-8 space-y-4">
                   <div className="space-y-2">
-                    <label
+                    <Label
                       htmlFor="mpesa-phone"
                       className="text-sm font-medium text-gray-700"
                     >
                       Enter your M-PESA Phone number
-                    </label>
-                    <input
-                      type="tel"
-                      id="mpesa-phone"
-                      placeholder="+254 700 000 000"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none"
+                    </Label>
+                    <PhoneInput
+                      defaultCountry="KE"
+                      withCountryCallingCode
+                      value={formData.paymentPhoneNumber}
+                      onChange={(value) =>
+                        handleInputChange("paymentPhoneNumber", value)
+                      }
+                      type="text"
+                      name="paymentPhoneNumber"
+                      id="paymentPhoneNumber"
+                      className="border border-[#E5E5E5] bg-[#F4F4F5] rounded-md py-2 px-3 text-sm outline-none placeholder:text-[#A3A3A3] w-full"
                     />
                   </div>
 
@@ -234,7 +231,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                       >
                         Name on card
                       </Label>
-                      <input
+                      <Input
                         id="card-name"
                         type="text"
                         placeholder="John Doe"
@@ -242,7 +239,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                         onChange={(e) =>
                           handleCardChange("name", e.target.value)
                         }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700 focus-visible:ring-2 focus-visible:ring-[#92CABD] focus-visible:ring-offset-2"
                       />
                     </div>
 
@@ -254,7 +251,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                         >
                           Expiry date
                         </Label>
-                        <input
+                        <Input
                           id="expiry"
                           type="text"
                           placeholder="MM/YYYY"
@@ -262,7 +259,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                           onChange={(e) =>
                             handleCardChange("expiry", e.target.value)
                           }
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700 focus-visible:ring-2 focus-visible:ring-[#92CABD] focus-visible:ring-offset-2"
                         />
                       </div>
                       <div className="space-y-2">
@@ -272,7 +269,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                         >
                           CVV
                         </Label>
-                        <input
+                        <Input
                           id="cvv"
                           type="text"
                           placeholder="123"
@@ -280,7 +277,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                           onChange={(e) =>
                             handleCardChange("cvv", e.target.value)
                           }
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700 focus-visible:ring-2 focus-visible:ring-[#92CABD] focus-visible:ring-offset-2"
                         />
                       </div>
                     </div>
@@ -292,7 +289,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                       >
                         Card number
                       </Label>
-                      <input
+                      <Input
                         id="card-number"
                         type="text"
                         placeholder="1234 5678 9012 3456"
@@ -300,7 +297,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                         onChange={(e) =>
                           handleCardChange("number", e.target.value)
                         }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#92CABD] focus:border-transparent outline-none text-gray-700 focus-visible:ring-2 focus-visible:ring-[#92CABD] focus-visible:ring-offset-2"
                       />
                     </div>
                   </div>
@@ -319,6 +316,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                             />
                           </svg>
                         </div>
+
                         <div className="w-12 h-8 bg-white rounded flex items-center justify-center shadow-sm border border-gray-200">
                           <svg viewBox="0 0 48 16" className="w-8 h-4">
                             <text
@@ -339,7 +337,7 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                       <div className="bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 rounded-xl p-6 shadow-2xl relative overflow-hidden">
                         {/* Card chip */}
                         <div className="absolute top-4 right-4">
-                          <div className="w-12 h-10 rounded-md bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 opacity-80"></div>
+                          <div className="w-12 h-10 rounded-md bg-gradient-to-br from-yellow-200 via-yellow-300 to-yellow-400 opacity-80" />
                         </div>
 
                         <div className="relative z-10">
@@ -372,8 +370,8 @@ function Payment({ formData, handleInputChange, programTitle, pricing }) {
                         </div>
 
                         {/* Decorative elements */}
-                        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white opacity-5 rounded-full"></div>
-                        <div className="absolute -top-5 -left-5 w-32 h-32 bg-white opacity-5 rounded-full"></div>
+                        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white opacity-5 rounded-full" />
+                        <div className="absolute -top-5 -left-5 w-32 h-32 bg-white opacity-5 rounded-full" />
                       </div>
                     </div>
                   </div>
